@@ -138,8 +138,13 @@
     .docs-content {
       margin-left: var(--docs-sidebar-w);
       flex: 1;
-      padding: var(--ease-space-12) var(--ease-space-12);
+      padding: var(--ease-space-12) 0;
+    }
+
+    .docs-content-inner {
       max-width: 860px;
+      margin: 0 auto;
+      padding: 0 var(--ease-space-12);
     }
 
     /* ── Section headings ─────────────────────────────────── */
@@ -366,6 +371,7 @@
 
     <!-- Main content -->
     <main class="docs-content">
+      <div class="docs-content-inner">
 
       <!-- ══════════════ GETTING STARTED ══════════════ -->
       <section id="getting-started" class="docs-section ease-fade-in">
@@ -748,6 +754,7 @@
         </div>
       </section>
 
+      </div>
     </main>
   </div>
 <script>
