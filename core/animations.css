@@ -1065,7 +1065,8 @@
 .ease-delay-100 { animation-delay: 100ms; transition-delay: 100ms; }
 .ease-delay-150 { animation-delay: 150ms; transition-delay: 150ms; }
 .ease-delay-200 { animation-delay: 200ms; transition-delay: 200ms; }
-.ease-delay-300 { animation-delay: 300ms; transition-delay: 300ms; }
+/* 300ms stagger delay helper */
+1 animation-delay: 300ms; transition-delay: 300ms; }
 .ease-delay-400 { animation-delay: 400ms; transition-delay: 400ms; }
 .ease-delay-500 { animation-delay: 500ms; transition-delay: 500ms; }
 .ease-delay-600 { animation-delay: 600ms; transition-delay: 600ms; }
