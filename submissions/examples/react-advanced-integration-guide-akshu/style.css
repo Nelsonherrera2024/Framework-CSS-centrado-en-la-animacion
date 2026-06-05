@@ -1,0 +1,177 @@
+:root {
+  --dashboard-bg: #0f172a;
+  --card-bg: #1e293b;
+  --border-color: #334155;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --accent: #6366f1;
+}
+
+body {
+  background: var(--dashboard-bg);
+  color: var(--text-primary);
+  font-family: Inter, sans-serif;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+.ease-container {
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Dashboard Cards */
+
+.ease-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  padding: 1.5rem;
+  transition: transform 0.25s ease;
+}
+
+.ease-card:hover {
+  transform: translateY(-4px);
+}
+
+.ease-card h1 {
+  font-size: 2rem;
+  margin-top: 0.5rem;
+}
+
+.ease-card h3 {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* Grid Layout */
+
+.ease-grid {
+  display: grid;
+}
+
+.ease-grid-cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.ease-gap-4 {
+  gap: 1rem;
+}
+
+/* Notification Toast */
+
+.notification-toast {
+  background: rgba(34, 197, 94, 0.12);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  color: #86efac;
+}
+
+/* Task List */
+
+.task-item {
+  margin-bottom: 0.75rem;
+  padding: 1rem;
+}
+
+/* Modal */
+
+.dashboard-modal {
+  max-width: 500px;
+  margin: 0 auto;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.dashboard-modal h3 {
+  margin-bottom: 1rem;
+}
+
+.dashboard-modal p {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+/* Button */
+
+.ease-btn {
+  border: none;
+  border-radius: 10px;
+  padding: 0.8rem 1.4rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.ease-btn-primary {
+  background: var(--accent);
+  color: white;
+}
+
+/* Code Block */
+
+.code-block {
+  background: #020617;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.25rem;
+  overflow-x: auto;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #e2e8f0;
+}
+
+/* Utility Spacing */
+
+.ease-mb-4 {
+  margin-bottom: 1rem;
+}
+
+.ease-mb-8 {
+  margin-bottom: 2rem;
+}
+
+.ease-mb-10 {
+  margin-bottom: 2.5rem;
+}
+
+.ease-py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.ease-text-muted {
+  color: var(--text-secondary);
+}
+
+.ease-text-2xl {
+  font-size: 1.5rem;
+}
+
+.ease-text-4xl {
+  font-size: 2.5rem;
+}
+
+.ease-font-bold {
+  font-weight: 700;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .ease-grid-cols-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-modal {
+    width: 100%;
+  }
+}
