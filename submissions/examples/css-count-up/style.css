@@ -1,4 +1,4 @@
-@property --count-value {
+@property --ease-count {
   syntax: "<integer>";
   initial-value: 0;
   inherits: false;
@@ -87,8 +87,6 @@ h1 {
 }
 
 .count-card {
-  --count-target: 0;
-  --count-value: 0;
   --counter-ease: ease-out;
   --accent: var(--green);
 
@@ -119,14 +117,12 @@ h1 {
 }
 
 .count-card.is-visible {
-  --count-value: var(--count-target);
   opacity: 1;
   transform: translateY(0);
   border-color: color-mix(in srgb, var(--accent), white 34%);
   box-shadow:
     0 24px 70px rgba(24, 32, 51, 0.12),
     inset 0 4px 0 var(--accent);
-  animation: count-up 1500ms var(--counter-ease) both;
 }
 
 .count-label {
@@ -137,28 +133,34 @@ h1 {
   text-transform: uppercase;
 }
 
-.count-number {
+.count-value {
   margin: 28px 0 18px;
   color: var(--accent);
   font-size: clamp(3rem, 10vw, 5.5rem);
   line-height: 0.92;
   letter-spacing: 0;
-  counter-reset: count var(--count-value);
 }
 
-.count-number::before {
-  content: counter(count);
+.count-number {
+  --ease-count: 0;
+  --ease-count-duration: 1500ms;
+  --ease-count-ease: var(--counter-ease);
+
+  counter-reset: n var(--ease-count);
 }
 
 .count-number::after {
-  content: attr(data-suffix);
+  content: counter(n);
+}
+
+.count-suffix {
   font-size: 0.44em;
   margin-left: 0.08em;
   vertical-align: 0.42em;
 }
 
-.count-number[data-suffix="%"]::after,
-.count-number[data-suffix="+"]::after {
+.count-suffix-percent,
+.count-suffix-plus {
   font-size: 0.72em;
   margin-left: 0.04em;
   vertical-align: 0.16em;
@@ -172,12 +174,22 @@ h1 {
 
 @keyframes count-up {
   from {
-    --count-value: 0;
+    --ease-count: 0;
   }
 
   to {
-    --count-value: var(--count-target);
+    --ease-count: var(--ease-count-target);
   }
+}
+
+.ease-count-up.is-visible,
+.is-visible .ease-count-up,
+.ease-count-up.ease-count-active {
+  animation:
+    count-up
+    var(--ease-count-duration)
+    var(--ease-count-ease)
+    both;
 }
 
 @media (max-width: 760px) {

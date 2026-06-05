@@ -252,6 +252,15 @@ Every class in the framework has passed through this process. The curation is wh
 ```
 
 Applies a quick squish animation during hover, focus, and active interactions.
+
+### Count Up
+
+```html
+<span class="ease-count-up is-visible" style="--ease-count-target: 1200"></span>
+```
+
+Use `--ease-count-target` inline, then add `is-visible` on scroll or class toggle to animate the displayed counter from `0` to the target.
+
 ### Layout Utilities
 
 ```html

@@ -10,6 +10,17 @@
 
 /* ── Keyframe Definitions ──────────────────────────────────── */
 
+@property --ease-count {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+
+@keyframes ease-kf-count-up {
+  from { --ease-count: 0; }
+  to   { --ease-count: var(--ease-count-target); }
+}
+
 @keyframes ease-kf-fade-in {
   from { opacity: 0; }
   to   { opacity: 1; }
@@ -657,6 +668,32 @@
 
 .ease-shake {
   animation: ease-kf-shake 0.5s var(--ease-ease) both;
+}
+
+/* Count Up
+   [INTEGRATED] from submissions/examples/css-count-up/
+   Set --ease-count-target inline and add .is-visible to trigger. */
+.ease-count-up {
+  --ease-count: 0;
+  --ease-count-target: 0;
+  --ease-count-duration: 1500ms;
+  --ease-count-ease: var(--ease-ease-out);
+
+  counter-reset: n var(--ease-count);
+}
+
+.ease-count-up::after {
+  content: counter(n);
+}
+
+.ease-count-up.is-visible,
+.is-visible .ease-count-up,
+.ease-count-up.ease-count-active {
+  animation:
+    ease-kf-count-up
+    var(--ease-count-duration)
+    var(--ease-count-ease)
+    both;
 }
 
 /* Typewriter Loop

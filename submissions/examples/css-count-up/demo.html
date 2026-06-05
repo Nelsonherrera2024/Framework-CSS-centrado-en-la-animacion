@@ -22,21 +22,30 @@
     </div>
 
     <section class="stats-grid" aria-label="Animated product statistics">
-      <article class="count-card" data-target="95" data-suffix="%" data-ease="ease-out">
+      <article class="count-card" data-ease="ease-out">
         <span class="count-label">Retention lift</span>
-        <strong class="count-number"></strong>
+        <div class="count-value">
+          <strong class="count-number ease-count-up" style="--ease-count-target: 95"></strong>
+          <span class="count-suffix count-suffix-percent">%</span>
+        </div>
         <span class="count-note">Ease-out finish for dashboard highlights</span>
       </article>
 
-      <article class="count-card count-card-blue" data-target="1200" data-suffix="+" data-ease="linear">
+      <article class="count-card count-card-blue" data-ease="linear">
         <span class="count-label">Components styled</span>
-        <strong class="count-number"></strong>
+        <div class="count-value">
+          <strong class="count-number ease-count-up" style="--ease-count-target: 1200"></strong>
+          <span class="count-suffix count-suffix-plus">+</span>
+        </div>
         <span class="count-note">Linear pacing for neutral progress counters</span>
       </article>
 
-      <article class="count-card count-card-amber" data-target="48" data-suffix="ms" data-ease="ease-in-out">
+      <article class="count-card count-card-amber" data-ease="ease-in-out">
         <span class="count-label">Interaction delay</span>
-        <strong class="count-number"></strong>
+        <div class="count-value">
+          <strong class="count-number ease-count-up" style="--ease-count-target: 48"></strong>
+          <span class="count-suffix">ms</span>
+        </div>
         <span class="count-note">Ease-in-out motion for compact metric cards</span>
       </article>
     </section>
@@ -53,12 +62,7 @@
           }
 
           const card = entry.target;
-          const number = card.querySelector(".count-number");
-          card.style.setProperty("--count-target", card.dataset.target || "0");
           card.style.setProperty("--counter-ease", card.dataset.ease || "ease-out");
-          if (number) {
-            number.dataset.suffix = card.dataset.suffix || "";
-          }
           card.classList.add("is-visible");
           observer.unobserve(card);
         });

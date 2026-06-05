@@ -72,6 +72,8 @@ EaseMotion CSS v1.0.0 is the first public release of the framework. This version
 - `ease-hover-shimmer` — [INTEGRATED] from `submissions/examples/hover-shimmer/`
 - `ease-card-lift` — [INTEGRATED] from `submissions/examples/card-lift/`
 
+- `ease-count-up` — [INTEGRATED] from `submissions/examples/css-count-up/`
+
 #### Infrastructure
 
 - `easemotion.css` — Single-import entry point
