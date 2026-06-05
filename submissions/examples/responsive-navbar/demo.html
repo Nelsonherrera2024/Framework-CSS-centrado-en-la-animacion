@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Navbar - EaseMotion CSS</title>
+  <link rel="stylesheet" href="./style.css">
+  <style>
+    /* Demo page styling */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+    
+    .demo-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+    
+    .demo-content {
+      padding: 60px 40px;
+      text-align: center;
+    }
+    
+    .demo-content h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    
+    .demo-content p {
+      font-size: 1.1rem;
+      color: #666;
+      margin-bottom: 30px;
+    }
+    
+    .spacer {
+      height: 100px;
+      background: linear-gradient(to bottom, rgba(102, 126, 234, 0.1), transparent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="demo-container">
+    <!-- Navbar 1: Basic Responsive Navbar -->
+    <nav class="navbar">
+      <a href="#" class="logo">EaseMotion</a>
+      
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation menu">
+      <label for="nav-toggle" class="nav-hamburger" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+      
+      <ul class="nav-links">
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">Components</a></li>
+        <li><a href="#">Examples</a></li>
+        <li><a href="#">Docs</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </nav>
+    
+    <div class="demo-content">
+      <h1>Responsive Navbar</h1>
+      <p>A modern, animated navigation bar with smooth hover effects and mobile-friendly hamburger menu</p>
+      <p>👉 Resize your browser window to see the mobile hamburger menu activate</p>
+    </div>
+    
+    <div class="spacer">Scroll to see more content...</div>
+    <div class="spacer">Mobile hamburger menu on screens smaller than 768px</div>
+    <div class="spacer">Smooth animations on hover and link states</div>
+  </div>
+</body>
+</html>
