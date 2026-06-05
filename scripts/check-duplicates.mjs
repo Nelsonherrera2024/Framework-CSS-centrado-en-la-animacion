@@ -10,6 +10,7 @@ const baselinePath = path.join(__dirname, "duplicate-baseline.json");
 const dirs = ["core", "components"];
 const classPattern = /^\.([a-zA-Z0-9_-]+)\s*\{/;
 const keyframePattern = /@keyframes\s+(\S+)/;
+const animationRefPattern = /animation:\s*(\S+)/;
 
 async function readBaseline() {
   try {
@@ -27,6 +28,7 @@ async function findDuplicates() {
   const baseline = await readBaseline();
   const classes = {};
   const keyframes = {};
+  const animationRefs = {};
 
   for (const dir of dirs) {
     const dirPath = path.join(rootDir, dir);
@@ -58,6 +60,13 @@ async function findDuplicates() {
           if (!keyframes[km[1]]) keyframes[km[1]] = [];
           keyframes[km[1]].push(`${dir}/${entry.name}:${i + 1}`);
         }
+
+        const am = line.match(animationRefPattern);
+        if (am) {
+          const animName = am[1];
+          if (!animationRefs[animName]) animationRefs[animName] = [];
+          animationRefs[animName].push(`${dir}/${entry.name}:${i + 1}`);
+        }
       }
     }
   }
@@ -82,6 +91,15 @@ async function findDuplicates() {
       exitCode = 1;
     } else if (locations.length > 1) {
       knownDuplicateCount++;
+    }
+  }
+
+  for (const [animName, locations] of Object.entries(animationRefs)) {
+    if (animName.startsWith("var(") || animName === "none") continue;
+    if (animName.startsWith("ease-") && !animName.startsWith("ease-kf-") && !keyframes[animName]) {
+      console.log(`Missing @keyframes "${animName}" referenced by animation property:`);
+      locations.forEach((loc) => console.log(`  ${loc}`));
+      exitCode = 1;
     }
   }
 
