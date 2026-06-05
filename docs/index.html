@@ -616,6 +616,20 @@
     .docs-code:hover .docs-code-lang {
       opacity: 0;
     }
+
+    /* Smooth scrolling for anchor links */
+    html {
+    scroll-behavior: smooth;
+  }
+
+    .docs-nav-link {
+    cursor: pointer;
+    transition: color var(--ease-speed-fast) var(--ease-ease);
+  }
+
+    .docs-nav-link:hover {
+    color: var(--page-text) !important;
+  }
   </style>
 </head>
 
@@ -635,7 +649,7 @@
       <li><a href="#getting-started">Getting Started</a></li>
       <li><a href="#utilities">Utilities</a></li>
       <li><a href="#animations">Animations</a></li>
-      <li><a href="#buttons">Components</a></li>
+      <li><a href="#buttons" class="docs-nav-link">Components</a></li>
       <li><a href="https://github.com/SAPTARSHI-coder/EaseMotion-css/blob/main/examples/demo.html">
           <button class="ease-btn ease-btn-primary ease-btn-sm ease-btn-pill">Live Demo →</button>
         </a></li>
@@ -1952,6 +1966,43 @@ const savedTheme = localStorage.getItem('theme');
 if (savedTheme === 'light') {
   document.documentElement.setAttribute('data-theme', 'light');
 }
+
+// Handle navbar link clicks to update active state
+const navbarLinks = document.querySelectorAll('.docs-header-links a[href^="#"]');
+
+navbarLinks.forEach(link => {
+  link.addEventListener('click', (e) => {
+    // Remove active state from all navbar links
+    navbarLinks.forEach(l => l.classList.remove('active'));
+    
+    // Add active state to clicked link
+    link.classList.add('active');
+    
+    // Let the browser handle scrolling to the anchor
+  });
+});
+
+// Also update navbar active state when scrolling
+const updateNavbarActiveState = () => {
+  const sections = document.querySelectorAll('[id]');
+  let currentSection = null;
+  
+  sections.forEach(section => {
+    if (section.offsetTop <= window.scrollY + 100) {
+      currentSection = section.id;
+    }
+  });
+  
+  navbarLinks.forEach(link => {
+    if (link.href.includes(`#${currentSection}`)) {
+      link.classList.add('active');
+    } else {
+      link.classList.remove('active');
+    }
+  });
+};
+
+window.addEventListener('scroll', updateNavbarActiveState);
   </script>
 </body>
 
