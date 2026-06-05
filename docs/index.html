@@ -4,18 +4,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'unsafe-inline' 'unsafe-eval'; style-src 'self' https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:;">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:;">
   <title>EaseMotion CSS — Documentation</title>
   <meta name="description"
     content="Official documentation for EaseMotion CSS — the animation-first, human-readable CSS framework." />
 
-  <!-- EaseMotion CSS — loaded from jsDelivr CDN -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/easemotion-css/core/variables.css" integrity="sha384-u4alaiV9voo/7cfhvrlsJM1LxczXThaPZZd0qYJ9uU/GcD0yYWvNpYUtxKSpQss+" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/easemotion-css/core/base.css" integrity="sha384-AsMBzWcRzfyNTvGunukSBn+STpI4j/N0jD4K9cGcz4yt4J6J5ywJ8ZsxQpeChACZ" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/easemotion-css/core/animations.css" integrity="sha384-NtJ5ykloBafTw5bMeppPfLikC+O5h6DjvwfNtYAvfdB5JgYTjQuf4w96EiYOFUHZ" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/easemotion-css/core/utilities.css" integrity="sha384-D0aTwI6DmYseuLNFb+hHO7TJs6BiY3xoIrRcgvaIwAPX1ymAUVMiiK4qVCGM+Ems" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/easemotion-css/components/buttons.css" integrity="sha384-H5bIG5QdU3kEin/DKekP85FpkWVi39X1u9XmyfqyhdHr9nqlfOPPJDyeUMMY7CkM" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/easemotion-css/components/cards.css" integrity="sha384-blU1Snn5oMev2zg1q3KYoGqQM+9vcpO31N6/lEpFJkuLOhC2GbDGrUuJNxwX/knw" crossorigin="anonymous" />
+  <!-- EaseMotion CSS loaded from local files so docs work when opened directly -->
+  <link rel="stylesheet" href="../core/variables.css" />
+  <link rel="stylesheet" href="../core/base.css" />
+  <link rel="stylesheet" href="../core/animations.css" />
+  <link rel="stylesheet" href="../core/utilities.css" />
+  <link rel="stylesheet" href="../components/buttons.css" />
+  <link rel="stylesheet" href="../components/cards.css" />
   <link rel="stylesheet" href="../components/scroll-progress.css" />
 
   <style>
@@ -23,6 +23,7 @@
     :root {
       --docs-sidebar-w: 260px;
       --docs-header-h: 60px;
+      --docs-content-max: 1120px;
 
       /* Dark Theme (Default) */
       --page-bg: #0f0e17;
@@ -31,6 +32,7 @@
       --header-bg: rgba(15, 14, 23, 0.9);
       --border-color: rgba(255, 255, 255, 0.07);
       --card-bg: rgba(255, 255, 255, 0.04);
+      --card-bg-strong: rgba(255, 255, 255, 0.07);
       --sidebar-bg: rgba(255, 255, 255, 0.02);
       --code-bg: rgba(255, 255, 255, 0.04);
       --code-border: rgba(255, 255, 255, 0.08);
@@ -57,6 +59,7 @@
       --header-bg: rgba(248, 250, 252, 0.9);
       --border-color: rgba(15, 23, 42, 0.08);
       --card-bg: #ffffff;
+      --card-bg-strong: #ffffff;
       --sidebar-bg: rgba(15, 23, 42, 0.02);
       --code-bg: #f1f5f9;
       --code-border: #e2e8f0;
@@ -98,7 +101,10 @@
     }
 
     body {
-      background: var(--page-bg);
+      background:
+        radial-gradient(circle at top left, rgba(108, 99, 255, 0.18), transparent 34rem),
+        radial-gradient(circle at 85% 10%, rgba(34, 197, 94, 0.08), transparent 24rem),
+        var(--page-bg);
       color: var(--page-text);
       overflow-x: hidden;
     }
@@ -112,7 +118,8 @@
       height: var(--docs-header-h);
       z-index: var(--ease-z-overlay);
       background: var(--header-bg);
-      backdrop-filter: blur(12px);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
       border-bottom: 1px solid var(--border-color);
       display: flex;
       align-items: center;
@@ -130,6 +137,7 @@
       background-clip: text;
       letter-spacing: -0.02em;
       text-decoration: none;
+      white-space: nowrap;
     }
 
     .docs-header-links {
@@ -152,6 +160,12 @@
     }
 
     .docs-header-links a:hover { color: var(--page-text); }
+
+    .docs-header-links > li > a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 36px;
+    }
 
     /* ── Theme Toggle Button ──────────────────────────────── */
     .theme-toggle-btn {
@@ -191,6 +205,7 @@
       min-height: 100vh;
       min-height: 100dvh;
       padding-top: var(--docs-header-h);
+      width: 100%;
     }
 
     /* ── Sidebar ──────────────────────────────────────────── */
@@ -204,6 +219,8 @@
       padding: var(--ease-space-8) var(--ease-space-5);
       border-right: 1px solid var(--border-color);
       background: var(--sidebar-bg);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
     }
 
     .docs-sidebar::-webkit-scrollbar-thumb {
@@ -238,6 +255,7 @@
       color: var(--nav-link-color);
       border-radius: var(--ease-radius-sm);
       text-decoration: none;
+      border-left: 3px solid transparent;
       transition: color var(--ease-speed-fast) var(--ease-ease),
         background var(--ease-speed-fast) var(--ease-ease);
     }
@@ -251,14 +269,41 @@
     /* ── Mobile Toggle Button ─────────────────────────────── */
     .sidebar-toggle {
       display: none;
-      background: none;
-      border: none;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
       cursor: pointer;
-      padding: 4px 8px;
+      width: 38px;
+      height: 38px;
       font-size: 1.4rem;
-      color: #fff;
+      color: var(--page-text);
       z-index: 200;
+      border-radius: var(--ease-radius-md);
     }
+
+    .sidebar-toggle-line,
+    .sidebar-toggle-line::before,
+    .sidebar-toggle-line::after {
+      display: block;
+      width: 18px;
+      height: 2px;
+      background: currentColor;
+      border-radius: 999px;
+      content: "";
+    }
+
+    .sidebar-toggle-line {
+      position: relative;
+      margin: 0 auto;
+    }
+
+    .sidebar-toggle-line::before,
+    .sidebar-toggle-line::after {
+      position: absolute;
+      left: 0;
+    }
+
+    .sidebar-toggle-line::before { top: -6px; }
+    .sidebar-toggle-line::after { top: 6px; }
 
     /* ── Mobile Responsive ────────────────────────────────── */
     @media (max-width: 768px) {
@@ -308,14 +353,142 @@
       margin-left: var(--docs-sidebar-w);
       flex: 1;
       padding: var(--ease-space-12) var(--ease-space-12);
-      max-width: 860px;
+      max-width: var(--docs-content-max);
       min-width: 0;
+    }
+
+    .docs-hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+      gap: var(--ease-space-8);
+      align-items: stretch;
+      margin-bottom: var(--ease-space-12);
+    }
+
+    .docs-hero-main,
+    .docs-hero-panel,
+    .docs-quick-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--ease-radius-md);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+    }
+
+    .docs-hero-main {
+      padding: clamp(2rem, 5vw, 4rem);
+      min-height: 420px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .docs-hero-main::after {
+      content: "";
+      position: absolute;
+      inset: auto -20% -45% 32%;
+      height: 260px;
+      background: linear-gradient(120deg, rgba(108, 99, 255, 0.2), rgba(34, 197, 94, 0.12));
+      transform: rotate(-8deg);
+      pointer-events: none;
+    }
+
+    .docs-hero-main > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .docs-hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--ease-space-3);
+      margin-top: var(--ease-space-3);
+    }
+
+    .docs-hero-panel {
+      padding: var(--ease-space-6);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: var(--ease-space-4);
+    }
+
+    .docs-hero-stat {
+      padding: var(--ease-space-4) 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .docs-hero-stat:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .docs-stat-value {
+      display: block;
+      color: var(--heading-color);
+      font-size: var(--ease-text-2xl);
+      font-weight: 800;
+      line-height: 1.1;
+    }
+
+    .docs-stat-label {
+      display: block;
+      color: var(--page-text-muted);
+      font-size: var(--ease-text-sm);
+      margin-top: var(--ease-space-1);
+    }
+
+    .docs-quick-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: var(--ease-space-4);
+      margin-bottom: var(--ease-space-12);
+    }
+
+    .docs-quick-card {
+      padding: var(--ease-space-5);
+      text-decoration: none;
+      color: var(--page-text);
+      transition: transform var(--ease-speed-fast) var(--ease-ease),
+        border-color var(--ease-speed-fast) var(--ease-ease),
+        background var(--ease-speed-fast) var(--ease-ease);
+    }
+
+    .docs-quick-card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(108, 99, 255, 0.45);
+      background: var(--card-bg-strong);
+    }
+
+    .docs-quick-card strong {
+      display: block;
+      margin-bottom: var(--ease-space-2);
+    }
+
+    .docs-quick-card span {
+      display: block;
+      color: var(--page-text-muted);
+      font-size: var(--ease-text-sm);
+      line-height: 1.55;
     }
 
     /* ── Section headings ─────────────────────────────────── */
     .docs-section {
       margin-bottom: var(--ease-space-16);
       scroll-margin-top: calc(var(--docs-header-h) + var(--ease-space-4));
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: var(--ease-radius-md);
+      padding: clamp(1.25rem, 3vw, 2rem);
+    }
+
+    .docs-section:first-child {
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      padding: 0;
+      margin-bottom: 0;
     }
 
     .docs-eyebrow {
@@ -336,6 +509,11 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
       margin-bottom: var(--ease-space-4);
+    }
+
+    .docs-lead {
+      max-width: 680px;
+      font-size: var(--ease-text-lg);
     }
 
     .docs-h2 {
@@ -466,6 +644,7 @@
       border: none;
       border-top: 1px solid var(--border-color);
       margin: var(--ease-space-10) 0;
+      opacity: 0;
     }
 
     /* ── Pill badge ───────────────────────────────────────── */
@@ -545,6 +724,14 @@
         width: 100%;
         padding: var(--ease-space-8) var(--ease-space-4);
       }
+
+      .docs-hero {
+        grid-template-columns: 1fr;
+      }
+
+      .docs-quick-grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 640px) {
@@ -562,6 +749,11 @@
 
       .docs-h1 {
         font-size: 2rem;
+      }
+
+      .docs-hero-main {
+        min-height: auto;
+        padding: var(--ease-space-8) var(--ease-space-5);
       }
 
       .docs-code {
@@ -629,7 +821,9 @@
     <a href="#" class="docs-logo">EaseMotion CSS</a>
 
     <!-- Mobile hamburger toggle button -->
-    <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+    <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+      <span class="sidebar-toggle-line" aria-hidden="true"></span>
+    </button>
 
     <ul class="docs-header-links">
       <li><a href="#getting-started">Getting Started</a></li>
@@ -680,10 +874,12 @@
       <div class="sidebar-group">
         <div class="sidebar-group-label">Core</div>
         <ul class="sidebar-nav">
-          <li><a href="#variables">Variables</a></li>
+          <li><a href="#variables">Variables Overview</a></li>
+          <li><a href="#variables-reference">Variables Reference</a></li>
           <li><a href="#dark-mode">Dark Mode</a></li>
           <li><a href="#utilities">Utilities</a></li>
-          <li><a href="#animations">Animations</a></li>
+          <li><a href="#animations">Animations Overview</a></li>
+          <li><a href="#animation-reference">Animation Reference</a></li>
         </ul>
       </div>
       <div class="sidebar-group">
@@ -708,15 +904,52 @@
 
       <!-- ══════════════ GETTING STARTED ══════════════ -->
       <section id="getting-started" class="docs-section ease-fade-in">
-        <div class="docs-eyebrow">Introduction</div>
-        <h1 class="docs-h1">EaseMotion CSS</h1>
-        <p class="docs-p">
-          EaseMotion CSS is a human-readable, animation-first CSS library. Write UI with simple,
-          English-like class names — no memorizing utilities, no complex configuration.
-          Just readable HTML that looks great and moves beautifully.
-        </p>
+        <div class="docs-hero">
+          <div class="docs-hero-main">
+            <div class="docs-eyebrow">Animation-first CSS framework</div>
+            <h1 class="docs-h1">EaseMotion CSS</h1>
+            <p class="docs-p docs-lead">
+              A human-readable CSS library for interfaces that feel clear, polished, and alive. Use simple class names,
+              compose motion utilities, and ship without a build step.
+            </p>
+            <div class="docs-hero-actions">
+              <a href="#installation" class="ease-btn ease-btn-primary ease-btn-pill">Get started</a>
+              <a href="#utilities" class="ease-btn ease-btn-outline ease-btn-pill">Explore utilities</a>
+            </div>
+          </div>
+
+          <aside class="docs-hero-panel" aria-label="EaseMotion highlights">
+            <div class="docs-hero-stat">
+              <span class="docs-stat-value">0 deps</span>
+              <span class="docs-stat-label">Drop in the CSS and start building.</span>
+            </div>
+            <div class="docs-hero-stat">
+              <span class="docs-stat-value">Readable</span>
+              <span class="docs-stat-label">Class names describe behavior in plain language.</span>
+            </div>
+            <div class="docs-hero-stat">
+              <span class="docs-stat-value">Composable</span>
+              <span class="docs-stat-label">Mix utilities, animations, buttons, cards, and progress components.</span>
+            </div>
+          </aside>
+        </div>
+
+        <div class="docs-quick-grid" aria-label="Documentation shortcuts">
+          <a class="docs-quick-card" href="#installation">
+            <strong>Install</strong>
+            <span>Load the full bundle or choose only the modules you need.</span>
+          </a>
+          <a class="docs-quick-card" href="#animations">
+            <strong>Animate</strong>
+            <span>Use fade, slide, bounce, pulse, hover, and motion helpers.</span>
+          </a>
+          <a class="docs-quick-card" href="#buttons">
+            <strong>Build UI</strong>
+            <span>Start with buttons, cards, and scroll progress components.</span>
+          </a>
+        </div>
         <div class="docs-info">
-          <span class="docs-info-icon">💡</span>
+          <span class="docs-info-icon">Tip</span>
           <div>
             EaseMotion CSS bridges the gap between raw vanilla CSS and utility-heavy frameworks like Tailwind.
             You get structure and power, with none of the cognitive overhead.
@@ -887,8 +1120,8 @@
         <p class="docs-p">Based on a 4px base unit: <code>--ease-space-1</code> (4px) → <code>--ease-space-16</code>
           (64px).</p>
       </section>
-<section id="variables" class="docs-section">
-  <h2 class="docs-h2">Variables</h2>
+<section id="variables-reference" class="docs-section">
+  <h2 class="docs-h2">Variables Reference</h2>
 
   <p class="docs-p">
     All values are defined as CSS custom properties in <code>:root</code>.
@@ -1315,7 +1548,6 @@
           <span class="docs-code-lang">html</span>
           <pre><code>&lt;div class="ease-padding-6 ease-margin-4"&gt; ... &lt;/div&gt;
 &lt;div class="ease-px-8 ease-py-4"&gt; ... &lt;/div&gt;</code></pre>
- main
         </div>
       </section>
 
@@ -1509,15 +1741,17 @@
         <div class="docs-code">
           <span class="docs-code-lang">html</span>
           <pre><code>&lt;!-- Staggered entrance sequence --&gt;
-
-            </div>
-          </section>
+&lt;div class="ease-slide-up ease-delay-100"&gt;First&lt;/div&gt;
+&lt;div class="ease-slide-up ease-delay-200"&gt;Second&lt;/div&gt;
+&lt;div class="ease-slide-up ease-delay-300"&gt;Third&lt;/div&gt;</code></pre>
+        </div>
+      </section>
 
           <hr class="docs-divider" />
 
           <!-- ══════════════ ANIMATIONS ══════════════ -->
-          <section id="animations" class="docs-section">
-            <h2 class="docs-h2">Animations</h2>
+          <section id="animation-reference" class="docs-section">
+            <h2 class="docs-h2">Animation Reference</h2>
             <p class="docs-p">Add any entrance class to trigger the animation on page load. Combine with delay classes
               for staggered sequences.</p>
 
@@ -1639,7 +1873,6 @@
             <div class="docs-code">
               <span class="docs-code-lang">html</span>
               <pre><code>&lt;!-- Staggered entrance sequence --&gt;
- main
 &lt;div class="ease-slide-up ease-delay-100"&gt;First&lt;/div&gt;
 &lt;div class="ease-slide-up ease-delay-200"&gt;Second&lt;/div&gt;
 &lt;div class="ease-slide-up ease-delay-300"&gt;Third&lt;/div&gt;</code></pre>
