@@ -89,7 +89,7 @@
   align-items: center;
   gap: 1rem;
   font-size: 0.8rem;
-  color: var(--ease-color-neutral-500, #6b7280);
+  color: var(--ease-color-neutral-400, #9ca3af);
 }
 
 /* ── Responsive ─────────────────────────────────────────────── */
