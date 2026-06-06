@@ -35,7 +35,12 @@
 @import "./components/footer.css";
 @import "./components/sidebar.css";
 @import "./components/scroll-progress.css";
-@import "./components/tooltips.css";
+
+@import "./components/tabs.css";
+
+@import "./components/badges.css";
+
+
 
 /* Accessibility: Respect user's reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
