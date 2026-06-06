@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Timeline Component — EaseMotion CSS</title>
+  <link rel="stylesheet" href="../easemotion.css" />
+  <style>
+    body { font-family: system-ui, sans-serif; background: #f5f4ff; padding: 2rem 1rem; }
+    .demo-wrap { max-width: 860px; margin: 0 auto; }
+    h1 { text-align: center; color: #6c63ff; font-size: 2rem; margin-bottom: 0.5rem; }
+    .subtitle { text-align: center; color: #888; margin-bottom: 3rem; font-size: 0.9rem; }
+    h2 { font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+         letter-spacing: 0.1em; color: #6c63ff; border-left: 3px solid #6c63ff;
+         padding-left: 0.6rem; margin-bottom: 1.5rem; }
+    .demo-card { background: #fff; border-radius: 16px; padding: 2rem;
+                 box-shadow: 0 2px 20px rgba(108,99,255,0.08); margin-bottom: 3rem; }
+  </style>
+</head>
+<body>
+<div class="demo-wrap">
+
+  <h1>⚡ Timeline Component</h1>
+  <p class="subtitle">EaseMotion CSS — Responsive & Animated Timeline | Issue #1622</p>
+
+  <!-- 1. Vertical Timeline -->
+  <h2>Vertical Timeline (Default)</h2>
+  <div class="demo-card">
+    <ul class="em-timeline em-timeline--animated" role="list" aria-label="Project timeline">
+      <li class="em-timeline-item">
+        <div class="em-timeline-marker" aria-hidden="true"></div>
+        <div class="em-timeline-content">
+          <span class="em-timeline-date">Jan 2024</span>
+          <h3 class="em-timeline-title">Project Kickoff</h3>
+          <p>Initial planning, repository setup, and team onboarding completed.</p>
+        </div>
+      </li>
+      <li class="em-timeline-item">
+        <div class="em-timeline-marker" aria-hidden="true"></div>
+        <div class="em-timeline-content">
+          <span class="em-timeline-date">Mar 2024</span>
+          <h3 class="em-timeline-title">Alpha Release</h3>
+          <p>Core animation utilities shipped. Community feedback loop opened.</p>
+        </div>
+      </li>
+      <li class="em-timeline-item">
+        <div class="em-timeline-marker" aria-hidden="true"></div>
+        <div class="em-timeline-content">
+          <span class="em-timeline-date">Jun 2024</span>
+          <h3 class="em-timeline-title">v1.0 Launch 🚀</h3>
+          <p>Stable production release with full documentation and 40+ animation classes.</p>
+        </div>
+      </li>
+      <li class="em-timeline-item">
+        <div class="em-timeline-marker" aria-hidden="true"></div>
+        <div class="em-timeline-content">
+          <span class="em-timeline-date">Sep 2024</span>
+          <h3 class="em-timeline-title">Timeline Component Added</h3>
+          <p>Responsive timeline with animated milestones added to component library.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- 2. Alternating Timeline -->
+  <h2>Alternating Timeline (Left-Right on Desktop)</h2>
+  <div class="demo-card">
+    <ul class="em-timeline em-timeline--alternating em-timeline--animated" role="list">
+      <li class="em-timeline-item">
+        <div class="em-timeline-marker" aria-hidden="true"></div>
+        <div class="em-timeline-content">
+          <span class="em-timeline-date">Q1 2024</span>
+          <h3 class="em-timeline-title">Research Phase</h3>
+          <p>User research, competitive analysis, and design system audit.</p>
+        </div>
+      </li>
+      <li class="em-timeline-item">
+        <div class="em-timeline-marker" aria-hidden="true"></div>
+        <div class="em-timeline-content">
+          <span class="em-timeline-date">Q2 2024</span>
+          <h3 class="em-timeline-title">Design & Prototype</h3>
+          <p>Wireframes, high-fidelity mockups, and interactive prototypes.</p>
+        </div>
+      </li>
+      <li class="em-timeline-item">
+        <div class="em-timeline-marker" aria-hidden="true"></div>
+        <div class="em-timeline-content">
+          <span class="em-timeline-date">Q3 2024</span>
+          <h3 class="em-timeline-title">Development</h3>
+          <p>Full-stack implementation, unit tests, and CI/CD pipeline setup.</p>
+        </div>
+      </li>
+      <li class="em-timeline-item">
+        <div class="em-timeline-marker" aria-hidden="true"></div>
+        <div class="em-timeline-content">
+          <span class="em-timeline-date">Q4 2024</span>
+          <h3 class="em-timeline-title">Launch & Scale</h3>
+          <p>Production deployment, monitoring, and growth campaigns.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- 3. Fade Variant -->
+  <h2>Fade-In Animation Variant</h2>
+  <div class="demo-card">
+    <ul class="em-timeline em-timeline--fade" role="list">
+      <li class="em-timeline-item">
+        <div class="em-timeline-marker" aria-hidden="true"></div>
+        <div class="em-timeline-content">
+          <span class="em-timeline-date">Step 1</span>
+          <h3 class="em-timeline-title">Install EaseMotion CSS</h3>
+          <p>Add the stylesheet to your project via CDN or npm.</p>
+        </div>
+      </li>
+      <li class="em-timeline-item">
+        <div class="em-timeline-marker" aria-hidden="true"></div>
+        <div class="em-timeline-content">
+          <span class="em-timeline-date">Step 2</span>
+          <h3 class="em-timeline-title">Add Timeline Markup</h3>
+          <p>Use <code>.em-timeline</code> and <code>.em-timeline-item</code> classes.</p>
+        </div>
+      </li>
+      <li class="em-timeline-item">
+        <div class="em-timeline-marker" aria-hidden="true"></div>
+        <div class="em-timeline-content">
+          <span class="em-timeline-date">Step 3</span>
+          <h3 class="em-timeline-title">Customize with CSS Variables</h3>
+          <p>Override <code>--em-timeline-color</code> and other variables to match your brand.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- 4. Color Variants -->
+  <h2>Color Variants — Success & Warning</h2>
+  <div class="demo-card">
+    <ul class="em-timeline em-timeline--success em-timeline--animated" role="list">
+      <li class="em-timeline-item">
+        <div class="em-timeline-marker" aria-hidden="true"></div>
+        <div class="em-timeline-content">
+          <span class="em-timeline-date">Milestone 1</span>
+          <h3 class="em-timeline-title">✅ Feature Complete</h3>
+          <p>All acceptance criteria met. QA sign-off received.</p>
+        </div>
+      </li>
+      <li class="em-timeline-item">
+        <div class="em-timeline-marker" aria-hidden="true"></div>
+        <div class="em-timeline-content">
+          <span class="em-timeline-date">Milestone 2</span>
+          <h3 class="em-timeline-title">✅ Deployed to Production</h3>
+          <p>Zero downtime deployment. All health checks passing.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+</div>
+
+<script>
+  (function () {
+    var items = document.querySelectorAll(
+      '.em-timeline--animated .em-timeline-item, .em-timeline--fade .em-timeline-item'
+    );
+    if (!items.length) return;
+    if (!('IntersectionObserver' in window)) {
+      items.forEach(function (el) { el.classList.add('em-visible'); });
+      return;
+    }
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('em-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    items.forEach(function (el) { observer.observe(el); });
+  })();
+</script>
+</body>
+</html>
