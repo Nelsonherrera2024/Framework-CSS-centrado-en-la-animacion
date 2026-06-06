@@ -1,7 +1,12 @@
 {
   "extends": "stylelint-config-standard",
   "rules": {
-    "selector-class-pattern": null,
+    "selector-class-pattern": [
+      "^ease-[a-z0-9-]+$",
+      {
+        "message": "Expected class selector to be prefixed with ease- (e.g., .ease-my-class)"
+      }
+    ],
     "custom-property-pattern": null,
     "keyframes-name-pattern": null,
     "no-descending-specificity": null,
