@@ -10,30 +10,41 @@ body {
 
 .docs-nav {
   position: fixed;
+  left: 0;
   top: 0;
-  width: 100%;
+  width: 250px;
+  height: 100vh;
   background: #111827;
   display: flex;
-  gap: 20px;
-  padding: 16px 24px;
+  flex-direction: column;
+  gap: 8px;
+  padding: 24px 16px;
   box-sizing: border-box;
+  overflow-y: auto;
 }
 
 .docs-nav a {
   color: #cbd5e1;
   text-decoration: none;
-  padding: 6px 10px;
+  padding: 8px 12px;
   transition: all 0.2s ease;
+  border-radius: 4px;
+}
+
+.docs-nav a:hover {
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .docs-nav a.active {
-  color: #ffffff;
-  border-bottom: 3px solid #6366f1;
   font-weight: 600;
+  border-left: 3px solid currentColor;
+  padding-left: 8px;
+  background: rgba(255, 255, 255, 0.05);
 }
 
 main {
-  padding-top: 70px;
+  margin-left: 250px;
+  padding: 40px;
 }
 
 section {
