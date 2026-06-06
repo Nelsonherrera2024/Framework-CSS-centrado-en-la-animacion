@@ -7,7 +7,9 @@
   *::before,
   *::after {
     /* Completely disable motion */
-    animation: none !important;
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
 
     /* Remove transitions */
     transition: none !important;
