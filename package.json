@@ -21,6 +21,7 @@
     "lint:duplicates": "node scripts/check-duplicates.mjs",
     "lint:fix": "stylelint \"**/*.css\" --fix",
     "format": "prettier --write \"**/*.{css,html,js,md}\"",
+    "prepare": "husky",
     "validate:manifest": "node scripts/validate-package.mjs",
     "validate:bundle": "node scripts/validate-bundle.mjs",
     "validate:pack": "node scripts/validate-pack.mjs",
@@ -46,11 +47,17 @@
     "url": "https://github.com/SAPTARSHI-coder/EaseMotion-css/issues"
   },
   "homepage": "https://saptarshi-coder.github.io/EaseMotion-css/",
+  "lint-staged": {
+    "*.css": "stylelint --fix",
+    "*.{html,js,md}": "prettier --write"
+  },
   "engines": {
     "node": ">=18"
   },
   "devDependencies": {
+    "husky": "^9.1.7",
     "jsdom": "^29.1.1",
+    "lint-staged": "^17.0.7",
     "prettier": "^3.8.3",
     "stylelint": "^17.12.0",
     "stylelint-config-standard": "^40.0.0",
