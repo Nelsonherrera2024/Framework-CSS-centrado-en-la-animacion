@@ -28,24 +28,23 @@
 
 /* ── Color Variants ────────────────────────────────────────── */
 /* 
-   We explicitly use neutral-900 for text color on these bright backgrounds 
-   to guarantee WCAG AA 4.5:1 contrast compliance out-of-the-box, 
-   based on the findings from Issue #381. 
+   We use white (#ffffff) for primary, success, and danger backgrounds 
+   to guarantee WCAG AA 4.5:1 contrast compliance. Warning uses neutral-900.
 */
 
 .ease-badge-primary {
   background-color: var(--ease-color-primary);
-  color: var(--ease-color-neutral-900);
+  color: #ffffff;
 }
 
 .ease-badge-success {
   background-color: var(--ease-color-success);
-  color: var(--ease-color-neutral-900);
+  color: #ffffff;
 }
 
 .ease-badge-danger {
   background-color: var(--ease-color-danger);
-  color: var(--ease-color-neutral-900);
+  color: #ffffff;
 }
 
 .ease-badge-warning {
