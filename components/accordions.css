@@ -1,0 +1,48 @@
+@layer easemotion-components {
+  .em-accordion {
+    border: 1px solid var(--ease-color-neutral-200);
+    border-radius: var(--ease-radius-md);
+    background-color: var(--ease-color-surface);
+    margin-bottom: var(--ease-space-2);
+    overflow: hidden;
+  }
+
+  .em-accordion summary {
+    padding: var(--ease-space-4);
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+    transition: background-color var(--ease-speed-fast) var(--ease-ease);
+  }
+
+  .em-accordion summary:hover {
+    background-color: var(--ease-color-neutral-100);
+  }
+
+  .em-accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 var(--ease-space-4);
+    transition:
+      max-height var(--ease-speed-medium) var(--ease-ease),
+      padding var(--ease-speed-medium) var(--ease-ease);
+  }
+
+  /* Expand transition on open Details element */
+  .em-accordion[open] .em-accordion-content {
+    max-height: 500px; /* arbitrary large value for transition */
+    padding: var(--ease-space-4);
+  }
+
+  .em-accordion-chevron {
+    transition: transform var(--ease-speed-medium) var(--ease-ease);
+  }
+
+  .em-accordion[open] .em-accordion-chevron {
+    transform: rotate(180deg);
+  }
+}
