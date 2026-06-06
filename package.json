@@ -13,7 +13,13 @@
     "CHANGELOG.md"
   ],
   "scripts": {
-    "test": "echo \"No tests yet\" && exit 0"
+    "lint": "stylelint \"**/*.css\" --ignore-path .gitignore",
+    "lint:fix": "stylelint \"**/*.css\" --fix --ignore-path .gitignore",
+    "test": "npm run lint"
+  },
+  "devDependencies": {
+    "stylelint": "^16.26.1",
+    "stylelint-config-standard": "^36.0.1"
   },
   "repository": {
     "type": "git",

@@ -1,0 +1,37 @@
+{
+  "extends": ["stylelint-config-standard"],
+  "rules": {
+    "custom-property-pattern": "^ease-",
+    "keyframes-name-pattern": "^ease-kf-",
+    "selector-class-pattern": "^ease-",
+    "no-duplicate-selectors": true,
+    "length-zero-no-unit": true,
+
+    "declaration-no-important": null,
+    "alpha-value-notation": null,
+    "color-function-notation": null,
+    "import-notation": null,
+
+    "rule-empty-line-before": null,
+    "at-rule-empty-line-before": null,
+    "comment-empty-line-before": null,
+    "declaration-empty-line-before": null,
+    "custom-property-empty-line-before": null,
+
+    "declaration-block-single-line-max-declarations": null,
+
+    "property-no-vendor-prefix": null,
+    "value-no-vendor-prefix": null,
+
+    "color-hex-length": null,
+    "value-keyword-case": null,
+    "media-feature-range-notation": null,
+    "font-family-no-missing-generic-family-keyword": null
+  },
+  "ignoreFiles": [
+    "node_modules/**",
+    "submissions/**",
+    "docs/**",
+    "examples/**"
+  ]
+}

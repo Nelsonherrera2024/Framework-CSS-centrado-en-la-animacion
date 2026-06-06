@@ -1,0 +1,36 @@
+name: Lint CSS
+
+on:
+  pull_request:
+    paths:
+      - 'submissions/**/*.css'
+      - 'core/**/*.css'
+      - 'components/**/*.css'
+      - '.stylelintrc.json'
+
+jobs:
+  stylelint:
+    name: Stylelint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint submission CSS
+        run: npx stylelint "submissions/**/*.css"
+
+      - name: Lint core and components CSS (advisory)
+        run: npx stylelint "core/**/*.css" "components/**/*.css" || true
+        # Running as advisory (non-blocking) until pre-existing issues are resolved.
+        # Known pre-existing issues in core/animations.css: lines 164, 258, 264, 406, 438, 444.
+        # See issue #1805 for the list. Remove `|| true` once those are fixed.
