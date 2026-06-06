@@ -37,6 +37,12 @@
 @import "./components/scroll-progress.css";
 @import "./components/timeline.css";
 
+@import "./components/tabs.css";
+
+@import "./components/badges.css";
+@import "./components/loaders.css";
+
+
 /* Accessibility: Respect user's reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -49,6 +55,7 @@
     scroll-behavior: auto !important;
   }
 }
+
 
 
 
