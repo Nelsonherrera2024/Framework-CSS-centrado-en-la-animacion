@@ -614,6 +614,29 @@
     .docs-code:hover .docs-code-lang {
       opacity: 0;
     }
+
+    .copy-class-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.7);
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-family: var(--ease-font-mono, monospace);
+  cursor: pointer;
+  margin-left: 8px;
+  transition: background 150ms ease, color 150ms ease;
+}
+
+.copy-class-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+.copy-class-btn.copied {
+  color: #86efac;
+  border-color: rgba(134, 239, 172, 0.3);
+}
   </style>
 </head>
 
