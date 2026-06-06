@@ -4,9 +4,6 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
 
 body {
   display: flex;
@@ -57,7 +54,6 @@ body {
 .content {
   margin-left: 250px;
   width: calc(100% - 250px);
-}
 
 section {
   min-height: 100vh;
