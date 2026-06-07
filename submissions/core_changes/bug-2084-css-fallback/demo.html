@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bug Fix #2084: CSS Custom Property Fallback Consistency</title>
+  <style>
+    :root {
+      --ease-color-surface: #ffffff;
+      --ease-color-neutral-200: #e2e8f0;
+      --ease-color-muted: #64748b;
+      --ease-radius-lg: 1rem;
+      --ease-radius-xl: 1.5rem;
+      --ease-space-4: 1rem;
+      --ease-space-6: 1.5rem;
+      --ease-glass-bg: color-mix(in srgb, var(--ease-color-surface) 12%, transparent);
+      --ease-glass-border: color-mix(in srgb, var(--ease-color-surface) 20%, transparent);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #f8fafc;
+      color: #0f172a;
+      padding: 2rem;
+      line-height: 1.6;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .demo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .demo-card {
+      background-color: var(--ease-color-surface);
+      border: 1px solid var(--ease-color-neutral-200);
+      border-radius: var(--ease-radius-lg);
+      padding: var(--ease-space-6);
+    }
+
+    .demo-navbar {
+      background: var(--ease-glass-bg);
+      border: 1px solid var(--ease-glass-border);
+      border-radius: var(--ease-radius-xl);
+      padding: var(--ease-space-4) var(--ease-space-6);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.2em 0.6em;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .badge-fixed {
+      background: rgba(34, 197, 94, 0.15);
+      color: #16a34a;
+    }
+
+    h2 { font-size: 1.1rem; margin: 0.5rem 0; }
+    p { font-size: 0.875rem; color: var(--ease-color-muted); margin-bottom: 1rem; }
+
+    code {
+      background: #f1f5f9;
+      padding: 0.1em 0.4em;
+      border-radius: 0.25rem;
+      font-family: monospace;
+    }
+
+    .note {
+      background: rgba(108, 99, 255, 0.08);
+      border: 1px solid rgba(108, 99, 255, 0.2);
+      border-radius: 0.5rem;
+      padding: 1rem;
+      margin-top: 2rem;
+      font-size: 0.875rem;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .note strong { color: #6c63ff; }
+    .note ul { margin: 0.5rem 0 0 1.25rem; }
+  </style>
+</head>
+<body>
+
+  <h1>Bug Fix #2084: CSS Custom Property Fallback Consistency</h1>
+
+  <div class="demo-grid">
+
+    <div class="demo-card">
+      <span class="badge badge-fixed">FIXED</span>
+      <h2>.ease-card</h2>
+      <p>Fallback changed from <code>#141e33</code> (dark value) to <code>#ffffff</code> (light default)</p>
+    </div>
+
+    <div class="demo-card">
+      <span class="badge badge-fixed">FIXED</span>
+      <h2>.ease-navbar-glass</h2>
+      <p>Replaced hardcoded <code>rgba(255,255,255,0.18)</code> with <code>var(--ease-glass-bg)</code></p>
+    </div>
+
+    <div class="demo-card">
+      <span class="badge badge-fixed">FIXED</span>
+      <h2>variables.css</h2>
+      <p>Removed duplicate <code>--ease-glass-bg</code> and <code>--ease-glass-border</code> declarations</p>
+    </div>
+
+  </div>
+
+  <div class="note">
+    <strong>Summary of Changes:</strong>
+    <ul>
+      <li><strong>core/variables.css</strong> — Removed duplicate variable declarations</li>
+      <li><strong>components/cards.css</strong> — Fixed .ease-card fallback from dark to light default</li>
+      <li><strong>components/navbar.css</strong> — Replaced hardcoded rgba() with CSS variable tokens</li>
+    </ul>
+  </div>
+
+</body>
+</html>
