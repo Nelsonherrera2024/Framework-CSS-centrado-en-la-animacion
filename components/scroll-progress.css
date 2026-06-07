@@ -88,3 +88,12 @@
 .ease-scroll-progress-root {
   animation-timeline: scroll(root);
 }
+
+/* ── Reduced Motion Support (Accessibility) ─────────────────── */
+/* Respects prefers-reduced-motion per WCAG 2.1 SC 2.3.3 (Level AAA) */
+@media (prefers-reduced-motion: reduce) {
+  .ease-scroll-progress {
+    animation: none;
+    transform: scaleX(1);
+  }
+}

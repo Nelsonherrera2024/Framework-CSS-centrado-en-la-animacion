@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bug Fix #2085 - prefers-reduced-motion Scroll Progress</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Bug Fix #2085: prefers-reduced-motion in Scroll Progress Bar</h1>
+
+  <p class="info">
+    The <code>.ease-scroll-progress</code> component now respects the
+    <code>prefers-reduced-motion: reduce</code> accessibility setting.
+  </p>
+
+  <div class="demo-section">
+    <h2>1. Normal Motion (default)</h2>
+    <div class="progress-track">
+      <div class="ease-scroll-progress"></div>
+    </div>
+    <p class="note">
+      Scroll the box below to see the animated progress bar.
+      The bar fills from left to right as you scroll.
+    </p>
+    <div class="scroll-box">
+      <p>Scroll inside this box...</p>
+      <div style="height:300px;">Keep scrolling to see the progress</div>
+    </div>
+  </div>
+
+  <div class="demo-section">
+    <h2>2. Reduced Motion</h2>
+    <p class="note">
+      When the browser has <code>prefers-reduced-motion: reduce</code> set
+      (or via OS accessibility settings), the progress bar is static —
+      no animation runs, WCAG 2.1 SC 2.3.3 compliant.
+    </p>
+    <div class="progress-track">
+      <div class="ease-scroll-progress"></div>
+    </div>
+  </div>
+
+  <div class="demo-section">
+    <h2>3. Root Timeline Variant</h2>
+    <p class="note">
+      <code>.ease-scroll-progress-root</code> also inherits the reduced-motion
+      behaviour automatically.
+    </p>
+    <div class="progress-track">
+      <div class="ease-scroll-progress ease-scroll-progress-root"></div>
+    </div>
+  </div>
+
+</body>
+</html>

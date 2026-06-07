@@ -1,0 +1,92 @@
+/* Bug Fix Submission #2085 — prefers-reduced-motion for Scroll Progress */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: system-ui, sans-serif;
+  background: #f8fafc;
+  color: #0f172a;
+  padding: 2rem;
+  line-height: 1.6;
+}
+
+h1 {
+  font-size: 1.4rem;
+  text-align: center;
+  margin-bottom: 0.75rem;
+}
+
+.info {
+  text-align: center;
+  color: #475569;
+  margin-bottom: 2rem;
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.info code {
+  background: #e2e8f0;
+  padding: 0.1em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+/* --- Simulate prefers-reduced-motion: reduce on the 2nd and 3rd demos */
+@media (prefers-reduced-motion: reduce) {
+  .demo-section:nth-child(n+3) .ease-scroll-progress,
+  .demo-section:nth-child(n+3) .redux-box {
+    animation: none !important;
+  }
+}
+
+.demo-section {
+  max-width: 640px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+}
+
+.demo-section h2 {
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+  color: #334155;
+}
+
+.note {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin: 0.5rem 0 0.75rem;
+}
+
+.progress-track {
+  width: 100%;
+  height: 4px;
+  background: #e2e8f0;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+/* --- Inline copy of the scroll-progress styles so demo is self-contained --- */
+.ease-scroll-progress {
+  position: relative;
+  width: 100%;
+  height: 4px;
+  transform-origin: left center;
+  transform: scaleX(0);
+  background: linear-gradient(90deg, #a09af8 0%, #6c63ff 50%, #4b44cc 100%);
+}
+
+/* Simulate scroll-timeline in demo: fill on container scroll */
+.scroll-box {
+  height: 180px;
+  overflow-y: auto;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 1rem;
+  background: #f1f5f9;
+  font-size: 0.85rem;
+}
+.scroll-box p { margin-bottom: 0.5rem; }
