@@ -3,7 +3,7 @@
    Pure CSS Scroll-Driven Progress Bar Component
    ============================================================ */
 
-/* ── Keyframes ─────────────────────────────────────────────── */
+/* ── Keyframes (outside @layer so they resolve globally) ───── */
 @keyframes ease-kf-scroll-progress {
   from {
     transform: scaleX(0);
@@ -12,6 +12,8 @@
     transform: scaleX(1);
   }
 }
+
+@layer easemotion-components {
 
 /* ── Base Scroll Progress Class ───────────────────────────── */
 .ease-scroll-progress {
@@ -96,4 +98,5 @@
     animation: none;
     transform: scaleX(1);
   }
+}
 }
