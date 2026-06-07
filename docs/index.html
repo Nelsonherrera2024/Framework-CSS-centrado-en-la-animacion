@@ -1,1974 +1,638 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'unsafe-inline' 'unsafe-eval'; style-src 'unsafe-inline' 'self' https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:;">
-  <title>EaseMotion CSS — Documentation</title>
-  <meta name="description"
-    content="Official documentation for EaseMotion CSS — the animation-first, human-readable CSS framework." />
-
-  <!-- EaseMotion CSS — loaded from latest GitHub main branch via jsDelivr CDN -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/SAPTARSHI-coder/EaseMotion-css@main/easemotion.min.css" />
-
-  <!-- Google Fonts: Inter — loaded via <link> (not @import) to avoid render blocking -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-
-  <style>
-    /* ── Theme Definitions ────────────────────────────────── */
-    :root {
-      --docs-sidebar-w: 260px;
-      --docs-header-h: 60px;
-
-      /* Dark Theme (Default) */
-      --page-bg: #0f0e17;
-      --page-text: #fffffe;
-      --page-text-muted: rgba(255, 255, 255, 0.65);
-      --header-bg: rgba(15, 14, 23, 0.9);
-      --border-color: rgba(255, 255, 255, 0.07);
-      --card-bg: rgba(255, 255, 255, 0.04);
-      --sidebar-bg: rgba(255, 255, 255, 0.02);
-      --code-bg: rgba(255, 255, 255, 0.04);
-      --code-border: rgba(255, 255, 255, 0.08);
-      --table-row-hover: rgba(255, 255, 255, 0.02);
-      --nav-link-color: rgba(255, 255, 255, 0.6);
-      --nav-link-active-bg: rgba(108, 99, 255, 0.12);
-      --nav-link-active-text: #ffffff;
-      --heading-color: #ffffff;
-      --heading-sub-color: rgba(255, 255, 255, 0.9);
-      --title-gradient-end: #a78bfa;
-
-      /* Overrides for EaseMotion variables in dark mode */
-      --ease-color-bg: #0f0e17;
-      --ease-color-surface: #1e1b29;
-      --ease-color-text: #fffffe;
-      --ease-color-muted: rgba(255, 255, 255, 0.65);
-    }
-
-    [data-theme="light"] {
-      /* Light Theme */
-      --page-bg: #f8fafc;
-      --page-text: #0f172a;
-      --page-text-muted: #475569;
-      --header-bg: rgba(248, 250, 252, 0.9);
-      --border-color: rgba(15, 23, 42, 0.08);
-      --card-bg: #ffffff;
-      --sidebar-bg: rgba(15, 23, 42, 0.02);
-      --code-bg: #f1f5f9;
-      --code-border: #e2e8f0;
-      --table-row-hover: rgba(15, 23, 42, 0.02);
-      --nav-link-color: #475569;
-      --nav-link-active-bg: rgba(108, 99, 255, 0.1);
-      --nav-link-active-text: #6c63ff;
-      --heading-color: #0f172a;
-      --heading-sub-color: #1e293b;
-      --title-gradient-end: #4f46e5;
-
-      /* Overrides for EaseMotion variables in light mode */
-      --ease-color-bg: #f8fafc;
-      --ease-color-surface: #ffffff;
-      --ease-color-text: #0f172a;
-      --ease-color-muted: #475569;
-    }
-
-    /* Smooth Transitions for Theme Changes */
-    body, 
-    .docs-header, 
-    .docs-sidebar, 
-    .docs-sidebar a, 
-    .docs-content, 
-    .docs-h1, 
-    .docs-h2, 
-    .docs-h3, 
-    .docs-p, 
-    .docs-code, 
-    .docs-code pre, 
-    .docs-table, 
-    .docs-table th, 
-    .docs-table td, 
-    .docs-info {
-      transition: background-color var(--ease-speed-medium) var(--ease-ease),
-                  background var(--ease-speed-medium) var(--ease-ease),
-                  border-color var(--ease-speed-medium) var(--ease-ease),
-                  color var(--ease-speed-medium) var(--ease-ease);
-    }
-
-    body {
-      background: var(--page-bg);
-      color: var(--page-text);
-      overflow-x: hidden;
-    }
-
-    /* ── Header ───────────────────────────────────────────── */
-    .docs-header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: var(--docs-header-h);
-      z-index: var(--ease-z-overlay);
-      background: var(--header-bg);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border-color);
-      display: flex;
-      align-items: center;
-      padding: 0 var(--ease-space-6);
-      justify-content: space-between;
-      gap: var(--ease-space-4);
-    }
-
-    .docs-logo {
-      font-size: var(--ease-text-xl);
-      font-weight: 800;
-      background: linear-gradient(135deg, #6c63ff, #a78bfa);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      letter-spacing: -0.02em;
-      text-decoration: none;
-    }
-
-    .docs-header-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--ease-space-5);
-      align-items: center;
-      justify-content: flex-end;
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .docs-header-links a {
-      color: var(--nav-link-color);
-      font-size: var(--ease-text-sm);
-      font-weight: 500;
-      text-decoration: none;
-      padding: 10px 20px;
-        border-radius: var(--ease-radius-md);
-        transition:
-          color 0.3s ease,
-          background-color 0.3s ease,
-          transform 0.3s ease;
-      }
-
-      .docs-header-links a:hover {
-        color: var(--page-text);
-        background: var(--nav-link-active-bg);
-      }
-
-      [data-theme="light"] .docs-header-links a:hover {
-        background: rgba(108, 99, 255, 0.18);
-        color: #4f46e5;
-      }
-
-    /* ── Theme Toggle Button ──────────────────────────────── */
-    .theme-toggle-btn {
-      background: none;
-      border: 1px solid var(--border-color);
-      color: var(--page-text);
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 36px;
-      height: 36px;
-      border-radius: var(--ease-radius-full);
-      transition: background var(--ease-speed-fast) var(--ease-ease), 
-                  color var(--ease-speed-fast) var(--ease-ease),
-                  border-color var(--ease-speed-fast) var(--ease-ease);
-    }
-
-    .theme-toggle-btn:hover {
-      background: rgba(255, 255, 255, 0.08);
-      border-color: var(--ease-color-primary);
-    }
-
-    [data-theme="light"] .theme-toggle-btn:hover {
-      background: rgba(15, 23, 42, 0.08);
-    }
-
-    /* Toggle visibility of icons */
-    [data-theme="light"] .theme-toggle-btn .sun-icon { display: none; }
-    [data-theme="light"] .theme-toggle-btn .moon-icon { display: block; }
-    :root:not([data-theme="light"]) .theme-toggle-btn .sun-icon { display: block; }
-    :root:not([data-theme="light"]) .theme-toggle-btn .moon-icon { display: none; }
-
-    /* ── Layout Shell ─────────────────────────────────────── */
-    .docs-shell {
-      display: flex;
-      min-height: 100vh;
-      min-height: 100dvh;
-      padding-top: var(--docs-header-h);
-    }
-
-    /* ── Sidebar ──────────────────────────────────────────── */
-    .docs-sidebar {
-      width: var(--docs-sidebar-w);
-      position: fixed;
-      top: var(--docs-header-h);
-      left: 0;
-      bottom: 0;
-      overflow-y: auto;
-      padding: var(--ease-space-8) var(--ease-space-5);
-      border-right: 1px solid var(--border-color);
-      background: var(--sidebar-bg);
-    }
-
-    .docs-sidebar::-webkit-scrollbar-thumb {
-      background: var(--border-color);
-      border-radius: 4px;
-    }
-
-    .sidebar-group {
-      margin-bottom: var(--ease-space-6);
-    }
-
-    .sidebar-group-label {
-      font-size: var(--ease-text-xs);
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--ease-color-primary-light);
-      margin-bottom: var(--ease-space-2);
-      padding: 0 var(--ease-space-2);
-    }
-
-    .sidebar-nav {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .sidebar-nav a {
-      display: block;
-      padding: var(--ease-space-2) var(--ease-space-2);
-      font-size: var(--ease-text-sm);
-      color: var(--nav-link-color);
-      border-radius: var(--ease-radius-sm);
-      text-decoration: none;
-      transition: color var(--ease-speed-fast) var(--ease-ease),
-        background var(--ease-speed-fast) var(--ease-ease);
-    }
-
-    .sidebar-nav a.active {
-      color: var(--nav-link-active-text);
-      background: var(--nav-link-active-bg);
-      border-left: 3px solid #6c63ff;
-    }
-
-    /* ── Mobile Toggle Button ─────────────────────────────── */
-    .sidebar-toggle {
-      display: none;
-      background: none;
-      border: none;
-      cursor: pointer;
-      padding: 4px 8px;
-      font-size: 1.4rem;
-      color: #fff;
-      z-index: 200;
-    }
-
-    /* ── Mobile Responsive ────────────────────────────────── */
-    @media (max-width: 768px) {
-      .sidebar-toggle {
-        display: block;
-      }
-
-      .docs-sidebar {
-        transform: translateX(-100%);
-        transition: transform 0.3s ease;
-        z-index: 100;
-        top: var(--docs-header-h);
-        background: var(--page-bg);
-      }
-
-      .docs-sidebar.open {
-        transform: translateX(0);
-      }
-
-      .docs-content {
-        margin-left: 0 !important;
-        padding: var(--ease-space-6);
-        width: 100%;
-      }
-
-      .docs-header-links {
-        display: none;
-      }
-
-      /* Overlay when sidebar open */
-      .sidebar-overlay {
-        display: none;
-        position: fixed;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.5);
-        z-index: 99;
-        top: var(--docs-header-h);
-      }
-
-      .sidebar-overlay.open {
-        display: block;
-      }
-    }
-
-    /* ── Content ──────────────────────────────────────────── */
-    .docs-content {
-      margin-left: var(--docs-sidebar-w);
-      flex: 1;
-      padding: var(--ease-space-12) var(--ease-space-12);
-      max-width: 860px;
-      min-width: 0;
-    }
-
-    /* ── Section headings ─────────────────────────────────── */
-    .docs-section {
-      margin-bottom: var(--ease-space-16);
-      scroll-margin-top: calc(var(--docs-header-h) + var(--ease-space-4));
-    }
-
-    .docs-eyebrow {
-      font-size: var(--ease-text-xs);
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--ease-color-primary-light);
-      margin-bottom: var(--ease-space-2);
-    }
-
-    .docs-h1 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 800;
-      letter-spacing: -0.04em;
-      background: linear-gradient(135deg, var(--heading-color), var(--title-gradient-end));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: var(--ease-space-4);
-    }
-
-    .docs-h2 {
-      font-size: var(--ease-text-2xl);
-      font-weight: 700;
-      color: var(--heading-color);
-      margin-bottom: var(--ease-space-4);
-      padding-bottom: var(--ease-space-3);
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    .docs-h3 {
-      font-size: var(--ease-text-lg);
-      font-weight: 600;
-      color: var(--heading-sub-color);
-      margin-bottom: var(--ease-space-3);
-    }
-
-    .docs-p {
-      color: var(--page-text-muted);
-      line-height: 1.75;
-      margin-bottom: var(--ease-space-4);
-    }
-
-    /* ── Code Block ───────────────────────────────────────── */
-    .docs-code {
-      background: var(--code-bg);
-      border: 1px solid var(--code-border);
-      border-radius: var(--ease-radius-md);
-      padding: var(--ease-space-5);
-      margin-bottom: var(--ease-space-6);
-      overflow-x: auto;
-      position: relative;
-    }
-
-    .docs-code pre {
-      background: none;
-      color: var(--page-text);
-      padding: 0;
-      margin: 0;
-      font-size: var(--ease-text-sm);
-      line-height: 1.7;
-      border-radius: 0;
-      max-width: 100%;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    .docs-code-lang {
-      position: absolute;
-      top: var(--ease-space-3);
-      right: var(--ease-space-4);
-      font-size: 10px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--page-text-muted);
-      opacity: 0.5;
-      font-family: var(--ease-font-mono);
-    }
-
-    /* Inline code */
-    .docs-content code {
-      background: rgba(108, 99, 255, 0.12);
-      color: var(--ease-color-primary-light);
-      border: 1px solid rgba(108, 99, 255, 0.2);
-      padding: 0.1em 0.45em;
-      border-radius: var(--ease-radius-sm);
-      font-size: 0.87em;
-    }
-
-    .docs-code pre code {
-      background: none;
-      border: none;
-      color: inherit;
-      padding: 0;
-      font-size: inherit;
-    }
-
-    /* ── Table ────────────────────────────────────────────── */
-    .docs-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: var(--ease-text-sm);
-      margin-bottom: var(--ease-space-8);
-    }
-
-    .docs-table th {
-      text-align: left;
-      padding: var(--ease-space-3) var(--ease-space-4);
-      background: var(--code-bg);
-      color: var(--page-text-muted);
-      font-weight: 600;
-      font-size: var(--ease-text-xs);
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    .docs-table td {
-      padding: var(--ease-space-3) var(--ease-space-4);
-      border-bottom: 1px solid var(--border-color);
-      color: var(--page-text-muted);
-    }
-
-    .docs-table tr:hover td {
-      background: var(--table-row-hover);
-    }
-
-    /* ── Info Box ─────────────────────────────────────────── */
-    .docs-info {
-      background: rgba(108, 99, 255, 0.08);
-      border: 1px solid rgba(108, 99, 255, 0.25);
-      border-radius: var(--ease-radius-md);
-      padding: var(--ease-space-4) var(--ease-space-5);
-      color: var(--page-text-muted);
-      font-size: var(--ease-text-sm);
-      line-height: 1.7;
-      margin-bottom: var(--ease-space-6);
-      display: flex;
-      gap: var(--ease-space-3);
-    }
-
-    .docs-info-icon {
-      font-size: 1.1rem;
-      flex-shrink: 0;
-    }
-
-    /* ── Divider ──────────────────────────────────────────── */
-    .docs-divider {
-      border: none;
-      border-top: 1px solid var(--border-color);
-      margin: var(--ease-space-10) 0;
-    }
-
-    /* ── Pill badge ───────────────────────────────────────── */
-    .docs-badge {
-      display: inline-block;
-      padding: 0.15em 0.65em;
-      border-radius: var(--ease-radius-full);
-      font-size: var(--ease-text-xs);
-      font-weight: 700;
-      background: rgba(108, 99, 255, 0.15);
-      color: var(--ease-color-primary-light);
-      border: 1px solid rgba(108, 99, 255, 0.25);
-      margin-right: var(--ease-space-1);
-    }
-
-    @media (hover: none), (pointer: coarse) {
-      .docs-table tr:hover td {
-        background: transparent;
-      }
-
-      .sidebar-nav a:hover:not(.active) {
-        color: rgba(255,255,255,0.6);
-        background: transparent;
-      }
-    }
-
-    @media (max-width: 900px) {
-      :root {
-        --docs-header-h: 0px;
-      }
-
-      .docs-header {
-        position: sticky;
-        min-height: 60px;
-        height: auto;
-        flex-wrap: wrap;
-        padding: var(--ease-space-3) var(--ease-space-4);
-      }
-
-      .docs-header-links {
-        gap: var(--ease-space-2);
-        justify-content: flex-start;
-        width: 100%;
-      }
-
-      .docs-shell {
-        flex-direction: column;
-        padding-top: 0;
-      }
-
-      .docs-sidebar {
-        position: static;
-        width: 100%;
-        padding: var(--ease-space-4);
-        border-right: 0;
-        border-bottom: 1px solid rgba(255,255,255,0.06);
-        background: rgba(255,255,255,0.03);
-      }
-
-      .sidebar-group {
-        margin-bottom: var(--ease-space-4);
-      }
-
-      .sidebar-nav {
-        display: flex;
-        flex-wrap: wrap;
-        gap: var(--ease-space-1);
-      }
-
-      .sidebar-nav a {
-        padding: var(--ease-space-1) var(--ease-space-2);
-      }
-
-      .docs-content {
-        margin-left: 0;
-        max-width: none;
-        width: 100%;
-        padding: var(--ease-space-8) var(--ease-space-4);
-      }
-    }
-
-    @media (max-width: 640px) {
-      .docs-logo {
-        font-size: var(--ease-text-lg);
-      }
-
-      .docs-header-links li:last-child {
-        width: 100%;
-      }
-
-      .docs-header-links .ease-btn {
-        width: 100%;
-      }
-
-      .docs-h1 {
-        font-size: 2rem;
-      }
-
-      .docs-code {
-        padding: var(--ease-space-4);
-      }
-
-      .docs-table {
-        display: block;
-        overflow-x: auto; /* allow wide tables to scroll on mobile */
-        white-space: nowrap;
-      }
-
-      .docs-info {
-        padding: var(--ease-space-4);
-      }
-    }  
-    /* ── Copy Button ──────────────────────────────────────── */
-    .docs-copy-btn {
-      position: absolute;
-      top: var(--ease-space-3);
-      right: var(--ease-space-4);
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.2);
-      color: rgba(255,255,255,0.7);
-      padding: 4px 8px;
-      border-radius: var(--ease-radius-sm);
-      font-size: 11px;
-      font-family: var(--ease-font-mono, monospace);
-      cursor: pointer;
-      opacity: 0;
-      transition: opacity var(--ease-speed-fast) var(--ease-ease),
-                  background var(--ease-speed-fast) var(--ease-ease),
-                  color var(--ease-speed-fast) var(--ease-ease);
-      display: flex;
-      align-items: center;
-      gap: 4px;
-    }
-
-    .docs-code:hover .docs-copy-btn {
-      opacity: 1;
-    }
-
-    .docs-copy-btn:hover {
-      background: rgba(255,255,255,0.2);
-      color: #fff;
-    }
-
-    .docs-code-lang {
-      transition: opacity var(--ease-speed-fast) var(--ease-ease);
-    }
-
-    .docs-code:hover .docs-code-lang {
-      opacity: 0;
-    }
-  </style>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'unsafe-inline' 'unsafe-eval'; style-src 'unsafe-inline' 'self' https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:;">
+<title>EaseMotion CSS — Documentation</title>
+<meta name="description" content="Official docs for EaseMotion CSS — animation-first, human-readable CSS framework."/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/SAPTARSHI-coder/EaseMotion-css@main/easemotion.min.css"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --sdw:260px;--hdh:64px;--rds:12px;
+  --bg:#050715;--bg-card:#0b0e1e;--bg-elevated:#13172f;--border:rgba(255,255,255,.04);--border-hover:rgba(139,92,246,.3);--text:#eef2ff;--text-sec:#94a3b8;--text-muted:#475569;--accent:#8b5cf6;--accent-light:#a78bfa;--accent-deep:#6d3dff;--accent-glow:rgba(139,92,246,.12);--shadow:0 8px 32px rgba(0,0,0,.3);--hdr-bg:rgba(5,7,21,.8);--sdbar-bg:rgba(255,255,255,.012);--code-bg:rgba(255,255,255,.025);--code-border:rgba(139,92,246,.08);--tb-row:rgba(255,255,255,.015);--nav-clr:rgba(255,255,255,.45);--nav-act-bg:rgba(139,92,246,.12);--nav-act-text:#f1f5f9;--hdg:#f1f5f9;--hdg-sub:#e2e8f0;--grad-start:#f1f5f9;--grad-end:#a78bfa;--ease-color-bg:#050715;--ease-color-surface:#0b0e1e;--ease-color-text:#eef2ff;--ease-color-muted:#94a3b8
+}
+[data-theme="light"]{
+  --bg:#f4f5fa;--bg-card:#fff;--bg-elevated:#eef0f6;--border:rgba(15,23,42,.07);--border-hover:rgba(99,102,241,.25);--text:#0f172a;--text-sec:#475569;--text-muted:#94a3b8;--accent:#6366f1;--accent-light:#818cf8;--accent-deep:#4f46e5;--accent-glow:rgba(99,102,241,.08);--shadow:0 8px 32px rgba(15,23,42,.08);--hdr-bg:rgba(244,245,250,.82);--sdbar-bg:rgba(15,23,42,.012);--code-bg:#f1f3f8;--code-border:rgba(99,102,241,.08);--tb-row:rgba(15,23,42,.015);--nav-clr:#475569;--nav-act-bg:rgba(99,102,241,.08);--nav-act-text:#6366f1;--hdg:#0f172a;--hdg-sub:#1e293b;--grad-start:#0f172a;--grad-end:#6366f1;--ease-color-bg:#f4f5fa;--ease-color-surface:#fff;--ease-color-text:#0f172a;--ease-color-muted:#475569
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden}
+body *{transition:background .7s cubic-bezier(.22,1,.36,1),border-color .7s cubic-bezier(.22,1,.36,1),color .5s ease,box-shadow .7s cubic-bezier(.22,1,.36,1)}
+
+.theme-overlay{position:fixed;inset:0;z-index:9999;pointer-events:none;clip-path:circle(0% at 50% 50%);transition:clip-path .7s cubic-bezier(.22,1,.36,1)}.theme-overlay.active{clip-path:circle(150% at 50% 50%)}.theme-overlay.to-dark{background:#050715}.theme-overlay.to-light{background:#f4f5fa}
+body.theming *{transition-duration:0s!important;animation-duration:0s!important}
+
+.bg-glow{position:fixed;top:-40%;left:50%;width:1000px;height:1000px;transform:translateX(-50%);background:radial-gradient(circle,rgba(139,92,246,.06) 0%,rgba(109,61,255,.03) 30%,transparent 65%);pointer-events:none;z-index:0}
+[data-theme="light"] .bg-glow{background:radial-gradient(circle,rgba(99,102,241,.06) 0%,rgba(79,70,229,.03) 30%,transparent 65%)}
+
+.docs-header{position:fixed;top:0;left:0;right:0;height:var(--hdh);z-index:100;background:var(--hdr-bg);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);display:flex;align-items:center;padding:0 1.5rem;justify-content:space-between;gap:1rem}
+.docs-logo{font-size:1.1rem;font-weight:800;background:linear-gradient(135deg,var(--grad-start) 30%,var(--grad-end));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-.02em;text-decoration:none}
+.docs-header-links{display:flex;gap:1.25rem;align-items:center;list-style:none;padding:0;margin:0}
+.docs-header-links a{color:var(--nav-clr);font-size:.82rem;font-weight:500;text-decoration:none;padding:.5rem .8rem;border-radius:8px}.docs-header-links a:hover{color:var(--text);background:var(--nav-act-bg)}
+
+.theme-btn{background:none;border:1px solid var(--border);color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%}.theme-btn:hover{background:var(--accent-glow);border-color:var(--accent)}
+[data-theme="light"] .theme-btn .sun-icon{display:none}
+[data-theme="light"] .theme-btn .moon-icon{display:block}
+:root:not([data-theme="light"]) .theme-btn .sun-icon{display:block}
+:root:not([data-theme="light"]) .theme-btn .moon-icon{display:none}
+
+.docs-shell{display:flex;min-height:100vh;min-height:100dvh;padding-top:var(--hdh)}
+.sidebar-toggle{display:none;background:none;border:none;cursor:pointer;padding:4px 8px;font-size:1.4rem;color:var(--text);z-index:200}
+
+.docs-sidebar{width:var(--sdw);position:fixed;top:var(--hdh);left:0;bottom:0;overflow-y:auto;padding:1.5rem 1rem;border-right:1px solid var(--border);background:var(--sdbar-bg)}
+.docs-sidebar::-webkit-scrollbar{width:4px}
+.docs-sidebar::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px}
+.sd-group{margin-bottom:1.5rem}
+.sd-label{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--accent-light);margin-bottom:.5rem;padding:0 .5rem}
+.sd-nav{list-style:none;padding:0;margin:0}
+.sd-nav a{display:block;padding:.4rem .5rem;font-size:.82rem;color:var(--nav-clr);border-radius:6px;text-decoration:none}
+.sd-nav a.active{color:var(--nav-act-text);background:var(--nav-act-bg);border-left:2.5px solid var(--accent)}
+
+.docs-content{margin-left:var(--sdw);flex:1;padding:3rem 3rem 4rem;max-width:900px;min-width:0}
+
+.docs-section{margin-bottom:4rem;scroll-margin-top:calc(var(--hdh) + 1rem)}
+.eyebrow{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--accent-light);margin-bottom:.5rem}
+h1{font-size:clamp(2rem,4vw,2.8rem);font-weight:800;letter-spacing:-.04em;background:linear-gradient(135deg,var(--grad-start),var(--grad-end));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:1rem}
+h2{font-size:1.5rem;font-weight:700;color:var(--hdg);margin-bottom:1rem;padding-bottom:.6rem;border-bottom:1px solid var(--border)}
+h3{font-size:1.05rem;font-weight:600;color:var(--hdg-sub);margin-bottom:.75rem;margin-top:2rem}
+p{color:var(--text-sec);line-height:1.75;margin-bottom:1rem;font-size:.9rem}
+p strong{color:var(--text)}
+
+.docs-code{background:var(--code-bg);border:1px solid var(--code-border);border-radius:var(--rds);padding:1.25rem;padding-top:calc(1.25rem + 4px);margin-bottom:1.5rem;overflow-x:auto;position:relative;box-shadow:var(--shadow)}
+.docs-code:hover{border-color:var(--border-hover)}
+.docs-code pre{background:none;color:var(--text);padding:0;margin:0;font-size:.82rem;line-height:1.7;font-family:'JetBrains Mono',monospace}
+.docs-code pre code{background:none;border:none;color:inherit;padding:0;font-size:inherit}
+.docs-lang{position:absolute;top:.75rem;left:1rem;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--text-muted);opacity:.35;font-family:'JetBrains Mono',monospace;transition:opacity .25s}
+.docs-code:hover .docs-lang{opacity:0}
+.docs-content code{background:var(--accent-glow);color:var(--accent-light);border:1px solid rgba(139,92,246,.15);padding:.1em .45em;border-radius:5px;font-size:.87em;font-family:'JetBrains Mono',monospace}
+
+.code-toolbar{position:absolute;top:.7rem;right:.75rem;display:flex;gap:3px;opacity:0;transition:opacity .25s}
+.docs-code:hover .code-toolbar{opacity:1}
+.code-copy-btn{background:rgba(255,255,255,.04);border:1px solid var(--border);color:var(--text-sec);padding:4px 10px;border-radius:6px;font-size:10px;font-weight:600;font-family:'JetBrains Mono',monospace;cursor:pointer;transition:all .2s;letter-spacing:.02em;display:flex;align-items:center;gap:4px}
+.code-copy-btn:hover{background:rgba(255,255,255,.08);color:var(--text);border-color:var(--border-hover)}
+.code-copy-btn.copied{background:rgba(52,211,153,.12);color:#34d399;border-color:rgba(52,211,153,.2)}
+.code-copy-btn svg{width:12px;height:12px;flex-shrink:0}
+
+.ai-dropdown{position:relative}
+.ai-dd-btn{background:rgba(139,92,246,.1);border:1px solid rgba(139,92,246,.15);color:var(--accent-light);padding:4px 10px;border-radius:6px;font-size:10px;font-weight:600;font-family:'JetBrains Mono',monospace;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:4px;white-space:nowrap}
+.ai-dd-btn:hover{background:rgba(139,92,246,.18);border-color:rgba(139,92,246,.25)}
+.ai-dd-btn svg{width:12px;height:12px;flex-shrink:0}
+.ai-dd-menu{display:none;position:absolute;right:0;top:calc(100% + 4px);background:var(--bg-elevated);border:1px solid var(--border);border-radius:8px;padding:4px;min-width:130px;z-index:20;box-shadow:var(--shadow);opacity:0;transform:translateY(-4px);transition:opacity .15s,transform .15s}
+.ai-dropdown.open .ai-dd-menu,
+.ai-dropdown:hover .ai-dd-menu{display:block;opacity:1;transform:translateY(0)}
+.ai-dd-menu button{display:flex;align-items:center;gap:6px;width:100%;text-align:left;background:none;border:none;padding:7px 10px;font-size:11px;color:var(--text-sec);border-radius:5px;cursor:pointer;transition:all .15s;font-family:'Inter',system-ui,sans-serif;font-weight:500}
+.ai-dd-menu button:hover{background:var(--accent-glow);color:var(--accent-light)}
+.ai-dd-menu button:active{transform:scale(.97)}
+.ai-dd-menu button svg{width:14px;height:14px;flex-shrink:0}
+
+table{width:100%;border-collapse:collapse;font-size:.85rem;margin-bottom:2rem}
+th{text-align:left;padding:.65rem .85rem;background:var(--code-bg);color:var(--text-sec);font-weight:600;font-size:.7rem;text-transform:uppercase;letter-spacing:.07em;border-bottom:1px solid var(--border)}
+td{padding:.6rem .85rem;border-bottom:1px solid var(--border);color:var(--text-sec);font-size:.85rem}
+tr:hover td{background:var(--tb-row)}
+
+.docs-info{background:var(--accent-glow);border:1px solid rgba(139,92,246,.15);border-radius:var(--rds);padding:1rem 1.25rem;color:var(--text-sec);font-size:.85rem;line-height:1.7;margin-bottom:1.5rem;display:flex;gap:.75rem}
+.docs-info-icon{font-size:1.1rem;flex-shrink:0;margin-top:1px}
+.docs-divider{border:none;border-top:1px solid var(--border);margin:2.5rem 0}
+.docs-badge{display:inline-block;padding:.15em .65em;border-radius:50px;font-size:.68rem;font-weight:700;background:var(--accent-glow);color:var(--accent-light);border:1px solid rgba(139,92,246,.15);margin-right:4px}
+
+.copy-class-btn{display:inline-flex;align-items:center;gap:3px;margin-left:.5rem;padding:1px 7px;border-radius:4px;font-size:9px;font-weight:600;font-family:'JetBrains Mono',monospace;background:var(--accent-glow);border:1px solid rgba(139,92,246,.12);color:var(--accent-light);cursor:pointer;opacity:0;vertical-align:middle;transition:all .15s}
+td:hover .copy-class-btn{opacity:1}
+.copy-class-btn:hover{background:rgba(139,92,246,.15)}
+.copy-class-btn.copied{opacity:1;background:rgba(52,211,153,.1);color:#34d399;border-color:rgba(52,211,153,.12)}
+tr td:first-child code{margin-right:0}
+
+.hdr-ai-drop{position:relative}
+.hdr-ai-btn{background:linear-gradient(135deg,rgba(139,92,246,.15),rgba(109,61,255,.08));border:1px solid rgba(139,92,246,.2);color:var(--accent-light);padding:5px 14px;border-radius:8px;font-size:.78rem;font-weight:600;cursor:pointer;transition:all .2s;font-family:'Inter',system-ui,sans-serif;letter-spacing:.02em}
+.hdr-ai-btn:hover{background:linear-gradient(135deg,rgba(139,92,246,.25),rgba(109,61,255,.15));border-color:var(--accent);box-shadow:0 0 20px rgba(139,92,246,.15)}
+.hdr-ai-menu{display:none;position:absolute;right:0;top:calc(100% + 6px);background:var(--bg-elevated);border:1px solid var(--border);border-radius:10px;padding:5px;min-width:170px;z-index:30;box-shadow:0 12px 40px rgba(0,0,0,.4);opacity:0;transform:translateY(-6px);transition:opacity .2s,transform .2s}
+.hdr-ai-drop.open .hdr-ai-menu{display:block;opacity:1;transform:translateY(0)}
+.hdr-ai-menu button{display:flex;align-items:center;gap:8px;width:100%;text-align:left;background:none;border:none;padding:8px 12px;font-size:.82rem;color:var(--text-sec);border-radius:7px;cursor:pointer;transition:all .15s;font-family:'Inter',system-ui,sans-serif;font-weight:500}
+.hdr-ai-menu button:hover{background:var(--accent-glow);color:var(--accent-light)}
+.hdr-ai-menu button:active{transform:scale(.97)}
+.hdr-ai-menu button.copied{background:rgba(52,211,153,.1)!important;color:#34d399!important}
+.hdr-ai-menu button svg{width:18px;height:18px;flex-shrink:0}
+
+.docs-footer{text-align:center;padding:2.5rem 1.5rem;border-top:1px solid var(--border);color:var(--text-muted);font-size:.82rem;margin-top:2rem;margin-left:var(--sdw)}
+
+@media(max-width:900px){
+  .docs-content{margin-left:0;max-width:none;width:100%;padding:2rem 1.25rem}
+  .docs-shell{flex-direction:column;padding-top:0}
+  .docs-header{position:sticky;min-height:60px;height:auto;flex-wrap:wrap;padding:.5rem 1rem}
+  :root{--hdh:0px}
+  h1{font-size:1.8rem}
+  table{display:block;overflow-x:auto;white-space:nowrap}
+}
+@media(max-width:900px)and(min-width:769px){
+  .docs-sidebar{position:static;width:100%;padding:1rem;border-right:0;border-bottom:1px solid var(--border)}
+  .sd-nav{display:flex;flex-wrap:wrap;gap:2px}
+  .sd-nav a{padding:.3rem .5rem}
+  .sd-close{display:none!important}
+}
+@media(max-width:768px){
+  .sidebar-toggle{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:8px;background:var(--accent-glow);border:1px solid var(--border);font-size:1.25rem;padding:0;transition:background .2s,border-color .2s,color .2s}
+  .sidebar-toggle:hover{background:rgba(139,92,246,.2);border-color:var(--accent);color:var(--accent-light)}
+  .docs-sidebar{transform:translateX(-100%);transition:transform .35s cubic-bezier(.22,1,.36,1);z-index:200;background:var(--bg);width:min(300px,80vw);padding:1rem .75rem;padding-top:calc(1rem + 8px);position:fixed;top:0;left:0;bottom:0;overflow-y:auto;border-right:1px solid var(--border);box-shadow:4px 0 24px rgba(0,0,0,.3)}
+  .docs-sidebar.open{transform:translateX(0)}
+  .sd-close{display:flex;align-items:center;justify-content:center;margin-left:auto;width:32px;height:32px;border-radius:6px;background:none;border:1px solid var(--border);color:var(--text-sec);cursor:pointer;font-size:1.1rem;transition:background .2s,border-color .2s,color .2s;flex-shrink:0}
+  .sd-close:hover{background:rgba(255,255,255,.06);border-color:var(--border-hover);color:var(--text)}
+  .sd-group:first-of-type{margin-top:0}
+  .docs-content{margin-left:0;padding:1.5rem;width:100%}
+  .docs-footer{margin-left:0}
+  .docs-header-links li:not(:last-child):not(:has(.hdr-ai-drop)){display:none}
+  .sidebar-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);z-index:199;top:0}
+  .sidebar-overlay.open{display:block}
+  .hdr-ai-btn{padding:4px 10px;font-size:.72rem}
+  .hdr-ai-menu{right:-8px;min-width:155px}
+  .hdr-ai-menu button{padding:9px 11px;font-size:.78rem}
+  .hdr-ai-menu button svg{width:16px;height:16px}
+  .code-toolbar{opacity:1!important}
+  .docs-code:hover .code-toolbar{opacity:1!important}
+  .docs-code{padding-top:2.5rem}
+  .docs-lang{top:.5rem;left:.75rem;font-size:8px}
+  .code-toolbar{top:.45rem;right:.5rem}
+  .code-copy-btn{padding:3px 7px;font-size:9px}
+  .ai-dd-btn{padding:3px 7px;font-size:9px}
+  .code-copy-btn span{display:none}
+  .ai-dd-btn .ai-label{display:none}
+  .ai-dd-menu{right:-4px;min-width:120px}
+  .ai-dd-menu button{padding:8px 10px;font-size:12px}
+}
+@media(hover:none){
+  .code-toolbar{opacity:1!important}
+  .docs-code{padding-top:2.5rem}
+  .docs-lang{top:.5rem;left:.75rem}
+  .code-toolbar{top:.45rem;right:.5rem}
+}
+</style>
 </head>
-
 <body>
+<div class="bg-glow"></div>
+<div class="theme-overlay" id="themeOverlay"></div>
+<div class="ease-scroll-progress"></div>
 
-  <!-- Scroll Progress Bar -->
-  <div class="ease-scroll-progress"></div>
+<header class="docs-header">
+  <a href="#" class="docs-logo">EaseMotion</a>
+  <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+  <ul class="docs-header-links">
+    <li><a href="#getting-started">Getting Started</a></li>
+    <li><a href="#utilities">Utilities</a></li>
+    <li><a href="#animations">Animations</a></li>
+    <li><a href="#components">Components</a></li>
+    <li><a href="demo.html" class="ease-btn ease-btn-primary ease-btn-sm ease-btn-pill">Live Demo →</a></li>
+    <li><div class="hdr-ai-drop" id="hdrAiDrop"><button class="hdr-ai-btn" id="hdrAiToggle" aria-label="Open in AI">AI</button><div class="hdr-ai-menu"><button data-ai="chatgpt"><svg viewBox="0 0 24 24" fill="#10a37f"><path d="M11.97 2.5a4.5 4.5 0 0 1 4.11 2.62l.58 1.23 1.33-.27a4.5 4.5 0 0 1 4.94 2.86 4.5 4.5 0 0 1-1.72 5.24l-1.07.76.33 1.27a4.5 4.5 0 0 1-2.14 5.17 4.5 4.5 0 0 1-5.53-.62L12 19.58l-.87.78a4.5 4.5 0 0 1-5.53.62 4.5 4.5 0 0 1-2.14-5.17l.33-1.27-1.07-.76a4.5 4.5 0 0 1-1.72-5.24 4.5 4.5 0 0 1 4.94-2.86l1.33.27.58-1.23A4.5 4.5 0 0 1 11.97 2.5z"/></svg>ChatGPT</button><button data-ai="claude"><svg viewBox="0 0 24 24" fill="#d97706"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8 8h8M8 12h6M8 16h4" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>Claude</button><button data-ai="gemini"><svg viewBox="0 0 24 24"><path d="M12 2l2.5 7H22l-5.5 4 2.5 7-7-4.5L4 20l2.5-7L2 9h7.5L12 2z" fill="#4285f4"/></svg>Gemini</button></div></div></li>
+    <li>
+      <button id="theme-toggle" class="theme-btn ease-hover-grow" aria-label="Toggle theme">
+        <svg class="sun-icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.72" x2="5.64" y2="18.3"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <svg class="moon-icon" viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+    </li>
+  </ul>
+</header>
 
-  <!-- Header -->
-  <header class="docs-header">
-    <a href="#" class="docs-logo">EaseMotion CSS</a>
+<div class="docs-shell">
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="docs-sidebar">
+    <div class="sd-group" style="display:flex;align-items:center;gap:.5rem;margin-bottom:.75rem">
+      <div class="sd-label" style="margin-bottom:0;flex:1">Navigation</div>
+      <button class="sd-close" id="sidebarClose" aria-label="Close sidebar">✕</button>
+    </div>
+    <div class="sd-group">
+      <div class="sd-label">Introduction</div>
+      <ul class="sd-nav">
+        <li><a href="#getting-started" class="active">Getting Started</a></li>
+        <li><a href="#philosophy">Design Philosophy</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </div>
+    <div class="sd-group">
+      <div class="sd-label">Core</div>
+      <ul class="sd-nav">
+        <li><a href="#variables">Variables</a></li>
+        <li><a href="#dark-mode">Dark Mode</a></li>
+        <li><a href="#utilities">Utilities</a></li>
+        <li><a href="#animations">Animations</a></li>
+      </ul>
+    </div>
+    <div class="sd-group">
+      <a href="#components" class="sd-label">Components</a>
+      <ul class="sd-nav">
+        <li><a href="#buttons">Buttons</a></li>
+        <li><a href="#cards">Cards</a></li>
+        <li><a href="#scroll-progress">Scroll Progress</a></li>
+      </ul>
+    </div>
+    <div class="sd-group">
+      <div class="sd-label">Contributing</div>
+      <ul class="sd-nav">
+        <li><a href="#contributing">How to Contribute</a></li>
+        <li><a href="#naming">Naming Rules</a></li>
+      </ul>
+    </div>
+  </aside>
 
-    <!-- Mobile hamburger toggle button -->
-    <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
-
-    <ul class="docs-header-links">
-      <li><a href="#getting-started">Getting Started</a></li>
-      <li><a href="#utilities">Utilities</a></li>
-      <li><a href="#animations">Animations</a></li>
-      <li><a href="#components">Components</a></li>
-      <li>
-        <a href="demo.html" class="ease-btn ease-btn-primary ease-btn-sm ease-btn-pill" style="padding: 10px;">Live Demo →</a>
-      </li>
-      <li>
-        <button id="theme-toggle" class="theme-toggle-btn ease-hover-grow" aria-label="Toggle dark/light theme">
-          <!-- Sun Icon -->
-          <svg class="sun-icon" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="5"></circle>
-            <line x1="12" y1="1" x2="12" y2="3"></line>
-            <line x1="12" y1="21" x2="12" y2="23"></line>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-            <line x1="1" y1="12" x2="3" y2="12"></line>
-            <line x1="21" y1="12" x2="23" y2="12"></line>
-            <line x1="4.22" y1="19.72" x2="5.64" y2="18.3"></line>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-          </svg>
-          <!-- Moon Icon -->
-          <svg class="moon-icon" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-          </svg>
-        </button>
-      </li>
-    </ul>
-  </header>
-
-  <div class="docs-shell">
-
-    <!-- Overlay for mobile sidebar -->
-    <div class="sidebar-overlay" id="sidebarOverlay"></div>
-
-    <!-- Sidebar -->
-    <aside class="docs-sidebar">
-      <div class="sidebar-group">
-        <div class="sidebar-group-label">Introduction</div>
-        <ul class="sidebar-nav">
-          <li><a href="#getting-started" class="active">Getting Started</a></li>
-          <li><a href="#philosophy">Design Philosophy</a></li>
-          <li><a href="#installation">Installation</a></li>
-        </ul>
-      </div>
-      <div class="sidebar-group">
-        <div class="sidebar-group-label">Core</div>
-        <ul class="sidebar-nav">
-          <li><a href="#variables">Variables</a></li>
-          <li><a href="#dark-mode">Dark Mode</a></li>
-          <li><a href="#utilities">Utilities</a></li>
-          <li><a href="#animations">Animations</a></li>
-        </ul>
-      </div>
-      <div class="sidebar-group">
-        <a href="#components" class="sidebar-group-label">Components</a>
-        <ul class="sidebar-nav">
-          <li><a href="#buttons">Buttons</a></li>
-          <li><a href="#cards">Cards</a></li>
-          <li><a href="#scroll-progress">Scroll Progress</a></li>
-        </ul>
-      </div>
-      <div class="sidebar-group">
-        <div class="sidebar-group-label">Contributing</div>
-        <ul class="sidebar-nav">
-          <li><a href="#contributing">How to Contribute</a></li>
-          <li><a href="#naming">Naming Rules</a></li>
-        </ul>
-      </div>
-    </aside>
-
-    <!-- Main content -->
-    <main class="docs-content">
-
-      <!-- ══════════════ GETTING STARTED ══════════════ -->
-      <section id="getting-started" class="docs-section ease-fade-in">
-        <div class="docs-eyebrow">Introduction</div>
-        <h1 class="docs-h1">EaseMotion CSS</h1>
-        <p class="docs-p">
-          EaseMotion CSS is a human-readable, animation-first CSS library. Write UI with simple,
-          English-like class names — no memorizing utilities, no complex configuration.
-          Just readable HTML that looks great and moves beautifully.
-        </p>
-        <div class="docs-info">
-          <span class="docs-info-icon">💡</span>
-          <div>
-            EaseMotion CSS bridges the gap between raw vanilla CSS and utility-heavy frameworks like Tailwind.
-            You get structure and power, with none of the cognitive overhead.
-          </div>
-        </div>
-      </section>
-
-      <hr class="docs-divider" />
-
-      <!-- ══════════════ PHILOSOPHY ══════════════ -->
-      <section id="philosophy" class="docs-section">
-        <h2 class="docs-h2">Design Philosophy</h2>
-        <p class="docs-p">EaseMotion CSS is built on four core principles:</p>
-        <table class="docs-table">
-          <thead>
-            <tr>
-              <th>Principle</th>
-              <th>What it means</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><code>Human-readable</code></td>
-              <td>Class names read like plain English, e.g. <code>ease-fade-in</code>, <code>ease-hover-glow</code></td>
-            </tr>
-            <tr>
-              <td><code>Animation-first</code></td>
-              <td>Animations are first-class citizens, not accessories bolted on later</td>
-            </tr>
-            <tr>
-              <td><code>Composable</code></td>
-              <td>Stack modifier classes freely — no specificity wars</td>
-            </tr>
-            <tr>
-              <td><code>Clean & minimal</code></td>
-              <td>No dependencies, no build steps, no JavaScript required</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-
-      <hr class="docs-divider" />
-
-      <!-- ══════════════ INSTALLATION ══════════════ -->
-      <section id="installation" class="docs-section">
-        <h2 class="docs-h2">Installation</h2>
-        <p class="docs-p">The fastest way — drop one line into your <code>&lt;head&gt;</code>. No npm, no build step:
-        </p>
-        <div class="docs-code">
-          <span class="docs-code-lang">html</span>
-          <pre><code>&lt;!-- CDN — recommended, works everywhere --&gt;
-&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/easemotion-css/easemotion.css" /&gt;</code></pre>
-        </div>
-        <p class="docs-p">Or install via npm:</p>
-        <div class="docs-code">
-          <span class="docs-code-lang">bash</span>
-          <pre><code>npm install easemotion-css</code></pre>
-        </div>
-        <p class="docs-p">Or import individual files from CDN:</p>
-        <div class="docs-code">
-          <span class="docs-code-lang">html</span>
-          <pre><code>&lt;!-- Core (required, in this order) --&gt;
+  <main class="docs-content">
+    <section id="getting-started" class="docs-section ease-fade-in">
+      <div class="eyebrow">Introduction</div>
+      <h1>EaseMotion CSS</h1>
+      <p>EaseMotion CSS is a human-readable, animation-first CSS library. Write UI with simple, English-like class names — no memorizing utilities, no complex configuration. Just readable HTML that looks great and moves beautifully.</p>
+      <div class="docs-info"><span class="docs-info-icon">💡</span><div>EaseMotion CSS bridges the gap between raw vanilla CSS and utility-heavy frameworks like Tailwind. You get structure and power, with none of the cognitive overhead.</div></div>
+    </section>
+    <hr class="docs-divider"/>
+    <section id="philosophy" class="docs-section">
+      <h2>Design Philosophy</h2>
+      <p>EaseMotion CSS is built on four core principles:</p>
+      <table><thead><tr><th>Principle</th><th>What it means</th></tr></thead><tbody>
+        <tr><td><code>Human-readable</code></td><td>Class names read like plain English, e.g. <code>ease-fade-in</code>, <code>ease-hover-glow</code></td></tr>
+        <tr><td><code>Animation-first</code></td><td>Animations are first-class citizens, not accessories bolted on later</td></tr>
+        <tr><td><code>Composable</code></td><td>Stack modifier classes freely — no specificity wars</td></tr>
+        <tr><td><code>Clean & minimal</code></td><td>No dependencies, no build steps, no JavaScript required</td></tr>
+      </tbody></table>
+    </section>
+    <hr class="docs-divider"/>
+    <section id="installation" class="docs-section">
+      <h2>Installation</h2>
+      <p>The fastest way — drop one line into your <code>&lt;head&gt;</code>. No npm, no build step:</p>
+      <div class="docs-code"><span class="docs-lang">html</span><button class="copy-btn" onclick="copyCode(this,'<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/easemotion-css/easemotion.css>')">Copy</button><pre><code>&lt;!-- CDN — recommended, works everywhere --&gt;
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/easemotion-css/easemotion.css" /&gt;</code></pre></div>
+      <p>Or install via npm:</p>
+      <div class="docs-code"><span class="docs-lang">bash</span><button class="copy-btn" onclick="copyCode(this,'npm install easemotion-css')">Copy</button><pre><code>npm install easemotion-css</code></pre></div>
+      <p>Or import individual files from CDN:</p>
+      <div class="docs-code"><span class="docs-lang">html</span><button class="copy-btn" onclick="copyCode(this,'<link>')">Copy</button><pre><code>&lt;!-- Core (required, in this order) --&gt;
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/easemotion-css/core/variables.css" /&gt;
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/easemotion-css/core/base.css" /&gt;
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/easemotion-css/core/animations.css" /&gt;
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/easemotion-css/core/utilities.css" /&gt;
-
 &lt;!-- Components (add as needed) --&gt;
 &lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/easemotion-css/components/buttons.css" /&gt;
-&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/easemotion-css/components/cards.css" /&gt;</code></pre>
-        </div>
-        <div class="docs-info">
-          <span class="docs-info-icon">⚠️</span>
-          <div>
-            Always load <code>variables.css</code> first — all other modules depend on the CSS custom properties it
-            defines.
-          </div>
-        </div>
-      </section>
-
-      <hr class="docs-divider" />
-
-      <!-- ══════════════ VARIABLES ══════════════ -->
-      <section id="variables" class="docs-section">
-        <h2 class="docs-h2">Variables</h2>
-        <p class="docs-p">
-          All values are defined as CSS custom properties in <code>:root</code>.
-          Override any token to theme the framework.
-        </p>
-        <h3 class="docs-h3">CSS Custom Properties Reference</h3>
-        <p class="docs-p">
-          The table below documents every <code>--ease-*</code> design token,
-          its default value, purpose, and an example override.
-        </p>
-        <h3 class="docs-h3">Transition Speeds</h3>
-
-        <table class="docs-table">
-          <thead><tr><th>Variable</th><th>Value</th></tr></thead>
-          <tbody>
-            <tr>
-              <td>
-                <code>--ease-speed-fast</code>
-                <button class="copy-class-btn">Copy Variable</button>
-              </td>
-              <td>150ms</td>
-            </tr>
-
-            <tr>
-              <td>
-                <code>--ease-speed-medium</code>
-                <button class="copy-class-btn">Copy Variable</button>
-              </td>
-              <td>300ms</td>
-            </tr>
-
-            <tr>
-              <td>
-                <code>--ease-speed-slow</code>
-                <button class="copy-class-btn">Copy Variable</button>
-              </td>
-              <td>600ms</td>
-            </tr>
-          </tbody>
-        </table>
-        <h3 class="docs-h3">Colors</h3>
-        <table class="docs-table">
-          <thead>
-            <tr>
-              <th>Variable</th>
-              <th>Value</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <code>--ease-color-primary</code>
-                <button class="copy-class-btn">Copy Variable</button>
-              </td>
-              <td>#6c63ff</td>
-            </tr>
-
-            <tr>
-              <td>
-                <code>--ease-color-success</code>
-                <button class="copy-class-btn">Copy Variable</button>
-              </td>
-              <td>#22c55e</td>
-            </tr>
-
-            <tr>
-              <td>
-                <code>--ease-color-danger</code>
-                <button class="copy-class-btn">Copy Variable</button>
-              </td>
-              <td>#ef4444</td>
-            </tr>
-
-            <tr>
-              <td>
-                <code>--ease-color-warning</code>
-                <button class="copy-class-btn">Copy Variable</button>
-              </td>
-              <td>#f59e0b</td>
-            </tr>
-          </tbody>
-        </table>
-        <h3 class="docs-h3">Spacing Scale</h3>
-        <p class="docs-p">Based on a 4px base unit: <code>--ease-space-1</code> (4px) → <code>--ease-space-16</code>
-          (64px).</p>
-      </section>
-<section id="custom-properties" class="docs-section">
-  <h2 class="docs-h2">CSS Custom Properties Reference</h2>
-
-  <p class="docs-p">
-    Every <code>--ease-*</code> token can be overridden globally:
-  </p>
-
-  <div class="docs-code">
-    <span class="docs-code-lang">css</span>
-<pre><code>:root {
+&lt;link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/easemotion-css/components/cards.css" /&gt;</code></pre></div>
+      <div class="docs-info"><span class="docs-info-icon">⚠️</span><div>Always load <code>variables.css</code> first — all other modules depend on the CSS custom properties it defines.</div></div>
+    </section>
+    <hr class="docs-divider"/>
+    <section id="variables" class="docs-section">
+      <h2>Variables</h2>
+      <p>All values are defined as CSS custom properties in <code>:root</code>. Override any token to theme the framework.</p>
+      <h3>Transition Speeds</h3>
+      <table><thead><tr><th>Variable</th><th>Value</th></tr></thead><tbody>
+        <tr><td><code>--ease-speed-fast</code><button class="copy-class-btn">Copy</button></td><td>150ms</td></tr>
+        <tr><td><code>--ease-speed-medium</code><button class="copy-class-btn">Copy</button></td><td>300ms</td></tr>
+        <tr><td><code>--ease-speed-slow</code><button class="copy-class-btn">Copy</button></td><td>600ms</td></tr>
+      </tbody></table>
+      <h3>Colors</h3>
+      <table><thead><tr><th>Variable</th><th>Value</th></tr></thead><tbody>
+        <tr><td><code>--ease-color-primary</code><button class="copy-class-btn">Copy</button></td><td>#6c63ff</td></tr>
+        <tr><td><code>--ease-color-success</code><button class="copy-class-btn">Copy</button></td><td>#22c55e</td></tr>
+        <tr><td><code>--ease-color-danger</code><button class="copy-class-btn">Copy</button></td><td>#ef4444</td></tr>
+        <tr><td><code>--ease-color-warning</code><button class="copy-class-btn">Copy</button></td><td>#f59e0b</td></tr>
+      </tbody></table>
+      <h3>Spacing Scale</h3>
+      <p>Based on a 4px base unit: <code>--ease-space-1</code> (4px) → <code>--ease-space-16</code> (64px).</p>
+    </section>
+    <section id="custom-properties" class="docs-section">
+      <h2>CSS Custom Properties Reference</h2>
+      <p>Every <code>--ease-*</code> token can be overridden globally:</p>
+      <div class="docs-code"><span class="docs-lang">css</span><pre><code>:root {
   --ease-color-primary: #7c3aed;
   --ease-speed-medium: 400ms;
-}</code></pre>
-  </div>
-
-  <!-- Transition Speeds -->
-  <h3 class="docs-h3">Transition Speeds</h3>
-
-  <table class="docs-table">
-    <thead>
-      <tr>
-        <th>Variable</th>
-        <th>Default</th>
-        <th>What it Controls</th>
-        <th>Override Example</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>--ease-speed-fast</code></td>
-        <td>150ms</td>
-        <td>Hover effects and quick transitions</td>
-        <td><code>--ease-speed-fast: 200ms;</code></td>
-      </tr>
-      <tr>
-        <td><code>--ease-speed-medium</code></td>
-        <td>300ms</td>
-        <td>Default animation timing</td>
-        <td><code>--ease-speed-medium: 400ms;</code></td>
-      </tr>
-      <tr>
-        <td><code>--ease-speed-slow</code></td>
-        <td>600ms</td>
-        <td>Long entrance animations</td>
-        <td><code>--ease-speed-slow: 800ms;</code></td>
-      </tr>
-    </tbody>
-  </table>
-
-  <!-- Easing -->
-  <h3 class="docs-h3">Easing Functions</h3>
-
-  <table class="docs-table">
-    <thead>
-      <tr>
-        <th>Variable</th>
-        <th>Default</th>
-        <th>What it Controls</th>
-        <th>Override Example</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>--ease-ease</code></td>
-        <td>cubic-bezier(0.4,0,0.2,1)</td>
-        <td>Default easing curve</td>
-        <td><code>--ease-ease: ease;</code></td>
-      </tr>
-      <tr>
-        <td><code>--ease-ease-out</code></td>
-        <td>cubic-bezier(0,0,0.2,1)</td>
-        <td>Exit and easing-out effects</td>
-        <td><code>--ease-ease-out: ease-out;</code></td>
-      </tr>
-      <tr>
-        <td><code>--ease-ease-bounce</code></td>
-        <td>cubic-bezier(0.34,1.56,0.64,1)</td>
-        <td>Bouncy animations</td>
-        <td><code>--ease-ease-bounce: ease-in-out;</code></td>
-      </tr>
-    </tbody>
-  </table>
-
-  <!-- Colors -->
-  <h3 class="docs-h3">Color Palette</h3>
-
-  <table class="docs-table">
-    <thead>
-      <tr>
-        <th>Variable</th>
-        <th>Default</th>
-        <th>What it Controls</th>
-        <th>Override Example</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>--ease-color-primary</code></td>
-        <td>#6c63ff</td>
-        <td>Primary brand color</td>
-        <td><code>--ease-color-primary: #7c3aed;</code></td>
-      </tr>
-      <tr>
-        <td><code>--ease-color-primary-light</code></td>
-        <td>#a09af8</td>
-        <td>Light primary shade</td>
-        <td><code>--ease-color-primary-light: #c4b5fd;</code></td>
-      </tr>
-      <tr>
-        <td><code>--ease-color-primary-dark</code></td>
-        <td>#4b44cc</td>
-        <td>Dark primary shade</td>
-        <td><code>--ease-color-primary-dark: #5b21b6;</code></td>
-      </tr>
-      <tr>
-        <td><code>--ease-color-success</code></td>
-        <td>#22c55e</td>
-        <td>Success states</td>
-        <td><code>--ease-color-success: #16a34a;</code></td>
-      </tr>
-      <tr>
-        <td><code>--ease-color-danger</code></td>
-        <td>#ef4444</td>
-        <td>Error states</td>
-        <td><code>--ease-color-danger: #dc2626;</code></td>
-      </tr>
-      <tr>
-        <td><code>--ease-color-warning</code></td>
-        <td>#f59e0b</td>
-        <td>Warning states</td>
-        <td><code>--ease-color-warning: #d97706;</code></td>
-      </tr>
-      <tr>
-        <td><code>--ease-color-bg</code></td>
-        <td>var(--ease-color-neutral-50)</td>
-        <td>Page background</td>
-        <td><code>--ease-color-bg: #fafafa;</code></td>
-      </tr>
-      <tr>
-        <td><code>--ease-color-surface</code></td>
-        <td>#ffffff</td>
-        <td>Cards and surfaces</td>
-        <td><code>--ease-color-surface: #f8fafc;</code></td>
-      </tr>
-      <tr>
-        <td><code>--ease-color-text</code></td>
-        <td>var(--ease-color-neutral-800)</td>
-        <td>Main text color</td>
-        <td><code>--ease-color-text: #111827;</code></td>
-      </tr>
-      <tr>
-        <td><code>--ease-color-muted</code></td>
-        <td>var(--ease-color-neutral-500)</td>
-        <td>Secondary text</td>
-        <td><code>--ease-color-muted: #6b7280;</code></td>
-      </tr>
-      <tr>
-        <td><code>--ease-color-success-light</code></td>
-        <td>#4ade80</td>
-        <td>Light success shade</td>
-        <td><code>--ease-color-success-light: #65e894;</code></td>
-      </tr>
-      <tr>
-        <td><code>--ease-color-success-dark</code></td>
-        <td>#16a34a</td>
-        <td>Dark success shade</td>
-        <td><code>--ease-color-success-dark: #15803d;</code></td>
-      </tr>
-    </tbody>
-  </table>
-
-  <!-- Spacing -->
-  <h3 class="docs-h3">Spacing Scale</h3>
-
-  <table class="docs-table">
-    <thead>
-      <tr>
-        <th>Variable</th>
-        <th>Default</th>
-        <th>What it Controls</th>
-        <th>Override Example</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td><code>--ease-space-1</code></td><td>0.25rem</td><td>4px spacing</td><td><code>--ease-space-1: 0.3rem;</code></td></tr>
-      <tr><td><code>--ease-space-2</code></td><td>0.5rem</td><td>8px spacing</td><td><code>--ease-space-2: 0.6rem;</code></td></tr>
-      <tr><td><code>--ease-space-4</code></td><td>1rem</td><td>16px spacing</td><td><code>--ease-space-4: 1.2rem;</code></td></tr>
-      <tr><td><code>--ease-space-8</code></td><td>2rem</td><td>32px spacing</td><td><code>--ease-space-8: 2.5rem;</code></td></tr>
-      <tr><td><code>--ease-space-16</code></td><td>4rem</td><td>64px spacing</td><td><code>--ease-space-16: 5rem;</code></td></tr>
-    </tbody>
-  </table>
-
-  <!-- Radius -->
-  <h3 class="docs-h3">Border Radius</h3>
-
-  <table class="docs-table">
-    <thead>
-      <tr>
-        <th>Variable</th>
-        <th>Default</th>
-        <th>What it Controls</th>
-        <th>Override Example</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td><code>--ease-radius-sm</code></td><td>0.25rem</td><td>Small corners</td><td><code>--ease-radius-sm: 0.4rem;</code></td></tr>
-      <tr><td><code>--ease-radius-md</code></td><td>0.5rem</td><td>Default corners</td><td><code>--ease-radius-md: 0.75rem;</code></td></tr>
-      <tr><td><code>--ease-radius-lg</code></td><td>1rem</td><td>Large cards</td><td><code>--ease-radius-lg: 1.25rem;</code></td></tr>
-      <tr><td><code>--ease-radius-full</code></td><td>9999px</td><td>Pill elements</td><td><code>--ease-radius-full: 999px;</code></td></tr>
-    </tbody>
-  </table>
-
-  <!-- Shadows -->
-  <h3 class="docs-h3">Shadows & Glows</h3>
-
-  <table class="docs-table">
-    <thead>
-      <tr>
-        <th>Variable</th>
-        <th>Default</th>
-        <th>What it Controls</th>
-        <th>Override Example</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td><code>--ease-shadow-sm</code></td><td><code>0 1px 3px rgba(0, 0, 0, 0.1)</code></td><td>Subtle depth</td><td><code>--ease-shadow-sm: ...</code></td></tr>
-      <tr><td><code>--ease-shadow-md</code></td><td><code>0 4px 6px rgba(0, 0, 0, 0.1)</code></td><td>Cards & panels</td><td><code>--ease-shadow-md: ...</code></td></tr>
-      <tr><td><code>--ease-shadow-lg</code></td><td><code>0 10px 15px rgba(0, 0, 0, 0.1)</code></td><td>Elevated surfaces</td><td><code>--ease-shadow-lg: ...</code></td></tr>
-      <tr><td><code>--ease-glow-primary</code></td><td><code>0 0 10px rgba(124, 58, 237, 0.5)</code></td><td>Glow effects</td><td><code>--ease-glow-primary: ...</code></td></tr>
-    </tbody>
-  </table>
-
-  <!-- Typography -->
-  <h3 class="docs-h3">Typography</h3>
-
-  <table class="docs-table">
-    <thead>
-      <tr>
-        <th>Variable</th>
-        <th>Default</th>
-        <th>What it Controls</th>
-        <th>Override Example</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td><code>--ease-font-sans</code></td><td>Inter, system-ui</td><td>Primary font</td><td><code>--ease-font-sans: Arial, sans-serif;</code></td></tr>
-      <tr><td><code>--ease-font-mono</code></td><td>JetBrains Mono</td><td>Code font</td><td><code>--ease-font-mono: monospace;</code></td></tr>
-      <tr><td><code>--ease-text-sm</code></td><td>0.875rem</td><td>Small text size</td><td><code>--ease-text-sm: 0.9rem;</code></td></tr>
-      <tr><td><code>--ease-text-base</code></td><td>1rem</td><td>Base text size</td><td><code>--ease-text-base: 1.1rem;</code></td></tr>
-      <tr><td><code>--ease-text-xl</code></td><td>1.25rem</td><td>Large headings</td><td><code>--ease-text-xl: 1.4rem;</code></td></tr>
-      <tr><td><code>--ease-leading-normal</code></td><td>1.6</td><td>Default line height</td><td><code>--ease-leading-normal: 1.8;</code></td></tr>
-    </tbody>
-  </table>
-
-  <!-- Z Index -->
-  <h3 class="docs-h3">Z-Index Scale</h3>
-
-  <table class="docs-table">
-    <thead>
-      <tr>
-        <th>Variable</th>
-        <th>Default</th>
-        <th>What it Controls</th>
-        <th>Override Example</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td><code>--ease-z-base</code></td><td>0</td><td>Default layer</td><td><code>--ease-z-base: 1;</code></td></tr>
-      <tr><td><code>--ease-z-raised</code></td><td>10</td><td>Raised elements</td><td><code>--ease-z-raised: 20;</code></td></tr>
-      <tr><td><code>--ease-z-overlay</code></td><td>100</td><td>Dropdowns & overlays</td><td><code>--ease-z-overlay: 200;</code></td></tr>
-      <tr><td><code>--ease-z-modal</code></td><td>1000</td><td>Modals</td><td><code>--ease-z-modal: 2000;</code></td></tr>
-      <tr><td><code>--ease-z-toast</code></td><td>9999</td><td>Toast notifications</td><td><code>--ease-z-toast: 10000;</code></td></tr>
-    </tbody>
-  </table>
-  <h3 class="docs-h3">Custom Theme Example</h3>
-
-<div class="docs-code">
-<span class="docs-code-lang">css</span>
-<pre><code>:root {
-  --ease-color-primary: #7c3aed;
-  --ease-color-primary-light: #c4b5fd;
-  --ease-color-primary-dark: #5b21b6;
-
-  --ease-radius-md: 0.75rem;
-  --ease-speed-medium: 400ms;
-}</code></pre>
-</div>
-</section>
-
-      <!-- ══════════════ DARK MODE ══════════════ -->
-      <section id="dark-mode" class="docs-section">
-        <h2 class="docs-h2">Dark Mode</h2>
-        <p class="docs-p">
-          EaseMotion CSS uses CSS custom properties for theming.
-          Override color tokens in <code>:root</code>, then use a system preference
-          media query or a manual theme toggle.
-        </p>
-
-        <h3 class="docs-h3">System dark mode</h3>
-        <p class="docs-p">
-          Add a dark-mode override with <code>@media (prefers-color-scheme: dark)</code>.
-          This lets the browser switch automatically when the user prefers dark mode.
-        </p>
-
-        <div class="docs-code">
-          <span class="docs-code-lang">css</span>
-          <pre><code>:root {
+}</code></pre></div>
+      <h3>Transition Speeds</h3>
+      <table><thead><tr><th>Variable</th><th>Default</th><th>What it Controls</th></tr></thead><tbody>
+        <tr><td><code>--ease-speed-fast</code></td><td>150ms</td><td>Hover effects, quick transitions</td></tr>
+        <tr><td><code>--ease-speed-medium</code></td><td>300ms</td><td>Default animation timing</td></tr>
+        <tr><td><code>--ease-speed-slow</code></td><td>600ms</td><td>Long entrance animations</td></tr>
+      </tbody></table>
+      <h3>Color Palette</h3>
+      <table><thead><tr><th>Variable</th><th>Default</th><th>What it Controls</th></tr></thead><tbody>
+        <tr><td><code>--ease-color-primary</code></td><td>#6c63ff</td><td>Primary brand color</td></tr>
+        <tr><td><code>--ease-color-primary-light</code></td><td>#a09af8</td><td>Light primary shade</td></tr>
+        <tr><td><code>--ease-color-primary-dark</code></td><td>#4b44cc</td><td>Dark primary shade</td></tr>
+        <tr><td><code>--ease-color-success</code></td><td>#22c55e</td><td>Success states</td></tr>
+        <tr><td><code>--ease-color-danger</code></td><td>#ef4444</td><td>Error states</td></tr>
+        <tr><td><code>--ease-color-warning</code></td><td>#f59e0b</td><td>Warning states</td></tr>
+        <tr><td><code>--ease-color-bg</code></td><td>neutral-50</td><td>Page background</td></tr>
+        <tr><td><code>--ease-color-surface</code></td><td>#ffffff</td><td>Cards and surfaces</td></tr>
+        <tr><td><code>--ease-color-text</code></td><td>neutral-800</td><td>Main text color</td></tr>
+        <tr><td><code>--ease-color-muted</code></td><td>neutral-500</td><td>Secondary text</td></tr>
+      </tbody></table>
+      <h3>Spacing Scale</h3>
+      <table><thead><tr><th>Variable</th><th>Default</th><th>What it Controls</th></tr></thead><tbody>
+        <tr><td><code>--ease-space-1</code></td><td>0.25rem</td><td>4px spacing</td></tr>
+        <tr><td><code>--ease-space-2</code></td><td>0.5rem</td><td>8px spacing</td></tr>
+        <tr><td><code>--ease-space-4</code></td><td>1rem</td><td>16px spacing</td></tr>
+        <tr><td><code>--ease-space-8</code></td><td>2rem</td><td>32px spacing</td></tr>
+        <tr><td><code>--ease-space-16</code></td><td>4rem</td><td>64px spacing</td></tr>
+      </tbody></table>
+      <h3>Border Radius</h3>
+      <table><thead><tr><th>Variable</th><th>Default</th><th>What it Controls</th></tr></thead><tbody>
+        <tr><td><code>--ease-radius-sm</code></td><td>0.25rem</td><td>Small corners</td></tr>
+        <tr><td><code>--ease-radius-md</code></td><td>0.5rem</td><td>Default corners</td></tr>
+        <tr><td><code>--ease-radius-lg</code></td><td>1rem</td><td>Large cards</td></tr>
+        <tr><td><code>--ease-radius-full</code></td><td>9999px</td><td>Pill elements</td></tr>
+      </tbody></table>
+      <h3>Z-Index Scale</h3>
+      <table><thead><tr><th>Variable</th><th>Default</th><th>What it Controls</th></tr></thead><tbody>
+        <tr><td><code>--ease-z-base</code></td><td>0</td><td>Default layer</td></tr>
+        <tr><td><code>--ease-z-raised</code></td><td>10</td><td>Raised elements</td></tr>
+        <tr><td><code>--ease-z-overlay</code></td><td>100</td><td>Dropdowns & overlays</td></tr>
+        <tr><td><code>--ease-z-modal</code></td><td>1000</td><td>Modals</td></tr>
+        <tr><td><code>--ease-z-toast</code></td><td>9999</td><td>Toast notifications</td></tr>
+      </tbody></table>
+    </section>
+    <hr class="docs-divider"/>
+    <section id="dark-mode" class="docs-section">
+      <h2>Dark Mode</h2>
+      <p>EaseMotion CSS uses CSS custom properties for theming. Override color tokens in <code>:root</code>, then use a system preference media query or a manual theme toggle.</p>
+      <h3>System dark mode</h3>
+      <p>Add a dark-mode override with <code>@media (prefers-color-scheme: dark)</code>.</p>
+      <div class="docs-code"><span class="docs-lang">css</span><pre><code>:root {
   --ease-color-bg:      var(--ease-color-neutral-50);
   --ease-color-surface: #ffffff;
   --ease-color-text:    var(--ease-color-neutral-800);
-  --ease-color-muted:   var(--ease-color-neutral-500);
 }
-
 @media (prefers-color-scheme: dark) {
   :root {
     --ease-color-bg:      #0f172a;
     --ease-color-surface: #111827;
     --ease-color-text:    #f8fafc;
-    --ease-color-muted:   #94a3b8;
-    --ease-color-primary: #8b5cf6;
   }
-}</code></pre>
-        </div>
-
-        <h3 class="docs-h3">Manual theme toggle</h3>
-        <p class="docs-p">
-          Use a theme attribute like <code>data-theme="dark"</code> to override tokens on demand.
-          This allows users to switch themes without relying on OS settings.
-        </p>
-
-        <div class="docs-code">
-          <span class="docs-code-lang">css</span>
-          <pre><code>[data-theme="dark"] {
-  --ease-color-bg:      #0f172a;
-  --ease-color-surface: #111827;
-  --ease-color-text:    #f8fafc;
-  --ease-color-muted:   #94a3b8;
-}</code></pre>
-        </div>
-
-        <div class="docs-code">
-          <span class="docs-code-lang">html</span>
-          <pre><code>&lt;html data-theme="dark"&gt;
-  ...
-&lt;/html&gt;</code></pre>
-        </div>
-
-        <h3 class="docs-h3">Recommended variables to override</h3>
-        <ul class="docs-p">
-          <li><code>--ease-color-bg</code></li>
-          <li><code>--ease-color-surface</code></li>
-          <li><code>--ease-color-text</code></li>
-          <li><code>--ease-color-muted</code></li>
-          <li><code>--ease-color-primary</code></li>
-          <li><code>--ease-color-primary-light</code></li>
-          <li><code>--ease-color-primary-dark</code></li>
-        </ul>
-
-        <div class="docs-info">
-          <span class="docs-info-icon">✨</span>
-          <div>
-            Because EaseMotion is built on custom properties, dark mode works cleanly without
-            rewriting component or utility rules.
-          </div>
-        </div>
-      </section>
-
-      <hr class="docs-divider" />
-
-      <!-- ══════════════ UTILITIES ══════════════ -->
-      <section id="utilities" class="docs-section">
-        <h2 class="docs-h2">Utilities</h2>
-        <h3 class="docs-h3">Flexbox</h3>
-        <div class="docs-code">
-          <span class="docs-code-lang">html</span>
-          <pre><code>&lt;!-- Center content --&gt;
-&lt;div class="ease-center"&gt; ... &lt;/div&gt;
-
-&lt;!-- Flex with gap --&gt;
-&lt;div class="ease-flex ease-gap-4 ease-items-center"&gt; ... &lt;/div&gt;
-
-&lt;!-- Wrap utilities --&gt;
-&lt;div class="ease-flex ease-flex-wrap"&gt; ... &lt;/div&gt;
-&lt;div class="ease-flex ease-flex-nowrap"&gt; ... &lt;/div&gt;
-&lt;div class="ease-flex ease-flex-wrap-reverse"&gt; ... &lt;/div&gt;
-
-&lt;!-- Align self utilities --&gt;
-&lt;div class="ease-flex ease-items-stretch"&gt;
-  &lt;div class="ease-self-start"&gt;...&lt;/div&gt;
-  &lt;div class="ease-self-center"&gt;...&lt;/div&gt;
-  &lt;div class="ease-self-end"&gt;...&lt;/div&gt;
-  &lt;div class="ease-self-stretch"&gt;...&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;!-- Space between --&gt;
-&lt;div class="ease-flex ease-justify-between"&gt; ... &lt;/div&gt;</code></pre>
-        </div>
-        <h3 class="docs-h3">Grid</h3>
-        <div class="docs-code">
-          <span class="docs-code-lang">html</span>
-          <pre><code>&lt;!-- 3-column grid --&gt;
-&lt;div class="ease-grid ease-grid-cols-3 ease-gap-6"&gt; ... &lt;/div&gt;
-
-&lt;!-- Grid placement --&gt;
-&lt;div class="ease-grid ease-grid-cols-4 ease-place-center ease-gap-4"&gt;
-  &lt;div class="ease-col-span-2"&gt;...&lt;/div&gt;
-  &lt;div class="ease-col-span-1"&gt;...&lt;/div&gt;
-  &lt;div class="ease-col-span-1"&gt;...&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="ease-grid ease-place-start"&gt; ... &lt;/div&gt;
-&lt;div class="ease-grid ease-place-end"&gt; ... &lt;/div&gt;
-
-&lt;!-- Responsive auto-fit grid --&gt;
-&lt;div class="ease-grid ease-grid-auto ease-gap-4"&gt; ... &lt;/div&gt;</code></pre>
-        </div>
-        <h3 class="docs-h3">Spacing</h3>
-        <div class="docs-code">
-          <span class="docs-code-lang">html</span>
-          <pre><code>&lt;div class="ease-padding-6 ease-margin-4"&gt; ... &lt;/div&gt;
-&lt;div class="ease-px-8 ease-py-4"&gt; ... &lt;/div&gt;</code></pre>
- main
-        </div>
-      </section>
-
-      <hr class="docs-divider" />
-
-      <!-- ══════════════ ANIMATIONS ══════════════ -->
-      <section id="animations" class="docs-section">
-        <h2 class="docs-h2">Animations</h2>
-        <p class="docs-p">Add any entrance class to trigger the animation on page load. Combine with delay classes for
-          staggered sequences.</p>
-
-        <h3 class="docs-h3">Entrance</h3>
-        <table class="docs-table">
-          <thead>
-            <tr>
-              <th>Class</th>
-              <th>Effect</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <code>ease-fade-in</code>
-                <button class="copy-class-btn">Copy Class</button>
-              </td>
-              <td>Fades element from 0 → 1 opacity</td>
-            </tr>
-
-            <tr>
-              <td>
-                <code>ease-slide-up</code>
-                <button class="copy-class-btn">Copy Class</button>
-              </td>
-              <td>Slides element up while fading in</td>
-            </tr>
-
-            <tr>
-              <td>
-                <code>ease-slide-down</code>
-                <button class="copy-class-btn">Copy Class</button>
-              </td>
-              <td>Slides element down while fading in</td>
-            </tr>
-
-            <tr>
-              <td>
-                <code>ease-slide-in-left</code>
-                <button class="copy-class-btn">Copy Class</button>
-              </td>
-              <td>Slides in from the left</td>
-            </tr>
-
-            <tr>
-              <td>
-                <code>ease-slide-in-right</code>
-                <button class="copy-class-btn">Copy Class</button>
-              </td>
-              <td>Slides in from the right</td>
-            </tr>
-
-            <tr>
-              <td>
-                <code>ease-zoom-in</code>
-                <button class="copy-class-btn">Copy Class</button>
-              </td>
-              <td>Scales from 85% with elastic ease</td>
-            </tr>
-
-            <tr>
-              <td>
-                <code>ease-flip</code>
-                <button class="copy-class-btn">Copy Class</button>
-              </td>
-              <td>3D perspective flip from Y-axis</td>
-            </tr>
-            <tr><td><code>ease-fade-in</code></td><td>Fades element from 0 → 1 opacity</td></tr>
-            <tr><td><code>ease-slide-up</code></td><td>Slides element up while fading in</td></tr>
-            <tr><td><code>ease-slide-down</code></td><td>Slides element down while fading in</td></tr>
-            <tr><td><code>ease-slide-left</code></td><td>Slides element left while fading in</td></tr>
-            <tr><td><code>ease-slide-right</code></td><td>Slides element right while fading in</td></tr>
-            <tr><td><code>ease-slide-in-left</code></td><td>Slides in from the left</td></tr>
-            <tr><td><code>ease-slide-in-right</code></td><td>Slides in from the right</td></tr>
-            <tr><td><code>ease-zoom-in</code></td><td>Scales from 85% with elastic ease</td></tr>
-            <tr><td><code>ease-flip</code></td><td>3D perspective flip from Y-axis</td></tr>
-          </tbody>
-        </table>
-
-        <h3 class="docs-h3">Looping</h3>
-        <table class="docs-table">
-          <thead>
-            <tr>
-              <th>Class</th>
-              <th>Effect</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <code>ease-bounce</code>
-                <button class="copy-class-btn">Copy Class</button>
-              </td>
-              <td>Infinite vertical bounce</td>
-            </tr>
-
-            <tr>
-              <td>
-                <code>ease-rotate</code>
-                <button class="copy-class-btn">Copy Class</button>
-              </td>
-              <td>Infinite 360° rotation</td>
-            </tr>
-
-            <tr>
-              <td>
-                <code>ease-pulse</code>
-                <button class="copy-class-btn">Copy Class</button>
-              </td>
-              <td>Infinite opacity pulse</td>
-            </tr>
-
-            <tr>
-              <td>
-                <code>ease-ping</code>
-                <button class="copy-class-btn">Copy Class</button>
-              </td>
-              <td>Expands and fades (ping effect)</td>
-            </tr>
-
-            <tr>
-              <td>
-                <code>ease-shake</code>
-                <button class="copy-class-btn">Copy Class</button>
-              </td>
-              <td>Horizontal shake (one-shot)</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <h3 class="docs-h3">Hover Animations</h3>
-        <table class="docs-table">
-          <thead>
-            <tr>
-              <th>Class</th>
-              <th>Effect</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <code>ease-hover-grow</code>
-                <button class="copy-class-btn">Copy Class</button>
-              </td>
-              <td>Scales up on hover (elastic)</td>
-            </tr>
-
-            <tr>
-              <td>
-                <code>ease-hover-shrink</code>
-                <button class="copy-class-btn">Copy Class</button>
-              </td>
-              <td>Scales down on hover</td>
-            </tr>
-
-            <tr>
-              <td>
-                <code>ease-hover-glow</code>
-                <button class="copy-class-btn">Copy Class</button>
-              </td>
-              <td>Adds primary color glow on hover</td>
-            </tr>
-
-            <tr>
-              <td>
-                <code>ease-hover-lift</code>
-                <button class="copy-class-btn">Copy Class</button>
-              </td>
-              <td>Lifts element with deeper shadow on hover</td>
-            </tr>
-
-            <tr>
-              <td>
-                <code>ease-hover-underline</code>
-                <button class="copy-class-btn">Copy Class</button>
-              </td>
-              <td>Animated underline from left on hover</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <h3 class="docs-h3">Delay Helpers</h3>
-        <div class="docs-code">
-          <span class="docs-code-lang">html</span>
-          <pre><code>&lt;!-- Staggered entrance sequence --&gt;</code></pre>
-            </div>
-          </section>
-
-          <hr class="docs-divider" />
-
-          <!-- ══════════════ ANIMATIONS ══════════════ -->
-          <section id="animations-reference" class="docs-section">
-            <h2 class="docs-h2">Animations Reference</h2>
-            <p class="docs-p">Add any entrance class to trigger the animation on page load. Combine with delay classes
-              for staggered sequences.</p>
-
-            <h3 class="docs-h3">Entrance</h3>
-            <table class="docs-table">
-              <thead>
-                <tr>
-                  <th>Class</th>
-                  <th>Effect</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><code>ease-fade-in</code></td>
-                  <td>Fades element from 0 → 1 opacity</td>
-                </tr>
-                <tr>
-                  <td><code>ease-slide-up</code></td>
-                  <td>Slides element up while fading in</td>
-                </tr>
-                <tr>
-                  <td><code>ease-slide-down</code></td>
-                  <td>Slides element down while fading in</td>
-                </tr>
-                <tr>
-                  <td><code>ease-slide-in-left</code></td>
-                  <td>Slides in from the left</td>
-                </tr>
-                <tr>
-                  <td><code>ease-slide-in-right</code></td>
-                  <td>Slides in from the right</td>
-                </tr>
-                <tr>
-                  <td><code>ease-zoom-in</code></td>
-                  <td>Scales from 85% with elastic ease</td>
-                </tr>
-                <tr>
-                  <td><code>ease-flip</code></td>
-                  <td>3D perspective flip from Y-axis</td>
-                </tr>
-              </tbody>
-            </table>
-
-            <h3 class="docs-h3">Looping</h3>
-            <table class="docs-table">
-              <thead>
-                <tr>
-                  <th>Class</th>
-                  <th>Effect</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><code>ease-bounce</code></td>
-                  <td>Infinite vertical bounce</td>
-                </tr>
-                <tr>
-                  <td><code>ease-rotate</code></td>
-                  <td>Infinite 360° rotation</td>
-                </tr>
-                <tr>
-                  <td><code>ease-pulse</code></td>
-                  <td>Infinite opacity pulse</td>
-                </tr>
-                <tr>
-                  <td><code>ease-ping</code></td>
-                  <td>Expands and fades (ping effect)</td>
-                </tr>
-                <tr>
-                  <td><code>ease-shake</code></td>
-                  <td>Horizontal shake (one-shot)</td>
-                </tr>
-              </tbody>
-            </table>
-
-            <h3 class="docs-h3">Hover Animations</h3>
-            <div class="docs-info">
-              <span class="docs-info-icon">✨</span>
-              <div>
-                Example showcases:
-                <br>
-                • Hover Animation Showcase
-                <br>
-                • Hover Sweep Background
-              </div>
-            </div>
-            <table class="docs-table">
-              <thead>
-                <tr>
-                  <th>Class</th>
-                  <th>Effect</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><code>ease-hover-grow</code></td>
-                  <td>Scales up on hover (elastic)</td>
-                </tr>
-                <tr>
-                  <td><code>ease-hover-shrink</code></td>
-                  <td>Scales down on hover</td>
-                </tr>
-                <tr>
-                  <td><code>ease-hover-glow</code></td>
-                  <td>Adds primary color glow on hover</td>
-                </tr>
-                <tr>
-                  <td><code>ease-hover-lift</code></td>
-                  <td>Lifts element with deeper shadow on hover</td>
-                </tr>
-                <tr>
-                  <td><code>ease-hover-underline</code></td>
-                  <td>Animated underline from left on hover</td>
-                </tr>
-              </tbody>
-            </table>
-
-            <h3 class="docs-h3">Delay Helpers</h3>
-            <div class="docs-code">
-              <span class="docs-code-lang">html</span>
-              <pre><code>&lt;!-- Staggered entrance sequence --&gt;
- main
-&lt;div class="ease-slide-up ease-delay-100"&gt;First&lt;/div&gt;
+}</code></pre></div>
+      <div class="docs-info"><span class="docs-info-icon">✨</span><div>Because EaseMotion is built on custom properties, dark mode works cleanly without rewriting component or utility rules.</div></div>
+    </section>
+    <hr class="docs-divider"/>
+    <section id="utilities" class="docs-section">
+      <h2>Utilities</h2>
+      <h3>Flexbox</h3>
+      <div class="docs-code"><span class="docs-lang">html</span><pre><code>&lt;div class="ease-flex ease-gap-4 ease-items-center"&gt; ... &lt;/div&gt;
+&lt;div class="ease-center"&gt; ... &lt;/div&gt;</code></pre></div>
+      <h3>Grid</h3>
+      <div class="docs-code"><span class="docs-lang">html</span><pre><code>&lt;div class="ease-grid ease-grid-cols-3 ease-gap-6"&gt; ... &lt;/div&gt;
+&lt;div class="ease-grid ease-grid-auto ease-gap-4"&gt; ... &lt;/div&gt;</code></pre></div>
+      <h3>Spacing</h3>
+      <div class="docs-code"><span class="docs-lang">html</span><pre><code>&lt;div class="ease-padding-6 ease-margin-4"&gt; ... &lt;/div&gt;</code></pre></div>
+    </section>
+    <hr class="docs-divider"/>
+    <section id="animations" class="docs-section">
+      <h2>Animations</h2>
+      <p>Add any entrance class to trigger on page load. Combine with delay classes for staggered sequences.</p>
+      <h3>Entrance</h3>
+      <table><thead><tr><th>Class</th><th>Effect</th></tr></thead><tbody>
+        <tr><td><code>ease-fade-in</code><button class="copy-class-btn">Copy</button></td><td>Fades from 0 → 1 opacity</td></tr>
+        <tr><td><code>ease-slide-up</code><button class="copy-class-btn">Copy</button></td><td>Slides up while fading in</td></tr>
+        <tr><td><code>ease-slide-down</code><button class="copy-class-btn">Copy</button></td><td>Slides down while fading in</td></tr>
+        <tr><td><code>ease-slide-in-left</code><button class="copy-class-btn">Copy</button></td><td>Slides in from the left</td></tr>
+        <tr><td><code>ease-slide-in-right</code><button class="copy-class-btn">Copy</button></td><td>Slides in from the right</td></tr>
+        <tr><td><code>ease-zoom-in</code><button class="copy-class-btn">Copy</button></td><td>Scales from 85% elastic</td></tr>
+        <tr><td><code>ease-flip</code><button class="copy-class-btn">Copy</button></td><td>3D perspective Y-axis flip</td></tr>
+      </tbody></table>
+      <h3>Looping</h3>
+      <table><thead><tr><th>Class</th><th>Effect</th></tr></thead><tbody>
+        <tr><td><code>ease-bounce</code><button class="copy-class-btn">Copy</button></td><td>Infinite vertical bounce</td></tr>
+        <tr><td><code>ease-rotate</code><button class="copy-class-btn">Copy</button></td><td>Infinite 360° rotation</td></tr>
+        <tr><td><code>ease-pulse</code><button class="copy-class-btn">Copy</button></td><td>Infinite opacity pulse</td></tr>
+        <tr><td><code>ease-ping</code><button class="copy-class-btn">Copy</button></td><td>Expand and fade (ping)</td></tr>
+        <tr><td><code>ease-shake</code><button class="copy-class-btn">Copy</button></td><td>Horizontal shake (one-shot)</td></tr>
+      </tbody></table>
+      <h3>Hover</h3>
+      <table><thead><tr><th>Class</th><th>Effect</th></tr></thead><tbody>
+        <tr><td><code>ease-hover-grow</code><button class="copy-class-btn">Copy</button></td><td>Scales up elastic</td></tr>
+        <tr><td><code>ease-hover-shrink</code><button class="copy-class-btn">Copy</button></td><td>Scales down</td></tr>
+        <tr><td><code>ease-hover-glow</code><button class="copy-class-btn">Copy</button></td><td>Primary color glow</td></tr>
+        <tr><td><code>ease-hover-lift</code><button class="copy-class-btn">Copy</button></td><td>Lifts with shadow</td></tr>
+        <tr><td><code>ease-hover-underline</code><button class="copy-class-btn">Copy</button></td><td>Animated underline</td></tr>
+      </tbody></table>
+      <h3>Delay Helpers</h3>
+      <div class="docs-code"><span class="docs-lang">html</span><pre><code>&lt;div class="ease-slide-up ease-delay-100"&gt;First&lt;/div&gt;
 &lt;div class="ease-slide-up ease-delay-200"&gt;Second&lt;/div&gt;
-&lt;div class="ease-slide-up ease-delay-300"&gt;Third&lt;/div&gt;</code></pre>
-        </div>
-      </section>
-
-      <hr class="docs-divider" />
-
-      <!-- ══════════════ BROWSER COMPATIBILITY ══════════════ -->
-      <section id="browser-compatibility" class="docs-section">
-        <h2 class="docs-h2">Browser Compatibility</h2>
-        <p class="docs-p">
-          EaseMotion CSS core animations, utilities, and components work across modern browsers. Some advanced CSS
-          features have limited support.
-        </p>
-        <table class="docs-table">
-          <thead>
-            <tr>
-              <th>Feature</th>
-              <th>Chrome</th>
-              <th>Edge</th>
-              <th>Firefox</th>
-              <th>Safari</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td>Core Animations</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
-            <tr><td>Utility Classes</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
-            <tr><td>CSS Custom Properties</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
-            <tr><td>@property</td><td>✅</td><td>✅</td><td>❌</td><td>⚠️ Partial</td></tr>
-            <tr><td>Scroll-Driven Animations</td><td>✅</td><td>⚠️ Partial</td><td>❌</td><td>❌</td></tr>
-          </tbody>
-        </table>
-        <div class="docs-info">
-          <span class="docs-info-icon">🔗</span>
-          <div>
-            Browser support references:
-            <br><a href="https://caniuse.com/?search=%40property" target="_blank">@property</a>
-            <br><a href="https://caniuse.com/?search=scroll-timeline" target="_blank">Scroll-Driven Animations</a>
-          </div>
-        </div>
-      </section>
-
-      <hr class="docs-divider" />
-
-      <!-- ══════════════ COMPONENTS ══════════════ -->
-      <section id="components" class="docs-section">
-        <h2 class="docs-h2">Components</h2>
-        <p class="docs-p">
-          EaseMotion CSS includes reusable UI components such as Buttons, Cards and Scroll Progress indicators.
-        </p>
-      </section>
-
-      <hr class="docs-divider" />
-
-      <!-- ══════════════ BUTTONS ══════════════ -->
-      <section id="buttons" class="docs-section">
-        <h2 class="docs-h2">Buttons</h2>
-        <p class="docs-p">All buttons require the base <code>ease-btn</code> class plus one or more modifier classes.
-        </p>
-        <div class="docs-code">
-          <span class="docs-code-lang">html</span>
-          <pre><code>&lt;!-- Variants --&gt;
-&lt;button class="ease-btn ease-btn-primary"&gt;Primary&lt;/button&gt;
+&lt;div class="ease-slide-up ease-delay-300"&gt;Third&lt;/div&gt;</code></pre></div>
+    </section>
+    <hr class="docs-divider"/>
+    <section id="components" class="docs-section">
+      <h2>Components</h2>
+      <p>EaseMotion CSS includes reusable UI components such as Buttons, Cards and Scroll Progress indicators.</p>
+    </section>
+    <hr class="docs-divider"/>
+    <section id="buttons" class="docs-section">
+      <h2>Buttons</h2>
+      <p>All buttons require the base <code>ease-btn</code> class plus one or more modifier classes.</p>
+      <div class="docs-code"><span class="docs-lang">html</span><pre><code>&lt;button class="ease-btn ease-btn-primary"&gt;Primary&lt;/button&gt;
 &lt;button class="ease-btn ease-btn-success"&gt;Success&lt;/button&gt;
 &lt;button class="ease-btn ease-btn-danger"&gt;Danger&lt;/button&gt;
 &lt;button class="ease-btn ease-btn-outline"&gt;Outline&lt;/button&gt;
-&lt;button class="ease-btn ease-btn-ghost"&gt;Ghost&lt;/button&gt;
-&lt;button class="ease-btn ease-btn-primary ease-btn-hover"&gt;Animated&lt;/button&gt;
-&lt;button class="ease-btn ease-btn-primary ease-btn-sm"&gt;Small&lt;/button&gt;
-&lt;button class="ease-btn ease-btn-primary ease-btn-lg"&gt;Large&lt;/button&gt;
-&lt;button class="ease-btn ease-btn-primary ease-btn-pill"&gt;Pill&lt;/button&gt;</code></pre>
-        </div>
-      </section>
-
-      <hr class="docs-divider" />
-
-      <!-- ══════════════ CARDS ══════════════ -->
-      <section id="cards" class="docs-section">
-        <h2 class="docs-h2">Cards</h2>
-        <div class="docs-code">
-          <span class="docs-code-lang">html</span>
-          <pre><code>&lt;!-- Basic card --&gt;
-&lt;div class="ease-card"&gt;
+&lt;button class="ease-btn ease-btn-ghost"&gt;Ghost&lt;/button&gt;</code></pre></div>
+    </section>
+    <hr class="docs-divider"/>
+    <section id="cards" class="docs-section">
+      <h2>Cards</h2>
+      <div class="docs-code"><span class="docs-lang">html</span><pre><code>&lt;div class="ease-card"&gt;
   &lt;h3 class="ease-card-title"&gt;Title&lt;/h3&gt;
-  &lt;p&gt;Card content goes here.&lt;/p&gt;
+  &lt;p&gt;Content goes here.&lt;/p&gt;
 &lt;/div&gt;
-
 &lt;div class="ease-card ease-card-shadow ease-card-hover"&gt;
   &lt;div class="ease-card-header"&gt;...&lt;/div&gt;
   &lt;div class="ease-card-body"&gt;...&lt;/div&gt;
   &lt;div class="ease-card-footer"&gt;...&lt;/div&gt;
-&lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
+    </section>
+    <hr class="docs-divider"/>
+    <section id="scroll-progress" class="docs-section">
+      <h2>Scroll Progress Bar</h2>
+      <p>A horizontal progress bar at the top that tracks scroll position. Powered by <strong>CSS Scroll-Driven Animations</strong> — zero JavaScript.</p>
+      <div class="docs-code"><span class="docs-lang">html</span><pre><code>&lt;div class="ease-scroll-progress"&gt;&lt;/div&gt;</code></pre></div>
+      <div class="docs-info"><span class="docs-info-icon">💡</span><div>Add <code>ease-scroll-progress-root</code> to track page scroll instead of nearest ancestor.</div></div>
+    </section>
+    <hr class="docs-divider"/>
+    <section id="contributing" class="docs-section">
+      <h2>Contributing</h2>
+      <p>Contributions are welcome. Please read the <a href="https://github.com/SAPTARSHI-coder/EaseMotion-css/blob/main/CONTRIBUTING.md" style="color:var(--accent-light)">CONTRIBUTING.md</a> before submitting a pull request.</p>
+      <div class="docs-info"><span class="docs-info-icon">🔒</span><div>Only maintainers can merge pull requests.</div></div>
+    </section>
+    <hr class="docs-divider"/>
+    <section id="naming" class="docs-section">
+      <h2>Naming Rules</h2>
+      <p>All class names must follow the <code>ease-</code> prefix convention:</p>
+      <div class="docs-code"><span class="docs-lang">text</span><pre><code>✅  ease-fade-in   ✅  ease-btn-primary
+✅  ease-card-hover   ✅  ease-hover-glow
+❌  btn-primary       (missing ease- prefix)
+❌  easeFadeIn        (camelCase not allowed)
+❌  ease_slide_up     (underscores not allowed)</code></pre></div>
+    </section>
+  </main>
+</div>
 
-&lt;div class="ease-card ease-card-glass"&gt;...&lt;/div&gt;
+<footer class="docs-footer">Built with ❤️ using <strong>EaseMotion CSS</strong> — the animation-first, human-readable CSS framework.</footer>
 
-&lt;!-- Neumorphic card --&gt;
-&lt;div class="ease-card ease-card-neumorphic"&gt;...&lt;/div&gt;
+<script>
+/* ── Theme ── */
+const toggleBtn=document.getElementById('theme-toggle');
+const overlay=document.getElementById('themeOverlay');
+toggleBtn.addEventListener('click',()=>{
+  const html=document.documentElement;
+  const isLight=html.getAttribute('data-theme')==='light';
+  document.body.classList.add('theming');
+  overlay.className='theme-overlay '+(isLight?'to-dark':'to-light');
+  requestAnimationFrame(()=>{
+    overlay.classList.add('active');
+    setTimeout(()=>{
+      html.setAttribute('data-theme',isLight?'dark':'light');
+      localStorage.setItem('theme',isLight?'dark':'light');
+      setTimeout(()=>{
+        overlay.classList.remove('active');
+        document.body.classList.remove('theming');
+      },100);
+    },600);
+  });
+});
+const savedTheme=localStorage.getItem('theme');
+if(savedTheme==='light')document.documentElement.setAttribute('data-theme','light');
 
-&lt;!-- Accent border --&gt;
-&lt;div class="ease-card ease-card-accent"&gt;...&lt;/div&gt;</code></pre>
-        </div>
-      </section>
+/* ── Sidebar ── */
+const st=document.getElementById('sidebarToggle');
+const sb=document.querySelector('.docs-sidebar');
+const so=document.getElementById('sidebarOverlay');
+st.addEventListener('click',()=>{sb.classList.toggle('open');so.classList.toggle('open')});
+so.addEventListener('click',()=>{sb.classList.remove('open');so.classList.remove('open')});
+const sc=document.getElementById('sidebarClose');
+if(sc)sc.addEventListener('click',()=>{sb.classList.remove('open');so.classList.remove('open')});
+document.querySelectorAll('.sd-nav a').forEach(l=>l.addEventListener('click',()=>{sb.classList.remove('open');so.classList.remove('open')}));
 
-      <hr class="docs-divider" />
+/* ── Intersection Observer ── */
+let cur=null;
+document.querySelectorAll(".docs-section").forEach(s=>{new IntersectionObserver(ents=>{ents.forEach(e=>{if(e.isIntersecting){const id=e.target.getAttribute("id");const link=document.querySelector(`.sd-nav a[href="#${id}"]`);if(link&&cur!==link){if(cur)cur.classList.remove("active");link.classList.add("active");cur=link}}})},{threshold:.4}).observe(s)});
 
-      <!-- ══════════════ SCROLL PROGRESS BAR ══════════════ -->
-      <section id="scroll-progress" class="docs-section">
-        <h2 class="docs-h2">Scroll Progress Bar</h2>
-        <p class="docs-p">
-          A horizontal progress bar fixed at the top of the page that visually tracks scroll position. 
-          Powered purely by the native <strong>CSS Scroll-Driven Animations API</strong>, it runs on the browser's compositor thread with full hardware acceleration, requiring zero JavaScript listeners.
-        </p>
+/* ── Clipboard helpers ── */
+let copyTimer;
+async function copyCode(btn,text){try{await navigator.clipboard.writeText(text);btn.innerHTML='<svg viewBox="0 0 24 24" width="12" height="12" stroke="currentColor" stroke-width="2.5" fill="none"><polyline points="20 6 9 17 4 12"/></svg>Copied!';btn.classList.add('copied');clearTimeout(copyTimer);copyTimer=setTimeout(()=>{btn.innerHTML='<svg viewBox="0 0 24 24" width="12" height="12" stroke="currentColor" stroke-width="2" fill="none"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span>Copy</span>';btn.classList.remove('copied')},2000)}catch(e){}}
 
-        <h3 class="docs-h3">HTML Element</h3>
-        <p class="docs-p">Place this container anywhere in your document (ideally fixed to the top of the body/viewport):</p>
-        <div class="docs-code">
-          <span class="docs-code-lang">html</span>
-          <pre><code>&lt;!-- Simple Scroll Progress Bar --&gt;
-&lt;div class="ease-scroll-progress"&gt;&lt;/div&gt;</code></pre>
-        </div>
+async function copyText(text,btn){try{await navigator.clipboard.writeText(text);const orig=btn.textContent;btn.textContent='✓ Copied!';btn.classList.add('copied');setTimeout(()=>{btn.textContent=orig;btn.classList.remove('copied')},2000)}catch(e){}}
+document.querySelectorAll(".copy-class-btn").forEach(b=>{b.addEventListener("click",async()=>{const t=b.parentElement.querySelector("code").textContent.trim();await copyText(t,b)})});
 
-        <h3 class="docs-h3">Theme Modifier Classes</h3>
-        <p class="docs-p">You can stack modifier classes to style the scroll bar using standard color palettes:</p>
-        <div class="docs-code">
-          <span class="docs-code-lang">html</span>
-          <pre><code>&lt;!-- Success (Green Accent) --&gt;
-&lt;div class="ease-scroll-progress ease-scroll-progress-success"&gt;&lt;/div&gt;
+/* ── Send code to AI (pre-fills chat box via URL params) ── */
+function sendToAI(ai,code,btn){
+  navigator.clipboard.writeText(code);
+  const prefix='Analyze this CSS:\n';
+  const urlBase={chatgpt:'https://chatgpt.com/?prompt=',claude:'https://claude.ai/new?q=',gemini:'https://gemini.google.com/app'};
+  window.open(urlBase[ai]+(ai==='gemini'?'':encodeURIComponent(prefix+code)),'_blank','noopener');
+  const orig=btn.textContent;
+  btn.textContent=ai==='gemini'?'✓ Copied (Paste in Gemini)':'✓ Opening…';
+  btn.classList.add('copied');
+  setTimeout(()=>{btn.textContent=orig;btn.classList.remove('copied')},3000);
+}
 
-&lt;!-- Danger (Red Accent) --&gt;
-&lt;div class="ease-scroll-progress ease-scroll-progress-danger"&gt;&lt;/div&gt;
+/* ── Enhance all code blocks ── */
+function enhanceCodeBlocks(){
+  document.querySelectorAll('.docs-code').forEach(block=>{
+    if(block.querySelector('.code-toolbar'))return;
+    const codeEl=block.querySelector('code');
+    if(!codeEl)return;
+    const code=codeEl.textContent;
+    const toolbar=document.createElement('div');
+    toolbar.className='code-toolbar';
 
-&lt;!-- Warning (Amber Accent) --&gt;
-&lt;div class="ease-scroll-progress ease-scroll-progress-warning"&gt;&lt;/div&gt;</code></pre>
-        </div>
+    const copyBtn=document.createElement('button');
+    copyBtn.className='code-copy-btn';
+    copyBtn.innerHTML='<svg viewBox="0 0 24 24" width="12" height="12" stroke="currentColor" stroke-width="2" fill="none"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span>Copy</span>';
+    copyBtn.addEventListener('click',()=>copyCode(copyBtn,code));
 
-        <h3 class="docs-h3">CSS Customization</h3>
-        <p class="docs-p">Customize the progress bar height, background gradient, glow shadows, and overlay levels globally or per-element using CSS variables:</p>
-        <table class="docs-table">
-          <thead>
-            <tr>
-              <th>Variable Name</th>
-              <th>Default Value</th>
-              <th>Description</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><code>--ease-scroll-progress-height</code></td>
-              <td><code>4px</code></td>
-              <td>The height of the horizontal progress bar.</td>
-            </tr>
-            <tr>
-              <td><code>--ease-scroll-progress-bg</code></td>
-              <td><code>linear-gradient(...)</code></td>
-              <td>Custom background color or gradient sweep.</td>
-            </tr>
-            <tr>
-              <td><code>--ease-scroll-progress-shadow</code></td>
-              <td><code>0 2px 10px rgba(108, 99, 255, 0.45)</code></td>
-              <td>Glow drop shadow effect at the bottom of the bar.</td>
-            </tr>
-            <tr>
-              <td><code>--ease-scroll-progress-z-index</code></td>
-              <td><code>9999</code> (toast level)</td>
-              <td>Position overlay depth.</td>
-            </tr>
-          </tbody>
-        </table>
+    const dd=document.createElement('div');
+    dd.className='ai-dropdown';
+    const ddBtn=document.createElement('button');
+    ddBtn.className='ai-dd-btn';
+    ddBtn.innerHTML='<svg viewBox="0 0 24 24" width="12" height="12" stroke="currentColor" stroke-width="2" fill="none"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg><span class="ai-label">AI</span>';
+    ddBtn.addEventListener('click',e=>{e.stopPropagation();dd.classList.toggle('open')});
 
-        <div class="docs-info">
-          <span class="docs-info-icon">💡</span>
-          <div>
-            <strong>Force Root Scroll:</strong> If the progress bar is nested inside a container but you want it to always track page/viewport scroll instead of nearest scrollable ancestor, add the class <code>ease-scroll-progress-root</code>.
-          </div>
-        </div>
-      </section>
-
-      <hr class="docs-divider" />
-
-      <!-- ══════════════ CONTRIBUTING ══════════════ -->
-      <section id="contributing" class="docs-section">
-        <h2 class="docs-h2">Contributing</h2>
-        <p class="docs-p">
-          Contributions are welcome. Please read the
-          <a href="https://github.com/SAPTARSHI-coder/EaseMotion-css/blob/main/CONTRIBUTING.md">CONTRIBUTING.md</a> before submitting a pull request.
-          All PRs are reviewed by the maintainer before merging.
-        </p>
-        <div class="docs-info">
-          <span class="docs-info-icon">🔒</span>
-          <div>Only maintainers can merge pull requests. Please do not merge your own PRs.</div>
-        </div>
-      </section>
-
-      <section id="naming" class="docs-section">
-        <h2 class="docs-h2">Naming Rules</h2>
-        <p class="docs-p">All class names must follow the <code>ease-</code> prefix convention:</p>
-        <div class="docs-code">
-          <span class="docs-code-lang">text</span>
-          <pre><code>✅  ease-fade-in
-✅  ease-btn-primary
-✅  ease-card-hover
-✅  ease-hover-glow
-
-❌  btn-primary         (missing ease- prefix)
-❌  easeFadeIn          (camelCase not allowed)
-❌  ease_slide_up       (underscores not allowed)
-❌  f-fade              (too abbreviated)</code></pre>
-        </div>
-      </section>
-
-    </main>
-  </div>
-
-  
-
-  <script>
-    // Mobile sidebar toggle logic
-    const sidebarToggle = document.getElementById('sidebarToggle');
-    const sidebar = document.querySelector('.docs-sidebar');
-    const overlay = document.getElementById('sidebarOverlay');
-
-    sidebarToggle.addEventListener('click', () => {
-      sidebar.classList.toggle('open');
-      overlay.classList.toggle('open');
+    const menu=document.createElement('div');
+    menu.className='ai-dd-menu';
+    const items=[
+      {id:'chatgpt',label:'ChatGPT',svg:'<svg viewBox="0 0 24 24" fill="#10a37f"><path d="M11.97 2.5a4.5 4.5 0 0 1 4.11 2.62l.58 1.23 1.33-.27a4.5 4.5 0 0 1 4.94 2.86 4.5 4.5 0 0 1-1.72 5.24l-1.07.76.33 1.27a4.5 4.5 0 0 1-2.14 5.17 4.5 4.5 0 0 1-5.53-.62L12 19.58l-.87.78a4.5 4.5 0 0 1-5.53.62 4.5 4.5 0 0 1-2.14-5.17l.33-1.27-1.07-.76a4.5 4.5 0 0 1-1.72-5.24 4.5 4.5 0 0 1 4.94-2.86l1.33.27.58-1.23A4.5 4.5 0 0 1 11.97 2.5z"/></svg>'},
+      {id:'claude',label:'Claude',svg:'<svg viewBox="0 0 24 24" fill="#d97706"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8 8h8M8 12h6M8 16h4" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>'},
+      {id:'gemini',label:'Gemini',svg:'<svg viewBox="0 0 24 24"><path d="M12 2l2.5 7H22l-5.5 4 2.5 7-7-4.5L4 20l2.5-7L2 9h7.5L12 2z" fill="#4285f4"/></svg>'}
+    ];
+    items.forEach(({id,label,svg})=>{
+      const btn=document.createElement('button');
+      btn.innerHTML=svg+label;
+      btn.addEventListener('click',e=>{e.stopPropagation();sendToAI(id,code,btn);dd.classList.remove('open')});
+      menu.appendChild(btn);
     });
+    dd.appendChild(ddBtn);
+    dd.appendChild(menu);
+    toolbar.appendChild(copyBtn);
+    toolbar.appendChild(dd);
+    block.appendChild(toolbar);
 
-    overlay.addEventListener('click', () => {
-      sidebar.classList.remove('open');
-      overlay.classList.remove('open');
+    const oldBtn=block.querySelector('.copy-btn');
+    if(oldBtn)oldBtn.remove();
+  });
+}
+
+/* ── Scrape all page docs for sending to AI ── */
+function buildDocsPrompt(){
+  const title=document.querySelector('h1')?.textContent||'EaseMotion CSS';
+  const sections=[];
+  document.querySelectorAll('.docs-section').forEach(sec=>{
+    const h2=sec.querySelector('h2');
+    const heading=h2?h2.textContent.trim():'';
+    const text=[];
+    sec.querySelectorAll('p,li,td').forEach(el=>text.push(el.textContent.trim()));
+    const codes=[];
+    sec.querySelectorAll('.docs-code code').forEach(el=>codes.push(el.textContent.trim()));
+    if(heading||text.length||codes.length)sections.push({heading,text,codes});
+  });
+  let md='# '+title+'\n\nEaseMotion CSS Documentation\n\n';
+  sections.forEach(s=>{
+    if(s.heading)md+='## '+s.heading+'\n\n';
+    s.text.forEach(t=>{if(t)md+='- '+t+'\n'});
+    if(s.codes.length){md+='\n### Code Examples\n\n';s.codes.forEach(c=>md+='```css\n'+c+'\n```\n\n')}
+  });
+  md+='---\nI want to use EaseMotion CSS in my project. Help me understand the framework and how to use the features shown above. Give me code snippets and best practices.';
+  return md;
+}
+
+/* ── Header AI button ── */
+const hdrAiToggle=document.getElementById('hdrAiToggle');
+const hdrAiDrop=document.getElementById('hdrAiDrop');
+if(hdrAiToggle){
+  hdrAiToggle.addEventListener('click',e=>{e.stopPropagation();hdrAiDrop.classList.toggle('open')});
+  hdrAiDrop.querySelectorAll('.hdr-ai-menu button').forEach(btn=>{
+    btn.addEventListener('click',e=>{
+      e.stopPropagation();
+      const ai=btn.getAttribute('data-ai');
+      const prompt=buildDocsPrompt();
+      navigator.clipboard.writeText(prompt);
+      const urlBase={chatgpt:'https://chatgpt.com/?prompt=',claude:'https://claude.ai/new?q=',gemini:'https://gemini.google.com/app'};
+      window.open(urlBase[ai]+(ai==='gemini'?'':encodeURIComponent(prompt)),'_blank','noopener');
+      const orig=btn.textContent;
+      btn.textContent=ai==='gemini'?'✓ Copied! Paste in Gemini':'✓ Opening…';
+      btn.classList.add('copied');
+      setTimeout(()=>{btn.textContent=orig;btn.classList.remove('copied')},3000);
+      hdrAiDrop.classList.remove('open');
     });
+  });
+}
 
-    document.querySelectorAll('.sidebar-nav a').forEach(link => {
-      link.addEventListener('click', () => {
-        sidebar.classList.remove('open');
-        overlay.classList.remove('open');
-      });
-    });
-
-    // Active section highlight on scroll
-    const sections = document.querySelectorAll(".docs-section");
-    const navLinks = document.querySelectorAll(".sidebar-nav a");
-    let currentActive = null;
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const id = entry.target.getAttribute("id");
-          const activeLink = document.querySelector(`.sidebar-nav a[href="#${id}"]`);
-
-          if (activeLink && currentActive !== activeLink) {
-            if (currentActive) currentActive.classList.remove("active");
-
-            activeLink.classList.add("active");
-            currentActive = activeLink;
-          }
-        }
-      });
-    }, {
-      threshold: 0.4
-    });
-
-    sections.forEach(section => observer.observe(section));
-
-    async function copyToClipboard(text) {
-      try {
-        if (navigator.clipboard) {
-          await navigator.clipboard.writeText(text);
-        } else {
-          const textarea = document.createElement("textarea");
-          textarea.value = text;
-          document.body.appendChild(textarea);
-          textarea.select();
-          document.execCommand("copy");
-          document.body.removeChild(textarea);
-        }
-        return true;
-      } catch (err) {
-        console.error("Copy failed:", err);
-        return false;
-      }
-    }
-
-    document.querySelectorAll(".copy-class-btn").forEach(button => {
-      button.addEventListener("click", async () => {
-        const className =
-          button.parentElement.querySelector("code").textContent.trim();
-
-        const success = await copyToClipboard(className);
-
-        if (!success) return;
-
-        const originalText = button.textContent;
-
-        button.textContent = "✓ Copied!";
-        button.classList.add("copied");
-
-        setTimeout(() => {
-          button.textContent = originalText;
-          button.classList.remove("copied");
-        }, 2000);
-      });
-    });
-    // Dark/Light mode toggle
-const themeToggle = document.getElementById('theme-toggle');
-
-themeToggle.addEventListener('click', () => {
-  const html = document.documentElement;
-  if (html.getAttribute('data-theme') === 'light') {
-    html.removeAttribute('data-theme');
-    localStorage.setItem('theme', 'dark');
-  } else {
-    html.setAttribute('data-theme', 'light');
-    localStorage.setItem('theme', 'light');
-  }
+/* ── Close all dropdowns on outside click ── */
+document.addEventListener('click',()=>{
+  document.querySelectorAll('.ai-dropdown.open').forEach(d=>d.classList.remove('open'));
+  document.querySelectorAll('.hdr-ai-drop.open').forEach(d=>d.classList.remove('open'));
 });
 
-// Persist theme on page load
-const savedTheme = localStorage.getItem('theme');
-if (savedTheme === 'light') {
-  document.documentElement.setAttribute('data-theme', 'light');
+/* ── Init ── */
+function init(){
+  enhanceCodeBlocks();
+  /* close header AI dropdown on Escape */
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'){document.querySelectorAll('.hdr-ai-drop.open').forEach(d=>d.classList.remove('open'));document.querySelectorAll('.ai-dropdown.open').forEach(d=>d.classList.remove('open'))}});
 }
-  </script>
+if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',init);
+else init();
+</script>
 </body>
-
 </html>
