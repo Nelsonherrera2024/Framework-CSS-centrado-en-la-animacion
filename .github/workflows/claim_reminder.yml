@@ -19,7 +19,7 @@ jobs:
     steps:
       # We must checkout the repo to access our external JS script
       - name: Checkout Repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Post /claim Reminder
         uses: actions/github-script@v7
