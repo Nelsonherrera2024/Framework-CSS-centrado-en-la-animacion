@@ -24,7 +24,7 @@ jobs:
 
       - name: Validate Submissions
         id: validate
-        uses: actions/github-script@v8
+        uses: actions/github-script@v9
         with:
           script: |
             const fs = require('fs');
@@ -170,7 +170,7 @@ jobs:
 
       - name: Create/Update Failure Comment
         if: failure() && steps.validate.outputs.hasFailures == 'true'
-        uses: actions/github-script@v8
+        uses: actions/github-script@v9
         with:
           script: |
             const failures = JSON.parse(`${{ steps.validate.outputs.failures }}`);
@@ -253,7 +253,7 @@ jobs:
 
       - name: Create/Update Success Comment
         if: success() && steps.validate.outputs.hasFailures == 'false' && steps.validate.outputs.successes != '[]'
-        uses: actions/github-script@v8
+        uses: actions/github-script@v9
         with:
           script: |
             const successes = JSON.parse(`${{ steps.validate.outputs.successes }}`);
@@ -312,7 +312,7 @@ jobs:
 
       - name: Add Label for Missing Files
         if: failure() && steps.validate.outputs.hasFailures == 'true'
-        uses: actions/github-script@v8
+        uses: actions/github-script@v9
         with:
           script: |
             try {
@@ -329,7 +329,7 @@ jobs:
 
       - name: Remove Labels on Success
         if: success() && steps.validate.outputs.hasFailures == 'false'
-        uses: actions/github-script@v8
+        uses: actions/github-script@v9
         with:
           script: |
             try {

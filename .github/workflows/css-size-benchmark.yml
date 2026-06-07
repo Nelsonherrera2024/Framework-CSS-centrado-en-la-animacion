@@ -68,7 +68,7 @@ jobs:
           echo "MAIN_BROTLI=$(echo $SIZES | cut -d',' -f3)" >> $GITHUB_ENV
 
       - name: Post Comment on PR
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           script: |
             const formatBytes = (bytes) => (bytes / 1024).toFixed(2) + ' KB';
