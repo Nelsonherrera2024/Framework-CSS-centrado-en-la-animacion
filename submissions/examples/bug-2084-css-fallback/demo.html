@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bug Fix #2084: CSS Custom Property Fallback Consistency</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>Bug Fix #2084: CSS Custom Property Fallback Consistency</h1>
+
+  <!-- Bug Explanation -->
+  <div class="bug-section">
+    <h2>Bug Summary — What Was Fixed</h2>
+    <ul class="bug-list">
+      <li><strong>components/cards.css</strong> — <code>.ease-card</code> fallback was <code>#141e33</code> (dark value). Changed to <code>#ffffff</code> (light default from variables.css)</li>
+      <li><strong>components/navbar.css</strong> — <code>.ease-navbar-glass</code> hardcoded <code>rgba(255,255,255,0.18)</code>. Replaced with <code>var(--ease-glass-bg)</code> and <code>var(--ease-glass-border)</code></li>
+      <li><strong>core/variables.css</strong> — Duplicate <code>--ease-glass-bg</code> and <code>--ease-glass-border</code> declarations. Now single clean <code>color-mix()</code> declarations</li>
+    </ul>
+  </div>
+
+  <!-- Component Demos -->
+  <div class="demo-grid">
+
+    <!-- Card Component -->
+    <div class="demo-card">
+      <span class="badge badge-fixed">FIXED</span>
+      <h2>.ease-card</h2>
+      <p>Fallback changed from <code>#141e33</code> (dark) to <code>#ffffff</code> (light). Now matches variables.css default.</p>
+    </div>
+
+    <!-- Navbar Component -->
+    <div class="demo-card">
+      <span class="badge badge-fixed">FIXED</span>
+      <h2>.ease-navbar-glass</h2>
+      <p>Uses <code>var(--ease-glass-bg)</code> and <code>var(--ease-glass-border)</code> instead of hardcoded rgba. Now adapts to dark mode.</p>
+      <div class="demo-navbar">
+        <strong style="font-weight: 700;">Brand</strong>
+        <span style="font-size: 0.875rem; color: #64748b;">Nav Items</span>
+      </div>
+    </div>
+
+    <!-- Variables Fix -->
+    <div class="demo-card">
+      <span class="badge badge-fixed">FIXED</span>
+      <h2>variables.css</h2>
+      <p>Removed duplicate <code>--ease-glass-bg</code> and <code>--ease-glass-border</code> declarations. Single <code>color-mix()</code> values used.</p>
+    </div>
+
+  </div>
+
+  <!-- Fix Note -->
+  <div class="note">
+    <strong>Core Files Changed:</strong> The bug fix modifies <code>core/variables.css</code>, <code>components/cards.css</code>, and <code>components/navbar.css</code> to ensure CSS custom property fallbacks are consistent with the design token defaults.
+  </div>
+
+</body>
+</html>
