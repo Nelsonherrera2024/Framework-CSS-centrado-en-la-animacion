@@ -44,10 +44,20 @@
 }
 
 .ease-bounce-in {
-  animation: ease-kf-bounce-in var(--ease-speed-slow) ease-out forwards;
+  animation: ease-kf-bounce-in var(--ease-speed-slow) var(--ease-ease) both;
 }
 
 .ease-bounce-button-exit {
   animation: ease-kf-bounce-button-exit var(--ease-speed-medium) var(--ease-ease) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ease-bounce,
+  .ease-bounce-in,
+  .ease-bounce-button-exit {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transform: none !important;
+  }
 }
 }
