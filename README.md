@@ -51,6 +51,7 @@ Write UI like you describe it in English. No build steps. No memorizing shorthan
 - [Philosophy](#philosophy)
 - [Usage & Examples](#usage--examples)
 - [Customization](#customization)
+- [Troubleshooting](#troubleshooting)
 - [FAQ](#faq)
 - [File Structure](#file-structure)
 - [Roadmap](#roadmap)
@@ -604,6 +605,30 @@ EaseMotion wraps all its CSS behind `@layer` cascade layers. Your own styles alw
 ```
 
 No `!important` needed.
+
+---
+
+## Troubleshooting 🛠️
+
+Here are solutions to common problems you might encounter while setting up or using EaseMotion CSS:
+
+### 1. Animations not working due to incorrect stylesheet loading order
+If you're using granular imports, **`variables.css` must always load first**. All animations depend on the custom properties defined there. If an animation file loads before the variables, the keyframes will fail to resolve. Ensure your `<link>` tags match the required order shown in the [Granular imports](#option-3--granular-imports-pick-only-what-you-need) section.
+
+### 2. Missing `variables.css` when using modular imports
+When loading modular animations (e.g., `easemotion/fade.css`), you must manually include `easemotion/variables.css` beforehand. Without it, none of the modular animations will work because the underlying timing and easing variables will be undefined.
+
+### 3. CDN caching issues after updating to a newer version
+If you update your HTML to point to a new version of the CDN but the old styles are still loading, it might be due to aggressive browser or CDN caching. Try clearing your browser cache, doing a hard refresh (`Ctrl + F5` or `Cmd + Shift + R`), or appending a version tag to the CDN URL to force a fresh fetch.
+
+### 4. Custom CSS variables not overriding framework defaults as expected
+EaseMotion CSS wraps styles in `@layer`. If you are overriding custom variables like `--ease-color-primary`, ensure you define your overrides in the `:root` selector. If you're overriding full classes, wrap your overrides in `@layer easemotion.components` or ensure your stylesheet loads *after* EaseMotion CSS.
+
+### 5. Missing font imports affecting typography
+If the typography looks incorrect or fallback fonts are showing, ensure you have included the Google Fonts import for `Inter` (or your chosen font) *before* the EaseMotion CSS link. The framework uses `Inter` by default in its base styles.
+
+### 6. Common mistakes when using granular imports
+Granular imports allow you to pick exactly what you need, but omitting required core files will break layout or styling. Always ensure you load `variables.css`, `base.css`, `animations.css`, and `utilities.css` before any component-specific stylesheets (like `buttons.css` or `cards.css`).
 
 ---
 
