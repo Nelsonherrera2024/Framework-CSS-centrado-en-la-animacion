@@ -10,28 +10,27 @@
 </head>
 
 <body>
-<canvas id="particles"></canvas>
+    <canvas id="particles"></canvas>
+
     <header class="hero">
         <h1>EaseMotion CSS</h1>
         <p>Documentation Layout Enhancement Proposal</p>
     </header>
 
     <div class="container">
-
         <aside class="sidebar">
             <h3>Documentation</h3>
 
-            <a href="#">Getting Started</a>
-            <a href="#">Installation</a>
-            <a href="#">Utilities</a>
-            <a href="#">Animations</a>
-            <a href="#">Components</a>
-            <a href="#">Contributing</a>
+            <a href="#getting-started">Getting Started</a>
+            <a href="#installation">Installation</a>
+            <a href="#utilities">Utilities</a>
+            <a href="#animations">Animations</a>
+            <a href="#components">Components</a>
+            <a href="#contributing">Contributing</a>
         </aside>
 
         <main class="content">
-
-            <section class="card">
+            <section id="getting-started" class="card">
                 <h2>Getting Started</h2>
 
                 <p>
@@ -40,7 +39,7 @@
                 </p>
             </section>
 
-            <section class="card">
+            <section id="installation" class="card">
                 <h2>Installation</h2>
 
                 <pre>
@@ -48,7 +47,7 @@ npm install easemotion-css
                 </pre>
             </section>
 
-            <section class="card">
+            <section id="utilities" class="card">
                 <h2>Utilities</h2>
 
                 <p>
@@ -57,7 +56,7 @@ npm install easemotion-css
                 </p>
             </section>
 
-            <section class="card">
+            <section id="animations" class="card">
                 <h2>Animations</h2>
 
                 <p>
@@ -66,7 +65,7 @@ npm install easemotion-css
                 </p>
             </section>
 
-            <section class="card">
+            <section id="components" class="card">
                 <h2>Components</h2>
 
                 <p>
@@ -75,9 +74,18 @@ npm install easemotion-css
                 </p>
             </section>
 
-        </main>
+            <section id="contributing" class="card">
+                <h2>Contributing</h2>
 
+                <p>
+                    Contributions are welcome. You can help improve documentation,
+                    add new examples, enhance existing components, and report bugs
+                    to make EaseMotion CSS better for everyone.
+                </p>
+            </section>
+        </main>
     </div>
-<script src="particles.js"></script>
+
+    <script src="particles.js"></script>
 </body>
 </html>
