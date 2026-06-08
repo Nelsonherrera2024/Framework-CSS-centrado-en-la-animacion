@@ -41,7 +41,7 @@
 @import "./components/loaders.css";
 @import "./components/tooltips.css";
 @import "./components/modals.css";
-
+@import "./components/forms.css";
 
 /* Accessibility: Respect user's reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
@@ -56,8 +56,3 @@
     scroll-behavior: auto !important;
   }
 }
-
-
-
-
-

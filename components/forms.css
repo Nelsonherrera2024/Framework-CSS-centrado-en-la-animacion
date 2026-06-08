@@ -1,0 +1,61 @@
+@layer easemotion-components {
+  /* ── Input Group Container ───────────────────────────────── */
+  .ease-input-group {
+    position: relative;
+    margin: var(--ease-space-6, 1.5rem) 0;
+    width: 100%;
+  }
+
+  /* ── Floating Input Field ────────────────────────────────── */
+  .ease-input-floating {
+    width: 100%;
+    padding: var(--ease-space-3, 0.75rem) var(--ease-space-2, 0.5rem);
+    font-size: var(--ease-text-base, 1rem);
+    color: var(--ease-color-text, #333);
+    border: 1px solid
+      var(
+        --ease-border-color,
+        var(--border-color, var(--ease-color-neutral-300, #ccc))
+      );
+    border-radius: var(--ease-radius, var(--ease-radius-sm, 4px));
+    background: transparent;
+    outline: none;
+    transition:
+      border-color var(--ease-speed-fast, 150ms) var(--ease-ease, ease),
+      box-shadow var(--ease-speed-fast, 150ms) var(--ease-ease, ease);
+  }
+
+  /* ── Input Focus State (Pixel-Perfect Non-Shifting Ring) ── */
+  .ease-input-floating:focus {
+    border-color: var(--ease-color-primary, #6c63ff);
+    box-shadow: 0 0 0 3px
+      var(--ease-color-primary-alpha, rgba(108, 99, 255, 0.15));
+  }
+
+  /* ── Floating Label ──────────────────────────────────────── */
+  .ease-label-floating {
+    position: absolute;
+    left: var(--ease-space-2, 0.5rem);
+    top: 50%;
+    transform: translateY(-50%);
+    transform-origin: top left;
+    background-color: var(--ease-bg-color, var(--ease-color-surface, #fff));
+    padding: 0 var(--ease-space-1, 0.25rem);
+    color: var(--ease-text-muted, var(--ease-color-muted, #777));
+    font-size: var(--ease-text-base, 1rem);
+    pointer-events: none;
+    transition:
+      transform var(--ease-speed-fast, 150ms) var(--ease-ease, ease),
+      color var(--ease-speed-fast, 150ms) var(--ease-ease, ease);
+  }
+
+  /* ── Label Translation States ────────────────────────────── */
+  .ease-input-floating:focus ~ .ease-label-floating,
+  .ease-input-floating:not(:placeholder-shown) ~ .ease-label-floating {
+    transform: translateY(-1.45rem) scale(0.85);
+  }
+
+  .ease-input-floating:focus ~ .ease-label-floating {
+    color: var(--ease-color-primary, #6c63ff);
+  }
+}
