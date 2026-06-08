@@ -212,7 +212,6 @@
   .ease-slide-image-exit {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
-    transform: none !important;
   }
 }
 }
