@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accessibility Improvements Demo</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <header
+        class="hero-card"
+        tabindex="0"
+        aria-label="Accessibility example overview card"
+      >
+        <h1>Accessibility Improvements</h1>
+        <p>
+          Demonstrating <strong>aria-label</strong>, keyboard focus, and visible
+          focus styles.
+        </p>
+      </header>
+
+      <section class="interactive-grid">
+        <button class="action-btn" aria-label="Open accessibility guide">
+          Open Guide
+        </button>
+
+        <button
+          class="action-btn secondary"
+          aria-label="Download accessibility checklist"
+        >
+          Download Checklist
+        </button>
+
+        <div
+          class="demo-card"
+          tabindex="0"
+          aria-label="Keyboard focus card with hover and focus styles"
+        >
+          <h2>Keyboard Card</h2>
+          <p>Use Tab to focus me, and Enter or Space to interact.</p>
+        </div>
+
+        <div
+          class="demo-card accent"
+          tabindex="0"
+          aria-label="Accessibility status card"
+        >
+          <h2>Status Card</h2>
+          <p>
+            Visible focus styles help keyboard users see the active element.
+          </p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
