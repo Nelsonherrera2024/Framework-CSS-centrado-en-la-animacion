@@ -135,3 +135,37 @@ const modals = readFileSync(resolve(componentsDir, 'modals.css'), 'utf8');
     expect(duplicates).toEqual([]);
   });
 });
+
+describe('Example HTML markup validation', () => {
+  it('marquee demo uses correct ease-marquee variant classes', () => {
+    const html = readFileSync(resolve(__dirname, '../examples/marquee-demo.html'), 'utf8');
+    
+    // Verify required variant classes are present
+    const requiredVariants = [
+      'ease-marquee-slow',
+      'ease-marquee-fast',
+      'ease-marquee-reverse',
+      'ease-marquee-fade-edges',
+      'ease-marquee-gap-xl',
+      'ease-marquee-pause-on-hover',
+    ];
+    
+    for (const variant of requiredVariants) {
+      expect(html).toContain(variant);
+    }
+    
+    // Verify old bare class names are not used
+    const invalidPatterns = [
+      'class="ease-marquee slow"',
+      'class="ease-marquee fast"',
+      'class="ease-marquee reverse"',
+      'class="ease-marquee fade-edges"',
+      'class="ease-marquee gap-xl"',
+      'class="ease-marquee pause-on-hover"',
+    ];
+    
+    for (const pattern of invalidPatterns) {
+      expect(html).not.toContain(pattern);
+    }
+  });
+});
