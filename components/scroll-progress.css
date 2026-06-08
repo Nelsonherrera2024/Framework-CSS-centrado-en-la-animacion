@@ -3,7 +3,9 @@
    Pure CSS Scroll-Driven Progress Bar Component
    ============================================================ */
 
-/* ── Keyframes (outside @layer so they resolve globally) ───── */
+@layer easemotion.components {
+
+/* ── Keyframes ─────────────────────────────────────────────── */
 @keyframes ease-kf-scroll-progress {
   from {
     transform: scaleX(0);
@@ -12,8 +14,6 @@
     transform: scaleX(1);
   }
 }
-
-@layer easemotion-components {
 
 /* ── Base Scroll Progress Class ───────────────────────────── */
 .ease-scroll-progress {
@@ -86,18 +86,8 @@
 }
 
 /* ── Animation Timeline Overrides ──────────────────────────── */
-/* Root-scoped variant: binds the scroll timeline to the document root,
-   not the nearest scroll container, so the bar tracks page scroll */
+/* Use viewport/root timeline specifically, ignoring nearest ancestors if inside small scroll containers */
 .ease-scroll-progress-root {
   animation-timeline: scroll(root);
-}
-
-/* ── Accessibility: Reduced Motion ─────────────────────────── */
-/* WCAG 2.1 SC 2.3.3: removes scroll-driven animation + keeps the bar visible */
-@media (prefers-reduced-motion: reduce) {
-  .ease-scroll-progress {
-    animation: none;
-    transform: scaleX(1);
-  }
 }
 }

@@ -3,7 +3,7 @@
    Sidebar layout component with collapsible variant
    ============================================================ */
 
-@layer easemotion-components {
+@layer easemotion.components {
 
 /* ── Sidebar Layout Wrapper ─────────────────────────────────── */
 .ease-sidebar-layout {

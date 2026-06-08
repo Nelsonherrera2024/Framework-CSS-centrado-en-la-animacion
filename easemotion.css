@@ -13,18 +13,16 @@
    ============================================================ */
 
 /* ── Cascade Layers ──────────────────────────────────────── */
-/* Unique names prefixed with 'easemotion-' to avoid cascade
-   conflicts with other frameworks using generic @layer names. */
-@layer easemotion-base, easemotion-components, easemotion-utilities;
+/* Declare layer order (first = lowest priority). Unlayered
+   user styles always win over all framework layers. */
+@layer easemotion.tokens, easemotion.base, easemotion.utilities, easemotion.animations, easemotion.components;
 
 /* ── Core (required, load in this order) ─────────────────── */
-/* variables.css and base.css intentionally left unlayered so
-   :root custom properties and CSS reset always win the cascade. */
 @import "./core/variables.css";
+@import "./easemotion/ease-marquee.css";
 @import "./core/base.css";
 @import "./core/animations.css";
 @import "./core/utilities.css";
-@import "./components/ease-marquee.css";
 
 /* ── Components (tree-shakeable in future versions) ──────── */
 @import "./components/buttons.css";
@@ -45,18 +43,16 @@
 
 /* Accessibility: Respect user's reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
-  :root {
-    --ease-speed-fast: 0.01ms;
-    --ease-speed-medium: 0.01ms;
-    --ease-speed-slow: 0.01ms;
-    --ease-animation-iterations: 1;
-  }
-
-  html {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0s !important;
+    transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
 }
-
 
 
 

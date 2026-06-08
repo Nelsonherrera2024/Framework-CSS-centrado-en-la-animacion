@@ -1,4 +1,4 @@
-@layer easemotion-components {
+@layer easemotion.components {
   /* ==========================================================================
      MODAL / DIALOG COMPONENT
      Pure CSS modal system using the :target pseudo-class overlay technique.
