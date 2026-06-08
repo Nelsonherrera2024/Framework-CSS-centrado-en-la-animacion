@@ -4,7 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:;">
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:;">
   <title>EaseMotion CSS — Interactive Demo</title>
   <meta name="description"
     content="Live demo showcasing EaseMotion CSS utilities, animations, buttons, and card components." />
@@ -304,7 +305,8 @@
         <h1>Build with EaseMotion</h1>
         <p>Human-readable class names. Animation-first. No memorization required.</p>
         <div class="ease-center ease-gap-3 ease-slide-up ease-delay-200">
-          <a href="./" class="ease-btn ease-btn-primary ease-btn-hover ease-btn-lg ease-btn-pill" style="padding:10px; color:white;">
+          <a href="./" class="ease-btn ease-btn-primary ease-btn-hover ease-btn-lg ease-btn-pill"
+            style="padding:10px; color:white;">
             Read Docs
           </a>
           <a href="https://github.com/SAPTARSHI-coder/EaseMotion-css"
@@ -392,8 +394,9 @@
         <div class="demo-chip">// ease-card + ease-card-hover</div>
         <div class="ease-grid ease-grid-auto ease-gap-6" style="margin-bottom: var(--ease-space-10);">
 
-          <article class="ease-card ease-card-shadow ease-card-hover ease-slide-up ease-delay-100" style="padding: 10px;">
-            <div class="ease-card-header" >
+          <article class="ease-card ease-card-shadow ease-card-hover ease-slide-up ease-delay-100"
+            style="padding: 10px;">
+            <div class="ease-card-header">
               <span class="ease-badge ease-badge-primary">New</span>
             </div>
             <h3 class="ease-card-title">Animation First</h3>
@@ -407,7 +410,8 @@
             </div>
           </article>
 
-          <article class="ease-card ease-card-shadow ease-card-hover ease-slide-up ease-delay-200" style="padding: 10px;">
+          <article class="ease-card ease-card-shadow ease-card-hover ease-slide-up ease-delay-200"
+            style="padding: 10px;">
             <div class="ease-card-header">
               <span class="ease-badge ease-badge-success">Stable</span>
             </div>
@@ -422,7 +426,8 @@
             </div>
           </article>
 
-          <article class="ease-card ease-card-shadow ease-card-hover ease-slide-up ease-delay-300" style="padding: 10px;">
+          <article class="ease-card ease-card-shadow ease-card-hover ease-slide-up ease-delay-300"
+            style="padding: 10px;">
             <div class="ease-card-header">
               <span class="ease-badge ease-badge-danger">MVP</span>
             </div>
@@ -503,7 +508,7 @@
     <!-- ═════════════════════════════════════════════════════
          ANIMATIONS
     ══════════════════════════════════════════════════════════ -->
-    <section id="animations" class="demo-section"style="padding-left: 10px;">
+    <section id="animations" class="demo-section" style="padding-left: 10px;">
       <div class="ease-container">
         <div class="demo-section-label">Animations</div>
         <h2 class="demo-section-title">Motion Library</h2>
@@ -745,15 +750,15 @@
 
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const id = entry.target.getAttribute("id");
-                navLinks.forEach(link => {
-                    link.classList.remove("active");
-                    if (link.getAttribute("href") === `#${id}`) {
-                        link.classList.add("active");
-                    }
-                });
-            }
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute("id");
+            navLinks.forEach(link => {
+              link.classList.remove("active");
+              if (link.getAttribute("href") === `#${id}`) {
+                link.classList.add("active");
+              }
+            });
+          }
         });
       }, observerOptions);
 
@@ -761,10 +766,10 @@
 
       // Click event for immediate feedback
       navLinks.forEach(link => {
-          link.addEventListener("click", function() {
-              navLinks.forEach(a => a.classList.remove("active"));
-              this.classList.add("active");
-          });
+        link.addEventListener("click", function () {
+          navLinks.forEach(a => a.classList.remove("active"));
+          this.classList.add("active");
+        });
       });
     });
   </script>
