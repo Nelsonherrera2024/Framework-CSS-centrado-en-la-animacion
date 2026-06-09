@@ -4,12 +4,12 @@ A pricing card component with hover lift animation and a featured/highlighted va
 
 ## Classes
 
-| Class | Description |
-|---|---|
-| `ease-pricing-card` | Base card with hover lift |
-| `ease-pricing-card-featured` | Highlighted variant with primary glow |
-| `ease-pricing-price` | Price slot wrapper |
-| `ease-pricing-features` | Features list (`<ul>`) with checkmarks |
+| Class                        | Description                            |
+| ---------------------------- | -------------------------------------- |
+| `ease-pricing-card`          | Base card with hover lift              |
+| `ease-pricing-card-featured` | Highlighted variant with primary glow  |
+| `ease-pricing-price`         | Price slot wrapper                     |
+| `ease-pricing-features`      | Features list (`<ul>`) with checkmarks |
 
 ## Usage
 
@@ -27,9 +27,7 @@ A pricing card component with hover lift animation and a featured/highlighted va
 </div>
 
 <!-- Featured variant -->
-<div class="ease-pricing-card ease-pricing-card-featured">
-  ...
-</div>
+<div class="ease-pricing-card ease-pricing-card-featured">...</div>
 ```
 
 ## Why it fits EaseMotion CSS

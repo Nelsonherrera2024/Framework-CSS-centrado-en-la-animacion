@@ -14,7 +14,8 @@
 
 /* Core keyframe */
 @keyframes wave-letter {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px);
     opacity: 1;
   }
@@ -36,26 +37,66 @@
 }
 
 /* Delays for up to 20 characters */
-.wave-text span:nth-child(1)  { animation-delay: calc(0  * var(--wave-delay-step)); }
-.wave-text span:nth-child(2)  { animation-delay: calc(1  * var(--wave-delay-step)); }
-.wave-text span:nth-child(3)  { animation-delay: calc(2  * var(--wave-delay-step)); }
-.wave-text span:nth-child(4)  { animation-delay: calc(3  * var(--wave-delay-step)); }
-.wave-text span:nth-child(5)  { animation-delay: calc(4  * var(--wave-delay-step)); }
-.wave-text span:nth-child(6)  { animation-delay: calc(5  * var(--wave-delay-step)); }
-.wave-text span:nth-child(7)  { animation-delay: calc(6  * var(--wave-delay-step)); }
-.wave-text span:nth-child(8)  { animation-delay: calc(7  * var(--wave-delay-step)); }
-.wave-text span:nth-child(9)  { animation-delay: calc(8  * var(--wave-delay-step)); }
-.wave-text span:nth-child(10) { animation-delay: calc(9  * var(--wave-delay-step)); }
-.wave-text span:nth-child(11) { animation-delay: calc(10 * var(--wave-delay-step)); }
-.wave-text span:nth-child(12) { animation-delay: calc(11 * var(--wave-delay-step)); }
-.wave-text span:nth-child(13) { animation-delay: calc(12 * var(--wave-delay-step)); }
-.wave-text span:nth-child(14) { animation-delay: calc(13 * var(--wave-delay-step)); }
-.wave-text span:nth-child(15) { animation-delay: calc(14 * var(--wave-delay-step)); }
-.wave-text span:nth-child(16) { animation-delay: calc(15 * var(--wave-delay-step)); }
-.wave-text span:nth-child(17) { animation-delay: calc(16 * var(--wave-delay-step)); }
-.wave-text span:nth-child(18) { animation-delay: calc(17 * var(--wave-delay-step)); }
-.wave-text span:nth-child(19) { animation-delay: calc(18 * var(--wave-delay-step)); }
-.wave-text span:nth-child(20) { animation-delay: calc(19 * var(--wave-delay-step)); }
+.wave-text span:nth-child(1) {
+  animation-delay: calc(0 * var(--wave-delay-step));
+}
+.wave-text span:nth-child(2) {
+  animation-delay: calc(1 * var(--wave-delay-step));
+}
+.wave-text span:nth-child(3) {
+  animation-delay: calc(2 * var(--wave-delay-step));
+}
+.wave-text span:nth-child(4) {
+  animation-delay: calc(3 * var(--wave-delay-step));
+}
+.wave-text span:nth-child(5) {
+  animation-delay: calc(4 * var(--wave-delay-step));
+}
+.wave-text span:nth-child(6) {
+  animation-delay: calc(5 * var(--wave-delay-step));
+}
+.wave-text span:nth-child(7) {
+  animation-delay: calc(6 * var(--wave-delay-step));
+}
+.wave-text span:nth-child(8) {
+  animation-delay: calc(7 * var(--wave-delay-step));
+}
+.wave-text span:nth-child(9) {
+  animation-delay: calc(8 * var(--wave-delay-step));
+}
+.wave-text span:nth-child(10) {
+  animation-delay: calc(9 * var(--wave-delay-step));
+}
+.wave-text span:nth-child(11) {
+  animation-delay: calc(10 * var(--wave-delay-step));
+}
+.wave-text span:nth-child(12) {
+  animation-delay: calc(11 * var(--wave-delay-step));
+}
+.wave-text span:nth-child(13) {
+  animation-delay: calc(12 * var(--wave-delay-step));
+}
+.wave-text span:nth-child(14) {
+  animation-delay: calc(13 * var(--wave-delay-step));
+}
+.wave-text span:nth-child(15) {
+  animation-delay: calc(14 * var(--wave-delay-step));
+}
+.wave-text span:nth-child(16) {
+  animation-delay: calc(15 * var(--wave-delay-step));
+}
+.wave-text span:nth-child(17) {
+  animation-delay: calc(16 * var(--wave-delay-step));
+}
+.wave-text span:nth-child(18) {
+  animation-delay: calc(17 * var(--wave-delay-step));
+}
+.wave-text span:nth-child(19) {
+  animation-delay: calc(18 * var(--wave-delay-step));
+}
+.wave-text span:nth-child(20) {
+  animation-delay: calc(19 * var(--wave-delay-step));
+}
 
 /* Speed variants */
 .wave-text-slow {
@@ -76,7 +117,8 @@
 }
 
 @keyframes wave-letter-color {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0px);
     color: inherit;
   }

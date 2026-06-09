@@ -10,16 +10,16 @@ Material Design click ripple effect using `:active::after` pseudo-element. Zero 
 
 ## Variants
 
-| Class | Description |
-|---|---|
-| `ease-ripple` | Default ripple (currentColor) |
-| `ease-ripple-white` | White ripple |
-| `ease-ripple-dark` | Dark ripple |
-| `ease-ripple-primary` | Blue ripple |
-| `ease-ripple-success` | Green ripple |
-| `ease-ripple-danger` | Red ripple |
-| `ease-ripple-fast` | 300ms duration |
-| `ease-ripple-slow` | 1000ms duration |
+| Class                 | Description                   |
+| --------------------- | ----------------------------- |
+| `ease-ripple`         | Default ripple (currentColor) |
+| `ease-ripple-white`   | White ripple                  |
+| `ease-ripple-dark`    | Dark ripple                   |
+| `ease-ripple-primary` | Blue ripple                   |
+| `ease-ripple-success` | Green ripple                  |
+| `ease-ripple-danger`  | Red ripple                    |
+| `ease-ripple-fast`    | 300ms duration                |
+| `ease-ripple-slow`    | 1000ms duration               |
 
 ## Submission
 

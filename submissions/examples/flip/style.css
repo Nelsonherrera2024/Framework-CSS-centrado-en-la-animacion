@@ -56,8 +56,12 @@
 }
 
 /* Speed variants */
-.ease-flip-fast { transition-duration: 300ms; }
-.ease-flip-slow { transition-duration: 1000ms; }
+.ease-flip-fast {
+  transition-duration: 300ms;
+}
+.ease-flip-slow {
+  transition-duration: 1000ms;
+}
 
 @media (prefers-reduced-motion: reduce) {
   .ease-flip,

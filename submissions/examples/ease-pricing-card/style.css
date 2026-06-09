@@ -11,8 +11,10 @@
   border-radius: var(--ease-radius-xl, 1.5rem);
   box-shadow: var(--ease-shadow-md);
   transition:
-    transform  var(--ease-speed-medium, 300ms) var(--ease-ease, cubic-bezier(0.4,0,0.2,1)),
-    box-shadow var(--ease-speed-medium, 300ms) var(--ease-ease, cubic-bezier(0.4,0,0.2,1));
+    transform var(--ease-speed-medium, 300ms)
+      var(--ease-ease, cubic-bezier(0.4, 0, 0.2, 1)),
+    box-shadow var(--ease-speed-medium, 300ms)
+      var(--ease-ease, cubic-bezier(0.4, 0, 0.2, 1));
 }
 
 /* Hover lift animation */
@@ -24,15 +26,21 @@
 /* Featured / highlighted variant */
 .ease-pricing-card-featured {
   border-color: var(--ease-color-primary, #6c63ff);
-  background: linear-gradient(160deg,
-    rgba(108,99,255,0.06) 0%,
-    var(--ease-color-surface, #ffffff) 60%);
-  box-shadow: var(--ease-glow-primary, 0 0 16px rgba(108,99,255,0.45)), var(--ease-shadow-lg);
+  background: linear-gradient(
+    160deg,
+    rgba(108, 99, 255, 0.06) 0%,
+    var(--ease-color-surface, #ffffff) 60%
+  );
+  box-shadow:
+    var(--ease-glow-primary, 0 0 16px rgba(108, 99, 255, 0.45)),
+    var(--ease-shadow-lg);
 }
 
 .ease-pricing-card-featured:hover {
   transform: translateY(-8px);
-  box-shadow: var(--ease-glow-primary, 0 0 24px rgba(108,99,255,0.55)), var(--ease-shadow-xl);
+  box-shadow:
+    var(--ease-glow-primary, 0 0 24px rgba(108, 99, 255, 0.55)),
+    var(--ease-shadow-xl);
 }
 
 /* Price slot */
@@ -82,14 +90,14 @@
 }
 
 .ease-pricing-features li::before {
-  content: '✓';
+  content: "✓";
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 1.2rem;
   height: 1.2rem;
   border-radius: 50%;
-  background: rgba(34,197,94,0.15);
+  background: rgba(34, 197, 94, 0.15);
   color: var(--ease-color-success, #22c55e);
   font-size: 0.7rem;
   font-weight: 800;
@@ -98,7 +106,11 @@
 
 @media (prefers-reduced-motion: reduce) {
   .ease-pricing-card,
-  .ease-pricing-card-featured { transition: none; }
+  .ease-pricing-card-featured {
+    transition: none;
+  }
   .ease-pricing-card:hover,
-  .ease-pricing-card-featured:hover { transform: none; }
+  .ease-pricing-card-featured:hover {
+    transform: none;
+  }
 }

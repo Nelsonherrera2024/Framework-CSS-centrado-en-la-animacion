@@ -6,8 +6,12 @@
    ============================================================ */
 
 @keyframes ease-parallax-move {
-  from { transform: translateY(0); }
-  to   { transform: translateY(var(--ease-parallax-distance, -80px)); }
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(var(--ease-parallax-distance, -80px));
+  }
 }
 
 .ease-parallax {
@@ -39,13 +43,21 @@
 }
 
 @keyframes ease-parallax-left-move {
-  from { transform: translateX(0); }
-  to   { transform: translateX(var(--ease-parallax-distance, -80px)); }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(var(--ease-parallax-distance, -80px));
+  }
 }
 
 @keyframes ease-parallax-right-move {
-  from { transform: translateX(0); }
-  to   { transform: translateX(var(--ease-parallax-distance, 80px)); }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(var(--ease-parallax-distance, 80px));
+  }
 }
 
 /* Fade + parallax combo */
@@ -54,8 +66,14 @@
 }
 
 @keyframes ease-parallax-fade-move {
-  from { transform: translateY(0); opacity: 1; }
-  to   { transform: translateY(var(--ease-parallax-distance, -80px)); opacity: 0.2; }
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(var(--ease-parallax-distance, -80px));
+    opacity: 0.2;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

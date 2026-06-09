@@ -1,6 +1,7 @@
 # ease-wave-text
 
 ## 1. What does this do?
+
 A pure CSS utility that animates each letter in a text element sequentially up and down, creating a smooth flowing wave effect across the word — no JavaScript, no SVG, zero dependencies.
 
 ## 2. How is it used?
@@ -9,6 +10,7 @@ Wrap each letter in a <span> inside any element with the wave-text class:
 Markup
 
 
+
 <!-- Base wave -->
 <p class="wave-text">
   <span>H</span><span>e</span><span>l</span><span>l</span><span>o</span>
@@ -43,14 +45,15 @@ EaseMotion CSS currently has no per-letter animation utility. Wave text is one o
 
 ## Class Reference
 
-| Class | Duration | Notes |
-|-------|----------|-------|
-| wave-text | 1.2s | Base class |
-| wave-text-slow | 2.4s | Gentle wave |
-| wave-text-fast | 0.6s | Energetic wave |
-| wave-text-color | — | Letter color shifts at peak |
+| Class           | Duration | Notes                       |
+| --------------- | -------- | --------------------------- |
+| wave-text       | 1.2s     | Base class                  |
+| wave-text-slow  | 2.4s     | Gentle wave                 |
+| wave-text-fast  | 0.6s     | Energetic wave              |
+| wave-text-color | —        | Letter color shifts at peak |
 
 ## Sizing Tips
+
 - Works best on font-size 1rem and above
 - For very large display text, increase --wave-height (e.g. `-20px`)
 - Spaces between words: use <span class="space"></span> or a non-breaking space

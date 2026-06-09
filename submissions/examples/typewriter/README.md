@@ -8,10 +8,10 @@ Reveals text character by character using the CSS `steps()` timing function, `ov
 
 ## Classes
 
-| Class | Effect |
-|---|---|
-| `.typewriter` | Typing reveal only |
-| `.typewriter-cursor` | Typing reveal + blinking `|` cursor |
+| Class                | Effect                     |
+| -------------------- | -------------------------- | -------- |
+| `.typewriter`        | Typing reveal only         |
+| `.typewriter-cursor` | Typing reveal + blinking ` | ` cursor |
 
 ## Customization
 

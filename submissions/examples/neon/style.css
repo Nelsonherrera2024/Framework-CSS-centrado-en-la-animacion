@@ -7,7 +7,8 @@
    ============================================================ */
 
 @keyframes ease-neon-pulse {
-  0%, 100% {
+  0%,
+  100% {
     text-shadow:
       0 0 6px var(--ease-neon-color),
       0 0 20px var(--ease-neon-color),
@@ -22,7 +23,8 @@
 }
 
 @keyframes ease-neon-border-pulse {
-  0%, 100% {
+  0%,
+  100% {
     box-shadow:
       0 0 6px var(--ease-neon-color),
       0 0 20px var(--ease-neon-color),
@@ -66,8 +68,12 @@
 }
 
 /* Speed variants */
-.ease-neon-fast { animation-duration: 0.8s; }
-.ease-neon-slow { animation-duration: 4s; }
+.ease-neon-fast {
+  animation-duration: 0.8s;
+}
+.ease-neon-slow {
+  animation-duration: 4s;
+}
 
 /* Static (no pulse, just glow) */
 .ease-neon-static {

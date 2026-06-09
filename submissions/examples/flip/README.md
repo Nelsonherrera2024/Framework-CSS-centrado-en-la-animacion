@@ -15,13 +15,13 @@
 
 ## Variants
 
-| Class | Description |
-|---|---|
-| `ease-flip` | Default hover flip (Y axis) |
-| `ease-flip-x` | Flip on X axis |
+| Class             | Description                         |
+| ----------------- | ----------------------------------- |
+| `ease-flip`       | Default hover flip (Y axis)         |
+| `ease-flip-x`     | Flip on X axis                      |
 | `ease-flip-click` | Click to flip (toggle `is-flipped`) |
-| `ease-flip-fast` | 300ms transition |
-| `ease-flip-slow` | 1000ms transition |
+| `ease-flip-fast`  | 300ms transition                    |
+| `ease-flip-slow`  | 1000ms transition                   |
 
 ## Notes
 

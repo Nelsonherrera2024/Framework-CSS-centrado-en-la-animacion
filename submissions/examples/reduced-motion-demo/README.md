@@ -17,3 +17,4 @@ When reduced motion is enabled in the operating system, the animation is disable
     animation: none;
   }
 }
+```

@@ -9,27 +9,30 @@ Looping pulse animation using `scale` and `opacity` keyframes. Perfect for live 
 <div class="ease-pulse">Pulsing element</div>
 
 <!-- Ring/ping variant -->
-<div class="ease-pulse-ring ease-pulse-primary" style="background:#6366f1;"></div>
+<div
+  class="ease-pulse-ring ease-pulse-primary"
+  style="background:#6366f1;"
+></div>
 ```
 
 ## Variants
 
-| Class | Description |
-|---|---|
-| `ease-pulse` | Base scale pulse animation |
-| `ease-pulse-ring` | Expanding ring/ping effect via `::after` |
-| `ease-pulse-primary` | Indigo color theme |
-| `ease-pulse-danger` | Red color theme |
-| `ease-pulse-success` | Green color theme |
-| `ease-pulse-warning` | Amber color theme |
-| `ease-pulse-fast` | 0.8s duration |
-| `ease-pulse-slow` | 3.5s duration |
-| `ease-pulse-pause` | Pauses animation on hover |
+| Class                | Description                              |
+| -------------------- | ---------------------------------------- |
+| `ease-pulse`         | Base scale pulse animation               |
+| `ease-pulse-ring`    | Expanding ring/ping effect via `::after` |
+| `ease-pulse-primary` | Indigo color theme                       |
+| `ease-pulse-danger`  | Red color theme                          |
+| `ease-pulse-success` | Green color theme                        |
+| `ease-pulse-warning` | Amber color theme                        |
+| `ease-pulse-fast`    | 0.8s duration                            |
+| `ease-pulse-slow`    | 3.5s duration                            |
+| `ease-pulse-pause`   | Pauses animation on hover                |
 
 ## Custom Properties
 
-| Property | Default | Description |
-|---|---|---|
+| Property             | Default   | Description                 |
+| -------------------- | --------- | --------------------------- |
 | `--ease-pulse-color` | `#6366f1` | Ring color for ping variant |
 
 ## Notes

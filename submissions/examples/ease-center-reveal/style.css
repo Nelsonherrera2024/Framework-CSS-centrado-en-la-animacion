@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@300;400;500;600;700;800&display=swap");
 
 /* ==========================================================================
    EASEMOTION CSS - CENTER REVEAL UTILITY COMPONENT
@@ -11,20 +11,22 @@
 :root {
   /* Common UI Tokens */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.05);
+  --shadow-md:
+    0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.08);
+  --shadow-lg:
+    0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.05);
   --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
-  
+
   /* Light Theme Colors */
   --bg-primary: #f8fafc;
   --bg-card: #ffffff;
   --border-color: #e2e8f0;
   --text-primary: #0f172a;
   --text-secondary: #64748b;
-  
+
   --accent-primary: #6366f1;
   --accent-secondary: #a855f7;
-  
+
   --control-bg: #f1f5f9;
   --control-border: #cbd5e1;
   --control-text: #64748b;
@@ -33,7 +35,7 @@
 
   --card-overlay-bg: rgba(15, 23, 42, 0.75);
   --card-overlay-text: #ffffff;
-  
+
   /* Default Reveal Tuning */
   --reveal-duration: 0.65s;
   --reveal-ease: cubic-bezier(0.16, 1, 0.3, 1); /* expo-out */
@@ -47,10 +49,10 @@ body:has(#theme-dark:checked) {
   --border-color: #1e2640;
   --text-primary: #f8fafc;
   --text-secondary: #94a3b8;
-  
+
   --accent-primary: #818cf8;
   --accent-secondary: #c084fc;
-  
+
   --control-bg: #131930;
   --control-border: #1e2640;
   --control-text: #94a3b8;
@@ -58,8 +60,9 @@ body:has(#theme-dark:checked) {
   --control-active-text: #ffffff;
 
   --card-overlay-bg: rgba(7, 10, 19, 0.85);
-  
-  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
+
+  --shadow-lg:
+    0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
   --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
 }
 
@@ -75,7 +78,9 @@ body:has(#theme-dark:checked) {
   background-color: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--reveal-radius);
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 /* Base Reveal Element Style */
@@ -88,9 +93,9 @@ body:has(#theme-dark:checked) {
   opacity: 0;
   pointer-events: none; /* Ignore mouse interactions when hidden */
   box-sizing: border-box;
-  
+
   /* Transition setup for clip-path, transform, and opacity */
-  transition: 
+  transition:
     clip-path var(--reveal-duration) var(--reveal-ease),
     transform var(--reveal-duration) var(--reveal-ease),
     opacity var(--reveal-duration) var(--reveal-ease);
@@ -206,8 +211,12 @@ body:has(#theme-dark:checked) {
 }
 
 /* Speed Modifiers */
-.ease-fast { --reveal-duration: 0.35s; }
-.ease-slow { --reveal-duration: 0.95s; }
+.ease-fast {
+  --reveal-duration: 0.35s;
+}
+.ease-slow {
+  --reveal-duration: 0.95s;
+}
 
 /* --------------------------------------------------------------------------
    4. Demo Layout & Card Design
@@ -221,7 +230,13 @@ body {
   align-items: center;
   padding: 40px 20px;
   box-sizing: border-box;
-  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family:
+    "Outfit",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
   background-color: #f1f5f9;
   transition: background-color 0.4s ease;
 }
@@ -238,7 +253,10 @@ body:has(#theme-dark:checked) {
   padding: 48px;
   border: 1px solid var(--border-color);
   box-shadow: var(--shadow-lg);
-  transition: background-color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+  transition:
+    background-color 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -255,7 +273,11 @@ body:has(#theme-dark:checked) {
   color: var(--text-primary);
   margin: 0 0 12px 0;
   letter-spacing: -0.03em;
-  background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--accent-primary) 0%,
+    var(--accent-secondary) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -299,7 +321,9 @@ body:has(#theme-dark:checked) {
   padding: 3px;
   border-radius: 10px;
   border: 1px solid var(--border-color);
-  transition: background-color 0.4s ease, border-color 0.4s ease;
+  transition:
+    background-color 0.4s ease,
+    border-color 0.4s ease;
   z-index: 1;
 }
 
@@ -328,7 +352,9 @@ body:has(#theme-dark:checked) {
   background-color: var(--control-active-bg);
   border-radius: 7px;
   box-shadow: var(--shadow-sm);
-  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.4s ease;
+  transition:
+    transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 0.4s ease;
   z-index: 1;
 }
 
@@ -378,7 +404,9 @@ body:has(#theme-dark:checked) label[for="theme-dark"] {
   color: var(--accent-primary);
   padding: 4px 10px;
   border-radius: 9999px;
-  transition: background-color 0.4s ease, color 0.4s ease;
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease;
 }
 
 .badge-diamond {
@@ -473,7 +501,9 @@ body:has(#theme-dark:checked) label[for="theme-dark"] {
   border-radius: 8px;
   cursor: pointer;
   box-shadow: var(--shadow-sm);
-  transition: transform 0.2s ease, background-color 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease;
 }
 
 .action-btn:hover {
@@ -510,7 +540,7 @@ body:has(#theme-dark:checked) label[for="theme-dark"] {
   z-index: 2;
   text-align: center;
   color: #00f3ff;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "JetBrains Mono", monospace;
   text-shadow: 0 0 8px rgba(0, 243, 255, 0.5);
   animation: pulse-neon 2s infinite ease-in-out;
 }
@@ -524,10 +554,12 @@ body:has(#theme-dark:checked) label[for="theme-dark"] {
 .cyber-overlay {
   background: rgba(7, 10, 19, 0.95);
   border: 2px solid #00f3ff;
-  box-shadow: inset 0 0 20px rgba(0, 243, 255, 0.2), 0 0 15px rgba(0, 243, 255, 0.1);
+  box-shadow:
+    inset 0 0 20px rgba(0, 243, 255, 0.2),
+    0 0 15px rgba(0, 243, 255, 0.1);
   padding: 24px;
   color: #00f3ff;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "JetBrains Mono", monospace;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -642,7 +674,9 @@ body:has(#theme-dark:checked) label[for="theme-dark"] {
   padding: 12px;
   border-radius: 8px;
   cursor: pointer;
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
 }
 
 .product-btn:hover {
@@ -681,14 +715,16 @@ body:has(#theme-dark:checked) label[for="theme-dark"] {
   padding: 12px 24px;
   border-radius: 8px;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
   user-select: none;
 }
 
 .trigger-label:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
 .trigger-label:active {
@@ -761,7 +797,7 @@ body:has(#theme-dark:checked) label[for="theme-dark"] {
   border-radius: 8px;
   padding: 14px;
   margin: 0 0 16px 0;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "JetBrains Mono", monospace;
   font-size: 11px;
   color: #a78bfa;
   text-align: left;
@@ -800,23 +836,34 @@ body:has(#theme-dark:checked) label[for="theme-dark"] {
    -------------------------------------------------------------------------- */
 
 @keyframes pulse-neon {
-  0%, 100% {
-    text-shadow: 0 0 8px rgba(0, 243, 255, 0.4), 0 0 1px rgba(0, 243, 255, 0.2);
+  0%,
+  100% {
+    text-shadow:
+      0 0 8px rgba(0, 243, 255, 0.4),
+      0 0 1px rgba(0, 243, 255, 0.2);
     opacity: 0.85;
   }
   50% {
-    text-shadow: 0 0 16px rgba(0, 243, 255, 0.8), 0 0 4px rgba(0, 243, 255, 0.4);
+    text-shadow:
+      0 0 16px rgba(0, 243, 255, 0.8),
+      0 0 4px rgba(0, 243, 255, 0.4);
     opacity: 1;
   }
 }
 
 @keyframes blink {
-  50% { opacity: 0; }
+  50% {
+    opacity: 0;
+  }
 }
 
 @keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Spin animation details for icons */
@@ -835,7 +882,9 @@ body:has(#theme-dark:checked) label[for="theme-dark"] {
   border-top: 1px solid var(--border-color);
   padding-top: 24px;
   margin-top: 12px;
-  transition: border-color 0.4s ease, color 0.4s ease;
+  transition:
+    border-color 0.4s ease,
+    color 0.4s ease;
 }
 
 .demo-footer strong {
@@ -851,7 +900,7 @@ body:has(#theme-dark:checked) label[for="theme-dark"] {
   .ease-reveal-element {
     transition: none !important;
   }
-  
+
   /* Instantly display without animations */
   .ease-reveal-container:hover .ease-reveal-element,
   .ease-reveal-container:focus-within .ease-reveal-element,
@@ -872,7 +921,7 @@ body:has(#theme-dark:checked) label[for="theme-dark"] {
     clip-path: none !important;
     transform: none !important;
   }
-  
+
   .hud-idle-state,
   .cyber-status,
   .icon-spin {
@@ -897,7 +946,7 @@ body:has(#theme-dark:checked) label[for="theme-dark"] {
     max-width: 550px;
     margin: 0 auto;
   }
-  
+
   .demo-wrapper {
     padding: 32px 24px;
   }
@@ -907,51 +956,51 @@ body:has(#theme-dark:checked) label[for="theme-dark"] {
   body {
     padding: 20px 10px;
   }
-  
+
   .demo-wrapper {
     padding: 24px 16px;
     border-radius: 16px;
     gap: 28px;
   }
-  
+
   .demo-header h1 {
     font-size: 26px;
   }
-  
+
   .demo-header p {
     font-size: 14px;
   }
-  
+
   .card-content {
     height: 280px;
   }
-  
+
   .glass-overlay {
     padding: 20px;
   }
-  
+
   .glass-overlay h4 {
     font-size: 20px;
   }
-  
+
   .glass-overlay p {
     font-size: 13px;
     margin-bottom: 16px;
   }
-  
+
   .cyber-grid {
     gap: 8px;
     margin: 10px 0;
   }
-  
+
   .cyber-overlay {
     padding: 16px;
   }
-  
+
   .cyber-item {
     padding: 6px;
   }
-  
+
   .code-snippet {
     padding: 10px;
     font-size: 10px;

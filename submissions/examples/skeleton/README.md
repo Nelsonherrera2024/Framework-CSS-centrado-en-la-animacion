@@ -12,17 +12,17 @@ Shimmer loading placeholder animation via `background-position` keyframes. Zero 
 
 ## Variants
 
-| Class | Description |
-|---|---|
-| `ease-skeleton-text` | Single line text placeholder |
-| `ease-skeleton-title` | Wider title placeholder |
-| `ease-skeleton-avatar` | Circle avatar placeholder |
-| `ease-skeleton-thumb` | Image/thumbnail placeholder |
-| `ease-skeleton-circle` | Force circle shape |
-| `ease-skeleton-rounded` | Rounded corners |
-| `ease-skeleton-dark` | Dark mode shimmer |
-| `ease-skeleton-fast` | 0.8s animation duration |
-| `ease-skeleton-slow` | 2.5s animation duration |
+| Class                   | Description                  |
+| ----------------------- | ---------------------------- |
+| `ease-skeleton-text`    | Single line text placeholder |
+| `ease-skeleton-title`   | Wider title placeholder      |
+| `ease-skeleton-avatar`  | Circle avatar placeholder    |
+| `ease-skeleton-thumb`   | Image/thumbnail placeholder  |
+| `ease-skeleton-circle`  | Force circle shape           |
+| `ease-skeleton-rounded` | Rounded corners              |
+| `ease-skeleton-dark`    | Dark mode shimmer            |
+| `ease-skeleton-fast`    | 0.8s animation duration      |
+| `ease-skeleton-slow`    | 2.5s animation duration      |
 
 ## Submission
 

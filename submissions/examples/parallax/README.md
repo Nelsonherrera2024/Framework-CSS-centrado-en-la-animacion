@@ -11,20 +11,20 @@ Scroll-driven parallax depth layers using `animation-timeline: scroll()`. Zero J
 
 ## Variants
 
-| Class | Description |
-|---|---|
-| `ease-parallax-slow` | Moves -30px over full scroll |
-| `ease-parallax-medium` | Moves -80px over full scroll |
-| `ease-parallax-fast` | Moves -150px over full scroll |
-| `ease-parallax-down` | Moves downward on scroll |
-| `ease-parallax-left` | Slides left on scroll |
-| `ease-parallax-right` | Slides right on scroll |
-| `ease-parallax-fade` | Moves up + fades out on scroll |
+| Class                  | Description                    |
+| ---------------------- | ------------------------------ |
+| `ease-parallax-slow`   | Moves -30px over full scroll   |
+| `ease-parallax-medium` | Moves -80px over full scroll   |
+| `ease-parallax-fast`   | Moves -150px over full scroll  |
+| `ease-parallax-down`   | Moves downward on scroll       |
+| `ease-parallax-left`   | Slides left on scroll          |
+| `ease-parallax-right`  | Slides right on scroll         |
+| `ease-parallax-fade`   | Moves up + fades out on scroll |
 
 ## Custom Properties
 
-| Property | Default | Description |
-|---|---|---|
+| Property                   | Default | Description                         |
+| -------------------------- | ------- | ----------------------------------- |
 | `--ease-parallax-distance` | `-80px` | Distance to travel over full scroll |
 
 ## Browser Support
