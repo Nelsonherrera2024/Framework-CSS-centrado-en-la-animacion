@@ -226,6 +226,9 @@ EaseMotion CSS can also be loaded using alternative CDN providers.
 
 ### GitHub Raw CDN
 
+```markdown
+### GitHub Raw CDN
+
 ```html
 <link rel="stylesheet" href="https://raw.githubusercontent.com/SAPTARSHI-coder/EaseMotion-css/main/easemotion.min.css" />
 ```
