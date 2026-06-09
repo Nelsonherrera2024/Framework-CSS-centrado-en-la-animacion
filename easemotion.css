@@ -42,7 +42,6 @@
 @import "./components/tooltips.css";
 @import "./components/modals.css";
 
-
 /* Accessibility: Respect user's reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
   :root {
@@ -56,8 +55,3 @@
     scroll-behavior: auto !important;
   }
 }
-
-
-
-
-
