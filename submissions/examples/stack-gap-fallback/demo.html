@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>stack-gap-fallback — Fix #3653</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    body { font-family: 'Inter', sans-serif; padding: 2rem; max-width: 800px; margin: 0 auto; }
+    .badge { display: inline-block; background: #6c63ff; color: #fff; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; margin-bottom: 1rem; }
+  </style>
+</head>
+<body>
+  <span class="badge">Fix #3653</span>
+  <h1>Stack Gap Fallback Values</h1>
+  <p>ease-stack-* gap utilities now have CSS variable fallbacks (e.g. 1rem) to prevent layout collapse.</p>
+  <hr style="margin: 1.5rem 0; border-color: #e2e8f0;">
+  <div class="ease-stack">
+    <div class="ease-card ease-padding-4"><strong>Item 1</strong><p>Gap falls back to 1rem if --ease-space-4 is missing.</p></div>
+    <div class="ease-card ease-padding-4"><strong>Item 2</strong><p>Tested with core/utilities.css changes.</p></div>
+    <div class="ease-card ease-padding-4"><strong>Item 3</strong><p>No layout collapse even if variables are unset.</p></div>
+  </div>
+</body>
+</html>
