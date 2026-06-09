@@ -649,30 +649,64 @@ Yes. That is one of the core goals of EaseMotion CSS. You can use the CDN link o
 
 ```
 easemotion-css/
-├── easemotion.css              ← readable source entry point
-├── easemotion.min.css          ← bundled production build
+├── easemotion.css                    ← readable source entry point
+├── easemotion.min.css                ← bundled production build
 │
-├── core/                       ← MAINTAINER-ONLY
-│   ├── variables.css           ← 60+ design tokens
-│   ├── base.css                ← reset + typography (Inter font)
-│   ├── animations.css          ← 20+ animation classes
-│   └── utilities.css           ← 80+ layout utilities
+├── core/                             ← MAINTAINER-ONLY
+│   ├── variables.css                 ← 60+ design tokens
+│   ├── base.css                      ← reset + typography (Inter font)
+│   ├── animations.css                ← 20+ animation classes
+│   ├── utilities.css                 ← 80+ layout utilities
+│   ├── reveal.js                     ← scroll-triggered animation (IntersectionObserver)
+│   └── modal.js                      ← modal helper script
 │
-├── components/                 ← MAINTAINER-ONLY
-│   ├── buttons.css             ← 6 variants, 4 sizes, pill, icon
-│   └── cards.css               ← 13 card variants
+├── components/                       ← MAINTAINER-ONLY
+│   ├── buttons.css                   ← 6 variants, 4 sizes, pill, icon
+│   ├── cards.css                     ← 13 card variants
+│   ├── navbar.css
+│   ├── sidebar.css
+│   ├── footer.css
+│   ├── tabs.css
+│   ├── chip.css
+│   ├── badges.css
+│   ├── loaders.css
+│   ├── modals.css
+│   ├── tooltips.css
+│   ├── masonry.css
+│   ├── scroll-progress.css
+│   └── ease-marquee.css
 │
-├── submissions/                ← CONTRIBUTOR AREA
-│   ├── README.md               ← full submission workflow
+├── easemotion/                       ← modular animation-only imports
+│   ├── variables.css                 ← shared tokens for modular use
+│   ├── all.css                       ← full modular bundle
+│   ├── fade.css
+│   ├── slide.css
+│   ├── zoom.css
+│   ├── bounce.css
+│   ├── rotate.css
+│   ├── hover.css
+│   ├── misc.css
+│   └── timing.css
+│
+├── scss/                             ← SCSS layer (optional)
+│   ├── _index.scss
+│   ├── _variables.scss
+│   └── _mixins.scss
+│
+├── submissions/                      ← CONTRIBUTOR AREA
+│   ├── README.md                     ← full submission workflow
 │   └── examples/
-│       ├── hover-grow/         ← [INTEGRATED] → ease-hover-grow
-│       ├── hover-shimmer/      ← [INTEGRATED] → ease-hover-shimmer
-│       ├── card-lift/          ← [INTEGRATED] → ease-card-lift
-│       └── button-glow/        ← pending review
+│       └── your-feature-name/        ← add your submission here
 │
-├── examples/demo.html          ← source interactive showcase
-├── docs/demo.html              ← deployed live demo page
-├── docs/index.html             ← full documentation site
+├── examples/                         ← interactive showcases
+├── docs/                             ← documentation site
+│   ├── index.html
+│   └── demo.html
+│
+├── tests/
+│   └── smoke.test.js
+│
+├── scripts/                          ← build and validation tools
 │
 ├── .github/
 │   ├── CODEOWNERS
@@ -681,10 +715,10 @@ easemotion-css/
 │   │   └── bug_report.md
 │   └── PULL_REQUEST_TEMPLATE.md
 │
-├── VISION.md                   ← long-term project direction
-├── CHANGELOG.md                ← full release history
-├── CONTRIBUTING.md             ← contribution guide
-├── LICENSE                     ← MIT © 2026 Saptarshi Sadhu
+├── VISION.md                         ← long-term project direction
+├── CHANGELOG.md                      ← full release history
+├── CONTRIBUTING.md                   ← contribution guide
+├── LICENSE                           ← MIT © 2026 Saptarshi Sadhu
 └── README.md
 ```
 
