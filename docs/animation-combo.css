@@ -48,13 +48,13 @@
   --text-primary: var(--page-text);
   --bg-secondary: var(--code-bg);
   --border-hover: rgba(108, 99, 255, 0.4);
-  --primary-color: #6c63ff;
+  --primary-color: var(--ease-color-primary);
   --bg-primary: var(--card-bg);
 
   --text-primary-dark: var(--page-text);
   --bg-secondary-dark: var(--code-bg);
   --border-color-dark: var(--border-color);
-  --primary-color-dark: #6c63ff;
+  --primary-color-dark: var(--ease-color-primary);
   --bg-primary-dark: var(--card-bg);
 
   width: 100%;

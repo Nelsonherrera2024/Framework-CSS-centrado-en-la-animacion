@@ -89,12 +89,12 @@
   --bg-secondary: var(--code-bg);
   --text-primary: var(--page-text);
   --border-color: var(--border-color);
-  --primary-color: #6c63ff;
+  --primary-color: var(--ease-color-primary);
 
   --bg-secondary-dark: var(--code-bg);
   --text-primary-dark: var(--page-text);
   --border-color-dark: var(--border-color);
-  --primary-color-dark: #6c63ff;
+  --primary-color-dark: var(--ease-color-primary);
 
   background-color: var(--bg-secondary, #f0f0f0);
   color: var(--text-primary, #333);
