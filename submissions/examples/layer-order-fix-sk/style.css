@@ -1,0 +1,2 @@
+/* Explicit @layer order — matches the declaration added to easemotion/all.css */
+@layer easemotion-base, easemotion-components, easemotion-utilities;

@@ -1,5 +1,8 @@
 /* EaseMotion CSS — full bundle using modular animation categories */
 
+/* Explicit layer order so modular consumers get a predictable cascade */
+@layer easemotion-base, easemotion-components, easemotion-utilities;
+
 @import "./variables.css";
 @import "../core/base.css";
 @import "../core/animations.css";

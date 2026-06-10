@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>@layer Order Fix — all.css</title>
+  <link rel="stylesheet" href="../../easemotion/all.css" />
+  <style>
+    body { font-family: sans-serif; padding: 2rem; }
+    pre { background: #f4f4f4; padding: 1rem; border-radius: 6px; }
+    p { color: #333; }
+  </style>
+</head>
+<body>
+  <h1>@layer order declaration — easemotion/all.css</h1>
+  <p>
+    Without an explicit <code>@layer</code> order, browsers assign cascade priority
+    based on the order layers are <em>first encountered</em> — which depends on
+    import order and can differ across bundlers/browsers.
+  </p>
+  <p>
+    With the declaration below at the top of <code>all.css</code>, the layer order
+    is always: base → components → utilities, regardless of how the file is consumed.
+  </p>
+  <pre>@layer easemotion-base, easemotion-components, easemotion-utilities;</pre>
+
+  <h2>Live test</h2>
+  <button class="ease-btn ease-btn-primary">Primary Button</button>
+  <span class="ease-badge ease-badge-success" style="margin-left:1rem;">Badge</span>
+</body>
+</html>
