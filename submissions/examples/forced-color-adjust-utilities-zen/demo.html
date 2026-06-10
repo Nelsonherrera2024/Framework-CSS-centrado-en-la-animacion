@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forced Color Adjust — Demo</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{font-family:system-ui,sans-serif;background:#f5f5f5;display:flex;justify-content:center;align-items:center;min-height:100vh}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;padding:2rem;max-width:600px;width:100%}
+    .card{background:#fff;border-radius:12px;padding:1.5rem;box-shadow:0 2px 8px rgba(0,0,0,.08);text-align:center}
+    .card h3{font-size:.8rem;text-transform:uppercase;color:#888;margin-bottom:.75rem}
+    .badge{display:inline-block;padding:.35rem .75rem;border-radius:20px;font-size:.85rem;font-weight:600;margin:.25rem}
+    .badge-success{background:#2ecc71;color:#fff}
+    .badge-danger{background:#e74c3c;color:#fff}
+    .note{font-size:.8rem;color:#888;margin-top:.75rem;line-height:1.4}
+    .tag{display:inline-block;margin-top:.5rem;font-family:monospace;font-size:.8rem;color:#666;background:#f0f0f0;padding:.25rem .5rem;border-radius:4px}
+  </style>
+</head>
+<body>
+  <div class="grid">
+    <div class="card">
+      <h3>Auto (default)</h3>
+      <span class="badge badge-success">Success</span>
+      <span class="badge badge-danger">Danger</span>
+      <p class="note">In Windows High Contrast mode, browser overrides these colors to system colors.</p>
+      <span class="tag">.forced-color-adjust-auto</span>
+    </div>
+    <div class="card">
+      <h3>None</h3>
+      <span class="badge badge-success forced-color-adjust-none">Success</span>
+      <span class="badge badge-danger forced-color-adjust-none">Danger</span>
+      <p class="note">In Windows High Contrast mode, these badges keep their custom colors.</p>
+      <span class="tag">.forced-color-adjust-none</span>
+    </div>
+  </div>
+</body>
+</html>
