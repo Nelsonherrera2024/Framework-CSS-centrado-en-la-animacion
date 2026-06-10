@@ -1,5 +1,5 @@
 body{
-  padding:40px;
+  padding: var(--ease-space-10);
   font-family:Arial,sans-serif;
 }
 
@@ -33,7 +33,7 @@ h1,h2{
 }
 
 button{
-  padding:8px 16px;
+  padding: var(--ease-space-2) 16px;
   cursor:pointer;
 }
 

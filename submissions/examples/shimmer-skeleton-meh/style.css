@@ -1,4 +1,4 @@
-/* Base shimmer box — apply to any element */
+/* Base shimmer box â€” apply to any element */
 .skeleton-box {
   background: linear-gradient(
     90deg,
@@ -20,28 +20,28 @@
 
 /* ---- SIZE VARIANTS ---- */
 
-/* Text line — full width */
+/* Text line â€” full width */
 .skeleton-line-full {
   width: 100%;
   height: 14px;
   margin-bottom: 10px;
 }
 
-/* Text line — half width */
+/* Text line â€” half width */
 .skeleton-line-half {
   width: 55%;
   height: 14px;
   margin-bottom: 10px;
 }
 
-/* Text line — three quarter width */
+/* Text line â€” three quarter width */
 .skeleton-line-three-quarter {
   width: 75%;
   height: 14px;
   margin-bottom: 10px;
 }
 
-/* Avatar — circle */
+/* Avatar â€” circle */
 .skeleton-avatar {
   width: 48px;
   height: 48px;
@@ -77,7 +77,7 @@
 .skeleton-card {
   background: #fff;
   border-radius: 12px;
-  padding: 20px;
+  padding: var(--ease-space-5);
   width: 280px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }

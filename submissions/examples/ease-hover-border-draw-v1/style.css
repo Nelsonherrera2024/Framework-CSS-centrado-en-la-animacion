@@ -6,7 +6,7 @@
 .ease-hover-border-draw {
   position: relative;
   display: inline-block;
-  padding: 16px 32px;
+  padding: var(--ease-space-4) 32px;
   color: #fff;
   background: #1f2937;
   cursor: pointer;
@@ -45,7 +45,7 @@
   box-sizing: border-box;
 }
 
-/* Draw Top → Right */
+/* Draw Top â†’ Right */
 .ease-hover-border-draw:hover::before {
   width: 100%;
   height: 100%;
@@ -55,7 +55,7 @@
     height calc(var(--ease-border-speed) / 2) ease calc(var(--ease-border-speed) / 2);
 }
 
-/* Draw Bottom → Left */
+/* Draw Bottom â†’ Left */
 .ease-hover-border-draw:hover::after {
   width: 100%;
   height: 100%;

@@ -80,7 +80,7 @@ body {
   align-items: center;
   justify-content: center;
 
-  padding: 12px 18px;
+  padding: var(--ease-space-3) 18px;
 
   background: var(--tooltip-bg);
   color: var(--text);

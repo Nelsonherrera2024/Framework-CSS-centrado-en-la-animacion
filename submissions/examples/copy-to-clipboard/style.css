@@ -6,7 +6,7 @@
   position: absolute;
   top: 8px;
   right: 8px;
-  padding: 4px 12px;
+  padding: var(--ease-space-1) 12px;
   font-size: 0.72rem;
   font-family: inherit;
   background: #7c3aed;

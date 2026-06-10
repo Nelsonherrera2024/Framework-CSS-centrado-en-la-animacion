@@ -16,7 +16,7 @@ body {
   width: 100%;
   max-width: 600px;
   justify-content: space-between;
-  padding: 20px;
+  padding: var(--ease-space-5);
   position: relative;
   box-sizing: border-box;
 }

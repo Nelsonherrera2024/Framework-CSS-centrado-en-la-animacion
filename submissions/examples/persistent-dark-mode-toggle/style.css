@@ -81,7 +81,7 @@ body {
 
 .demo-shell {
   max-width: 1000px;
-  margin: 48px auto;
+  margin: var(--ease-space-12) auto;
   padding: 0 24px;
 }
 
@@ -100,7 +100,7 @@ body {
   background-color: var(--surface-bg);
   border: 1px solid var(--border-color);
   border-radius: 12px;
-  padding: 32px;
+  padding: var(--ease-space-8);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }

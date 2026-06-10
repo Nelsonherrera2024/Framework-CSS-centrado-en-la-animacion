@@ -10,7 +10,7 @@ body {
 
 .header {
   text-align: center;
-  padding: 40px 20px;
+  padding: var(--ease-space-10) 20px;
 }
 
 .container {
@@ -22,7 +22,7 @@ body {
 
 .card {
   background: var(--ease-color-neutral-800);
-  padding: 20px;
+  padding: var(--ease-space-5);
   border-radius: 12px;
   transition: transform 0.3s ease;
 }
@@ -32,7 +32,7 @@ body {
 }
 
 .btn {
-  padding: 12px 20px;
+  padding: var(--ease-space-3) 20px;
   border: none;
   border-radius: 8px;
   background: #38bdf8;

@@ -14,7 +14,7 @@ body{
 }
 
 .ease-skew{
-    padding:20px 40px;
+    padding: var(--ease-space-5) 40px;
     background:#4f46e5;
     color:white;
     border-radius:12px;

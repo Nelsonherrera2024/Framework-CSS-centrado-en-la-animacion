@@ -1,7 +1,7 @@
 body {
   font-family: sans-serif;
   background: var(--ease-color-neutral-50);
-  padding: 40px;
+  padding: var(--ease-space-10);
 }
 
 .container {
@@ -16,7 +16,7 @@ body {
 }
 
 .card {
-  padding: 20px;
+  padding: var(--ease-space-5);
   background: white;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,.08);

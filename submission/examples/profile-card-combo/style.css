@@ -1,12 +1,12 @@
 /* ============================================================
-   EaseMotion CSS Sandbox — profile-card-combo/style.css
+   EaseMotion CSS Sandbox â€” profile-card-combo/style.css
    ============================================================ */
 
 /* Step back 3 levels out of submissions/examples/profile-card-combo to pull root tokens */
 @import "../../../core/variables.css";
 @import "../../../core/utilities.css";
 
-/* ── Tactical Blend Profile Card Shell ───────────────────── */
+/* â”€â”€ Tactical Blend Profile Card Shell â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .alm-hybrid-card {
   position: relative;
   width: 100%;
@@ -51,13 +51,13 @@
     inset 1px 1px 0px rgba(255, 255, 255, 0.15);
 }
 
-/* ── Card Content Internal Sub-Elements ──────────────────── */
+/* â”€â”€ Card Content Internal Sub-Elements â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .alm-avatar-ring {
   width: 80px;
   height: 80px;
   border-radius: 50%;
   margin: 0 auto var(--ease-space-4, 1rem) auto;
-  padding: 4px;
+  padding: var(--ease-space-1);
   
   /* Tactile recessed inset shadow mapping for the image seat */
   background: rgba(0, 0, 0, 0.15);

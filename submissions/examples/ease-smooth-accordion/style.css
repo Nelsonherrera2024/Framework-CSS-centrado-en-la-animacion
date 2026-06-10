@@ -76,7 +76,7 @@
 }
 
 .ease-accordion-toggle:checked ~ .ease-accordion-content p {
-  padding: 4px 24px 20px 24px;
+  padding: var(--ease-space-1) 24px 20px 24px;
   opacity: 1;
 }
 

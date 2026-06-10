@@ -6,7 +6,7 @@ body {
     background-image: linear-gradient(to bottom right, #070d2e, #3e4672 ,#5e7295 );
 }
 .ease-hover-grow{
-    padding: 16px 32px; 
+    padding: var(--ease-space-4) 32px; 
     border-radius: 10px;
     border: none;
     background:#7288AE;

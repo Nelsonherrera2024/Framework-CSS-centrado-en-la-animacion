@@ -1,9 +1,9 @@
 /* ============================================================
-   EaseMotion CSS — Before/After Image Comparison Slider
+   EaseMotion CSS â€” Before/After Image Comparison Slider
    Issue #1199
    ============================================================ */
 
-/* ── Container ────────────────────────────────────────────── */
+/* â”€â”€ Container â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 .ease-image-comparison {
   position: relative;
@@ -21,7 +21,7 @@
   box-shadow: 0 0 0 3px rgba(124, 108, 255, 0.35);
 }
 
-/* ── After image (full width) ────────────────────────────── */
+/* â”€â”€ After image (full width) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 .ease-image-comparison-after {
   display: block;
@@ -30,7 +30,7 @@
   pointer-events: none;
 }
 
-/* ── Before image (clipped) ──────────────────────────────── */
+/* â”€â”€ Before image (clipped) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 .ease-image-comparison-before {
   position: absolute;
@@ -51,7 +51,7 @@
   top: 0;
 }
 
-/* ── Handle ──────────────────────────────────────────────── */
+/* â”€â”€ Handle â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 .ease-image-comparison-handle {
   position: absolute;
@@ -89,12 +89,12 @@
   transform: translate(-50%, -50%) scale(1.1);
 }
 
-/* ── Labels ──────────────────────────────────────────────── */
+/* â”€â”€ Labels â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 .ease-image-comparison-label {
   position: absolute;
   bottom: 16px;
-  padding: 4px 12px;
+  padding: var(--ease-space-1) 12px;
   border-radius: var(--ease-radius-sm, 4px);
   background: rgba(0, 0, 0, 0.55);
   color: #fff;
@@ -113,7 +113,7 @@
   right: 16px;
 }
 
-/* ── Reduced motion ──────────────────────────────────────── */
+/* â”€â”€ Reduced motion â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 @media (prefers-reduced-motion: reduce) {
   .ease-image-comparison-handle::after {

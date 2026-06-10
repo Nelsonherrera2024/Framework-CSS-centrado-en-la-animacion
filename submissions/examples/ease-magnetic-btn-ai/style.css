@@ -1,6 +1,6 @@
 .ease-magnetic-btn-ai {
   position: relative;
-  padding: 20px 40px;
+  padding: var(--ease-space-5) 40px;
   background: #222;
   color: #fff;
   border: none;

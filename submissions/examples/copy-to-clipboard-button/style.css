@@ -1,12 +1,12 @@
 .code-block-wrapper {
   position: relative;
   max-width: 720px;
-  margin: 24px 0;
+  margin: var(--ease-space-6) 0;
 }
 
 .code-block-wrapper pre {
   margin: 0;
-  padding: 20px;
+  padding: var(--ease-space-5);
   padding-right: 76px;
   overflow-x: auto;
   color: #e5e7eb;
@@ -25,7 +25,7 @@
   position: absolute;
   top: 8px;
   right: 8px;
-  padding: 4px 10px;
+  padding: var(--ease-space-1) 10px;
   font-size: 0.75rem;
   background: #7c3aed;
   color: #fff;

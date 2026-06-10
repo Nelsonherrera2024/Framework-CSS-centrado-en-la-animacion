@@ -44,7 +44,7 @@ body {
 }
 
 .card {
-  padding: 48px 64px;
+  padding: var(--ease-space-12) 64px;
   border-radius: 24px;
 
   background: var(--card);

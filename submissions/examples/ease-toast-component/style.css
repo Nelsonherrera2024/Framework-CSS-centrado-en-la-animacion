@@ -40,7 +40,7 @@
 .ease-toast-container {
   position: fixed;
   z-index: 9999;
-  padding: 20px;
+  padding: var(--ease-space-5);
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -146,7 +146,7 @@
   border: none;
   color: inherit;
   cursor: pointer;
-  padding: 4px;
+  padding: var(--ease-space-1);
   opacity: 0.6;
   transition: opacity 0.2s, transform 0.2s;
   display: flex;
@@ -451,7 +451,7 @@ body {
 .demo-wrapper {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: var(--ease-space-10) 20px;
 }
 
 /* Header design */
@@ -500,7 +500,7 @@ body {
   background: var(--bg-secondary);
   border: 1px solid var(--border-color);
   border-radius: 12px;
-  padding: 24px;
+  padding: var(--ease-space-6);
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -558,7 +558,7 @@ body {
   background: var(--bg-secondary);
   border: 1px solid var(--border-color);
   border-radius: 12px;
-  padding: 24px;
+  padding: var(--ease-space-6);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -577,7 +577,7 @@ body {
 @media (max-width: 480px) {
   .ease-toast-container {
     width: 100%;
-    padding: 12px;
+    padding: var(--ease-space-3);
   }
   .ease-toast {
     width: 100%;

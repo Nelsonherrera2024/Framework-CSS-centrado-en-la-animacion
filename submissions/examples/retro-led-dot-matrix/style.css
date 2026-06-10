@@ -46,7 +46,7 @@ p{color:var(--muted);font-size:0.85rem;text-align:center;font-family:'Share Tech
   background:var(--surface);
   border:2px solid var(--panel-border);
   border-radius:12px;
-  padding:20px 24px;
+  padding: var(--ease-space-5) 24px;
   box-shadow:
     0 0 0 1px rgba(0,255,65,0.05),
     0 20px 60px rgba(0,0,0,0.8),
@@ -70,7 +70,7 @@ p{color:var(--muted);font-size:0.85rem;text-align:center;font-family:'Share Tech
 
 /* Corner screws */
 .led-panel::after{
-  content:'⬤ ⬤';
+  content:'â¬¤ â¬¤';
   position:absolute;
   bottom:8px;right:14px;
   font-size:5px;color:rgba(0,255,65,0.2);
@@ -114,7 +114,7 @@ p{color:var(--muted);font-size:0.85rem;text-align:center;font-family:'Share Tech
   background:transparent;
   border:1px solid var(--panel-border);
   border-radius:8px;
-  padding:8px 18px;
+  padding: var(--ease-space-2) 18px;
   font-family:'Share Tech Mono',monospace;
   font-size:0.78rem;
   color:var(--text);
@@ -161,7 +161,7 @@ p{color:var(--muted);font-size:0.85rem;text-align:center;font-family:'Share Tech
   background:rgba(0,255,65,0.04);
   border:1px solid var(--panel-border);
   border-radius:8px;
-  padding:8px 14px;
+  padding: var(--ease-space-2) 14px;
   font-family:'Share Tech Mono',monospace;
   font-size:0.82rem;
   color:var(--text);

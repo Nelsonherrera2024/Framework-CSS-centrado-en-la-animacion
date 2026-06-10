@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  padding: 40px;
+  padding: var(--ease-space-10);
   background: #f4f4f4;
   font-family: Arial, sans-serif;
 }

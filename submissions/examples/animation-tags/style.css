@@ -24,7 +24,7 @@ body{
     color:var(--text);
     transition:.4s;
     min-height:100vh;
-    padding:40px;
+    padding: var(--ease-space-10);
 }
 
 header{
@@ -176,7 +176,7 @@ header p{
 
 .controls input,
 .controls select{
-    padding:12px 15px;
+    padding: var(--ease-space-3) 15px;
     border-radius:10px;
     border:1px solid #d1d5db;
     min-width:220px;

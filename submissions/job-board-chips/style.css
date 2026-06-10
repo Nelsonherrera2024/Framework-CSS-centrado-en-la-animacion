@@ -11,7 +11,7 @@ body {
 
 .wrapper {
 	background-color: #111827;
-	padding: 24px;
+	padding: var(--ease-space-6);
 	border-radius: 12px;
 	border: 1px solid #1f2937;
 	width: 100%;

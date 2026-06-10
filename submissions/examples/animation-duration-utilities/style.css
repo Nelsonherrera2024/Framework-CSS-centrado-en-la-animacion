@@ -28,7 +28,7 @@ body {
 .demo-shell {
   width: min(1080px, calc(100% - 32px));
   margin: 0 auto;
-  padding: 64px 0;
+  padding: var(--ease-space-16) 0;
 }
 
 .intro {
@@ -94,7 +94,7 @@ h1 {
 .duration-label {
   align-self: start;
   width: fit-content;
-  padding: 8px 12px;
+  padding: var(--ease-space-2) 12px;
   border-radius: 999px;
   background: rgba(56, 189, 248, 0.12);
   color: var(--accent);

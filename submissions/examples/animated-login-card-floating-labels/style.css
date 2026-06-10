@@ -103,7 +103,7 @@ body {
 }
 
 .alm-subtitle {
-  margin: 8px 0 0;
+  margin: var(--ease-space-2) 0 0;
   color: var(--alm-muted);
   line-height: 1.5;
   font-size: 14px;

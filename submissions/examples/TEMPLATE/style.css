@@ -2,12 +2,12 @@
 /* Placeholder styles for demo */
 
 /* =============================================
-   EASEMOTION CSS — CONTRIBUTOR TEMPLATE
+   EASEMOTION CSS â€” CONTRIBUTOR TEMPLATE
    Fill in your animation below.
    The maintainer will rename classes to ease-*
    ============================================= */
 
-/* TEMPLATE: Basic page layout — keep this */
+/* TEMPLATE: Basic page layout â€” keep this */
 
 body {
   font-family: sans-serif;
@@ -46,7 +46,7 @@ body {
 .your-class-name {
   /* TEMPLATE: Add your CSS animation/transition here */
   /* Example: */
-  padding: 16px 32px;
+  padding: var(--ease-space-4) 32px;
   background: #4f46e5;
   color: white;
   border-radius: 8px;

@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    padding: 40px;
+    padding: var(--ease-space-10);
 }
 
 .button-group {

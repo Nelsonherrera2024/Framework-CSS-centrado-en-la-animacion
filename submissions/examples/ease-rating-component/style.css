@@ -357,7 +357,7 @@ body {
   font-weight: 700;
   background-color: var(--rating-inactive-color);
   color: var(--text-primary);
-  padding: 4px 10px;
+  padding: var(--ease-space-1) 10px;
   border-radius: var(--radius-sm);
   border: 1px solid var(--border-color);
   line-height: 1.3;

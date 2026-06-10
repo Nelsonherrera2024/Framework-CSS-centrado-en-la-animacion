@@ -81,7 +81,7 @@ body {
   font-size: 0.68rem;
   color: #aaa;
   text-align: center;
-  margin: 4px 0;
+  margin: var(--ease-space-1) 0;
 }
 
 .typing-wrapper {

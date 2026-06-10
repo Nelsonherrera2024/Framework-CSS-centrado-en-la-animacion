@@ -1,5 +1,5 @@
 /* ============================================================
-   EaseMotion CSS Sandbox — grid-layout-customizer/style.css
+   EaseMotion CSS Sandbox â€” grid-layout-customizer/style.css
    ============================================================ */
 
 /* Step back 3 levels out of submissions/examples/grid-layout-customizer to pull root tokens */
@@ -8,7 +8,7 @@
 
 @layer easemotion-components {
 
-/* ── Customizer Workspace Base Stage ─────────────────────── */
+/* â”€â”€ Customizer Workspace Base Stage â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .alm-grid-customizer-stage {
   width: 100%;
   max-width: 740px;
@@ -27,13 +27,13 @@
   pointer-events: none;
 }
 
-/* ── Layout Controls Command Bar ────────────────────────── */
+/* â”€â”€ Layout Controls Command Bar â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .alm-layout-control-bar {
   display: flex;
   align-items: center;
   gap: var(--ease-space-2, 0.5rem);
   background: rgba(0, 0, 0, 0.2);
-  padding: 4px;
+  padding: var(--ease-space-1);
   border-radius: var(--ease-radius-md, 0.5rem);
   width: max-content;
   margin-bottom: var(--ease-space-6, 1.5rem);
@@ -57,7 +57,7 @@
   color: #ffffff;
 }
 
-/* ── Master Dynamic Dashboard Grid Layout Canvas ─────────── */
+/* â”€â”€ Master Dynamic Dashboard Grid Layout Canvas â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .alm-dashboard-custom-grid {
   /* 1. Define localized layout variable tracking baselines */
   --alm-main-card-span: span 1;
@@ -70,7 +70,7 @@
   box-sizing: border-box;
 }
 
-/* ── INTERACTIVE DYNAMIC COLUMN MUTATION ENGINE RULES ────── */
+/* â”€â”€ INTERACTIVE DYNAMIC COLUMN MUTATION ENGINE RULES â”€â”€â”€â”€â”€â”€ */
 
 /* CONFIGURATION 1: SINGLE DETAIL VIEW OVERRIDE (Main card stretches full width, secondary cells hide) */
 #layout-view-detail:checked ~ .alm-layout-control-bar label[for="layout-view-detail"] { background: var(--ease-color-primary, #6c63ff); color: #ffffff; }
@@ -93,7 +93,7 @@
   --alm-sub-card-visibility: block;
 }
 
-/* ── Modifiable Target Card Wrapper Modules ───────────────── */
+/* â”€â”€ Modifiable Target Card Wrapper Modules â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .alm-customizer-card {
   background: rgba(0, 0, 0, 0.25);
   border: 1px solid rgba(255, 255, 255, 0.04);

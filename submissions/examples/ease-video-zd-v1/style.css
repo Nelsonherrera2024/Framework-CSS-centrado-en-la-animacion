@@ -154,7 +154,7 @@
   color: var(--vp-text);
   cursor: pointer;
   font-size: 0.85rem;
-  padding: 4px;
+  padding: var(--ease-space-1);
   transition: color 0.2s ease;
   display: flex;
   align-items: center;

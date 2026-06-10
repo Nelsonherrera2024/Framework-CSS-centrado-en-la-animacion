@@ -2,7 +2,7 @@ body {
   font-family: system-ui, sans-serif;
   background: #0f0e17;
   color: #fffffe;
-  padding: 48px 32px;
+  padding: var(--ease-space-12) 32px;
   margin: 0;
 }
 
@@ -23,7 +23,7 @@ p {
 
 .elastic-card {
   width: 220px;
-  padding: 24px;
+  padding: var(--ease-space-6);
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);

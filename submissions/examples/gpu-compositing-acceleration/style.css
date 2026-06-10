@@ -1,12 +1,12 @@
 /* ========================================================
-   ðŸ“¦ DEMO CONTAINER INTERFACE LAYOUTS
+   Ã°Å¸â€œÂ¦ DEMO CONTAINER INTERFACE LAYOUTS
    ======================================================== */
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   background-color: var(--ease-color-neutral-900);
   color: var(--ease-color-neutral-50);
   margin: 0;
-  padding: 40px;
+  padding: var(--ease-space-10);
 }
 
 .demo-container {
@@ -39,7 +39,7 @@ body {
 
 .demo-card {
   background: var(--ease-color-neutral-800);
-  padding: 24px;
+  padding: var(--ease-space-6);
   border-radius: 12px;
   text-align: center;
   border: 1px solid var(--ease-color-neutral-700);
@@ -59,7 +59,7 @@ body {
 
 
 /* ========================================================
-   ðŸŽ¯ CORE TASK OPTIMIZATION: INFINITE UTILITIES WITH GPU HINTS
+   Ã°Å¸Å½Â¯ CORE TASK OPTIMIZATION: INFINITE UTILITIES WITH GPU HINTS
    ======================================================== */
 
 /* 1. Float Utility */
@@ -69,7 +69,7 @@ body {
 }
 .ease-float {
   animation: ease-kf-float 3s ease-in-out infinite;
-  will-change: transform; /* ðŸ‘ˆ Forces GPU layer compositing */
+  will-change: transform; /* Ã°Å¸â€˜Ë† Forces GPU layer compositing */
 }
 
 /* 2. Rotate / Spin Utility */
@@ -79,7 +79,7 @@ body {
 }
 .ease-rotate {
   animation: ease-kf-rotate 1.2s linear infinite;
-  will-change: transform; /* ðŸ‘ˆ Forces GPU layer compositing */
+  will-change: transform; /* Ã°Å¸â€˜Ë† Forces GPU layer compositing */
 }
 
 /* 3. Pulse Utility */
@@ -89,7 +89,7 @@ body {
 }
 .ease-pulse {
   animation: ease-kf-pulse 2s ease-in-out infinite;
-  will-change: transform, opacity; /* ðŸ‘ˆ Hardware accelerates transforms & fade layers */
+  will-change: transform, opacity; /* Ã°Å¸â€˜Ë† Hardware accelerates transforms & fade layers */
 }
 
 /* 4. Ping Utility */
@@ -99,5 +99,5 @@ body {
 }
 .ease-ping {
   animation: ease-kf-ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
-  will-change: transform, opacity; /* ðŸ‘ˆ Hardware accelerates layout compression */
+  will-change: transform, opacity; /* Ã°Å¸â€˜Ë† Hardware accelerates layout compression */
 }

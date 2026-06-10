@@ -13,7 +13,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 40px;
-  padding: 40px 20px;
+  padding: var(--ease-space-10) 20px;
 }
 
 h2 {
@@ -29,7 +29,7 @@ h2 {
 .card {
   background: white;
   border-radius: 16px;
-  padding: 32px 40px;
+  padding: var(--ease-space-8) 40px;
   min-width: 420px;
   text-align: center;
 }
@@ -120,8 +120,8 @@ h2 {
 /* === Replay button === */
 .replay-btn {
   display: block;
-  margin: 20px auto 0;
-  padding: 8px 20px;
+  margin: var(--ease-space-5) auto 0;
+  padding: var(--ease-space-2) 20px;
   border: none;
   border-radius: 8px;
   background: var(--ease-color-primary);

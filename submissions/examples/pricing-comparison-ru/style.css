@@ -11,7 +11,7 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
-    padding:40px 20px;
+    padding: var(--ease-space-10) 20px;
     color:white;
 }
 
@@ -74,7 +74,7 @@ body{
 
 .price{
     font-size:3rem;
-    margin:20px 0;
+    margin: var(--ease-space-5) 0;
     font-weight:bold;
 }
 

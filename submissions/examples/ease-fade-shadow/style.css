@@ -1,6 +1,6 @@
 .fade-shadow {
     background: white;
-    padding: 24px;
+    padding: var(--ease-space-6);
     border-radius: 16px;
     transition: box-shadow 0.35s ease, transform 0.35s ease;
 }
@@ -14,8 +14,8 @@ body {
     font-family: Arial, sans-serif;
     background: var(--ease-color-neutral-50);
     max-width: 900px;
-    margin: 40px auto;
-    padding: 20px;
+    margin: var(--ease-space-10) auto;
+    padding: var(--ease-space-5);
 }
 
 h1,

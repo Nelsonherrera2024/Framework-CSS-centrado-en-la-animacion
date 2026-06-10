@@ -30,7 +30,7 @@ h1{
 
 .notification-btn{
     position:relative;
-    padding:16px 32px;
+    padding: var(--ease-space-4) 32px;
     border:none;
     border-radius:12px;
     background:var(--ease-color-secondary);

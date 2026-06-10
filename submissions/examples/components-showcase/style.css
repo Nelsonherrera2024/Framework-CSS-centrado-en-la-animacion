@@ -10,7 +10,7 @@ body {
 .container {
     max-width: 1000px;
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: var(--ease-space-10) 20px;
 }
 
 .showcase-header {
@@ -33,7 +33,7 @@ body {
 
 /* Fallback styles for items if library classes are purely animation-driven */
 .btn {
-    padding: 12px 24px;
+    padding: var(--ease-space-3) 24px;
     background-color: #6366f1;
     color: white;
     border: none;
@@ -45,7 +45,7 @@ body {
 .card {
     background-color: #161426;
     border: 1px solid #2e2a47;
-    padding: 24px;
+    padding: var(--ease-space-6);
     border-radius: 8px;
     max-width: 300px;
 }

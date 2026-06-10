@@ -13,7 +13,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 40px;
-  padding: 40px 20px;
+  padding: var(--ease-space-10) 20px;
 }
 
 h2 {
@@ -29,7 +29,7 @@ h2 {
 .card {
   background: white;
   border-radius: 16px;
-  padding: 32px 40px;
+  padding: var(--ease-space-8) 40px;
   min-width: 480px;
   text-align: center;
 }

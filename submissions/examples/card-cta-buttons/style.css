@@ -81,7 +81,7 @@ body {
   background: #191821;
   border: 1px solid #2e2b3a;
   border-radius: 22px;
-  padding: 24px;
+  padding: var(--ease-space-6);
   min-height: 390px;
   transition:
     transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
@@ -121,7 +121,7 @@ body {
 hr {
   border: none;
   border-top: 1px solid #292735;
-  margin: 20px 0;
+  margin: var(--ease-space-5) 0;
 }
 
 .card h3 {

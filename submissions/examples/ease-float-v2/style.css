@@ -12,7 +12,7 @@ body {
 }
 
 .float-card {
-  padding: 20px 40px;
+  padding: var(--ease-space-5) 40px;
   border-radius: 12px;
   background: #4f46e5;
   color: white;

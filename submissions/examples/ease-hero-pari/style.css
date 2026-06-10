@@ -72,7 +72,7 @@ h2 {
 }
 
 .hero-btn {
-  padding: 12px 28px;
+  padding: var(--ease-space-3) 28px;
   border-radius: 10px;
   font-size: 14px;
   font-weight: 600;

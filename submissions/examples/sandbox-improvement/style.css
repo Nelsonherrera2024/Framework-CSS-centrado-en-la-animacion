@@ -24,7 +24,7 @@ body {
   align-items: center;
 }
 
-/* 🚀 Global Sandbox Viewport Shield Class */
+/* ðŸš€ Global Sandbox Viewport Shield Class */
 .ease-sandbox-viewport {
   position: relative;
   width: 100%;
@@ -44,7 +44,7 @@ body {
   justify-content: center;
 }
 
-/* ⚡ Premium Blueprint Grid Mesh Overlay Background */
+/* âš¡ Premium Blueprint Grid Mesh Overlay Background */
 .ease-grid-mesh {
   position: absolute;
   top: 0;
@@ -83,7 +83,7 @@ body {
 
 .status-badge {
   display: inline-block;
-  padding: 4px 12px;
+  padding: var(--ease-space-1) 12px;
   background: rgba(0, 162, 255, 0.1);
   color: var(--ease-accent-blueprint);
   border-radius: 20px;

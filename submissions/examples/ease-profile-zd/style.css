@@ -26,7 +26,7 @@
   background: var(--pf-surface);
   border: 1px solid var(--pf-border);
   border-radius: 16px;
-  padding: 32px 24px 24px;
+  padding: var(--ease-space-8) 24px 24px;
   text-align: center;
   font-family: var(--pf-font);
   animation: pf-fade-up 0.5s ease-out both;
@@ -79,7 +79,7 @@
   justify-content: center;
   gap: 16px;
   margin-bottom: 16px;
-  padding: 12px 0;
+  padding: var(--ease-space-3) 0;
   border-top: 1px solid var(--pf-border);
   border-bottom: 1px solid var(--pf-border);
 }
@@ -145,7 +145,7 @@
 }
 @media (max-width: 640px) {
   .pf-grid { grid-template-columns: 1fr; }
-  .pf-card { padding: 24px 16px 20px; }
+  .pf-card { padding: var(--ease-space-6) 16px 20px; }
 }
 @media (prefers-reduced-motion: reduce) {
   * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }

@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  padding: 40px 20px;
+  padding: var(--ease-space-10) 20px;
   background-color: #0f172a;
   color: #f8fafc;
   font-family: system-ui, -apple-system, sans-serif;
@@ -28,7 +28,7 @@ body {
   justify-content: space-between;
   align-items: center;
   background-color: #1e293b;
-  padding: 12px 24px;
+  padding: var(--ease-space-3) 24px;
   border-radius: 12px;
   border: 1px solid #334155;
 }
@@ -75,7 +75,7 @@ body {
   color: #64748b;
   cursor: pointer;
   font-size: 12px;
-  padding: 4px;
+  padding: var(--ease-space-1);
   display: none; /* Hidden by default */
   align-items: center;
   justify-content: center;
@@ -86,11 +86,11 @@ body {
   color: #f1f5f9;
 }
 
-/* ─── Size Variants ─── */
+/* â”€â”€â”€ Size Variants â”€â”€â”€ */
 
 /* 1. Default Large View */
 .default .ease-search-input {
-  padding: 12px 40px 12px 42px;
+  padding: var(--ease-space-3) 40px 12px 42px;
   width: 400px;
 }
 .default .ease-search-input:focus {
@@ -101,7 +101,7 @@ body {
 
 /* 2. Compact Navbar View (Expandable Width focus) */
 .compact .ease-search-input {
-  padding: 8px 36px 8px 38px;
+  padding: var(--ease-space-2) 36px 8px 38px;
   width: 160px;
 }
 .compact .ease-search-input:focus {

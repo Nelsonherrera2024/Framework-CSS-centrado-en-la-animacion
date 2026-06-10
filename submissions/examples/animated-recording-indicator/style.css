@@ -17,7 +17,7 @@ body{
     display:flex;
     align-items:center;
     gap:10px;
-    padding:12px 18px;
+    padding: var(--ease-space-3) 18px;
     background:#fff;
     border-radius:30px;
     box-shadow:0 4px 12px rgba(0,0,0,0.1);

@@ -42,7 +42,7 @@ body {
   margin-top: 6px;
 }
 
-/* â”€â”€â”€ THE CORE GLASS SHINE UTILITY CONTROLLER â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ THE CORE GLASS SHINE UTILITY CONTROLLER Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 .ease-glass-shine {
   position: relative;
   overflow: hidden; /* Vital to clamp the light beam reflections within card borders */
@@ -72,19 +72,19 @@ body {
   pointer-events: none;
 }
 
-/* â”€â”€â”€ INTERACTIVE TRIGGER TRANSITIONS â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ INTERACTIVE TRIGGER TRANSITIONS Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 .ease-glass-shine:hover::after {
   /* Sweeps fluidly directly across the container surface matrix onto the right boundary */
   transform: skewX(-25deg) translate3d(350%, 0, 0);
 }
 
-/* â”€â”€â”€ SAMPLE CARD CONTENT BLOCKS (NEO-BRUTALIST DARK MODE) â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ SAMPLE CARD CONTENT BLOCKS (NEO-BRUTALIST DARK MODE) Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 .showcase-card {
   width: min(340px, 90vw);
   background: var(--card-dark);
   border-radius: 24px;
   border: 1px solid rgba(255, 255, 255, 0.05);
-  padding: 32px;
+  padding: var(--ease-space-8);
   box-sizing: border-box;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
   transition: border-color var(--transition-speed) ease, transform var(--transition-speed) var(--transition-fluid);

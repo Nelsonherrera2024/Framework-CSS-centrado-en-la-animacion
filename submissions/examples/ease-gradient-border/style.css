@@ -33,7 +33,7 @@ body {
 .demo-shell {
   width: min(1080px, calc(100% - 32px));
   margin: 0 auto;
-  padding: 64px 0;
+  padding: var(--ease-space-16) 0;
 }
 
 .intro-panel {
@@ -79,7 +79,7 @@ h1 {
   align-items: stretch;
 }
 
-/* â”€â”€ EaseMotion Utility: ease-gradient-border â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ EaseMotion Utility: ease-gradient-border Ã¢â€â‚¬Ã¢â€â‚¬ */
 .ease-gradient-border {
   --ease-gb-width: 3px;
   --ease-gb-radius: 18px;
@@ -143,7 +143,7 @@ h1 {
   }
 }
 
-/* â”€â”€ Demo Page Elements â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Demo Page Elements Ã¢â€â‚¬Ã¢â€â‚¬ */
 .demo-card {
   min-height: 320px;
   padding: 30px;
@@ -201,7 +201,7 @@ h1 {
   outline-offset: 4px;
 }
 
-/* â”€â”€ Accessibility â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Accessibility Ã¢â€â‚¬Ã¢â€â‚¬ */
 @media (prefers-reduced-motion: reduce) {
   .ease-gradient-border::before {
     animation-duration: 18s; /* Slower, less distracting rotation */

@@ -9,7 +9,7 @@ body {
   background: #0a0e1a;
   color: var(--ease-color-neutral-200);
   min-height: 100vh;
-  padding: 40px 20px;
+  padding: var(--ease-space-10) 20px;
 }
 
 /* Header */
@@ -46,7 +46,7 @@ body {
 /* Nodes */
 .flow-node {
   width: 100%;
-  padding: 20px 24px;
+  padding: var(--ease-space-5) 24px;
   border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: #111827;
@@ -132,7 +132,7 @@ body {
 .flow-arrow {
   font-size: 1.4rem;
   color: rgba(226, 232, 240, 0.25);
-  padding: 4px 0;
+  padding: var(--ease-space-1) 0;
   user-select: none;
 }
 
@@ -143,8 +143,8 @@ body {
 /* Blocked path */
 .blocked-path {
   max-width: 420px;
-  margin: 32px auto 0;
-  padding: 16px 20px;
+  margin: var(--ease-space-8) auto 0;
+  padding: var(--ease-space-4) 20px;
   border-radius: 12px;
   background: rgba(244, 63, 94, 0.08);
   border: 1px solid rgba(244, 63, 94, 0.25);
@@ -165,7 +165,7 @@ body {
 
 /* Responsive */
 @media (max-width: 480px) {
-  .flow-node { padding: 16px; }
+  .flow-node { padding: var(--ease-space-4); }
   .page-header h1 { font-size: 1.5rem; }
 }
 

@@ -17,8 +17,8 @@
 body {
     font-family: Arial, sans-serif;
     max-width: 900px;
-    margin: 40px auto;
-    padding: 20px;
+    margin: var(--ease-space-10) auto;
+    padding: var(--ease-space-5);
     background: var(--ease-color-neutral-50);
 }
 
@@ -29,7 +29,7 @@ h1 {
 
 .card {
     background: white;
-    padding: 24px;
+    padding: var(--ease-space-6);
     margin-bottom: 24px;
     border-radius: 12px;
 }

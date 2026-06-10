@@ -1,5 +1,5 @@
 /* ============================================================
-   EaseMotion CSS â€” ease-device-frame-az component (Proposal)
+   EaseMotion CSS Ã¢â‚¬â€ ease-device-frame-az component (Proposal)
    Device mockup frames: phone, tablet, laptop, browser.
    ============================================================ */
 
@@ -212,7 +212,7 @@
 
 .ease-device-frame-az.browser .browser-url-az {
   flex: 1;
-  padding: 4px var(--ease-space-3, 12px);
+  padding: var(--ease-space-1) var(--ease-space-3, 12px);
   font-size: 0.75rem;
   color: var(--ease-color-neutral-500, #6b7280);
   background: var(--ease-color-surface, #fff);

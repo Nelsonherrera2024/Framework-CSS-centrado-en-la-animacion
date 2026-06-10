@@ -32,7 +32,7 @@ body {
 .page-shell {
   width: min(1180px, calc(100% - 32px));
   margin: 0 auto;
-  padding: 32px 0 64px;
+  padding: var(--ease-space-8) 0 64px;
 }
 
 .hero-section,
@@ -70,7 +70,7 @@ body {
 .hero-section h1,
 .section-intro h2,
 .cta-banner h2 {
-  margin: 20px 0 0;
+  margin: var(--ease-space-5) 0 0;
   font-size: clamp(2.1rem, 5vw, 3.6rem);
   line-height: 1.02;
 }
@@ -99,7 +99,7 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 16px 24px;
+  padding: var(--ease-space-4) 24px;
   border-radius: 999px;
   border: 1px solid transparent;
   background: linear-gradient(135deg, var(--ease-color-secondary), #6366f1);
@@ -231,7 +231,7 @@ body {
 }
 
 .pricing-card li::before {
-  content: "â€¢";
+  content: "Ã¢â‚¬Â¢";
   margin-right: 0.8rem;
   color: var(--accent);
 }
@@ -244,7 +244,7 @@ body {
   display: grid;
   gap: 20px;
   align-items: center;
-  padding: 32px;
+  padding: var(--ease-space-8);
   border-radius: 28px;
   border: 1px solid rgba(139, 92, 246, 0.18);
   background: linear-gradient(180deg, rgba(17, 24, 39, 0.96), rgba(15, 23, 42, 0.92));
@@ -324,13 +324,13 @@ body {
 
 @media (max-width: 640px) {
   .page-shell {
-    padding: 24px 16px 48px;
+    padding: var(--ease-space-6) 16px 48px;
   }
 
   .hero-section,
   .cta-banner,
   .footer-section {
-    padding: 24px;
+    padding: var(--ease-space-6);
   }
 }
 

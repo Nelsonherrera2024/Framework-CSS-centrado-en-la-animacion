@@ -12,7 +12,7 @@ body {
 .demo-page {
   width: min(760px, calc(100% - 32px));
   margin: 0 auto;
-  padding: 48px 0;
+  padding: var(--ease-space-12) 0;
 }
 
 .demo-header {
@@ -32,7 +32,7 @@ body {
 }
 
 .demo-panel {
-  padding: 24px;
+  padding: var(--ease-space-6);
   border: 1px solid #d8dee8;
   border-radius: 8px;
   background: #ffffff;
@@ -50,7 +50,7 @@ body {
   gap: 8px;
   align-items: center;
   min-height: 48px;
-  padding: 8px;
+  padding: var(--ease-space-2);
   border: 1px solid #b9c3d1;
   border-radius: 8px;
   background: #ffffff;
@@ -67,7 +67,7 @@ body {
   min-width: 120px;
   border: 0;
   outline: 0;
-  padding: 8px 4px;
+  padding: var(--ease-space-2) 4px;
   color: #172033;
   font: inherit;
   background: transparent;
@@ -115,7 +115,7 @@ body {
 }
 
 .demo-hint {
-  margin: 12px 0 0;
+  margin: var(--ease-space-3) 0 0;
   color: #526071;
   font-size: 0.95rem;
   line-height: 1.5;
@@ -123,7 +123,7 @@ body {
 
 @media (max-width: 520px) {
   .demo-page {
-    padding: 32px 0;
+    padding: var(--ease-space-8) 0;
   }
 
   .demo-panel {

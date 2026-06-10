@@ -57,7 +57,7 @@ body {
         flex-direction: column;
         text-align: center;
         display: none;
-        padding: 20px 0;
+        padding: var(--ease-space-5) 0;
     }
 
     .nav-links.active {

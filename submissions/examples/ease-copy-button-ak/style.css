@@ -2,14 +2,14 @@ body {
     background: var(--ease-color-neutral-900);
     color: white;
     font-family: sans-serif;
-    padding: 40px;
+    padding: var(--ease-space-10);
 }
 
 .docs-code {
     position: relative;
     background: var(--ease-color-neutral-800);
     border-radius: 12px;
-    padding: 20px;
+    padding: var(--ease-space-5);
     margin-bottom: 20px;
 }
 

@@ -12,7 +12,7 @@
   align-items: center;
   gap: 6px;
   transition: all 0.2s ease;
-  padding: 4px 6px;
+  padding: var(--ease-space-1) 6px;
   border-radius: 6px;
 }
 

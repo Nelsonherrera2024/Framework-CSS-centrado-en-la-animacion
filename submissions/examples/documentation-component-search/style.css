@@ -16,8 +16,8 @@ h1 {
 
 #searchInput {
   width: 100%;
-  padding: 12px;
-  margin: 20px 0;
+  padding: var(--ease-space-3);
+  margin: var(--ease-space-5) 0;
   border-radius: 8px;
   border: none;
 }

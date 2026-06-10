@@ -28,7 +28,7 @@
 .demo-shell {
   width: min(980px, calc(100% - 32px));
   margin: 0 auto;
-  padding: 64px 0;
+  padding: var(--ease-space-16) 0;
 }
 
 .intro-panel {
@@ -71,7 +71,7 @@ p {
 .demo-card {
   background: var(--panel-bg);
   border-radius: 16px;
-  padding: 24px;
+  padding: var(--ease-space-6);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
 }
 
@@ -225,7 +225,7 @@ p {
 @media (max-width: 768px) {
   .demo-shell {
     width: min(100% - 24px, 560px);
-    padding: 40px 0;
+    padding: var(--ease-space-10) 0;
   }
 
   h1 {

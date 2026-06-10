@@ -21,7 +21,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 40px 20px;
+  padding: var(--ease-space-10) 20px;
   box-sizing: border-box;
 }
 
@@ -35,7 +35,7 @@ body {
   background-color: rgba(30, 41, 59, 0.5);
   border: 1px solid var(--border-color);
   border-radius: 20px;
-  padding: 24px;
+  padding: var(--ease-space-6);
   backdrop-filter: blur(12px);
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
 }

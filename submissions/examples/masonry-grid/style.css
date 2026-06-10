@@ -1,9 +1,9 @@
 /* ============================================================
-   EaseMotion CSS — Masonry Grid Component
+   EaseMotion CSS â€” Masonry Grid Component
    Issue #1202
    ============================================================ */
 
-/* ── Container (column-count approach) ────────────────────── */
+/* â”€â”€ Container (column-count approach) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 .ease-masonry-grid {
   column-count: 3;
@@ -13,13 +13,13 @@
   margin: 0 auto;
 }
 
-/* ── Column count modifiers ───────────────────────────────── */
+/* â”€â”€ Column count modifiers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 .ease-masonry-grid--cols-2 { column-count: 2; }
 .ease-masonry-grid--cols-3 { column-count: 3; }
 .ease-masonry-grid--cols-4 { column-count: 4; }
 
-/* ── Item ─────────────────────────────────────────────────── */
+/* â”€â”€ Item â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 .ease-masonry-item {
   break-inside: avoid;
@@ -40,7 +40,7 @@
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
 }
 
-/* ── Staggered entrance delays ────────────────────────────── */
+/* â”€â”€ Staggered entrance delays â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 .ease-masonry-item:nth-child(1) { animation-delay: 0.00s; }
 .ease-masonry-item:nth-child(2) { animation-delay: 0.05s; }
@@ -53,7 +53,7 @@
 .ease-masonry-item:nth-child(9) { animation-delay: 0.40s; }
 .ease-masonry-item:nth-child(10) { animation-delay: 0.45s; }
 
-/* ── Images inside items ──────────────────────────────────── */
+/* â”€â”€ Images inside items â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 .ease-masonry-item img {
   width: 100%;
@@ -61,10 +61,10 @@
   display: block;
 }
 
-/* ── Card body ────────────────────────────────────────────── */
+/* â”€â”€ Card body â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 .ease-masonry-item-body {
-  padding: 16px;
+  padding: var(--ease-space-4);
 }
 
 .ease-masonry-item-body h3 {
@@ -81,7 +81,7 @@
   line-height: 1.5;
 }
 
-/* ── Span modifiers (CSS Grid approach only) ──────────────── */
+/* â”€â”€ Span modifiers (CSS Grid approach only) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 .ease-masonry-item--wide,
 .ease-masonry-item--tall {
@@ -90,7 +90,7 @@
   border-color: rgba(124, 108, 255, 0.25);
 }
 
-/* ── Keyframes ───────────────────────────────────────────── */
+/* â”€â”€ Keyframes â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 @keyframes ease-kf-masonry-fade-in {
   from {
@@ -103,7 +103,7 @@
   }
 }
 
-/* ── Responsive ──────────────────────────────────────────── */
+/* â”€â”€ Responsive â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 @media (max-width: 1024px) {
   .ease-masonry-grid,
@@ -118,7 +118,7 @@
   }
 }
 
-/* ── Reduced motion ──────────────────────────────────────── */
+/* â”€â”€ Reduced motion â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 @media (prefers-reduced-motion: reduce) {
   .ease-masonry-item {

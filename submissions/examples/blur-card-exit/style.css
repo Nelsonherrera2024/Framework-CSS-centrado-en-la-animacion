@@ -28,7 +28,7 @@ body {
 .demo-shell {
   width: min(1040px, calc(100% - 32px));
   margin: 0 auto;
-  padding: 64px 0;
+  padding: var(--ease-space-16) 0;
 }
 
 .intro-panel {
@@ -68,7 +68,7 @@ h1 {
 
 .demo-panel {
   min-height: 420px;
-  padding: 24px;
+  padding: var(--ease-space-6);
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--panel-bg);

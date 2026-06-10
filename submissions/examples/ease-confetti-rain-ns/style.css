@@ -1,11 +1,11 @@
-/* ─── Reset ───────────────────────────────────────────── */
+/* â”€â”€â”€ Reset â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-/* ─── Page ────────────────────────────────────────────── */
+/* â”€â”€â”€ Page â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 body {
   min-height: 100vh;
   display: flex;
@@ -16,7 +16,7 @@ body {
   overflow: hidden;
 }
 
-/* ─── Demo content ────────────────────────────────────── */
+/* â”€â”€â”€ Demo content â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .demo-wrapper {
   position: relative;
   width: 100%;
@@ -49,7 +49,7 @@ body {
 
 .demo-btn {
   margin-top: 8px;
-  padding: 12px 32px;
+  padding: var(--ease-space-3) 32px;
   background: #ffffff;
   color: #0f0f1a;
   border: none;
@@ -69,7 +69,7 @@ body {
   transform: scale(0.97);
 }
 
-/* ─── Confetti container ──────────────────────────────── */
+/* â”€â”€â”€ Confetti container â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .confetti-container {
   position: fixed;
   inset: 0;
@@ -78,7 +78,7 @@ body {
   z-index: 5;
 }
 
-/* ─── Individual confetti piece ───────────────────────── */
+/* â”€â”€â”€ Individual confetti piece â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .confetti-piece {
   position: absolute;
   top: -20px;
@@ -91,7 +91,7 @@ body {
   will-change: transform, opacity;
 }
 
-/* ─── Shape variants ──────────────────────────────────── */
+/* â”€â”€â”€ Shape variants â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .confetti-square {
   width: var(--size);
   height: var(--size);
@@ -116,7 +116,7 @@ body {
   border-radius: 999px;
 }
 
-/* ─── Fall animation ──────────────────────────────────── */
+/* â”€â”€â”€ Fall animation â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 @keyframes confetti-fall {
   0% {
     transform:
@@ -127,7 +127,7 @@ body {
     opacity: var(--opacity);
   }
 
-  /* Wobble mid-fall — flipping effect */
+  /* Wobble mid-fall â€” flipping effect */
   25% {
     transform:
       translateY(25vh)
@@ -163,7 +163,7 @@ body {
   }
 }
 
-/* ─── Reduced motion ──────────────────────────────────── */
+/* â”€â”€â”€ Reduced motion â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 @media (prefers-reduced-motion: reduce) {
   .confetti-piece {
     animation: none;

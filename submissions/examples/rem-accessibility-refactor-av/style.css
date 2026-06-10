@@ -8,10 +8,10 @@
   /* Try changing this to 125% or 20px and watch the accessible card scale perfectly! */
 }
 
-/* âŒ BAD: Hardcoded pixels do not respect user preferences for zooming */
+/* Ã¢ÂÅ’ BAD: Hardcoded pixels do not respect user preferences for zooming */
 .ease-demo-card-bad {
   width: 320px;
-  padding: 24px;
+  padding: var(--ease-space-6);
   border-radius: 8px;
   font-size: 16px;
   background: white;
@@ -19,7 +19,7 @@
   margin-bottom: 2rem;
 }
 
-/* âœ… GOOD: Relative units scale natively with browser text zooming */
+/* Ã¢Å“â€¦ GOOD: Relative units scale natively with browser text zooming */
 .ease-demo-card-good {
   width: 20rem; /* 320px / 16 = 20rem */
   padding: 1.5rem; /* 24px / 16 = 1.5rem */

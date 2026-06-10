@@ -22,8 +22,8 @@
 body {
     font-family: Arial, sans-serif;
     max-width: 900px;
-    margin: 40px auto;
-    padding: 20px;
+    margin: var(--ease-space-10) auto;
+    padding: var(--ease-space-5);
     background: var(--ease-color-neutral-50);
 }
 
@@ -38,7 +38,7 @@ h1,
 }
 
 .hero {
-    padding: 64px 32px;
+    padding: var(--ease-space-16) 32px;
     border-radius: 18px;
     text-align: center;
     box-shadow: 0 16px 32px rgba(15, 23, 42, 0.18);

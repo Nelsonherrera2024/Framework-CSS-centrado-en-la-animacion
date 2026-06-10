@@ -26,7 +26,7 @@
   background: var(--tk-surface);
   border: 1px solid var(--tk-border);
   border-radius: 16px;
-  padding: 40px 32px 32px;
+  padding: var(--ease-space-10) 32px 32px;
   text-align: center;
   font-family: var(--tk-font);
   animation: tk-fade-up 0.5s ease-out both;
@@ -72,7 +72,7 @@
   background: rgba(255,255,255,0.03);
   border: 1px solid var(--tk-border);
   border-radius: 10px;
-  padding: 16px 20px;
+  padding: var(--ease-space-4) 20px;
   margin-bottom: 24px;
   text-align: left;
   animation: tk-fade-up 0.4s ease-out 0.3s both;
@@ -93,7 +93,7 @@
 .tk-divider {
   border: none;
   border-top: 1px solid var(--tk-border);
-  margin: 8px 0;
+  margin: var(--ease-space-2) 0;
 }
 .tk-total {
   font-weight: 700;

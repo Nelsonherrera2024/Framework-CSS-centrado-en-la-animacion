@@ -58,7 +58,7 @@
   justify-content: center;
   opacity: 0;
   transition: opacity 0.3s ease;
-  padding: 16px;
+  padding: var(--ease-space-4);
   text-align: center;
 }
 .ih-item:hover .ih-overlay {

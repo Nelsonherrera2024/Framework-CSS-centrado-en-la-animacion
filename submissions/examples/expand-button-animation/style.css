@@ -2,7 +2,7 @@
 
 .ease-expand-btn {
   display: inline-block;
-  padding: 12px 28px;
+  padding: var(--ease-space-3) 28px;
   border: none;
   border-radius: 8px;
   cursor: pointer;

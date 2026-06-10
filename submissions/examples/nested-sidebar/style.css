@@ -31,7 +31,7 @@ body {
     background: var(--sidebar);
     border-right: 1px solid var(--border);
     overflow-y: auto;
-    padding: 20px;
+    padding: var(--ease-space-5);
 }
 
 .sidebar-header {

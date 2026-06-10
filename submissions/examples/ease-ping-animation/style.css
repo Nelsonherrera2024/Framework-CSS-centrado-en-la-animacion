@@ -4,7 +4,7 @@ body {
   color: white;
   min-height: 100vh;
   margin: 0;
-  padding: 40px;
+  padding: var(--ease-space-10);
 }
 
 h1 {

@@ -2,7 +2,7 @@
 .tooltip-container {
   position: relative;
   display: inline-block;
-  padding: 12px 24px;
+  padding: var(--ease-space-3) 24px;
   background-color: var(--ease-color-primary); /* Matching EaseMotion primary color */
   color: white;
   border-radius: 8px;
@@ -24,7 +24,7 @@
   transform: translateX(-50%) translateY(10px);
   background-color: #1f2937; /* Dark background */
   color: #ffffff;
-  padding: 8px 12px;
+  padding: var(--ease-space-2) 12px;
   border-radius: 6px;
   font-size: 14px;
   font-weight: normal;

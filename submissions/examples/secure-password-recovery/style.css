@@ -29,7 +29,7 @@ body {
 .auth-container {
   width: 100%;
   max-width: 420px;
-  padding: 20px;
+  padding: var(--ease-space-5);
 }
 
 .auth-card {
@@ -70,7 +70,7 @@ h2 {
   background-color: var(--input-bg);
   border: 1px solid var(--ease-color-neutral-700);
   color: white;
-  padding: 12px 14px;
+  padding: var(--ease-space-3) 14px;
   border-radius: 8px;
   font-size: 14px;
   transition: all 0.2s ease;

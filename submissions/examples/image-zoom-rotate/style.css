@@ -1,10 +1,10 @@
 /* ============================================================
-   SUBMISSION — image-zoom-rotate
+   SUBMISSION â€” image-zoom-rotate
    Raw CSS: no ease- prefix required at submission stage.
    Maintainer will standardize naming before integrating.
    ============================================================ */
 
-/* ── Demo Page Scaffold ────────────────────────────────────── */
+/* â”€â”€ Demo Page Scaffold â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 :root {
   --bg-color: #0b0f19;
   --text-color: #f3f4f6;
@@ -55,7 +55,7 @@ p.subtitle {
 .section-title {
   font-size: 1.25rem;
   font-weight: 700;
-  margin: 40px 0 20px 0;
+  margin: var(--ease-space-10) 0 20px 0;
   border-left: 4px solid var(--primary-color);
   padding-left: 12px;
 }
@@ -67,7 +67,7 @@ p.subtitle {
   margin-bottom: 40px;
 }
 
-/* ── Card & Image Container ────────────────────────────────── */
+/* â”€â”€ Card & Image Container â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .gallery-card {
   background: var(--card-bg);
   border: 1px solid rgba(255, 255, 255, 0.05);
@@ -99,7 +99,7 @@ p.subtitle {
 }
 
 .card-content {
-  padding: 20px;
+  padding: var(--ease-space-5);
 }
 
 .card-content h3 {
@@ -115,7 +115,7 @@ p.subtitle {
   line-height: 1.5;
 }
 
-/* ── EFFECT 1: Zoom & Rotate Left ─────────────────────────── */
+/* â”€â”€ EFFECT 1: Zoom & Rotate Left â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .zoom-rotate-left img {
   transform: scale(1) rotate(0deg);
 }
@@ -124,7 +124,7 @@ p.subtitle {
   transform: scale(1.12) rotate(-2deg);
 }
 
-/* ── EFFECT 2: Zoom & Rotate Right ────────────────────────── */
+/* â”€â”€ EFFECT 2: Zoom & Rotate Right â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .zoom-rotate-right img {
   transform: scale(1) rotate(0deg);
 }
@@ -133,7 +133,7 @@ p.subtitle {
   transform: scale(1.12) rotate(2deg);
 }
 
-/* ── EFFECT 3: Zoom & Rotate Deep ─────────────────────────── */
+/* â”€â”€ EFFECT 3: Zoom & Rotate Deep â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .zoom-rotate-deep img {
   transform: scale(1) rotate(0deg);
 }

@@ -100,7 +100,7 @@ h1 {
 .card-content {
   display: flex;
   min-width: 0;
-  padding: 24px;
+  padding: var(--ease-space-6);
   flex-direction: column;
 }
 
@@ -112,7 +112,7 @@ h1 {
 }
 
 .card-content h2 {
-  margin: 12px 0 10px;
+  margin: var(--ease-space-3) 0 10px;
   font-size: 1.45rem;
 }
 

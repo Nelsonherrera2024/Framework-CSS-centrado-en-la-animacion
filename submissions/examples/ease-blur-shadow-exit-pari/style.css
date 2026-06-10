@@ -13,7 +13,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 40px;
-  padding: 40px 20px;
+  padding: var(--ease-space-10) 20px;
 }
 
 h2 {
@@ -29,14 +29,14 @@ h2 {
 .card {
   background: white;
   border-radius: 16px;
-  padding: 32px 40px;
+  padding: var(--ease-space-8) 40px;
   min-width: 380px;
   text-align: center;
 }
 
 .box {
   border-radius: 12px;
-  padding: 24px 32px;
+  padding: var(--ease-space-6) 32px;
   font-size: 15px;
   font-weight: 600;
 }
@@ -92,7 +92,7 @@ h2 {
 /* === Buttons === */
 .btn {
   margin-top: 20px;
-  padding: 8px 20px;
+  padding: var(--ease-space-2) 20px;
   border: none;
   border-radius: 8px;
   color: white;

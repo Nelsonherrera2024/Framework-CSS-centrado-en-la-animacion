@@ -9,7 +9,7 @@ body{
     color:white;
     font-family:Arial,sans-serif;
     min-height:100vh;
-    padding:40px 20px;
+    padding: var(--ease-space-10) 20px;
 }
 
 .container{
@@ -41,7 +41,7 @@ body{
 .metric-card{
     background:#111827;
     border-radius:20px;
-    padding:24px;
+    padding: var(--ease-space-6);
     border:1px solid rgba(255,255,255,.08);
     transition:.35s ease;
 }
@@ -78,7 +78,7 @@ body{
 
 .node{
     background:var(--ease-color-neutral-800);
-    padding:12px 20px;
+    padding: var(--ease-space-3) 20px;
     border-radius:14px;
 }
 
@@ -105,7 +105,7 @@ body{
 .endpoint-card{
     background:#111827;
     border-radius:20px;
-    padding:24px;
+    padding: var(--ease-space-6);
 }
 
 .endpoint-card h3{

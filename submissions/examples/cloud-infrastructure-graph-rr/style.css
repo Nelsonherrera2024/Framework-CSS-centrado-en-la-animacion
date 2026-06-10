@@ -9,7 +9,7 @@ body{
     color:white;
     font-family:Arial,sans-serif;
     min-height:100vh;
-    padding:40px 20px;
+    padding: var(--ease-space-10) 20px;
 }
 
 .container{
@@ -49,7 +49,7 @@ body{
     background:#111827;
     border:1px solid rgba(255,255,255,.08);
     border-radius:20px;
-    padding:20px 30px;
+    padding: var(--ease-space-5) 30px;
     min-width:180px;
     text-align:center;
     transition:.35s ease;
@@ -116,7 +116,7 @@ body{
 
 .node{
     min-width:140px;
-    padding:16px;
+    padding: var(--ease-space-4);
 }
 
 }

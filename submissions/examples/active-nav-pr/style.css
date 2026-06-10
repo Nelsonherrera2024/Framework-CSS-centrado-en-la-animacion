@@ -6,7 +6,7 @@
 .my-nav {
     width: 200px;
     background: #fdfdfd;
-    padding: 20px 10px;
+    padding: var(--ease-space-5) 10px;
     border-right: 1px solid #ddd;
     height: 100vh;
 }

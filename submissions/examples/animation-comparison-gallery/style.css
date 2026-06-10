@@ -19,7 +19,7 @@ h1 {
 .card {
   background: var(--ease-color-neutral-800);
   border-radius: 12px;
-  padding: 20px;
+  padding: var(--ease-space-5);
 }
 
 .preview {
@@ -37,7 +37,7 @@ h1 {
 }
 
 button {
-  padding: 8px 14px;
+  padding: var(--ease-space-2) 14px;
   cursor: pointer;
   border: none;
   border-radius: 8px;

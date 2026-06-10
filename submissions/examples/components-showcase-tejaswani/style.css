@@ -1,5 +1,5 @@
 body {
-  padding: 40px;
+  padding: var(--ease-space-10);
   font-family: Arial, sans-serif;
 }
 
@@ -14,5 +14,5 @@ body {
 
 .ease-card {
   margin-top: 20px;
-  padding: 16px;
+  padding: var(--ease-space-4);
 }

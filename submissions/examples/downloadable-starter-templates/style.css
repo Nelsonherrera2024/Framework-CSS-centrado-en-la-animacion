@@ -22,7 +22,7 @@ h1,
 
 .template-card {
   background: var(--ease-color-neutral-800);
-  padding: 20px;
+  padding: var(--ease-space-5);
   border-radius: 12px;
   transition: transform 0.3s ease;
 }

@@ -1,11 +1,11 @@
 /*
  * ============================================================
- *  GLITCH ANIMATION EFFECT — EaseMotion CSS Submission
+ *  GLITCH ANIMATION EFFECT â€” EaseMotion CSS Submission
  *  File: style.css
  *  Path: submissions/examples/glitch-animation/style.css
  * ============================================================
  *
- *  HOW THE GLITCH WORKS — TECHNICAL OVERVIEW
+ *  HOW THE GLITCH WORKS â€” TECHNICAL OVERVIEW
  *  ------------------------------------------
  *  The effect is built from three layered techniques:
  *
@@ -24,11 +24,11 @@
  *     clip-path: inset(TOP% 0 BOTTOM% 0).
  *     The bands shift erratically across frames, so different
  *     vertical slices of the text appear offset at any given
- *     moment — giving the "sliced scanline" feel.
+ *     moment â€” giving the "sliced scanline" feel.
  *
  *  3. HORIZONTAL DISTORTION BURSTS
  *     A rapid transform: skewX() + translateX() combo fires
- *     on a very tight window (2–4% of the keyframe timeline)
+ *     on a very tight window (2â€“4% of the keyframe timeline)
  *     so it looks like a split-second tape-warp rather than a
  *     sustained lean.
  *
@@ -46,7 +46,7 @@
  * ============================================================
  */
 
-/* ── CUSTOM PROPERTIES ──────────────────────────────────────── */
+/* â”€â”€ CUSTOM PROPERTIES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 :root {
   --bg-void:       #050508;
   --bg-panel:      #0a0b12;
@@ -73,7 +73,7 @@
                    0 0 20px rgba(57, 255, 20, 0.35);
 }
 
-/* ── RESET & BASE ────────────────────────────────────────────── */
+/* â”€â”€ RESET & BASE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -104,7 +104,7 @@ body {
     );
 }
 
-/* ── LAYOUT ──────────────────────────────────────────────────── */
+/* â”€â”€ LAYOUT â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .page-wrapper {
   max-width: 1100px;
   margin: 0 auto;
@@ -126,7 +126,7 @@ body {
   opacity: 0.5;
 }
 
-/* ── HEADER AREA ─────────────────────────────────────────────── */
+/* â”€â”€ HEADER AREA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .site-header {
   text-align: center;
   padding: 80px 0 60px;
@@ -157,7 +157,7 @@ body {
   animation: glitch-flicker 6s infinite;
 }
 
-/* ── GRID ────────────────────────────────────────────────────── */
+/* â”€â”€ GRID â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -165,9 +165,9 @@ body {
   margin-top: 40px;
 }
 
-/* ══════════════════════════════════════════════════════════════
-   GLITCH-TEXT  — the primary heading glitch class
-   ══════════════════════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   GLITCH-TEXT  â€” the primary heading glitch class
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    Requires: data-text="same content as inner text" on the element.
 
    Why data-text?
@@ -197,7 +197,7 @@ body {
 }
 
 /*
- * ::before — CYAN channel
+ * ::before â€” CYAN channel
  * Sits slightly to the left, clipped to the upper band.
  * Runs slightly slower than ::after so they never sync.
  */
@@ -213,7 +213,7 @@ body {
 }
 
 /*
- * ::after — MAGENTA channel
+ * ::after â€” MAGENTA channel
  * Sits slightly to the right, clipped to the lower band.
  * Runs on a different cadence to ::before.
  */
@@ -227,7 +227,7 @@ body {
     glitch-clip-b 2s   infinite linear;
 }
 
-/* ── glitch-title variant — larger, used for H1 ────────────── */
+/* â”€â”€ glitch-title variant â€” larger, used for H1 â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .glitch-title {
   font-size: clamp(3rem, 10vw, 7rem);
   font-weight: 900;
@@ -235,14 +235,14 @@ body {
   letter-spacing: -0.02em;
 }
 
-/* ── glitch-subtitle variant — medium subheadings ──────────── */
+/* â”€â”€ glitch-subtitle variant â€” medium subheadings â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .glitch-subtitle {
   font-size: clamp(1.4rem, 4vw, 2.4rem);
   font-weight: 700;
   letter-spacing: 0.04em;
 }
 
-/* ── glitch-label variant — small UI labels ─────────────────── */
+/* â”€â”€ glitch-label variant â€” small UI labels â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .glitch-label {
   font-size: clamp(0.9rem, 2vw, 1.2rem);
   letter-spacing: 0.18em;
@@ -250,19 +250,19 @@ body {
 }
 
 
-/* ══════════════════════════════════════════════════════════════
-   CYBER-CARD — glassmorphism panel with scan-line highlight
-   ══════════════════════════════════════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   CYBER-CARD â€” glassmorphism panel with scan-line highlight
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .cyber-card {
   background: var(--bg-card);
   border: 1px solid var(--border-dim);
   border-radius: 2px;
-  padding: 32px 28px;
+  padding: var(--ease-space-8) 28px;
   position: relative;
   overflow: hidden;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 
-  /* Corner accent — purely decorative */
+  /* Corner accent â€” purely decorative */
   clip-path: polygon(
     0 0, calc(100% - 16px) 0,
     100% 16px, 100% 100%,
@@ -334,7 +334,7 @@ body {
   letter-spacing: 0.04em;
 }
 
-/* ── Status badge ───────────────────────────────────────────── */
+/* â”€â”€ Status badge â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .status-badge {
   display: inline-flex;
   align-items: center;
@@ -342,7 +342,7 @@ body {
   font-size: 0.6rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  padding: 4px 10px;
+  padding: var(--ease-space-1) 10px;
   border: 1px solid;
   margin-top: 18px;
 }
@@ -369,7 +369,7 @@ body {
 }
 
 .status-badge.warning::before {
-  content: '⚠';
+  content: 'âš ';
   font-size: 8px;
 }
 
@@ -380,15 +380,15 @@ body {
   animation: glitch-flicker 1s infinite;
 }
 
-/* ══════════════════════════════════════════════════════════════
-   NEON-PANEL — full-width info/stat panels
-   ══════════════════════════════════════════════════════════════ */
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   NEON-PANEL â€” full-width info/stat panels
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 .neon-panel {
   background: var(--bg-panel);
   border: 1px solid var(--border-dim);
   border-left: 3px solid var(--cyan);
-  padding: 20px 28px;
-  margin: 16px 0;
+  padding: var(--ease-space-5) 28px;
+  margin: var(--ease-space-4) 0;
   position: relative;
   font-family: var(--font-display);
   font-size: 0.75rem;
@@ -412,9 +412,9 @@ body {
 .neon-panel.green   .neon-panel-title { color: var(--green-neon); }
 .neon-panel.yellow  .neon-panel-title { color: var(--yellow-neon); }
 
-/* ══════════════════════════════════════════════════════════════
-   GLITCH-EFFECT — utility class for inline glitch on any element
-   ══════════════════════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   GLITCH-EFFECT â€” utility class for inline glitch on any element
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    Unlike glitch-text (which needs data-text), this version works
    on non-text elements such as borders, boxes, images, or buttons
    by animating the element itself (no pseudo-elements required).
@@ -425,10 +425,10 @@ body {
     glitch-flicker  5s   infinite;
 }
 
-/* ── Button with glitch-effect ──────────────────────────────── */
+/* â”€â”€ Button with glitch-effect â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .cyber-button {
   display: inline-block;
-  padding: 12px 28px;
+  padding: var(--ease-space-3) 28px;
   background: transparent;
   border: 1px solid var(--cyan);
   color: var(--cyan);
@@ -458,7 +458,7 @@ body {
   box-shadow: var(--glow-magenta);
 }
 
-/* ── Stat block ─────────────────────────────────────────────── */
+/* â”€â”€ Stat block â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .stat-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -470,7 +470,7 @@ body {
 
 .stat-cell {
   background: var(--bg-card);
-  padding: 20px;
+  padding: var(--ease-space-5);
   text-align: center;
 }
 
@@ -502,18 +502,18 @@ body {
   margin-top: 6px;
 }
 
-/* ── Divider ─────────────────────────────────────────────────── */
+/* â”€â”€ Divider â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .glitch-divider {
   border: none;
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--cyan), transparent);
-  margin: 64px 0;
+  margin: var(--ease-space-16) 0;
   position: relative;
   opacity: 0.4;
   animation: glitch-flicker 5s infinite;
 }
 
-/* ── Code-like tag labels ────────────────────────────────────── */
+/* â”€â”€ Code-like tag labels â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .code-tag {
   display: inline-block;
   padding: 2px 8px;
@@ -531,15 +531,15 @@ body {
   color: var(--magenta);
 }
 
-/* ══════════════════════════════════════════════════════════════
+/* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
    KEYFRAME DEFINITIONS
-   ══════════════════════════════════════════════════════════════ */
+   â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
 
 /*
  * glitch-shift
- * ────────────
+ * â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
  * Moves the pseudo-element left/right and toggles opacity.
- * The "quiet" frames (0%–18%, 22%–38%, etc.) keep things still
+ * The "quiet" frames (0%â€“18%, 22%â€“38%, etc.) keep things still
  * so the burst feels sudden, not continuous.
  */
 @keyframes glitch-shift {
@@ -566,7 +566,7 @@ body {
 
 /*
  * glitch-clip-a
- * ─────────────
+ * â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
  * Controls which horizontal slice of the ::before element is
  * visible. inset(T% 0 B% 0) means clip from top T% and bottom B%.
  * We jump the band to random positions across the timeline.
@@ -592,7 +592,7 @@ body {
 
 /*
  * glitch-clip-b
- * ─────────────
+ * â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
  * Same idea for ::after, but on an offset schedule and inverted
  * (clips from the bottom half instead of the top).
  */
@@ -616,10 +616,10 @@ body {
 
 /*
  * glitch-distort
- * ──────────────
+ * â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
  * Applied to the HOST element (not pseudo-elements).
  * A very brief skewX burst simulates magnetic tape warp.
- * Keep it short (1–2% window) so it reads as a glitch,
+ * Keep it short (1â€“2% window) so it reads as a glitch,
  * not a permanent lean.
  */
 @keyframes glitch-distort {
@@ -641,7 +641,7 @@ body {
 
 /*
  * glitch-flicker
- * ──────────────
+ * â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
  * Subtle opacity variation.  Used on the host element to
  * give a faint CRT power-fluctuation feel.
  * Also used on status LEDs and dividers.
@@ -659,14 +659,14 @@ body {
   75.1%      { opacity: 1;    }
 }
 
-/* ── RESPONSIVE ─────────────────────────────────────────────── */
+/* â”€â”€ RESPONSIVE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 @media (max-width: 640px) {
   .card-grid { grid-template-columns: 1fr; }
   .stat-grid { grid-template-columns: repeat(2, 1fr); }
-  .page-wrapper { padding: 40px 16px 60px; }
+  .page-wrapper { padding: var(--ease-space-10) 16px 60px; }
 }
 
-/* ── UTILITY ─────────────────────────────────────────────────── */
+/* â”€â”€ UTILITY â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .mt-8  { margin-top: 8px;  }
 .mt-16 { margin-top: 16px; }
 .mt-32 { margin-top: 32px; }

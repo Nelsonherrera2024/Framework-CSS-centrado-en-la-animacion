@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  padding: 40px 20px;
+  padding: var(--ease-space-10) 20px;
   background-color: #0b0f19;
   font-family: system-ui, -apple-system, sans-serif;
   color: var(--ease-color-neutral-100);
@@ -32,7 +32,7 @@ h2 {
   background: #111827;
   border: 1px solid #1f2937;
   border-radius: 16px;
-  padding: 24px;
+  padding: var(--ease-space-6);
   min-height: 160px;
   display: flex;
   flex-direction: column;

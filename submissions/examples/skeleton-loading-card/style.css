@@ -6,7 +6,7 @@
   background: #1a1a1a;
   border: 1px solid #2a2a2a;
   border-radius: 16px;
-  padding: 24px;
+  padding: var(--ease-space-6);
   width: 100%;
   max-width: 360px;
   box-sizing: border-box;
@@ -99,7 +99,7 @@
 
 /* Responsive */
 @media (max-width: 400px) {
-  .skeleton-card { padding: 16px; }
+  .skeleton-card { padding: var(--ease-space-4); }
   .skeleton-avatar { width: 40px; height: 40px; }
   .skeleton-image { height: 120px; }
 }

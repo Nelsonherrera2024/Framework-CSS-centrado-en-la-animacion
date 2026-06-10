@@ -58,7 +58,7 @@ body {
 .tab-label {
   flex: 1;
   text-align: center;
-  padding: 12px 20px;
+  padding: var(--ease-space-3) 20px;
   font-size: 0.9rem;
   font-weight: 500;
   color: var(--tab-text);
@@ -79,7 +79,7 @@ body {
   background: rgba(99, 102, 241, 0.08);
 }
 
-/* Active tab label — triggered by :checked sibling */
+/* Active tab label â€” triggered by :checked sibling */
 #tab-1:checked ~ .tab-nav label[for="tab-1"],
 #tab-2:checked ~ .tab-nav label[for="tab-2"],
 #tab-3:checked ~ .tab-nav label[for="tab-3"],
@@ -189,7 +189,7 @@ body {
   }
 
   .tab-panel {
-    padding: 20px 16px;
+    padding: var(--ease-space-5) 16px;
   }
 }
 

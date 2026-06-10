@@ -9,7 +9,7 @@ body{
     color:white;
     font-family:Arial,sans-serif;
     min-height:100vh;
-    padding:40px 20px;
+    padding: var(--ease-space-10) 20px;
 }
 
 .container{
@@ -53,7 +53,7 @@ body{
 .agent-card{
     background:#111827;
     border-radius:20px;
-    padding:24px;
+    padding: var(--ease-space-6);
     transition:.35s ease;
     border:1px solid rgba(255,255,255,.08);
 }
@@ -72,9 +72,9 @@ body{
 
 .vote{
     display:inline-block;
-    padding:8px 14px;
+    padding: var(--ease-space-2) 14px;
     border-radius:14px;
-    margin:12px 0;
+    margin: var(--ease-space-3) 0;
     font-weight:bold;
 }
 

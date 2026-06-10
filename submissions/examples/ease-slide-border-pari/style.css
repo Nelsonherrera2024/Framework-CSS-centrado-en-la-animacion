@@ -13,7 +13,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 40px;
-  padding: 40px 20px;
+  padding: var(--ease-space-10) 20px;
 }
 
 h2 {
@@ -29,7 +29,7 @@ h2 {
 .card {
   background: white;
   border-radius: 16px;
-  padding: 32px 40px;
+  padding: var(--ease-space-8) 40px;
   min-width: 420px;
   text-align: center;
 }
@@ -38,12 +38,12 @@ h2 {
 .slide-border-box {
   position: relative;
   display: inline-block;
-  padding: 16px 32px;
+  padding: var(--ease-space-4) 32px;
   border-radius: 10px;
   font-size: 15px;
   font-weight: 600;
   overflow: hidden;
-  margin: 8px;
+  margin: var(--ease-space-2);
 }
 
 .slide-border-box::after {
@@ -84,11 +84,11 @@ h2 {
 .slide-border-center {
   position: relative;
   display: inline-block;
-  padding: 16px 32px;
+  padding: var(--ease-space-4) 32px;
   border-radius: 10px;
   font-size: 15px;
   font-weight: 600;
-  margin: 8px;
+  margin: var(--ease-space-2);
 }
 
 .slide-border-center::after {
@@ -112,11 +112,11 @@ h2 {
 .slide-border-outline {
   position: relative;
   display: inline-block;
-  padding: 16px 32px;
+  padding: var(--ease-space-4) 32px;
   border-radius: 10px;
   font-size: 15px;
   font-weight: 600;
-  margin: 8px;
+  margin: var(--ease-space-2);
   border: 2px solid transparent;
   transition: border-color 0.4s ease;
 }

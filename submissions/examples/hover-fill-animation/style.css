@@ -1,20 +1,20 @@
 /* ============================================================
-   EaseMotion — hover-fill-animation / style.css
+   EaseMotion â€” hover-fill-animation / style.css
    
    HOW THE PSEUDO-ELEMENT FILL WORKS
-   ──────────────────────────────────
+   â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
    Each animating element is position: relative with overflow: hidden.
    A ::before pseudo-element is absolutely positioned to cover the
    full face of its parent (top: 0; left: 0; width: 100%; height: 100%).
    
    BOTTOM-TO-TOP variant
-     • Default: transform: scaleY(0); transform-origin: bottom center
-     • Hover:   transform: scaleY(1)
+     â€¢ Default: transform: scaleY(0); transform-origin: bottom center
+     â€¢ Hover:   transform: scaleY(1)
      The fill grows upward from the bottom edge.
    
    LEFT-TO-RIGHT variant
-     • Default: transform: scaleX(0); transform-origin: left center
-     • Hover:   transform: scaleX(1)
+     â€¢ Default: transform: scaleX(0); transform-origin: left center
+     â€¢ Hover:   transform: scaleX(1)
      The fill sweeps in from the left edge.
    
    Both use transition on the transform property so the browser can
@@ -24,7 +24,7 @@
 ============================================================ */
 
 
-/* ── Custom Properties ──────────────────────────────────── */
+/* â”€â”€ Custom Properties â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 :root {
   /* Palette */
@@ -64,7 +64,7 @@
 }
 
 
-/* ── Reset & Base ──────────────────────────────────────── */
+/* â”€â”€ Reset & Base â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -109,7 +109,7 @@ code {
 }
 
 
-/* ── Reduced Motion Override ──────────────────────────── */
+/* â”€â”€ Reduced Motion Override â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 /* Honour the user's OS preference and skip the animation */
 
 @media (prefers-reduced-motion: reduce) {
@@ -123,10 +123,10 @@ code {
 
 
 /* ============================================================
-   LAYOUT — Site Chrome
+   LAYOUT â€” Site Chrome
 ============================================================ */
 
-/* ── Header ─────────────────────────────────────────────── */
+/* â”€â”€ Header â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 .site-header {
   max-width: 900px;
@@ -182,7 +182,7 @@ code {
   line-height: 1.7;
 }
 
-/* ── Main Showcase ──────────────────────────────────────── */
+/* â”€â”€ Main Showcase â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 .showcase {
   max-width: 900px;
@@ -193,7 +193,7 @@ code {
   gap: 80px;
 }
 
-/* ── Demo Section ───────────────────────────────────────── */
+/* â”€â”€ Demo Section â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 .demo-section {
   display: flex;
@@ -235,7 +235,7 @@ code {
   max-width: 560px;
 }
 
-/* ── Demo Rows ──────────────────────────────────────────── */
+/* â”€â”€ Demo Rows â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 .demo-row {
   display: flex;
@@ -262,11 +262,11 @@ code {
   letter-spacing: 0.04em;
 }
 
-/* ── Footer ─────────────────────────────────────────────── */
+/* â”€â”€ Footer â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 .site-footer {
   border-top: 1px solid var(--border);
-  padding: 32px;
+  padding: var(--ease-space-8);
   text-align: center;
   font-size: 0.8rem;
   color: var(--text-muted);
@@ -311,7 +311,7 @@ code {
   transition: color var(--dur-fill) var(--ease-fill);
 }
 
-/* ── The fill layer ── */
+/* â”€â”€ The fill layer â”€â”€ */
 .fill-button::before {
   content: '';
 
@@ -319,10 +319,10 @@ code {
   position: absolute;
   inset: 0;           /* shorthand for top/right/bottom/left: 0 */
 
-  /* Fill colour — overridden per variant below */
+  /* Fill colour â€” overridden per variant below */
   background-color: var(--fill-white);
 
-  /* Start invisible via transform (not display/opacity — GPU-friendly) */
+  /* Start invisible via transform (not display/opacity â€” GPU-friendly) */
   /* Default is bottom-to-top; left-to-right is set in .fill-left-right */
   transform: scaleY(0);
   transform-origin: bottom center;
@@ -334,13 +334,13 @@ code {
   z-index: 0;
 }
 
-/* ── Text must sit ABOVE the fill layer ── */
+/* â”€â”€ Text must sit ABOVE the fill layer â”€â”€ */
 .fill-button > span {
   position: relative;
   z-index: 1;
 }
 
-/* ── Hover: extend the fill to full scale ── */
+/* â”€â”€ Hover: extend the fill to full scale â”€â”€ */
 .fill-button:hover::before,
 .fill-button:focus-visible::before {
   transform: scaleY(1);     /* bottom-to-top default */
@@ -359,13 +359,13 @@ code {
   outline: none;
 }
 
-/* ── Variant: left-to-right ── */
+/* â”€â”€ Variant: left-to-right â”€â”€ */
 .fill-button.fill-left-right::before {
   transform: scaleX(0);
   transform-origin: left center;
 }
 
-/* ── Variant: gold accent fill ── */
+/* â”€â”€ Variant: gold accent fill â”€â”€ */
 .fill-button.fill-accent::before {
   background-color: var(--fill-gold);
 }
@@ -404,7 +404,7 @@ code {
   cursor: pointer;
   font-family: var(--font-body);
 
-  /* Transparent base — just the border */
+  /* Transparent base â€” just the border */
   background-color: transparent;
   color: var(--text-primary);
   border: 1px solid rgba(255 255 255 / 0.3);
@@ -523,7 +523,7 @@ code {
   transform: scaleX(1);
 }
 
-/* ── Variant: bottom-to-top ── */
+/* â”€â”€ Variant: bottom-to-top â”€â”€ */
 .fill-link--btt::before {
   transform: scaleY(0);
   transform-origin: bottom center;
@@ -534,19 +534,19 @@ code {
   transform: scaleY(1);
 }
 
-/* ── Variant: gold fill ── */
+/* â”€â”€ Variant: gold fill â”€â”€ */
 .fill-link--gold::before {
   background-color: var(--fill-gold);
 }
 
-/* ── Variant: dim/subtle fill ── */
+/* â”€â”€ Variant: dim/subtle fill â”€â”€ */
 .fill-link--dim::before {
   background-color: rgba(255 255 255 / 0.12);
 }
 
 .fill-link--dim:hover,
 .fill-link--dim:focus-visible {
-  color: var(--text-primary);   /* keep text colour — fill is subtle */
+  color: var(--text-primary);   /* keep text colour â€” fill is subtle */
 }
 
 
@@ -571,13 +571,13 @@ code {
   background-color: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 8px;
-  padding: 32px 28px 28px;
+  padding: var(--ease-space-8) 28px 28px;
   cursor: default;
 
   transition: border-color var(--dur-fill) var(--ease-fill);
 }
 
-/* The fill layer — covers the entire card face */
+/* The fill layer â€” covers the entire card face */
 .fill-card::before {
   content: '';
   position: absolute;
@@ -607,7 +607,7 @@ code {
   transform: scaleY(1);
 }
 
-/* ── Variant: left-to-right ── */
+/* â”€â”€ Variant: left-to-right â”€â”€ */
 .fill-card--ltr::before {
   transform: scaleX(0);
   transform-origin: left center;
@@ -618,7 +618,7 @@ code {
   transform: scaleX(1);
 }
 
-/* ── Variant: gold tinted fill ── */
+/* â”€â”€ Variant: gold tinted fill â”€â”€ */
 .fill-card--gold::before {
   background-color: rgba(201 168 76 / 0.08);
 }
@@ -678,7 +678,7 @@ code {
 
   display: inline-flex;
   align-items: center;
-  padding: 8px 18px;
+  padding: var(--ease-space-2) 18px;
   font-size: 0.82rem;
   font-weight: 500;
   letter-spacing: 0.04em;
@@ -785,7 +785,7 @@ code {
 
 @media (max-width: 600px) {
   .site-header {
-    padding: 48px 20px 56px;
+    padding: var(--ease-space-12) 20px 56px;
   }
 
   .showcase {

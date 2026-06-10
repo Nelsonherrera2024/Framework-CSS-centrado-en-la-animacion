@@ -63,7 +63,7 @@ body {
     right: 20px;
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.15);
-    padding: 4px 10px;
+    padding: var(--ease-space-1) 10px;
     border-radius: 20px;
     font-size: 0.75rem;
     letter-spacing: 1px;
@@ -97,7 +97,7 @@ body {
 }
 
 .profile-title {
-    margin: 4px 0 0 0;
+    margin: var(--ease-space-1) 0 0 0;
     font-size: 0.9rem;
     color: var(--ease-color-neutral-400);
     font-weight: 500;
@@ -163,7 +163,7 @@ body {
     display: flex;
     justify-content: space-around;
     background: rgba(0, 0, 0, 0.2);
-    padding: 12px;
+    padding: var(--ease-space-3);
     border-radius: 12px;
     margin-bottom: auto;
     border: 1px solid rgba(255, 255, 255, 0.05);
@@ -192,7 +192,7 @@ body {
     background: #ffffff;
     color: var(--ease-color-neutral-900);
     border: none;
-    padding: 12px;
+    padding: var(--ease-space-3);
     border-radius: 10px;
     font-size: 0.9rem;
     font-weight: 600;

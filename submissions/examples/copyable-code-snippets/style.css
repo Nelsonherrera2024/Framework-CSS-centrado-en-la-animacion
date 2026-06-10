@@ -2,7 +2,7 @@ body {
   font-family: Arial, sans-serif;
   background: var(--ease-color-neutral-900);
   color: white;
-  padding: 40px;
+  padding: var(--ease-space-10);
 }
 
 .container {
@@ -17,7 +17,7 @@ body {
 
 pre {
   background: var(--ease-color-neutral-800);
-  padding: 20px;
+  padding: var(--ease-space-5);
   border-radius: 12px;
   overflow-x: auto;
 }
@@ -28,7 +28,7 @@ pre {
   right: 10px;
 
   border: none;
-  padding: 8px 12px;
+  padding: var(--ease-space-2) 12px;
 
   border-radius: 6px;
   cursor: pointer;

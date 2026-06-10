@@ -30,7 +30,7 @@ body {
   min-height: 100vh;
   display: grid;
   place-items: center;
-  padding: 48px 20px;
+  padding: var(--ease-space-12) 20px;
 }
 
 .demo-panel {
@@ -78,7 +78,7 @@ h1 {
   flex-direction: column;
   justify-content: flex-end;
   gap: 12px;
-  padding: 24px;
+  padding: var(--ease-space-6);
   border: 1px solid var(--border);
   border-radius: 18px;
   background:

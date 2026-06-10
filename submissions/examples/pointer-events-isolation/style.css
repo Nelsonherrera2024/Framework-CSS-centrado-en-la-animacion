@@ -1,5 +1,5 @@
 /* ============================================================
-   EaseMotion CSS Sandbox — pointer-events-isolation/style.css
+   EaseMotion CSS Sandbox â€” pointer-events-isolation/style.css
    ============================================================ */
 /* Step back 3 levels out of submissions/examples/pointer-events-isolation to pull root tokens */
 @import "../../../core/variables.css";
@@ -7,7 +7,7 @@
 
 @layer easemotion-components {
 
-/* ── Interactive Dashboard Workspace Canvas ──────────────── */
+/* â”€â”€ Interactive Dashboard Workspace Canvas â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .alm-dashboard-viewport-stage {
   position: relative;
   width: 100%;
@@ -22,7 +22,7 @@
   font-family: var(--ease-font-sans, system-ui, sans-serif);
 }
 
-/* ── Hidden Under-Layer Action Box (The Target Baseline) ── */
+/* â”€â”€ Hidden Under-Layer Action Box (The Target Baseline) â”€â”€ */
 .alm-underlying-action-card {
   width: 100%;
   height: 100%;
@@ -62,7 +62,7 @@
   pointer-events: none;
 }
 
-/* ── Click-Penetration Floating Overlay (The Core Fix) ───── */
+/* â”€â”€ Click-Penetration Floating Overlay (The Core Fix) â”€â”€â”€â”€â”€ */
 .alm-floating-overlay-drawer {
   position: absolute;
   top: 0;
@@ -91,7 +91,7 @@
     opacity var(--ease-speed-medium, 300ms) ease;
 }
 
-/* ── ACTIVE SELECTOR STATE CONFIGURATIONS (:checked) ──────── */
+/* â”€â”€ ACTIVE SELECTOR STATE CONFIGURATIONS (:checked) â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 /* 1. Reveal the slide-out drawer layout smoothly */
 .alm-sidebar-checkbox:checked ~ .alm-floating-overlay-drawer {
@@ -114,7 +114,7 @@
   text-transform: uppercase;
   color: var(--ease-color-muted, #94a3b8);
   background: rgba(255, 255, 255, 0.04);
-  padding: 4px 8px;
+  padding: var(--ease-space-1) 8px;
   border-radius: var(--ease-radius-sm, 0.25rem);
   cursor: pointer;
   border: 1px solid rgba(255, 255, 255, 0.06);

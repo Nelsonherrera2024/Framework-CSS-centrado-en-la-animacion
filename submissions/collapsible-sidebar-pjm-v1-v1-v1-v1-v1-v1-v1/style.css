@@ -18,7 +18,7 @@ body {
 .sidebar {
     width: 260px;
     background: #151b2f;
-    padding: 20px;
+    padding: var(--ease-space-5);
     overflow: hidden;
     transition: width 0.3s ease, padding 0.35s ease;
 }
@@ -32,7 +32,7 @@ body {
 }
 
 .sidebar li {
-    padding: 12px 0;
+    padding: var(--ease-space-3) 0;
     cursor: pointer;
 }
 

@@ -41,7 +41,7 @@ body {
 }
 
 .demo-wrapper {
-    padding: 40px;
+    padding: var(--ease-space-10);
 }
 
 p {

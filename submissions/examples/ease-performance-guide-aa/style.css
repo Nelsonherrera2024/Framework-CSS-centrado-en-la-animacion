@@ -39,7 +39,7 @@ body {
 .badge {
     background-color: rgba(88, 166, 255, 0.15);
     color: var(--accent-blue);
-    padding: 4px 10px;
+    padding: var(--ease-space-1) 10px;
     font-size: 0.75rem;
     font-weight: 600;
     text-transform: uppercase;

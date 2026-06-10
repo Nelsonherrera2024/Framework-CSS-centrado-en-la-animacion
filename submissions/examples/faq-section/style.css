@@ -1,7 +1,7 @@
 .faq-section {
   max-width: 800px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: var(--ease-space-10) 20px;
   font-family: inherit;
 }
 
@@ -34,7 +34,7 @@
 }
 
 .faq-section details[open] summary::after {
-  content: "−";
+  content: "âˆ’";
 }
 
 .faq-section details[open] summary {

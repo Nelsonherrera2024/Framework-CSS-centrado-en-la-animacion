@@ -1,5 +1,5 @@
 /* ==========================================
-   ðŸŽ¨ DESIGN TOKENS & BASE SETTINGS
+   Ã°Å¸Å½Â¨ DESIGN TOKENS & BASE SETTINGS
    ========================================== */
 body {
   margin: 0;
@@ -17,12 +17,12 @@ body {
 }
 
 /* ==========================================
-   ðŸ“± MOBILE LAYOUT (< 768px Viewports)
+   Ã°Å¸â€œÂ± MOBILE LAYOUT (< 768px Viewports)
    ========================================== */
 .docs-sidebar {
   width: 100%;
   background-color: #111827; /* Deep slate container background */
-  padding: 20px;
+  padding: var(--ease-space-5);
   box-sizing: border-box;
   border-bottom: 1px solid #1f2937;
 }
@@ -76,12 +76,12 @@ body {
   border-radius: 8px;
   border: 1px solid #1f2937;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  margin: 24px 0;
+  margin: var(--ease-space-6) 0;
   overflow-x: auto;
 }
 
 /* ==========================================
-   ðŸ’» DESKTOP UPGRADES (>= 768px Viewports)
+   Ã°Å¸â€™Â» DESKTOP UPGRADES (>= 768px Viewports)
    ========================================== */
 @media (min-width: 768px) {
   .docs-container {
@@ -95,7 +95,7 @@ body {
     top: 0;
     border-bottom: none;
     border-right: 1px solid #1f2937;
-    padding: 40px 24px;
+    padding: var(--ease-space-10) 24px;
     background-color: #0b0f19; /* Seamless side blending */
   }
 

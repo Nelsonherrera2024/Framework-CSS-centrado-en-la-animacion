@@ -1,5 +1,5 @@
 /* ============================================================
-   EaseMotion CSS — ease-empty-state-az component (Proposal)
+   EaseMotion CSS â€” ease-empty-state-az component (Proposal)
    Empty state placeholder for no data, no results, or zero state.
    ============================================================ */
 
@@ -95,7 +95,7 @@
 }
 
 .ease-empty-state-az.sm .ease-empty-state-action-az {
-  padding: 8px 20px;
+  padding: var(--ease-space-2) 20px;
   font-size: 0.8125rem;
 }
 

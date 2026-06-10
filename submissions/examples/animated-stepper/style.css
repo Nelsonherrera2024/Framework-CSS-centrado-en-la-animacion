@@ -26,7 +26,7 @@
     justify-content: space-between;
     gap: var(--stepper-spacing);
     position: relative;
-    padding: 20px 0;
+    padding: var(--ease-space-5) 0;
     flex-wrap: wrap;
 }
 
@@ -212,7 +212,7 @@
     flex-direction: column;
     gap: 0;
     width: 100%;
-    padding: 20px 0;
+    padding: var(--ease-space-5) 0;
 }
 
 /* Remove horizontal progress line for vertical layout */
@@ -401,7 +401,7 @@
     }
 
     .ease-stepper-vertical .ease-step {
-        padding: 12px 0;
+        padding: var(--ease-space-3) 0;
     }
 
     .ease-stepper-vertical .step-marker {

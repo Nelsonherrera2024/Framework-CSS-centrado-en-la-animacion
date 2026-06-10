@@ -34,7 +34,7 @@ h1 {
 
 .card {
   background: var(--ease-color-neutral-800);
-  padding: 20px;
+  padding: var(--ease-space-5);
   border-radius: 12px;
   text-align: center;
   transition: transform 0.3s ease;

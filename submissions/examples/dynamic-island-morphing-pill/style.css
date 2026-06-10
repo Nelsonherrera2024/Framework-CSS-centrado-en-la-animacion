@@ -50,7 +50,7 @@
 .island-expanded-state {
   opacity: 0;
   pointer-events: none;
-  padding: 16px;
+  padding: var(--ease-space-4);
   gap: 16px;
 }
 

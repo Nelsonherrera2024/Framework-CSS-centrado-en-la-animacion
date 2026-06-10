@@ -6,7 +6,7 @@ body {
   background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
   background-size: 24px 24px;
   margin: 0;
-  padding: 40px 20px;
+  padding: var(--ease-space-10) 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,7 +22,7 @@ body {
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-radius: 24px;
-  padding: 48px 32px;
+  padding: var(--ease-space-12) 32px;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
 }
 
@@ -62,7 +62,7 @@ body {
   background: rgba(30, 41, 59, 0.3);
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  padding: 24px 0;
+  padding: var(--ease-space-6) 0;
   margin-bottom: 48px;
   border-radius: 12px;
   mask-image: linear-gradient(to right, transparent, #000 15%, #000 85%, transparent);

@@ -26,8 +26,8 @@ body {
     font-family: Arial, sans-serif;
     background: var(--ease-color-neutral-50);
     max-width: 900px;
-    margin: 40px auto;
-    padding: 20px;
+    margin: var(--ease-space-10) auto;
+    padding: var(--ease-space-5);
     color: #1f2937;
 }
 
@@ -38,7 +38,7 @@ h1,
 
 .demo-card {
     background: white;
-    padding: 32px;
+    padding: var(--ease-space-8);
     border-radius: 16px;
     text-align: center;
     box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);

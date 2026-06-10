@@ -89,7 +89,7 @@ body {
 
 .btn {
     flex: 1;
-    padding: 12px;
+    padding: var(--ease-space-3);
     border: none;
     border-radius: 6px;
     font-size: 0.95rem;

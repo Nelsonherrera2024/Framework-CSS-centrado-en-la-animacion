@@ -13,7 +13,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 40px;
-  padding: 40px 20px;
+  padding: var(--ease-space-10) 20px;
 }
 
 h2 {

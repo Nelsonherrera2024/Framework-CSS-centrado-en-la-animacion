@@ -1,5 +1,5 @@
 /* ==========================================================================
-   EaseMotion CSS â€” Usage Statistics Dashboard
+   EaseMotion CSS Ã¢â‚¬â€ Usage Statistics Dashboard
    ========================================================================== */
 
 :root {
@@ -66,7 +66,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 24px;
+  padding: var(--ease-space-4) 24px;
   background: rgba(15, 17, 23, 0.9);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--ease-color-neutral-100);
@@ -81,12 +81,12 @@ body {
    Header
    -------------------------------------------------------------------------- */
 .site-header {
-  padding: 64px 0 48px;
+  padding: var(--ease-space-16) 0 48px;
   text-align: center;
   border-bottom: 1px solid var(--ease-color-neutral-100);
 }
 .site-header h1   { font-size: var(--ease-text-2xl); font-weight: 800; letter-spacing: -0.03em; }
-.site-header p    { color: var(--ease-color-muted); margin: 12px auto 0; max-width: 52ch; }
+.site-header p    { color: var(--ease-color-muted); margin: var(--ease-space-3) auto 0; max-width: 52ch; }
 
 .header-tag {
   display: inline-block;
@@ -234,7 +234,7 @@ body {
   background: var(--ease-color-surface);
   border: 1px solid var(--ease-color-neutral-200);
   border-radius: var(--ease-radius-md);
-  padding: 20px;
+  padding: var(--ease-space-5);
   text-align: center;
   transition: border-color 0.2s, box-shadow 0.2s;
 }

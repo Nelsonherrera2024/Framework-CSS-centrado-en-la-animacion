@@ -40,7 +40,7 @@ body {
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  padding: 24px 16px;
+  padding: var(--ease-space-6) 16px;
   transition: background 0.3s, color 0.3s;
 }
 
@@ -72,7 +72,7 @@ body {
   background: var(--bg-surface);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
-  padding: 8px 14px;
+  padding: var(--ease-space-2) 14px;
   cursor: pointer;
   font-size: 18px;
   transition: background 0.2s;
@@ -86,7 +86,7 @@ body {
   justify-content: center;
 }
 
-/* â”€â”€ Developer Profile Card â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Developer Profile Card Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 
 .ease-dev-card {
   perspective: 1200px;
@@ -150,7 +150,7 @@ body {
 
 /* Info */
 .ease-dev-info {
-  padding: 16px 20px 0;
+  padding: var(--ease-space-4) 20px 0;
   text-align: center;
 }
 
@@ -196,7 +196,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  padding: 16px 20px 0;
+  padding: var(--ease-space-4) 20px 0;
   justify-content: center;
 }
 
@@ -205,7 +205,7 @@ body {
   font-weight: 600;
   color: var(--accent);
   background: rgba(108, 99, 255, 0.1);
-  padding: 4px 10px;
+  padding: var(--ease-space-1) 10px;
   border-radius: var(--radius-full);
   transition: background 0.2s, transform 0.2s;
   border: 1px solid transparent;
@@ -222,7 +222,7 @@ body {
   display: flex;
   justify-content: center;
   gap: 24px;
-  padding: 16px 20px 0;
+  padding: var(--ease-space-4) 20px 0;
 }
 
 .ease-dev-stat {
@@ -286,7 +286,7 @@ body {
   display: block;
   width: calc(100% - 40px);
   margin: 18px 20px 20px;
-  padding: 12px;
+  padding: var(--ease-space-3);
   border: none;
   border-radius: var(--radius-sm);
   background: var(--accent);

@@ -43,7 +43,7 @@ header p{
   background:var(--surface);
   border:1px solid var(--border);
   border-radius:12px;
-  padding:20px;
+  padding: var(--ease-space-5);
 }
 
 .controls{

@@ -354,7 +354,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px 20px;
+  padding: var(--ease-space-10) 20px;
   box-sizing: border-box;
   font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   background-color: var(--ease-color-neutral-100);
@@ -371,7 +371,7 @@ body:has(#theme-dark:checked) {
   width: 100%;
   max-width: 1100px;
   border-radius: 24px;
-  padding: 48px;
+  padding: var(--ease-space-12);
   border: 1px solid var(--border-color);
   box-shadow: var(--shadow-lg);
   transition: background-color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
@@ -502,7 +502,7 @@ body:has(#theme-dark:checked) label[for="theme-dark"] {
 }
 
 .card-header {
-  padding: 24px 24px 0 24px;
+  padding: var(--ease-space-6) 24px 0 24px;
 }
 
 .card-badge {
@@ -513,7 +513,7 @@ body:has(#theme-dark:checked) label[for="theme-dark"] {
   text-transform: uppercase;
   background-color: rgba(99, 102, 241, 0.1);
   color: #6366f1;
-  padding: 4px 10px;
+  padding: var(--ease-space-1) 10px;
   border-radius: 9999px;
   margin-bottom: 12px;
 }
@@ -552,7 +552,7 @@ body:has(#theme-dark:checked) .badge-purple {
 }
 
 .card-body {
-  padding: 24px;
+  padding: var(--ease-space-6);
   flex: 1;
   display: flex;
   align-items: center;
@@ -565,7 +565,7 @@ body:has(#theme-dark:checked) .badge-purple {
   background: var(--display-card-bg);
   border-radius: 12px;
   margin: 0 24px;
-  padding: 24px 12px;
+  padding: var(--ease-space-6) 12px;
   transition: background 0.4s ease;
   width: calc(100% - 48px);
 }
@@ -576,7 +576,7 @@ body:has(#theme-dark:checked) .badge-purple {
   border: 1px solid var(--terminal-border);
   border-radius: 12px;
   margin: 0 24px;
-  padding: 24px 16px;
+  padding: var(--ease-space-6) 16px;
   position: relative;
   overflow: hidden;
   transition: background-color 0.4s ease, border-color 0.4s ease;
@@ -626,7 +626,7 @@ body:has(#theme-dark:checked) .badge-purple {
   font-size: 13px;
   line-height: 1.6;
   color: var(--text-secondary);
-  margin: 16px 0 0 0;
+  margin: var(--ease-space-4) 0 0 0;
   transition: color 0.4s ease;
 }
 
@@ -684,7 +684,7 @@ body:has(#theme-dark:checked) .badge-purple {
 
 @media (max-width: 768px) {
   .demo-wrapper {
-    padding: 32px;
+    padding: var(--ease-space-8);
   }
   .glitch-showcase-grid {
     grid-template-columns: 1fr;
@@ -697,10 +697,10 @@ body:has(#theme-dark:checked) .badge-purple {
 
 @media (max-width: 520px) {
   body {
-    padding: 20px 12px;
+    padding: var(--ease-space-5) 12px;
   }
   .demo-wrapper {
-    padding: 24px 16px;
+    padding: var(--ease-space-6) 16px;
     border-radius: 16px;
     gap: 28px;
   }
@@ -711,7 +711,7 @@ body:has(#theme-dark:checked) .badge-purple {
     font-size: 14px;
   }
   .card-body {
-    padding: 16px;
+    padding: var(--ease-space-4);
   }
   .glitch-bg-display, .terminal-bg {
     margin: 0 16px;

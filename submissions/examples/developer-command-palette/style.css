@@ -1,5 +1,5 @@
 /* ============================================
-   Developer Command Palette – style.css
+   Developer Command Palette â€“ style.css
    VS Code / Raycast-inspired command launcher.
    ============================================ */
 
@@ -26,7 +26,7 @@ body {
 
 .cp-preview {
   width: 100%;
-  padding: 24px;
+  padding: var(--ease-space-6);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -207,7 +207,7 @@ body {
   }
 
   .cp-header {
-    padding: 12px 14px;
+    padding: var(--ease-space-3) 14px;
   }
 
   .cp-input {

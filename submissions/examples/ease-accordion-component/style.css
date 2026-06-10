@@ -1,5 +1,5 @@
 /* ============================================================
-   EaseMotion CSS — Accordion Component (ease-accordion)
+   EaseMotion CSS â€” Accordion Component (ease-accordion)
    An interactive, responsive, and collapsible content system.
    Supports single-open, multi-open, nested, and icon states.
    ============================================================ */
@@ -8,7 +8,7 @@
 @import "../../../core/animations.css";
 
 :root {
-  /* ── Accordion Specific Custom Properties ───────────────── */
+  /* â”€â”€ Accordion Specific Custom Properties â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
   --ease-accordion-bg: var(--ease-color-surface, #ffffff);
   --ease-accordion-border-color: var(--ease-color-neutral-200, #e2e8f0);
   --ease-accordion-radius: var(--ease-radius-md, 8px);
@@ -25,7 +25,7 @@
   --ease-accordion-transition-speed: var(--ease-speed-medium, 300ms);
 }
 
-/* ── Dark Mode Overrides ─────────────────────────────────── */
+/* â”€â”€ Dark Mode Overrides â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 @media (prefers-color-scheme: dark) {
   :root {
     --ease-accordion-bg: var(--ease-color-neutral-800, #1e293b);
@@ -36,7 +36,7 @@
   }
 }
 
-/* ── Accordion Stack ─────────────────────────────────────── */
+/* â”€â”€ Accordion Stack â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .ease-accordion {
   display: flex;
   flex-direction: column;
@@ -44,7 +44,7 @@
   width: 100%;
 }
 
-/* ── Accordion Item Card ─────────────────────────────────── */
+/* â”€â”€ Accordion Item Card â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .ease-accordion-item {
   background: var(--ease-accordion-bg);
   border: 1px solid var(--ease-accordion-border-color);
@@ -62,13 +62,13 @@
   box-shadow: var(--ease-shadow-md);
 }
 
-/* ── Accordion Trigger Button ────────────────────────────── */
+/* â”€â”€ Accordion Trigger Button â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .ease-accordion-trigger {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 16px 20px;
+  padding: var(--ease-space-4) 20px;
   background: var(--ease-accordion-trigger-bg);
   border: none;
   color: var(--ease-accordion-trigger-color);
@@ -87,7 +87,7 @@
   background: var(--ease-accordion-trigger-hover-bg);
 }
 
-/* ── Status Indicator (Heading + Icon) ───────────────────── */
+/* â”€â”€ Status Indicator (Heading + Icon) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .ease-accordion-trigger-heading {
   display: flex;
   align-items: center;
@@ -109,7 +109,7 @@
   opacity: 1;
 }
 
-/* ── Caret Icon (Chevron) ────────────────────────────────── */
+/* â”€â”€ Caret Icon (Chevron) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .ease-accordion-icon {
   width: 10px;
   height: 6px;
@@ -131,7 +131,7 @@
   transform: rotate(180deg);
 }
 
-/* ── Collapsible Panel (Height Transition Core) ───────────── */
+/* â”€â”€ Collapsible Panel (Height Transition Core) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .ease-accordion-panel {
   display: grid;
   grid-template-rows: 0fr; /* Collapsed */
@@ -142,7 +142,7 @@
   grid-template-rows: 1fr; /* Expanded */
 }
 
-/* ── Collapsible Inner Container ─────────────────────────── */
+/* â”€â”€ Collapsible Inner Container â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .ease-accordion-content {
   min-height: 0; /* Required for grid transition calculation */
   overflow: hidden;
@@ -156,7 +156,7 @@
   line-height: 1.6;
 }
 
-/* ── Nested Accordion Support ────────────────────────────── */
+/* â”€â”€ Nested Accordion Support â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .ease-accordion-content-inner .ease-accordion {
   margin-top: 12px;
 }

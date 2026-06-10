@@ -1,5 +1,5 @@
 /* ============================================================
-   EaseMotion CSS — ease-cookie-consent-az component (Proposal)
+   EaseMotion CSS â€” ease-cookie-consent-az component (Proposal)
    Slide-in cookie consent banner with accept/decline actions.
    ============================================================ */
 
@@ -68,7 +68,7 @@
 }
 
 .ease-cookie-consent-btn-az {
-  padding: 8px 18px;
+  padding: var(--ease-space-2) 18px;
   font-family: inherit;
   font-size: 0.8125rem;
   font-weight: 600;

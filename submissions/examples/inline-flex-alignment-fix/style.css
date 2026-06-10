@@ -1,5 +1,5 @@
 /* ============================================================
-   EaseMotion CSS Sandbox â€” inline-flex-alignment-fix/style.css
+   EaseMotion CSS Sandbox Ã¢â‚¬â€ inline-flex-alignment-fix/style.css
    ============================================================ */
 
 /* Step back 3 levels out of submissions/examples/inline-flex-alignment-fix to pull root tokens */
@@ -8,7 +8,7 @@
 
 @layer easemotion-components {
 
-/* â”€â”€ Badge Grid Component Container Row â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Badge Grid Component Container Row Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 .alm-badge-alignment-row {
   display: flex;
   gap: var(--ease-space-3, 0.75rem);
@@ -17,7 +17,7 @@
   box-sizing: border-box;
 }
 
-/* â”€â”€ Stabilized Inline-Flex Status Pill (The Core Fix) â”€â”€â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Stabilized Inline-Flex Status Pill (The Core Fix) Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 .alm-stabilized-status-pill {
   display: inline-flex;
   align-items: center;
@@ -26,7 +26,7 @@
   background: var(--ease-glass-bg, rgba(255, 255, 255, 0.02));
   border: 1px solid var(--ease-glass-border, rgba(255, 255, 255, 0.06));
   border-radius: var(--ease-radius-full, 9999px);
-  padding: 4px 12px;
+  padding: var(--ease-space-1) 12px;
   height: 28px;
   box-sizing: border-box;
   font-family: var(--ease-font-sans, system-ui, sans-serif);
@@ -36,7 +36,7 @@
   line-height: 1;
 }
 
-/* â”€â”€ Inline Custom SVG Icon â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Inline Custom SVG Icon Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 .alm-pill-vector-icon {
   width: 14px;
   height: 14px;
@@ -46,7 +46,7 @@
   stroke-width: 2;
 }
 
-/* â”€â”€ Performance Contained Font Glyph Target â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Performance Contained Font Glyph Target Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 .alm-pill-text-render-node {
   font-size: var(--ease-text-xs, 0.75rem);
   font-weight: 600;

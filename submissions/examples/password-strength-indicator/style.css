@@ -1,5 +1,5 @@
 /* ==========================================================================
-   EaseMotion CSS â€¢ Password Strength Indicator Styling
+   EaseMotion CSS Ã¢â‚¬Â¢ Password Strength Indicator Styling
    ========================================================================== */
 
 :root {
@@ -59,7 +59,7 @@ body {
   min-height: 100%;
   display: grid;
   place-items: center;
-  padding: 40px 20px;
+  padding: var(--ease-space-10) 20px;
 }
 
 /* Card Container */
@@ -195,7 +195,7 @@ body {
   border: none;
   color: var(--psi-muted);
   cursor: pointer;
-  padding: 4px;
+  padding: var(--ease-space-1);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -383,7 +383,7 @@ body {
   background: linear-gradient(135deg, var(--psi-accent) 0%, rgba(16, 185, 129, 0.85) 100%);
   border: none;
   border-radius: 12px;
-  padding: 16px;
+  padding: var(--ease-space-4);
   color: #ffffff;
   font-size: 15px;
   font-weight: 700;
@@ -443,7 +443,7 @@ body {
 /* Responsive Scaling */
 @media (max-width: 480px) {
   .psi-root {
-    padding: 20px 12px;
+    padding: var(--ease-space-5) 12px;
   }
   
   .psi-card {

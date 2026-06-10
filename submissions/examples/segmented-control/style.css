@@ -1,9 +1,9 @@
-/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+/* Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
    CSS-Only Segmented Control
    EaseMotion CSS Submission
-   â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+   Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 
-/* â”€â”€ Reset & base â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Reset & base Ã¢â€â‚¬Ã¢â€â‚¬ */
 *,
 *::before,
 *::after {
@@ -19,11 +19,11 @@ body {
   min-height: 100vh;
 }
 
-/* â”€â”€ Page scaffold â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Page scaffold Ã¢â€â‚¬Ã¢â€â‚¬ */
 .demo-page {
   max-width: 800px;
   margin: 0 auto;
-  padding: 48px 24px 80px;
+  padding: var(--ease-space-12) 24px 80px;
 }
 
 .demo-header {
@@ -72,7 +72,7 @@ body {
 .demo-card {
   background: #ffffff;
   border-radius: 12px;
-  padding: 24px;
+  padding: var(--ease-space-6);
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
   display: flex;
   flex-direction: column;
@@ -88,15 +88,15 @@ body {
   color: var(--ease-color-neutral-400);
 }
 
-/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-   Segmented Control â€” core utility
-   â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
+   Segmented Control Ã¢â‚¬â€ core utility
+   Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 
 /*
  * Technique:
  *   1. Hidden radio inputs sit in the DOM before each label.
  *   2. :checked + label selects the label immediately after
- *      a checked radio â€” that label gets the "active" style.
+ *      a checked radio Ã¢â‚¬â€ that label gets the "active" style.
  *   3. The fieldset acts as the visual container; border: none
  *      and padding: 0 strip the browser default fieldset styles.
  */
@@ -110,7 +110,7 @@ body {
   border-collapse: separate;
 }
 
-/* Visually hide the radio inputs â€” keep them in the accessibility tree */
+/* Visually hide the radio inputs Ã¢â‚¬â€ keep them in the accessibility tree */
 .em-segmented input[type="radio"] {
   position: absolute;
   width: 1px;
@@ -119,12 +119,12 @@ body {
   pointer-events: none;
 }
 
-/* Segment label â€” the visible button */
+/* Segment label Ã¢â‚¬â€ the visible button */
 .em-segmented label {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 8px 18px;
+  padding: var(--ease-space-2) 18px;
   font-size: 0.875rem;
   font-weight: 500;
   color: #6366f1;
@@ -142,7 +142,7 @@ body {
   border-right: none;
 }
 
-/* Hover â€” subtle fill */
+/* Hover Ã¢â‚¬â€ subtle fill */
 .em-segmented label:hover {
   background: rgba(99, 102, 241, 0.07);
 }
@@ -159,7 +159,7 @@ body {
   outline-offset: -3px;
 }
 
-/* â”€â”€ Pill variant â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Pill variant Ã¢â€â‚¬Ã¢â€â‚¬ */
 .em-segmented--pill {
   border-radius: 999px;
   padding: 3px;

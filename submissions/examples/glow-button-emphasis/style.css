@@ -7,7 +7,7 @@ body {
 }
 
 .glow-button {
-    padding: 12px 24px;
+    padding: var(--ease-space-3) 24px;
     border: none;
     border-radius: 8px;
     font-size: 16px;

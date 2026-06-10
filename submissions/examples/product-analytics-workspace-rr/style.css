@@ -78,7 +78,7 @@ body{
 
 .step{
     margin-bottom:15px;
-    padding:16px;
+    padding: var(--ease-space-4);
     border-radius:12px;
     text-align:center;
     font-weight:bold;
@@ -91,13 +91,13 @@ body{
 
 .insight{
     background:var(--ease-color-neutral-800);
-    padding:12px;
+    padding: var(--ease-space-3);
     border-radius:10px;
     margin-bottom:10px;
 }
 
 .item{
-    padding:12px;
+    padding: var(--ease-space-3);
     border-bottom:1px solid rgba(255,255,255,.05);
 }
 

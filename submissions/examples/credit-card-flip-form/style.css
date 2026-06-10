@@ -93,7 +93,7 @@ p{color:var(--muted);font-size:0.9rem;text-align:center;}
   background:linear-gradient(135deg,#d4af37,#f5d060,#c8941a);
   border-radius:6px;
   display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;
-  gap:2px;padding:4px;
+  gap:2px;padding: var(--ease-space-1);
 }
 
 .chip-line{
@@ -241,7 +241,7 @@ input{
   background:rgba(255,255,255,0.04);
   border:1px solid rgba(255,255,255,0.1);
   border-radius:10px;
-  padding:12px 14px;
+  padding: var(--ease-space-3) 14px;
   font-family:'Inter',sans-serif;
   font-size:0.9rem;
   color:var(--text);

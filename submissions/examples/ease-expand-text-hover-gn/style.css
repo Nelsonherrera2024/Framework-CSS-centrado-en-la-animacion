@@ -1,6 +1,6 @@
 /* ease-expand-text-hover-gn/style.css */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{font-family:sans-serif;background:#f4f4f4;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;gap:40px;padding:40px 20px}
+body{font-family:sans-serif;background:#f4f4f4;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;gap:40px;padding: var(--ease-space-10) 20px}
 .expand-text{display:inline-block;font-size:1.5rem;font-weight:700;color:#333;letter-spacing:0;transition:letter-spacing 0.4s cubic-bezier(0.25,0.46,0.45,0.94),color 0.3s ease;cursor:default}
 .expand-text:hover,.expand-text:focus-visible{letter-spacing:0.2em;color:var(--ease-color-primary);outline:none}
 .expand-text-underline{display:inline-block;font-size:1.5rem;font-weight:700;color:#333;letter-spacing:0;position:relative;cursor:default;transition:letter-spacing 0.4s cubic-bezier(0.25,0.46,0.45,0.94),color 0.3s ease}

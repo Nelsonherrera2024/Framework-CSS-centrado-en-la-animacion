@@ -115,7 +115,7 @@ body {
   display: flex;
   background-color: var(--bg-toggle);
   border: 1px solid var(--border-color);
-  padding: 4px;
+  padding: var(--ease-space-1);
   border-radius: var(--radius-full);
   position: relative;
   width: 256px; /* 124px per button + padding */

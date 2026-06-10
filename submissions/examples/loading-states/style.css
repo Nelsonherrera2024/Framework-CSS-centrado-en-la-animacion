@@ -50,7 +50,7 @@ body {
 
 .ease-card {
   background: var(--ease-card-bg);
-  padding: 32px 16px;
+  padding: var(--ease-space-8) 16px;
   border-radius: 12px;
   display: flex;
   flex-direction: column;
@@ -218,7 +218,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 12px 24px;
+  padding: var(--ease-space-3) 24px;
   background: var(--ease-primary);
   color: white;
   border: none;
@@ -246,7 +246,7 @@ body {
 
 .ease-skel-block {
   background: var(--ease-card-bg);
-  padding: 24px;
+  padding: var(--ease-space-6);
   border-radius: 12px;
 }
 

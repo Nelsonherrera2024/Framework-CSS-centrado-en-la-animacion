@@ -2,7 +2,7 @@
   position: relative;
   width: 320px;
   height: 220px;
-  padding: 24px;
+  padding: var(--ease-space-6);
   border-radius: 20px;
   background: linear-gradient(135deg, var(--ease-color-neutral-800), var(--ease-color-neutral-700));
   color: white;

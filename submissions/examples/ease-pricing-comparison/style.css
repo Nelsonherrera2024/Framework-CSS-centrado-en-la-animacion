@@ -29,7 +29,7 @@ body {
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  padding: 40px 16px;
+  padding: var(--ease-space-10) 16px;
 }
 
 .demo-root {
@@ -65,7 +65,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  padding: 8px 16px;
+  padding: var(--ease-space-2) 16px;
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-full);
@@ -147,7 +147,7 @@ body {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
-  padding: 32px 24px;
+  padding: var(--ease-space-8) 24px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -182,7 +182,7 @@ body {
   letter-spacing: 0.05em;
   color: #fff;
   background: var(--accent);
-  padding: 4px 14px;
+  padding: var(--ease-space-1) 14px;
   border-radius: var(--radius-full);
   white-space: nowrap;
 }
@@ -260,7 +260,7 @@ body {
 /* Plan Buttons */
 .ease-plan-btn {
   width: 100%;
-  padding: 12px 20px;
+  padding: var(--ease-space-3) 20px;
   border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
   font-size: 14px;
@@ -315,6 +315,6 @@ body {
 }
 
 @media (max-width: 500px) {
-  .ease-pricing-card { padding: 24px 18px; }
+  .ease-pricing-card { padding: var(--ease-space-6) 18px; }
   .billing-toggle { flex-wrap: wrap; justify-content: center; }
 }

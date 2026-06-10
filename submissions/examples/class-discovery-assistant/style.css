@@ -31,7 +31,7 @@ body {
 .assistant-shell {
   width: min(1120px, calc(100% - 32px));
   margin: 0 auto;
-  padding: 32px 0 64px;
+  padding: var(--ease-space-8) 0 64px;
   display: grid;
   gap: 28px;
 }
@@ -118,7 +118,7 @@ label[for="searchInput"] {
 }
 
 .result-card {
-  padding: 20px;
+  padding: var(--ease-space-5);
   border-radius: 24px;
   border: 1px solid var(--border);
   background: var(--panel-strong);
@@ -145,7 +145,7 @@ label[for="searchInput"] {
 }
 
 .result-name {
-  margin: 8px 0 0;
+  margin: var(--ease-space-2) 0 0;
   color: var(--muted);
 }
 
@@ -236,7 +236,7 @@ label[for="searchInput"] {
 
 @media (max-width: 620px) {
   .assistant-shell {
-    padding: 24px 16px 48px;
+    padding: var(--ease-space-6) 16px 48px;
   }
 
   .reference-panel {

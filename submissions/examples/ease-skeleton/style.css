@@ -1,16 +1,16 @@
 /* ============================================
-   ease-skeleton â€” EaseMotion CSS
+   ease-skeleton Ã¢â‚¬â€ EaseMotion CSS
    Pure CSS Skeleton Loading Animation
    No JavaScript
 ============================================ */
 
-/* â”€â”€ Shimmer keyframe â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Shimmer keyframe Ã¢â€â‚¬Ã¢â€â‚¬ */
 @keyframes ease-shimmer {
   0%   { background-position: -200% 0; }
   100% { background-position:  200% 0; }
 }
 
-/* â”€â”€ Base skeleton â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Base skeleton Ã¢â€â‚¬Ã¢â€â‚¬ */
 .ease-skeleton {
   --ease-base:      var(--ease-color-neutral-800);
   --ease-shine:     var(--ease-color-neutral-700);
@@ -35,7 +35,7 @@
   animation: ease-shimmer var(--ease-duration) linear infinite;
 }
 
-/* â”€â”€ Shape variants â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Shape variants Ã¢â€â‚¬Ã¢â€â‚¬ */
 .ease-skeleton--circle {
   --ease-width:  48px;
   --ease-height: 48px;
@@ -50,18 +50,18 @@
   border-radius: 0;
 }
 
-/* â”€â”€ Size variants â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Size variants Ã¢â€â‚¬Ã¢â€â‚¬ */
 .ease-skeleton--sm { --ease-height: 10px; }
 .ease-skeleton--md { --ease-height: 16px; }
 .ease-skeleton--lg { --ease-height: 24px; }
 .ease-skeleton--xl { --ease-height: 48px; }
 
-/* â”€â”€ Card layout helper â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Card layout helper Ã¢â€â‚¬Ã¢â€â‚¬ */
 .ease-skeleton-card {
   background: #111827;
   border: 1px solid var(--ease-color-neutral-800);
   border-radius: 12px;
-  padding: 20px;
+  padding: var(--ease-space-5);
   display: flex;
   flex-direction: column;
   gap: 12px;

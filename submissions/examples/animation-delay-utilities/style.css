@@ -29,7 +29,7 @@ body {
 .demo-shell {
   width: min(1120px, calc(100% - 32px));
   margin: 0 auto;
-  padding: 64px 0;
+  padding: var(--ease-space-16) 0;
 }
 
 .intro {
@@ -74,7 +74,7 @@ h1 {
 
 .delay-card {
   min-height: 250px;
-  padding: 24px;
+  padding: var(--ease-space-6);
   border: 1px solid var(--border);
   border-radius: 18px;
   background: var(--panel-bg);
@@ -91,7 +91,7 @@ h1 {
 
 .delay-label {
   display: inline-flex;
-  padding: 8px 10px;
+  padding: var(--ease-space-2) 10px;
   border-radius: 999px;
   background: rgba(20, 83, 45, 0.1);
   color: #14532d;
@@ -138,7 +138,7 @@ h1 {
   gap: 18px;
   align-items: center;
   margin-top: 28px;
-  padding: 24px;
+  padding: var(--ease-space-6);
   border: 1px solid var(--border);
   border-radius: 18px;
   background: rgba(255, 255, 255, 0.08);
@@ -203,7 +203,7 @@ code {
 
 @media (max-width: 560px) {
   .demo-shell {
-    padding: 40px 0;
+    padding: var(--ease-space-10) 0;
   }
 
   .delay-grid,

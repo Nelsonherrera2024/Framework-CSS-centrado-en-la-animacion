@@ -11,7 +11,7 @@ body{
     justify-content:center;
     align-items:center;
     font-family:Arial,sans-serif;
-    padding:20px;
+    padding: var(--ease-space-5);
 }
 
 .notification-center{
@@ -32,7 +32,7 @@ body{
 
 .badge{
     background:#2563eb;
-    padding:8px 14px;
+    padding: var(--ease-space-2) 14px;
     border-radius:20px;
     font-size:.9rem;
 }

@@ -103,7 +103,7 @@
   background: var(--ag-surface);
   border: 1px solid var(--ag-border);
   border-radius: 14px;
-  padding: 24px;
+  padding: var(--ease-space-6);
   font-family: var(--ag-font);
   margin-bottom: 20px;
 }

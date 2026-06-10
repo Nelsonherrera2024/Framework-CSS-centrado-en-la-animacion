@@ -9,7 +9,7 @@
 body {
     font-family: Arial, sans-serif;
     background: var(--ease-color-neutral-50);
-    padding: 40px;
+    padding: var(--ease-space-10);
     max-width: 900px;
     margin: auto;
 }

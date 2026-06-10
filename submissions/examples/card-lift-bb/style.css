@@ -1,15 +1,15 @@
 /* ============================================================
-   SUBMISSION — card-lift
+   SUBMISSION â€” card-lift
    Raw CSS: no ease- prefix required at submission stage.
    Maintainer will standardize naming before integrating.
    ============================================================ */
 
-/* ── Demo page scaffold ────────────────────────────────────── */
+/* â”€â”€ Demo page scaffold â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 body {
   font-family: system-ui, -apple-system, sans-serif;
   background: #0f0e17;
   color: #fffffe;
-  padding: 48px 32px;
+  padding: var(--ease-space-12) 32px;
   margin: 0;
 }
 
@@ -31,7 +31,7 @@ p {
   max-width: 800px;
 }
 
-/* ── The proposed effect ───────────────────────────────────── */
+/* â”€â”€ The proposed effect â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .lift-card {
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -61,7 +61,7 @@ p {
   border-color: rgba(108, 99, 255, 0.35);
 }
 
-/* ── Card internals ────────────────────────────────────────── */
+/* â”€â”€ Card internals â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .lift-card-icon {
   font-size: 2rem;
   margin-bottom: 16px;

@@ -10,7 +10,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
   background: var(--ease-color-neutral-50);
   color: var(--ease-color-neutral-900);
-  padding: 48px 32px;
+  padding: var(--ease-space-12) 32px;
   line-height: 1.6;
 }
 
@@ -28,7 +28,7 @@ h1 {
 .section-title {
   font-size: 1.25rem;
   font-weight: 700;
-  margin: 40px 0 16px;
+  margin: var(--ease-space-10) 0 16px;
   padding-bottom: 8px;
   border-bottom: 2px solid var(--ease-color-neutral-200);
 }
@@ -56,7 +56,7 @@ h1 {
   background: #ffffff;
   border: 1px solid var(--ease-color-neutral-200);
   border-radius: 12px;
-  padding: 24px;
+  padding: var(--ease-space-6);
   margin-bottom: 24px;
 }
 
@@ -72,7 +72,7 @@ h1 {
 .badge {
   display: inline-flex;
   align-items: center;
-  padding: 4px 12px;
+  padding: var(--ease-space-1) 12px;
   font-size: 0.75rem;
   font-weight: 600;
   line-height: 1;
@@ -247,7 +247,7 @@ h1 {
 }
 
 .tag-removable::after {
-  content: 'Ã—';
+  content: 'Ãƒâ€”';
   display: inline-flex;
   align-items: center;
   justify-content: center;

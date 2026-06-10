@@ -9,7 +9,7 @@ body{
     color:white;
     font-family:Arial,sans-serif;
     min-height:100vh;
-    padding:40px 20px;
+    padding: var(--ease-space-10) 20px;
 }
 
 .container{
@@ -71,13 +71,13 @@ body{
 .badge{
     display:inline-block;
     background:#2563eb;
-    padding:8px 14px;
+    padding: var(--ease-space-2) 14px;
     border-radius:18px;
     margin-bottom:15px;
 }
 
 .prompt-text{
-    margin:20px 0;
+    margin: var(--ease-space-5) 0;
     color:var(--ease-color-neutral-300);
     line-height:1.7;
 }

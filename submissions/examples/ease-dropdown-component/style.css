@@ -1,5 +1,5 @@
 /* ============================================================
-   EaseMotion CSS — Dropdown Component (ease-dropdown)
+   EaseMotion CSS â€” Dropdown Component (ease-dropdown)
    A flexible, accessible, and animated menu system.
    Supports multiple variants and aligns with framework design tokens.
    ============================================================ */
@@ -8,7 +8,7 @@
 @import "../../../core/animations.css";
 
 :root {
-  /* ── Dropdown Specific CSS Custom Properties ──────────────── */
+  /* â”€â”€ Dropdown Specific CSS Custom Properties â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
   --ease-dropdown-bg: var(--ease-color-surface, #ffffff);
   --ease-dropdown-border-color: var(--ease-color-neutral-200, #e2e8f0);
   --ease-dropdown-shadow: var(--ease-shadow-lg);
@@ -24,7 +24,7 @@
   --ease-dropdown-item-danger-hover-color: var(--ease-color-danger-dark, #991b1b);
 }
 
-/* ── Dark Mode Variable Overrides ─────────────────────────── */
+/* â”€â”€ Dark Mode Variable Overrides â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 @media (prefers-color-scheme: dark) {
   :root {
     --ease-dropdown-bg: var(--ease-color-neutral-800, #1e293b);
@@ -34,18 +34,18 @@
   }
 }
 
-/* ── Dropdown Wrapper ────────────────────────────────────── */
+/* â”€â”€ Dropdown Wrapper â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .ease-dropdown {
   position: relative;
   display: inline-block;
 }
 
-/* ── Dropdown Trigger ────────────────────────────────────── */
+/* â”€â”€ Dropdown Trigger â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .ease-dropdown-trigger {
   cursor: pointer;
 }
 
-/* ── Dropdown Menu Card ───────────────────────────────────── */
+/* â”€â”€ Dropdown Menu Card â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .ease-dropdown-menu {
   position: absolute;
   top: 100%;
@@ -75,7 +75,7 @@
     visibility var(--ease-speed-fast, 150ms) var(--ease-ease);
 }
 
-/* ── Position Modifiers ──────────────────────────────────── */
+/* â”€â”€ Position Modifiers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 /* Right Aligned */
 .ease-dropdown-menu--right {
@@ -98,12 +98,12 @@
   transform-origin: bottom right;
 }
 
-/* ── Animation Bouncy Curve Override ─────────────────────── */
+/* â”€â”€ Animation Bouncy Curve Override â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .ease-dropdown-menu--bounce {
   transition-timing-function: var(--ease-ease-bounce, cubic-bezier(0.34, 1.56, 0.64, 1));
 }
 
-/* ── Interactive State Triggers ────────────────────────── */
+/* â”€â”€ Interactive State Triggers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 /* Hover triggers (pure CSS fallback) */
 .ease-dropdown--hover:hover > .ease-dropdown-menu,
@@ -126,12 +126,12 @@
   transform: translateY(0) scale(1);
 }
 
-/* ── Dropdown Items ──────────────────────────────────────── */
+/* â”€â”€ Dropdown Items â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .ease-dropdown-item {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 8px 12px;
+  padding: var(--ease-space-2) 12px;
   font-family: var(--ease-font-sans, sans-serif);
   font-size: var(--ease-text-sm, 0.875rem);
   color: var(--ease-color-text, #1e293b);
@@ -196,7 +196,7 @@
   opacity: 1;
 }
 
-/* ── Divider & Headers ───────────────────────────────────── */
+/* â”€â”€ Divider & Headers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .ease-dropdown-divider {
   height: 1px;
   background: var(--ease-dropdown-border-color);
@@ -213,7 +213,7 @@
   pointer-events: none;
 }
 
-/* ── Multi-level Submenus ────────────────────────────────── */
+/* â”€â”€ Multi-level Submenus â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .ease-dropdown-submenu {
   position: relative;
 }
@@ -282,7 +282,7 @@
   transform: translateX(0) scale(1);
 }
 
-/* ── Glassmorphism Modifiers ──────────────────────────────── */
+/* â”€â”€ Glassmorphism Modifiers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .ease-dropdown-menu--glass {
   background: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(16px) saturate(120%);

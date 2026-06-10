@@ -73,7 +73,7 @@
   color: var(--ac-text-sec);
 }
 .ac-body {
-  padding: 24px 28px 28px;
+  padding: var(--ease-space-6) 28px 28px;
 }
 .ac-section {
   animation: ac-slide-in 0.4s ease-out both;
@@ -108,7 +108,7 @@
 }
 .ac-input {
   flex: 1;
-  padding: 8px 12px;
+  padding: var(--ease-space-2) 12px;
   border: 1.5px solid var(--ac-border);
   border-radius: 8px;
   background: rgba(255,255,255,0.04);
@@ -204,7 +204,7 @@
   transform: translateY(-1px);
 }
 @media (max-width: 640px) {
-  .ac-header { flex-direction: column; text-align: center; padding: 20px 18px 0; }
+  .ac-header { flex-direction: column; text-align: center; padding: var(--ease-space-5) 18px 0; }
   .ac-body { padding: 18px; }
   .ac-row { flex-direction: column; align-items: stretch; gap: 4px; }
   .ac-label { width: auto; }

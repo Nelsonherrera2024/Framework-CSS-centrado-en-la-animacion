@@ -8,7 +8,7 @@ body{
   font-family:Arial,sans-serif;
   background:#f5f7fa;
   color:#222;
-  padding:40px;
+  padding: var(--ease-space-10);
 }
 
 header{
@@ -23,7 +23,7 @@ header h1{
 .search{
   width:100%;
   max-width:500px;
-  padding:12px;
+  padding: var(--ease-space-3);
   border:1px solid #ccc;
   border-radius:8px;
 }
@@ -37,7 +37,7 @@ header h1{
 .card{
   background:white;
   border-radius:12px;
-  padding:20px;
+  padding: var(--ease-space-5);
   box-shadow:0 4px 12px rgba(0,0,0,.08);
 }
 

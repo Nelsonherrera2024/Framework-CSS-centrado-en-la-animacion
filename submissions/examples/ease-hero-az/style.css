@@ -1,5 +1,5 @@
 /* ============================================================
-   EaseMotion CSS — ease-hero-az component (Proposal)
+   EaseMotion CSS â€” ease-hero-az component (Proposal)
    Landing page hero section with headline, subtitle, CTAs, variants.
    ============================================================ */
 
@@ -67,7 +67,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--ease-space-2, 8px);
-  padding: 12px 28px;
+  padding: var(--ease-space-3) 28px;
   font-family: inherit;
   font-size: 0.9375rem;
   font-weight: 600;

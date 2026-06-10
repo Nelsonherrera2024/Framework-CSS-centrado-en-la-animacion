@@ -34,7 +34,7 @@ body {
 .demo-shell {
   width: min(1080px, calc(100% - 32px));
   margin: 0 auto;
-  padding: 64px 0;
+  padding: var(--ease-space-16) 0;
 }
 
 .intro {

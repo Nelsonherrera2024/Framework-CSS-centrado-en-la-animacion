@@ -7,7 +7,7 @@
   position: relative;
   background-color: var(--ease-color-neutral-800);
   border-radius: 8px;
-  margin: 20px 0;
+  margin: var(--ease-space-5) 0;
   border: 1px solid var(--ease-color-neutral-700);
   overflow: hidden;
 }
@@ -15,7 +15,7 @@
 /* Code content target area */
 .docs-code {
   margin: 0;
-  padding: 16px;
+  padding: var(--ease-space-4);
   overflow-x: auto;
   font-family: 'Fira Code', Consolas, Monaco, monospace;
   font-size: 14px;
@@ -29,7 +29,7 @@
   justify-content: space-between;
   align-items: center;
   background-color: var(--ease-color-neutral-800);
-  padding: 8px 16px;
+  padding: var(--ease-space-2) 16px;
   border-bottom: 1px solid var(--ease-color-neutral-700);
 }
 
@@ -46,7 +46,7 @@
   background: transparent;
   border: 1px solid var(--ease-color-neutral-600);
   color: var(--ease-color-neutral-400);
-  padding: 4px 10px;
+  padding: var(--ease-space-1) 10px;
   font-size: 12px;
   border-radius: 4px;
   cursor: pointer;

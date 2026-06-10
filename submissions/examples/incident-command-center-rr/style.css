@@ -44,7 +44,7 @@ body{
     background:#111827;
     border:1px solid rgba(255,255,255,.08);
     border-radius:20px;
-    padding:24px;
+    padding: var(--ease-space-6);
     transition:.35s ease;
 }
 
@@ -64,7 +64,7 @@ body{
 .service{
     display:flex;
     justify-content:space-between;
-    padding:12px 0;
+    padding: var(--ease-space-3) 0;
     border-bottom:1px solid rgba(255,255,255,.05);
 }
 
@@ -96,7 +96,7 @@ body{
     background:var(--ease-color-neutral-800);
     border-radius:20px;
     overflow:hidden;
-    margin:20px 0;
+    margin: var(--ease-space-5) 0;
 }
 
 .fill{

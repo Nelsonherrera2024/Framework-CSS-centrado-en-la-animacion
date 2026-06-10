@@ -27,7 +27,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  padding: 8px 4px;
+  padding: var(--ease-space-2) 4px;
   gap: 0;
 }
 

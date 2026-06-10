@@ -81,7 +81,7 @@ body {
 .theme-page {
   width: min(1120px, calc(100% - 32px));
   margin: 0 auto;
-  padding: 64px 0;
+  padding: var(--ease-space-16) 0;
 }
 
 .hero-section {

@@ -1,9 +1,9 @@
 /* ============================================================
-   EaseMotion CSS — Flip Card 3D
+   EaseMotion CSS â€” Flip Card 3D
    Contributor: submissions/examples/flip-card-3d/style.css
    ============================================================ */
 
-/* ── Reset & base ─────────────────────────────────────────── */
+/* â”€â”€ Reset & base â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 *,
 *::before,
 *::after {
@@ -55,7 +55,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* ── Page layout ──────────────────────────────────────────── */
+/* â”€â”€ Page layout â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .page-wrapper {
   min-height: 100vh;
   display: flex;
@@ -65,7 +65,7 @@ body {
   gap: 64px;
 }
 
-/* ── Showcase header ──────────────────────────────────────── */
+/* â”€â”€ Showcase header â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .showcase-header {
   text-align: center;
   max-width: 560px;
@@ -79,7 +79,7 @@ body {
   text-transform: uppercase;
   color: var(--teal);
   border: 1px solid rgba(45, 212, 191, 0.3);
-  padding: 4px 14px;
+  padding: var(--ease-space-1) 14px;
   border-radius: 100px;
   margin-bottom: 20px;
 }
@@ -113,7 +113,7 @@ body {
   letter-spacing: 0.02em;
 }
 
-/* ── Cards grid ───────────────────────────────────────────── */
+/* â”€â”€ Cards grid â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .cards-grid {
   display: flex;
   flex-wrap: wrap;
@@ -121,7 +121,7 @@ body {
   gap: 32px;
 }
 
-/* ── Flip card shell ──────────────────────────────────────── */
+/* â”€â”€ Flip card shell â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .flip-card {
   width: var(--card-w);
   height: var(--card-h);
@@ -149,7 +149,7 @@ body {
   transform: rotateY(180deg);
 }
 
-/* ── Front & back shared styles ───────────────────────────── */
+/* â”€â”€ Front & back shared styles â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .flip-card__front,
 .flip-card__back {
   position: absolute;
@@ -161,7 +161,7 @@ body {
   -webkit-backface-visibility: hidden;
 }
 
-/* ── Front face ───────────────────────────────────────────── */
+/* â”€â”€ Front face â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .flip-card__front {
   background-color: var(--color-surface);
   border: 1px solid var(--color-border);
@@ -185,7 +185,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 100%;
-  padding: 40px 28px;
+  padding: var(--ease-space-10) 28px;
   text-align: center;
   gap: 10px;
 }
@@ -271,7 +271,7 @@ body {
   opacity: 0.7;
 }
 
-/* ── Back face ────────────────────────────────────────────── */
+/* â”€â”€ Back face â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .flip-card__back {
   /* Pre-rotated so it's hidden until the flip completes */
   transform: rotateY(180deg);
@@ -287,7 +287,7 @@ body {
   flex-direction: column;
   justify-content: center;
   height: 100%;
-  padding: 40px 32px;
+  padding: var(--ease-space-10) 32px;
   gap: 14px;
 }
 
@@ -314,7 +314,7 @@ body {
   border-top: 1px solid var(--color-border);
   border-bottom: 1px solid var(--color-border);
   padding: 14px 0;
-  margin: 4px 0;
+  margin: var(--ease-space-1) 0;
 }
 
 .back-stats li {
@@ -373,7 +373,7 @@ body {
 .flip-card__back--amber  .back-btn { background: var(--amber); }
 .flip-card__back--indigo .back-btn { background: var(--indigo); }
 
-/* ── Footer ───────────────────────────────────────────────── */
+/* â”€â”€ Footer â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .showcase-footer {
   font-size: 0.8rem;
   color: var(--color-muted);
@@ -387,7 +387,7 @@ body {
   text-underline-offset: 3px;
 }
 
-/* ── Responsive ───────────────────────────────────────────── */
+/* â”€â”€ Responsive â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 @media (max-width: 700px) {
   :root {
     --card-w: 280px;

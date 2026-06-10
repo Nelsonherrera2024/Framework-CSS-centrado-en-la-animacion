@@ -143,7 +143,7 @@ input:checked + .slider:before {
   transform: translateX(-50%);
   background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
   color: #0f172a;
-  padding: 4px 16px;
+  padding: var(--ease-space-1) 16px;
   font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
@@ -234,7 +234,7 @@ input:checked + .slider:before {
 /* Button CTAs */
 .cta-btn {
   width: 100%;
-  padding: 12px 24px;
+  padding: var(--ease-space-3) 24px;
   border-radius: 10px;
   font-size: 15px;
   font-weight: 600;

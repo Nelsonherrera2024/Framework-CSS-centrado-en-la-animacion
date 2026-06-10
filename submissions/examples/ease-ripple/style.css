@@ -1,5 +1,5 @@
 /* =============================================
-   EaseMotion CSS â€” ease-ripple Click Effect
+   EaseMotion CSS Ã¢â‚¬â€ ease-ripple Click Effect
    Composable ripple animation for any element
    ============================================= */
 
@@ -52,7 +52,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   max-width: 720px;
   margin: 0 auto;
-  padding: 40px 24px;
+  padding: var(--ease-space-10) 24px;
   line-height: 1.6;
   color: var(--ease-color-neutral-800);
   background: var(--ease-color-neutral-50);
@@ -70,7 +70,7 @@ h2 {
 
 section {
   margin-bottom: 32px;
-  padding: 20px;
+  padding: var(--ease-space-5);
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.08);
@@ -127,7 +127,7 @@ section {
 }
 
 .demo-card {
-  padding: 24px;
+  padding: var(--ease-space-6);
   border-radius: 10px;
   border: 1px solid var(--ease-color-neutral-200);
   background: var(--ease-color-neutral-50);

@@ -1,5 +1,5 @@
 /* ============================================================
-   EaseMotion CSS — Carousel / Slider Component (ease-carousel)
+   EaseMotion CSS â€” Carousel / Slider Component (ease-carousel)
    An interactive, responsive, and animated carousel system.
    Supports multiple transition types and content layouts.
    ============================================================ */
@@ -8,7 +8,7 @@
 @import "../../../core/animations.css";
 
 :root {
-  /* ── Carousel Specific Custom Properties ─────────────────── */
+  /* â”€â”€ Carousel Specific Custom Properties â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
   --ease-carousel-bg: var(--ease-color-surface, #ffffff);
   --ease-carousel-border-color: var(--ease-color-neutral-200, #e2e8f0);
   --ease-carousel-radius: var(--ease-radius-lg, 12px);
@@ -24,7 +24,7 @@
   --ease-carousel-transition-speed: var(--ease-speed-medium, 300ms);
 }
 
-/* ── Dark Mode Overrides ─────────────────────────────────── */
+/* â”€â”€ Dark Mode Overrides â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 @media (prefers-color-scheme: dark) {
   :root {
     --ease-carousel-bg: var(--ease-color-neutral-800, #1e293b);
@@ -33,7 +33,7 @@
   }
 }
 
-/* ── Carousel Container ──────────────────────────────────── */
+/* â”€â”€ Carousel Container â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .ease-carousel {
   position: relative;
   width: 100%;
@@ -44,7 +44,7 @@
   overflow: hidden;
 }
 
-/* ── Viewport ────────────────────────────────────────────── */
+/* â”€â”€ Viewport â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .ease-carousel-viewport {
   position: relative;
   width: 100%;
@@ -52,7 +52,7 @@
   overflow: hidden;
 }
 
-/* ── Sliding Track ───────────────────────────────────────── */
+/* â”€â”€ Sliding Track â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .ease-carousel-track {
   display: flex;
   width: 100%;
@@ -61,7 +61,7 @@
   transition: transform var(--ease-carousel-transition-speed) var(--ease-ease);
 }
 
-/* ── Individual Slide ────────────────────────────────────── */
+/* â”€â”€ Individual Slide â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .ease-carousel-slide {
   position: relative;
   flex: 0 0 100%;
@@ -71,7 +71,7 @@
   outline: none;
 }
 
-/* ── Variant: Fade Transition Carousel ────────────────────── */
+/* â”€â”€ Variant: Fade Transition Carousel â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .ease-carousel--fade .ease-carousel-track {
   display: block;
   position: relative;
@@ -98,7 +98,7 @@
   z-index: 2;
 }
 
-/* ── Navigation Controls (Arrows) ───────────────────────── */
+/* â”€â”€ Navigation Controls (Arrows) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .ease-carousel-control {
   position: absolute;
   top: 50%;
@@ -146,7 +146,7 @@
   stroke: currentColor;
 }
 
-/* ── Indicators (Dots) ───────────────────────────────────── */
+/* â”€â”€ Indicators (Dots) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .ease-carousel-indicators {
   position: absolute;
   bottom: 20px;
@@ -183,7 +183,7 @@
   background: var(--ease-carousel-indicator-active-bg);
 }
 
-/* ── Carousel Slide Content Overlays (Image) ─────────────── */
+/* â”€â”€ Carousel Slide Content Overlays (Image) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .ease-carousel-slide-img {
   width: 100%;
   height: 100%;
@@ -197,7 +197,7 @@
   left: 0;
   right: 0;
   background: linear-gradient(to top, rgba(9, 13, 22, 0.9) 0%, rgba(9, 13, 22, 0.4) 60%, transparent 100%);
-  padding: 40px 80px 40px 40px; /* Safe space on the right to avoid Next-Arrow overlap */
+  padding: var(--ease-space-10) 80px 40px 40px; /* Safe space on the right to avoid Next-Arrow overlap */
   color: #ffffff;
   box-sizing: border-box;
 }
@@ -215,7 +215,7 @@
   line-height: 1.5;
 }
 
-/* ── Card Slide Layout ───────────────────────────────────── */
+/* â”€â”€ Card Slide Layout â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .ease-carousel-slide-card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -230,7 +230,7 @@
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: var(--ease-radius-md, 8px);
-  padding: 24px;
+  padding: var(--ease-space-6);
   text-align: center;
   transition: 
     transform var(--ease-speed-fast) var(--ease-ease), 
@@ -263,7 +263,7 @@
   line-height: 1.5;
 }
 
-/* ── Testimonial Slide Layout ───────────────────────────── */
+/* â”€â”€ Testimonial Slide Layout â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 .ease-carousel-slide-testimonial {
   display: flex;
   flex-direction: column;
@@ -287,7 +287,7 @@
 }
 
 .ease-carousel-testimonial-quote::before {
-  content: '“';
+  content: 'â€œ';
   font-size: 3rem;
   color: var(--ease-color-primary, #6c63ff);
   opacity: 0.25;
@@ -336,17 +336,17 @@
   margin-top: 2px;
 }
 
-/* ── Responsive Spacing adjustments ──────────────────────── */
+/* â”€â”€ Responsive Spacing adjustments â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 @media (max-width: 768px) {
   .ease-carousel-slide-overlay {
     padding: 30px 40px;
   }
   .ease-carousel-slide-card-grid {
-    padding: 40px 60px;
+    padding: var(--ease-space-10) 60px;
     grid-template-columns: 1fr;
   }
   .ease-carousel-slide-testimonial {
-    padding: 40px 60px;
+    padding: var(--ease-space-10) 60px;
   }
   .ease-carousel-control {
     width: 36px;

@@ -23,11 +23,11 @@ h1 {
 }
 
 h2 {
-    margin: 20px 0 10px;
+    margin: var(--ease-space-5) 0 10px;
 }
 
 .hover-btn {
-    padding: 12px 24px;
+    padding: var(--ease-space-3) 24px;
     border: none;
     border-radius: 8px;
     background: #6366f1;
@@ -43,7 +43,7 @@ h2 {
 .hover-card {
     width: 300px;
     margin: 0 auto;
-    padding: 20px;
+    padding: var(--ease-space-5);
     background: var(--ease-color-neutral-800);
     border-radius: 12px;
     transition: transform 0.3s ease;

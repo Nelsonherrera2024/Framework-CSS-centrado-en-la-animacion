@@ -12,7 +12,7 @@ body {
 .demo-page {
   width: min(1100px, calc(100% - 32px));
   margin: 0 auto;
-  padding: 48px 0;
+  padding: var(--ease-space-12) 0;
 }
 
 .demo-header {
@@ -40,14 +40,14 @@ body {
 }
 
 .demo-card {
-  padding: 20px;
+  padding: var(--ease-space-5);
   border: 1px solid #d8dee8;
   border-radius: 8px;
   background: #ffffff;
 }
 
 .demo-card h2 {
-  margin: 16px 0 8px;
+  margin: var(--ease-space-4) 0 8px;
   font-size: 1.1rem;
 }
 
@@ -68,7 +68,7 @@ body {
 }
 
 .demo-box span {
-  padding: 8px 12px;
+  padding: var(--ease-space-2) 12px;
   border-radius: 999px;
   background: rgba(0, 0, 0, 0.24);
 }
@@ -92,6 +92,6 @@ body {
   }
 
   .demo-page {
-    padding: 32px 0;
+    padding: var(--ease-space-8) 0;
   }
 }

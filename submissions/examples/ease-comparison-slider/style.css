@@ -1,5 +1,5 @@
 /* ============================================================
-   EaseMotion CSS — ease-comparison-slider
+   EaseMotion CSS â€” ease-comparison-slider
    Before/after image comparison using clip-path + range input
    ============================================================ */
 
@@ -45,7 +45,7 @@
 
 /* Divider handle */
 .ease-comparison-divider::after {
-  content: '◀ ▶';
+  content: 'â—€ â–¶';
   position: absolute;
   top: 50%;
   left: 50%;
@@ -79,7 +79,7 @@
 .ease-comparison-label-after {
   position: absolute;
   bottom: 12px;
-  padding: 4px 10px;
+  padding: var(--ease-space-1) 10px;
   background: rgba(0,0,0,0.5);
   color: #fff;
   font-size: 12px;

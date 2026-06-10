@@ -1,4 +1,4 @@
-/* Glassmorphism Settings Panel — self-contained styles */
+/* Glassmorphism Settings Panel â€” self-contained styles */
 
 :root {
   --gsp-bg: #070b14;
@@ -227,7 +227,7 @@ body:not(.gsp-dark) .gsp-gear {
   align-items: flex-start;
   justify-content: space-between;
   gap: 12px;
-  padding: 4px 2px 10px;
+  padding: var(--ease-space-1) 2px 10px;
 }
 
 .gsp-panel__titleWrap {
@@ -293,7 +293,7 @@ body:not(.gsp-dark) .gsp-panel__icon {
 .gsp-divider {
   height: 1px;
   background: rgba(255,255,255,0.14);
-  margin: 12px 2px;
+  margin: var(--ease-space-3) 2px;
 }
 
 body:not(.gsp-dark) .gsp-divider {

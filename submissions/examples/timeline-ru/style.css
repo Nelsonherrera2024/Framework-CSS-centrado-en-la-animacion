@@ -7,7 +7,7 @@
 body{
     font-family:Arial, sans-serif;
     background:#f5f7fb;
-    padding:40px 20px;
+    padding: var(--ease-space-10) 20px;
     color:#222;
 }
 
@@ -59,7 +59,7 @@ section{
 
 .content{
     background:white;
-    padding:20px;
+    padding: var(--ease-space-5);
     border-radius:12px;
     box-shadow:0 5px 15px rgba(0,0,0,.1);
     transition:.3s;
@@ -90,7 +90,7 @@ section{
 
 .alt-item{
     width:50%;
-    padding:20px;
+    padding: var(--ease-space-5);
 }
 
 .alt-item.left{

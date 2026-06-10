@@ -1,5 +1,5 @@
 /* ============================================================
-   Project Roadmap Timeline â€“ style.css
+   Project Roadmap Timeline Ã¢â‚¬â€œ style.css
    Author: open-source contributor
    Theme: Obsidian Glass & Neon Progression (EaseMotion CSS style)
    ============================================================ */
@@ -119,7 +119,7 @@ body {
   gap: 32px;
   position: relative;
   width: 100%;
-  padding: 20px 0;
+  padding: var(--ease-space-5) 0;
 }
 
 /* ---- Timeline Item ---- */
@@ -279,7 +279,7 @@ body {
   background: var(--rt-color-surface);
   border: 1px solid var(--rt-color-border);
   border-radius: 18px;
-  padding: 24px;
+  padding: var(--ease-space-6);
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -321,7 +321,7 @@ body {
 .rt-badge {
   display: inline-flex;
   align-self: flex-start;
-  padding: 4px 10px;
+  padding: var(--ease-space-1) 10px;
   border-radius: 30px;
   font-size: 10px;
   font-weight: 700;
@@ -463,7 +463,7 @@ body {
   }
 
   .rt-card {
-    padding: 20px;
+    padding: var(--ease-space-5);
   }
 
   /* Shift card hover animation to side shift instead of lift to prevent vertical overlaps */
@@ -474,7 +474,7 @@ body {
 
 @media (max-width: 480px) {
   .rt-preview {
-    padding: 40px 16px;
+    padding: var(--ease-space-10) 16px;
   }
 
   .rt-item {
@@ -498,7 +498,7 @@ body {
   }
 
   .rt-card {
-    padding: 16px;
+    padding: var(--ease-space-4);
     border-radius: 14px;
   }
 

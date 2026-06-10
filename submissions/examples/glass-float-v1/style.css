@@ -19,7 +19,7 @@ body {
 .container {
   text-align: center;
   max-width: 900px;
-  padding: 40px 32px;
+  padding: var(--ease-space-10) 32px;
 }
 
 h1 {

@@ -21,8 +21,8 @@ body {
 }
 
 .demo-btn {
-  padding: 16px 32px;
-  margin: 20px;
+  padding: var(--ease-space-4) 32px;
+  margin: var(--ease-space-5);
   border: 2px solid var(--ease-sweep-color);
   border-radius: 8px;
   cursor: pointer;

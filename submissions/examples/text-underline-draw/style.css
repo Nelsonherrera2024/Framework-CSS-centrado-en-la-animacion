@@ -1,10 +1,10 @@
 /* ============================================================
-   SUBMISSION â€” text-underline-draw
+   SUBMISSION Ã¢â‚¬â€ text-underline-draw
    Raw CSS: no ease- prefix required at submission stage.
    Maintainer will standardize naming before integrating.
    ============================================================ */
 
-/* â”€â”€ Demo Page Scaffold â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Demo Page Scaffold Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 :root {
   --bg-color: var(--ease-color-neutral-900);
   --text-color: var(--ease-color-neutral-50);
@@ -57,7 +57,7 @@ p.subtitle {
 .section-title {
   font-size: 1.25rem;
   font-weight: 700;
-  margin: 40px 0 20px 0;
+  margin: var(--ease-space-10) 0 20px 0;
   border-left: 4px solid var(--primary-color);
   padding-left: 12px;
 }
@@ -66,7 +66,7 @@ p.subtitle {
   background: var(--card-bg);
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 12px;
-  padding: 40px;
+  padding: var(--ease-space-10);
   display: flex;
   flex-direction: column;
   gap: 28px;
@@ -77,7 +77,7 @@ p.subtitle {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 0;
+  padding: var(--ease-space-4) 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
@@ -103,7 +103,7 @@ p.subtitle {
   color: var(--text-muted);
 }
 
-/* â”€â”€ Base Link Styling â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Base Link Styling Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 .underline-link {
   color: var(--text-color);
   text-decoration: none;
@@ -127,7 +127,7 @@ p.subtitle {
   transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* â”€â”€ EFFECT 1: Underline Draw Left-to-Right â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ EFFECT 1: Underline Draw Left-to-Right Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 .underline-left::before {
   transform-origin: left;
 }
@@ -140,7 +140,7 @@ p.subtitle {
   color: var(--primary-color);
 }
 
-/* â”€â”€ EFFECT 2: Underline Expand Center-Out â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ EFFECT 2: Underline Expand Center-Out Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 .underline-center::before {
   background-color: var(--secondary-color);
   transform-origin: center;
@@ -154,7 +154,7 @@ p.subtitle {
   color: var(--secondary-color);
 }
 
-/* â”€â”€ EFFECT 3: Underline Slide-Through (Continuous) â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ EFFECT 3: Underline Slide-Through (Continuous) Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 .underline-slide-through::before {
   background-color: var(--accent-color);
   transform-origin: right;

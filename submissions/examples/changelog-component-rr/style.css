@@ -102,7 +102,7 @@ body{
 }
 
 .release-card ul li{
-    padding:8px 0;
+    padding: var(--ease-space-2) 0;
     color:var(--ease-color-neutral-300);
 }
 

@@ -14,7 +14,7 @@ body{
     justify-content:center;
     align-items:center;
 
-    padding:40px;
+    padding: var(--ease-space-10);
 }
 
 .container{
@@ -91,7 +91,7 @@ h1{
 
 .terminal-body{
 
-    padding:24px;
+    padding: var(--ease-space-6);
 
     font-family:monospace;
 }

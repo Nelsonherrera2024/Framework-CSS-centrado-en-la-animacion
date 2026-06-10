@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  padding: 40px;
+  padding: var(--ease-space-10);
   background: #f4f4f4;
   font-family: Arial, sans-serif;
 
@@ -14,7 +14,7 @@ body {
   position: relative;
   overflow: hidden;
 
-  padding: 16px 32px;
+  padding: var(--ease-space-4) 32px;
   border: none;
   border-radius: 12px;
 

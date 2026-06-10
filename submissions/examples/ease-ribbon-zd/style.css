@@ -34,7 +34,7 @@
   background: var(--rb-surface);
   border: 1px solid var(--rb-border);
   border-radius: 12px;
-  padding: 40px 20px 24px;
+  padding: var(--ease-space-10) 20px 24px;
   font-family: var(--rb-font);
   overflow: hidden;
   animation: rb-fade-in 0.4s ease-out both;
@@ -49,7 +49,7 @@
   top: 20px;
   right: -30px;
   transform: rotate(45deg);
-  padding: 4px 40px;
+  padding: var(--ease-space-1) 40px;
   font-size: 0.7rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -114,7 +114,7 @@
 .rb-label {
   display: inline-block;
   margin-top: 12px;
-  padding: 4px 12px;
+  padding: var(--ease-space-1) 12px;
   border-radius: 999px;
   font-size: 0.65rem;
   font-weight: 600;

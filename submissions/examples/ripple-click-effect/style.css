@@ -1,5 +1,5 @@
 /* ============================================================
-   SUBMISSION â€” ripple-click-effect
+   SUBMISSION Ã¢â‚¬â€ ripple-click-effect
    Raw CSS: no ease- prefix required at submission stage.
    Maintainer will standardize naming before integrating.
    ============================================================ */
@@ -9,7 +9,7 @@ body {
     font-family: system-ui, -apple-system, sans-serif;
     background: #0f0e17;
     color: #fffffe;
-    padding: 48px 32px;
+    padding: var(--ease-space-12) 32px;
     margin: 0;
 }
 
@@ -81,7 +81,7 @@ p {
     background: var(--ease-color-primary);
     color: #fff;
     border: none;
-    padding: 12px 28px;
+    padding: var(--ease-space-3) 28px;
     border-radius: 8px;
     font-size: 1rem;
     font-weight: 600;
@@ -93,7 +93,7 @@ p {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
-    padding: 24px;
+    padding: var(--ease-space-6);
     width: 240px;
 }
 

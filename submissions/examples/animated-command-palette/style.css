@@ -43,7 +43,7 @@
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 16px 20px;
+    padding: var(--ease-space-4) 20px;
     background: var(--palette-bg-color);
     border-bottom: 1px solid var(--palette-border-color);
     position: relative;
@@ -63,7 +63,7 @@
     background: transparent;
     font-size: 1rem;
     color: var(--palette-text-color);
-    padding: 8px 0;
+    padding: var(--ease-space-2) 0;
     font-family: inherit;
 }
 
@@ -74,7 +74,7 @@
 .search-hint {
     font-size: 0.75rem;
     color: #999;
-    padding: 4px 8px;
+    padding: var(--ease-space-1) 8px;
     background: var(--palette-hover-bg);
     border-radius: 4px;
     flex-shrink: 0;
@@ -102,7 +102,7 @@
     font-weight: 700;
     text-transform: uppercase;
     color: #999;
-    padding: 12px 20px 8px;
+    padding: var(--ease-space-3) 20px 8px;
     letter-spacing: 0.5px;
 }
 
@@ -118,7 +118,7 @@
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 12px 20px;
+    padding: var(--ease-space-3) 20px;
     cursor: pointer;
     transition: all var(--palette-animation-speed) ease;
     background: var(--palette-bg-color);
@@ -171,7 +171,7 @@
     font-weight: 500;
     color: #999;
     background: var(--palette-hover-bg);
-    padding: 4px 8px;
+    padding: var(--ease-space-1) 8px;
     border-radius: 4px;
     flex-shrink: 0;
     white-space: nowrap;
@@ -247,7 +247,7 @@
     display: flex;
     justify-content: center;
     gap: 30px;
-    padding: 12px 20px;
+    padding: var(--ease-space-3) 20px;
     background: var(--palette-hover-bg);
     border-top: 1px solid var(--palette-border-color);
     flex-shrink: 0;

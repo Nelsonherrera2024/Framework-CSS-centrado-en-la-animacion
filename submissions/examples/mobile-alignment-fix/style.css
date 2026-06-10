@@ -81,7 +81,7 @@ body {
   .pulse-stats-container {
     width: 90%;
     margin: 0 auto;
-    padding: 20px;
+    padding: var(--ease-space-5);
     align-items: center;
     text-align: center;
   }
@@ -102,7 +102,7 @@ body {
 @media (max-width: 480px) {
   .pulse-stats-container {
     width: 92%;
-    padding: 16px;
+    padding: var(--ease-space-4);
   }
 }
 

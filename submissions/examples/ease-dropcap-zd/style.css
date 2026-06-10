@@ -23,7 +23,7 @@
   background: var(--dc-surface);
   border: 1px solid var(--dc-border);
   border-radius: 14px;
-  padding: 32px 28px;
+  padding: var(--ease-space-8) 28px;
   font-family: var(--dc-font);
   cursor: default;
 }
@@ -106,9 +106,9 @@
   gap: 24px;
 }
 @media (max-width: 640px) {
-  .dc-card { padding: 24px 18px; }
+  .dc-card { padding: var(--ease-space-6) 18px; }
   .dc-cap { font-size: 2.5rem; }
-  .dc-cap-circle { font-size: 1.4rem; padding: 8px 12px; }
+  .dc-cap-circle { font-size: 1.4rem; padding: var(--ease-space-2) 12px; }
   .dc-cap-gradient, .dc-cap-outline, .dc-cap-serif { font-size: 2.8rem; }
 }
 @media (prefers-reduced-motion: reduce) {

@@ -49,7 +49,7 @@ body {
   margin-top: 6px;
 }
 
-/* â”€â”€â”€ 3D PERSPECTIVE VIEWPORT STAGE â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ 3D PERSPECTIVE VIEWPORT STAGE Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 .ease-iso-stage {
   width: 100%;
   height: 650px;
@@ -59,7 +59,7 @@ body {
   perspective: 2000px; /* Deep camera view */
 }
 
-/* â”€â”€â”€ THE TILTED GRID MATRIX CONTAINER â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ THE TILTED GRID MATRIX CONTAINER Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 .ease-iso-bento-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -76,13 +76,13 @@ body {
     grid-template-rows var(--transition-speed) var(--transition-fluid);
 }
 
-/* â”€â”€â”€ BENTO BOX TILES ARCHITECTURE â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ BENTO BOX TILES ARCHITECTURE Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 .ease-bento-tile {
   position: relative;
   background: var(--tile-bg-solid);
   border-radius: 28px;
   border: 1px solid rgba(255, 255, 255, 0.05);
-  padding: 32px;
+  padding: var(--ease-space-8);
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -123,7 +123,7 @@ body {
   opacity: 0.8;
 }
 
-/* â”€â”€â”€ ðŸ› ï¸ THE ACCORDION DRIFT TRANSFORMS (HOVER MATRIX) â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ Ã°Å¸â€ºÂ Ã¯Â¸Â THE ACCORDION DRIFT TRANSFORMS (HOVER MATRIX) Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 
 /* 1. Lift and highlight active item */
 .ease-bento-tile:hover {

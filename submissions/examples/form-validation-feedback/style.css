@@ -1,9 +1,9 @@
-/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+/* Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬
    CSS-Only Form Validation Feedback
    EaseMotion CSS Submission
-   â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+   Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 
-/* â”€â”€ Reset & base â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Reset & base Ã¢â€â‚¬Ã¢â€â‚¬ */
 *,
 *::before,
 *::after {
@@ -19,11 +19,11 @@ body {
   min-height: 100vh;
 }
 
-/* â”€â”€ Page scaffold â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Page scaffold Ã¢â€â‚¬Ã¢â€â‚¬ */
 .demo-page {
   max-width: 480px;
   margin: 0 auto;
-  padding: 48px 24px 80px;
+  padding: var(--ease-space-12) 24px 80px;
 }
 
 .demo-header {
@@ -52,18 +52,18 @@ body {
   line-height: 1.7;
 }
 
-/* â”€â”€ Form container â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Form container Ã¢â€â‚¬Ã¢â€â‚¬ */
 .em-form {
   background: #ffffff;
   border-radius: 14px;
-  padding: 32px;
+  padding: var(--ease-space-8);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-/* â”€â”€ Field wrapper â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Field wrapper Ã¢â€â‚¬Ã¢â€â‚¬ */
 .em-field {
   display: flex;
   flex-direction: column;
@@ -71,7 +71,7 @@ body {
   position: relative;
 }
 
-/* â”€â”€ Label â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Label Ã¢â€â‚¬Ã¢â€â‚¬ */
 .em-label {
   font-size: 0.85rem;
   font-weight: 600;
@@ -84,7 +84,7 @@ body {
   font-size: 0.8rem;
 }
 
-/* â”€â”€ Input â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Input Ã¢â€â‚¬Ã¢â€â‚¬ */
 .em-input {
   width: 100%;
   padding: 10px 40px 10px 12px; /* right padding leaves room for icon */
@@ -108,19 +108,19 @@ body {
   box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
 }
 
-/* â”€â”€ Valid state (only show after user has typed, not on blank placeholder) â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Valid state (only show after user has typed, not on blank placeholder) Ã¢â€â‚¬Ã¢â€â‚¬ */
 .em-input:not(:placeholder-shown):valid {
   border-color: var(--ease-color-success);
   box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.12);
 }
 
-/* â”€â”€ Invalid state â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Invalid state Ã¢â€â‚¬Ã¢â€â‚¬ */
 .em-input:not(:placeholder-shown):invalid {
   border-color: var(--ease-color-danger);
   box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.12);
 }
 
-/* â”€â”€ Tick / cross icons via pseudo-element on the field wrapper â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Tick / cross icons via pseudo-element on the field wrapper Ã¢â€â‚¬Ã¢â€â‚¬ */
 .em-field::after {
   content: '';
   position: absolute;
@@ -148,7 +148,7 @@ body {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ef4444' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='18' y1='6' x2='6' y2='18'/%3E%3Cline x1='6' y1='6' x2='18' y2='18'/%3E%3C/svg%3E");
 }
 
-/* â”€â”€ Hint messages â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Hint messages Ã¢â€â‚¬Ã¢â€â‚¬ */
 .em-hint {
   font-size: 0.78rem;
   line-height: 1.4;
@@ -168,7 +168,7 @@ body {
   display: block;
 }
 
-/* â”€â”€ Checkbox field â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Checkbox field Ã¢â€â‚¬Ã¢â€â‚¬ */
 .em-field--checkbox {
   flex-direction: row;
   flex-wrap: wrap;
@@ -203,9 +203,9 @@ body {
   display: block;
 }
 
-/* â”€â”€ Submit button â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Submit button Ã¢â€â‚¬Ã¢â€â‚¬ */
 .em-btn {
-  padding: 12px 24px;
+  padding: var(--ease-space-3) 24px;
   background: #6366f1;
   color: #ffffff;
   border: none;

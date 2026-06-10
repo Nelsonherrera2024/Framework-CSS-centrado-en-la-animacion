@@ -25,7 +25,7 @@
   background: var(--cf-surface);
   border: 1px solid var(--cf-border);
   border-radius: 16px;
-  padding: 32px;
+  padding: var(--ease-space-8);
   font-family: var(--cf-font);
   animation: cf-fade-up 0.5s ease-out both;
   cursor: default;
@@ -95,7 +95,7 @@
 }
 .cf-btn {
   width: 100%;
-  padding: 12px;
+  padding: var(--ease-space-3);
   border: none;
   border-radius: 8px;
   background: var(--cf-primary);
@@ -117,7 +117,7 @@
 .cf-success {
   display: none;
   text-align: center;
-  padding: 40px 20px;
+  padding: var(--ease-space-10) 20px;
   animation: cf-fade-up 0.5s ease-out both;
 }
 .cf-success-icon {
@@ -137,7 +137,7 @@
   color: var(--cf-text-sec);
 }
 @media (max-width: 640px) {
-  .cf-card { padding: 24px 18px; }
+  .cf-card { padding: var(--ease-space-6) 18px; }
 }
 @media (prefers-reduced-motion: reduce) {
   * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }

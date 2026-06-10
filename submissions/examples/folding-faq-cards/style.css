@@ -14,7 +14,7 @@ body{
     justify-content:center;
     align-items:center;
 
-    padding:40px;
+    padding: var(--ease-space-10);
 }
 
 .container{

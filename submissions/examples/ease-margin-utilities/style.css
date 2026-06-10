@@ -1,6 +1,6 @@
 body {
   font-family: system-ui, sans-serif;
-  padding: 40px;
+  padding: var(--ease-space-10);
   background: var(--ease-color-neutral-50);
   color: var(--ease-color-neutral-900);
 }
@@ -16,7 +16,7 @@ section {
 .container,
 .wrapper {
   border: 1px dashed var(--ease-color-neutral-300);
-  padding: 20px;
+  padding: var(--ease-space-5);
   margin-bottom: 20px;
   min-height: 80px;
 }

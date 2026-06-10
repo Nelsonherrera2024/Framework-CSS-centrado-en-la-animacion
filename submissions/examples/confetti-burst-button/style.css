@@ -38,7 +38,7 @@ p { color: #7c7caa; font-size: 0.9rem; text-align: center; }
 
 .btn-confetti {
   position: relative;
-  padding: 16px 42px;
+  padding: var(--ease-space-4) 42px;
   font-family: 'Inter', sans-serif;
   font-size: 1rem;
   font-weight: 700;

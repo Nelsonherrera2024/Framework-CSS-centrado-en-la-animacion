@@ -18,7 +18,7 @@ body {
     position: fixed;
     width: 250px;
     height: 100vh;
-    padding: 24px;
+    padding: var(--ease-space-6);
     background: #111827;
     border-right: 1px solid rgba(255, 255, 255, .1);
 
@@ -46,7 +46,7 @@ body {
 }
 
 .nav-link {
-    padding: 12px;
+    padding: var(--ease-space-3);
     text-decoration: none;
     color: var(--ease-color-neutral-300);
     border-radius: 10px;
@@ -92,7 +92,7 @@ h1 {
 
     .content {
         margin-left: 180px;
-        padding: 24px;
+        padding: var(--ease-space-6);
     }
 
 }

@@ -24,14 +24,14 @@ body {
   align-items: center;
 }
 
-/* 🚀 The Liquid Gooey Effect Blending Container Layer */
+/* ðŸš€ The Liquid Gooey Effect Blending Container Layer */
 .ease-liquid-blend-wrapper {
   position: relative;
   /* High contrast filter combined with inner blur creates the organic gooey merge */
   filter: blur(10px) contrast(22);
   background: var(--ease-fluid-bg);
   display: inline-block;
-  padding: 20px;
+  padding: var(--ease-space-5);
 }
 
 /* Core Interactive Anchor Framework Grid Node */

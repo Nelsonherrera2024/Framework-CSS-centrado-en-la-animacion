@@ -61,7 +61,7 @@ body{
 
 .content{
     flex:1;
-    padding:40px;
+    padding: var(--ease-space-10);
     max-width:900px;
 }
 

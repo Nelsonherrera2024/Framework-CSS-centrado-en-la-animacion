@@ -7,7 +7,7 @@
   --ease-slider-thumb-size: 20px;
   position: relative;
   width: 100%;
-  padding: 16px 0 8px;
+  padding: var(--ease-space-4) 0 8px;
 }
 
 .ease-slider input[type="range"] {
@@ -23,7 +23,7 @@
   display: block;
 }
 
-/* Filled track â€” WebKit */
+/* Filled track Ã¢â‚¬â€ WebKit */
 .ease-slider input[type="range"]::-webkit-slider-runnable-track {
   height: var(--ease-slider-height);
   background: var(--ease-slider-track);
@@ -159,7 +159,7 @@
   display: inline-block;
   width: auto;
   height: 200px;
-  padding: 8px 16px;
+  padding: var(--ease-space-2) 16px;
 }
 
 .ease-slider--vertical input[type="range"] {

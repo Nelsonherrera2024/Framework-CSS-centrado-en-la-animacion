@@ -35,7 +35,7 @@
 .demo-shell {
   width: min(1120px, calc(100% - 32px));
   margin: 0 auto;
-  padding: 48px 0;
+  padding: var(--ease-space-12) 0;
   display: grid;
   grid-template-columns: minmax(320px, 0.9fr) minmax(320px, 1.1fr);
   gap: 24px;
@@ -101,7 +101,7 @@ h1 {
 }
 
 .job-details {
-  margin: 24px 0;
+  margin: var(--ease-space-6) 0;
 }
 
 .apply-lock-button {
@@ -304,7 +304,7 @@ h1 {
 @media (max-width: 760px) {
   .demo-shell {
     grid-template-columns: 1fr;
-    padding: 24px 0;
+    padding: var(--ease-space-6) 0;
   }
 
   .job-panel {

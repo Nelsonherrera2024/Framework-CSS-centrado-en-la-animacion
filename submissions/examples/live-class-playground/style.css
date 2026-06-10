@@ -83,7 +83,7 @@ h1 {
 .control-panel {
   display: grid;
   gap: 18px;
-  padding: 20px;
+  padding: var(--ease-space-5);
 }
 
 .control-group {
@@ -192,7 +192,7 @@ input[type="range"] {
   display: grid;
   min-height: 420px;
   place-items: center;
-  padding: 32px;
+  padding: var(--ease-space-8);
   background:
     linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px),

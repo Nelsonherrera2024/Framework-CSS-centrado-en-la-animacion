@@ -61,7 +61,7 @@ button {
 
 pre {
   max-width: 500px;
-  margin: 20px auto;
+  margin: var(--ease-space-5) auto;
   padding: 15px;
   border-radius: 8px;
   background: var(--ease-color-neutral-800);

@@ -97,7 +97,7 @@ p{color:var(--muted);font-size:0.9rem;text-align:center;}
   background:var(--card-bg);
   border:1px solid rgba(56,189,248,0.2);
   border-radius:16px;
-  padding:16px;
+  padding: var(--ease-space-4);
   box-shadow:0 20px 50px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.04);
   transform-origin:50% 100%;
   /* closed: folded flat */
@@ -128,7 +128,7 @@ p{color:var(--muted);font-size:0.9rem;text-align:center;}
   pointer-events:all;
 }
 
-/* Card inner sections â€” staggered unfold */
+/* Card inner sections Ã¢â‚¬â€ staggered unfold */
 .card-header{
   display:flex;align-items:center;gap:10px;
   margin-bottom:10px;
@@ -171,7 +171,7 @@ p{color:var(--muted);font-size:0.9rem;text-align:center;}
 
 .card-btn{
   margin-top:12px;
-  width:100%;padding:8px;
+  width:100%;padding: var(--ease-space-2);
   background:linear-gradient(135deg,rgba(56,189,248,0.15),rgba(129,140,248,0.15));
   border:1px solid rgba(56,189,248,0.3);
   border-radius:10px;

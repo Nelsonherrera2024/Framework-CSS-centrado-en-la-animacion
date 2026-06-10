@@ -19,7 +19,7 @@
 .ease-shake-background-hover {
   background: linear-gradient(135deg, #4f46e5, #7c3aed);
   color: white;
-  padding: 16px 24px;
+  padding: var(--ease-space-4) 24px;
   border-radius: 8px;
   display: inline-block;
   background-size: 200% 200%;

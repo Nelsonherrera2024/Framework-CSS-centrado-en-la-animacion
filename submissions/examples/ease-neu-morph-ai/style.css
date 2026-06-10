@@ -1,5 +1,5 @@
 .ease-neu-morph-ai {
-  padding: 20px 40px;
+  padding: var(--ease-space-5) 40px;
   border: none;
   background: #e0e5ec;
   border-radius: 50px;

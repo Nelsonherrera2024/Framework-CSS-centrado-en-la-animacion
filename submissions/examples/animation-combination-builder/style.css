@@ -13,8 +13,8 @@ body {
 
 .preview {
     width: 250px;
-    padding: 20px;
-    margin: 20px auto;
+    padding: var(--ease-space-5);
+    margin: var(--ease-space-5) auto;
     background: #4f46e5;
     color: white;
     border-radius: 10px;

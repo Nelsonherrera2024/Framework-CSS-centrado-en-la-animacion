@@ -144,7 +144,7 @@
   font-weight: 800;
   letter-spacing: -0.03em;
   display: block;
-  margin: 4px 0;
+  margin: var(--ease-space-1) 0;
 }
 
 .cmp-plan-price .currency {
@@ -202,7 +202,7 @@
 }
 
 .cmp-category td {
-  padding: 12px 16px 8px;
+  padding: var(--ease-space-3) 16px 8px;
   font-size: 0.72rem;
   font-weight: 700;
   color: var(--cmp-text-muted);
@@ -304,7 +304,7 @@
 }
 
 .cmp-footer td {
-  padding: 20px 16px;
+  padding: var(--ease-space-5) 16px;
   text-align: center;
   border-bottom: none;
 }

@@ -21,14 +21,14 @@ body {
     }
     .workspace {
       position: relative;
-      padding: 40px;
+      padding: var(--ease-space-10);
     }
     .replay-trigger {
       margin-top: 60px;
       background: rgba(15, 23, 42, 0.05);
       border: 1px solid rgba(15, 23, 42, 0.1);
       color: var(--ease-color-neutral-800);
-      padding: 12px 28px;
+      padding: var(--ease-space-3) 28px;
       font-size: 0.85rem;
       font-weight: 600;
       border-radius: 40px;
@@ -61,7 +61,7 @@ body {
   overflow: visible;
 }
 
-/* â”€â”€â”€ LAYER 1: LIQUID FILTER CONTAINER (NOW PLACED ABOVE THE TEXT) â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ LAYER 1: LIQUID FILTER CONTAINER (NOW PLACED ABOVE THE TEXT) Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 .ease-liquid-filter-container {
   position: absolute;
   inset: 0;
@@ -107,7 +107,7 @@ body {
   }
 }
 
-/* â”€â”€â”€ LAYER 2: CLEAN CRISP TEXT LAYER (PLACED UNDERNEATH THE WAVE) â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ LAYER 2: CLEAN CRISP TEXT LAYER (PLACED UNDERNEATH THE WAVE) Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 .ease-liquid-text-strata {
   position: relative;
   font-size: 6.5rem;

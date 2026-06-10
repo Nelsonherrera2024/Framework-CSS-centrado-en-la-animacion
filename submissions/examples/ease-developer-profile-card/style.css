@@ -167,7 +167,7 @@ body,
 .segmented-control {
   display: flex;
   background: var(--tag-bg);
-  padding: 4px;
+  padding: var(--ease-space-1);
   border-radius: 12px;
   border: 1px solid var(--card-border);
 }
@@ -437,7 +437,7 @@ body:has(#theme-dark:checked) .profile-card:hover .profile-avatar-border {
   grid-template-columns: repeat(3, 1fr);
   width: 100%;
   background: var(--tag-bg);
-  padding: 16px 8px;
+  padding: var(--ease-space-4) 8px;
   border-radius: 16px;
   border: 1px solid var(--card-border);
   margin-bottom: 24px;
@@ -644,7 +644,7 @@ body:has(#theme-dark:checked) .profile-card:hover .profile-avatar-border {
 /* 19. Responsive Layout Customization */
 @media (max-width: 480px) {
   .demo-wrapper {
-    padding: 40px 16px;
+    padding: var(--ease-space-10) 16px;
   }
 
   .demo-header h1 {
@@ -677,7 +677,7 @@ body:has(#theme-dark:checked) .profile-card:hover .profile-avatar-border {
   }
 
   .profile-stats {
-    padding: 12px 4px;
+    padding: var(--ease-space-3) 4px;
     margin-bottom: 20px;
   }
 
@@ -705,7 +705,7 @@ body:has(#theme-dark:checked) .profile-card:hover .profile-avatar-border {
   }
 
   .profile-cta-btn {
-    padding: 12px 24px;
+    padding: var(--ease-space-3) 24px;
     font-size: 14px;
   }
 }

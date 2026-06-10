@@ -9,7 +9,7 @@ body{
     color:white;
     font-family:Arial,sans-serif;
     min-height:100vh;
-    padding:40px 20px;
+    padding: var(--ease-space-10) 20px;
 }
 
 .container{
@@ -42,7 +42,7 @@ body{
     background:#111827;
     border:1px solid rgba(255,255,255,.08);
     border-radius:20px;
-    padding:24px;
+    padding: var(--ease-space-6);
     transition:.35s ease;
 }
 
@@ -77,7 +77,7 @@ body{
 }
 
 .attack-card{
-    padding:24px;
+    padding: var(--ease-space-6);
     border-radius:18px;
     background:#111827;
     transition:.3s ease;
@@ -116,7 +116,7 @@ body{
 .risk-item{
     display:flex;
     justify-content:space-between;
-    padding:12px 0;
+    padding: var(--ease-space-3) 0;
     border-bottom:1px solid rgba(255,255,255,.15);
 }
 

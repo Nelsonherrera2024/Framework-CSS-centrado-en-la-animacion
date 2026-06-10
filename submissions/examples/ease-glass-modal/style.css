@@ -39,7 +39,7 @@
   border-radius: 16px;
   width: 90%;
   max-width: 480px;
-  padding: 32px;
+  padding: var(--ease-space-8);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   font-family: system-ui, -apple-system, sans-serif;
   color: #1e1e24;
@@ -82,7 +82,7 @@
   font-size: 24px;
   color: #6b7280;
   cursor: pointer;
-  padding: 4px;
+  padding: var(--ease-space-1);
   line-height: 1;
   transition: color 0.2s ease;
 }

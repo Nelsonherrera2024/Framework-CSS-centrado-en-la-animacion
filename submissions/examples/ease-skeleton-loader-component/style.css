@@ -206,7 +206,7 @@
   background: var(--bg-secondary);
   border: 1px solid var(--border-color);
   border-radius: 12px;
-  padding: 16px;
+  padding: var(--ease-space-4);
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -240,7 +240,7 @@
 }
 
 .skeleton-profile .profile-details {
-  padding: 16px 20px 24px;
+  padding: var(--ease-space-4) 20px 24px;
   position: relative;
 }
 
@@ -250,7 +250,7 @@
   left: 20px;
   border-radius: 50%;
   background: var(--bg-secondary);
-  padding: 4px;
+  padding: var(--ease-space-1);
 }
 
 .skeleton-profile .profile-meta {
@@ -271,7 +271,7 @@
   background: var(--bg-secondary);
   border: 1px solid var(--border-color);
   border-radius: 12px;
-  padding: 24px;
+  padding: var(--ease-space-6);
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -310,7 +310,7 @@
 }
 
 .skeleton-table .table-row {
-  padding: 16px 20px;
+  padding: var(--ease-space-4) 20px;
   display: grid;
   grid-template-columns: 2fr 3fr 2fr 1fr;
   gap: 12px;
@@ -339,7 +339,7 @@
   background: var(--bg-secondary);
   border: 1px solid var(--border-color);
   border-radius: 12px;
-  padding: 20px;
+  padding: var(--ease-space-5);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
 }
 
@@ -347,7 +347,7 @@
   background: var(--bg-secondary);
   border: 1px solid var(--border-color);
   border-radius: 12px;
-  padding: 24px;
+  padding: var(--ease-space-6);
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
 }
 
@@ -357,7 +357,7 @@
   justify-content: space-between;
   gap: 12px;
   height: 160px;
-  padding: 20px 10px 0;
+  padding: var(--ease-space-5) 10px 0;
   border-bottom: 2px solid var(--border-color);
 }
 
@@ -383,7 +383,7 @@ body {
 .demo-wrapper {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: var(--ease-space-10) 20px;
 }
 
 /* Header design */
@@ -426,7 +426,7 @@ body {
 }
 
 .animation-toggle-container label {
-  padding: 8px 20px;
+  padding: var(--ease-space-2) 20px;
   border-radius: 50px;
   font-size: 0.95rem;
   font-weight: 600;
@@ -473,7 +473,7 @@ body {
   background: var(--bg-secondary);
   border: 1px solid var(--border-color);
   border-radius: 12px;
-  padding: 24px;
+  padding: var(--ease-space-6);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -513,7 +513,7 @@ body {
   background: var(--bg-secondary);
   border: 1px solid var(--border-color);
   border-radius: 12px;
-  padding: 24px;
+  padding: var(--ease-space-6);
   display: flex;
   flex-direction: column;
   gap: 12px;

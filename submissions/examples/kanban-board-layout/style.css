@@ -1,5 +1,5 @@
 /* ============================================================
-   EaseMotion CSS Sandbox â€” kanban-board-component/style.css
+   EaseMotion CSS Sandbox Ã¢â‚¬â€ kanban-board-component/style.css
    ============================================================ */
 
 /* Step back 3 levels out of submissions/examples/kanban-board-component to pull root tokens */
@@ -8,7 +8,7 @@
 
 @layer easemotion-components {
 
-/* â”€â”€ Kanban Board Shell Layout â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Kanban Board Shell Layout Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 .alm-kanban-board-wrapper {
   width: 100%;
   max-width: 780px;
@@ -20,7 +20,7 @@
   font-family: var(--ease-font-sans, system-ui, sans-serif);
 }
 
-/* â”€â”€ Unified Grid Workspace Canvas (The Core Fix) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Unified Grid Workspace Canvas (The Core Fix) Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 .alm-kanban-grid {
   display: grid;
   /* Establishes three distinct structural column lanes upfront */
@@ -29,7 +29,7 @@
   align-items: start;
 }
 
-/* â”€â”€ Column Headers and Base Tracks â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Column Headers and Base Tracks Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 .alm-kanban-column-lane {
   background: rgba(0, 0, 0, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.03);
@@ -50,7 +50,7 @@
   gap: 6px;
 }
 
-/* â”€â”€ Interactive Task Card Wrapper Modules â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Interactive Task Card Wrapper Modules Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 .alm-task-card-envelope {
   background: var(--ease-color-neutral-800);
   border: 1px solid rgba(255, 255, 255, 0.05);
@@ -89,7 +89,7 @@
   color: var(--ease-color-text, #f8fafc);
 }
 
-/* â”€â”€ Multi-Region Stage Routing Controller Controls â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ Multi-Region Stage Routing Controller Controls Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 .alm-task-routing-bar {
   display: flex;
   gap: 4px;
@@ -105,7 +105,7 @@
   text-transform: uppercase;
   color: var(--ease-color-muted, #94a3b8);
   text-align: center;
-  padding: 4px 2px;
+  padding: var(--ease-space-1) 2px;
   cursor: pointer;
   border-radius: var(--ease-radius-sm, 0.25rem);
   
@@ -117,7 +117,7 @@
   background: rgba(255, 255, 255, 0.02);
 }
 
-/* â”€â”€ INTERACTIVE LANE REDISTRIBUTION RULES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬ INTERACTIVE LANE REDISTRIBUTION RULES Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 
 /* CARD 1 LANING CONFIGURATIONS */
 #t1-todo:checked ~ #task-1 { grid-column: 1; }

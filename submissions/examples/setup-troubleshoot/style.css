@@ -93,7 +93,7 @@ p  { color: var(--color-text-muted); max-width: 65ch; }
 
 .site-header .subtitle {
   font-size: 1.1rem;
-  margin: 16px auto 0;
+  margin: var(--ease-space-4) auto 0;
   max-width: 55ch;
   text-align: center;
 }
@@ -118,7 +118,7 @@ p  { color: var(--color-text-muted); max-width: 65ch; }
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
-  padding: 24px;
+  padding: var(--ease-space-6);
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 
@@ -215,7 +215,7 @@ p  { color: var(--color-text-muted); max-width: 65ch; }
    EaseMotion Core Animation Classes
    -------------------------------------------------------------------------- */
 
-/* â€” Fade â€” */
+/* Ã¢â‚¬â€ Fade Ã¢â‚¬â€ */
 .em-fade-in {
   animation: em-fadeIn var(--em-duration-base) var(--em-easing-ease) both;
 }
@@ -223,47 +223,47 @@ p  { color: var(--color-text-muted); max-width: 65ch; }
   animation: em-fadeOut var(--em-duration-base) var(--em-easing-ease) both;
 }
 
-/* â€” Slide â€” */
+/* Ã¢â‚¬â€ Slide Ã¢â‚¬â€ */
 .em-slide-up    { animation: em-slideUp    var(--em-duration-base) var(--em-easing-smooth) both; }
 .em-slide-down  { animation: em-slideDown  var(--em-duration-base) var(--em-easing-smooth) both; }
 .em-slide-left  { animation: em-slideLeft  var(--em-duration-base) var(--em-easing-smooth) both; }
 .em-slide-right { animation: em-slideRight var(--em-duration-base) var(--em-easing-smooth) both; }
 
-/* â€” Scale â€” */
+/* Ã¢â‚¬â€ Scale Ã¢â‚¬â€ */
 .em-zoom-in  { animation: em-zoomIn  var(--em-duration-base) var(--em-easing-spring) both; }
 .em-zoom-out { animation: em-zoomOut var(--em-duration-base) var(--em-easing-smooth) both; }
 
-/* â€” Attention â€” */
+/* Ã¢â‚¬â€ Attention Ã¢â‚¬â€ */
 .em-bounce  { animation: em-bounce  var(--em-duration-slow) var(--em-easing-bounce) both; }
 .em-shake   { animation: em-shake   var(--em-duration-base) var(--em-easing-ease)   both; }
 .em-pulse   { animation: em-pulse   var(--em-duration-slow) var(--em-easing-ease) infinite; }
 .em-spin    { animation: em-spin    var(--em-duration-slow) linear infinite; }
 .em-flip    { animation: em-flip    var(--em-duration-base) var(--em-easing-smooth) both; }
 
-/* â€” Duration Modifiers â€” */
+/* Ã¢â‚¬â€ Duration Modifiers Ã¢â‚¬â€ */
 .em-fast   { animation-duration: var(--em-duration-fast) !important; }
 .em-slow   { animation-duration: var(--em-duration-slow) !important; }
 .em-slower { animation-duration: 2.4s !important; }
 
-/* â€” Delay Modifiers â€” */
+/* Ã¢â‚¬â€ Delay Modifiers Ã¢â‚¬â€ */
 .em-delay-1 { animation-delay: var(--em-delay-short)  !important; }
 .em-delay-2 { animation-delay: var(--em-delay-medium) !important; }
 .em-delay-3 { animation-delay: var(--em-delay-long)   !important; }
 
-/* â€” Easing Modifiers â€” */
+/* Ã¢â‚¬â€ Easing Modifiers Ã¢â‚¬â€ */
 .em-ease-smooth { animation-timing-function: var(--em-easing-smooth) !important; }
 .em-ease-bounce { animation-timing-function: var(--em-easing-bounce) !important; }
 .em-ease-spring { animation-timing-function: var(--em-easing-spring) !important; }
 
-/* â€” Fill Mode â€” */
+/* Ã¢â‚¬â€ Fill Mode Ã¢â‚¬â€ */
 .em-fill-both    { animation-fill-mode: both !important; }
 .em-fill-forward { animation-fill-mode: forwards !important; }
 
-/* â€” Iteration â€” */
+/* Ã¢â‚¬â€ Iteration Ã¢â‚¬â€ */
 .em-infinite { animation-iteration-count: infinite !important; }
 .em-once     { animation-iteration-count: 1 !important; }
 
-/* â€” Accessibility: Reduced Motion â€” */
+/* Ã¢â‚¬â€ Accessibility: Reduced Motion Ã¢â‚¬â€ */
 @media (prefers-reduced-motion: reduce) {
   [class*="em-"] {
     animation-duration:        0.01ms !important;
@@ -349,7 +349,7 @@ p  { color: var(--color-text-muted); max-width: 65ch; }
 .issue-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 2px; }
 .issue-desc  { font-size: 0.8rem; color: var(--color-text-muted); }
 
-.issue-body  { padding: 16px 20px; }
+.issue-body  { padding: var(--ease-space-4) 20px; }
 
 .issue-body ul, .issue-body ol {
   padding-left: 18px;
@@ -402,7 +402,7 @@ p  { color: var(--color-text-muted); max-width: 65ch; }
   padding: 14px 16px;
   border-radius: var(--radius-sm);
   font-size: 0.86rem;
-  margin: 12px 0;
+  margin: var(--ease-space-3) 0;
 }
 
 .callout-icon { font-size: 1.1rem; flex-shrink: 0; padding-top: 1px; }
@@ -480,7 +480,7 @@ p  { color: var(--color-text-muted); max-width: 65ch; }
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  padding: 20px;
+  padding: var(--ease-space-5);
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -519,7 +519,7 @@ p  { color: var(--color-text-muted); max-width: 65ch; }
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px;
+  padding: var(--ease-space-10);
 }
 
 .playground-target {
@@ -542,7 +542,7 @@ p  { color: var(--color-text-muted); max-width: 65ch; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 24px;
+  padding: var(--ease-space-4) 24px;
   background: rgba(15,17,23,0.85);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--color-border);
@@ -562,7 +562,7 @@ p  { color: var(--color-text-muted); max-width: 65ch; }
    Footer
    -------------------------------------------------------------------------- */
 .site-footer {
-  padding: 40px 0;
+  padding: var(--ease-space-10) 0;
   border-top: 1px solid var(--color-border);
   text-align: center;
 }

@@ -4,7 +4,7 @@ body {
     background-color: #f4f6f8;
     color: #2D3748;
     margin: 0;
-    padding: 40px 20px;
+    padding: var(--ease-space-10) 20px;
     display: flex;
     justify-content: center;
 }
@@ -23,7 +23,7 @@ body {
 .badge {
     background-color: #ebf8ff;
     color: #2b6cb0;
-    padding: 4px 12px;
+    padding: var(--ease-space-1) 12px;
     border-radius: 20px;
     font-size: 0.85rem;
     font-weight: 600;
@@ -50,7 +50,7 @@ h1 {
     background-color: #f7fafc;
     border-left: 4px solid #4299e1;
     border-radius: 0 8px 8px 0;
-    padding: 20px;
+    padding: var(--ease-space-5);
     margin: 25px 0;
 }
 

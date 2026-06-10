@@ -13,7 +13,7 @@ body{
     background:var(--ease-color-neutral-900);
     color:white;
     min-height:100vh;
-    padding:40px 20px;
+    padding: var(--ease-space-10) 20px;
     transition:.3s;
 }
 
@@ -44,7 +44,7 @@ p{
 
 .stat{
     background:var(--ease-color-neutral-800);
-    padding:8px 14px;
+    padding: var(--ease-space-2) 14px;
     border-radius:999px;
     font-size:.9rem;
 }
@@ -62,7 +62,7 @@ p{
 
     border:1px solid rgba(255,255,255,.08);
 
-    padding:24px;
+    padding: var(--ease-space-6);
     border-radius:18px;
 
     margin:35px 0;
@@ -76,7 +76,7 @@ p{
     border:1px solid var(--ease-color-neutral-700);
     border-radius:12px;
 
-    padding:12px 16px;
+    padding: var(--ease-space-3) 16px;
 }
 
 .controls input:focus,
@@ -100,7 +100,7 @@ button{
     border:none;
     background:#2563eb;
     color:white;
-    padding:12px 18px;
+    padding: var(--ease-space-3) 18px;
     border-radius:10px;
     cursor:pointer;
     transition:.3s;
@@ -130,7 +130,7 @@ button:hover{
 
     border-radius:16px;
 
-    padding:24px;
+    padding: var(--ease-space-6);
 
     text-align:center;
 
@@ -190,7 +190,7 @@ button:hover{
 
     background:#020617;
 
-    padding:8px 12px;
+    padding: var(--ease-space-2) 12px;
 
     border-radius:6px;
 
@@ -212,7 +212,7 @@ button:hover{
 
     color:white;
 
-    padding:12px 18px;
+    padding: var(--ease-space-3) 18px;
 
     border-radius:8px;
 

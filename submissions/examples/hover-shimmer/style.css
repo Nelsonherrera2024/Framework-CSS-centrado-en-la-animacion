@@ -1,5 +1,5 @@
 /* ============================================================
-   EXAMPLE SUBMISSION — Hover Shimmer
+   EXAMPLE SUBMISSION â€” Hover Shimmer
    Raw CSS: no ease- prefix required at submission stage.
    The maintainer will standardize naming before merging.
    ============================================================ */
@@ -30,7 +30,7 @@ p {
 /* The proposed effect */
 .hover-shimmer-card {
   width: 280px;
-  padding: 32px 24px;
+  padding: var(--ease-space-8) 24px;
   border-radius: 12px;
   background: rgba(255,255,255,0.05);
   border: 1px solid rgba(255,255,255,0.1);

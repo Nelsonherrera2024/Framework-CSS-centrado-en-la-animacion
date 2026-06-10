@@ -62,7 +62,7 @@
   z-index: 2;
 }
 .rv-body {
-  padding: 16px 18px 18px;
+  padding: var(--ease-space-4) 18px 18px;
 }
 .rv-title {
   font-size: 0.9rem;

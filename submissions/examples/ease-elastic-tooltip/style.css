@@ -16,7 +16,7 @@
   transform: translateX(-50%) scale(0.8) translateY(10px);
   background-color: #1e1e24;
   color: #ffffff;
-  padding: 8px 14px;
+  padding: var(--ease-space-2) 14px;
   border-radius: 6px;
   font-family: system-ui, -apple-system, sans-serif;
   font-size: 13px;

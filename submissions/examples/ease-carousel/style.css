@@ -41,7 +41,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 24px 20px;
+  padding: var(--ease-space-6) 20px;
   background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
   color: #fff;
 }
@@ -57,7 +57,7 @@
   opacity: 0.85;
 }
 
-/* Peek variant â€” show edges of next/prev slides */
+/* Peek variant Ã¢â‚¬â€ show edges of next/prev slides */
 .ease-carousel--peek {
   padding: 0 5%;
 }
@@ -71,7 +71,7 @@
   margin-left: 16px;
 }
 
-/* Fade variant â€” cross-fade instead of scroll */
+/* Fade variant Ã¢â‚¬â€ cross-fade instead of scroll */
 .ease-carousel--fade .ease-carousel__track {
   overflow: hidden;
   scroll-snap-type: none;
@@ -111,7 +111,7 @@
   display: flex;
   justify-content: center;
   gap: 8px;
-  padding: 16px 0;
+  padding: var(--ease-space-4) 0;
   flex-wrap: wrap;
 }
 
@@ -185,7 +185,7 @@
   background: var(--ease-border, #e2e8f0);
   border-radius: 2px;
   overflow: hidden;
-  margin: 8px 0 0;
+  margin: var(--ease-space-2) 0 0;
 }
 
 .ease-carousel__progress-bar {

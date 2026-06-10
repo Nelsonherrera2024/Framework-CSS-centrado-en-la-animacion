@@ -1,7 +1,7 @@
 .blur-border-entrance {
     position: relative;
     background: white;
-    padding: 32px;
+    padding: var(--ease-space-8);
     border-radius: 16px;
     overflow: hidden;
     animation: borderEntrance 0.8s ease-out both;
@@ -39,7 +39,7 @@
     align-items: center;
     justify-content: center;
     margin: 0;
-    padding: 20px;
+    padding: var(--ease-space-5);
 }
 
 .ease-blur-border-wrapper .card {

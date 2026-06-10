@@ -7,7 +7,7 @@
 body{
   font-family:Arial,sans-serif;
   background:#f5f7fa;
-  padding:40px;
+  padding: var(--ease-space-10);
   color:#222;
 }
 
@@ -24,7 +24,7 @@ h1{
 
 .card{
   background:#fff;
-  padding:20px;
+  padding: var(--ease-space-5);
   border-radius:12px;
   box-shadow:0 4px 12px rgba(0,0,0,.08);
 }
@@ -38,7 +38,7 @@ h1{
   align-items:center;
   justify-content:center;
   border-radius:12px;
-  margin:20px 0;
+  margin: var(--ease-space-5) 0;
 }
 
 button{

@@ -42,7 +42,7 @@
 }
 
 .ease-btn {
-  padding: 12px 18px;
+  padding: var(--ease-space-3) 18px;
   border: none;
   border-radius: 10px;
   background: var(--ease-color-primary);

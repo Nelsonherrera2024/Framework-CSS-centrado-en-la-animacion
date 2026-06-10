@@ -23,7 +23,7 @@ body{
   font-family:Arial,sans-serif;
   background:var(--bg-primary);
   color:var(--text-primary);
-  padding:20px;
+  padding: var(--ease-space-5);
   min-height:100vh;
 }
 
@@ -55,7 +55,7 @@ header h1{
   background:var(--bg-secondary);
   border:1px solid var(--border);
   border-radius:12px;
-  padding:20px;
+  padding: var(--ease-space-5);
 }
 
 .editor h2,
@@ -67,7 +67,7 @@ header h1{
 textarea{
   width:100%;
   min-height:180px;
-  padding:12px;
+  padding: var(--ease-space-3);
 
   background:var(--card-bg);
   color:var(--text-primary);

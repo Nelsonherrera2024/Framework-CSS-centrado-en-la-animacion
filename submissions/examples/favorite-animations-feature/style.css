@@ -19,7 +19,7 @@ h2 {
 
 .card {
   background: var(--ease-color-neutral-800);
-  padding: 20px;
+  padding: var(--ease-space-5);
   border-radius: 12px;
   text-align: center;
   transition: transform 0.3s ease;
@@ -39,7 +39,7 @@ h2 {
 
 .favorites-section {
   background: var(--ease-color-neutral-800);
-  padding: 20px;
+  padding: var(--ease-space-5);
   border-radius: 12px;
 }
 
@@ -48,5 +48,5 @@ h2 {
 }
 
 #favoritesList li {
-  margin: 8px 0;
+  margin: var(--ease-space-2) 0;
 }

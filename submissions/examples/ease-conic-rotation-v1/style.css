@@ -46,7 +46,7 @@
   margin-top: 6px;
 }
 
-/* â”€â”€â”€ REGISTER THE CUSTOM ANGLE PROPERTY â”€â”€â”€ 
+/* Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ REGISTER THE CUSTOM ANGLE PROPERTY Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ 
    This layout configuration informs the browser that '--glow-angle' is a degree value.
    It allows pure CSS conic-gradients to animate natively on GPU threads.
 */
@@ -113,7 +113,7 @@
   background: var(--card-dark);
   border-radius: 23px; /* Nested perfectly within the outer curves */
   z-index: 5;
-  padding: 32px;
+  padding: var(--ease-space-8);
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -138,7 +138,7 @@
   line-height: 1.5;
 }
 
-/* â”€â”€â”€ INTERACTION ANGLE ROTATION WHEEL â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ INTERACTION ANGLE ROTATION WHEEL Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 @keyframes spinGlow {
   0% { --glow-angle: 0deg; }
   100% { --glow-angle: 360deg; }

@@ -1,5 +1,5 @@
 /* ============================================
-   Permission Stack Toggle – style.css
+   Permission Stack Toggle â€“ style.css
    Mobile-inspired permission settings panel.
    ============================================ */
 
@@ -26,7 +26,7 @@ body {
 
 .tg-perm-preview {
   width: 100%;
-  padding: 24px;
+  padding: var(--ease-space-6);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -49,7 +49,7 @@ body {
   display: flex;
   align-items: center;
   gap: 14px;
-  padding: 16px 18px;
+  padding: var(--ease-space-4) 18px;
   cursor: pointer;
   transition: background-color 0.25s ease;
 }

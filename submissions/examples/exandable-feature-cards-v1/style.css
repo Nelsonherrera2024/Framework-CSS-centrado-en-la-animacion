@@ -17,7 +17,7 @@ body{
 .container{
     width:100%;
     max-width:1100px;
-    padding:40px;
+    padding: var(--ease-space-10);
     text-align:center;
 }
 
@@ -54,7 +54,7 @@ h1{
     width:280px;
     height:220px;
 
-    padding:24px;
+    padding: var(--ease-space-6);
 
     border-radius:24px;
 

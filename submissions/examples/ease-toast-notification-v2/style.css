@@ -140,7 +140,7 @@
   border: none;
   color: var(--toast-subtext);
   cursor: pointer;
-  padding: 4px;
+  padding: var(--ease-space-1);
   border-radius: 4px;
   flex-shrink: 0;
   display: flex;

@@ -1,9 +1,9 @@
 /* ============================================================
-   EaseMotion CSS — Breadcrumb Navigation Component
+   EaseMotion CSS â€” Breadcrumb Navigation Component
    Issue #1183
    ============================================================ */
 
-/* ── Container ────────────────────────────────────────────── */
+/* â”€â”€ Container â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 .ease-breadcrumb {
   display: flex;
@@ -12,7 +12,7 @@
   gap: 4px;
   list-style: none;
   margin: 0;
-  padding: 12px 16px;
+  padding: var(--ease-space-3) 16px;
   border-radius: var(--ease-radius-md, 0.625rem);
   background: rgba(255, 255, 255, 0.03);
   border: 1.5px solid rgba(255, 255, 255, 0.06);
@@ -21,7 +21,7 @@
   overflow: hidden;
 }
 
-/* ── List items ──────────────────────────────────────────── */
+/* â”€â”€ List items â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 .ease-breadcrumb li {
   display: inline-flex;
@@ -30,7 +30,7 @@
   white-space: nowrap;
 }
 
-/* ── Separator (default slash) ───────────────────────────── */
+/* â”€â”€ Separator (default slash) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 .ease-breadcrumb li + li::before {
   content: "/";
@@ -39,7 +39,7 @@
   font-size: var(--ease-text-xs, 0.75rem);
 }
 
-/* ── Separator variants ──────────────────────────────────── */
+/* â”€â”€ Separator variants â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 .ease-breadcrumb-arrow li + li::before {
   content: "\203A";
@@ -53,7 +53,7 @@
   content: "\276F";
 }
 
-/* ── Links ────────────────────────────────────────────────── */
+/* â”€â”€ Links â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 .ease-breadcrumb a {
   color: rgba(255, 255, 255, 0.5);
@@ -70,7 +70,7 @@
   background: rgba(124, 108, 255, 0.08);
 }
 
-/* ── Active (current) page ───────────────────────────────── */
+/* â”€â”€ Active (current) page â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 .ease-breadcrumb li[aria-current="page"] {
   color: rgba(255, 255, 255, 0.9);
@@ -78,7 +78,7 @@
   padding: 2px 4px;
 }
 
-/* ── Responsive truncation (show last 2 items + "...") ───── */
+/* â”€â”€ Responsive truncation (show last 2 items + "...") â”€â”€â”€â”€â”€ */
 
 @media (max-width: 640px) {
   .ease-breadcrumb li:nth-child(-n + 2) {
@@ -96,7 +96,7 @@
   }
 }
 
-/* ── Reduce transition to minimum on reduced motion ──────── */
+/* â”€â”€ Reduce transition to minimum on reduced motion â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 @media (prefers-reduced-motion: reduce) {
   .ease-breadcrumb a {

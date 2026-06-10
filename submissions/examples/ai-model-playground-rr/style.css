@@ -9,7 +9,7 @@ body{
     color:white;
     font-family:Arial,sans-serif;
     min-height:100vh;
-    padding:40px 20px;
+    padding: var(--ease-space-10) 20px;
 }
 
 .container{
@@ -35,7 +35,7 @@ body{
     background:#111827;
     border:1px solid rgba(255,255,255,.08);
     border-radius:20px;
-    padding:24px;
+    padding: var(--ease-space-6);
     margin-bottom:40px;
 }
 
@@ -58,7 +58,7 @@ body{
     background:#111827;
     border:1px solid rgba(255,255,255,.08);
     border-radius:20px;
-    padding:24px;
+    padding: var(--ease-space-6);
     transition:.35s ease;
 }
 
@@ -73,7 +73,7 @@ body{
 
 .model-badge{
     display:inline-block;
-    padding:8px 14px;
+    padding: var(--ease-space-2) 14px;
     border-radius:16px;
     font-size:13px;
     font-weight:bold;
@@ -107,7 +107,7 @@ body{
 }
 
 .prompt-box{
-    padding:20px;
+    padding: var(--ease-space-5);
 }
 
 }

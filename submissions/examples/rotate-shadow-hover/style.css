@@ -202,7 +202,7 @@ h1 {
   position: relative;
   isolation: isolate;
   min-width: 120px;
-  padding: 12px 18px;
+  padding: var(--ease-space-3) 18px;
   overflow: hidden;
   border: 1px solid rgba(var(--shadow-rotate-color), 0.28);
   border-radius: 12px;

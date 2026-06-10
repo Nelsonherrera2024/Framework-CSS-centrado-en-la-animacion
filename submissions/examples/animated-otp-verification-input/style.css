@@ -22,7 +22,7 @@ body {
   min-height: 100vh;
   display: grid;
   place-items: center;
-  padding: 24px;
+  padding: var(--ease-space-6);
 }
 
 .card {
@@ -98,7 +98,7 @@ body {
 
 /* Filled state (no JS needed): when value exists */
 .otp-input:where(:not(:placeholder-shown)) {
-  /* Some browsers won’t show placeholder-shown, but this is safe */
+  /* Some browsers wonâ€™t show placeholder-shown, but this is safe */
 }
 
 /* Better filled styling: attribute-based (works after user types) */

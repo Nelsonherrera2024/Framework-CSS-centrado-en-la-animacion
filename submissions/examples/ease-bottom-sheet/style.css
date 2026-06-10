@@ -58,7 +58,7 @@
     height: 4px;
     background: var(--ease-color-neutral-300);
     border-radius: 2px;
-    margin: 12px auto;
+    margin: var(--ease-space-3) auto;
     cursor: pointer;
 }
 

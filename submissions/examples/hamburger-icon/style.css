@@ -1,4 +1,4 @@
-/* Animated Hamburger Icon — morphs to X on toggle
+/* Animated Hamburger Icon â€” morphs to X on toggle
    Technique: hidden checkbox + label + span bars */
 
 .hamburger-input {
@@ -14,7 +14,7 @@
   width: 40px;
   height: 40px;
   cursor: pointer;
-  padding: 4px;
+  padding: var(--ease-space-1);
 }
 
 .hamburger-bar {
@@ -28,7 +28,7 @@
               opacity   0.25s ease;
 }
 
-/* ── Checked state: morph to X ── */
+/* â”€â”€ Checked state: morph to X â”€â”€ */
 .hamburger-input:checked + .hamburger .hamburger-bar:nth-child(1) {
   transform: translateY(8.5px) rotate(45deg);
 }

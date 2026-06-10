@@ -79,7 +79,7 @@
   transform: rotate(180deg);
 }
 @media (max-width: 640px) {
-  .wv-content { padding: 40px 16px; }
+  .wv-content { padding: var(--ease-space-10) 16px; }
   .wv-divider svg { height: 50px; }
 }
 @media (prefers-reduced-motion: reduce) {

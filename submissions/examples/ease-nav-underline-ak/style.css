@@ -16,7 +16,7 @@ body {
 .navbar {
     display: flex;
     gap: 30px;
-    padding: 20px 30px;
+    padding: var(--ease-space-5) 30px;
     background: rgba(255, 255, 255, 0.05);
     border-radius: 16px;
     backdrop-filter: blur(10px);

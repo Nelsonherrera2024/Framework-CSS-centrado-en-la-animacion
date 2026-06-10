@@ -2,7 +2,7 @@
    Inline Status Message Component
    Success, Error, Warning, and Info message styles with
    animated entrances, icons, and dismiss interaction.
-   Pure CSS — no JavaScript.
+   Pure CSS â€” no JavaScript.
    ============================================================ */
 
 :root {
@@ -60,7 +60,7 @@
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  padding: 12px 14px;
+  padding: var(--ease-space-3) 14px;
   border-radius: var(--msg-radius);
   border: 1px solid var(--msg-border);
   background: var(--msg-surface);

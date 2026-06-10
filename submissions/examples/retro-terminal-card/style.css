@@ -1,5 +1,5 @@
 /* ============================================
-   Retro Terminal Card – style.css
+   Retro Terminal Card â€“ style.css
    A retro terminal-style status card component.
    ============================================ */
 
@@ -24,7 +24,7 @@ body {
 
 .card-term-preview {
   width: 100%;
-  padding: 24px;
+  padding: var(--ease-space-6);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -49,7 +49,7 @@ body {
   display: flex;
   align-items: center;
   gap: 5px;
-  padding: 8px 10px;
+  padding: var(--ease-space-2) 10px;
   background: #14141c;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
@@ -95,7 +95,7 @@ body {
   white-space: nowrap;
 }
 
-/* Prompt symbol ($) — dimmed */
+/* Prompt symbol ($) â€” dimmed */
 
 .card-term-prompt {
   color: #555;
@@ -103,13 +103,13 @@ body {
   font-weight: 600;
 }
 
-/* Command text — green */
+/* Command text â€” green */
 
 .card-term-cmd {
   color: #2eb88a;
 }
 
-/* Success output — white */
+/* Success output â€” white */
 
 .card-term-success {
   color: #e0e0e0;
@@ -146,7 +146,7 @@ body {
 
   .card-term-body {
     font-size: 10px;
-    padding: 12px 10px;
+    padding: var(--ease-space-3) 10px;
   }
 }
 

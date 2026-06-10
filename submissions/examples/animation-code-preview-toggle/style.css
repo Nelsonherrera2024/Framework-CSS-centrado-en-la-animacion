@@ -16,7 +16,7 @@ body {
 }
 
 .toggle-group {
-  margin: 20px 0;
+  margin: var(--ease-space-5) 0;
 }
 
 button {
@@ -34,7 +34,7 @@ button {
 .demo-box {
   width: 220px;
   height: 120px;
-  margin: 20px auto;
+  margin: var(--ease-space-5) auto;
   background: #38bdf8;
   display: flex;
   justify-content: center;
@@ -54,7 +54,7 @@ button {
 pre {
   text-align: left;
   background: var(--ease-color-neutral-800);
-  padding: 20px;
+  padding: var(--ease-space-5);
   border-radius: 12px;
   overflow-x: auto;
 }

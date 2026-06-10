@@ -35,7 +35,7 @@ body {
 
 .box {
   width: 300px;
-  padding: 24px;
+  padding: var(--ease-space-6);
   background: #1e1e2e;
   border-radius: 12px;
   text-align: center;

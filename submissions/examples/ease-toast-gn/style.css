@@ -18,7 +18,7 @@
 .ease-toast {
   display: inline-flex;
   align-items: center;
-  padding: 12px 20px;
+  padding: var(--ease-space-3) 20px;
   border-radius: 8px;
   font-size: 0.95rem;
   color: #fff;

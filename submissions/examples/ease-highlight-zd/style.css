@@ -79,7 +79,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 12px;
-  margin: 16px 0;
+  margin: var(--ease-space-4) 0;
 }
 .hl-grid .hl-block:nth-child(1) { animation-delay: 0.1s; }
 .hl-grid .hl-block:nth-child(2) { animation-delay: 0.2s; }

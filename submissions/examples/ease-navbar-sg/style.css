@@ -276,7 +276,7 @@ body {
 }
 
 .cta-button {
-  padding: 12px 40px;
+  padding: var(--ease-space-3) 40px;
   font-size: 16px;
   background-color: white;
   color: #667eea;
@@ -349,7 +349,7 @@ body {
 
 .example-item {
   background: white;
-  padding: 20px;
+  padding: var(--ease-space-5);
   border-left: 4px solid #2563eb;
   border-radius: 4px;
   cursor: pointer;
@@ -372,7 +372,7 @@ body {
 
 .doc-item {
   background: white;
-  padding: 20px;
+  padding: var(--ease-space-5);
   border-radius: 8px;
   text-align: center;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -392,7 +392,7 @@ body {
   background-color: #333;
   color: white;
   text-align: center;
-  padding: 40px 20px;
+  padding: var(--ease-space-10) 20px;
   margin-top: 60px;
 }
 

@@ -74,7 +74,7 @@ h1 {
     left: 0;
     background: #667eea;
     color: white;
-    padding: 8px;
+    padding: var(--ease-space-2);
     text-decoration: none;
     z-index: 100;
 }

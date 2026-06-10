@@ -90,14 +90,14 @@ header p{
 }
 
 .panel li{
-    padding:12px;
+    padding: var(--ease-space-3);
     margin-bottom:10px;
     background:var(--ease-color-neutral-700);
     border-radius:10px;
 }
 
 .status{
-    padding:12px;
+    padding: var(--ease-space-3);
     border-radius:10px;
     margin-bottom:12px;
 }

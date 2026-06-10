@@ -103,7 +103,7 @@ h1 {
   border-top: 1px solid #2a2a3a;
 }
 
-/* ðŸŸ£ BADGE FIX */
+/* Ã°Å¸Å¸Â£ BADGE FIX */
 .ease-badge {
   font-size: 0.75rem;
   padding: 6px 12px;
@@ -115,7 +115,7 @@ h1 {
 
 /*  BUTTON UPGRADE (MATCH PREMIUM UI) */
 .ease-btn {
-  padding: 12px 18px;
+  padding: var(--ease-space-3) 18px;
   border-radius: 10px;
 
   font-weight: 600;

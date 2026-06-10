@@ -38,7 +38,7 @@ p{
 
 button,
 a{
-    padding:12px 24px;
+    padding: var(--ease-space-3) 24px;
     border:none;
     border-radius:8px;
     background:var(--ease-color-info);

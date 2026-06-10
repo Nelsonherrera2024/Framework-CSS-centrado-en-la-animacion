@@ -91,7 +91,7 @@ header p{
 
 .panel li{
     background:var(--ease-color-neutral-700);
-    padding:12px;
+    padding: var(--ease-space-3);
     border-radius:10px;
     margin-bottom:10px;
 }

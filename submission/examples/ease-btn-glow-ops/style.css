@@ -1,10 +1,10 @@
-/* ease-btn-glow-ops — Glowing Button on Hover
+/* ease-btn-glow-ops â€” Glowing Button on Hover
    Contributor: prasanthipallagani9-ops
 */
 
 .ease-btn-glow-ops {
   display: inline-block;
-  padding: 12px 28px;
+  padding: var(--ease-space-3) 28px;
   background-color: #7c3aed;
   color: #ffffff;
   font-size: 1rem;

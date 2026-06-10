@@ -54,7 +54,7 @@
   pointer-events: none;
 }
 
-/* Open state — sub-buttons appear */
+/* Open state â€” sub-buttons appear */
 .fab-container.open .fab-item {
   opacity: 1;
   transform: translateY(0) scale(1);
@@ -73,7 +73,7 @@
   right: 54px;
   background: rgba(0, 0, 0, 0.75);
   color: white;
-  padding: 4px 10px;
+  padding: var(--ease-space-1) 10px;
   border-radius: 4px;
   font-size: 0.75rem;
   white-space: nowrap;

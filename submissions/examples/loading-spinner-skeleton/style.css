@@ -2,7 +2,7 @@ body {
   font-family: Arial, sans-serif;
   background: #111827;
   color: white;
-  padding: 40px;
+  padding: var(--ease-space-10);
 }
 
 .section {
@@ -81,7 +81,7 @@ body {
 
 .ease-skeleton-card {
   width: 300px;
-  padding: 20px;
+  padding: var(--ease-space-5);
   border-radius: 12px;
   background: #1f2937;
 }

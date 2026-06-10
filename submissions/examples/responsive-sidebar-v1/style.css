@@ -10,7 +10,7 @@
 
 .content {
   margin-left: 250px;
-  padding: 20px;
+  padding: var(--ease-space-5);
 }
 
 /* MOBILE FIX */

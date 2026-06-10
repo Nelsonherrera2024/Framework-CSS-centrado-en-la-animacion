@@ -3,7 +3,7 @@
   width: 100%;
   background-color: #e5e7eb; /* Darker, clear background track */
   border-radius: var(--ease-radius-full, 9999px);
-  padding: 4px;
+  padding: var(--ease-space-1);
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
   overflow: hidden;
 }

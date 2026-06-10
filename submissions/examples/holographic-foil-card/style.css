@@ -151,7 +151,7 @@ body {
 
 .card-tag {
   display: inline-block;
-  padding: 4px 10px;
+  padding: var(--ease-space-1) 10px;
   background: rgba(139, 92, 246, 0.2);
   border: 1px solid rgba(139, 92, 246, 0.4);
   border-radius: 20px;

@@ -83,7 +83,7 @@ h1 {
 
 .spacer p {
   margin: 0;
-  padding: 16px 22px;
+  padding: var(--ease-space-4) 22px;
   border: 1px dashed rgba(255, 255, 255, 0.16);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.03);
@@ -92,7 +92,7 @@ h1 {
 
 .demo-card {
   position: relative;
-  padding: 32px;
+  padding: var(--ease-space-8);
   border-radius: var(--radius);
   border: 1px solid var(--panel-border);
   background: var(--panel);
@@ -125,7 +125,7 @@ h1 {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 8px 12px;
+  padding: var(--ease-space-2) 12px;
   border-radius: 999px;
   background: rgba(96, 165, 250, 0.14);
   color: #bfdbfe;
@@ -244,7 +244,7 @@ h1 {
   }
 
   .demo-card {
-    padding: 24px;
+    padding: var(--ease-space-6);
   }
 
   .spacer {

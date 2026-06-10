@@ -55,7 +55,7 @@ body {
 
 /* === Buttons === */
 .ease-btn {
-  padding: 12px 24px;
+  padding: var(--ease-space-3) 24px;
   background: var(--ease-card-bg);
   color: var(--ease-text);
   border: 2px solid var(--ease-primary);
@@ -98,7 +98,7 @@ body {
   position: absolute;
   background: var(--ease-tooltip-dark-bg);
   color: #fff;
-  padding: 8px 14px;
+  padding: var(--ease-space-2) 14px;
   border-radius: 8px;
   font-size: 0.85rem;
   white-space: nowrap;

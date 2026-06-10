@@ -54,7 +54,7 @@ body {
   text-decoration: none;
   font-size: 14px;
   font-weight: 500;
-  padding: 8px 16px;
+  padding: var(--ease-space-2) 16px;
   border-radius: 6px;
   transition: all 0.3s ease;
   position: relative;

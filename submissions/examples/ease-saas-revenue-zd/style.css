@@ -2,10 +2,10 @@
    SaaS Revenue & Subscription Dashboard Component
    Animated dashboard showcasing MRR, subscribers, churn,
    plan breakdown, and revenue analytics.
-   Pure CSS — no JavaScript required for animations.
+   Pure CSS â€” no JavaScript required for animations.
    ============================================================ */
 
-/* ── CSS Custom Properties ────────────────────────────────── */
+/* â”€â”€ CSS Custom Properties â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 :root {
   --color-bg: #0b0e1a;
@@ -35,7 +35,7 @@
   --shadow-glow-primary: 0 0 20px rgba(108, 92, 231, 0.15);
 }
 
-/* ── Keyframes ────────────────────────────────────────────── */
+/* â”€â”€ Keyframes â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 @keyframes saas-fade-in {
   from { opacity: 0; transform: translateY(12px); }
@@ -126,7 +126,7 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ── Staggered Entrance Animations ────────────────────────── */
+/* â”€â”€ Staggered Entrance Animations â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 .saas-stagger > * {
   opacity: 0;
@@ -146,7 +146,7 @@
 .saas-stagger > *:nth-child(11) { animation-delay: 0.55s; }
 .saas-stagger > *:nth-child(12) { animation-delay: 0.60s; }
 
-/* ── KPI Card Animations ──────────────────────────────────── */
+/* â”€â”€ KPI Card Animations â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 .saas-kpi-card {
   animation: saas-fade-in-up 0.6s ease-out both;
@@ -157,7 +157,7 @@
 .saas-kpi-card:nth-child(3) { animation-delay: 0.3s; }
 .saas-kpi-card:nth-child(4) { animation-delay: 0.4s; }
 
-/* ── Metric Number Count-Up ───────────────────────────────── */
+/* â”€â”€ Metric Number Count-Up â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 .saas-metric-value {
   display: inline-flex;
@@ -177,7 +177,7 @@
 .saas-metric-value .digit:nth-child(6) { animation-delay: 0.55s; }
 .saas-metric-value .digit:nth-child(7) { animation-delay: 0.6s; }
 
-/* ── Trend Badge ──────────────────────────────────────────── */
+/* â”€â”€ Trend Badge â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 .saas-trend-badge {
   display: inline-flex;
@@ -206,7 +206,7 @@
   color: var(--color-warning);
 }
 
-/* ── Progress Bar ─────────────────────────────────────────── */
+/* â”€â”€ Progress Bar â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 .saas-progress-track {
   width: 100%;
@@ -237,7 +237,7 @@
 .saas-progress-warning { background: linear-gradient(90deg, #e17055, var(--color-warning)); }
 .saas-progress-info    { background: linear-gradient(90deg, #0984e3, var(--color-info)); }
 
-/* ── Bar Chart ────────────────────────────────────────────── */
+/* â”€â”€ Bar Chart â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 .saas-bar-chart {
   display: flex;
@@ -288,7 +288,7 @@
 .saas-bar:nth-child(11) { animation-delay: 0.8s; }
 .saas-bar:nth-child(12) { animation-delay: 0.85s; }
 
-/* ── Ring / Donut Chart ──────────────────────────────────── */
+/* â”€â”€ Ring / Donut Chart â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 .saas-ring {
   --ring-size: 80px;
@@ -337,7 +337,7 @@
   color: var(--color-text-muted);
 }
 
-/* ── Activity Feed ─────────────────────────────────────────── */
+/* â”€â”€ Activity Feed â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 .saas-feed-item {
   display: flex;
@@ -385,7 +385,7 @@
   margin-top: 2px;
 }
 
-/* ── Donut Chart (Conic Gradient) ─────────────────────────── */
+/* â”€â”€ Donut Chart (Conic Gradient) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 .saas-donut {
   position: relative;
@@ -420,7 +420,7 @@
   font-family: var(--font-mono);
 }
 
-/* ── Legend Items ──────────────────────────────────────────── */
+/* â”€â”€ Legend Items â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 .saas-legend {
   display: flex;
@@ -460,7 +460,7 @@
   color: var(--color-text);
 }
 
-/* ── Hover Effects ─────────────────────────────────────────── */
+/* â”€â”€ Hover Effects â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 .saas-hover-lift {
   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
@@ -497,13 +497,13 @@
   opacity: 0.8;
 }
 
-/* ── Utility Classes ───────────────────────────────────────── */
+/* â”€â”€ Utility Classes â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 .saas-card {
   background: var(--color-surface);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
-  padding: 20px;
+  padding: var(--ease-space-5);
   box-shadow: var(--shadow-card);
 }
 
@@ -550,7 +550,7 @@
 .saas-divider {
   height: 1px;
   background: var(--color-border);
-  margin: 16px 0;
+  margin: var(--ease-space-4) 0;
 }
 
 .saas-flex {
@@ -581,7 +581,7 @@
 .saas-mb-2 { margin-bottom: 8px; }
 .saas-mb-3 { margin-bottom: 12px; }
 
-/* ── Grid Layouts ─────────────────────────────────────────── */
+/* â”€â”€ Grid Layouts â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 .saas-grid-4 {
   display: grid;
@@ -595,7 +595,7 @@
   gap: 16px;
 }
 
-/* ── Active Indicator ─────────────────────────────────────── */
+/* â”€â”€ Active Indicator â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 .saas-indicator-pulse {
   position: relative;
@@ -611,7 +611,7 @@
   animation: saas-glow-pulse 2s ease-in-out infinite;
 }
 
-/* ── Shimmer Loading Skeleton ────────────────────────────── */
+/* â”€â”€ Shimmer Loading Skeleton â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 .saas-shimmer {
   background: linear-gradient(90deg, var(--color-surface) 25%, var(--color-surface-2) 50%, var(--color-surface) 75%);
@@ -620,7 +620,7 @@
   border-radius: 4px;
 }
 
-/* ── Reduced Motion ────────────────────────────────────────── */
+/* â”€â”€ Reduced Motion â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -644,7 +644,7 @@
   .saas-hover-scale:hover { transform: none !important; }
 }
 
-/* ── Responsive ────────────────────────────────────────────── */
+/* â”€â”€ Responsive â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 
 @media (max-width: 1024px) {
   .saas-grid-4 {

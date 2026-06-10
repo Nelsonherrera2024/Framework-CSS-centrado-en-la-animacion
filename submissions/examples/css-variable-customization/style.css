@@ -189,7 +189,7 @@ select {
 .header-badge {
   display: inline-flex;
 
-  padding: 8px 14px;
+  padding: var(--ease-space-2) 14px;
 
   border-radius: 999px;
 
@@ -246,7 +246,7 @@ select {
   align-items: center;
   justify-content: center;
 
-  padding: 12px 24px;
+  padding: var(--ease-space-3) 24px;
 
   border-radius: var(--radius-sm);
 
@@ -312,7 +312,7 @@ select {
 
   border-radius: var(--radius-md);
 
-  padding: 24px;
+  padding: var(--ease-space-6);
 
   transition:
     transform .25s ease,
@@ -719,7 +719,7 @@ select {
 
   gap: 16px;
 
-  padding: 24px;
+  padding: var(--ease-space-6);
 }
 
 .control-group {
@@ -763,7 +763,7 @@ select {
   align-items: center;
   justify-content: center;
 
-  padding: 40px;
+  padding: var(--ease-space-10);
 }
 
 .playground-target {
@@ -798,7 +798,7 @@ select {
 .code-block {
   overflow-x: auto;
 
-  padding: 20px;
+  padding: var(--ease-space-5);
 
   border-radius:
     var(--radius-sm);

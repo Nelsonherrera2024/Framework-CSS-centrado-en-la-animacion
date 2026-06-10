@@ -35,7 +35,7 @@ body {
 .stat-card {
   background: var(--ease-color-neutral-800);
   border-radius: 16px;
-  padding: 20px;
+  padding: var(--ease-space-5);
   transition: transform 0.3s ease;
 }
 

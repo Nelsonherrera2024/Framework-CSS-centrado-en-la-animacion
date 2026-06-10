@@ -21,7 +21,7 @@ body {
 /* --- SUBMISSION HOVER CLASS --- */
 .jello-hover-trigger {
     display: inline-block;
-    padding: 16px 32px;
+    padding: var(--ease-space-4) 32px;
     background: linear-gradient(135deg, #a855f7, #6366f1);
     color: #ffffff;
     font-weight: 700;

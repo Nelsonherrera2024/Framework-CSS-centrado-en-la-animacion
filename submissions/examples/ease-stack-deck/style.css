@@ -107,7 +107,7 @@ body {
     box-shadow var(--transition-speed) ease;
 }
 
-/* â”€â”€â”€ IMAGE HEADER BANNERS â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ IMAGE HEADER BANNERS Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 .card-banner {
   width: 100%;
   height: 180px;
@@ -128,15 +128,15 @@ body {
   fill: none;
   stroke-width: 1.5;
   background: rgba(255, 255, 255, 0.06);
-  padding: 16px;
+  padding: var(--ease-space-4);
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(4px);
 }
 
-/* â”€â”€â”€ CONTENT BLOCKS â”€â”€â”€ */
+/* Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ CONTENT BLOCKS Ã¢â€â‚¬Ã¢â€â‚¬Ã¢â€â‚¬ */
 .card-content {
-  padding: 24px;
+  padding: var(--ease-space-6);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -149,7 +149,7 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  padding: 4px 14px;
+  padding: var(--ease-space-1) 14px;
   border-radius: 20px;
   margin-bottom: 16px;
 }

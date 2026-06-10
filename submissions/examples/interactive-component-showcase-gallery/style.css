@@ -61,7 +61,7 @@ body {
   color: var(--text-primary);
   display: flex;
   justify-content: center;
-  padding: 40px 20px;
+  padding: var(--ease-space-10) 20px;
   box-sizing: border-box;
   transition: background-color 0.4s ease, color 0.4s ease;
 }
@@ -121,7 +121,7 @@ body {
   background-color: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
-  padding: 24px;
+  padding: var(--ease-space-6);
   box-shadow: var(--shadow-sm);
   display: flex;
   flex-direction: column;
@@ -154,7 +154,7 @@ body {
   letter-spacing: 0.05em;
   background-color: var(--bg-preview);
   color: var(--text-secondary);
-  padding: 4px 10px;
+  padding: var(--ease-space-1) 10px;
   border-radius: 9999px;
   border: 1px solid var(--border-color);
 }
@@ -275,7 +275,7 @@ body {
   background-color: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
-  padding: 24px;
+  padding: var(--ease-space-6);
   width: 90%;
   max-width: 440px;
   box-shadow: var(--shadow-xl);
@@ -338,7 +338,7 @@ body {
   position: relative;
   display: inline-block;
   cursor: help;
-  padding: 8px 16px;
+  padding: var(--ease-space-2) 16px;
   background-color: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
@@ -532,7 +532,7 @@ body {
 /* --- F. Card Showcase --- */
 .ease-card-preview-container {
   width: 100%;
-  padding: 16px;
+  padding: var(--ease-space-4);
   box-sizing: border-box;
 }
 
@@ -540,7 +540,7 @@ body {
   background-color: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
-  padding: 16px;
+  padding: var(--ease-space-4);
   width: 100%;
   box-shadow: var(--shadow-sm);
   display: flex;
@@ -706,7 +706,7 @@ body {
   color: var(--text-secondary);
   cursor: pointer;
   position: relative;
-  padding: 4px 0;
+  padding: var(--ease-space-1) 0;
   transition: color 0.2s ease;
 }
 

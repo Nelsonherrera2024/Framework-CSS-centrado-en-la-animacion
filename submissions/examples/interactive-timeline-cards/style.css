@@ -109,7 +109,7 @@ h1{
 
     border-radius:18px;
 
-    padding:24px;
+    padding: var(--ease-space-6);
 
     overflow:hidden;
 

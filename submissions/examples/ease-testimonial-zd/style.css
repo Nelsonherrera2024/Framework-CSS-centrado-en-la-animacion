@@ -101,7 +101,7 @@
 }
 @media (max-width: 640px) {
   .tm-grid { grid-template-columns: 1fr; }
-  .tm-card { padding: 20px 18px; }
+  .tm-card { padding: var(--ease-space-5) 18px; }
 }
 @media (prefers-reduced-motion: reduce) {
   * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }

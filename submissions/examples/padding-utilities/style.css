@@ -18,7 +18,7 @@ body {
 
 .container {
     max-width: 900px;
-    margin: 40px auto;
+    margin: var(--ease-space-10) auto;
     background: #ffffff;
     border-radius: 12px;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
@@ -38,7 +38,7 @@ body {
     font-weight: 600;
     text-align: center;
     border-radius: 4px;
-    padding: 8px;
+    padding: var(--ease-space-2);
 }
 
 /* --- SUBMISSION UTILITIES --- */

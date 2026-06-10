@@ -8,7 +8,7 @@ body {
   font-family: Arial, sans-serif;
   background: #f5f7fb;
   color: #222;
-  padding: 24px;
+  padding: var(--ease-space-6);
 }
 
 header {
@@ -33,7 +33,7 @@ header p {
 
 .toolbar input,
 .toolbar select {
-  padding: 12px;
+  padding: var(--ease-space-3);
   border: 1px solid #ddd;
   border-radius: 10px;
   font-size: 14px;
@@ -81,7 +81,7 @@ header p {
   margin-bottom: 16px;
   border-radius: 10px;
   background: #fafafa;
-  padding: 12px;
+  padding: var(--ease-space-3);
 }
 
 .button-preview {
@@ -110,7 +110,7 @@ header p {
   width: 100%;
   background: #fff8e1;
   color: #a16207;
-  padding: 12px;
+  padding: var(--ease-space-3);
   border-radius: 8px;
   border-left: 4px solid var(--ease-color-warning);
 }
@@ -137,7 +137,7 @@ header p {
 
 .empty-state {
   text-align: center;
-  padding: 40px;
+  padding: var(--ease-space-10);
   color: #777;
   grid-column: 1/-1;
 }

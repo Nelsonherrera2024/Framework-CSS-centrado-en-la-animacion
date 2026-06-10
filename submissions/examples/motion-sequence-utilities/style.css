@@ -30,7 +30,7 @@ body {
 .demo-shell {
   width: min(1200px, calc(100% - 32px));
   margin: 0 auto;
-  padding: 48px 0 96px;
+  padding: var(--ease-space-12) 0 96px;
 }
 
 .page-heading {
@@ -46,7 +46,7 @@ body {
 }
 
 .page-heading p {
-  margin: 20px 0 0;
+  margin: var(--ease-space-5) 0 0;
   font-size: 1.05rem;
   color: var(--muted);
   line-height: 1.8;
@@ -147,7 +147,7 @@ body {
 }
 
 .nav-item {
-  padding: 16px 20px;
+  padding: var(--ease-space-4) 20px;
   color: var(--ease-color-neutral-200);
   text-decoration: none;
   display: inline-flex;
@@ -162,7 +162,7 @@ body {
 }
 
 .widget {
-  padding: 20px;
+  padding: var(--ease-space-5);
   min-height: 172px;
 }
 
@@ -341,7 +341,7 @@ body {
 
 @media (max-width: 520px) {
   .demo-shell {
-    padding: 32px 0 64px;
+    padding: var(--ease-space-8) 0 64px;
   }
 
   .nav-item,

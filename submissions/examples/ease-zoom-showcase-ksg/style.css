@@ -14,12 +14,12 @@ body {
   min-height: 100vh;
   display: grid;
   place-items: center;
-  padding: 32px;
+  padding: var(--ease-space-8);
 }
 
 .demo-panel {
   width: min(720px, 100%);
-  padding: 32px;
+  padding: var(--ease-space-8);
   background: #ffffff;
   border: 1px solid #d9e1ec;
   border-radius: 8px;
@@ -91,7 +91,7 @@ h1 {
 .replay-button {
   border: 0;
   border-radius: 6px;
-  padding: 12px 18px;
+  padding: var(--ease-space-3) 18px;
   background: #2563eb;
   color: #ffffff;
   font-weight: 700;

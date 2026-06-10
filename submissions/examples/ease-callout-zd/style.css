@@ -24,7 +24,7 @@
 .cl-callout {
   display: flex;
   gap: 14px;
-  padding: 16px 18px;
+  padding: var(--ease-space-4) 18px;
   border-radius: var(--cl-radius);
   background: var(--cl-surface);
   border: 1px solid var(--cl-border);

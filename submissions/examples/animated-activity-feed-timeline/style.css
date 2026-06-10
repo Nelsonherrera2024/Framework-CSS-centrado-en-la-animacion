@@ -84,7 +84,7 @@ body {
 }
 
 .ease-af__sub {
-  margin: 4px 0 0;
+  margin: var(--ease-space-1) 0 0;
   color: var(--ease-af-muted);
   font-size: 13px;
 }
@@ -92,7 +92,7 @@ body {
 .ease-af__pill {
   display: inline-flex;
   align-items: center;
-  padding: 8px 12px;
+  padding: var(--ease-space-2) 12px;
   border-radius: 999px;
   border: 1px solid rgba(15, 23, 42, 0.10);
   background: rgba(255, 255, 255, 0.55);
@@ -102,7 +102,7 @@ body {
 }
 
 .ease-af__frame {
-  padding: 4px 10px 18px;
+  padding: var(--ease-space-1) 10px 18px;
 }
 
 /* Timeline */
@@ -212,7 +212,7 @@ body {
   background: rgba(255, 255, 255, 0.70);
   border: 1px solid rgba(15, 23, 42, 0.10);
   border-radius: var(--ease-af-radius-sm);
-  padding: 16px 16px;
+  padding: var(--ease-space-4) 16px;
   box-shadow: var(--ease-af-shadow-soft);
   transition:
     transform 260ms ease,

@@ -10,7 +10,7 @@ body {
 
 .demo-card {
   width: 280px;
-  padding: 40px;
+  padding: var(--ease-space-10);
   background: white;
   border-radius: 16px;
   text-align: center;

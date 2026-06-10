@@ -297,7 +297,7 @@ body {
 .ease-breadcrumb-shadow {
   background-color: var(--bg-surface);
   border: 1px solid var(--border-color);
-  padding: 12px 20px;
+  padding: var(--ease-space-3) 20px;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
   display: inline-flex;
@@ -444,7 +444,7 @@ body {
 
 .nested-dropdown-list a {
   display: block;
-  padding: 8px 16px;
+  padding: var(--ease-space-2) 16px;
   color: var(--text-secondary);
   text-decoration: none;
   font-size: 0.85rem;

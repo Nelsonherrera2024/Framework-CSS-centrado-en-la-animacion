@@ -42,7 +42,7 @@ body {
 
 /* === Primary Button === */
 .ease-btn-primary {
-  padding: 12px 22px;
+  padding: var(--ease-space-3) 22px;
   background: var(--ease-primary);
   color: white;
   border: none;
@@ -86,7 +86,7 @@ body {
 /* === Modal Card (Base) === */
 .ease-modal-card {
   background: var(--ease-card-bg);
-  padding: 32px;
+  padding: var(--ease-space-8);
   border-radius: 16px;
   max-width: 420px;
   width: 90%;

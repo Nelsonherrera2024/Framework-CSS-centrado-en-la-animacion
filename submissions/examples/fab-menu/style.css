@@ -7,7 +7,7 @@
   transform: translateX(-50%);
   z-index: 100;
   /* Massive invisible padding area to catch hovers smoothly */
-  padding: 40px 100px;
+  padding: var(--ease-space-10) 100px;
 }
 
 .dynamic-fab {

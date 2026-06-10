@@ -91,7 +91,7 @@
 }
 @media (max-width: 640px) {
   .fg-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
-  .fg-card { padding: 20px 16px; }
+  .fg-card { padding: var(--ease-space-5) 16px; }
   .fg-icon-wrap { width: 44px; height: 44px; font-size: 1.1rem; }
 }
 @media (prefers-reduced-motion: reduce) {
