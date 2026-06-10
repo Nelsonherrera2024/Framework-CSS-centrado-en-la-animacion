@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reduced Motion Fix — Loaders &amp; Badges</title>
+  <link rel="stylesheet" href="../../easemotion/all.css" />
+  <style>
+    body { font-family: sans-serif; padding: 2rem; }
+    .section { margin-bottom: 2rem; }
+    h2 { margin-bottom: 1rem; }
+    .row { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+    p.note { font-size: 0.85rem; color: #666; margin-top: 0.5rem; }
+  </style>
+</head>
+<body>
+  <h1>prefers-reduced-motion: loaders &amp; badges</h1>
+  <p class="note">
+    Enable <strong>Reduce Motion</strong> in your OS accessibility settings to verify animations stop.
+  </p>
+
+  <div class="section">
+    <h2>Loaders</h2>
+    <div class="row">
+      <span class="ease-loader ease-loader-spin"></span>
+      <span class="ease-loader ease-loader-pulse"></span>
+      <span class="ease-loader ease-loader-ping"></span>
+      <span class="ease-loader-dots">
+        <span class="ease-loader-dot"></span>
+        <span class="ease-loader-dot"></span>
+        <span class="ease-loader-dot"></span>
+      </span>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Badges</h2>
+    <div class="row">
+      <span class="ease-badge ease-badge-pulse">Live</span>
+      <span class="ease-badge ease-badge-danger ease-badge-pulse">Alert</span>
+    </div>
+  </div>
+</body>
+</html>
