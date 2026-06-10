@@ -18,31 +18,40 @@ The CSS `prefers-reduced-motion` media query detects if users have requested red
 
 ### How EaseMotion CSS Handles It
 
-All animation classes automatically respect `prefers-reduced-motion`. When enabled, animations run with:
-- Duration: `0.01ms` (essentially instant)
-- Iteration count: `1` (no loops)
-- Transition duration: `0.01ms` (no fade transitions)
+All animation classes automatically respect `prefers-reduced-motion`. When enabled, EaseMotion makes heavy motion accessible by:
+- Reducing animation and transition duration to `0.01ms`
+- Stopping loops after one iteration
+- Replacing large slides, zooms, flips, and rotations with gentle fade fallbacks
 
-This is applied globally at the end of `core/animations.css`:
+This is applied globally at the end of `easemotion.css`:
 
 ```css
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+  [class*="ease-"] {
     animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
   }
 }
 ```
 
-### Classes That Respect This
+### What Changes in Reduced Motion Mode
 
-✅ **All entrance animations:** `.ease-fade-in`, `.ease-slide-up`, `.ease-zoom-in`, `.ease-flip`, etc.  
-✅ **All looping animations:** `.ease-bounce`, `.ease-pulse`, `.ease-rotate`, `.ease-ping`  
-✅ **All exit animations:** `.ease-fade-out`, `.ease-expand-border-exit`, etc.  
-✅ **All hover animations:** `.ease-hover-grow`, `.ease-hover-lift-shadow`, etc.
+✅ **Slide-style animations** become gentle fades instead of large translates.  
+✅ **Bounce, rotate, zoom, and flip presets** are replaced with minimal opacity-based motion.  
+✅ **Transitions are effectively instant**, preserving component state without creating extra movement.
+
+### Utility Class
+
+If you want to force reduced motion in a specific area regardless of OS setting, use `.ease-reduced-motion`:
+
+```html
+<div class="ease-reduced-motion">
+  <div class="ease-slide-up">No heavy motion here</div>
+</div>
+```
 
 **No additional setup required.** EaseMotion CSS classes work correctly whether `prefers-reduced-motion` is enabled or not.
 

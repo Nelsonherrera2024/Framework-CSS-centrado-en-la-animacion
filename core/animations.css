@@ -23,6 +23,16 @@
   }
 }
 
+@keyframes ease-kf-reduced-motion {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
 @keyframes ease-kf-fade-out {
   from {
     opacity: 1;
@@ -1307,13 +1317,55 @@
 @media (prefers-reduced-motion: reduce) {
   [class*="ease-"] {
     animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
     animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
   }
+
   [class*="ease-hover-"],
   [class*="ease-card-"],
   .ease-btn-hover {
     transition: none !important;
     transform: none !important;
   }
-}
+
+  .ease-reduced-motion,
+  .ease-reduced-motion[class*="ease-"],
+  .ease-reduced-motion [class*="ease-"],
+  .ease-reduced-motion [class*="ease-hover-"],
+  .ease-reduced-motion .ease-btn-hover {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+    transform: none !important;
+  }
+
+  .ease-slide-up,
+  .ease-slide-down,
+  .ease-slide-in-left,
+  .ease-slide-in-right,
+  .ease-slide-in-from-top,
+  .ease-slide-in-from-bottom,
+  .ease-slide-in-from-left,
+  .ease-slide-in-from-right,
+  .ease-slide-in-from-top-left,
+  .ease-slide-in-from-top-right,
+  .ease-slide-in-from-bottom-left,
+  .ease-slide-in-from-bottom-right,
+  .ease-reveal-up,
+  .ease-reveal-down,
+  .ease-reveal-left,
+  .ease-reveal-right,
+  .ease-reveal-scale,
+  .ease-bounce,
+  .ease-rotate,
+  .ease-zoom-in,
+  .ease-zoom-out,
+  .ease-flip {
+    animation-name: ease-kf-reduced-motion !important;
+    animation-timing-function: linear !important;
+  }
 }

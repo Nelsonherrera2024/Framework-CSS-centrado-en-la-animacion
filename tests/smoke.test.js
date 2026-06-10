@@ -56,6 +56,10 @@ const modals = readFileSync(resolve(componentsDir, 'modals.css'), 'utf8');
 
   it('should handle prefers-reduced-motion', () => {
     expect(css).toContain('@media (prefers-reduced-motion: reduce)');
+    expect(css).toContain('[class*="ease-"]');
+    expect(css).toContain('animation-delay: 0ms !important');
+    expect(css).toContain('transition-delay: 0ms !important');
+    expect(css).toContain('.ease-reduced-motion');
   });
 
   it('should have component classes defined', () => {

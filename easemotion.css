@@ -56,6 +56,137 @@
   html {
     scroll-behavior: auto !important;
   }
+
+  [class*="ease-"] {
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+  }
+
+  @keyframes ease-kf-slide-up {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes ease-kf-slide-down {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes ease-kf-slide-in-left {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes ease-kf-slide-in-right {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes ease-kf-slide-in-from-top {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes ease-kf-slide-in-from-bottom {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes ease-kf-slide-in-from-left {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes ease-kf-slide-in-from-right {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes ease-kf-slide-in-from-top-left {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes ease-kf-slide-in-from-top-right {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes ease-kf-slide-in-from-bottom-left {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes ease-kf-slide-in-from-bottom-right {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes ease-kf-reveal-up {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes ease-kf-reveal-down {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes ease-kf-reveal-left {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes ease-kf-reveal-right {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes ease-kf-reveal-scale {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes ease-kf-bounce {
+    from { transform: none; }
+    to { transform: none; }
+  }
+
+  @keyframes ease-kf-rotate {
+    from { transform: none; }
+    to { transform: none; }
+  }
+
+  @keyframes ease-kf-zoom-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes ease-kf-zoom-out {
+    from { opacity: 1; }
+    to { opacity: 1; }
+  }
+
+  @keyframes ease-kf-flip {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+}
+
+.ease-reduced-motion,
+.ease-reduced-motion[class*="ease-"],
+.ease-reduced-motion [class*="ease-"],
+.ease-reduced-motion [class*="ease-hover-"],
+.ease-reduced-motion .ease-btn-hover {
+  animation-duration: 0.01ms !important;
+  animation-delay: 0ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  transition-delay: 0ms !important;
+  transform: none !important;
 }
 
 

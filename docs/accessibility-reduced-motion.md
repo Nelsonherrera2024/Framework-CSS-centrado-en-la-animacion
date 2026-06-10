@@ -8,12 +8,12 @@ from animations.
 ## The CSS Pattern
 ```css
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+  [class*="ease-"] {
     animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
   }
 }
 ```
