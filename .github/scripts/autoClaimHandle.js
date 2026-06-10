@@ -14,6 +14,22 @@ async function handleClaim({ github, context }) {
   const issueNumber = context.payload.issue.number;
   const commenter = context.payload.comment.user.login;
 
+  // Validate payload fields before use
+  if (!Array.isArray(context.payload.issue.assignees)) {
+    await github.rest.issues.createComment({
+      owner, repo, issue_number: issueNumber,
+      body: `⚠️ **Error:** Invalid payload — assignees field is missing or malformed.`,
+    });
+    return;
+  }
+  if (!Array.isArray(context.payload.issue.labels)) {
+    await github.rest.issues.createComment({
+      owner, repo, issue_number: issueNumber,
+      body: `⚠️ **Error:** Invalid payload — labels field is missing or malformed.`,
+    });
+    return;
+  }
+
   // Fetch the latest issue state to prevent race conditions on closed issues
   const { data: issue } = await github.rest.issues.get({
     owner, repo, issue_number: issueNumber
@@ -30,8 +46,8 @@ async function handleClaim({ github, context }) {
 
   const currentAssignees = context.payload.issue.assignees.map((a) => a.login.toLowerCase());
   const issueLabels = context.payload.issue.labels.map((l) => l.name.toLowerCase());
-  const issueTitle = (context.payload.issue.title || '').toLowerCase();
-  const issueBody = (context.payload.issue.body || '').toLowerCase();
+  const issueTitle = String(context.payload.issue.title || '').toLowerCase();
+  const issueBody = String(context.payload.issue.body || '').toLowerCase();
 
   const isSubmissionIssue = issueLabels.some(label => 
     label.includes('submission') || 
