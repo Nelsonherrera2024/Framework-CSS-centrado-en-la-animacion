@@ -666,7 +666,7 @@
 }
 
 .ease-float {
-  animation: ease-float 3s ease-in-out infinite;
+  animation: ease-kf-float var(--ease-speed-medium) var(--ease-ease) infinite;
 }
 .ease-zoom-in {
   animation: ease-kf-zoom-in var(--ease-speed-medium) var(--ease-ease-bounce) both;
