@@ -1,0 +1,2 @@
+/* Fix #3916: .ease-hover-morph-card missing will-change: border-radius for animation optimization. */
+/* See README.md for the recommended permanent fix in framework CSS */
