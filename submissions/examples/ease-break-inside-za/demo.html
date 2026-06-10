@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ease-break-inside-za — break utilities</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div data-ease-demo-za>
+      <h1>ease-break utilities</h1>
+      <p>Control how elements break across columns and print pages.</p>
+
+      <div class="card-za">
+        <h2>ease-break-inside-avoid-za</h2>
+        <p>
+          Prevents the element from being split across columns or printed pages.
+          The entire element stays together in one column.
+        </p>
+      </div>
+
+      <div class="card-za">
+        <h2>ease-break-inside-auto-za</h2>
+        <p>Default behavior — allows breaking inside the element if needed.</p>
+      </div>
+
+      <div class="card-za">
+        <h2>ease-break-before-za</h2>
+        <p>
+          Forces a column/page break before the element — it always starts at
+          the top of a new column or page.
+        </p>
+      </div>
+
+      <div class="card-za">
+        <h2>ease-break-before-avoid-za</h2>
+        <p>
+          Prevents a column/page break before the element — keeps it with the
+          preceding content.
+        </p>
+      </div>
+
+      <div class="card-za">
+        <h2>ease-break-after-za</h2>
+        <p>
+          Forces a column/page break after the element — next content starts in
+          a new column or page.
+        </p>
+      </div>
+
+      <h2>Demo: multi-column with break control</h2>
+      <div class="demo-columns-za">
+        <div class="item-za">Item 1</div>
+        <div class="item-za ease-break-inside-avoid-za">
+          Item 2 (keeps together)
+        </div>
+        <div class="item-za">Item 3</div>
+        <div class="item-za">Item 4</div>
+        <div class="item-za">Item 5</div>
+        <div class="item-za">Item 6</div>
+      </div>
+    </div>
+  </body>
+</html>
