@@ -14,9 +14,11 @@ module.exports = async ({ github, context }) => {
 
   if (issue.state === 'closed') return;
 
-  const commentBody = context.payload.comment.body.toLowerCase();
+  const commentBody = context.payload.comment.body;
+  if (typeof commentBody !== 'string') return;
+  const lowerBody = commentBody.toLowerCase();
 
-  if (commentBody.includes('/claim') || commentBody.includes('/assign')) {
+  if (lowerBody.includes('/claim') || lowerBody.includes('/assign')) {
     return;
   }
 
@@ -49,7 +51,7 @@ module.exports = async ({ github, context }) => {
   ];
 
   // Check if the comment contains any of the trigger phrases
-  const needsReminder = triggerPhrases.some(phrase => commentBody.includes(phrase));
+  const needsReminder = triggerPhrases.some(phrase => lowerBody.includes(phrase));
   if (!needsReminder) {
     return;
   }
