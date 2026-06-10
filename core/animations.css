@@ -1315,5 +1315,16 @@
     transition: none !important;
     transform: none !important;
   }
+
+  /* Typewriter loop: animation ends at width:0 — show static text instead */
+  .ease-typewriter-loop {
+    width: auto !important;
+    max-width: none !important;
+    overflow: visible !important;
+    white-space: normal !important;
+    border-right: none !important;
+    animation: none !important;
+    will-change: auto !important;
+  }
 }
 }
