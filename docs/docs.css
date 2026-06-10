@@ -776,7 +776,9 @@ a.sidebar-group-label:hover {
 /* ── Brand Logo Styling ──────────────────────────────────── */
 
 .docs-logo-img {
-  height: 36px;
+  height: 120px;
+  margin-top: -42px;
+  margin-bottom: -42px;
   width: auto;
   display: block;
   transition: filter var(--ease-duration-3) var(--ease-ease-in-out);
