@@ -1,0 +1,11 @@
+/* Fix #3959: add animation-fill-mode: both to keyframe utilities */
+.ease-rotate {
+  animation: ease-kf-rotate 1s linear infinite;
+  animation-fill-mode: both;
+}
+.ease-fade-in {
+  animation: ease-kf-fade-in 300ms var(--ease-ease) both;
+}
+.ease-fade-out {
+  animation: ease-kf-fade-out 300ms var(--ease-ease) both;
+}
