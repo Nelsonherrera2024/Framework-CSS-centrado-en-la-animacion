@@ -7,7 +7,7 @@ async function findExistingAssignments(github, owner, repo, username, currentIss
 }
 
 // change to increase/decrease the cap
-const MAX_ASSIGNED_ISSUES = 1;
+const MAX_ASSIGNED_ISSUES = Number(process.env.MAX_ASSIGNED_ISSUES) || 1;
 
 async function handleClaim({ github, context }) {
   const { owner, repo } = context.repo;
