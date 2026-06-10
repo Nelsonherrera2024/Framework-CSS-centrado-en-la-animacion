@@ -4,12 +4,13 @@ Reads /tmp/contributors.json, replaces content between
 <!-- CONTRIBUTOR-WALL-START --> and <!-- CONTRIBUTOR-WALL-END --> markers.
 """
 import json
+import os
 import re
 import sys
 
-COLS = 12
-INPUT = "/tmp/contributors.json"
-README = "README.md"
+COLS = int(os.environ.get("CONTRIBUTOR_COLS", 12))
+INPUT = os.environ.get("CONTRIBUTOR_INPUT", "/tmp/contributors.json")
+README = os.environ.get("CONTRIBUTOR_README", "README.md")
 START_MARKER = "<!-- CONTRIBUTOR-WALL-START -->"
 END_MARKER = "<!-- CONTRIBUTOR-WALL-END -->"
 
@@ -49,8 +50,18 @@ def build_wall(contributors):
 
 
 def main():
-    with open(INPUT) as f:
-        contributors = json.load(f)
+    try:
+        with open(INPUT) as f:
+            contributors = json.load(f)
+    except FileNotFoundError:
+        print(f"ERROR: Input file not found: {INPUT}", file=sys.stderr)
+        sys.exit(1)
+    except json.JSONDecodeError as e:
+        print(f"ERROR: Invalid JSON in {INPUT}: {e}", file=sys.stderr)
+        sys.exit(1)
+    except OSError as e:
+        print(f"ERROR: Cannot read {INPUT}: {e}", file=sys.stderr)
+        sys.exit(1)
 
     if not contributors:
         print("ERROR: No contributors found in JSON.", file=sys.stderr)
@@ -58,8 +69,15 @@ def main():
 
     wall = build_wall(contributors)
 
-    with open(README, "r", encoding="utf-8") as f:
-        content = f.read()
+    try:
+        with open(README, "r", encoding="utf-8") as f:
+            content = f.read()
+    except FileNotFoundError:
+        print(f"ERROR: README file not found: {README}", file=sys.stderr)
+        sys.exit(1)
+    except OSError as e:
+        print(f"ERROR: Cannot read {README}: {e}", file=sys.stderr)
+        sys.exit(1)
 
     pattern = re.compile(
         rf"{re.escape(START_MARKER)}.*?{re.escape(END_MARKER)}",
@@ -72,8 +90,12 @@ def main():
 
     updated = pattern.sub(wall, content)
 
-    with open(README, "w", encoding="utf-8") as f:
-        f.write(updated)
+    try:
+        with open(README, "w", encoding="utf-8") as f:
+            f.write(updated)
+    except OSError as e:
+        print(f"ERROR: Cannot write to {README}: {e}", file=sys.stderr)
+        sys.exit(1)
 
     print(f"Done — {len(contributors)} contributors written across {-(-len(contributors) // COLS)} rows.")
 
