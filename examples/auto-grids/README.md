@@ -4,7 +4,7 @@
 A structural optimization patch for flexible auto-fitting grids to prevent horizontal container leaks and column layout distortion caused by continuous unspaced data strings.
 
 ## 📁 Sandbox Configuration Files
-* `demo.html` — Cross-breakpoint testing canvas loading unspaced strings to verify text wrapping metrics.
+* `` — Cross-breakpoint testing canvas loading unspaced strings to verify text wrapping metrics.
 * `style.css` — Localized layout modifier block applying strict constraints linked back to framework core tokens.
 
 ## 🐛 The Bug Resolved
