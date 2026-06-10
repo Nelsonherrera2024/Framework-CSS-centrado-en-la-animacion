@@ -49,8 +49,18 @@ def build_wall(contributors):
 
 
 def main():
-    with open(INPUT) as f:
-        contributors = json.load(f)
+    try:
+        with open(INPUT) as f:
+            contributors = json.load(f)
+    except FileNotFoundError:
+        print(f"ERROR: Input file not found: {INPUT}", file=sys.stderr)
+        sys.exit(1)
+    except json.JSONDecodeError as e:
+        print(f"ERROR: Invalid JSON in {INPUT}: {e}", file=sys.stderr)
+        sys.exit(1)
+    except OSError as e:
+        print(f"ERROR: Cannot read {INPUT}: {e}", file=sys.stderr)
+        sys.exit(1)
 
     if not contributors:
         print("ERROR: No contributors found in JSON.", file=sys.stderr)
@@ -58,8 +68,15 @@ def main():
 
     wall = build_wall(contributors)
 
-    with open(README, "r", encoding="utf-8") as f:
-        content = f.read()
+    try:
+        with open(README, "r", encoding="utf-8") as f:
+            content = f.read()
+    except FileNotFoundError:
+        print(f"ERROR: README file not found: {README}", file=sys.stderr)
+        sys.exit(1)
+    except OSError as e:
+        print(f"ERROR: Cannot read {README}: {e}", file=sys.stderr)
+        sys.exit(1)
 
     pattern = re.compile(
         rf"{re.escape(START_MARKER)}.*?{re.escape(END_MARKER)}",
@@ -72,8 +89,12 @@ def main():
 
     updated = pattern.sub(wall, content)
 
-    with open(README, "w", encoding="utf-8") as f:
-        f.write(updated)
+    try:
+        with open(README, "w", encoding="utf-8") as f:
+            f.write(updated)
+    except OSError as e:
+        print(f"ERROR: Cannot write to {README}: {e}", file=sys.stderr)
+        sys.exit(1)
 
     print(f"Done — {len(contributors)} contributors written across {-(-len(contributors) // COLS)} rows.")
 
