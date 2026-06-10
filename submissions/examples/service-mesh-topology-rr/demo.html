@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Service Mesh Topology Explorer</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <h1>Service Mesh Topology Explorer</h1>
+        <p>Visualize service dependencies, traffic flows, and communication health.</p>
+    </div>
+
+    <div class="metrics-grid">
+
+        <div class="metric-card">
+            <span>Services</span>
+            <h2>48</h2>
+        </div>
+
+        <div class="metric-card">
+            <span>Active Connections</span>
+            <h2>372</h2>
+        </div>
+
+        <div class="metric-card">
+            <span>Request Volume</span>
+            <h2>2.4M</h2>
+        </div>
+
+        <div class="metric-card">
+            <span>Error Rate</span>
+            <h2>0.12%</h2>
+        </div>
+
+    </div>
+
+    <div class="topology">
+
+        <div class="service gateway">
+            API Gateway
+        </div>
+
+        <div class="arrow">↓</div>
+
+        <div class="service-row">
+
+            <div class="service healthy">
+                Auth Service
+            </div>
+
+            <div class="service healthy">
+                User Service
+            </div>
+
+        </div>
+
+        <div class="arrow">↓</div>
+
+        <div class="service-row">
+
+            <div class="service warning">
+                Payment Service
+            </div>
+
+            <div class="service healthy">
+                Order Service
+            </div>
+
+            <div class="service healthy">
+                Notification Service
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="traffic-panel">
+
+        <h2>Traffic Insights</h2>
+
+        <div class="traffic-item">
+            <span>API Gateway → Auth Service</span>
+            <span>42ms</span>
+        </div>
+
+        <div class="traffic-item">
+            <span>Auth Service → User Service</span>
+            <span>18ms</span>
+        </div>
+
+        <div class="traffic-item">
+            <span>User Service → Payment Service</span>
+            <span>96ms</span>
+        </div>
+
+        <div class="traffic-item">
+            <span>Order Service → Notification Service</span>
+            <span>24ms</span>
+        </div>
+
+    </div>
+
+    <div class="summary-panel">
+
+        <h2>Topology Summary</h2>
+
+        <p>
+            Service communication remains healthy across the mesh.
+            Payment Service is experiencing slightly elevated latency,
+            while all other dependencies remain within operational targets.
+        </p>
+
+    </div>
+
+</div>
+
+</body>
+</html>
