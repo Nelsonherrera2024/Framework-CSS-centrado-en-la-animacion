@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cards – Undefined --ease-color-text-dark</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Bug: undefined <code>--ease-color-text-dark</code></h1>
+  <p><code>--ease-color-text-dark</code> is referenced in <code>cards.css</code> line 180 but never defined in <code>variables.css</code>.</p>
+
+  <div class="ease-card ease-card-glass" style="max-width:300px;color:#fff;">
+    <h3>Glass Card (dark mode simulation)</h3>
+    <p>Color uses <code>var(--ease-color-text-dark, #f8fafc)</code> — token doesn't exist.</p>
+  </div>
+
+  <hr />
+  <h2>Source</h2>
+  <pre>
+.ease-card-glass {
+  color: var(--ease-color-text-dark, #f8fafc);  /* token doesn't exist */
+}
+  </pre>
+
+  <h2>Fix</h2>
+  <pre>
+/* Either define in variables.css: */
+--ease-color-text-dark: #f8fafc;
+/* Or use existing token: */
+color: var(--ease-color-text, #1e293b);
+  </pre>
+</body>
+</html>

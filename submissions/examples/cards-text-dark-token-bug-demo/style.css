@@ -1,0 +1,28 @@
+/* cards.css bug demo: undefined --ease-color-text-dark */
+
+body { font-family: system-ui, sans-serif; margin: 2rem; background: #0b1121; }
+.ease-card {
+  background-color: #141e33;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.ease-card-glass {
+  color: var(--ease-color-text-dark, #f8fafc);
+  /* BUG: --ease-color-text-dark is never defined in variables.css */
+  backdrop-filter: blur(16px);
+}
+
+h3 { margin: 0 0 0.5rem 0; color: inherit; }
+p { margin: 0; color: inherit; }
+
+/* FIX */
+/*
+  Either add to variables.css:
+  --ease-color-text-dark: #f8fafc;
+
+  Or use:
+  color: var(--ease-color-text, #e2e8f0);
+*/
