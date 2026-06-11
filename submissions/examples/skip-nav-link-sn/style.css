@@ -1,0 +1,21 @@
+@layer easemotion-base {
+  .ease-skip-link {
+    position: absolute;
+    top: -100%;
+    left: 0.5rem;
+    z-index: 9999;
+    padding: 0.5rem 1rem;
+    background: var(--ease-color-primary, #6c63ff);
+    color: #fff;
+    border-radius: 0 0 0.5rem 0.5rem;
+    font-weight: 700;
+    font-size: 0.875rem;
+    text-decoration: none;
+    transition: top 150ms ease;
+  }
+  .ease-skip-link:focus-visible {
+    top: 0;
+    outline: 3px solid white;
+    outline-offset: 2px;
+  }
+}
