@@ -1,0 +1,103 @@
+/* ============================================================
+   EaseMotion CSS — ease-flip-card
+   Submission by: sudha09-git
+   Description: 3D CSS card flip on hover using perspective
+                and rotateY/rotateX. Zero JavaScript required.
+   ============================================================ */
+
+/* ---------- Container (provides perspective) ---------- */
+.ease-flip-card {
+  perspective: 1000px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* ---------- Inner (the element that flips) ---------- */
+.ease-flip-card__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+}
+
+/* Flip on hover (default — rotateY) */
+.ease-flip-card:hover .ease-flip-card__inner {
+  transform: rotateY(180deg);
+}
+
+/* ---------- Front & Back faces ---------- */
+.ease-flip-card__front,
+.ease-flip-card__back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.ease-flip-card__front {
+  /* sits at 0deg — visible by default */
+}
+
+.ease-flip-card__back {
+  transform: rotateY(180deg);
+}
+
+/* ---------- Vertical flip variant (rotateX) ---------- */
+.ease-flip-card--vertical:hover .ease-flip-card__inner {
+  transform: rotateX(180deg);
+}
+
+.ease-flip-card--vertical .ease-flip-card__back {
+  transform: rotateX(180deg);
+}
+
+/* ---------- Click / focus variant (no hover) ---------- */
+.ease-flip-card--click {
+  /* Remove hover trigger */
+}
+
+.ease-flip-card--click .ease-flip-card__inner {
+  /* driven by :focus-within instead */
+}
+
+.ease-flip-card--click:focus-within .ease-flip-card__inner,
+.ease-flip-card--click.is-flipped .ease-flip-card__inner {
+  transform: rotateY(180deg);
+}
+
+.ease-flip-card--click.ease-flip-card--vertical:focus-within .ease-flip-card__inner,
+.ease-flip-card--click.ease-flip-card--vertical.is-flipped .ease-flip-card__inner {
+  transform: rotateX(180deg);
+}
+
+/* Remove hover flip for click variant */
+.ease-flip-card--click:hover .ease-flip-card__inner {
+  transform: none;
+}
+
+.ease-flip-card--click:focus-within .ease-flip-card__inner {
+  transform: rotateY(180deg);
+}
+
+/* Hidden focusable trigger inside click variant */
+.ease-flip-card__trigger {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+/* ---------- Speed variants ---------- */
+.ease-flip-card--fast .ease-flip-card__inner  { transition-duration: 0.3s; }
+.ease-flip-card--slow .ease-flip-card__inner  { transition-duration: 1s; }
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .ease-flip-card__inner {
+    transition: none;
+  }
+}

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ease-flip-card — EaseMotion CSS</title>
+  <link rel="stylesheet" href="../../../easemotion.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      background: #0f172a;
+      gap: 3rem;
+      padding: 3rem 1.5rem;
+      color: #e2e8f0;
+    }
+    h1 { font-size: 1rem; color: #475569; letter-spacing: 0.1em; text-transform: uppercase; }
+    .section { display: flex; flex-direction: column; align-items: center; gap: 1rem; width: 100%; }
+    .label { font-size: 0.7rem; color: #475569; text-align: center; }
+    .row { display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center; }
+
+    /* Card dimensions */
+    .card-size {
+      width: 200px;
+      height: 130px;
+    }
+
+    /* Front faces */
+    .front-default {
+      background: linear-gradient(135deg, #4f46e5, #7c3aed);
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 0.4rem;
+    }
+    .front-green {
+      background: linear-gradient(135deg, #059669, #10b981);
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 0.4rem;
+    }
+    .front-orange {
+      background: linear-gradient(135deg, #d97706, #f59e0b);
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 0.4rem;
+    }
+
+    /* Back faces */
+    .back-default {
+      background: #1e293b;
+      border: 1px solid #334155;
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 0.5rem; padding: 1rem; text-align: center;
+    }
+
+    .face-title { font-size: 0.9rem; font-weight: 700; color: #fff; }
+    .face-sub   { font-size: 0.7rem; color: rgba(255,255,255,0.6); }
+    .back-title { font-size: 0.85rem; font-weight: 600; color: #e2e8f0; }
+    .back-body  { font-size: 0.72rem; color: #64748b; line-height: 1.4; }
+  </style>
+</head>
+<body>
+
+  <h1>ease-flip-card Demo</h1>
+
+  <!-- Hover flip (default rotateY) -->
+  <div class="section">
+    <div class="label">Hover to flip — rotateY (default)</div>
+    <div class="row">
+
+      <div class="ease-flip-card card-size">
+        <div class="ease-flip-card__inner">
+          <div class="ease-flip-card__front front-default">
+            <span class="face-title">Hover Me</span>
+            <span class="face-sub">Front</span>
+          </div>
+          <div class="ease-flip-card__back back-default">
+            <span class="back-title">Back Side</span>
+            <span class="back-body">Revealed on hover via rotateY</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ease-flip-card ease-flip-card--fast card-size">
+        <div class="ease-flip-card__inner">
+          <div class="ease-flip-card__front front-green">
+            <span class="face-title">Fast</span>
+            <span class="face-sub">0.3s</span>
+          </div>
+          <div class="ease-flip-card__back back-default">
+            <span class="back-title">Fast Flip</span>
+            <span class="back-body">300ms transition</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ease-flip-card ease-flip-card--slow card-size">
+        <div class="ease-flip-card__inner">
+          <div class="ease-flip-card__front front-orange">
+            <span class="face-title">Slow</span>
+            <span class="face-sub">1s</span>
+          </div>
+          <div class="ease-flip-card__back back-default">
+            <span class="back-title">Slow Flip</span>
+            <span class="back-body">1000ms transition</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Vertical flip (rotateX) -->
+  <div class="section">
+    <div class="label">Hover to flip — rotateX (vertical)</div>
+    <div class="row">
+
+      <div class="ease-flip-card ease-flip-card--vertical card-size">
+        <div class="ease-flip-card__inner">
+          <div class="ease-flip-card__front front-default">
+            <span class="face-title">Vertical</span>
+            <span class="face-sub">rotateX</span>
+          </div>
+          <div class="ease-flip-card__back back-default">
+            <span class="back-title">Flipped!</span>
+            <span class="back-body">Vertical flip via rotateX</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Click / focus variant -->
+  <div class="section">
+    <div class="label">Click to flip (focus-within — no hover needed)</div>
+    <div class="row">
+
+      <div class="ease-flip-card ease-flip-card--click card-size" tabindex="0">
+        <input class="ease-flip-card__trigger" type="checkbox" aria-label="Flip card" />
+        <div class="ease-flip-card__inner">
+          <div class="ease-flip-card__front front-green">
+            <span class="face-title">Click Me</span>
+            <span class="face-sub">Tab + Space also works</span>
+          </div>
+          <div class="ease-flip-card__back back-default">
+            <span class="back-title">Flipped!</span>
+            <span class="back-body">Click anywhere to flip back</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
