@@ -1,0 +1,14 @@
+.rotate-hover {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.rotate-hover:hover {
+  transform: rotate(15deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rotate-hover {
+    transition: none;
+  }
+}
