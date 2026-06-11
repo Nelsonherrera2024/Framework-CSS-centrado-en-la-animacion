@@ -343,6 +343,7 @@
 .ease-cursor-pointer  { cursor: pointer !important; }
 .ease-cursor-default  { cursor: default !important; }
 .ease-cursor-not-allowed { cursor: not-allowed !important; }
+.ease-pointer-events-none { pointer-events: none !important; }
 
 /* ────────────────────────────────────────────────────────────
    RESPONSIVE VARIANTS
