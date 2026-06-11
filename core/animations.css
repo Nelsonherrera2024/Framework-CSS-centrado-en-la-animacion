@@ -1107,7 +1107,7 @@
 /* Morphing Card Hover
    Standardized to: .ease-hover-morph-card */
 .ease-hover-morph-card {
-  border-radius: 0;
+  border-radius: var(--ease-radius-md, 0);
   will-change: border-radius, transform;
   transition:
     border-radius var(--ease-speed-medium) var(--ease-ease),
