@@ -1,0 +1,12 @@
+/* utilities.css bug demo: snap missing fallbacks */
+
+body { margin: 2rem; font-family: system-ui, sans-serif; }
+
+.ease-snap-x {
+  --ease-snap-axis: x !important;
+  scroll-snap-type: var(--ease-snap-axis, x) var(--ease-snap-strictness, proximity) !important;
+  -webkit-scroll-snap-type: var(--ease-snap-axis, x) var(--ease-snap-strictness, proximity) !important;
+}
+/* BUG: --ease-snap-axis is forced to "x" via !important, but the var() fallback is a belt-and-suspenders issue */
+/* The real bug: the !important on --ease-snap-axis makes it impossible for consumers to set --ease-snap-axis on the element */
+/* And --ease-snap-strictness has no fallback if unset */

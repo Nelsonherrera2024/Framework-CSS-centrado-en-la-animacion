@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Utilities – Snap missing var() fallbacks</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Bug: snap utilities missing fallbacks</h1>
+  <p><code>scroll-snap-type</code> uses <code>var(--ease-snap-axis)</code> and <code>var(--ease-snap-strictness)</code> without fallbacks — defaults to <code>none</code>.</p>
+
+  <div class="ease-snap-x" style="display:flex;overflow-x:auto;gap:1rem;padding:1rem 0;border:1px solid #ccc">
+    <div class="snap-item" style="flex:0 0 200px;height:100px;background:#6c63ff;color:#fff;display:flex;align-items:center;justify-content:center;border-radius:8px;scroll-snap-align:center">1</div>
+    <div class="snap-item" style="flex:0 0 200px;height:100px;background:#6c63ff;color:#fff;display:flex;align-items:center;justify-content:center;border-radius:8px;scroll-snap-align:center">2</div>
+    <div class="snap-item" style="flex:0 0 200px;height:100px;background:#6c63ff;color:#fff;display:flex;align-items:center;justify-content:center;border-radius:8px;scroll-snap-align:center">3</div>
+  </div>
+
+  <hr />
+  <h2>Fix</h2>
+  <pre>
+.ease-snap-x {
+  scroll-snap-type: var(--ease-snap-axis, x) var(--ease-snap-strictness, proximity) !important;
+}
+.ease-snap-y {
+  scroll-snap-type: var(--ease-snap-axis, y) var(--ease-snap-strictness, proximity) !important;
+}
+  </pre>
+</body>
+</html>
