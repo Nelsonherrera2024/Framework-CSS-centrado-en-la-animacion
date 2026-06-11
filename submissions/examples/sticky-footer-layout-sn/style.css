@@ -1,0 +1,8 @@
+@layer easemotion-utilities {
+  .ease-sticky-footer-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+  }
+  .ease-sticky-footer-main { flex: 1; }
+}
