@@ -1,19 +1,50 @@
-# Reduced Motion Accessibility Demo
+\# prefers-reduced-motion Support
 
-A simple example showing how CSS animations can respect the user's `prefers-reduced-motion` setting.
 
-## Files
 
-- demo.html
-- style.css
+Adds accessibility support for users who prefer reduced motion.
 
-## Accessibility
 
-When reduced motion is enabled in the operating system, the animation is disabled using:
+
+\## Features
+
+
+
+\- ♿ Respects OS-level "Reduce Motion" settings
+
+\- 🎯 Disables or reduces animations when preferred
+
+\- 📱 Works across Windows, macOS, iOS, Android
+
+\- 🌍 WCAG compliant
+
+
+
+\## Implementation
+
+
+
+Add this to your CSS:
+
+
 
 ```css
+
 @media (prefers-reduced-motion: reduce) {
-  .box {
-    animation: none;
-  }
+
+&#x20;   \*,
+
+&#x20;   \*::before,
+
+&#x20;   \*::after {
+
+&#x20;       animation-duration: 0.01ms !important;
+
+&#x20;       animation-iteration-count: 1 !important;
+
+&#x20;       transition-duration: 0.01ms !important;
+
+&#x20;   }
+
 }
+

@@ -1,22 +1,63 @@
-.box {
-  width: 150px;
-  height: 150px;
-  background: royalblue;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: bounce 2s infinite;
+/* Demo Animation Styles */
+
+.bounce-card {
+    animation: bounce 0.8s ease infinite;
+}
+
+.pulse-card {
+    animation: pulse 1s ease infinite;
+}
+
+.rotate-card {
+    animation: rotate 2s linear infinite;
+}
+
+.fade-card {
+    animation: fade 2s ease infinite;
 }
 
 @keyframes bounce {
-  50% {
-    transform: translateY(-20px);
-  }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
 }
 
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes fade {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+}
+
+/* prefers-reduced-motion Support */
 @media (prefers-reduced-motion: reduce) {
-  .box {
-    animation: none;
-  }
+    .bounce-card,
+    .pulse-card,
+    .rotate-card,
+    .fade-card {
+        animation: none;
+    }
+    
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+.info ul {
+    margin-left: 1.5rem;
+    margin-top: 0.5rem;
+}
+.info li {
+    margin-bottom: 0.25rem;
 }

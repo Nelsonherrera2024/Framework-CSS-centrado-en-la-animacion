@@ -1,12 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Reduced Motion Demo</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prefers-reduced-motion - Accessibility Support</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            padding: 2rem;
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+        .demo-section {
+            margin: 2rem 0;
+            padding: 1rem;
+            background: #f8fafc;
+            border-radius: 0.5rem;
+        }
+        .demo-section h2 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            color: #1e293b;
+        }
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        .card {
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            border-radius: 0.5rem;
+        }
+        .info {
+            background: #e0e7ff;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+        }
+        .success {
+            background: #d1fae5;
+            color: #065f46;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        code {
+            background: #f1f5f9;
+            padding: 0.2rem 0.4rem;
+            border-radius: 0.25rem;
+            font-family: monospace;
+            font-size: 0.875rem;
+            color: #d946ef;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .card {
+                background: #10b981;
+                transition: none;
+                animation: none;
+            }
+        }
+    </style>
 </head>
 <body>
-  <h1>Reduced Motion Accessibility Demo</h1>
-  <div class="box">Animated Box</div>
+    <div class="container">
+        <h1>♿ prefers-reduced-motion Support</h1>
+        <p style="text-align: center">Respecting users' motion preferences for better accessibility</p>
+
+        <div class="success">
+            ✅ <strong>How this works:</strong> If you have "Reduce Motion" enabled in your OS, animations will be disabled or reduced.
+        </div>
+
+        <div class="demo-section">
+            <h2>Test the Effect</h2>
+            <p>These cards have animations. Enable/disable "Reduce Motion" in your OS settings to see the difference.</p>
+            <div class="demo-grid">
+                <div class="card bounce-card">Bounce Animation</div>
+                <div class="card pulse-card">Pulse Animation</div>
+                <div class="card rotate-card">Rotate Animation</div>
+                <div class="card fade-card">Fade Animation</div>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2>How to Test</h2>
+            <div class="info">
+                <p><strong>Windows:</strong> Settings → Accessibility → Visual Effects → Turn off "Animation Effects"</p>
+                <p><strong>macOS:</strong> System Settings → Accessibility → Display → Reduce Motion</p>
+                <p><strong>iOS:</strong> Settings → Accessibility → Motion → Reduce Motion</p>
+                <p><strong>Android:</strong> Settings → Accessibility → Remove animations</p>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2>Implementation Code</h2>
+            <pre>/* Add this to your CSS to respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Or for specific animations */
+.ease-bounce {
+    animation: bounce 1s ease infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ease-bounce {
+        animation: none;
+    }
+}</pre>
+        </div>
+
+        <div class="info">
+            <h3>⚡ Accessibility Benefits</h3>
+            <ul>
+                <li>🎯 Respects user motion preferences</li>
+                <li>♿ Improves accessibility for vestibular disorders</li>
+                <li>📱 Works across all modern browsers</li>
+                <li>🌍 Aligns with WCAG guidelines</li>
+            </ul>
+        </div>
+    </div>
 </body>
 </html>
