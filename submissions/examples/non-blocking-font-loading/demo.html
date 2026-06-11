@@ -9,10 +9,8 @@
     ✅ CORRECT APPROACH (this demo):
     Font loaded via <link> tags — browser discovers the resource early,
     in parallel with other assets. Non-blocking.
+    (This demo uses system font stacks only — no external font requests.)
   -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!--
     ❌ BROKEN APPROACH (what core/base.css currently does):
@@ -20,8 +18,7 @@
     is synchronously render-blocking. The browser cannot paint the page
     until this external stylesheet is fully downloaded and parsed.
 
-    To reproduce the problem, comment out the <link> tags above and
-    uncomment the <style> block below, then run Lighthouse.
+    To reproduce the problem, uncomment the <style> block below, then run Lighthouse.
   -->
   <!--
   <style>
@@ -33,7 +30,7 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
       background: #f8fafc;
       color: #1e293b;
       padding: 2rem;
@@ -74,7 +71,7 @@
     }
 
     code {
-      font-family: 'JetBrains Mono', 'Fira Code', monospace;
+      font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
       font-size: 0.85rem;
       background: #f1f5f9;
       color: #4b44cc;
@@ -88,7 +85,7 @@
       padding: 1.25rem;
       border-radius: 0.5rem;
       overflow-x: auto;
-      font-family: 'JetBrains Mono', 'Fira Code', monospace;
+      font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
       font-size: 0.85rem;
       line-height: 1.7;
       margin: 0.75rem 0;

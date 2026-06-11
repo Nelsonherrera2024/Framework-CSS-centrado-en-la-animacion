@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap');
 
 /* ==========================================================================
    EASEMOTION CSS - TYPING EFFECT ANIMATION COMPONENT
@@ -94,7 +93,7 @@ body:has(#theme-dark:checked) {
 
 /* Suffix active font style */
 .ease-typewriter-container .ease-typewriter-text {
-  font-family: 'Fira Code', 'Courier New', Courier, monospace;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
   font-weight: 600;
   background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
   -webkit-background-clip: text;
@@ -177,7 +176,7 @@ body:has(#theme-dark:checked) .ease-typewriter-container .ease-typewriter-text {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
   overflow: hidden;
   width: 100%;
-  font-family: 'Fira Code', monospace;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
   box-sizing: border-box;
 }
 
@@ -217,7 +216,7 @@ body:has(#theme-dark:checked) .ease-typewriter-container .ease-typewriter-text {
 }
 
 .ease-terminal-line {
-  font-family: 'Fira Code', monospace;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
   font-size: 14px;
   white-space: nowrap;
   overflow: hidden;
@@ -401,7 +400,7 @@ body {
   align-items: center;
   padding: 40px 20px;
   box-sizing: border-box;
-  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   background-color: #f1f5f9;
   transition: background-color 0.4s ease;
 }
@@ -647,7 +646,7 @@ body:has(#theme-dark:checked) .badge-purple {
 }
 
 .card-footer code {
-  font-family: 'Fira Code', monospace;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
   font-size: 12px;
   background-color: var(--control-bg);
   padding: 2px 4px;

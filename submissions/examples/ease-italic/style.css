@@ -19,7 +19,6 @@
    DEMO SHOWCASE STYLING
    ──────────────────────────────────────────────────────────── */
 
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
 :root {
   --bg-primary: #07080b;
@@ -37,7 +36,7 @@ body {
   padding: 0;
   background-color: var(--bg-primary);
   color: var(--text-primary);
-  font-family: 'Outfit', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -56,7 +55,7 @@ header {
 }
 
 h1 {
-  font-family: 'Playfair Display', serif;
+  font-family: Georgia, 'Times New Roman', 'Palatino Linotype', serif;
   font-size: 3.5rem;
   font-weight: 600;
   margin-bottom: 1rem;
@@ -74,7 +73,7 @@ h1 {
 }
 
 .section-title {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   font-size: 1.6rem;
   font-weight: 600;
   margin-top: 3.5rem;
@@ -109,7 +108,7 @@ h1 {
 
 /* Typography showcase box */
 .typo-preview {
-  font-family: 'Playfair Display', serif;
+  font-family: Georgia, 'Times New Roman', 'Palatino Linotype', serif;
   font-size: 1.8rem;
   line-height: 1.4;
   color: #f8fafc;
@@ -119,7 +118,7 @@ h1 {
 }
 
 .typo-label {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   color: var(--text-secondary);
   font-size: 0.9rem;
   letter-spacing: 0.05em;
@@ -132,7 +131,7 @@ h1 {
   background: rgba(251, 191, 36, 0.1);
   border: 1px solid rgba(251, 191, 36, 0.2);
   color: #fbbf24;
-  font-family: 'Space Grotesk', monospace;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   font-size: 0.85rem;
   padding: 0.25rem 0.6rem;
   border-radius: 6px;
@@ -159,7 +158,7 @@ h1 {
   border-radius: 10px;
   padding: 1.25rem;
   overflow-x: auto;
-  font-family: 'Space Grotesk', monospace;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   font-size: 0.95rem;
   color: #fde047;
   border: 1px solid rgba(255, 255, 255, 0.03);

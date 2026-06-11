@@ -8,7 +8,6 @@
    ========================================================================== */
 
 /* ─── Modern Typography ────────────────────────────────────────────────── */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap");
 
 /* ─── Premium Design System ────────────────────────────────────────────── */
 :root {
@@ -29,8 +28,8 @@
   --text-dimmed: #6b7280;
 
   /* Typography */
-  --font-display: "Outfit", "Inter", sans-serif;
-  --font-body: "Inter", sans-serif;
+  --font-display: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
 
   /* Border Radii */
   --radius-sm: 8px;

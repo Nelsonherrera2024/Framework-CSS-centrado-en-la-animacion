@@ -3,7 +3,6 @@
    A showcase of 3D transforms, custom properties, and blending modes.
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap');
 
 :root {
   --bg-color: #0b0b0f;
@@ -26,7 +25,7 @@
 
 body {
   background-color: var(--bg-color);
-  font-family: 'Outfit', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   min-height: 100vh;
   display: flex;
   flex-direction: column;

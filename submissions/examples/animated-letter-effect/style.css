@@ -3,7 +3,6 @@
    Monochrome terminal aesthetic
    ───────────────────────────────────────────── */
 
-@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap');
 
 *, *::before, *::after {
   box-sizing: border-box;
@@ -16,7 +15,7 @@
   --white:      #ffffff;
   --grey:       #888888;
   --grey-light: #aaaaaa;
-  --font:       'Courier Prime', 'Courier New', Courier, monospace;
+  --font: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
   --font-size:  clamp(2.8rem, 9vw, 6rem);
   --letter-gap: 0.05em;
 }

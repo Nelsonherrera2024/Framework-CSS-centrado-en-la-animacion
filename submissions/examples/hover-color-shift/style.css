@@ -52,9 +52,9 @@
   --hcs-radius-banner: 1.25rem;
 
   /* Typography */
-  --font-display: 'DM Serif Display', 'Georgia', serif;
-  --font-body:    'DM Sans', 'Helvetica Neue', sans-serif;
-  --font-mono:    'JetBrains Mono', 'Fira Code', monospace;
+  --font-display: Georgia, 'Times New Roman', 'Palatino Linotype', serif;
+  --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  --font-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
 
   /* Demo page surface */
   --page-bg:      #f7f4ef;
@@ -88,7 +88,6 @@ body {
 }
 
 /* Google Fonts import — display + body pairing */
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap');
 
 
 /* ============================================================

@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Inter:wght@400;500;600;700&display=swap');
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 
@@ -15,7 +14,7 @@
 }
 
 body{
-  font-family:'Inter',sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   background:var(--bg);
   color:var(--text);
   min-height:100vh;
@@ -31,7 +30,7 @@ body::before{
 }
 
 h1{
-  font-family:'Share Tech Mono',monospace;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
   font-size:1.6rem;
   color:var(--dot-on);
   text-shadow:0 0 20px var(--dot-glow);
@@ -39,7 +38,7 @@ h1{
   letter-spacing:0.1em;
 }
 
-p{color:var(--muted);font-size:0.85rem;text-align:center;font-family:'Share Tech Mono',monospace;}
+p{color:var(--muted);font-size:0.85rem;text-align:center;font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;}
 
 /* ---- LED PANEL ---- */
 .led-panel{
@@ -115,7 +114,7 @@ p{color:var(--muted);font-size:0.85rem;text-align:center;font-family:'Share Tech
   border:1px solid var(--panel-border);
   border-radius:8px;
   padding:8px 18px;
-  font-family:'Share Tech Mono',monospace;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
   font-size:0.78rem;
   color:var(--text);
   cursor:pointer;
@@ -142,7 +141,7 @@ p{color:var(--muted);font-size:0.85rem;text-align:center;font-family:'Share Tech
 }
 
 .speed-wrap label{
-  font-family:'Share Tech Mono',monospace;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
   font-size:0.75rem;color:var(--muted);
   letter-spacing:0.08em;
 }
@@ -162,7 +161,7 @@ p{color:var(--muted);font-size:0.85rem;text-align:center;font-family:'Share Tech
   border:1px solid var(--panel-border);
   border-radius:8px;
   padding:8px 14px;
-  font-family:'Share Tech Mono',monospace;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
   font-size:0.82rem;
   color:var(--text);
   outline:none;
@@ -184,14 +183,14 @@ p{color:var(--muted);font-size:0.85rem;text-align:center;font-family:'Share Tech
 }
 
 .panel-title{
-  font-family:'Share Tech Mono',monospace;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
   font-size:0.7rem;color:var(--muted);
   letter-spacing:0.15em;text-transform:uppercase;
 }
 
 .panel-status{
   display:flex;align-items:center;gap:6px;
-  font-family:'Share Tech Mono',monospace;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
   font-size:0.7rem;color:var(--dot-on);
 }
 

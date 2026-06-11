@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
 
 *, *::before, *::after {
   margin: 0;
@@ -60,7 +59,7 @@ html, body {
 /* ─── TEXT ───────────────────────────────────────────────── */
 .comic-word {
   position: relative;
-  font-family: 'Bangers', 'Impact', cursive;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   font-size: clamp(60px, 15vw, 160px);
   font-style: italic;
   letter-spacing: 0.04em;

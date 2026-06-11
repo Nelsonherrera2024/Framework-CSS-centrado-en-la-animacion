@@ -3,7 +3,6 @@
    Maintainer will rename classes to ease-* convention
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500&display=swap');
 
 /* ----- Reset & base ----- */
 *, *::before, *::after {
@@ -30,8 +29,8 @@
   --text-primary:     #f0f0f8;
   --text-muted:       #5a5a72;
   --text-label:       #6c6c88;
-  --font-display:     'Syne', sans-serif;
-  --font-body:        'DM Sans', sans-serif;
+  --font-display: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   --radius-card:      18px;
   --transition-snap:  0.12s ease;
   --transition-spring:0.45s cubic-bezier(0.23, 1, 0.32, 1);

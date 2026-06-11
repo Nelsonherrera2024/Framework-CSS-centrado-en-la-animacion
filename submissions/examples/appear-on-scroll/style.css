@@ -9,7 +9,6 @@
    ============================================================ */
 
 /* ─── Google Fonts ───────────────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap');
 
 /* ─── Design Tokens ──────────────────────────────────────── */
 :root {
@@ -22,8 +21,8 @@
   --color-text:      #e8eaf0;
   --color-heading:   #f5f7ff;
 
-  --font-display:    'DM Serif Display', Georgia, serif;
-  --font-body:       'DM Sans', system-ui, sans-serif;
+  --font-display: Georgia, 'Times New Roman', 'Palatino Linotype', serif;
+  --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
 
   --radius-sm:  6px;
   --radius-md:  12px;
@@ -427,12 +426,12 @@ p { color: var(--color-text); font-weight: 300; }
   font-size: 0.76rem;
   color: var(--color-muted);
   margin-left: 0.5rem;
-  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
 }
 
 .code-block {
   padding: 1.6rem 1.8rem;
-  font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
   font-size: 0.82rem;
   line-height: 1.85;
   overflow-x: auto;

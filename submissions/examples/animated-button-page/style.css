@@ -4,7 +4,6 @@
    Maintainer will rename classes to ease-* convention
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
 
 /* ── TOKENS ───────────────────────────────────────────────── */
 :root {
@@ -25,8 +24,8 @@
   --text-muted:     #52526a;
   --text-tag:       #3d3d55;
 
-  --font-ui:        'Space Grotesk', sans-serif;
-  --font-mono:      'Space Mono', monospace;
+  --font-ui: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  --font-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
 
   --radius-btn:     8px;
   --radius-pill:    999px;
