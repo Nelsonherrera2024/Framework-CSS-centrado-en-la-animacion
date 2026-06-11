@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tooltips – :root vars inside @layer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Bug: tooltip vars in wrong layer</h1>
+  <p><code>:root</code> custom properties are defined inside <code>@layer easemotion-components</code>, giving them lower cascade priority than unlayered CSS. They should be in the base layer.</p>
+
+  <div class="ease-tooltip" data-tooltip="Tooltip text here" tabindex="0">
+    Hover or focus me
+  </div>
+
+  <hr />
+  <h2>Source</h2>
+  <pre>
+@layer easemotion-components {
+  :root {
+    --ease-tooltip-bg: var(--ease-color-neutral-900, #1f2937);
+    /* ...more vars... */
+  }
+}
+  </pre>
+
+  <h2>Fix</h2>
+  <pre>
+/* Move to variables.css (easemotion-base layer) */
+:root {
+  --ease-tooltip-bg: var(--ease-color-neutral-900, #1f2937);
+}
+  </pre>
+</body>
+</html>

@@ -1,0 +1,57 @@
+/* tooltips.css bug demo: :root vars inside @layer */
+
+/* Simulating the tooltip vars being inside a component layer */
+@layer easemotion-components {
+  :root {
+    --ease-tooltip-bg: #1f2937;
+    --ease-tooltip-text: #ffffff;
+    --ease-tooltip-font-size: 0.75rem;
+    --ease-tooltip-padding: 0.25rem 0.5rem;
+    --ease-tooltip-radius: 0.25rem;
+    --ease-tooltip-gap: 0.5rem;
+    --ease-tooltip-animation-duration: 0.15s;
+    --ease-tooltip-z-index: 9999;
+  }
+}
+
+/* This unlayered :root should win, but due to layer ordering might not */
+:root {
+  --ease-tooltip-bg: #dc2626;  /* red — test if this overrides */
+}
+
+.ease-tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  background: #f1f5f9;
+  border-radius: 0.25rem;
+}
+
+.ease-tooltip::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  background: var(--ease-tooltip-bg);
+  color: var(--ease-tooltip-text);
+  font-size: var(--ease-tooltip-font-size);
+  padding: var(--ease-tooltip-padding);
+  border-radius: var(--ease-tooltip-radius);
+  white-space: nowrap;
+  z-index: var(--ease-tooltip-z-index);
+  bottom: calc(100% + var(--ease-tooltip-gap));
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--ease-tooltip-animation-duration) ease,
+              visibility var(--ease-tooltip-animation-duration) ease,
+              transform var(--ease-tooltip-animation-duration) ease;
+  pointer-events: none;
+}
+
+.ease-tooltip:hover::after,
+.ease-tooltip:focus-within::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
