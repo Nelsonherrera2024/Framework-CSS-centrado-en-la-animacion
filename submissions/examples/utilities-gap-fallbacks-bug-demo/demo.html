@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Utilities – Gap missing var() fallbacks</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Bug: gap-1, gap-3, gap-10 missing fallbacks</h1>
+  <p>Without the base layer, these gap utilities resolve to <code>initial</code> (no gap). Other gap utilities have fallbacks.</p>
+
+  <h2>Utilities with fallbacks (work):</h2>
+  <div class="ease-flex ease-gap-2">
+    <span class="box">A</span><span class="box">B</span><span class="box">C</span>
+  </div>
+
+  <h2>Utilities WITHOUT fallbacks (broken):</h2>
+  <div class="ease-flex ease-gap-1">
+    <span class="box">A</span><span class="box">B</span><span class="box">C</span>
+  </div>
+  <div class="ease-flex ease-gap-3">
+    <span class="box">A</span><span class="box">B</span><span class="box">C</span>
+  </div>
+
+  <hr />
+  <h2>Fix</h2>
+  <pre>
+.ease-gap-1  { gap: var(--ease-space-1, 0.25rem) !important; }
+.ease-gap-3  { gap: var(--ease-space-3, 0.75rem) !important; }
+.ease-gap-10 { gap: var(--ease-space-10, 2.5rem) !important; }
+  </pre>
+</body>
+</html>
