@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Utilities – Padding missing var() fallbacks</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Bug: padding utilities missing fallbacks</h1>
+  <p>Without the base layer, padding utilities resolve to <code>initial</code>.</p>
+
+  <div class="ease-padding-4" style="background:#e2e8f0;border:1px solid #94a3b8">
+    .ease-padding-4 — uses fallback (works)
+  </div>
+  <br />
+  <div class="ease-padding-2" style="background:#e2e8f0;border:1px solid #94a3b8">
+    .ease-padding-2 — NO fallback (broken)
+  </div>
+
+  <hr />
+  <h2>Fix</h2>
+  <pre>
+.ease-padding-1  { padding: var(--ease-space-1, 0.25rem) !important; }
+.ease-padding-2  { padding: var(--ease-space-2, 0.5rem) !important; }
+.ease-padding-3  { padding: var(--ease-space-3, 0.75rem) !important; }
+/* ... etc */
+  </pre>
+</body>
+</html>

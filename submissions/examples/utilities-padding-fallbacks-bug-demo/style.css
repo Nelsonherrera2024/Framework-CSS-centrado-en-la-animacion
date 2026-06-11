@@ -1,0 +1,15 @@
+/* utilities.css bug demo: padding missing fallbacks */
+
+body { margin: 2rem; font-family: system-ui, sans-serif; }
+
+.ease-padding    { padding: var(--ease-space-4) !important; } /* BUG */
+.ease-padding-1  { padding: var(--ease-space-1) !important; } /* BUG */
+.ease-padding-2  { padding: var(--ease-space-2) !important; } /* BUG */
+.ease-padding-3  { padding: var(--ease-space-3) !important; } /* BUG */
+.ease-padding-4  { padding: var(--ease-space-4, 1rem) !important; } /* OK */
+.ease-padding-6  { padding: var(--ease-space-6) !important; } /* BUG */
+.ease-padding-8  { padding: var(--ease-space-8) !important; } /* BUG */
+.ease-padding-10 { padding: var(--ease-space-10) !important; } /* BUG */
+.ease-padding-12 { padding: var(--ease-space-12) !important; } /* BUG */
+
+/* FIX: add fallbacks for all */
