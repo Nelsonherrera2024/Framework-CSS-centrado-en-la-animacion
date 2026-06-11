@@ -1,0 +1,69 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  background: #0f172a;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+@property --num {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+
+.counter {
+  font-size: 5rem;
+  font-weight: 800;
+  color: #f1f5f9;
+  letter-spacing: -0.03em;
+}
+
+.counter::after {
+  content: counter(num);
+  counter-set: num var(--num);
+}
+
+.counter-100 {
+  animation: count-100 2s ease-out forwards;
+  animation-delay: 0.2s;
+}
+
+.counter-250 {
+  animation: count-250 2.5s ease-out forwards;
+  animation-delay: 0.4s;
+}
+
+.counter-500 {
+  animation: count-500 3s ease-out forwards;
+  animation-delay: 0.6s;
+}
+
+@keyframes count-100 {
+  to { --num: 100; }
+}
+
+@keyframes count-250 {
+  to { --num: 250; }
+}
+
+@keyframes count-500 {
+  to { --num: 500; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .counter {
+    animation: none !important;
+  }
+  .counter-100 { --num: 100; }
+  .counter-250 { --num: 250; }
+  .counter-500 { --num: 500; }
+}
