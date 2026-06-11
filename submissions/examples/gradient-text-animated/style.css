@@ -1,26 +1,49 @@
-@keyframes ease-gradient-text-shift {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.ease-gradient-text-animated {
-  background: linear-gradient(
-    90deg,
-    var(--ease-color-primary, #6366f1),
-    var(--ease-color-accent, #ec4899),
-    var(--ease-color-primary, #6366f1)
-  );
-  background-size: 200% auto;
-  background-clip: text;
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  background: #0f172a;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.gradient-text {
+  font-size: 4rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: transparent;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: ease-gradient-text-shift 4s ease infinite;
+  background-clip: text;
+  background-size: 200% auto;
+}
+
+.gradient-shift {
+  background-image: linear-gradient(90deg, #6c63ff, #ff6b9d, #feca57, #6c63ff);
+  animation: gradient-slide 4s linear infinite;
+}
+
+.gradient-rainbow {
+  background-image: linear-gradient(90deg, #ff6b6b, #feca57, #22c55e, #3b82f6, #8b5cf6, #ff6b6b);
+  animation: gradient-slide 6s linear infinite;
+}
+
+@keyframes gradient-slide {
+  to {
+    background-position: -200% center;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .ease-gradient-text-animated {
+  .gradient-text {
     animation: none;
-    background-position: 0% 50%;
+    background-position: 0% center;
   }
 }
