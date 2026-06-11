@@ -1,0 +1,26 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 2rem;
+  background: #0f0e17;
+  color: white;
+}
+
+.demo-section {
+  margin-bottom: 3rem;
+}
+
+.navbar {
+  padding: 1rem;
+  border: 1px solid #333;
+  border-radius: 12px;
+}
+
+.logo-before {
+  height: 40px;
+  width: auto;
+}
+
+.logo-after {
+  height: 100px;
+  width: auto;
+}
