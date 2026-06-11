@@ -1,0 +1,23 @@
+@layer easemotion-components {
+  .ease-field { display: flex; flex-direction: column; gap: 0.3rem; }
+  .ease-field-label {
+    font-size: 0.875rem; font-weight: 600;
+    color: var(--ease-color-text);
+  }
+  .ease-field-hint  { font-size: 0.8rem; color: var(--ease-color-muted); }
+  .ease-field-error { font-size: 0.8rem; color: var(--ease-color-danger, #ef4444); display: flex; align-items: center; gap: 0.25rem; }
+  .ease-input {
+    border: 1.5px solid var(--ease-color-neutral-300, #cbd5e1);
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem; width: 100%;
+    color: var(--ease-color-text);
+    background: transparent;
+    outline: none;
+    transition: border-color 150ms ease;
+  }
+  .ease-input:focus-visible { border-color: var(--ease-color-primary); }
+  .ease-input-error   { border-color: var(--ease-color-danger, #ef4444) !important; }
+  .ease-input-success { border-color: var(--ease-color-success, #22c55e) !important; }
+  .ease-input:disabled { opacity: 0.5; cursor: not-allowed; background: var(--ease-color-neutral-100); }
+}
