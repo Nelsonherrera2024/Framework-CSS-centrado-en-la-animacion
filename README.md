@@ -61,6 +61,7 @@ Write UI like you describe it in English. No build steps. No memorizing shorthan
 - [Roadmap](#roadmap)
 - [Contributing](#contributing)
 - [Community](#community)
+- [Showcase](#showcase)
 - [Contributors](#contributors)
 - [Maintainer](#maintainer)
 - [Changelog](#changelog)
@@ -813,6 +814,21 @@ The project encourages creative variations and parallel implementations rather t
 </div>
 
 > ⭐ **If EaseMotion CSS saves you time, consider starring the repo.** It helps more developers discover the project and motivates continued development.
+---
+
+## Showcase 🎨
+
+Built something cool with EaseMotion CSS? Add it here!
+
+| Project | Author | Link |
+|---------|--------|------|
+| _Your project name_ | [@yourusername](https://github.com/yourusername) | [Live Demo](#) |
+
+**How to add your project:**
+1. Open a PR adding a row to the table above with your project name, GitHub handle, and a live demo or repo link.
+2. Optionally include a short screenshot or GIF in `docs/assets/showcase/`.
+3. Keep descriptions to one line — link out for details.
+
 ---
 
 ## Contributors 🏆
