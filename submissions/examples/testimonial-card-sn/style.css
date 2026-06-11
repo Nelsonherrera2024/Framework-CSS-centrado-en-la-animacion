@@ -1,0 +1,30 @@
+@layer easemotion-components {
+  .ease-testimonial {
+    margin: 0;
+    padding: 1.5rem;
+    background: var(--ease-color-surface, #fff);
+    border: 1px solid var(--ease-color-neutral-100);
+    border-radius: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,.05);
+    position: relative;
+  }
+  .ease-testimonial::before {
+    content: '"';
+    position: absolute; top: 0.75rem; left: 1rem;
+    font-size: 4rem; line-height: 1;
+    color: var(--ease-color-primary-alpha, rgba(108,99,255,.2));
+    font-family: Georgia, serif;
+    pointer-events: none;
+  }
+  .ease-testimonial-quote {
+    font-size: 0.95rem; line-height: 1.7;
+    color: var(--ease-color-text);
+    margin: 0.5rem 0 1rem;
+    padding-left: 0.5rem;
+  }
+  .ease-testimonial-author {
+    display: flex; align-items: center; gap: 0.75rem;
+    font-size: 0.85rem; color: var(--ease-color-muted);
+  }
+  .ease-testimonial-author strong { color: var(--ease-color-text); display: block; }
+}
