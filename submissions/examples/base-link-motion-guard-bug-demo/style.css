@@ -1,0 +1,26 @@
+/* base.css bug demo: link transition missing guard */
+
+body { margin: 2rem; font-family: system-ui, sans-serif; }
+
+a {
+  color: var(--ease-color-primary, #6c63ff);
+  text-decoration: none;
+  transition: color var(--ease-speed-fast, 150ms) var(--ease-ease, cubic-bezier(0.4, 0, 0.2, 1));
+  /* BUG: no reduced-motion guard */
+}
+
+@media (hover: hover) and (pointer: fine) {
+  a:hover {
+    color: var(--ease-color-primary-dark, #4b44cc);
+    text-decoration: underline;
+  }
+}
+
+/* FIX: add reduced-motion guard */
+/*
+@media (prefers-reduced-motion: reduce) {
+  a {
+    transition: none !important;
+  }
+}
+*/
