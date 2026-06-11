@@ -237,7 +237,7 @@
   border: 2px solid currentColor;
   border-top-color: transparent;
   border-radius: 50%;
-  animation: ease-kf-btn-spin 0.7s linear infinite;
+  animation: ease-kf-btn-spin var(--ease-speed-slow) linear infinite;
 }
 
 @keyframes ease-kf-btn-spin {

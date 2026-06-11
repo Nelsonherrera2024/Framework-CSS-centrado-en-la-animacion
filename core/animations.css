@@ -1125,7 +1125,7 @@
 }
 .ease-flip-3d-inner {
   transform-style: preserve-3d;
-  transition: transform 0.6s var(--ease-ease);
+  transition: transform var(--ease-speed-slow) var(--ease-ease);
   position: relative;
 }
 .ease-flip-3d:hover .ease-flip-3d-inner {
@@ -1154,15 +1154,15 @@
 /* Mask Reveal Utilities */
 .ease-mask-reveal {
   clip-path: inset(0 100% 0 0);
-  animation: ease-kf-mask-reveal 0.8s var(--ease-ease) forwards;
+  animation: ease-kf-mask-reveal var(--ease-speed-slow) var(--ease-ease) forwards;
 }
 .ease-mask-reveal-y {
   clip-path: inset(100% 0 0 0);
-  animation: ease-kf-mask-reveal-y 0.8s var(--ease-ease) forwards;
+  animation: ease-kf-mask-reveal-y var(--ease-speed-slow) var(--ease-ease) forwards;
 }
 .ease-mask-reveal-circle {
   clip-path: circle(0% at center);
-  animation: ease-kf-mask-reveal-circle 0.8s var(--ease-ease) forwards;
+  animation: ease-kf-mask-reveal-circle var(--ease-speed-slow) var(--ease-ease) forwards;
 }
 
 /* ── Stagger Delay Helpers ─────────────────────────────────── */
@@ -1199,8 +1199,8 @@
   opacity: 0;
   will-change: transform, opacity;
   transition:
-    opacity 0.7s var(--ease-ease, cubic-bezier(0.4, 0, 0.2, 1)),
-    transform 0.7s var(--ease-ease, cubic-bezier(0.4, 0, 0.2, 1));
+    opacity var(--ease-speed-slow) var(--ease-ease, cubic-bezier(0.4, 0, 0.2, 1)),
+    transform var(--ease-speed-slow) var(--ease-ease, cubic-bezier(0.4, 0, 0.2, 1));
 }
 
 .ease-reveal.ease-reveal-active {
@@ -1226,7 +1226,8 @@
 /* Scroll-driven animation (progressive enhancement) */
 @supports (animation-timeline: view()) {
   .ease-reveal {
-    animation: ease-kf-reveal-up 0.7s var(--ease-ease, cubic-bezier(0.4, 0, 0.2, 1));
+    animation: ease-kf-reveal-up var(--ease-speed-slow)
+          var(--ease-ease, cubic-bezier(0.4, 0, 0.2, 1));
     animation-timeline: view();
     animation-range: entry 0% entry 100%;
     opacity: 1;

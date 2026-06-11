@@ -9,7 +9,7 @@
   .ease-loader-spin {
     border: 3px solid var(--ease-color-neutral-200);
     border-top-color: var(--ease-color-primary);
-    animation: ease-kf-rotate 0.8s var(--ease-ease-linear) infinite;
+    animation: ease-kf-rotate var(--ease-speed-slow) var(--ease-ease-linear) infinite;
   }
 
   .ease-loader-pulse {
