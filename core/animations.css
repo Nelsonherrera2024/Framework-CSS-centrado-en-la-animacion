@@ -792,6 +792,7 @@
 .ease-skeleton-block {
   border-radius: var(--ease-radius-md);
   display: block;
+  min-height: 1em;
 }
 
 @property --ease-count {
