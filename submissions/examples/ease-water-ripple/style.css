@@ -1,0 +1,26 @@
+@keyframes ease-water-ripple-ring {
+  0%   { transform: scale(0.3); opacity: 0.6; }
+  100% { transform: scale(2.8); opacity: 0; }
+}
+
+.ease-water-ripple {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.ease-water-ripple .wr-ring {
+  position: absolute;
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(56,189,248,0.6);
+  top: 50%; left: 50%;
+  margin: -15px 0 0 -15px;
+  animation: ease-water-ripple-ring 2.4s ease-out infinite;
+  pointer-events: none;
+}
+
+.ease-water-ripple .wr-ring:nth-child(2) { animation-delay: 0.8s; }
+.ease-water-ripple .wr-ring:nth-child(3) { animation-delay: 1.6s; }
