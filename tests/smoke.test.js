@@ -28,7 +28,7 @@ const badges = readFileSync(resolve(componentsDir, 'badges.css'), 'utf8');
 const loaders = readFileSync(resolve(componentsDir, 'loaders.css'), 'utf8');
 const tooltips = readFileSync(resolve(componentsDir, 'tooltips.css'), 'utf8');
 const modals = readFileSync(resolve(componentsDir, 'modals.css'), 'utf8');
-const forms = readFileSync(resolve(componentsDir, 'forms.css'), 'utf8');
+const forms  = readFileSync(resolve(componentsDir, 'forms.css'),  'utf8');
 
     css = variables + base + animations + utilities + buttons + cards + chip + footer + masonry + navbar + scrollProgress + sidebar + tabs + badges + loaders + tooltips + modals + forms;
     dom = new JSDOM('<!DOCTYPE html><html><head></head><body></body></html>');
