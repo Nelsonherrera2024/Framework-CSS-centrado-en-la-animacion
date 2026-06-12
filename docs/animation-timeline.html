@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Animation Timeline Visualizer – EaseMotion CSS</title>
+  <!-- Core EaseMotion stylesheet -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/SAPTARSHI-coder/EaseMotion-css@main/easemotion.min.css" />
+  <!-- Documentation styling -->
+  <link rel="stylesheet" href="docs.css" />
+  <!-- Visualizer specific styling -->
+  <link rel="stylesheet" href="../assets/animation-timeline.css" />
+  <style>
+    /* Simple page layout adjustments */
+    .visualizer-wrapper { max-width: 960px; margin: 2rem auto; }
+    .section-header { margin-bottom: 1rem; }
+  </style>
+</head>
+<body>
+  <header class="docs-header">
+    <a href="index.html" class="docs-logo">EaseMotion CSS</a>
+    <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+    <ul class="docs-header-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="animation-timeline.html" class="active">Animation Timeline</a></li>
+    </ul>
+  </header>
+
+  <main class="docs-content visualizer-wrapper">
+    <section id="animation-timeline" class="docs-section">
+      <h1 class="docs-h1 section-header">Animation Timeline Visualizer</h1>
+
+      <!-- Animation selector -->
+      <div class="controls" style="margin-bottom:1rem;">
+        <label for="anim-selector" style="margin-right:0.5rem; font-weight:500;">Select animation:</label>
+        <select id="anim-selector">
+          <option value="ease-fade-in">ease-fade-in</option>
+          <option value="ease-slide-up">ease-slide-up</option>
+          <option value="ease-bounce">ease-bounce</option>
+          <option value="ease-hover-grow">ease-hover-grow</option>
+        </select>
+      </div>
+
+      <!-- Preview box -->
+      <div id="animation-preview" class="visualizer-container" style="display:flex;align-items:center;justify-content:center;height:150px;">
+        <div id="preview-element" class="ease-fade-in" style="font-size:1.5rem;">Sample Text</div>
+      </div>
+
+      <!-- Timeline -->
+      <div class="timeline" style="margin-top:1rem;position:relative;height:8px;">
+        <div class="delay-segment" id="delay-segment"></div>
+        <div class="playhead" id="playhead"></div>
+      </div>
+
+      <!-- Playback controls -->
+      <div class="controls" style="margin-top:1rem;">
+        <button id="play-pause">Play</button>
+        <button id="restart">Restart</button>
+        <label for="speed-range" style="margin-left:0.5rem;">Speed:</label>
+        <input type="range" id="speed-range" min="0.5" max="2" step="0.1" value="1" />
+      </div>
+
+      <!-- Generated code snippet -->
+      <pre class="code-snippet" style="margin-top:1rem;"><code id="code-output"></code></pre>
+    </section>
+  </main>
+
+  <script src="../assets/animation-timeline.js"></script>
+</body>
+</html>
