@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EaseMotion — Animated Neural Network Background</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============================================
+       NEURAL NETWORK BACKGROUND LAYER
+       A collection of glowing "nodes" connected by
+       lines, plus floating particles for depth.
+       Everything here is purely decorative and
+       sits behind the hero content via z-index.
+  ============================================= -->
+  <div class="neural-bg" aria-hidden="true">
+
+    <!-- Soft ambient glow blobs for atmosphere -->
+    <div class="glow glow--one"></div>
+    <div class="glow glow--two"></div>
+
+    <!-- Connection lines (data flow effect) -->
+    <svg class="connections" viewBox="0 0 1200 800" preserveAspectRatio="none">
+      <line class="link link--1" x1="120" y1="120" x2="380" y2="260" />
+      <line class="link link--2" x1="380" y1="260" x2="640" y2="140" />
+      <line class="link link--3" x1="640" y1="140" x2="920" y2="220" />
+      <line class="link link--4" x1="920" y1="220" x2="1080" y2="420" />
+      <line class="link link--5" x1="120" y1="120" x2="260" y2="420" />
+      <line class="link link--1" x1="260" y1="420" x2="500" y2="500" />
+      <line class="link link--2" x1="500" y1="500" x2="780" y2="460" />
+      <line class="link link--3" x1="780" y1="460" x2="1080" y2="420" />
+      <line class="link link--4" x1="380" y1="260" x2="500" y2="500" />
+      <line class="link link--5" x1="640" y1="140" x2="780" y2="460" />
+      <line class="link link--1" x1="120" y1="120" x2="60" y2="380" />
+      <line class="link link--2" x1="60" y1="380" x2="260" y2="420" />
+      <line class="link link--3" x1="920" y1="220" x2="1140" y2="120" />
+      <line class="link link--4" x1="500" y1="500" x2="640" y2="700" />
+      <line class="link link--5" x1="780" y1="460" x2="960" y2="660" />
+      <line class="link link--1" x1="640" y1="700" x2="960" y2="660" />
+      <line class="link link--2" x1="260" y1="420" x2="200" y2="660" />
+      <line class="link link--3" x1="200" y1="660" x2="640" y2="700" />
+    </svg>
+
+    <!-- Glowing nodes (20 total) -->
+    <div class="node node--lg" style="top: 15%; left: 10%;  --delay: 0s;"></div>
+    <div class="node node--sm" style="top: 32%; left: 31%;  --delay: .4s;"></div>
+    <div class="node node--md" style="top: 17%; left: 53%;  --delay: .8s;"></div>
+    <div class="node node--lg" style="top: 27%; left: 76%;  --delay: 1.2s;"></div>
+    <div class="node node--sm" style="top: 52%; left: 90%;  --delay: 1.6s;"></div>
+    <div class="node node--md" style="top: 52%; left: 21%;  --delay: 2s;"></div>
+    <div class="node node--lg" style="top: 62%; left: 41%;  --delay: .3s;"></div>
+    <div class="node node--sm" style="top: 57%; left: 65%;  --delay: .7s;"></div>
+    <div class="node node--md" style="top: 47%; left: 5%;   --delay: 1.1s;"></div>
+    <div class="node node--sm" style="top: 14%; left: 95%;  --delay: 1.5s;"></div>
+    <div class="node node--lg" style="top: 87%; left: 53%;  --delay: 1.9s;"></div>
+    <div class="node node--sm" style="top: 82%; left: 80%;  --delay: .2s;"></div>
+    <div class="node node--md" style="top: 82%; left: 17%;  --delay: .6s;"></div>
+    <div class="node node--sm" style="top: 7%;  left: 35%;  --delay: 1s;"></div>
+    <div class="node node--md" style="top: 38%; left: 87%;  --delay: 1.4s;"></div>
+    <div class="node node--sm" style="top: 70%; left: 4%;   --delay: 1.8s;"></div>
+    <div class="node node--lg" style="top: 4%;  left: 65%;  --delay: .5s;"></div>
+    <div class="node node--sm" style="top: 95%; left: 35%;  --delay: .9s;"></div>
+    <div class="node node--md" style="top: 25%; left: 19%;  --delay: 1.3s;"></div>
+    <div class="node node--sm" style="top: 67%; left: 53%;  --delay: 1.7s;"></div>
+
+    <!-- Floating particles for ambient depth -->
+    <div class="particles">
+      <span class="particle p1"></span>
+      <span class="particle p2"></span>
+      <span class="particle p3"></span>
+      <span class="particle p4"></span>
+      <span class="particle p5"></span>
+      <span class="particle p6"></span>
+      <span class="particle p7"></span>
+      <span class="particle p8"></span>
+      <span class="particle p9"></span>
+      <span class="particle p10"></span>
+    </div>
+  </div>
+
+  <!-- ============================================
+       HERO CONTENT — Glassmorphism panel
+  ============================================= -->
+  <main class="hero">
+    <div class="hero__card">
+      <span class="hero__badge">EaseMotion · CSS Component</span>
+      <h1 class="hero__title">
+        Intelligence, <span class="hero__title-accent">Visualized</span>
+      </h1>
+      <p class="hero__subtitle">
+        A pure CSS animated neural network background — glowing nodes,
+        pulsing connections, and drifting particles. Drop it behind any
+        hero section for an instant futuristic, AI-native feel.
+      </p>
+      <div class="hero__actions">
+        <a href="#" class="btn btn--primary">Get Started</a>
+        <a href="#" class="btn btn--ghost">View Docs</a>
+      </div>
+
+      <div class="hero__stats">
+        <div class="stat">
+          <span class="stat__num">20</span>
+          <span class="stat__label">Glowing nodes</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num">0</span>
+          <span class="stat__label">JS dependencies</span>
+        </div>
+        <div class="stat">
+          <span class="stat__num">100%</span>
+          <span class="stat__label">CSS animated</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>
