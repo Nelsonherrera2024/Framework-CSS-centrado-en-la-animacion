@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Glassmorphism Card Demo</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/SAPTARSHI-coder/EaseMotion-css@main/easemotion.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: Inter, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem;
+      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+    }
+    h2 {
+      color: #fff;
+      font-size: 1.75rem;
+    }
+    p { color: rgba(255,255,255,0.6); }
+    .row {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Glassmorphism Card</h2>
+  <p>Hover over cards to see the animated glow border</p>
+
+  <div class="row">
+
+    <div class="glass-card" style="width: 280px">
+      <h3 class="glass-card-title">Design System</h3>
+      <p class="glass-card-body">
+        Build polished interfaces with frosted glass aesthetics
+        and smooth animated borders.
+      </p>
+      <div class="glass-card-footer">
+        <button class="glass-card-btn">Learn More</button>
+        <button class="glass-card-btn">Get Started</button>
+      </div>
+    </div>
+
+    <div class="glass-card" style="width: 280px; animation-delay: 0.1s">
+      <h3 class="glass-card-title">Animation First</h3>
+      <p class="glass-card-body">
+        Every interaction is intentional — entrance animations,
+        hover glows, and smooth transitions built in.
+      </p>
+      <div class="glass-card-footer">
+        <button class="glass-card-btn">Explore</button>
+      </div>
+    </div>
+
+    <div class="glass-card" style="width: 280px; animation-delay: 0.2s">
+      <h3 class="glass-card-title">Zero Dependencies</h3>
+      <p class="glass-card-body">
+        Pure CSS — no JavaScript, no build tools.
+        Just link the stylesheet and go.
+      </p>
+      <div class="glass-card-footer">
+        <button class="glass-card-btn">View Docs</button>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
