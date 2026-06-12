@@ -1,0 +1,73 @@
+@layer easemotion-components {
+
+      .ease-timeline {
+          --et-line: rgba(120,120,120,0.25);
+              --et-dot: #6c5ce7;
+                  --et-bg: #fff;
+                      --et-text: #1f1f1f;
+                          --et-muted: rgba(0,0,0,0.6);
+                              --et-radius: 12px;
+
+                                  position: relative;
+                                      display: flex;
+                                          flex-direction: column;
+                                              gap: 28px;
+                                                  padding: 24px;
+                                                    }
+
+                                                      .ease-timeline::before {
+                                                          content: "";
+                                                              position: absolute;
+                                                                  left: 20px;
+                                                                      top: 0;
+                                                                          bottom: 0;
+                                                                              width: 2px;
+                                                                                  background: var(--et-line);
+                                                                                    }
+
+                                                                                      .ease-timeline__item {
+                                                                                          display: flex;
+                                                                                              gap: 16px;
+                                                                                                  opacity: 0;
+                                                                                                      transform: translateY(16px);
+                                                                                                          transition: 0.4s ease;
+                                                                                                            }
+
+                                                                                                              .ease-timeline__item.is-visible {
+                                                                                                                  opacity: 1;
+                                                                                                                      transform: translateY(0);
+                                                                                                                        }
+
+                                                                                                                          .ease-timeline__dot {
+                                                                                                                              width: 14px;
+                                                                                                                                  height: 14px;
+                                                                                                                                      border-radius: 50%;
+                                                                                                                                          background: var(--et-dot);
+                                                                                                                                              margin-top: 6px;
+                                                                                                                                                }
+
+                                                                                                                                                  .ease-timeline__content {
+                                                                                                                                                      background: var(--et-bg);
+                                                                                                                                                          color: var(--et-text);
+                                                                                                                                                              padding: 14px 16px;
+                                                                                                                                                                  border-radius: var(--et-radius);
+                                                                                                                                                                      width: 100%;
+                                                                                                                                                                          box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+                                                                                                                                                                            }
+
+                                                                                                                                                                              .ease-timeline__tite {
+                                                                                                                                                                                  font-weight: 600;
+                                                                                                                                                                                      margin-bottom: 4px;
+                                                                                                                                                                                        }
+
+                                                                                                                                                                                          .ease-timeline__desc {
+                                                                                                                                                                                              font-size: 14px;
+                                                                                                                                                                                                  color: var(--et-muted);
+                                                                                                                                                                                                    }
+
+                                                                                                                                                                                                      @media (prefers-reduced-motion: reduce) {
+                                                                                                                                                                                                          .ease-timeline__item {
+                                                                                                                                                                                                                opacity: 1;
+                                                                                                                                                                                                                      transform: none;
+                                                                                                                                                                                
+}

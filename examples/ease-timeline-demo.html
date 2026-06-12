@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <title>Ease Timeline (Advanced Demo)</title>
+
+        <link rel="stylesheet" href="../components/ease-timeline.css" />
+        </head>
+
+        <body style="font-family:system-ui; background:#f6f7fb; padding:40px;">
+
+          <h2>Ease Timeline</h2>
+
+            <div class="ease-timeline">
+
+                <div class="ease-timeline__item">
+                      <div class="ease-timeline__dot"></div>
+                            <div class="ease-timeline__content" tabindex="0">
+                                    <div class="ease-timeline__title">Project Kickoff</div>
+                                            <div class="ease-timeline__desc">Initial repo setup and architecture planning.</div>
+                                                  </div>
+                                                      </div>
+
+                                                          <div class="ease-timeline__item">
+                                                                <div class="ease-timeline__dot"></div>
+                                                                      <div class="ease-timeline__content" tabindex="0">
+                                                                              <div class="ease-timeline__title">Design System</div>
+                                                                                      <div class="ease-timeline__desc">Tokens, spacing, and component rules defined.</div>
+                                                                                            </div>
+                                                                                                </div>
+
+                                                                                                    <div class="ease-timeline__item">
+                                                                                                          <div class="ease-timeline__dot"></div>
+                                                                                                                <div class="ease-timeline__content" tabindex="0">
+                                                                                                                        <div class="ease-timeline__title">Component Build</div>
+                                                                                                                                <div class="ease-timeline__desc">Core UI components implemented with accessibility support.</div>
+                                                                                                                                      </div>
+                                                                                                                                          </div>
+
+                                                                                                                                              <div class="ease-timeline__item">
+                                                                                                                                                    <div class="ease-timeline__dot"></div>
+                                                                                                                                                          <div class="ease-timeline__content" tabindex="0">
+                                                                                                                                                                  <div class="ease-timeline__title">Optimization</div>
+                                                                                                                                                                          <div class="ease-timeline__desc">Performance tuning and reduced-motion compliance.</div>
+                                                                                                                                                                                </div>
+                                                                                                                                                                                    </div>
+
+                                                                                                                                                                                        <div class="ease-timeline__item">
+                                                                                                                                                                                              <div class="ease-timeline__dot"></div>
+                                                                                                                                                                                                    <div class="ease-timeline__content" tabindex="0">
+                                                                                                                                                                                                            <div class="ease-timeline__title">Release</div>
+                                                                                                                                                                                                                    <div class="ease-timeline__desc">Production deployment completed successfully.</div>
+                                                                                                                                                                                                                          </div>
+                                                                                                                                                                                                                              </div>
+
+                                                                                                                                                                                                                                </div>
+
+                                                                                                                                                                                                                                  <!-- Scroll trigger script -->
+                                                                                                                                                                                                                                    <script>
+                                                                                                                                                                                                                                        const items = document.querySelectorAll('.ease-timeline__item');
+
+                                                                                                                                                                                                                                            const observer = new IntersectionObserver(entries => {
+                                                                                                                                                                                                                                                  entries.forEach(entry => {
+                                                                                                                                                                                                                                                          if (entry.isIntersecting) {
+                                                                                                                                                                                                                                                                    entry.target.classList.add('is-visible');
+                                                                                                                                                                                                                                                                            }
+                                                                                                                                                                                                                                                                                  });
+                                                                                                                                                                                                                                                                                      }, {
+                                                                                                                                                                                                                                                                                            threshold: 0.2
+                                                                                                                                                                                                                                                                                                });
+
+                                                                                                                                                                                                                                                                                                    items.forEach(item => observer.observe(item));
+                                                                                                                                                                                                                                                                                                      </script>
+
+                                                                                                                                                                                                                                                                                                      </body>
+                                                                                                                                                                                                                                                                                                      </html>
