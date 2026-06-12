@@ -86,6 +86,11 @@ const modals = readFileSync(resolve(componentsDir, 'modals.css'), 'utf8');
     expect(selectors).toContain('.ease-sidebar');
   });
 
+  it('should keep forms.css imported in the alternate entrypoint', () => {
+    const allCss = readFileSync(resolve(__dirname, '../easemotion/all.css'), 'utf8');
+    expect(allCss).toContain('../components/forms.css');
+  });
+
   it('should expose scroll-progress theme variants', () => {
     expect(css).toContain('.ease-scroll-progress-success');
     expect(css).toContain('.ease-scroll-progress-danger');
