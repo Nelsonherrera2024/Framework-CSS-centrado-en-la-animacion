@@ -1,0 +1,10 @@
+/* ==========================================================================
+   EaseMotion CSS: Dashboard Status Pulsing Dot Indicator
+   ========================================================================== */
+
+@layer components {
+.ease-status-dot-container { display: flex; align-items: center; gap: 8px; color: #fff; }
+.status-dot-pulse { width: 8px; height: 8px; border-radius: 50%; position: relative; }
+.status-dot-pulse.green { background: #00ff7f; }
+.status-dot-pulse.green::after { content: ''; position: absolute; width: 24px; height: 24px; border: 2px solid #00ff7f; border-radius: 50%; top: -8px; left: -8px; animation: easeDotPulse 1.6s infinite ease-out; }
+}
