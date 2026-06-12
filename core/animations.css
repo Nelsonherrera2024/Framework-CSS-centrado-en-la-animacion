@@ -1040,6 +1040,9 @@
   transition: background-size var(--ease-speed-medium) var(--ease-ease);
   padding-bottom: 2px;
   cursor: pointer;
+  /* fix: prevent the 2px background strip from intercepting pointer events
+     on elements positioned just below this one (#6829) */
+  pointer-events: auto;
 }
 
 .ease-hover-underline:hover {
