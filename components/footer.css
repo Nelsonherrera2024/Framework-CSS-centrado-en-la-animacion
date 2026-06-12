@@ -169,6 +169,7 @@
   .ease-footer-links a,
   .ease-footer-social a {
     transition: none !important;
+    transform: none !important;
   }
 }
 }
