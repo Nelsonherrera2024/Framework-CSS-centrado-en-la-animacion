@@ -1,0 +1,93 @@
+/* =============================================
+   EASEMOTION CSS — CONTRIBUTOR TEMPLATE
+   ============================================= */
+
+body {
+  font-family: 'Outfit', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background: #09090b; /* Sleek dark theme */
+  color: #f4f4f5;
+}
+
+.demo-wrapper {
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(to right, #a5b4fc, #818cf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+.description {
+  color: #a1a1aa;
+  font-size: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* =============================================
+   YOUR ANIMATION GOES BELOW THIS LINE
+   ============================================= */
+
+.pulse-ring-btn {
+  position: relative;
+  padding: 14px 28px;
+  background: #6366f1;
+  color: #ffffff;
+  border-radius: 9999px;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+}
+
+.pulse-ring-btn:hover {
+  background: #4f46e5;
+  transform: scale(1.02);
+}
+
+.pulse-ring-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 9999px;
+  border: 2px solid #6366f1;
+  opacity: 0;
+  z-index: -1;
+  pointer-events: none;
+  transition: border-color 0.3s ease;
+}
+
+.pulse-ring-btn:hover::after {
+  border-color: #4f46e5;
+  animation: ease-pulse-ring-effect 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+}
+
+@keyframes ease-pulse-ring-effect {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.28);
+    opacity: 0;
+  }
+}
