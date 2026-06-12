@@ -186,6 +186,20 @@
     transform: scale(1);
   }
 
+  /* Pop Animation Variant (elastic bounce pop-in effect) */
+  .ease-modal-pop {
+    transform: scale(0.9);
+    opacity: 0;
+    transition: transform var(--ease-speed-medium, 0.25s) var(--ease-ease-bounce, cubic-bezier(0.34, 1.56, 0.64, 1)),
+                opacity var(--ease-speed-medium, 0.25s) var(--ease-ease, ease);
+  }
+
+  .ease-modal-overlay:target .ease-modal-pop,
+  .ease-modal-overlay.is-active .ease-modal-pop {
+    transform: scale(1);
+    opacity: 1;
+  }
+
   /* ── Responsive Behavior ────────────────────────────────────────────────── */
   @media (max-width: 640px) {
     .ease-modal {
