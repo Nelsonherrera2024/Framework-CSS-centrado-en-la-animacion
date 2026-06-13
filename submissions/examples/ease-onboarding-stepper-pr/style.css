@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f5f7fa;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 2rem;
+}
+
+.ease-onboarding-stepper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 3rem;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 22px;
+  left: 60px;
+  width: 90px;
+  height: 4px;
+  background: #d1d5db;
+  border-radius: 999px;
+}
+
+.completed:not(:last-child)::after {
+  background: #22c55e;
+}
+
+.step-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid #d1d5db;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  z-index: 2;
+}
+
+.step-label {
+  margin-top: 12px;
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+.completed .step-circle {
+  background: #22c55e;
+  border-color: #22c55e;
+  color: white;
+}
+
+.active .step-circle {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: white;
+  animation: pulse 1.5s infinite;
+}
+
+.step:hover .step-circle {
+  transform: translateY(-3px);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.45);
+  }
+
+  70% {
+    transform: scale(1.08);
+    box-shadow: 0 0 0 14px rgba(37, 99, 235, 0);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+  }
+}
+
+@media (max-width: 768px) {
+  .ease-onboarding-stepper {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
+  .step {
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .step-label {
+    margin-top: 0;
+  }
+
+  .step:not(:last-child)::after {
+    width: 4px;
+    height: 45px;
+    left: 20px;
+    top: 50px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
