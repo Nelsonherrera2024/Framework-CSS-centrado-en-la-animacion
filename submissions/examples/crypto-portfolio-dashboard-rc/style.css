@@ -1,0 +1,120 @@
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#0f172a;
+    color:white;
+}
+
+.hero{
+    text-align:center;
+    padding:40px 20px;
+    animation:fadeIn 1s ease;
+}
+
+.overview,
+.asset-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:20px;
+    padding:20px;
+}
+
+.stat-card,
+.asset-card,
+.allocation-card,
+.activity-item{
+    background:#1e293b;
+    padding:20px;
+    border-radius:14px;
+    box-shadow:0 4px 12px rgba(0,0,0,.25);
+    transition:.3s;
+}
+
+.stat-card:hover,
+.asset-card:hover{
+    transform:translateY(-6px);
+}
+
+.stat-card span{
+    font-size:2rem;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+.profit span{
+    color:#22c55e;
+    animation:pulse 2s infinite;
+}
+
+.assets,
+.allocation,
+.activity{
+    padding:20px;
+}
+
+.gain{
+    color:#22c55e;
+    font-weight:bold;
+}
+
+.loss{
+    color:#ef4444;
+    font-weight:bold;
+}
+
+.progress{
+    height:12px;
+    background:#334155;
+    border-radius:20px;
+    overflow:hidden;
+    margin:10px 0;
+}
+
+.progress-fill{
+    width:68%;
+    height:100%;
+    background:#22c55e;
+    animation:grow 2s ease;
+}
+
+.activity-item{
+    margin-bottom:12px;
+    animation:slideIn .8s ease;
+}
+
+@keyframes fadeIn{
+    from{opacity:0;}
+    to{opacity:1;}
+}
+
+@keyframes grow{
+    from{width:0;}
+}
+
+@keyframes pulse{
+    50%{
+        transform:scale(1.08);
+    }
+}
+
+@keyframes slideIn{
+    from{
+        opacity:0;
+        transform:translateX(-20px);
+    }
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+}
+
+@media (max-width:768px){
+    .overview,
+    .asset-grid{
+        grid-template-columns:1fr;
+    }
+}
