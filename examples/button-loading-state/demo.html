@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Button Loading State</title>
+  <link rel="stylesheet" href="../../easemotion.css">
+</head>
+<body>
+
+  <button id="btn" onclick="handleClick()">Submit</button>
+
+  <script>
+    let loading = false;
+
+    function handleClick() {
+      loading = true;
+      const btn = document.getElementById("btn");
+
+      btn.disabled = true;
+      btn.innerText = "Loading...";
+
+      setTimeout(() => {
+        loading = false;
+        btn.disabled = false;
+        btn.innerText = "Submit";
+      }, 2000);
+    }
+  </script>
+
+</body>
+</html>
