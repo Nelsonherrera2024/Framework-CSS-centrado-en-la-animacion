@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hotel Reservation Management Dashboard</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<header class="hero">
+    <h1>Hotel Reservation Dashboard</h1>
+    <p>Manage reservations, rooms, guests, and occupancy.</p>
+</header>
+
+<section class="overview">
+
+    <div class="stat-card">
+        <h3>Total Rooms</h3>
+        <span>150</span>
+    </div>
+
+    <div class="stat-card occupied">
+        <h3>Occupied Rooms</h3>
+        <span>112</span>
+    </div>
+
+    <div class="stat-card">
+        <h3>Upcoming Check-ins</h3>
+        <span>28</span>
+    </div>
+
+</section>
+
+<section class="reservations">
+
+    <h2>Recent Reservations</h2>
+
+    <div class="reservation-grid">
+
+        <div class="reservation-card">
+            <h3>Emma Wilson</h3>
+            <p>Room 204 • 2 Nights</p>
+            <span class="badge confirmed">Confirmed</span>
+        </div>
+
+        <div class="reservation-card">
+            <h3>Michael Brown</h3>
+            <p>Room 312 • 5 Nights</p>
+            <span class="badge pending">Pending</span>
+        </div>
+
+        <div class="reservation-card">
+            <h3>Sophia Davis</h3>
+            <p>Room 118 • 3 Nights</p>
+            <span class="badge confirmed">Confirmed</span>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="rooms">
+
+    <h2>Room Availability</h2>
+
+    <div class="room-grid">
+
+        <div class="room-card available">
+            <h3>Room 101</h3>
+            <span>Available</span>
+        </div>
+
+        <div class="room-card occupied-room">
+            <h3>Room 205</h3>
+            <span>Occupied</span>
+        </div>
+
+        <div class="room-card maintenance">
+            <h3>Room 309</h3>
+            <span>Maintenance</span>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="occupancy">
+
+    <h2>Hotel Occupancy</h2>
+
+    <div class="occupancy-card">
+
+        <p>Current Occupancy Rate</p>
+
+        <div class="progress">
+            <div class="progress-fill"></div>
+        </div>
+
+        <span>75% Occupied</span>
+
+    </div>
+
+</section>
+
+<section class="activity">
+
+    <h2>Guest Activity</h2>
+
+    <div class="activity-item">🛎️ Emma Wilson checked in</div>
+    <div class="activity-item">🏨 Room 309 marked for maintenance</div>
+    <div class="activity-item">✅ Reservation confirmed for Sophia Davis</div>
+
+</section>
+
+</body>
+</html>
