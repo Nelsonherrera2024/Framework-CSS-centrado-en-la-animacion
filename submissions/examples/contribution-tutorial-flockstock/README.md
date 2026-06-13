@@ -125,13 +125,23 @@ Preview:
 ### 6. Commit and push changes
 Commit your work with a clear message.
 
+<a href="./screenshots/11-create-branch-a.jpeg"><img src="./screenshots/11-create-branch-a.jpeg" width="300"></a>
+
+<a href="./screenshots/11-create-branch-b.jpeg"><img src="./screenshots/11-create-branch-b.jpeg" width="300"></a>
+
 Example:
 git add .
+
+<a href="./screenshots/12-git-status.jpeg"><img src="./screenshots/12-git-status.jpeg" width="300"></a>
+
 git commit -m "Add contribution tutorial"
+
+<a href="./screenshots/13-commit.jpeg"><img src="./screenshots/13-commit.jpeg" width="300"></a>
 
 ### 7. Submit a pull request
 Push your branch and submit PR for review.
 
+<a href="./screenshots/14-push and pull req.jpeg"><img src="./screenshots/14-push and pull req.jpeg" width="300"></a>
 
 # Common Mistakes
 - Editing core/
