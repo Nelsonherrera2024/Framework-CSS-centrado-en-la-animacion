@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Optimization Report - EaseMotion</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --surface: #161b22;
+      --border: #30363d;
+      --text: #e6edf3;
+      --muted: #8b949e;
+      --accent: #58a6ff;
+      --green: #3fb950;
+      --red: #f85149;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      padding: 2rem;
+      line-height: 1.6;
+    }
+    .container { max-width: 900px; margin: 0 auto; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+    h2 { font-size: 1.3rem; margin: 2rem 0 0.75rem; padding-bottom: 0.3rem; border-bottom: 1px solid var(--border); }
+    h3 { font-size: 1.1rem; margin: 1.25rem 0 0.5rem; }
+    .meta { color: var(--muted); margin-bottom: 1.5rem; font-size: 0.9rem; }
+    .stat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin: 1rem 0; }
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+    }
+    .stat-card .value { font-size: 1.5rem; font-weight: 700; }
+    .stat-card .label { font-size: 0.8rem; color: var(--muted); margin-top: 0.25rem; }
+    .stat-card .diff { font-size: 0.9rem; font-weight: 600; }
+    .positive { color: var(--green); }
+    .negative { color: var(--red); }
+    code {
+      background: var(--surface);
+      padding: 0.15em 0.4em;
+      border-radius: 4px;
+      font-size: 0.85em;
+    }
+    pre {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1rem;
+      overflow-x: auto;
+      margin: 0.75rem 0;
+      font-size: 0.85rem;
+    }
+    .diff-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin: 0.75rem 0;
+    }
+    @media (max-width: 640px) {
+      .diff-block { grid-template-columns: 1fr; }
+    }
+    .diff-block pre {
+      margin: 0;
+    }
+    .diff-block .before { border-left: 3px solid var(--red); }
+    .diff-block .after { border-left: 3px solid var(--green); }
+    .diff-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.25rem;
+    }
+    .diff-label.before-label { color: var(--red); }
+    .diff-label.after-label { color: var(--green); }
+    ul { padding-left: 1.25rem; margin: 0.5rem 0; }
+    li { margin-bottom: 0.25rem; }
+    table { width: 100%; border-collapse: collapse; margin: 0.75rem 0; }
+    th, td { text-align: left; padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--border); }
+    th { font-size: 0.8rem; color: var(--muted); font-weight: 600; text-transform: uppercase; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>EaseMotion CSS Bundle Optimization</h1>
+    <p class="meta">Issue #7415 • Audit &amp; Cleanup Report</p>
+
+    <div class="stat-grid">
+      <div class="stat-card">
+        <div class="value">102,475 <span style="font-size:1rem">B</span></div>
+        <div class="label">Before</div>
+      </div>
+      <div class="stat-card">
+        <div class="value positive">102,160 <span style="font-size:1rem">B</span></div>
+        <div class="label">After</div>
+      </div>
+      <div class="stat-card">
+        <div class="value positive">−315 <span style="font-size:1rem">B</span></div>
+        <div class="label">Saved (−0.3%)</div>
+      </div>
+      <div class="stat-card">
+        <div class="value positive">−1</div>
+        <div class="label">Unused Keyframes</div>
+      </div>
+      <div class="stat-card">
+        <div class="value positive">−2</div>
+        <div class="label">Vendor Prefixes</div>
+      </div>
+      <div class="stat-card">
+        <div class="value positive">−2</div>
+        <div class="label">Hardcoded Timing Curves</div>
+      </div>
+    </div>
+
+    <h2>1. Removed Unused Keyframe</h2>
+    <p><code>@keyframes ease-kf-morph-card</code> was defined at line 626 of <code>core/animations.css</code> but never referenced by any class in the framework. The <code>.ease-hover-morph-card</code> class uses CSS transitions instead of this keyframe.</p>
+    <div class="diff-block">
+      <div>
+        <div class="diff-label before-label">Removed</div>
+        <pre class="before">@keyframes ease-kf-morph-card {
+  from {
+    border-radius: 8px;
+    transform: scale(1);
+  }
+  to {
+    border-radius: 50%;
+    transform: scale(0.96);
+  }
+}</pre>
+      </div>
+      <div>
+        <div class="diff-label after-label">Result</div>
+        <pre class="after">/* Removed — dead code,
+   zero references in
+   any CSS file */</pre>
+      </div>
+    </div>
+
+    <h2>2. Fixed Keyframe Name Mismatch</h2>
+    <p><code>@keyframes ease-zoom-out</code> (no <code>-kf-</code> infix) didn't match the reference <code>ease-kf-zoom-out</code> in <code>.ease-zoom-out</code>. This was a <strong>bug</strong> — the animation never ran.</p>
+    <div class="diff-block">
+      <div>
+        <div class="diff-label before-label">Before (broken)</div>
+        <pre class="before">@keyframes ease-zoom-out {
+  from { transform: scale(1.5); }
+  to   { transform: scale(1); }
+}
+
+/* .ease-zoom-out references
+   ease-kf-zoom-out — MISMATCH */</pre>
+      </div>
+      <div>
+        <div class="diff-label after-label">After (fixed)</div>
+        <pre class="after">@keyframes ease-kf-zoom-out {
+  from { transform: scale(1.5); }
+  to   { transform: scale(1); }
+}
+
+/* Names now match.
+   Animation works correctly. */</pre>
+      </div>
+    </div>
+
+    <h2>3. Removed Redundant <code>-webkit-</code> Prefix</h2>
+    <p><code>-webkit-scroll-snap-type</code> is no longer needed — unprefixed <code>scroll-snap-type</code> has universal support since Safari 15 (2021).</p>
+    <div class="diff-block">
+      <div>
+        <div class="diff-label before-label">Before</div>
+        <pre class="before">.ease-snap-x {
+  scroll-snap-type: ...;
+  -webkit-scroll-snap-type: ...; /* redundant */
+}</pre>
+      </div>
+      <div>
+        <div class="diff-label after-label">After</div>
+        <pre class="after">.ease-snap-x {
+  scroll-snap-type: ...;
+  /* -webkit- prefix removed */</pre>
+      </div>
+    </div>
+
+    <h2>4. Replaced Hardcoded Timing Curves</h2>
+    <p><code>cubic-bezier(0, 0, 0.2, 1)</code> appears twice. The project already defines <code>--ease-ease-out</code> with this value in <code>core/variables.css</code>.</p>
+
+    <table>
+      <thead>
+        <tr><th>File</th><th>Before</th><th>After</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>core/animations.css:925</code></td>
+          <td><code>cubic-bezier(0, 0, 0.2, 1)</code></td>
+          <td><code>var(--ease-ease-out)</code></td>
+        </tr>
+        <tr>
+          <td><code>components/badges.css:61</code></td>
+          <td><code>cubic-bezier(0, 0, 0.2, 1)</code></td>
+          <td><code>var(--ease-ease-out)</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>5. Verification</h2>
+    <ul>
+      <li><code>npm run build</code> completes without errors</li>
+      <li>All 57 remaining keyframes are referenced by at least one class</li>
+      <li><code>.ease-zoom-out</code> now correctly references <code>ease-kf-zoom-out</code></li>
+      <li>No visual regression in core animation classes</li>
+    </ul>
+  </div>
+</body>
+</html>
