@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'unsafe-inline' 'unsafe-eval'; style-src 'unsafe-inline' 'self' https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:;"
+    />
+    <!-- Favicon and App Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png" />
+    <link rel="shortcut icon" href="assets/favicon.ico" />
+    
+    <title>404 - Page Not Found | EaseMotion CSS</title>
+    <meta
+      name="description"
+      content="The page you are looking for could not be found."
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/SAPTARSHI-coder/EaseMotion-css@main/easemotion.min.css"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="docs.css" />
+
+    <script>
+      (function () {
+        var t = localStorage.getItem("em-theme") || "dark";
+        document.documentElement.setAttribute("data-theme", t);
+      })();
+    </script>
+
+    <style>
+      .not-found-wrapper {
+        position: relative;
+        min-height: calc(100vh - 70px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        padding: 2rem;
+      }
+
+      /* Subtle glowing orb background */
+      .ambient-glow {
+        position: absolute;
+        width: 60vw;
+        height: 60vw;
+        max-width: 800px;
+        max-height: 800px;
+        background: radial-gradient(circle, rgba(124, 58, 237, 0.15) 0%, rgba(0, 240, 255, 0.05) 40%, transparent 70%);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 0;
+        pointer-events: none;
+        animation: pulse-glow 8s ease-in-out infinite alternate;
+      }
+
+      @keyframes pulse-glow {
+        0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.7; }
+        100% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
+      }
+
+      .not-found-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+        max-width: 600px;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 24px;
+        padding: 3rem 2rem;
+        background: rgba(15, 23, 42, 0.3);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        animation: float-container 6s ease-in-out infinite;
+      }
+
+      @keyframes float-container {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+      }
+
+      /* Professional Gradient Title */
+      .not-found-title {
+        font-size: 8rem;
+        font-weight: 900;
+        margin-bottom: 0;
+        background: linear-gradient(135deg, #00f0ff, #7c3aed);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        line-height: 1;
+        letter-spacing: -2px;
+        text-shadow: 0 10px 30px rgba(124, 58, 237, 0.3);
+      }
+
+      /* Clean Typography */
+      .not-found-subtitle {
+        font-size: 2rem;
+        font-weight: 700;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        color: var(--ease-color-text);
+        letter-spacing: 1px;
+      }
+
+      .not-found-desc {
+        font-size: 1.125rem;
+        color: #94a3b8;
+        margin-bottom: 2.5rem;
+        line-height: 1.6;
+      }
+
+      /* Professional Futuristic Buttons */
+      .btn-modern {
+        border-radius: 9999px;
+        padding: 0.75rem 1.5rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .btn-modern-primary {
+        background: linear-gradient(135deg, var(--ease-color-primary), #6366f1);
+        color: white;
+        border: none;
+        box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+      }
+
+      .btn-modern-primary:hover {
+        box-shadow: 0 6px 20px rgba(124, 58, 237, 0.5);
+        transform: translateY(-2px);
+        color: white;
+      }
+
+      .btn-modern-outline {
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: var(--ease-color-text);
+      }
+
+      .btn-modern-outline:hover {
+        border-color: rgba(255, 255, 255, 0.4);
+        background: rgba(255, 255, 255, 0.05);
+        transform: translateY(-2px);
+      }
+
+      /* Fix mobile toggle alignment */
+      .header-actions {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+      }
+
+      /* Mobile responsiveness */
+      @media (min-width: 769px) {
+        .d-mobile-only {
+          display: none !important;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .not-found-title { font-size: 5rem; }
+        .not-found-subtitle { font-size: 1.5rem; }
+        .not-found-desc { font-size: 1rem; }
+        .not-found-container { padding: 2rem 1.5rem; }
+        .ease-flex { flex-direction: column; width: 100%; }
+        .ease-flex .ease-btn { width: 100%; }
+        
+        .header-actions {
+          gap: 1rem;
+        }
+      }
+
+      [data-theme="light"] .not-found-container {
+        background: rgba(255, 255, 255, 0.5);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+      }
+      [data-theme="light"] .not-found-desc {
+        color: #475569;
+      }
+      [data-theme="light"] .btn-modern-outline {
+        border: 1px solid rgba(0, 0, 0, 0.2);
+      }
+      [data-theme="light"] .btn-modern-outline:hover {
+        border-color: rgba(0, 0, 0, 0.4);
+        background: rgba(0, 0, 0, 0.05);
+      }
+      [data-theme="light"] .ambient-glow {
+        background: radial-gradient(circle, rgba(124, 58, 237, 0.1) 0%, rgba(0, 240, 255, 0.05) 40%, transparent 70%);
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ── Header ───────────────────────────────────────────── -->
+    <header class="docs-header">
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <a href="index.html" class="docs-logo">
+          <img src="assets/logo.svg" alt="EaseMotion CSS" class="docs-logo-img" />
+        </a>
+
+        <!-- Restored Sidebar Toggle for Mobile -->
+        <button
+          class="sidebar-toggle"
+          id="sidebarToggle"
+          aria-label="Toggle sidebar"
+        >
+          ☰
+        </button>
+      </div>
+
+      <div class="header-actions">
+        <!-- These links hide on mobile due to docs.css -->
+        <ul class="docs-header-links" style="margin: 0; margin-right: 1rem;">
+          <li><a href="index.html">Documentation</a></li>
+          <li><a href="animations-preview.html">Animation Preview</a></li>
+          <li>
+            <a href="animation-combo.html" class="ease-btn ease-nav-button"
+              >Animation Builder</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://github.com/SAPTARSHI-coder/EaseMotion-css"
+              target="_blank"
+              rel="noopener noreferrer"
+              >GitHub</a
+            >
+          </li>
+        </ul>
+
+        <!-- Placed OUTSIDE .docs-header-links so it STAYS visible on mobile! -->
+        <button
+          id="theme-toggle"
+          class="theme-toggle-btn ease-hover-grow"
+          aria-label="Toggle dark/light theme"
+        >
+          <svg
+            class="sun-icon"
+            viewBox="0 0 24 24"
+            width="18"
+            height="18"
+            stroke="currentColor"
+            stroke-width="2"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.72" x2="5.64" y2="18.3"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg
+            class="moon-icon"
+            viewBox="0 0 24 24"
+            width="18"
+            height="18"
+            stroke="currentColor"
+            stroke-width="2"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <!-- ── Shell ────────────────────────────────────────────── -->
+    <div class="docs-shell">
+      <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+      <!-- ── Restored Sidebar for Mobile Navigation ──────────── -->
+      <aside class="docs-sidebar" id="docsSidebar">
+        <!-- Quick Links for Mobile Users (Since header links are hidden on mobile) -->
+        <div class="sidebar-group d-mobile-only">
+          <div class="sidebar-group-label">Quick Links</div>
+          <ul class="sidebar-nav">
+            <li><a href="index.html">Documentation Home</a></li>
+            <li><a href="animations-preview.html">Animation Preview</a></li>
+            <li><a href="https://github.com/SAPTARSHI-coder/EaseMotion-css" target="_blank">GitHub Repository</a></li>
+          </ul>
+        </div>
+
+        <div class="sidebar-group">
+          <div class="sidebar-group-label">Introduction</div>
+          <ul class="sidebar-nav">
+            <li><a href="index.html#getting-started">Getting Started</a></li>
+            <li><a href="index.html#philosophy">Design Philosophy</a></li>
+            <li><a href="index.html#installation">Installation</a></li>
+          </ul>
+        </div>
+        <div class="sidebar-group">
+          <div class="sidebar-group-label">Core</div>
+          <ul class="sidebar-nav">
+            <li><a href="index.html#variables">Variables</a></li>
+            <li><a href="index.html#dark-mode">Dark Mode</a></li>
+            <li><a href="index.html#utilities">Utilities</a></li>
+            <li><a href="index.html#animations">Animations</a></li>
+            <li><a href="animation-combo.html">Animation Builder</a></li>
+          </ul>
+        </div>
+        <div class="sidebar-group">
+          <a href="index.html#components" class="sidebar-group-label">Components</a>
+          <ul class="sidebar-nav">
+            <li><a href="index.html#buttons">Buttons</a></li>
+            <li><a href="index.html#cards">Cards</a></li>
+            <li><a href="index.html#scroll-progress">Scroll Progress</a></li>
+            <li><a href="index.html#forms">Forms</a></li>
+          </ul>
+        </div>
+      </aside>
+
+      <!-- ── Main Content ──────────────────────────────────── -->
+      <main class="docs-content" style="padding: 0;">
+        <div class="not-found-wrapper">
+          <div class="ambient-glow"></div>
+          
+          <div class="not-found-container ease-fade-in ease-slide-up">
+            <h1 class="not-found-title">404</h1>
+            <h2 class="not-found-subtitle">Page Not Found</h2>
+            <p class="not-found-desc">
+              The page you are looking for doesn't exist or has been moved. Check the URL or return to the documentation to find your way.
+            </p>
+            <div class="ease-flex ease-gap-4">
+              <a href="index.html" class="ease-btn btn-modern btn-modern-primary">
+                Return Home
+              </a>
+              <a href="https://github.com/SAPTARSHI-coder/EaseMotion-css/issues" target="_blank" rel="noopener noreferrer" class="ease-btn btn-modern btn-modern-outline">
+                Report an Issue
+              </a>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- ── Scripts ──────────────────────────────────────────── -->
+    <script>
+      // Theme Toggle logic
+      const themeBtn = document.getElementById("theme-toggle");
+      const html = document.documentElement;
+      themeBtn.addEventListener("click", () => {
+        const currentTheme = html.getAttribute("data-theme") || "dark";
+        const targetTheme = currentTheme === "light" ? "dark" : "light";
+
+        const rect = themeBtn.getBoundingClientRect();
+        const x = rect.left + rect.width / 2;
+        const y = rect.top + rect.height / 2;
+
+        html.style.setProperty("--clip-x", `${x}px`);
+        html.style.setProperty("--clip-y", `${y}px`);
+
+        if (document.startViewTransition) {
+          html.setAttribute("data-transition-theme", targetTheme);
+          const transition = document.startViewTransition(() => {
+            html.setAttribute("data-theme", targetTheme);
+            localStorage.setItem("em-theme", targetTheme);
+          });
+          transition.finished.finally(() => {
+            html.removeAttribute("data-transition-theme");
+          });
+        } else {
+          html.setAttribute("data-theme", targetTheme);
+          localStorage.setItem("em-theme", targetTheme);
+        }
+      });
+
+      // Mobile Sidebar Toggle
+      document.addEventListener("DOMContentLoaded", function () {
+        const sidebarToggle = document.getElementById("sidebarToggle");
+        const sidebar = document.getElementById("docsSidebar");
+        const overlay = document.getElementById("sidebarOverlay");
+
+        if (sidebarToggle && sidebar) {
+          sidebarToggle.addEventListener("click", function (e) {
+            e.stopPropagation();
+            sidebar.classList.toggle("open");
+            if (overlay) overlay.classList.toggle("open");
+          });
+
+          if (overlay) {
+            overlay.addEventListener("click", function () {
+              sidebar.classList.remove("open");
+              overlay.classList.remove("open");
+            });
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

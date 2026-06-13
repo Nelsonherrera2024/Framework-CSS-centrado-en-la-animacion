@@ -890,3 +890,23 @@ html[data-transition-theme] * {
   background-color: #3b31c4;
   box-shadow: 0 4px 12px rgba(79, 70, 229, 0.4);
 }
+
+/* Mobile Action Bar */
+.header-actions {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  gap: 1rem;
+}
+
+@media (min-width: 769px) {
+  .d-mobile-only {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-actions {
+    gap: 0.5rem;
+  }
+}
