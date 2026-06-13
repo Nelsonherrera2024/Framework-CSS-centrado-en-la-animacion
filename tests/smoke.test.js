@@ -110,6 +110,9 @@ const modals = readFileSync(resolve(componentsDir, 'modals.css'), 'utf8');
     expect(bundle).toContain('@keyframes ease-kf-zoom-in');
     expect(bundle).toContain('prefers-reduced-motion:reduce');
     expect(bundle.trim().length).toBeGreaterThan(100);
+    expect(bundle).toContain('.ease-fade-in');
+    expect(bundle).toContain('.ease-btn');
+    expect(bundle).toContain('.ease-card');
   });
   
   it('should have tabs, badges, loaders, tooltips, and modal classes defined', () => {
