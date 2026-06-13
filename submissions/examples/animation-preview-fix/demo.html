@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EaseMotion CSS — Animation Preview Demo</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/SAPTARSHI-coder/EaseMotion-css@main/easemotion.min.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main style="padding: 2rem; max-width: 800px; margin: 0 auto; font-family: sans-serif;">
+        <h1 style="text-align: center; color: #6c63ff; margin-bottom: 2rem;">Animation Preview Box Fix</h1>
+        
+        <div style="text-align: center; margin-bottom: 2rem;">
+            <button onclick="toggleDemoTheme()" style="padding: 10px 20px; cursor: pointer; border-radius: 6px; font-weight: bold;">
+                Toggle Light/Dark Theme View
+            </button>
+        </div>
+
+        <div class="animation-grid">
+            <div class="animation-card">
+                <div class="animation-preview-box ease-bounce">
+                    Preview Box
+                </div>
+                <button class="copy-btn">Copy</button>
+            </div>
+            
+            <div class="animation-card">
+                <div class="animation-preview-box ease-fade-in">
+                    Preview Box
+                </div>
+                <button class="copy-btn">Copy</button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Simple helper script so the reviewer can click and test both theme environments easily
+        function toggleDemoTheme() {
+            const html = document.documentElement;
+            const current = html.getAttribute('data-theme');
+            html.setAttribute('data-theme', current === 'light' ? 'dark' : 'light');
+        }
+    </script>
+</body>
+</html>
