@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Form Warning State — EaseMotion CSS</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <h1 class="page-title">Form Warning State Bug</h1>
+      <p class="page-copy">Form warning states use error colors instead of dedicated warning tokens.</p>
+      <a class="issue-link" href="https://github.com/anomalyco/easemotion/issues/5875" target="_blank">Issue #5875</a>
+    </header>
+
+    <section class="demo-section">
+      <h2 class="section-title">The Problem</h2>
+      <p class="section-desc">When a form field enters a warning state (e.g. password nearly expired, input format ambiguous), the styling incorrectly uses <code>--ease-color-error</code> instead of <code>--ease-color-warning</code> tokens.</p>
+    </section>
+
+    <section class="demo-section">
+      <h2 class="section-title">Before vs After</h2>
+      <div class="compare-grid">
+        <div class="compare-card broken">
+          <span class="label label-broken">Broken — Uses Error Color</span>
+          <h3>Warning Shown as Error</h3>
+          <div class="form-demo">
+            <label class="form-label">Password</label>
+            <input type="text" class="form-input broken-warning" value="ExpiringSoon123!" readonly />
+            <span class="form-hint broken-hint">Warning: Password expires in 3 days</span>
+          </div>
+          <p class="note">Warning state uses <code>--ease-color-error</code> — user may think something is wrong.</p>
+        </div>
+        <div class="compare-card fixed">
+          <span class="label label-fixed">Fixed — Uses Warning Token</span>
+          <h3>Proper Warning Styling</h3>
+          <div class="form-demo">
+            <label class="form-label">Password</label>
+            <input type="text" class="form-input fixed-warning" value="ExpiringSoon123!" readonly />
+            <span class="form-hint fixed-hint">Warning: Password expires in 3 days</span>
+          </div>
+          <p class="note">Warning state uses <code>--ease-color-warning-500</code> — clear distinction from errors.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
