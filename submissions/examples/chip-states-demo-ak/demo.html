@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chip States Demo — EaseMotion CSS</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <h1 class="page-title">Chip States Visual Bug</h1>
+      <p class="page-copy">Chip hover, active, selected, and disabled states are visually indistinguishable.</p>
+      <a class="issue-link" href="https://github.com/anomalyco/easemotion/issues/5874" target="_blank">Issue #5874</a>
+    </header>
+
+    <section class="demo-section">
+      <h2 class="section-title">The Problem</h2>
+      <p class="section-desc">Chips lack distinct visual styles for <code>:hover</code>, <code>:active</code>, <code>[aria-selected="true"]</code>, and <code>[disabled]</code> states. Users cannot tell if a chip is interactive, currently selected, or disabled.</p>
+    </section>
+
+    <section class="demo-section">
+      <h2 class="section-title">Before vs After</h2>
+      <div class="compare-grid">
+        <div class="compare-card broken">
+          <span class="label label-broken">Broken — No State Styles</span>
+          <h3>Indistinguishable States</h3>
+          <div class="chip-group">
+            <span class="chip broken-chip">Default</span>
+            <span class="chip broken-chip">Hover (no change)</span>
+            <span class="chip broken-chip selected">Selected</span>
+            <span class="chip broken-chip" disabled>Disabled</span>
+          </div>
+          <p class="note">All states look the same — no visual feedback.</p>
+        </div>
+        <div class="compare-card fixed">
+          <span class="label label-fixed">Fixed — Distinct States</span>
+          <h3>Clear State Differentiation</h3>
+          <div class="chip-group">
+            <span class="chip fixed-chip">Default</span>
+            <span class="chip fixed-chip hover-demo">Hover me</span>
+            <span class="chip fixed-chip selected">Selected</span>
+            <span class="chip fixed-chip" disabled>Disabled</span>
+          </div>
+          <p class="note">Each state has a distinct visual style.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
