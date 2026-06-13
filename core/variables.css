@@ -12,6 +12,21 @@
   --ease-speed-medium:  300ms;
   --ease-speed-slow:    600ms;
 
+  /* Additional speed variables for animations */
+  --ease-speed-shake:         500ms;  /* 0.5s */
+  --ease-speed-reveal:        700ms;  /* 0.7s */
+  --ease-speed-blink:         800ms;  /* 0.8s */
+  --ease-speed-loader:        800ms;  /* 0.8s */
+  --ease-speed-bounce:        1s;     /* 1s */
+  --ease-speed-ping:          1s;     /* 1s */
+  --ease-speed-rotate:        1.2s;   /* 1.2s */
+  --ease-speed-pulse-border:  1.5s;   /* 1.5s */
+  --ease-speed-pulse:         2s;     /* 2s */
+  --ease-speed-shimmer:       2s;     /* 2s */
+  --ease-speed-float:         3s;     /* 3s */
+  --ease-speed-gradient:      3s;     /* 3s */
+  --ease-speed-typewriter:    6s;     /* 6s */
+
   --ease-ease:          cubic-bezier(0.4, 0, 0.2, 1);   /* smooth ease-in-out */
   --ease-ease-out:      cubic-bezier(0, 0, 0.2, 1);
   --ease-ease-linear:   linear;
@@ -60,6 +75,7 @@
 
   --ease-color-bg:      var(--ease-color-neutral-50);
   --ease-color-surface: #ffffff;
+  --ease-color-white:   #ffffff;
   --ease-color-text:    var(--ease-color-neutral-800);
   --ease-color-muted:   var(--ease-color-neutral-600);
   --ease-selection-color: #ffffff;

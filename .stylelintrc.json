@@ -39,5 +39,21 @@
     "selector-pseudo-element-colon-notation": null,
     "no-empty-source": null,
     "selector-id-pattern": null
-  }
+  },
+  "overrides": [
+    {
+      "files": ["easemotion/**/*.css", "core/animations.css"],
+      "rules": {
+        "keyframes-name-pattern": "^ease-kf-[a-z]+(-[a-z]+)*$",
+        "declaration-property-value-disallowed-list": {
+          "animation": ["/(?<![\\d.])(?!0\\.01ms\\b)\\d+(?:\\.\\d+)?m?s\\b/"],
+          "transition": ["/(?<![\\d.])(?!0\\.01ms\\b)\\d+(?:\\.\\d+)?m?s\\b/"],
+          "animation-duration": ["/(?<![\\d.])(?!0\\.01ms\\b)\\d+(?:\\.\\d+)?m?s\\b/"],
+          "transition-duration": ["/(?<![\\d.])(?!0\\.01ms\\b)\\d+(?:\\.\\d+)?m?s\\b/"],
+          "/^color/": ["/#/", "/rgba?\\(/", "/hsla?\\(/", "/linear-gradient/"],
+          "/^background/": ["/#/", "/rgba?\\(/", "/hsla?\\(/"]
+        }
+      }
+    }
+  ]
 }

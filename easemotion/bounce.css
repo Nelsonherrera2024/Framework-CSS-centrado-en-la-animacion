@@ -44,7 +44,7 @@
 }
 
 .ease-bounce-in {
-  animation: ease-kf-bounce-in var(--ease-speed-slow) ease-out forwards;
+  animation: ease-kf-bounce-in var(--ease-speed-slow) var(--ease-ease-out) forwards;
 }
 
 .ease-bounce-button-exit {

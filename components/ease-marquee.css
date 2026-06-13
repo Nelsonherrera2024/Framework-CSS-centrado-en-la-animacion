@@ -26,7 +26,7 @@
 .ease-marquee-track {
   display: inline-flex;
   gap: var(--marquee-gap);
-  animation: ease-marquee-scroll var(--marquee-speed) linear infinite;
+  animation: ease-kf-marquee-scroll var(--marquee-speed) linear infinite;
   animation-direction: var(--marquee-direction);
 }
 
@@ -118,7 +118,7 @@
 /* ============================================
    ANIMATION KEYFRAMES
    ============================================ */
-@keyframes ease-marquee-scroll {
+@keyframes ease-kf-marquee-scroll {
   0% {
     transform: translateX(0);
   }

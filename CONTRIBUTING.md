@@ -127,12 +127,19 @@ Answer these three questions:
 
 ## Naming Rules
 
-| Who              | Rule                                                      |
-| ---------------- | --------------------------------------------------------- |
-| **Contributors** | Use any class name that makes sense to you                |
-| **Maintainer**   | Renames everything to follow `ease-kebab-case` convention |
+| Target | Convention | Example |
+| :--- | :--- | :--- |
+| **Keyframe Names** | `@keyframes ease-kf-{name}` | `@keyframes ease-kf-fade-in` |
+| **Utility Classes (Animations)** | `.ease-{name}` | `.ease-fade-in`, `.ease-slide-up` |
+| **Utility Classes (Hovers)** | `.ease-hover-{name}` | `.ease-hover-grow`, `.ease-hover-lift` |
+| **Component Classes** | `.ease-{component}-{variant}` | `.ease-btn-primary`, `.ease-card-lift` |
+| **Custom Properties** | `--ease-{category}-{name}` | `--ease-speed-medium`, `--ease-color-primary` |
 
-You do not need to worry about the `ease-` prefix. Do not try to pre-standardize — just write clear, readable CSS.
+### Key Guidelines for Maintainers and Core Contributions
+
+- **No Hardcoded Durations**: All transition/animation speeds and durations inside shorthand properties must use framework-wide transition speed custom properties (e.g. `var(--ease-speed-*)`), never raw digit literals (like `0.5s` or `300ms`).
+- **No Hardcoded Colors**: Colors inside animation files must use framework palette variables (e.g. `var(--ease-color-*)`), or alpha overlays created with `color-mix()` (e.g. `color-mix(in srgb, var(--ease-color-primary) 15%, transparent)`), rather than hardcoded hex, `rgb()`, or `hsl()` functions.
+- **Self-Contained Category Modules**: Category-specific CSS modules (such as those in `easemotion/`) must be self-contained and not depend on external styles/keyframes (for example, keyframes used by utilities in `misc.css` must be defined directly in `misc.css` or properly imported).
 
 ---
 

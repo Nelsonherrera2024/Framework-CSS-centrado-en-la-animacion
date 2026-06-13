@@ -37,7 +37,7 @@
 }
 
 .ease-zoom-out {
-  animation: ease-kf-zoom-out 0.6s ease-out forwards;
+  animation: ease-kf-zoom-out var(--ease-speed-slow) var(--ease-ease-out) forwards;
 }
 
 .ease-contract-image-entrance {

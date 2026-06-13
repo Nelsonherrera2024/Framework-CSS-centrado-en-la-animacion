@@ -23,19 +23,19 @@
 }
 
 .ease-rotate {
-  animation: ease-kf-rotate 1.2s linear;
+  animation: ease-kf-rotate var(--ease-speed-rotate) var(--ease-ease-linear);
   /* Added 'infinite' as a fallback */
   animation-iteration-count: var(--ease-animation-iterations, infinite);
 }
 
 .ease-flip {
   /* Added fallbacks for speed and easing */
-  animation: ease-kf-flip var(--ease-speed-medium, 300ms) var(--ease-ease, cubic-bezier(0.4, 0, 0.2, 1)) both;
+  animation: ease-kf-flip var(--ease-speed-medium) var(--ease-ease) both;
 }
 
 .ease-rotate-image-exit {
   /* Added fallbacks for speed and easing */
-  animation: ease-kf-rotate-image-exit var(--ease-speed-medium, 300ms) var(--ease-ease, cubic-bezier(0.4, 0, 0.2, 1)) both;
+  animation: ease-kf-rotate-image-exit var(--ease-speed-medium) var(--ease-ease) both;
 }
 
 /* Respect user motion preferences for accessibility */

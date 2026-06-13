@@ -635,7 +635,7 @@
   }
 }
 
-@keyframes ease-float {
+@keyframes ease-kf-float {
 
   0%,
   100% {
@@ -647,7 +647,7 @@
   }
 }
 
-@keyframes ease-zoom-out {
+@keyframes ease-kf-zoom-out {
   from {
     transform: scale(1.5);
   }
@@ -680,7 +680,7 @@
 }
 
 .ease-float {
-  animation: ease-float 3s ease-in-out infinite;
+  animation: ease-kf-float var(--ease-speed-float) var(--ease-ease) infinite;
 }
 .ease-zoom-in {
   animation: ease-kf-zoom-in var(--ease-speed-medium) var(--ease-ease-bounce) both;
@@ -711,7 +711,7 @@
 }
 
 .ease-pulse-border-emphasis {
-  animation: ease-kf-pulse-border-emphasis 1.5s var(--ease-ease) infinite;
+  animation: ease-kf-pulse-border-emphasis var(--ease-speed-pulse-border) var(--ease-ease) infinite;
 }
 
 /* Bounce Text Emphasis
@@ -728,7 +728,7 @@
 .ease-shimmer-sweep {
   background: linear-gradient(120deg,
       transparent 30%,
-      rgba(255, 255, 255, 0.15) 50%,
+      color-mix(in srgb, var(--ease-color-white) 15%, transparent) 50%,
       transparent 70%);
   background-size: 200% auto;
   animation: ease-kf-shimmer-sweep var(--ease-speed-slow) var(--ease-ease) infinite;
@@ -746,7 +746,7 @@
     var(--ease-color-primary)
   );
   background-size: 200% 200%;
-  animation: ease-kf-gradient-rotation 3s var(--ease-ease) infinite;
+  animation: ease-kf-gradient-rotation var(--ease-speed-gradient) var(--ease-ease) infinite;
 }
 
 .ease-contract-shadow-emphasis {
@@ -781,12 +781,12 @@
       var(--ease-color-neutral-200) 40px,
       transparent 80px);
   translate: -100% 0;
-  animation: ease-kf-shimmer 2s infinite linear forwards;
+  animation: ease-kf-shimmer var(--ease-speed-shimmer) infinite var(--ease-ease-linear) forwards;
 }
 
 .ease-skeleton-pulse {
   background-color: var(--ease-color-neutral-200);
-  animation: ease-kf-pulse-fade 1.5s var(--ease-ease) infinite;
+  animation: ease-kf-pulse-fade var(--ease-speed-pulse-border) var(--ease-ease) infinite;
 }
 
 .ease-skeleton-block {
@@ -901,15 +901,15 @@
 
 /* Looping Animations */
 .ease-bounce {
-  animation: ease-kf-bounce 1s var(--ease-animation-iterations, infinite);
+  animation: ease-kf-bounce var(--ease-speed-bounce) var(--ease-animation-iterations, infinite);
 }
 
 .ease-rotate {
-  animation: ease-kf-rotate 1.2s linear var(--ease-animation-iterations, infinite);
+  animation: ease-kf-rotate var(--ease-speed-rotate) var(--ease-ease-linear) var(--ease-animation-iterations, infinite);
 }
 
 .ease-pulse {
-  animation: ease-kf-pulse 2s var(--ease-ease) var(--ease-animation-iterations, infinite);
+  animation: ease-kf-pulse var(--ease-speed-pulse) var(--ease-ease) var(--ease-animation-iterations, infinite);
 }
 
 .ease-wave {
@@ -918,15 +918,15 @@
 }
 
 .ease-wave:hover {
-  animation-duration: 1s;
+  animation-duration: var(--ease-speed-bounce);
 }
 
 .ease-ping {
-  animation: ease-kf-ping 1s cubic-bezier(0, 0, 0.2, 1) var(--ease-animation-iterations, infinite);
+  animation: ease-kf-ping var(--ease-speed-ping) var(--ease-ease-out) var(--ease-animation-iterations, infinite);
 }
 
 .ease-shake {
-  animation: ease-kf-shake 0.5s var(--ease-ease) both;
+  animation: ease-kf-shake var(--ease-speed-shake) var(--ease-ease) both;
 }
 
 /* Typewriter Loop
@@ -935,7 +935,7 @@
 
 .ease-typewriter-loop {
   --ease-typewriter-length: 12ch;
-  --ease-typewriter-duration: 6s;
+  --ease-speed-typewriter: 6s;
 
   display: inline-block;
   overflow: hidden;
@@ -949,7 +949,7 @@
   --ease-typewriter-steps: 12;
 
   animation:
-    ease-kf-typewriter-loop var(--ease-typewriter-duration) steps(var(--ease-typewriter-steps), end) infinite;
+    ease-kf-typewriter-loop var(--ease-speed-typewriter) steps(var(--ease-typewriter-steps), end) infinite;
 
   will-change: width;
 }
@@ -1012,8 +1012,8 @@
 }
 
 .ease-hover-glow:hover {
-  filter: drop-shadow(0 0 8px rgba(108, 99, 255, 0.45))
-          drop-shadow(0 0 20px rgba(108, 99, 255, 0.30));
+  filter: drop-shadow(0 0 8px color-mix(in srgb, var(--ease-color-primary) 45%, transparent))
+          drop-shadow(0 0 20px color-mix(in srgb, var(--ease-color-primary) 30%, transparent));
   box-shadow: none;
 }
 
@@ -1079,7 +1079,7 @@
   border-radius: inherit;
   background: linear-gradient(120deg,
       transparent 0%,
-      rgba(255, 255, 255, 0.08) 50%,
+      color-mix(in srgb, var(--ease-color-white) 8%, transparent) 50%,
       transparent 100%);
   translate: -100% 0;
   transition: translate var(--ease-speed-slow) var(--ease-ease);
@@ -1125,7 +1125,7 @@
 }
 .ease-flip-3d-inner {
   transform-style: preserve-3d;
-  transition: transform 0.6s var(--ease-ease);
+  transition: transform var(--ease-speed-slow) var(--ease-ease);
   position: relative;
 }
 .ease-flip-3d:hover .ease-flip-3d-inner {
@@ -1148,21 +1148,21 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
-  animation: ease-kf-shimmer-text 2s linear infinite;
+  animation: ease-kf-shimmer-text var(--ease-speed-shimmer) var(--ease-ease-linear) infinite;
 }
 
 /* Mask Reveal Utilities */
 .ease-mask-reveal {
   clip-path: inset(0 100% 0 0);
-  animation: ease-kf-mask-reveal 0.8s var(--ease-ease) forwards;
+  animation: ease-kf-mask-reveal var(--ease-speed-blink) var(--ease-ease) forwards;
 }
 .ease-mask-reveal-y {
   clip-path: inset(100% 0 0 0);
-  animation: ease-kf-mask-reveal-y 0.8s var(--ease-ease) forwards;
+  animation: ease-kf-mask-reveal-y var(--ease-speed-blink) var(--ease-ease) forwards;
 }
 .ease-mask-reveal-circle {
   clip-path: circle(0% at center);
-  animation: ease-kf-mask-reveal-circle 0.8s var(--ease-ease) forwards;
+  animation: ease-kf-mask-reveal-circle var(--ease-speed-blink) var(--ease-ease) forwards;
 }
 
 /* ── Stagger Delay Helpers ─────────────────────────────────── */
@@ -1199,8 +1199,8 @@
   opacity: 0;
   will-change: transform, opacity;
   transition:
-    opacity 0.7s var(--ease-ease, cubic-bezier(0.4, 0, 0.2, 1)),
-    transform 0.7s var(--ease-ease, cubic-bezier(0.4, 0, 0.2, 1));
+    opacity var(--ease-speed-reveal) var(--ease-ease),
+    transform var(--ease-speed-reveal) var(--ease-ease);
 }
 
 .ease-reveal.ease-reveal-active {
@@ -1226,7 +1226,7 @@
 /* Scroll-driven animation (progressive enhancement) */
 @supports (animation-timeline: view()) {
   .ease-reveal {
-    animation: ease-kf-reveal-up 0.7s var(--ease-ease, cubic-bezier(0.4, 0, 0.2, 1));
+    animation: ease-kf-reveal-up var(--ease-speed-reveal) var(--ease-ease);
     animation-timeline: view();
     animation-range: entry 0% entry 100%;
     opacity: 1;
