@@ -34,8 +34,6 @@
     animation-delay: 0s !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+    will-change: auto !important; /* ← ADDED: release GPU layers too */
   }
 }
-
-
-

@@ -30,6 +30,24 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* ── GPU Acceleration ──────────────────────────────────────── */
+/* Promotes all ease- elements to compositor thread.
+   Prevents CPU-driven jank on infinite/scale animations,
+   especially on mobile and Safari. */
+[class*="ease-"] {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden; /* Safari */
+  perspective: 1000px;
+}
+
+/* Release GPU layer after animation — add .ease-done via JS:
+   el.addEventListener('animationend', () =>
+     el.classList.add('ease-done'), { once: true }); */
+.ease-done {
+  will-change: auto;
+}
+
 /* ── Typography ────────────────────────────────────────────── */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;

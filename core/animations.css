@@ -11,495 +11,211 @@
 /* ── Keyframe Definitions ──────────────────────────────────── */
 
 @keyframes ease-kf-fade-in {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 @keyframes ease-kf-fade-out {
-  from {
-    opacity: 1;
-  }
-
-  to {
-    opacity: 0;
-  }
+  from { opacity: 1; }
+  to   { opacity: 0; }
 }
 
 @keyframes ease-kf-slide-up {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translate3d(0, 24px, 0); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0); }
 }
 
 @keyframes ease-kf-slide-down {
-  from {
-    opacity: 0;
-    transform: translateY(-24px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translate3d(0, -24px, 0); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0); }
 }
 
 @keyframes ease-kf-slide-in-left {
-  from {
-    opacity: 0;
-    transform: translateX(-32px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  from { opacity: 0; transform: translate3d(-32px, 0, 0); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0); }
 }
 
 @keyframes ease-kf-slide-in-right {
-  from {
-    opacity: 0;
-    transform: translateX(32px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  from { opacity: 0; transform: translate3d(32px, 0, 0); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0); }
 }
 
 @keyframes ease-kf-slide-in-from-top {
-  from {
-    opacity: 0;
-    transform: translateY(-100%);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translate3d(0, -100%, 0); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0); }
 }
 
 @keyframes ease-kf-slide-in-from-bottom {
-  from {
-    opacity: 0;
-    transform: translateY(100%);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translate3d(0, 100%, 0); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0); }
 }
 
 @keyframes ease-kf-slide-in-from-left {
-  from {
-    opacity: 0;
-    transform: translateX(-100%);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  from { opacity: 0; transform: translate3d(-100%, 0, 0); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0); }
 }
 
 @keyframes ease-kf-slide-in-from-right {
-  from {
-    opacity: 0;
-    transform: translateX(100%);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  from { opacity: 0; transform: translate3d(100%, 0, 0); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0); }
 }
 
 @keyframes ease-kf-slide-in-from-top-left {
-  from {
-    opacity: 0;
-    transform: translate(-100%, -100%);
-  }
-
-  to {
-    opacity: 1;
-    transform: translate(0, 0);
-  }
+  from { opacity: 0; transform: translate3d(-100%, -100%, 0); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0); }
 }
 
 @keyframes ease-kf-slide-in-from-top-right {
-  from {
-    opacity: 0;
-    transform: translate(100%, -100%);
-  }
-
-  to {
-    opacity: 1;
-    transform: translate(0, 0);
-  }
+  from { opacity: 0; transform: translate3d(100%, -100%, 0); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0); }
 }
 
 @keyframes ease-kf-slide-in-from-bottom-left {
-  from {
-    opacity: 0;
-    transform: translate(-100%, 100%);
-  }
-
-  to {
-    opacity: 1;
-    transform: translate(0, 0);
-  }
+  from { opacity: 0; transform: translate3d(-100%, 100%, 0); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0); }
 }
 
 @keyframes ease-kf-slide-in-from-bottom-right {
-  from {
-    opacity: 0;
-    transform: translate(100%, 100%);
-  }
-
-  to {
-    opacity: 1;
-    transform: translate(0, 0);
-  }
+  from { opacity: 0; transform: translate3d(100%, 100%, 0); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0); }
 }
 
 @keyframes ease-kf-bounce {
-
-  0%,
-  100% {
-    transform: translateY(0);
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
     animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
   }
-
   50% {
-    transform: translateY(-20px);
+    transform: translate3d(0, -20px, 0);
     animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
   }
 }
 
 @keyframes ease-kf-squish-border {
-  0% {
-    border-radius: 12px;
-    transform: scaleX(1);
-  }
-
-  50% {
-    border-radius: 24px;
-    transform: scaleX(0.88);
-  }
-
-  100% {
-    border-radius: 6px;
-    transform: scaleX(1);
-  }
+  0%   { border-radius: 12px; transform: translate3d(0, 0, 0) scaleX(1); }
+  50%  { border-radius: 24px; transform: translate3d(0, 0, 0) scaleX(0.88); }
+  100% { border-radius: 6px;  transform: translate3d(0, 0, 0) scaleX(1); }
 }
 
 @keyframes ease-kf-pulse {
-
-  0%,
-  100% {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 0.45;
-  }
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.45; }
 }
 
 @keyframes ease-kf-rotate {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: translate3d(0, 0, 0) rotate(0deg); }
+  to   { transform: translate3d(0, 0, 0) rotate(360deg); }
 }
 
 @keyframes ease-kf-ping {
-
-  75%,
-  100% {
-    transform: scale(2);
+  75%, 100% {
+    transform: translate3d(0, 0, 0) scale(2);
     opacity: 0;
   }
 }
 
 @keyframes ease-kf-shake {
-
-  0%,
-  100% {
-    transform: translateX(0);
-  }
-
-  10%,
-  50%,
-  90% {
-    transform: translateX(-6px);
-  }
-
-  30%,
-  70% {
-    transform: translateX(6px);
-  }
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  10%, 50%, 90% { transform: translate3d(-6px, 0, 0); }
+  30%, 70%      { transform: translate3d(6px, 0, 0); }
 }
 
 @keyframes ease-kf-zoom-in {
-  from {
-    opacity: 0;
-    transform: scale(0.85);
-  }
-
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+  from { opacity: 0; transform: translate3d(0, 0, 0) scale(0.85); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
 }
 
 @keyframes ease-kf-flip {
-  from {
-    transform: perspective(400px) rotateY(90deg);
-    opacity: 0;
-  }
-
-  to {
-    transform: perspective(400px) rotateY(0deg);
-    opacity: 1;
-  }
+  from { transform: perspective(400px) translate3d(0, 0, 0) rotateY(90deg); opacity: 0; }
+  to   { transform: perspective(400px) translate3d(0, 0, 0) rotateY(0deg);  opacity: 1; }
 }
 
 @keyframes ease-kf-shimmer {
-  0% {
-    background-position: -1000px 0;
-  }
-
-  100% {
-    background-position: 1000px 0;
-  }
+  0%   { background-position: -1000px 0; }
+  100% { background-position:  1000px 0; }
 }
 
 @keyframes ease-kf-pulse-fade {
-
-  0%,
-  100% {
-    opacity: 1;
-  }
-
-  50% {
-    opacity: 0.45;
-  }
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.45; }
 }
 
-/* Typewriter Loop Animation */
-
 @keyframes ease-kf-typewriter-loop {
-  0% {
-    width: 0;
-  }
-
-  40% {
-    width: var(--ease-typewriter-length, 12ch);
-  }
-
-  60% {
-    width: var(--ease-typewriter-length, 12ch);
-  }
-
-  100% {
-    width: 0;
-  }
+  0%   { width: 0; }
+  40%  { width: var(--ease-typewriter-length, 12ch); }
+  60%  { width: var(--ease-typewriter-length, 12ch); }
+  100% { width: 0; }
 }
 
 @keyframes ease-kf-cursor-blink {
-
-  0%,
-  49% {
-    border-right-color: currentColor;
-  }
-
-  50%,
-  100% {
-    border-right-color: transparent;
-  }
+  0%, 49%  { border-right-color: currentColor; }
+  50%, 100% { border-right-color: transparent; }
 }
 
 @keyframes ease-kf-blur-to-focus {
-  from {
-    filter: blur(12px);
-    opacity: 0;
-  }
-
-  to {
-    filter: blur(0px);
-    opacity: 1;
-  }
+  from { filter: blur(12px); opacity: 0; }
+  to   { filter: blur(0px);  opacity: 1; }
 }
 
 @keyframes ease-kf-contract-bg-exit {
-  from {
-    transform: scale(1);
-    opacity: 1;
-  }
-
-  to {
-    transform: scale(0.85);
-    opacity: 0;
-  }
+  from { transform: translate3d(0, 0, 0) scale(1);    opacity: 1; }
+  to   { transform: translate3d(0, 0, 0) scale(0.85); opacity: 0; }
 }
 
 @keyframes ease-kf-contract-image-entrance {
-  from {
-    opacity: 0;
-    transform: scale(1.25);
-  }
-
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+  from { opacity: 0; transform: translate3d(0, 0, 0) scale(1.25); }
+  to   { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
 }
 
 @keyframes ease-kf-bounce-text {
-
-  0%,
-  100% {
-    transform: translateY(0) scale(1);
-  }
-
-  30% {
-    transform: translateY(-6px) scale(1.08);
-  }
-
-  60% {
-    transform: translateY(2px) scale(0.98);
-  }
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  30%       { transform: translate3d(0, -6px, 0) scale(1.08); }
+  60%       { transform: translate3d(0, 2px, 0)  scale(0.98); }
 }
 
 @keyframes ease-kf-shake-card-exit {
-  0% {
-    transform: translateX(0) rotate(0deg);
-    opacity: 1;
-  }
-
-  20% {
-    transform: translateX(-8px) rotate(-2deg);
-  }
-
-  40% {
-    transform: translateX(8px) rotate(2deg);
-  }
-
-  60% {
-    transform: translateX(-6px) rotate(-1deg);
-  }
-
-  80% {
-    transform: translateX(6px) rotate(1deg);
-  }
-
-  100% {
-    transform: translateX(0) rotate(0deg);
-    opacity: 0;
-  }
+  0%   { transform: translate3d(0, 0, 0) rotate(0deg);   opacity: 1; }
+  20%  { transform: translate3d(-8px, 0, 0) rotate(-2deg); }
+  40%  { transform: translate3d(8px, 0, 0)  rotate(2deg); }
+  60%  { transform: translate3d(-6px, 0, 0) rotate(-1deg); }
+  80%  { transform: translate3d(6px, 0, 0)  rotate(1deg); }
+  100% { transform: translate3d(0, 0, 0) rotate(0deg);   opacity: 0; }
 }
 
 @keyframes ease-kf-bounce-button-exit {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-
-  20% {
-    transform: scale(1.15);
-  }
-
-  40% {
-    transform: scale(0.90);
-  }
-
-  60% {
-    transform: scale(1.05);
-  }
-
-  80% {
-    transform: scale(0.95);
-  }
-
-  100% {
-    transform: scale(0);
-    opacity: 0;
-  }
+  0%   { transform: translate3d(0, 0, 0) scale(1);    opacity: 1; }
+  20%  { transform: translate3d(0, 0, 0) scale(1.15); }
+  40%  { transform: translate3d(0, 0, 0) scale(0.90); }
+  60%  { transform: translate3d(0, 0, 0) scale(1.05); }
+  80%  { transform: translate3d(0, 0, 0) scale(0.95); }
+  100% { transform: translate3d(0, 0, 0) scale(0);    opacity: 0; }
 }
 
 @keyframes ease-kf-expand-border-exit {
-  0% {
-    opacity: 1;
-    transform: scale(1);
-    border-width: 2px;
-  }
-
-  100% {
-    opacity: 0;
-    transform: scale(1.15);
-    border-width: 6px;
-  }
+  0%   { opacity: 1; transform: translate3d(0, 0, 0) scale(1);    border-width: 2px; }
+  100% { opacity: 0; transform: translate3d(0, 0, 0) scale(1.15); border-width: 6px; }
 }
 
 @keyframes ease-kf-fade-icon-exit {
-  from {
-    opacity: 1;
-    transform: scale(1);
-  }
-
-  to {
-    opacity: 0;
-    transform: scale(0.75);
-  }
+  from { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+  to   { opacity: 0; transform: translate3d(0, 0, 0) scale(0.75); }
 }
 
 @keyframes ease-kf-scale-text-exit {
-  from {
-    transform: scale(1);
-    opacity: 1;
-  }
-
-  to {
-    transform: scale(0.6);
-    opacity: 0;
-  }
+  from { transform: translate3d(0, 0, 0) scale(1);   opacity: 1; }
+  to   { transform: translate3d(0, 0, 0) scale(0.6); opacity: 0; }
 }
 
 @keyframes ease-kf-glow-shadow-exit {
-  from {
-    box-shadow: 0 0 12px 4px rgba(99, 102, 241, 0.6);
-    opacity: 1;
-  }
-
-  to {
-    box-shadow: 0 0 0px 0px rgba(99, 102, 241, 0);
-    opacity: 0;
-  }
+  from { box-shadow: 0 0 12px 4px rgba(99, 102, 241, 0.6); opacity: 1; }
+  to   { box-shadow: 0 0 0px  0px rgba(99, 102, 241, 0);   opacity: 0; }
 }
 
 @keyframes ease-kf-pulse-border-emphasis {
-
-  0%,
-  100% {
+  0%, 100% {
     box-shadow: 0 0 0 0px rgba(99, 102, 241, 0.6);
     border-color: rgba(99, 102, 241, 1);
   }
-
   50% {
     box-shadow: 0 0 0 6px rgba(99, 102, 241, 0);
     border-color: rgba(99, 102, 241, 0.4);
@@ -507,119 +223,62 @@
 }
 
 @keyframes ease-kf-squish-button {
-  0% {
-    transform: scale(1);
-  }
-
-  35% {
-    transform: scaleX(1.12) scaleY(0.88);
-  }
-
-  70% {
-    transform: scaleX(0.96) scaleY(1.06);
-  }
-
-  100% {
-    transform: scale(1);
-  }
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  35%  { transform: translate3d(0, 0, 0) scaleX(1.12) scaleY(0.88); }
+  70%  { transform: translate3d(0, 0, 0) scaleX(0.96) scaleY(1.06); }
+  100% { transform: translate3d(0, 0, 0) scale(1); }
 }
 
 @keyframes ease-kf-gradient-rotation {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 @keyframes ease-kf-contract-shadow-emphasis {
-  0% {
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-    transform: scale(1);
-  }
-
-  50% {
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-    transform: scale(0.96);
-  }
-
-  100% {
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-    transform: scale(1);
-  }
+  0%   { box-shadow: 0 8px 24px rgba(0,0,0,0.3); transform: translate3d(0, 0, 0) scale(1); }
+  50%  { box-shadow: 0 2px 6px  rgba(0,0,0,0.15); transform: translate3d(0, 0, 0) scale(0.96); }
+  100% { box-shadow: 0 8px 24px rgba(0,0,0,0.3); transform: translate3d(0, 0, 0) scale(1); }
 }
 
 @keyframes ease-kf-rotate-image-exit {
-  from {
-    transform: rotate(0deg) scale(1);
-    opacity: 1;
-  }
-
-  to {
-    transform: rotate(90deg) scale(0.75);
-  }
+  from { transform: translate3d(0, 0, 0) rotate(0deg)  scale(1);    opacity: 1; }
+  to   { transform: translate3d(0, 0, 0) rotate(90deg) scale(0.75); }
 }
 
 @keyframes ease-kf-bounce-in {
-  0%   { transform: scale(0);    opacity: 0; }
-  50%  { transform: scale(1.15); opacity: 1; }
-  70%  { transform: scale(0.92); }
-  85%  { transform: scale(1.05); }
-  100% { transform: scale(1);    opacity: 1; }
+  0%   { transform: translate3d(0, 0, 0) scale(0);    opacity: 0; }
+  50%  { transform: translate3d(0, 0, 0) scale(1.15); opacity: 1; }
+  70%  { transform: translate3d(0, 0, 0) scale(0.92); }
+  85%  { transform: translate3d(0, 0, 0) scale(1.05); }
+  100% { transform: translate3d(0, 0, 0) scale(1);    opacity: 1; }
 }
 
 @keyframes ease-kf-morph-card {
-  from {
-    border-radius: 8px;
-  }
-
-  to {
-    border-radius: 50%;
-  }
+  from { border-radius: 8px; }
+  to   { border-radius: 50%; }
 }
 
 @keyframes ease-float {
-
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-10px);
-  }
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50%       { transform: translate3d(0, -10px, 0); }
 }
 
 @keyframes ease-zoom-in {
-  from {
-    transform: scale(0);
-  }
-
-  to {
-    transform: scale(1);
-  }
+  from { transform: translate3d(0, 0, 0) scale(0); }
+  to   { transform: translate3d(0, 0, 0) scale(1); }
 }
 
 @keyframes ease-zoom-out {
-  from {
-    transform: scale(1.5);
-  }
-
-  to {
-    transform: scale(1);
-  }
+  from { transform: translate3d(0, 0, 0) scale(1.5); }
+  to   { transform: translate3d(0, 0, 0) scale(1); }
 }
 
 /* ── Animation Utility Classes ─────────────────────────────── */
 .ease-bounce-in {
   animation: ease-kf-bounce-in var(--ease-speed-medium) var(--ease-ease-bounce) both;
 }
+
 .ease-zoom-out {
   animation: ease-zoom-out 0.6s ease-out forwards;
 }
@@ -627,6 +286,7 @@
 .ease-float {
   animation: ease-float 3s ease-in-out infinite;
 }
+
 .ease-zoom-in {
   animation: ease-kf-zoom-in var(--ease-speed-medium) var(--ease-ease-bounce) both;
 }
@@ -655,22 +315,19 @@
   animation: ease-kf-pulse-border-emphasis 1.5s var(--ease-ease) infinite;
 }
 
-/* Bounce Text Emphasis
-   Standardized to: .ease-hover-bounce-text */
 .ease-hover-bounce-text {
   display: inline-block;
 }
 
 .ease-hover-bounce-text:hover {
-  animation:
-    ease-kf-bounce-text var(--ease-speed-medium) var(--ease-ease-bounce);
+  animation: ease-kf-bounce-text var(--ease-speed-medium) var(--ease-ease-bounce);
 }
 
 .ease-shimmer-sweep {
   background: linear-gradient(120deg,
-      transparent 30%,
-      rgba(255, 255, 255, 0.15) 50%,
-      transparent 70%);
+    transparent 30%,
+    rgba(255, 255, 255, 0.15) 50%,
+    transparent 70%);
   background-size: 200% auto;
   animation: ease-kf-shimmer-sweep var(--ease-speed-slow) var(--ease-ease) infinite;
 }
@@ -680,10 +337,11 @@
 .ease-squish-button:active {
   animation: ease-kf-squish-button var(--ease-speed-medium) var(--ease-ease) both;
 }
+
 .ease-gradient-rotation {
-  background: linear-gradient(270deg, 
-    var(--ease-color-primary), 
-    var(--ease-color-secondary), 
+  background: linear-gradient(270deg,
+    var(--ease-color-primary),
+    var(--ease-color-secondary),
     var(--ease-color-primary)
   );
   background-size: 200% 200%;
@@ -698,21 +356,17 @@
   animation: ease-kf-rotate-image-exit var(--ease-speed-medium) var(--ease-ease) both;
 }
 
-
 .ease-expand-border-exit {
   animation: ease-kf-expand-border-exit var(--ease-speed-medium) var(--ease-ease) forwards;
 }
 
-/* Entrance Animations */
-
-/* Skeleton Loading Animations*/
-
+/* Skeleton Loading */
 .ease-skeleton-shimmer {
   background: var(--ease-color-neutral-100);
   background-image: linear-gradient(90deg,
-      var(--ease-color-neutral-100) 0px,
-      var(--ease-color-neutral-200) 40px,
-      var(--ease-color-neutral-100) 80px);
+    var(--ease-color-neutral-100) 0px,
+    var(--ease-color-neutral-200) 40px,
+    var(--ease-color-neutral-100) 80px);
   background-size: 1000px 100%;
   animation: ease-kf-shimmer 2s infinite linear forwards;
 }
@@ -735,9 +389,6 @@
   animation: ease-kf-fade-out var(--ease-speed-medium) var(--ease-ease) both;
 }
 
-/* NOTE: :not() guards prevent animation cancellation when both
-   .ease-slide-up and .ease-slide-down are applied to the same element */
-/* Fixed: prevent conflict when both classes applied simultaneously */
 .ease-slide-up:not(.ease-slide-down) {
   animation: ease-kf-slide-up var(--ease-speed-medium) var(--ease-ease) both;
 }
@@ -829,38 +480,27 @@
   animation: ease-kf-shake 0.5s var(--ease-ease) both;
 }
 
-/* Typewriter Loop
-   Types → Pause → Delete → Repeat
-   Uses CSS variables for configurable text length */
-
+/* Typewriter Loop */
 .ease-typewriter-loop {
   --ease-typewriter-length: 12ch;
   --ease-typewriter-duration: 6s;
+  --ease-typewriter-steps: 12;
 
   display: inline-block;
   overflow: hidden;
   white-space: nowrap;
-
   width: 0;
   max-width: fit-content;
-
   border-right: 2px solid currentColor;
-
-  --ease-typewriter-steps: 12;
 
   animation:
     ease-kf-typewriter-loop var(--ease-typewriter-duration) steps(var(--ease-typewriter-steps), end) infinite,
     ease-kf-cursor-blink 0.8s step-end infinite;
 
-  will-change: width;
+  will-change: width; /* override global — width, not transform */
 }
 
 /* ── Hover Animations ──────────────────────────────────────── */
-
-/* Grow on hover
-   [INTEGRATED] from submissions/examples/hover-grow/
-   Original class name: .hover-grow-card / .hover-grow-btn
-   Standardized to: .ease-hover-grow */
 .ease-hover-grow {
   transition: transform var(--ease-speed-medium) var(--ease-ease-bounce);
   will-change: transform;
@@ -870,8 +510,6 @@
   transform: scale(1.06);
 }
 
-/* Lift + Shadow combined hover
-   Most common 'card lift' pattern — translateY with growing box-shadow */
 .ease-hover-lift-shadow {
   transition: transform var(--ease-speed-medium) var(--ease-ease),
     box-shadow var(--ease-speed-medium) var(--ease-ease);
@@ -879,12 +517,9 @@
 }
 
 .ease-hover-lift-shadow:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15),
-    0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translate3d(0, -4px, 0);
 }
 
-/* Shrink on hover */
 .ease-hover-shrink {
   transition: transform var(--ease-speed-fast) var(--ease-ease);
   will-change: transform;
@@ -894,7 +529,6 @@
   transform: scale(0.95);
 }
 
-/* Glow on hover */
 .ease-hover-glow {
   transition: box-shadow var(--ease-speed-medium) var(--ease-ease);
 }
@@ -903,18 +537,16 @@
   box-shadow: var(--ease-glow-primary);
 }
 
-/* Lift (shadow depth) on hover */
 .ease-hover-lift {
   transition: transform var(--ease-speed-medium) var(--ease-ease),
     box-shadow var(--ease-speed-medium) var(--ease-ease);
 }
 
 .ease-hover-lift:hover {
-  transform: translateY(-4px);
+  transform: translate3d(0, -4px, 0);
   box-shadow: var(--ease-shadow-xl);
 }
 
-/* Color shift underline on hover */
 .ease-hover-underline {
   position: relative;
 }
@@ -934,11 +566,6 @@
   width: 100%;
 }
 
-/* Card lift on hover
-   [INTEGRATED] from submissions/examples/card-lift/
-   Original class name: .lift-card
-   Standardized to: .ease-card-lift
-   (also available as .ease-hover-lift in the cards component) */
 .ease-card-lift {
   transition:
     transform var(--ease-speed-medium) var(--ease-ease-out),
@@ -947,14 +574,10 @@
 }
 
 .ease-card-lift:hover {
-  transform: translateY(-8px);
+  transform: translate3d(0, -8px, 0);
   box-shadow: var(--ease-shadow-xl);
 }
 
-/* Shimmer sweep on hover
-   [INTEGRATED] from submissions/examples/hover-shimmer/
-   Original class name: .hover-shimmer-card
-   Standardized to: .ease-hover-shimmer */
 .ease-hover-shimmer {
   position: relative;
   overflow: hidden;
@@ -968,9 +591,9 @@
   width: 60%;
   height: 100%;
   background: linear-gradient(120deg,
-      transparent 0%,
-      rgba(255, 255, 255, 0.08) 50%,
-      transparent 100%);
+    transparent 0%,
+    rgba(255, 255, 255, 0.08) 50%,
+    transparent 100%);
   transition: left var(--ease-speed-slow) var(--ease-ease);
   pointer-events: none;
 }
@@ -979,8 +602,6 @@
   left: 150%;
 }
 
-/* Squish Border Exit
-   Standardized to: .ease-hover-squish-border */
 .ease-hover-squish-border {
   display: inline-block;
   transition:
@@ -989,12 +610,9 @@
 }
 
 .ease-hover-squish-border:hover {
-  animation:
-    ease-kf-squish-border var(--ease-speed-medium) var(--ease-ease-bounce);
+  animation: ease-kf-squish-border var(--ease-speed-medium) var(--ease-ease-bounce);
 }
 
-/* Morphing Card Hover
-   Standardized to: .ease-hover-morph-card */
 .ease-hover-morph-card {
   border-radius: 0;
   transition:
@@ -1006,35 +624,32 @@
 .ease-hover-morph-card:hover {
   border-radius: 50%;
   transform: scale(1.08);
-
 }
 
 /* ── Stagger Delay Helpers ─────────────────────────────────── */
-/* Use these with entrance animations to stagger children */
-
-/* 75ms stagger delay helper */
-.ease-delay-75  { animation-delay: 75ms; transition-delay: 75ms; }
-.ease-delay-100 { animation-delay: 100ms; transition-delay: 100ms; }
-.ease-delay-150 { animation-delay: 150ms; transition-delay: 150ms; }
-.ease-delay-200 { animation-delay: 200ms; transition-delay: 200ms; }
-.ease-delay-300 { animation-delay: 300ms; transition-delay: 300ms; }
-.ease-delay-400 { animation-delay: 400ms; transition-delay: 400ms; }
-.ease-delay-500 { animation-delay: 500ms; transition-delay: 500ms; }
-.ease-delay-600 { animation-delay: 600ms; transition-delay: 600ms; }
-.ease-delay-700 { animation-delay: 700ms; transition-delay: 700ms; }
-.ease-delay-800 { animation-delay: 800ms; transition-delay: 800ms; }
+.ease-delay-75   { animation-delay:  75ms; transition-delay:  75ms; }
+.ease-delay-100  { animation-delay: 100ms; transition-delay: 100ms; }
+.ease-delay-150  { animation-delay: 150ms; transition-delay: 150ms; }
+.ease-delay-200  { animation-delay: 200ms; transition-delay: 200ms; }
+.ease-delay-300  { animation-delay: 300ms; transition-delay: 300ms; }
+.ease-delay-400  { animation-delay: 400ms; transition-delay: 400ms; }
+.ease-delay-500  { animation-delay: 500ms; transition-delay: 500ms; }
+.ease-delay-600  { animation-delay: 600ms; transition-delay: 600ms; }
+.ease-delay-700  { animation-delay: 700ms; transition-delay: 700ms; }
+.ease-delay-800  { animation-delay: 800ms; transition-delay: 800ms; }
 .ease-delay-1000 { animation-delay: 1000ms; transition-delay: 1000ms; }
 
 /* ── Duration Overrides ────────────────────────────────────── */
-.ease-duration-fast   { animation-duration: var(--ease-speed-fast); transition-duration: var(--ease-speed-fast); }
+.ease-duration-fast   { animation-duration: var(--ease-speed-fast);   transition-duration: var(--ease-speed-fast); }
 .ease-duration-medium { animation-duration: var(--ease-speed-medium); transition-duration: var(--ease-speed-medium); }
-.ease-duration-slow   { animation-duration: var(--ease-speed-slow); transition-duration: var(--ease-speed-slow); }
+.ease-duration-slow   { animation-duration: var(--ease-speed-slow);   transition-duration: var(--ease-speed-slow); }
 
-/* ── Reduced Motion: Respect user preference ───────────────── */
+/* ── Reduced Motion ────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   [class*="ease-"] {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
+    will-change: auto !important; /* release GPU layers */
   }
   [class*="ease-hover-"],
   [class*="ease-card-"],
