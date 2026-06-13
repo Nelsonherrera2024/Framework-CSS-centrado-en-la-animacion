@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cards Text Dark Fallback — EaseMotion CSS</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main>
+    <header class="page-header">
+      <h1 class="page-title">Cards Text Dark Fallback Bug</h1>
+      <p class="page-copy">Hardcoded light-theme text colors in cards break dark mode readability.</p>
+      <a class="issue-link" href="https://github.com/anomalyco/easemotion/issues/5945" target="_blank">Issue #5945</a>
+    </header>
+
+    <section class="demo-section">
+      <h2 class="section-title">The Problem</h2>
+      <p class="section-desc">Card components use hardcoded <code>color: #1f2937</code> (dark text) suitable only for light backgrounds. In dark mode, the card background changes to dark while the text stays dark — text becomes invisible.</p>
+    </section>
+
+    <section class="demo-section">
+      <h2 class="section-title">Before vs After</h2>
+      <div class="compare-grid">
+        <div class="compare-card broken">
+          <span class="label label-broken">Broken — Hardcoded Text</span>
+          <h3>Dark Text on Dark BG</h3>
+          <div class="card-demo">
+            <div class="demo-card broken-card">
+              <h4>Card Title</h4>
+              <p>This text uses a hardcoded light-theme color and may be invisible in dark mode.</p>
+            </div>
+          </div>
+          <p class="note">Text color <code>#1f2937</code> does not change in dark mode.</p>
+        </div>
+        <div class="compare-card fixed">
+          <span class="label label-fixed">Fixed — Token-Based Text</span>
+          <h3>Theme-Aware Text Color</h3>
+          <div class="card-demo">
+            <div class="demo-card fixed-card">
+              <h4>Card Title</h4>
+              <p>This text uses <code>--ease-color-text</code> and adapts to both themes.</p>
+            </div>
+          </div>
+          <p class="note">Text respects <code>--ease-color-text</code> token for automatic dark mode support.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
