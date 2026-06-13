@@ -623,18 +623,6 @@
   100% { transform: scale(1);    opacity: 1; }
 }
 
-@keyframes ease-kf-morph-card {
-  from {
-    border-radius: 8px;
-    transform: scale(1);
-  }
-
-  to {
-    border-radius: 50%;
-    transform: scale(0.96);
-  }
-}
-
 @keyframes ease-float {
 
   0%,
@@ -647,7 +635,7 @@
   }
 }
 
-@keyframes ease-zoom-out {
+@keyframes ease-kf-zoom-out {
   from {
     transform: scale(1.5);
   }
@@ -922,7 +910,7 @@
 }
 
 .ease-ping {
-  animation: ease-kf-ping 1s cubic-bezier(0, 0, 0.2, 1) var(--ease-animation-iterations, infinite);
+  animation: ease-kf-ping 1s var(--ease-ease-out) var(--ease-animation-iterations, infinite);
 }
 
 .ease-shake {

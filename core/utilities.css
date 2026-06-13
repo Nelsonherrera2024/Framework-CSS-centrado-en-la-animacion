@@ -229,12 +229,10 @@
 .ease-snap-x {
   --ease-snap-axis: x !important;
   scroll-snap-type: var(--ease-snap-axis, x) var(--ease-snap-strictness, proximity) !important;
-  -webkit-scroll-snap-type: var(--ease-snap-axis, x) var(--ease-snap-strictness, proximity) !important;
 }
 .ease-snap-y {
   --ease-snap-axis: y !important;
   scroll-snap-type: var(--ease-snap-axis, y) var(--ease-snap-strictness, proximity) !important;
-  -webkit-scroll-snap-type: var(--ease-snap-axis, y) var(--ease-snap-strictness, proximity) !important;
 }
 .ease-snap-center { scroll-snap-align: center !important; }
 .ease-snap-start  { scroll-snap-align: start !important; }
