@@ -369,6 +369,44 @@ By default, the value is `infinite`, preserving existing behavior.
 <!-- Exit animation -->
 <div class="ease-expand-border-exit"></div>
 
+### Available Animation Classes
+
+| Class | Description |
+|---------|------------|
+| `ease-fade-in` | Fades an element into view |
+| `ease-fade-out` | Fades an element out |
+| `ease-slide-up` | Slides an element upward into view |
+| `ease-slide-down` | Slides an element downward into view |
+| `ease-slide-in-left` | Slides an element in from the left |
+| `ease-slide-in-right` | Slides an element in from the right |
+| `ease-slide-in-from-top` | Slides an element in from the top |
+| `ease-slide-in-from-bottom` | Slides an element in from the bottom |
+| `ease-slide-in-from-left` | Slides an element in from the left edge |
+| `ease-slide-in-from-right` | Slides an element in from the right edge |
+| `ease-zoom-in` | Zoom-in entrance effect |
+| `ease-zoom-out` | Zoom-out animation effect |
+| `ease-bounce` | Continuous bouncing animation |
+| `ease-bounce-in` | Bouncy entrance animation |
+| `ease-pulse` | Repeated pulse effect |
+| `ease-rotate` | Continuous rotation animation |
+| `ease-ping` | Expanding ping effect |
+| `ease-shake` | Shake animation effect |
+| `ease-wave` | Waving motion effect |
+| `ease-float` | Floating motion effect |
+| `ease-flip` | 3D flip animation |
+| `ease-blur-to-focus` | Blur-to-focus entrance animation |
+| `ease-contract-image-entrance` | Contract-style image entrance effect |
+| `ease-expand-border-exit` | Border expansion exit animation |
+
+### Example
+
+```html
+<div class="ease-fade-in">Fade In</div>
+<div class="ease-slide-up">Slide Up</div>
+<div class="ease-bounce">Bounce</div>
+<div class="ease-pulse">Pulse</div>
+<div class="ease-zoom-in">Zoom In</div>
+```
 
 ### Hover Effects
 
