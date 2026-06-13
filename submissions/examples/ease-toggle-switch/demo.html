@@ -1,33 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Ease Toggle Switch</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ease-toggle-switch Demo</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/SAPTARSHI-coder/EaseMotion-css@main/easemotion.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: Inter, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      min-height: 100vh;
+      background: #f8fafc;
+      padding: 2rem;
+    }
+    h2 { color: #7c3aed; }
+    .demo-section {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+      width: 100%;
+      max-width: 400px;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .demo-section h3 {
+      margin: 0 0 0.5rem;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #94a3b8;
+    }
+  </style>
 </head>
 <body>
 
-  <h2>Ease Toggle Switch</h2>
+  <h2>ease-toggle-switch</h2>
 
-  <!-- Small Toggle -->
-  <div>
-    <p>Small</p>
-    <input type="checkbox" id="toggle-sm" class="ease-toggle sm">
-    <label for="toggle-sm"></label>
+  <!-- Default -->
+  <div class="demo-section">
+    <h3>Default</h3>
+    <label class="ease-toggle-wrapper">
+      <input type="checkbox" class="ease-toggle-input">
+      <span class="ease-toggle-slider"></span>
+      Enable Notifications
+    </label>
+
+    <label class="ease-toggle-wrapper">
+      <input type="checkbox" class="ease-toggle-input" checked>
+      <span class="ease-toggle-slider"></span>
+      Dark Mode
+    </label>
   </div>
 
-  <!-- Medium Toggle -->
-  <div>
-    <p>Medium</p>
-    <input type="checkbox" id="toggle-md" class="ease-toggle md">
-    <label for="toggle-md"></label>
+  <!-- Sizes -->
+  <div class="demo-section">
+    <h3>Sizes</h3>
+    <label class="ease-toggle-wrapper ease-toggle-sm">
+      <input type="checkbox" class="ease-toggle-input" checked>
+      <span class="ease-toggle-slider"></span>
+      Small
+    </label>
+
+    <label class="ease-toggle-wrapper">
+      <input type="checkbox" class="ease-toggle-input" checked>
+      <span class="ease-toggle-slider"></span>
+      Default
+    </label>
+
+    <label class="ease-toggle-wrapper ease-toggle-lg">
+      <input type="checkbox" class="ease-toggle-input" checked>
+      <span class="ease-toggle-slider"></span>
+      Large
+    </label>
   </div>
 
-  <!-- Large Toggle -->
-  <div>
-    <p>Large</p>
-    <input type="checkbox" id="toggle-lg" class="ease-toggle lg">
-    <label for="toggle-lg"></label>
+  <!-- Color variants -->
+  <div class="demo-section">
+    <h3>Color Variants</h3>
+    <label class="ease-toggle-wrapper">
+      <input type="checkbox" class="ease-toggle-input" checked>
+      <span class="ease-toggle-slider"></span>
+      Primary (default)
+    </label>
+
+    <label class="ease-toggle-wrapper ease-toggle-success">
+      <input type="checkbox" class="ease-toggle-input" checked>
+      <span class="ease-toggle-slider"></span>
+      Success
+    </label>
+
+    <label class="ease-toggle-wrapper ease-toggle-danger">
+      <input type="checkbox" class="ease-toggle-input" checked>
+      <span class="ease-toggle-slider"></span>
+      Danger
+    </label>
+  </div>
+
+  <!-- Disabled -->
+  <div class="demo-section">
+    <h3>Disabled</h3>
+    <label class="ease-toggle-wrapper">
+      <input type="checkbox" class="ease-toggle-input" disabled>
+      <span class="ease-toggle-slider"></span>
+      Disabled Off
+    </label>
+
+    <label class="ease-toggle-wrapper">
+      <input type="checkbox" class="ease-toggle-input" checked disabled>
+      <span class="ease-toggle-slider"></span>
+      Disabled On
+    </label>
   </div>
 
 </body>

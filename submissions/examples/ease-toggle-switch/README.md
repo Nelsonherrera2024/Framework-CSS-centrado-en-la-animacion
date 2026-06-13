@@ -1,23 +1,50 @@
-# Ease Toggle Switch
+# ease-toggle-switch
 
-## What it does
+A pure CSS animated toggle switch component for EaseMotion CSS.
 
-An iOS-style animated toggle switch built using pure CSS.
-
-## How to use
+## Usage
 
 ```html
-<input type="checkbox" id="toggle" class="ease-toggle md">
-<label for="toggle"></label>
+<label class="ease-toggle-wrapper">
+  <input type="checkbox" class="ease-toggle-input">
+  <span class="ease-toggle-slider"></span>
+  Enable Feature
+</label>
 ```
 
+## Sizes
+
+```html
+<label class="ease-toggle-wrapper ease-toggle-sm">...</label>
+<label class="ease-toggle-wrapper">...</label>
+<label class="ease-toggle-wrapper ease-toggle-lg">...</label>
+```
+
+## Color Variants
+
+```html
+<label class="ease-toggle-wrapper ease-toggle-success">...</label>
+<label class="ease-toggle-wrapper ease-toggle-danger">...</label>
+```
+
+## Classes
+
+| Class | Description |
+|---|---|
+| `ease-toggle-wrapper` | Label wrapper |
+| `ease-toggle-input` | Hidden checkbox input |
+| `ease-toggle-slider` | Visible toggle track and thumb |
+| `ease-toggle-sm` | Small size variant |
+| `ease-toggle-lg` | Large size variant |
+| `ease-toggle-success` | Green color variant |
+| `ease-toggle-danger` | Red color variant |
+
 ## Features
-
-* Pure CSS (no JavaScript)
-* Smooth sliding knob animation
-* Track color transition
-* Available in 3 sizes: small, medium, large
-
-## Why it fits EaseMotion CSS
-
-Follows a clean, animation-first approach with simple class usage and smooth transitions.
+- Pure CSS, zero JavaScript
+- Accessible via native checkbox
+- Keyboard navigable (Tab + Space)
+- Focus ring for keyboard users
+- 3 sizes, 3 color variants
+- Disabled state support
+- Respects prefers-reduced-motion
+- Uses EaseMotion CSS design tokens
