@@ -1,0 +1,4 @@
+
+.demo-wrapper { font-family: var(--ease-font-sans, system-ui, sans-serif); padding: 2rem; background: var(--ease-color-bg, #f8fafc); color: var(--ease-color-text, #1e293b); max-width: 500px; margin: 0 auto; perspective: 1000px; }
+.ease-tilt { padding: 3rem 2rem; background: linear-gradient(135deg, #6c63ff, #4338ca); color: white; border-radius: 12px; text-align: center; transition: transform 0.3s; transform-style: preserve-3d; }
+.ease-tilt:hover { transform: rotateX(10deg) rotateY(-10deg); }
