@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aspect Ratio Gallery</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Aspect Ratio Gallery</h1>
+    <p class="subtitle">Consistent media shapes with the <code>aspect-ratio</code> property</p>
+  </header>
+
+  <h2>1:1 — Square</h2>
+  <div class="gallery">
+    <div class="card">
+      <div class="media-wrapper aspect-1-1">
+        <img src="https://picsum.photos/seed/square1/400/400" alt="Square image 1" loading="lazy">
+      </div>
+      <div class="card-body">
+        <span class="ratio-label">1:1</span>
+        <p>Perfect squares for profile photos, thumbnails, and social cards.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="media-wrapper aspect-1-1">
+        <img src="https://picsum.photos/seed/square2/400/400" alt="Square image 2" loading="lazy">
+      </div>
+      <div class="card-body">
+        <span class="ratio-label">1:1</span>
+        <p>Consistent square crops regardless of container width.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>4:3 — Standard</h2>
+  <div class="gallery">
+    <div class="card">
+      <div class="media-wrapper aspect-4-3">
+        <img src="https://picsum.photos/seed/std1/800/600" alt="4:3 image 1" loading="lazy">
+      </div>
+      <div class="card-body">
+        <span class="ratio-label">4:3</span>
+        <p>Classic monitor and tablet proportion. Great for documentation screenshots.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="media-wrapper aspect-4-3">
+        <img src="https://picsum.photos/seed/std2/800/600" alt="4:3 image 2" loading="lazy">
+      </div>
+      <div class="card-body">
+        <span class="ratio-label">4:3</span>
+        <p>Common in photography and legacy video content.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>16:9 — Widescreen</h2>
+  <div class="gallery">
+    <div class="card">
+      <div class="media-wrapper aspect-16-9">
+        <img src="https://picsum.photos/seed/wide1/1600/900" alt="16:9 image 1" loading="lazy">
+      </div>
+      <div class="card-body">
+        <span class="ratio-label">16:9</span>
+        <p>Modern video and YouTube standard. Cinematic feel.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="media-wrapper aspect-16-9">
+        <video src="https://www.w3schools.com/html/mov_bbb.mp4" muted loop autoplay playsinline></video>
+      </div>
+      <div class="card-body">
+        <span class="ratio-label">16:9</span>
+        <p>Videos maintain widescreen shape across all viewport widths.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>3:2 — Photographic</h2>
+  <div class="gallery">
+    <div class="card">
+      <div class="media-wrapper aspect-3-2">
+        <img src="https://picsum.photos/seed/photo1/900/600" alt="3:2 image 1" loading="lazy">
+      </div>
+      <div class="card-body">
+        <span class="ratio-label">3:2</span>
+        <p>Standard 35mm film and DSLR frame proportion.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="media-wrapper aspect-3-2">
+        <img src="https://picsum.photos/seed/photo2/900/600" alt="3:2 image 2" loading="lazy">
+      </div>
+      <div class="card-body">
+        <span class="ratio-label">3:2</span>
+        <p>Ideal for print and editorial-style web layouts.</p>
+      </div>
+    </div>
+  </div>
+
+  <section class="comparison-section">
+    <h2>Aspect Ratio vs. Height: Auto</h2>
+    <div class="comparison-grid">
+      <div class="comparison-card">
+        <h3><span class="tag good">aspect-ratio: 16/9</span></h3>
+        <pre>img { width: 100%; aspect-ratio: 16 / 9; }</pre>
+        <div class="media-wrapper">
+          <img src="https://picsum.photos/seed/aspect-demo/800/450" alt="Aspect ratio demo" style="width:100%;aspect-ratio:16/9;object-fit:cover;">
+        </div>
+        <p style="color:#94a3b8;font-size:0.85rem;margin-top:0.5rem;">Space is reserved before the image loads — no layout shift.</p>
+      </div>
+      <div class="comparison-card">
+        <h3><span class="tag bad">height: auto (old way)</span></h3>
+        <pre>img { width: 100%; height: auto; }</pre>
+        <div class="media-wrapper">
+          <img src="https://picsum.photos/seed/fallback-demo/800/450" alt="Fallback demo" class="fallback-img" style="width:100%;height:auto;">
+        </div>
+        <p style="color:#94a3b8;font-size:0.85rem;margin-top:0.5rem;">Zero height until the image loads — causes CLS.</p>
+      </div>
+    </div>
+    <div class="code-block">
+      /* Recommended pattern for responsive media */<br>
+      img, video {<br>
+      &nbsp;&nbsp;width: 100%;<br>
+      &nbsp;&nbsp;aspect-ratio: attr(width) / attr(height);<br>
+      &nbsp;&nbsp;object-fit: cover;<br>
+      }
+    </div>
+  </section>
+
+  <footer>
+    <p>Part of the EaseMotion CSS Example Library &mdash; Dark theme demo</p>
+  </footer>
+</body>
+</html>
