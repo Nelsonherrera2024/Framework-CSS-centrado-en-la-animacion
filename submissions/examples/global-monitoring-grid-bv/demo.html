@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Global Monitoring Grid — EaseMotion CSS</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="gmg-layout">
+      <!-- ── SECTION 1: GMG Header ── -->
+      <header class="gmg-header">
+        <div class="gmg-logo">
+          <span>🌐</span>
+          <span>Global Telemetry Grid</span>
+        </div>
+        <div
+          style="
+            font-size: var(--text-sm);
+            font-weight: 600;
+            color: var(--gmg-accent);
+          "
+        >
+          Operations: Fully Nominal
+        </div>
+      </header>
+
+      <!-- ── SECTION 2: Worldwide Indicators ── -->
+      <section class="gmg-section">
+        <div class="gmg-grid-4">
+          <div class="gmg-card">
+            <h3>Global SLA Uptime</h3>
+            <div
+              style="
+                font-size: 2.5rem;
+                font-weight: 800;
+                color: var(--gmg-accent);
+                margin-top: 1rem;
+              "
+            >
+              99.999%
+            </div>
+            <p
+              style="
+                color: var(--gmg-text-muted);
+                font-size: 0.85rem;
+                margin-top: 0.5rem;
+              "
+            >
+              Across all global edge locations
+            </p>
+          </div>
+          <div class="gmg-card">
+            <h3>Edge Nodes</h3>
+            <div
+              style="
+                font-size: 2.5rem;
+                font-weight: 800;
+                color: var(--gmg-primary);
+                margin-top: 1rem;
+              "
+            >
+              1,240 / 1,240
+            </div>
+            <p
+              style="
+                color: var(--gmg-text-muted);
+                font-size: 0.85rem;
+                margin-top: 0.5rem;
+              "
+            >
+              All systems active and reporting
+            </p>
+          </div>
+          <div class="gmg-card">
+            <h3>Network Latency</h3>
+            <div
+              style="
+                font-size: 2.5rem;
+                font-weight: 800;
+                color: var(--gmg-accent);
+                margin-top: 1rem;
+              "
+            >
+              8.4 ms
+            </div>
+            <p
+              style="
+                color: var(--gmg-text-muted);
+                font-size: 0.85rem;
+                margin-top: 0.5rem;
+              "
+            >
+              Global average response times
+            </p>
+          </div>
+          <div class="gmg-card">
+            <h3>Compliance Level</h3>
+            <div
+              style="
+                font-size: 2.5rem;
+                font-weight: 800;
+                color: var(--gmg-primary);
+                margin-top: 1rem;
+              "
+            >
+              100% SEC
+            </div>
+            <p
+              style="
+                color: var(--gmg-text-muted);
+                font-size: 0.85rem;
+                margin-top: 0.5rem;
+              "
+            >
+              Active security posture rating
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SECTION 3: Global Incident Registry & Strategic Controls ── -->
+      <section class="gmg-section gmg-flex-2">
+        <div>
+          <h3>Worldwide Operations Incidents</h3>
+          <div style="margin-top: 1.5rem">
+            <table class="gmg-table">
+              <thead>
+                <tr>
+                  <th>Incident Code</th>
+                  <th>Region</th>
+                  <th>Core Impact</th>
+                  <th>Telemetry Load</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>gmg-us-east-88</td>
+                  <td>us-east-1</td>
+                  <td>None</td>
+                  <td>32% CPU</td>
+                  <td style="color: var(--gmg-accent)">Healthy</td>
+                </tr>
+                <tr>
+                  <td>gmg-eu-west-12</td>
+                  <td>eu-west-1</td>
+                  <td>None</td>
+                  <td>14% CPU</td>
+                  <td style="color: var(--gmg-accent)">Healthy</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="gmg-card">
+          <h3>Strategic Command</h3>
+          <p
+            style="
+              font-size: 0.9rem;
+              color: var(--gmg-text-muted);
+              margin-top: 0.5rem;
+              margin-bottom: 1.5rem;
+            "
+          >
+            Adjust global load balancing configurations and rules.
+          </p>
+          <button
+            style="
+              width: 100%;
+              padding: 0.75rem;
+              background-color: var(--gmg-primary);
+              border: none;
+              color: #fff;
+              font-weight: 700;
+              border-radius: 0.5rem;
+              cursor: pointer;
+              margin-bottom: 1rem;
+            "
+          >
+            Reroute Global Traffic
+          </button>
+          <button
+            style="
+              width: 100%;
+              padding: 0.75rem;
+              background-color: transparent;
+              border: 1px solid var(--gmg-border);
+              color: var(--gmg-text);
+              font-weight: 600;
+              border-radius: 0.5rem;
+              cursor: pointer;
+            "
+          >
+            Compile Global Report
+          </button>
+        </div>
+      </section>
+
+      <!-- ── SECTION 4: Live Global telemetry log ── -->
+      <section class="gmg-section">
+        <h3>Global Grid Command Console</h3>
+        <div style="margin-top: 1.5rem">
+          <pre><code>$ globalgrid-observer --monitor --verbose
+[INFO] Syning global telemetry nodes
+[SYNC] us-east-1 and eu-west-1 reporting 100% data fidelity
+[STATUS] Active global systems running nominally under standard limits</code></pre>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
