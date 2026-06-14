@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Styled &lt;dialog&gt; Element — EaseMotion</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <h1>Styled <code>&lt;dialog&gt;</code> element</h1>
+    <p>Native dialogs with animations, backdrop styling, and scroll locking.</p>
+  </header>
+
+  <div class="toolbar">
+    <button class="btn btn--sm" data-dialog="small-dialog">Small dialog</button>
+    <button class="btn btn--md" data-dialog="medium-dialog">Medium dialog</button>
+    <button class="btn btn--lg" data-dialog="large-dialog">Large dialog</button>
+  </div>
+
+  <dialog id="small-dialog" class="dialog dialog--sm">
+    <form method="dialog">
+      <h2>Small dialog</h2>
+      <p>This is a compact dialog for quick confirmations or alerts.</p>
+      <menu>
+        <button class="btn" value="cancel">Cancel</button>
+        <button class="btn btn--primary" value="confirm">Confirm</button>
+      </menu>
+    </form>
+  </dialog>
+
+  <dialog id="medium-dialog" class="dialog dialog--md">
+    <form method="dialog">
+      <h2>Medium dialog</h2>
+      <p>Use this size for forms, settings, or content that needs more room.</p>
+      <label>
+        <span>Sample input</span>
+        <input type="text" placeholder="Type something…">
+      </label>
+      <label>
+        <span>Choose an option</span>
+        <select>
+          <option>Option A</option>
+          <option>Option B</option>
+          <option>Option C</option>
+        </select>
+      </label>
+      <menu>
+        <button class="btn" value="cancel">Cancel</button>
+        <button class="btn btn--primary" value="submit">Submit</button>
+      </menu>
+    </form>
+  </dialog>
+
+  <dialog id="large-dialog" class="dialog dialog--lg">
+    <form method="dialog">
+      <h2>Large dialog</h2>
+      <p>Best for rich content, multi-step workflows, or full-featured panels.</p>
+      <div class="dialog-grid">
+        <div class="dialog-card">Card A</div>
+        <div class="dialog-card">Card B</div>
+        <div class="dialog-card">Card C</div>
+        <div class="dialog-card">Card D</div>
+      </div>
+      <menu>
+        <button class="btn" value="close">Close</button>
+      </menu>
+    </form>
+  </dialog>
+
+  <footer>
+    <p>Dialogs use <code>showModal()</code> for open and <code>close()</code> / <code>method="dialog"</code> for close. Body scroll is locked while open.</p>
+  </footer>
+
+  <script>
+    document.querySelectorAll('[data-dialog]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.getElementById(btn.dataset.dialog).showModal();
+      });
+    });
+    document.querySelectorAll('dialog').forEach(dlg => {
+      dlg.addEventListener('click', e => {
+        if (e.target === dlg) dlg.close();
+      });
+    });
+  </script>
+</body>
+</html>
