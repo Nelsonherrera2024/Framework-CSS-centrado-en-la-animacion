@@ -3,40 +3,78 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Conic Progress Ring - EaseMotion CSS</title>
-  <link rel="stylesheet" href="../../../core/animations.css">
+  <title>Conic Progress Ring</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="demo-wrapper">
-    <h1>Conic Progress Ring</h1>
-    <div class="rings-grid">
-      <div class="ring-card">
-        <div class="progress-ring" style="background: conic-gradient(#6366f1 0% 25%, light-dark(#e0e0e0, #2a2a2a) 25% 100%);">
-          <span class="ring-value">25%</span>
-        </div>
-        <span class="ring-label">Storage</span>
-      </div>
-      <div class="ring-card">
-        <div class="progress-ring" style="background: conic-gradient(#ec4899 0% 50%, light-dark(#e0e0e0, #2a2a2a) 50% 100%);">
-          <span class="ring-value">50%</span>
-        </div>
-        <span class="ring-label">Memory</span>
-      </div>
-      <div class="ring-card">
-        <div class="progress-ring" style="background: conic-gradient(#14b8a6 0% 75%, light-dark(#e0e0e0, #2a2a2a) 75% 100%);">
-          <span class="ring-value">75%</span>
-        </div>
-        <span class="ring-label">Bandwidth</span>
-      </div>
-      <div class="ring-card">
-        <div class="progress-ring" style="background: conic-gradient(#f59e0b 0% 90%, light-dark(#e0e0e0, #2a2a2a) 90% 100%);">
-          <span class="ring-value">90%</span>
-        </div>
-        <span class="ring-label">CPU</span>
-      </div>
+  <span class="page-title">Conic Progress Rings</span>
+
+  <div class="rings">
+    <div class="ring" style="--target: 30; --i: 0;">
+      <span class="ring-value" id="val0">0<small>%</small></span>
+      <span class="ring-label">Low</span>
     </div>
-    <p class="description">Circular progress indicators built with conic-gradient. Each ring displays a different percentage. The ring has a subtle scale animation on hover. Supports light and dark mode.</p>
+
+    <div class="ring ring--colored" style="--target: 62; --i: 1;">
+      <div class="ring-track"></div>
+      <span class="ring-value" id="val1">0<small>%</small></span>
+      <span class="ring-label">Passing</span>
+    </div>
+
+    <div class="ring ring--xl" style="--target: 88; --i: 2;">
+      <span class="ring-value" id="val2">0<small>%</small></span>
+      <span class="ring-label">Excellent</span>
+    </div>
+
+    <div class="ring ring--sm ring--double" style="--target: 100; --i: 3;">
+      <span class="ring-value" id="val3">0<small>%</small></span>
+      <span class="ring-label">Complete</span>
+    </div>
   </div>
+
+  <div class="legend">
+    <span class="legend-item"><span class="legend-swatch" style="background:#ef4444"></span> 0–25%</span>
+    <span class="legend-item"><span class="legend-swatch" style="background:#f59e0b"></span> 25–50%</span>
+    <span class="legend-item"><span class="legend-swatch" style="background:#22c55e"></span> 50–75%</span>
+    <span class="legend-item"><span class="legend-swatch" style="background:#3b82f6"></span> 75–100%</span>
+  </div>
+
+  <p class="footer-note">Percentages animate from 0 to target on load</p>
+
+  <script>
+    const rings = document.querySelectorAll('.ring');
+    const observers = [];
+
+    rings.forEach((ring, index) => {
+      const valueEl = ring.querySelector('.ring-value');
+      if (!valueEl) return;
+
+      const target = parseFloat(ring.style.getPropertyValue('--target')) || 0;
+      let startTime = null;
+      const duration = 2000;
+      const delay = index * 300;
+
+      function animate(timestamp) {
+        if (!startTime) startTime = timestamp;
+        const elapsed = timestamp - startTime - delay;
+        if (elapsed < 0) {
+          requestAnimationFrame(animate);
+          return;
+        }
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = Math.round(eased * target);
+
+        ring.style.setProperty('--percentage', current);
+        valueEl.innerHTML = current + '<small>%</small>';
+
+        if (progress < 1) {
+          requestAnimationFrame(animate);
+        }
+      }
+
+      requestAnimationFrame(animate);
+    });
+  </script>
 </body>
 </html>

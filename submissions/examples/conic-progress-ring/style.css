@@ -1,91 +1,223 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 :root {
-  color-scheme: light dark;
+  --bg: #0a0f1e;
+  --text: #e2e8f0;
+  --surface: #131a2b;
+  --ring-size: 140px;
+  --ring-thickness: 12px;
+  --percentage: 0;
+  --target: 0;
+  --color-low: #ef4444;
+  --color-mid: #f59e0b;
+  --color-high: #22c55e;
+  --color-full: #3b82f6;
+  --color-bg: #1e293b;
+  --anim-ready: running;
 }
 
 body {
-  font-family: sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   min-height: 100vh;
-  margin: 0;
-  padding: 2rem;
-  background: light-dark(#f0f2f5, #0f0f0f);
-  color: light-dark(#1a1a2e, #f0f0f0);
-  transition: background 0.3s, color 0.3s;
-}
-
-.demo-wrapper {
-  text-align: center;
-  max-width: 700px;
-}
-
-h1 {
-  margin-bottom: 2.5rem;
-  font-weight: 300;
-  letter-spacing: 0.05em;
-}
-
-.rings-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: center;
-}
-
-.ring-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.8rem;
+  justify-content: center;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, sans-serif;
+  padding: 2rem;
+  gap: 2rem;
 }
 
-.progress-ring {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
+.page-title {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  opacity: 0.5;
+  font-weight: 400;
+}
+
+@property --percentage { syntax: '<number>'; initial-value: 0; inherits: true; }
+
+.rings {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  justify-content: center;
+  max-width: 800px;
+  width: 100%;
+}
+
+.ring {
+  position: relative;
+  width: var(--ring-size);
+  height: var(--ring-size);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s, box-shadow 0.3s;
-  position: relative;
+  animation: fillRing 2s ease-out forwards var(--anim-ready);
+  animation-delay: calc(var(--i, 0) * 0.3s);
 }
 
-.progress-ring:hover {
-  transform: scale(1.08);
-}
-
-.progress-ring::before {
-  content: "";
+.ring::before {
+  content: '';
   position: absolute;
-  width: 88px;
-  height: 88px;
+  inset: 0;
   border-radius: 50%;
-  background: light-dark(#ffffff, #1a1a1a);
+  background: conic-gradient(
+    from 0deg,
+    var(--color-bg) 0deg,
+    var(--color-bg) calc(var(--percentage) * 3.6deg),
+    transparent calc(var(--percentage) * 3.6deg)
+  );
+  mask: radial-gradient(
+    closest-side,
+    transparent calc(var(--ring-size) / 2 - var(--ring-thickness)),
+    #000 calc(var(--ring-size) / 2 - var(--ring-thickness))
+  );
+  -webkit-mask: radial-gradient(
+    closest-side,
+    transparent calc(var(--ring-size) / 2 - var(--ring-thickness)),
+    #000 calc(var(--ring-size) / 2 - var(--ring-thickness))
+  );
+}
+
+.ring--colored::before {
+  background: conic-gradient(
+    from 0deg,
+    var(--color-low) 0deg, var(--color-low) 90deg,
+    var(--color-mid) 90deg, var(--color-mid) 180deg,
+    var(--color-high) 180deg, var(--color-high) 270deg,
+    var(--color-full) 270deg, var(--color-full) 360deg
+  );
+  mask: radial-gradient(
+    closest-side,
+    transparent calc(var(--ring-size) / 2 - var(--ring-thickness)),
+    #000 calc(var(--ring-size) / 2 - var(--ring-thickness))
+  );
+  -webkit-mask: radial-gradient(
+    closest-side,
+    transparent calc(var(--ring-size) / 2 - var(--ring-thickness)),
+    #000 calc(var(--ring-size) / 2 - var(--ring-thickness))
+  );
+  clip-path: inset(0 round 50%);
+}
+
+.ring--colored .ring-track {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    var(--color-bg) 0deg,
+    var(--color-bg) calc(var(--percentage) * 3.6deg),
+    transparent calc(var(--percentage) * 3.6deg)
+  );
+  mask: radial-gradient(
+    closest-side,
+    transparent calc(var(--ring-size) / 2 - var(--ring-thickness)),
+    #000 calc(var(--ring-size) / 2 - var(--ring-thickness))
+  );
+  -webkit-mask: radial-gradient(
+    closest-side,
+    transparent calc(var(--ring-size) / 2 - var(--ring-thickness)),
+    #000 calc(var(--ring-size) / 2 - var(--ring-thickness))
+  );
+  z-index: 1;
+}
+
+@keyframes fillRing {
+  from { --percentage: 0; }
+  to { --percentage: var(--target); }
 }
 
 .ring-value {
   position: relative;
-  z-index: 1;
-  font-size: 1.4rem;
+  z-index: 2;
+  font-size: 1.75rem;
   font-weight: 700;
-  font-family: monospace;
+  line-height: 1;
+  color: var(--text);
+}
+
+.ring-value small {
+  font-size: 0.75rem;
+  font-weight: 400;
+  opacity: 0.5;
 }
 
 .ring-label {
-  font-size: 0.9rem;
-  font-weight: 500;
-  opacity: 0.7;
+  position: absolute;
+  bottom: -1.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.4;
+  white-space: nowrap;
 }
 
-.description {
-  margin-top: 2.5rem;
-  opacity: 0.7;
-  font-size: 0.95rem;
+.ring--xl {
+  --ring-size: 180px;
+  --ring-thickness: 16px;
+}
+
+.ring--xl .ring-value {
+  font-size: 2.25rem;
+}
+
+.ring--sm {
+  --ring-size: 100px;
+  --ring-thickness: 8px;
+}
+
+.ring--sm .ring-value {
+  font-size: 1.25rem;
+}
+
+.ring--double {
+  --ring-thickness: 6px;
+  box-shadow: 0 0 0 6px var(--color-bg);
+  border-radius: 50%;
+}
+
+.ring--double::after {
+  content: '';
+  position: absolute;
+  inset: 18px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    var(--color-full) 0deg,
+    var(--color-full) calc(var(--percentage) * 3.6deg),
+    var(--color-bg) calc(var(--percentage) * 3.6deg)
+  );
+  mask: radial-gradient(
+    closest-side,
+    transparent calc(var(--ring-size) / 2 - var(--ring-thickness) - 24px),
+    #000 calc(var(--ring-size) / 2 - var(--ring-thickness) - 24px)
+  );
+  -webkit-mask: radial-gradient(
+    closest-side,
+    transparent calc(var(--ring-size) / 2 - var(--ring-thickness) - 24px),
+    #000 calc(var(--ring-size) / 2 - var(--ring-thickness) - 24px)
+  );
+}
+
+.footer-note {
+  font-size: 0.7rem;
+  opacity: 0.3;
+  text-align: center;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .progress-ring {
-    transition: none;
+  .ring {
+    animation: none;
+    --percentage: var(--target);
   }
 }
