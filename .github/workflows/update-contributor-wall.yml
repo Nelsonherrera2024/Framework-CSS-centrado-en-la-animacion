@@ -35,13 +35,17 @@ jobs:
       - name: Pull latest before building
         run: git pull --rebase origin main
 
-      - name: Build contributor wall
+            - name: Build contributor wall
         run: python3 scripts/build-contributor-wall.py
-        - name: Build contributor showcase page
-        run: python3 scripts/build-contributor-page.py  
+
+      - name: Build contributor showcase page
+        run: python3 scripts/build-contributor-page.py
+
       - name: Commit if changed
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore: update contributor wall [skip ci]"
-          file_pattern: README.md
+          file_pattern: |
+            README.md
+            docs/contributors.html
           push_options: --force-with-lease
