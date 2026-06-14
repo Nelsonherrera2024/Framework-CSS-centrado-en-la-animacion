@@ -1,0 +1,225 @@
+/* ============================================================
+   KNOWLEDGE BASE EXPERIENCE CENTER — Style Sheet
+   ============================================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap");
+
+:root {
+  --kb-bg: #111827;
+  --kb-surface: #1f2937;
+  --kb-elevated: #374151;
+  --kb-primary: #0ea5e9;
+  --kb-accent: #8b5cf6;
+  --kb-success: #10b981;
+  --kb-text: #f9fafb;
+  --kb-text-muted: #9ca3af;
+  --kb-border: rgba(255, 255, 255, 0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--kb-bg);
+  color: var(--kb-text);
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+.kb-layout {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.kb-section {
+  margin-bottom: 4rem;
+  animation: fadeInUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Header with Search */
+.kb-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--kb-border);
+  padding-bottom: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.kb-search-bar {
+  width: 350px;
+  padding: 0.6rem 1rem;
+  background-color: var(--kb-surface);
+  border: 1px solid var(--kb-border);
+  color: var(--kb-text);
+  border-radius: 9999px;
+  font-size: 0.9rem;
+  transition: all 0.3s;
+}
+
+.kb-search-bar:focus {
+  outline: none;
+  border-color: var(--kb-primary);
+  width: 400px;
+}
+
+/* Hero Section */
+.kb-hero {
+  text-align: center;
+  padding: 5rem 2rem;
+  background: radial-gradient(
+    circle at top,
+    rgba(14, 165, 233, 0.1),
+    transparent
+  );
+  border-radius: 1.5rem;
+  border: 1px solid var(--kb-border);
+  margin-bottom: 4rem;
+}
+
+/* Category Grid */
+.kb-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.kb-card {
+  background-color: var(--kb-surface);
+  border: 1px solid var(--kb-border);
+  border-radius: 1rem;
+  padding: 2rem;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.kb-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--kb-primary);
+  box-shadow: 0 10px 20px rgba(14, 165, 233, 0.08);
+}
+
+/* Doc Portal Sidebar Layout */
+.kb-portal-layout {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 3rem;
+}
+
+.kb-sidebar-toc {
+  position: sticky;
+  top: 100px;
+  list-style: none;
+}
+
+.kb-sidebar-toc li {
+  margin-bottom: 0.75rem;
+}
+
+.kb-sidebar-toc a {
+  color: var(--kb-text-muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+.kb-sidebar-toc a:hover,
+.kb-sidebar-toc a.active {
+  color: var(--kb-primary);
+  font-weight: 600;
+}
+
+/* Code Highlight */
+pre {
+  background-color: #0f172a;
+  border: 1px solid var(--kb-border);
+  padding: 1.25rem;
+  border-radius: 0.75rem;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.9rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+/* Badge */
+.kb-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  border: 1px solid transparent;
+}
+
+.kb-badge-blue {
+  background-color: rgba(14, 165, 233, 0.15);
+  border-color: var(--kb-primary);
+  color: var(--kb-primary);
+}
+
+.kb-badge-green {
+  background-color: rgba(16, 185, 129, 0.15);
+  border-color: var(--kb-success);
+  color: var(--kb-success);
+}
+
+/* Related articles */
+.kb-list {
+  list-style: none;
+}
+
+.kb-list li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--kb-border);
+}
+
+.kb-list a {
+  color: var(--kb-text-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.kb-list a:hover {
+  color: var(--kb-primary);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 900px) {
+  .kb-portal-layout {
+    grid-template-columns: 1fr;
+  }
+  .kb-sidebar-toc {
+    display: none;
+  }
+  .kb-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .kb-grid-4 {
+    grid-template-columns: 1fr;
+  }
+  .kb-search-bar {
+    width: 200px;
+  }
+  .kb-search-bar:focus {
+    width: 240px;
+  }
+}

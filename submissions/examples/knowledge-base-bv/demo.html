@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Knowledge Base Experience Center — EaseMotion CSS</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="kb-layout">
+      <!-- ── SECTION 1: Header ──────────────────────────────────────── -->
+      <header class="kb-header">
+        <div style="font-size: 1.5rem; font-weight: 800; color: #fff">
+          📚 DocCenter
+        </div>
+        <input
+          type="text"
+          class="kb-search-bar"
+          placeholder="Search documentation..."
+        />
+      </header>
+
+      <!-- ── SECTION 2: Hero search Section ─────────────────────────── -->
+      <section class="kb-hero">
+        <h1 style="font-size: 2.5rem; margin-bottom: 1rem">
+          How can we help you today?
+        </h1>
+        <p style="color: var(--kb-text-muted); margin-bottom: 1.5rem">
+          Popular topics:
+          <a href="#" style="color: var(--kb-primary)">Docker Setup</a>,
+          <a href="#" style="color: var(--kb-primary)">API Integrations</a>,
+          <a href="#" style="color: var(--kb-primary)">SLA Postures</a>
+        </p>
+      </section>
+
+      <!-- ── SECTION 3: Category Grid ───────────────────────────────── -->
+      <section class="kb-section">
+        <div class="kb-grid-4">
+          <div class="kb-card">
+            <div style="font-size: 2rem; margin-bottom: 1rem">🚀</div>
+            <h3>Getting Started</h3>
+            <p
+              style="
+                color: var(--kb-text-muted);
+                font-size: 0.85rem;
+                margin-top: 0.5rem;
+              "
+            >
+              Install, configure, and boot your local sandbox in minutes.
+            </p>
+          </div>
+          <div class="kb-card">
+            <div style="font-size: 2rem; margin-bottom: 1rem">📡</div>
+            <h3>API Reference</h3>
+            <p
+              style="
+                color: var(--kb-text-muted);
+                font-size: 0.85rem;
+                margin-top: 0.5rem;
+              "
+            >
+              Endpoints, parameters, schemas, and usage examples.
+            </p>
+          </div>
+          <div class="kb-card">
+            <div style="font-size: 2rem; margin-bottom: 1rem">🎓</div>
+            <h3>Video Tutorials</h3>
+            <p
+              style="
+                color: var(--kb-text-muted);
+                font-size: 0.85rem;
+                margin-top: 0.5rem;
+              "
+            >
+              Step-by-step guides from infrastructure experts.
+            </p>
+          </div>
+          <div class="kb-card">
+            <div style="font-size: 2rem; margin-bottom: 1rem">💬</div>
+            <h3>FAQs</h3>
+            <p
+              style="
+                color: var(--kb-text-muted);
+                font-size: 0.85rem;
+                margin-top: 0.5rem;
+              "
+            >
+              Common troubleshooting and billing clarifications.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SECTION 4: Sidebar TOC + Doc Portal ────────────────────── -->
+      <section class="kb-section kb-portal-layout">
+        <aside>
+          <ul class="kb-sidebar-toc">
+            <li><a href="#" class="active">1. Orchestration Pipelines</a></li>
+            <li><a href="#">2. Security Compliance</a></li>
+            <li><a href="#">3. ValueIntel SDK</a></li>
+            <li><a href="#">4. Troubleshooting Guides</a></li>
+          </ul>
+        </aside>
+
+        <div>
+          <h2>Pipeline Orchestration Setup</h2>
+          <p style="margin-top: 1rem; color: var(--kb-text-muted)">
+            DevSync offers dynamic pipeline automation configurations. Copy the
+            YAML block below to structure your pipeline trigger sequences inside
+            sandbox configuration files.
+          </p>
+
+          <pre><code># devsync.yaml configuration
+pipeline:
+  name: "Build & Deploy"
+  trigger: "push"
+  stages:
+    - name: "Build Stacks"
+      command: "docker build -t app:latest ."</code></pre>
+
+          <div
+            style="
+              margin-top: 2rem;
+              display: flex;
+              align-items: center;
+              gap: 1rem;
+            "
+          >
+            <span>Was this article helpful?</span>
+            <button class="kb-badge kb-badge-blue" style="cursor: pointer">
+              Yes
+            </button>
+            <button
+              class="kb-badge"
+              style="
+                cursor: pointer;
+                border-color: var(--kb-border);
+                background: transparent;
+                color: var(--kb-text-muted);
+              "
+            >
+              No
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SECTION 5: Recently Updated & Related Articles ─────────── -->
+      <section class="kb-section">
+        <h3>Recently Updated Articles</h3>
+        <ul class="kb-list" style="margin-top: 1.5rem">
+          <li>
+            <a href="#">Migrating Docker containers to cloudScale clusters</a>
+            <span class="kb-badge kb-badge-green" style="float: right"
+              >Updated Yesterday</span
+            >
+          </li>
+          <li>
+            <a href="#"
+              >Configuring multi-tier billing hooks inside ValueIntel
+              dashboard</a
+            >
+            <span class="kb-badge kb-badge-blue" style="float: right"
+              >New Doc</span
+            >
+          </li>
+        </ul>
+      </section>
+    </div>
+  </body>
+</html>
