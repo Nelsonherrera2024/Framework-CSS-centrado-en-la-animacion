@@ -1,0 +1,84 @@
+/* Contributor Wall page styles — isolated from docs.css */
+
+.contributor-wall {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.contributor-wall__header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.contributor-wall__updated {
+  font-size: 0.875rem;
+  color: var(--ease-color-muted, #6b7280);
+}
+
+.contributor-wall__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contributor-wall__footer {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.contributor-card {
+  border: 1px solid var(--ease-color-border, #e5e7eb);
+  border-radius: var(--ease-radius-md, 0.75rem);
+  background: var(--ease-color-surface, #ffffff);
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.contributor-card:hover,
+.contributor-card:focus-within {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.contributor-card__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.contributor-card__link:focus-visible {
+  outline: 2px solid var(--ease-color-primary, #6c63ff);
+  outline-offset: 2px;
+  border-radius: var(--ease-radius-md, 0.75rem);
+}
+
+.contributor-card__avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.contributor-card__name {
+  font-weight: 600;
+  word-break: break-word;
+}
+
+.contributor-card__count {
+  font-size: 0.8rem;
+  color: var(--ease-color-muted, #6b7280);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contributor-card {
+    transition: none;
+  }
+}
