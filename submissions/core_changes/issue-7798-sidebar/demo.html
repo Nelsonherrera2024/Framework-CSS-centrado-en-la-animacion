@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sidebar Component - EaseMotion CSS</title>
+  <link rel="stylesheet" href="../../easemotion.min.css">
+  <link rel="stylesheet" href="./sidebar.css">
+</head>
+<body style="padding: 0; margin: 0; font-family: Inter, sans-serif;">
+  <div class="ease-sidebar-overlay"></div>
+  
+  <button class="ease-sidebar-toggle" style="position: fixed; top: 1rem; left: 1rem; z-index: 31; background: #6c63ff; color: white; border: none; padding: 0.5rem 0.75rem; border-radius: 0.375rem; cursor: pointer;">
+    ☰
+  </button>
+
+  <aside class="ease-sidebar">
+    <div class="ease-sidebar-header">
+      <span style="font-weight: 700; font-size: 1.125rem;">Dashboard</span>
+      <button class="ease-sidebar-collapse" style="margin-left: auto; background: none; border: none; cursor: pointer; padding: 0.25rem;">⤵</button>
+    </div>
+    
+    <nav class="ease-sidebar-nav">
+      <a href="#" class="ease-sidebar-item active">
+        <span>🏠</span>
+        <span>Home</span>
+      </a>
+      <a href="#" class="ease-sidebar-item">
+        <span>📊</span>
+        <span>Analytics</span>
+      </a>
+      <a href="#" class="ease-sidebar-item">
+        <span>👥</span>
+        <span>Users</span>
+      </a>
+      <a href="#" class="ease-sidebar-item">
+        <span>⚙️</span>
+        <span>Settings</span>
+      </a>
+      <a href="#" class="ease-sidebar-item">
+        <span>📧</span>
+        <span>Messages</span>
+      </a>
+    </nav>
+  </aside>
+
+  <main style="margin-left: 16rem; padding: 3rem 2rem; transition: margin-left 0.3s;">
+    <h1 style="font-size: 2rem; font-weight: 700; margin-bottom: 1rem;">Sidebar Navigation Component</h1>
+    <p style="color: #6b7280; margin-bottom: 2rem;">A vertical sidebar with slide-in animation for dashboards and admin panels.</p>
+    
+    <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
+      <button id="toggleSidebar" style="background: #6c63ff; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 0.5rem; cursor: pointer;">Toggle Mobile Sidebar</button>
+      <button id="toggleCollapse" style="background: #10b981; color: white; border: none; padding: 0.75rem 1.5rem; border-radius: 0.5rem; cursor: pointer;">Toggle Collapsed Mode</button>
+    </div>
+
+    <div style="background: #f9fafb; border-radius: 0.75rem; padding: 2rem; margin-bottom: 2rem;">
+      <h2 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;">Features</h2>
+      <ul style="color: #374151; line-height: 1.8;">
+        <li>Fixed or relative vertical navigation with background</li>
+        <li>Individual nav links with icon and label support</li>
+        <li>Active state with primary color and left border accent</li>
+        <li>Hover background highlight</li>
+        <li>Collapsed mode (icons only, labels hidden)</li>
+        <li>Mobile slide-in animation via transform: translateX</li>
+        <li>Configurable width via --ease-sidebar-width custom property</li>
+        <li>Optional JavaScript for toggle, collapse, and mobile handling</li>
+      </ul>
+    </div>
+
+    <div style="background: #f9fafb; border-radius: 0.75rem; padding: 2rem;">
+      <h2 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 1rem;">Usage</h2>
+      <p style="color: #374151; margin-bottom: 1rem;">Apply these classes to build a sidebar:</p>
+      <ul style="color: #6b7280; font-size: 0.875rem; font-family: monospace;">
+        <li>.ease-sidebar — The sidebar container</li>
+        <li>.ease-sidebar-header — Header with branding</li>
+        <li>.ease-sidebar-nav — Navigation items wrapper</li>
+        <li>.ease-sidebar-item — Individual nav link</li>
+        <li>.ease-sidebar-item.active — Active/highlighted item</li>
+        <li>.ease-sidebar-collapsed — Collapsed state</li>
+        <li>.ease-sidebar-overlay — Mobile overlay</li>
+        <li>.ease-sidebar.open — Open mobile sidebar</li>
+      </ul>
+    </div>
+  </main>
+
+  <script src="./sidebar.js"></script>
+  <script>
+    document.getElementById('toggleSidebar').addEventListener('click', function() {
+      var sidebar = document.querySelector('.ease-sidebar');
+      var overlay = document.querySelector('.ease-sidebar-overlay');
+      sidebar.classList.toggle('open');
+      overlay.classList.toggle('open');
+    });
+    document.getElementById('toggleCollapse').addEventListener('click', function() {
+      var sidebar = document.querySelector('.ease-sidebar');
+      sidebar.classList.toggle('ease-sidebar-collapsed');
+    });
+  </script>
+</body>
+</html>
