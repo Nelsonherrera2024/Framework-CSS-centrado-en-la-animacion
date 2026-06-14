@@ -1,0 +1,251 @@
+:root {
+  --fca-bg: #0b0f1a;
+  --fca-surface: #141829;
+  --fca-border: rgba(255, 255, 255, 0.08);
+  --fca-text: #e8edf5;
+  --fca-text-sec: #8892a8;
+  --fca-success: #10b981;
+  --fca-warning: #f59e0b;
+  --fca-danger: #ef4444;
+  --fca-info: #3b82f6;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family:
+    "Inter",
+    -apple-system,
+    sans-serif;
+  background: var(--fca-bg);
+  color: var(--fca-text);
+  padding: 2.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.fca-wrap {
+  width: 100%;
+  max-width: 680px;
+}
+
+.fca-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+  text-align: center;
+}
+
+.fca-sub {
+  font-size: 0.82rem;
+  color: var(--fca-text-sec);
+  margin-bottom: 28px;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.fca-intro {
+  background: var(--fca-surface);
+  border: 1px solid var(--fca-border);
+  border-radius: 14px;
+  padding: 20px 24px;
+  margin-bottom: 24px;
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: var(--fca-text-sec);
+}
+
+.fca-intro strong {
+  color: var(--fca-text);
+}
+
+.fca-section-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--fca-text);
+}
+
+.fca-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.fca-card {
+  border-radius: 12px;
+  padding: 20px 24px;
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.fca-card-title {
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+}
+
+.fca-card-desc {
+  opacity: 0.85;
+  font-size: 0.8rem;
+}
+
+.fca-label {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 0.6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--fca-text-sec);
+  margin-bottom: 8px;
+}
+
+/* Cards with background colors */
+
+.fca-card-success {
+  background: var(--fca-success);
+  color: #fff;
+}
+
+.fca-card-warning {
+  background: var(--fca-warning);
+  color: #1a1a2e;
+}
+
+.fca-card-danger {
+  background: var(--fca-danger);
+  color: #fff;
+}
+
+.fca-card-info {
+  background: var(--fca-info);
+  color: #fff;
+}
+
+.fca-card-gradient {
+  background: linear-gradient(135deg, var(--fca-info), var(--fca-success));
+  color: #fff;
+}
+
+/* The key utility classes being demonstrated */
+
+.fca-preserve {
+  forced-color-adjust: none;
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+}
+
+.fca-forced-none {
+  forced-color-adjust: none;
+}
+
+.fca-print-exact {
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+}
+
+/* Cards that do NOT use forced-color-adjust (baseline comparison) */
+
+.fca-card-success-baseline {
+  background: var(--fca-success);
+  color: #fff;
+}
+
+.fca-card-warning-baseline {
+  background: var(--fca-warning);
+  color: #1a1a2e;
+}
+
+.fca-card-danger-baseline {
+  background: var(--fca-danger);
+  color: #fff;
+}
+
+/* Comparison section */
+
+.fca-compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.fca-compare-card {
+  background: var(--fca-surface);
+  border: 1px solid var(--fca-border);
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+}
+
+.fca-compare-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--fca-text-sec);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.fca-dot {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 4px;
+}
+
+.fca-dot-red {
+  background: var(--fca-danger);
+}
+.fca-dot-green {
+  background: var(--fca-success);
+}
+.fca-dot-blue {
+  background: var(--fca-info);
+}
+.fca-dot-yellow {
+  background: var(--fca-warning);
+}
+
+.fca-dot-preserve {
+  forced-color-adjust: none;
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+}
+
+.fca-note {
+  font-size: 0.75rem;
+  color: var(--fca-text-sec);
+  margin-top: 16px;
+  text-align: center;
+  line-height: 1.6;
+}
+
+@media (max-width: 640px) {
+  body {
+    padding: 1.5rem 1rem;
+  }
+  .fca-compare {
+    grid-template-columns: 1fr;
+  }
+  .fca-card {
+    padding: 16px 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

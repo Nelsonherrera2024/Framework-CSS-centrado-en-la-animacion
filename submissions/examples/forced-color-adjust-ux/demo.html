@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forced Color & Print Adjust — EaseMotion CSS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="fca-wrap">
+      <h1 class="fca-title">Color Adjust Utilities</h1>
+      <p class="fca-sub">
+        <code>forced-color-adjust</code> + <code>print-color-adjust</code>
+      </p>
+
+      <div class="fca-intro">
+        <strong>What this demonstrates:</strong><br />
+        <code>.fca-preserve</code> applies
+        <code>forced-color-adjust: none</code> and
+        <code>print-color-adjust: exact</code> to preserve custom background
+        colors in Windows High Contrast Mode and when printing. Without these,
+        the browser strips background colors in both scenarios.
+      </div>
+
+      <h2 class="fca-section-title">With <code>.fca-preserve</code></h2>
+      <div class="fca-grid">
+        <div class="fca-card fca-card-success fca-preserve">
+          <span class="fca-label">Success</span>
+          <div class="fca-card-title">Background preserved</div>
+          <div class="fca-card-desc">
+            This green background persists in forced-colors mode and print.
+          </div>
+        </div>
+        <div class="fca-card fca-card-warning fca-preserve">
+          <span class="fca-label">Warning</span>
+          <div class="fca-card-title">Background preserved</div>
+          <div class="fca-card-desc">
+            This amber background persists in forced-colors mode and print.
+          </div>
+        </div>
+        <div class="fca-card fca-card-danger fca-preserve">
+          <span class="fca-label">Danger</span>
+          <div class="fca-card-title">Background preserved</div>
+          <div class="fca-card-desc">
+            This red background persists in forced-colors mode and print.
+          </div>
+        </div>
+        <div class="fca-card fca-card-gradient fca-preserve">
+          <span class="fca-label">Gradient</span>
+          <div class="fca-card-title">Gradient preserved</div>
+          <div class="fca-card-desc">
+            Gradients are also preserved with
+            <code>print-color-adjust: exact</code>.
+          </div>
+        </div>
+      </div>
+
+      <h2 class="fca-section-title">Color Dot Comparison</h2>
+      <div class="fca-compare">
+        <div class="fca-compare-card">
+          <div class="fca-compare-title">
+            Without <code>.fca-preserve</code>
+          </div>
+          <div>
+            <span class="fca-dot fca-dot-red"></span>
+            <span class="fca-dot fca-dot-green"></span>
+            <span class="fca-dot fca-dot-blue"></span>
+            <span class="fca-dot fca-dot-yellow"></span>
+          </div>
+          <div class="fca-note">
+            Colors stripped in forced-colors mode and print
+          </div>
+        </div>
+        <div class="fca-compare-card">
+          <div class="fca-compare-title">With <code>.fca-preserve</code></div>
+          <div>
+            <span class="fca-dot fca-dot-red fca-dot-preserve"></span>
+            <span class="fca-dot fca-dot-green fca-dot-preserve"></span>
+            <span class="fca-dot fca-dot-blue fca-dot-preserve"></span>
+            <span class="fca-dot fca-dot-yellow fca-dot-preserve"></span>
+          </div>
+          <div class="fca-note">
+            Colors preserved in forced-colors mode and print
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
