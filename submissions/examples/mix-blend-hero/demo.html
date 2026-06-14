@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mix-Blend Hero</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section class="hero">
+    <div class="hero-image"></div>
+
+    <div class="blob blob--multiply"></div>
+    <div class="blob blob--screen"></div>
+    <div class="blob blob--difference"></div>
+
+    <h1 class="hero-heading">
+      <span class="sub">Blend Modes in CSS</span>
+      <span>difference</span>
+      <span class="sub">multiply · screen</span>
+    </h1>
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-badge">
+      <span class="key">H</span> hover to compare
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>mix-blend-mode in Action</h2>
+    <p>
+      The hero above uses <code>mix-blend-mode: difference</code> on the heading to invert
+      the background colors, creating high-contrast text without a solid background.
+      Two decorative blobs use <code>multiply</code> and <code>screen</code> to interact
+      with the image. Hovering reveals the original, unblended composition.
+    </p>
+
+    <div class="blend-list">
+      <span class="blend-tag">mix-blend-mode: difference</span>
+      <span class="blend-tag">mix-blend-mode: multiply</span>
+      <span class="blend-tag">mix-blend-mode: screen</span>
+    </div>
+  </section>
+
+  <script>
+    const hero = document.querySelector('.hero');
+    const overlay = document.querySelector('.hero-overlay');
+    hero.addEventListener('mouseenter', () => {
+      overlay.style.setProperty('--overlay-opacity', '0');
+    });
+    hero.addEventListener('mouseleave', () => {
+      overlay.style.setProperty('--overlay-opacity', '1');
+    });
+  </script>
+</body>
+</html>

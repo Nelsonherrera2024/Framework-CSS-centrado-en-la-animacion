@@ -1,0 +1,215 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #0a0f1e;
+  --text: #e2e8f0;
+  --hero-height: 80vh;
+  --overlay-opacity: 1;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: var(--hero-height);
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+}
+
+.hero-image {
+  position: absolute;
+  inset: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="%231e3a5f"/><stop offset="50%" stop-color="%232d1b69"/><stop offset="100%" stop-color="%235c1f4a"/></linearGradient><pattern id="p" width="60" height="60" patternUnits="userSpaceOnUse"><circle cx="30" cy="30" r="1.5" fill="rgba(255,255,255,0.12)"/><circle cx="0" cy="0" r="1" fill="rgba(255,255,255,0.06)"/><circle cx="60" cy="60" r="1" fill="rgba(255,255,255,0.06)"/></pattern></defs><rect width="1200" height="800" fill="url(%23g)"/><rect width="1200" height="800" fill="url(%23p)"/></svg>')
+    center / cover no-repeat;
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--bg);
+  opacity: var(--overlay-opacity);
+  transition: opacity 0.4s ease;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.hero:hover .hero-overlay {
+  opacity: 0;
+}
+
+.hero-heading {
+  position: relative;
+  z-index: 1;
+  font-size: clamp(3rem, 10vw, 8rem);
+  font-weight: 900;
+  text-align: center;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: #fff;
+  mix-blend-mode: difference;
+  pointer-events: none;
+  text-shadow: none;
+}
+
+.hero-heading span {
+  display: block;
+}
+
+.hero-heading .sub {
+  font-size: 0.35em;
+  font-weight: 300;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.4;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.blob--multiply {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, #60a5fa, transparent 70%);
+  mix-blend-mode: multiply;
+  top: -10%;
+  right: -5%;
+}
+
+.blob--screen {
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, #f472b6, transparent 70%);
+  mix-blend-mode: screen;
+  bottom: -10%;
+  left: -5%;
+}
+
+.blob--difference {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, #34d399, transparent 70%);
+  mix-blend-mode: difference;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hero-badge {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.4;
+  transition: opacity 0.3s;
+}
+
+.hero:hover .hero-badge {
+  opacity: 0;
+}
+
+.hero-badge .key {
+  display: inline-block;
+  padding: 0.15rem 0.4rem;
+  border: 1px solid currentColor;
+  border-radius: 4px;
+  font-size: 0.6rem;
+  line-height: 1.2;
+}
+
+.content-section {
+  padding: 4rem 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.content-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.content-section p {
+  opacity: 0.65;
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.blend-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.blend-tag {
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  background: var(--bg);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.8rem;
+  font-family: monospace;
+}
+
+@media (max-width: 600px) {
+  :root {
+    --hero-height: 60vh;
+  }
+  .blob--multiply {
+    width: 200px;
+    height: 200px;
+  }
+  .blob--screen {
+    width: 180px;
+    height: 180px;
+  }
+  .blob--difference {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-overlay {
+    opacity: 0.3;
+    transition: none;
+  }
+  .hero:hover .hero-overlay {
+    opacity: 0;
+    transition: none;
+  }
+  .blob {
+    animation: none;
+  }
+}
