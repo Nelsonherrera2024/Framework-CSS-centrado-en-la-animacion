@@ -371,15 +371,17 @@
         <div class="docs-eyebrow">Introduction</div>
         <h1 class="docs-h1">EaseMotion CSS</h1>
         <p class="docs-p">
-          EaseMotion CSS is a human-readable, animation-first CSS library. Write UI with simple,
-          English-like class names — no memorizing utilities, no complex configuration.
-          Just readable HTML that looks great and moves beautifully.
+          EaseMotion CSS is a human-readable, animation-first CSS library for
+          contributor-built demos, docs, and polished UI experiments. Write UI
+          with simple, English-like class names — no memorizing utilities, no
+          complex configuration, and no extra build step.
         </p>
         <div class="docs-info">
           <span class="docs-info-icon">💡</span>
           <div>
-            EaseMotion CSS bridges the gap between raw vanilla CSS and utility-heavy frameworks like Tailwind.
-            You get structure and power, with none of the cognitive overhead.
+            The framework keeps the core bundle small while still giving
+            contributors expressive motion, layout, and component patterns they
+            can ship directly from the docs.
           </div>
         </div>
       </section>
@@ -423,7 +425,12 @@
       <!-- ══════════════ INSTALLATION ══════════════ -->
       <section id="installation" class="docs-section">
         <h2 class="docs-h2">Installation</h2>
-        <p class="docs-p">Copy the <code>core/</code> and <code>components/</code> folders into your project. Then link the stylesheets in your HTML <code>&lt;head&gt;</code>:</p>
+        <p class="docs-p">
+          Copy the <code>core/</code> and <code>components/</code> folders into
+          your project. Then link the stylesheets in your HTML
+          <code>&lt;head&gt;</code>. This keeps the setup lightweight while you
+          test motion patterns locally.
+        </p>
         <div class="docs-code">
           <span class="docs-code-lang">html</span>
           <pre><code>&lt;!-- Core (required) --&gt;
@@ -439,7 +446,8 @@
         <div class="docs-info">
           <span class="docs-info-icon">⚠️</span>
           <div>
-            Always load <code>variables.css</code> first — all other modules depend on the CSS custom properties it defines.
+            Always load <code>variables.css</code> first — every other module
+            depends on the CSS custom properties it defines.
           </div>
         </div>
       </section>
@@ -450,7 +458,9 @@
       <section id="variables" class="docs-section">
         <h2 class="docs-h2">Variables</h2>
         <p class="docs-p">
-          All values are defined as CSS custom properties in <code>:root</code>. Override any token to theme the framework.
+          All values are defined as CSS custom properties in
+          <code>:root</code>. Override any token to theme the framework without
+          rewriting the component CSS.
         </p>
         <h3 class="docs-h3">Speeds</h3>
         <table class="docs-table">
@@ -480,6 +490,12 @@
       <!-- ══════════════ UTILITIES ══════════════ -->
       <section id="utilities" class="docs-section">
         <h2 class="docs-h2">Utilities</h2>
+        <p class="docs-p">
+          EaseMotion CSS includes lightweight, composable utilities for
+          spacing, layout, flexbox, grid, and typography. They are designed to
+          stay out of the way when contributors are building demo-first
+          features.
+        </p>
 
         <h3 class="docs-h3">Flexbox</h3>
         <div class="docs-code">
@@ -517,7 +533,11 @@
       <!-- ══════════════ ANIMATIONS ══════════════ -->
       <section id="animations" class="docs-section">
         <h2 class="docs-h2">Animations</h2>
-        <p class="docs-p">Add any entrance class to trigger the animation on page load. Combine with delay classes for staggered sequences.</p>
+        <p class="docs-p">
+          Animation primitives stay intentionally small and stackable, so
+          contributors can combine motion without fighting specificity or
+          adding JavaScript glue.
+        </p>
 
         <h3 class="docs-h3">Entrance</h3>
         <table class="docs-table">
@@ -572,7 +592,10 @@
       <!-- ══════════════ BUTTONS ══════════════ -->
       <section id="buttons" class="docs-section">
         <h2 class="docs-h2">Buttons</h2>
-        <p class="docs-p">All buttons require the base <code>ease-btn</code> class plus one or more modifier classes.</p>
+        <p class="docs-p">
+          All buttons require the base <code>ease-btn</code> class plus one or
+          more modifier classes.
+        </p>
         <div class="docs-code">
           <span class="docs-code-lang">html</span>
           <pre><code>&lt;!-- Variants --&gt;
@@ -599,6 +622,11 @@
       <!-- ══════════════ CARDS ══════════════ -->
       <section id="cards" class="docs-section">
         <h2 class="docs-h2">Cards</h2>
+        <p class="docs-p">
+          Cards are the simplest place to combine structure and motion:
+          readable content, clear hierarchy, and optional depth when the layout
+          needs it.
+        </p>
         <div class="docs-code">
           <span class="docs-code-lang">html</span>
           <pre><code>&lt;!-- Basic card --&gt;
@@ -629,18 +657,25 @@
         <h2 class="docs-h2">Contributing</h2>
         <p class="docs-p">
           Contributions are welcome. Please read the
-          <a href="../CONTRIBUTING.md">CONTRIBUTING.md</a> before submitting a pull request.
-          All PRs are reviewed by the maintainer before merging.
+          <a href="../CONTRIBUTING.md">CONTRIBUTING.md</a> before submitting a
+          pull request. The strongest PRs add a focused demo, explain the use
+          case, and show why the pattern belongs in the framework.
         </p>
         <div class="docs-info">
           <span class="docs-info-icon">🔒</span>
-          <div>Only maintainers can merge pull requests. Please do not merge your own PRs.</div>
+          <div>
+            Only maintainers can merge pull requests. Please do not merge your
+            own PRs.
+          </div>
         </div>
       </section>
 
       <section id="naming" class="docs-section">
         <h2 class="docs-h2">Naming Rules</h2>
-        <p class="docs-p">All class names must follow the <code>ease-</code> prefix convention:</p>
+        <p class="docs-p">
+          All class names must follow the <code>ease-</code> prefix
+          convention so new submissions stay readable and consistent:
+        </p>
         <div class="docs-code">
           <span class="docs-code-lang">text</span>
           <pre><code>✅  ease-fade-in
