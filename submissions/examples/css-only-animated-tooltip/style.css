@@ -1,0 +1,108 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f1f5f9;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.tooltip-wrapper {
+  display: flex;
+  gap: 40px;
+}
+
+button {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  background-color: #6366f1;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #4f46e5;
+}
+
+/* Tooltip Base */
+.css-tooltip {
+  position: relative;
+}
+
+/* Tooltip Bubble */
+.css-tooltip::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  padding: 8px 12px;
+  background-color: #1e293b;
+  color: white;
+  font-size: 0.875rem;
+  font-weight: normal;
+  white-space: nowrap;
+  border-radius: 6px;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.3s ease;
+  z-index: 10;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Tooltip Arrow */
+.css-tooltip::after {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  border-width: 6px;
+  border-style: solid;
+  border-color: #1e293b transparent transparent transparent;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.3s ease;
+  z-index: 10;
+}
+
+/* Tooltip Hover State */
+.css-tooltip:hover::before,
+.css-tooltip:hover::after,
+.css-tooltip:focus-visible::before,
+.css-tooltip:focus-visible::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Bottom variant */
+.css-tooltip.tooltip-bottom::before {
+  bottom: auto;
+  top: 100%;
+  transform: translateX(-50%) translateY(-10px);
+  margin-bottom: 0;
+  margin-top: 12px;
+}
+
+.css-tooltip.tooltip-bottom::after {
+  bottom: auto;
+  top: 100%;
+  transform: translateX(-50%) translateY(-10px);
+  border-color: transparent transparent #1e293b transparent;
+}
+
+.css-tooltip.tooltip-bottom:hover::before,
+.css-tooltip.tooltip-bottom:hover::after,
+.css-tooltip.tooltip-bottom:focus-visible::before,
+.css-tooltip.tooltip-bottom:focus-visible::after {
+  transform: translateX(-50%) translateY(0);
+}
