@@ -8,7 +8,12 @@ const rootDir = path.resolve(__dirname, "..");
 const entryFile = path.join(rootDir, "easemotion.css");
 const outputFile = path.join(rootDir, "easemotion.min.css");
 
-const localImportPattern = /@import\s+(?:url\(\s*)?["']([^"']+)["']\s*\)?\s*;/g;
+// Matches local @import statements, including those with optional cascade layers
+// or media queries between the URL and the semicolon, e.g.:
+//   @import "file.css";
+//   @import "file.css" layer(utilities);
+//   @import url("file.css") screen and (max-width: 600px);
+const localImportPattern = /@import\s+(?:url\(\s*)?["']([^"']+)["']\s*\)?[^;]*;/g;
 function removeCSSComments(source) {
   let result = "";
   let i = 0;
