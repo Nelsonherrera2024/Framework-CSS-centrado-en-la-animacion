@@ -1,0 +1,21 @@
+.deco-color-primary {
+  text-decoration-color: #6c63ff;
+}
+.deco-color-red {
+  text-decoration-color: #ef4444;
+}
+.deco-color-green {
+  text-decoration-color: #22c55e;
+}
+.deco-color-blue {
+  text-decoration-color: #3b82f6;
+}
+.deco-color-orange {
+  text-decoration-color: #f97316;
+}
+.demo-deco-color {
+  text-decoration-line: underline;
+  text-decoration-thickness: 3px;
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+}
