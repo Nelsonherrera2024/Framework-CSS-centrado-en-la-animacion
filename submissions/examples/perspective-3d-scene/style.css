@@ -1,0 +1,245 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0a0f1e;
+  color: #e2e8f0;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2.5rem 1.5rem;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 960px;
+  width: 100%;
+}
+
+h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #38bdf8, #818cf8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #94a3b8;
+  margin-bottom: 2rem;
+  max-width: 620px;
+}
+
+.subtitle code {
+  background: #1e293b;
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.scene-wrapper {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: grab;
+  position: relative;
+}
+
+.scene-wrapper:active {
+  cursor: grabbing;
+}
+
+.scene {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  perspective: 800px;
+  transition: perspective 0.2s;
+  will-change: transform;
+}
+
+.layer {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  border-radius: 20px;
+  backface-visibility: hidden;
+}
+
+.layer-bg {
+  background: linear-gradient(160deg, #0f172a, #1e293b);
+  border: 1px solid #1e293b;
+  transform: translateZ(-200px) scale(1.15);
+  color: #475569;
+  z-index: 1;
+}
+
+.layer-mid {
+  background: linear-gradient(160deg, rgba(56, 189, 248, 0.08), rgba(99, 102, 241, 0.08));
+  border: 1px solid rgba(56, 189, 248, 0.15);
+  transform: translateZ(0px);
+  color: #7dd3fc;
+  z-index: 2;
+}
+
+.layer-fg {
+  background: linear-gradient(160deg, rgba(168, 85, 247, 0.1), rgba(236, 72, 153, 0.1));
+  border: 1px solid rgba(168, 85, 247, 0.18);
+  transform: translateZ(150px);
+  color: #c084fc;
+  z-index: 3;
+}
+
+.layer-ui {
+  background: linear-gradient(160deg, rgba(251, 191, 36, 0.08), rgba(248, 113, 113, 0.08));
+  border: 1px solid rgba(251, 191, 36, 0.15);
+  transform: translateZ(300px);
+  color: #fcd34d;
+  z-index: 4;
+}
+
+.controls {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.controls label {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.controls input[type="range"] {
+  accent-color: #38bdf8;
+  background: transparent;
+  cursor: pointer;
+  width: 120px;
+}
+
+.controls input[type="checkbox"] {
+  accent-color: #818cf8;
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+}
+
+.depth-chart {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.depth-label {
+  font-size: 0.75rem;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  background: #131a2b;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #1e293b;
+  color: #64748b;
+  position: relative;
+}
+
+.depth-label::before {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 6px;
+  background: #334155;
+}
+
+.depth-chart::before {
+  content: 'Z = ';
+  font-size: 0.8rem;
+  color: #64748b;
+  margin-right: 0.5rem;
+}
+
+.info {
+  margin-top: 2rem;
+  padding: 1rem 1.5rem;
+  background: #131a2b;
+  border: 1px solid #1e293b;
+  border-left: 4px solid #38bdf8;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  color: #cbd5e1;
+}
+
+.info code {
+  background: #1e293b;
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+}
+
+@media (max-width: 640px) {
+  body {
+    padding: 1.5rem 1rem;
+  }
+  h1 {
+    font-size: 1.6rem;
+  }
+  .layer {
+    font-size: 1rem;
+  }
+  .controls {
+    gap: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: 0s !important;
+    animation-duration: 0s !important;
+  }
+  .scene {
+    transform: none !important;
+    perspective: 800px !important;
+  }
+  .layer {
+    opacity: 0.85;
+  }
+  .layer-bg {
+    transform: translateZ(-200px) scale(1.15);
+  }
+  .layer-mid {
+    transform: translateZ(0px);
+  }
+  .layer-fg {
+    transform: translateZ(150px);
+  }
+  .layer-ui {
+    transform: translateZ(300px);
+  }
+  .scene-wrapper {
+    cursor: default;
+  }
+  .controls input[type="range"] {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+}

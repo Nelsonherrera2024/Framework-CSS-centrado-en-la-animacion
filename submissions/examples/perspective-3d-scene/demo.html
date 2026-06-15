@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EaseMotion CSS – Perspective 3D Scene</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Perspective 3D Scene</h1>
+    <p class="subtitle">Move your mouse (or finger) to steer the camera. Each layer sits at a different <code>translateZ</code> depth, creating a parallax depth illusion.</p>
+
+    <div class="scene-wrapper" id="sceneWrapper">
+      <div class="scene" id="scene">
+        <div class="layer layer-bg" id="layerBg">Background</div>
+        <div class="layer layer-mid" id="layerMid">Midground</div>
+        <div class="layer layer-fg" id="layerFg">Foreground</div>
+        <div class="layer layer-ui" id="layerUi">UI Layer</div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <label>Perspective <input type="range" id="perspSlider" min="200" max="2000" value="800"></label>
+      <label><input type="checkbox" id="autoRotate" checked> Auto-rotate</label>
+    </div>
+
+    <div class="depth-chart">
+      <span class="depth-label" style="--z: -200px">-200px</span>
+      <span class="depth-label" style="--z: 0px">0px</span>
+      <span class="depth-label" style="--z: 150px">+150px</span>
+      <span class="depth-label" style="--z: 300px">+300px</span>
+    </div>
+
+    <div class="info">
+      The scene's <code>perspective</code> property defines the vanishing point distance.
+      Smaller values exaggerate depth; larger values flatten it.
+      Each layer's <code>translateZ</code> moves it toward or away from the viewer.
+    </div>
+  </div>
+
+  <script>
+    const scene = document.getElementById('scene');
+    const wrapper = document.getElementById('sceneWrapper');
+    const perspSlider = document.getElementById('perspSlider');
+    const autoRotate = document.getElementById('autoRotate');
+
+    let isHovering = false;
+    let targetRX = 0, targetRY = 0;
+    let currentRX = 0, currentRY = 0;
+    let autoAngle = 0;
+    let rafId = null;
+
+    function updatePerspective() {
+      scene.style.perspective = perspSlider.value + 'px';
+    }
+    perspSlider.addEventListener('input', updatePerspective);
+    updatePerspective();
+
+    function applyRotation() {
+      if (autoRotate.checked && !isHovering) {
+        autoAngle += 0.15;
+        currentRX = Math.sin(autoAngle * 0.3) * 8;
+        currentRY = Math.sin(autoAngle * 0.5) * 12;
+      } else if (isHovering) {
+        currentRX += (targetRX - currentRX) * 0.08;
+        currentRY += (targetRY - currentRY) * 0.08;
+      }
+      scene.style.transform = 'rotateX(' + currentRX + 'deg) rotateY(' + currentRY + 'deg)';
+      rafId = requestAnimationFrame(applyRotation);
+    }
+    rafId = requestAnimationFrame(applyRotation);
+
+    wrapper.addEventListener('mousemove', function (e) {
+      const rect = wrapper.getBoundingClientRect();
+      const x = (e.clientX - rect.left) / rect.width;
+      const y = (e.clientY - rect.top) / rect.height;
+      targetRY = (x - 0.5) * 30;
+      targetRX = (0.5 - y) * 20;
+      isHovering = true;
+    });
+
+    wrapper.addEventListener('mouseleave', function () {
+      isHovering = false;
+    });
+
+    // Touch support
+    wrapper.addEventListener('touchmove', function (e) {
+      e.preventDefault();
+      const touch = e.touches[0];
+      const rect = wrapper.getBoundingClientRect();
+      const x = (touch.clientX - rect.left) / rect.width;
+      const y = (touch.clientY - rect.top) / rect.height;
+      targetRY = (x - 0.5) * 30;
+      targetRX = (0.5 - y) * 20;
+      isHovering = true;
+    }, { passive: false });
+
+    wrapper.addEventListener('touchend', function () {
+      isHovering = false;
+    });
+
+    autoRotate.addEventListener('change', function () {
+      if (this.checked && !isHovering) {
+        autoAngle = 0;
+      }
+    });
+  </script>
+</body>
+</html>
