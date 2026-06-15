@@ -1,0 +1,28 @@
+.synth-weight {
+  font-synthesis: weight;
+}
+.synth-style {
+  font-synthesis: style;
+}
+.synth-small-caps {
+  font-synthesis: small-caps;
+}
+.synth-weight-style {
+  font-synthesis: weight style;
+}
+.synth-weight-small-caps {
+  font-synthesis: weight small-caps;
+}
+.synth-style-small-caps {
+  font-synthesis: style small-caps;
+}
+.synth-all {
+  font-synthesis: weight style small-caps;
+}
+.synth-none {
+  font-synthesis: none;
+}
+.demo-synth {
+  font-size: 1.8rem;
+  margin: 0.25rem 0;
+}
