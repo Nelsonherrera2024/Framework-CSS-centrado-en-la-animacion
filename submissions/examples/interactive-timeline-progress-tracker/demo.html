@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EaseMotion – Interactive Timeline Progress Tracker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Ambient background particles -->
+  <div class="particles" aria-hidden="true">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <div class="page-eyebrow">EaseMotion Component</div>
+    <h1 class="page-title">Timeline Progress Tracker</h1>
+    <p class="page-subtitle">Modern onboarding &amp; status tracking — pure HTML &amp; CSS</p>
+  </header>
+
+  <!-- ─────────────────────────────────────────────────────────
+       PRIMARY DEMO: 3 of 5 complete (step 4 = current)
+  ────────────────────────────────────────────────────────── -->
+  <main>
+    <article class="card" role="region" aria-label="Onboarding progress">
+
+      <!-- Card Header -->
+      <div class="card-header">
+        <div class="card-title-group">
+          <p class="card-label">Application Status</p>
+          <h2 class="card-title">Complete your profile to get started</h2>
+        </div>
+
+        <!-- Progress Badge -->
+        <div class="card-badge" aria-label="60% complete">
+          <div class="badge-ring">
+            <div class="badge-ring-inner">3/5</div>
+          </div>
+          <div class="badge-meta">
+            <div class="badge-pct">60%</div>
+            <div class="badge-sub">Completed</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Timeline -->
+      <div class="timeline" role="list" aria-label="Progress steps">
+
+        <!-- Track background + animated fill -->
+        <div class="timeline-track" aria-hidden="true">
+          <div class="timeline-track-fill"></div>
+        </div>
+
+        <!-- Step 1: Completed -->
+        <div class="timeline-step completed" role="listitem">
+          <div
+            class="timeline-node"
+            data-tooltip="Completed Jan 12"
+            aria-label="Step 1: Account Created — done"
+          >
+            <!-- Animated checkmark -->
+            <svg class="check-icon" viewBox="0 0 22 22" aria-hidden="true">
+              <path class="check-path" d="M4 11.5l5 5 9-9" />
+            </svg>
+          </div>
+          <div class="timeline-label">
+            <span class="timeline-step-name">Account<br/>Created</span>
+            <span class="timeline-step-tag">Done</span>
+          </div>
+        </div>
+
+        <!-- Step 2: Completed -->
+        <div class="timeline-step completed" role="listitem">
+          <div
+            class="timeline-node"
+            data-tooltip="Completed Jan 12"
+            aria-label="Step 2: Verification — done"
+          >
+            <svg class="check-icon" viewBox="0 0 22 22" aria-hidden="true">
+              <path class="check-path" d="M4 11.5l5 5 9-9" />
+            </svg>
+          </div>
+          <div class="timeline-label">
+            <span class="timeline-step-name">Verification</span>
+            <span class="timeline-step-tag">Done</span>
+          </div>
+        </div>
+
+        <!-- Step 3: Completed -->
+        <div class="timeline-step completed" role="listitem">
+          <div
+            class="timeline-node"
+            data-tooltip="Completed Jan 13"
+            aria-label="Step 3: Profile Setup — done"
+          >
+            <svg class="check-icon" viewBox="0 0 22 22" aria-hidden="true">
+              <path class="check-path" d="M4 11.5l5 5 9-9" />
+            </svg>
+          </div>
+          <div class="timeline-label">
+            <span class="timeline-step-name">Profile<br/>Setup</span>
+            <span class="timeline-step-tag">Done</span>
+          </div>
+        </div>
+
+        <!-- Step 4: Current -->
+        <div class="timeline-step current" role="listitem" aria-current="step">
+          <div
+            class="timeline-node"
+            aria-label="Step 4: Review — in progress"
+          >
+            <!-- Tooltip for current step via child element -->
+            <span class="tooltip" aria-hidden="true">In review · 1–2 days</span>
+            <div class="current-dot" aria-hidden="true"></div>
+          </div>
+          <div class="timeline-label">
+            <span class="timeline-step-name">Review</span>
+            <span class="timeline-step-tag">Active</span>
+          </div>
+        </div>
+
+        <!-- Step 5: Inactive -->
+        <div class="timeline-step inactive" role="listitem">
+          <div
+            class="timeline-node"
+            data-tooltip="Pending review"
+            aria-label="Step 5: Completed — pending"
+          >
+            <div class="inactive-dot" aria-hidden="true"></div>
+          </div>
+          <div class="timeline-label">
+            <span class="timeline-step-name">Completed</span>
+            <span class="timeline-step-tag">Pending</span>
+          </div>
+        </div>
+
+      </div><!-- /timeline -->
+
+      <!-- Card Footer -->
+      <footer class="card-footer">
+        <p class="footer-steps-text">
+          <strong>Step 4 of 5</strong> — Your application is under review
+        </p>
+        <div class="footer-actions">
+          <a href="#" class="btn btn-ghost">View Details</a>
+          <a href="#" class="btn btn-primary">Continue Setup</a>
+        </div>
+      </footer>
+
+    </article>
+  </main>
+
+</body>
+</html>
