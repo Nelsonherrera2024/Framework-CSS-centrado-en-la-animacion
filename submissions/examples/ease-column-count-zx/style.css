@@ -1,0 +1,20 @@
+.cols-1 {
+  column-count: 1;
+}
+.cols-2 {
+  column-count: 2;
+}
+.cols-3 {
+  column-count: 3;
+}
+.cols-4 {
+  column-count: 4;
+}
+.cols-auto {
+  column-count: auto;
+}
+.demo-cols {
+  column-gap: 1.5rem;
+  orphans: 1;
+  widows: 1;
+}
