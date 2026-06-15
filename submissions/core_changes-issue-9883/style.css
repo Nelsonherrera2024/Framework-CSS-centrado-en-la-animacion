@@ -1,0 +1,26 @@
+/* ── CSS Containment Utilities ──────────────────────────────────
+   These classes leverage content-visibility and contain properties
+   to optimize rendering performance. They tell the browser which
+   subtrees are independent, enabling the browser to skip layout,
+   paint, and style calculations for off-screen or isolated sections.
+
+   Use cases:
+     - Long-scrolling pages with many sections → content-visibility: auto
+     - Widgets/cards with dynamic content → contain: strict / contain: content
+     - Animations that shouldn't affect surrounding layout → contain: layout paint
+   ============================================================ */
+
+/* ── Content Visibility ──────────────────────────────────────── */
+.ease-content-visibility-auto    { content-visibility: auto !important; }
+.ease-content-visibility-hidden  { content-visibility: hidden !important; }
+.ease-content-visibility-visible { content-visibility: visible !important; }
+
+/* ── Containment ─────────────────────────────────────────────── */
+.ease-contain-none        { contain: none !important; }
+.ease-contain-strict      { contain: strict !important; }
+.ease-contain-content     { contain: content !important; }
+.ease-contain-layout      { contain: layout !important; }
+.ease-contain-paint       { contain: paint !important; }
+.ease-contain-size        { contain: size !important; }
+.ease-contain-style       { contain: style !important; }
+.ease-contain-layout-paint { contain: layout paint !important; }
