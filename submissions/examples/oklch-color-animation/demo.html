@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OKLCH Color Animation — Perceptually Uniform Transitions</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>OKLCH Color Animation</h1>
+    <p class="subtitle">Comparing color transition quality: OKLCH vs sRGB</p>
+
+    <div class="demo-section">
+      <h2>Background color cycling</h2>
+      <div class="split-view">
+        <div class="compare-panel">
+          <div class="compare-header">
+            <h3>OKLCH</h3>
+            <span class="tag tag-oklch">perceptual</span>
+          </div>
+          <div class="animation-area anim-oklch-bg">
+            <p>oklch()</p>
+          </div>
+          <div class="labels-row">
+            <span><span class="dot dot-oklch"></span> smooth hue transition</span>
+          </div>
+        </div>
+        <div class="compare-panel">
+          <div class="compare-header">
+            <h3>sRGB</h3>
+            <span class="tag tag-srgb">legacy</span>
+          </div>
+          <div class="animation-area anim-srgb-bg">
+            <p>srgb()</p>
+          </div>
+          <div class="labels-row">
+            <span><span class="dot dot-srgb"></span> uneven, muddy midpoint</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="demo-section">
+      <h2>Text color cycling</h2>
+      <div class="split-view">
+        <div class="compare-panel">
+          <div class="compare-header">
+            <h3>OKLCH</h3>
+            <span class="tag tag-oklch">perceptual</span>
+          </div>
+          <div class="animation-area anim-oklch-text" style="background: #0a0f1e;">
+            <p style="text-shadow: none;">oklch text</p>
+          </div>
+        </div>
+        <div class="compare-panel">
+          <div class="compare-header">
+            <h3>sRGB</h3>
+            <span class="tag tag-srgb">legacy</span>
+          </div>
+          <div class="animation-area anim-srgb-text" style="background: #0a0f1e;">
+            <p style="text-shadow: none;">srgb text</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="demo-section">
+      <h2>Transition quality assessment</h2>
+      <div class="quality-section">
+        <div class="quality-card">
+          <h3>OKLCH</h3>
+          <p>Maintains consistent perceived lightness and saturation throughout the hue cycle. No "dead" spots — every intermediate color feels vibrant and balanced. The hue wheel transition is smooth because OKLCH is designed to match human perception of color differences.</p>
+          <div class="rating rating-good">Excellent</div>
+        </div>
+        <div class="quality-card">
+          <h3>sRGB</h3>
+          <p>Passes through desaturated, muddy gray regions between hues. Red to green transitions look brownish; green to blue can look cyan-washed. This happens because sRGB interpolates in a non-perceptual space where equal channel steps do not correspond to equal perceived differences.</p>
+          <div class="rating rating-bad">Poor midpoints</div>
+        </div>
+      </div>
+    </div>
+
+    <pre><code>/* OKLCH — smooth, perceptual hue cycling */
+@keyframes oklchBgCycle {
+  0%   { background: oklch(0.5 0.2 0); }
+  25%  { background: oklch(0.6 0.25 90); }
+  50%  { background: oklch(0.55 0.2 180); }
+  75%  { background: oklch(0.6 0.25 270); }
+  100% { background: oklch(0.5 0.2 360); }
+}
+
+/* sRGB — uneven, muddy midpoints */
+@keyframes srgbBgCycle {
+  0%   { background: #ff6b6b; }
+  25%  { background: #7bed9f; }
+  50%  { background: #70a1ff; }
+  75%  { background: #e056fd; }
+  100% { background: #ff6b6b; }
+}</code></pre>
+  </div>
+</body>
+</html>
