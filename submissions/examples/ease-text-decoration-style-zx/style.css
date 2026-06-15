@@ -1,0 +1,21 @@
+.decoration-solid {
+  text-decoration-style: solid;
+}
+.decoration-double {
+  text-decoration-style: double;
+}
+.decoration-dotted {
+  text-decoration-style: dotted;
+}
+.decoration-dashed {
+  text-decoration-style: dashed;
+}
+.decoration-wavy {
+  text-decoration-style: wavy;
+}
+.demo-deco {
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+}
