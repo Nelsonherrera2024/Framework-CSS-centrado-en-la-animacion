@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>52 — Container Style Queries</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="hero">
+    <h1>Container Style Queries</h1>
+    <p>Themed containers using <code>@container style()</code></p>
+  </header>
+
+  <div class="controls">
+    <button class="btn" data-theme="dark" aria-pressed="true">🌙 Dark</button>
+    <button class="btn" data-theme="light" aria-pressed="false">☀️ Light</button>
+    <button class="btn" data-theme="colorful" aria-pressed="false">🎨 Colorful</button>
+  </div>
+
+  <div class="themed-container" id="themedContainer" style="--theme: dark;">
+    <section class="cardset">
+      <article class="card">
+        <span class="badge">Feature</span>
+        <h2>Responsive Components</h2>
+        <p>Components adapt to their container's style context automatically — no prop drilling or global overrides needed.</p>
+      </article>
+      <article class="card">
+        <span class="badge">Pattern</span>
+        <h2>Contextual Theming</h2>
+        <p>Style queries let you define component appearance in response to custom properties set on the parent container.</p>
+      </article>
+      <article class="card">
+        <span class="badge">Demo</span>
+        <h2>Three Themes</h2>
+        <p>Toggle between dark, light, and colorful themes above to see how each card adapts its look.</p>
+      </article>
+    </section>
+  </div>
+
+  <footer class="footer">
+    <p>Click a theme button to change the container's <code>--theme</code> value.</p>
+  </footer>
+
+  <script>
+    const container = document.getElementById('themedContainer');
+    const buttons = document.querySelectorAll('[data-theme]');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const theme = btn.dataset.theme;
+        container.style.setProperty('--theme', theme);
+        buttons.forEach(b => b.setAttribute('aria-pressed', 'false'));
+        btn.setAttribute('aria-pressed', 'true');
+      });
+    });
+  </script>
+
+</body>
+</html>
