@@ -1,0 +1,16 @@
+.ow-normal {
+  overflow-wrap: normal;
+}
+.ow-break {
+  overflow-wrap: break-word;
+}
+.ow-anywhere {
+  overflow-wrap: anywhere;
+}
+.demo-ow {
+  width: 200px;
+  border: 1px solid #cbd5e1;
+  padding: 0.5rem;
+  border-radius: 4px;
+  margin: 0.25rem 0;
+}
