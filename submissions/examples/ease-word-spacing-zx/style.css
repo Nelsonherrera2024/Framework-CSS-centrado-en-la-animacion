@@ -1,0 +1,19 @@
+.word-spacing-normal {
+  word-spacing: normal;
+}
+.word-spacing-tight {
+  word-spacing: -0.1em;
+}
+.word-spacing-wide {
+  word-spacing: 0.25em;
+}
+.word-spacing-wider {
+  word-spacing: 0.5em;
+}
+.word-spacing-widest {
+  word-spacing: 1em;
+}
+.demo-ws {
+  font-size: 1.2rem;
+  margin: 0.25rem 0;
+}
