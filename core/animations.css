@@ -36,7 +36,7 @@
 @keyframes ease-kf-slide-up {
   from {
     opacity: 0;
-    transform: translateY(24px);
+    transform: translateY(1.5rem);
   }
 
   to {
@@ -48,7 +48,7 @@
 @keyframes ease-kf-slide-down {
   from {
     opacity: 0;
-    transform: translateY(-24px);
+    transform: translateY(-1.5rem);
   }
 
   to {
@@ -60,7 +60,7 @@
 @keyframes ease-kf-slide-in-left {
   from {
     opacity: 0;
-    transform: translateX(-32px);
+    transform: translateX(-2rem);
   }
 
   to {
@@ -72,7 +72,7 @@
 @keyframes ease-kf-slide-in-right {
   from {
     opacity: 0;
-    transform: translateX(32px);
+    transform: translateX(2rem);
   }
 
   to {
