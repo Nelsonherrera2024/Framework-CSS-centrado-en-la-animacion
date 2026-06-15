@@ -1305,13 +1305,12 @@
 
 /* ── Reduced Motion: Respect user preference ───────────────── */
 @media (prefers-reduced-motion: reduce) {
-  [class*="ease-"] {
+  /* Targets only specific animation utility classes, preventing layout bugs */
+  [class*="ease-anim-"], .ease-bounce, .ease-pulse {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
   }
-  [class*="ease-hover-"],
-  [class*="ease-card-"],
-  .ease-btn-hover {
+  [class*="ease-hover-"], [class*="ease-card-"], .ease-btn-hover {
     transition: none !important;
     transform: none !important;
   }
