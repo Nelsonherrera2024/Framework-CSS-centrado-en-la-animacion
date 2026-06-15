@@ -1,0 +1,18 @@
+.gap-normal {
+  column-gap: normal;
+}
+.gap-sm {
+  column-gap: 0.5rem;
+}
+.gap-md {
+  column-gap: 1rem;
+}
+.gap-lg {
+  column-gap: 2rem;
+}
+.gap-xl {
+  column-gap: 3rem;
+}
+.demo-gap {
+  column-count: 3;
+}
