@@ -439,21 +439,6 @@ Use the non-minified version for debugging and development:
 | ease-duration-medium | 300ms    |
 | ease-duration-slow   | 600ms    |
 
-<!-- Looping animations -->
-<div class="ease-bounce">Bouncing</div>
-<div class="ease-pulse">Pulsing</div>
-<div class="ease-rotate">Rotating</div>
-<div class="ease-ping">Ping</div>
-
-You can customize the iteration count of looping animations:
-
-```css
-:root {
-  --ease-animation-iterations: 3;
-}
-```
-
-By default, the value is `infinite`, preserving existing behavior.
 
 <!-- Exit animation -->
 <div class="ease-expand-border-exit"></div>
