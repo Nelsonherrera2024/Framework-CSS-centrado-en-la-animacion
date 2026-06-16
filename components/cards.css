@@ -64,29 +64,20 @@
   border-color: transparent;
 }
 
-/* ── Performance Utility ────────────────────────────────────── */
-
-/* Force GPU Layer Rendering for complex animations */
-.ease-gpu {
-  will-change: transform, opacity, box-shadow;
-  transform: translate3d(0, 0, 0);
-}
-
 /* ── Hover Card ────────────────────────────────────────────── */
 
 .ease-card-hover {
   cursor: pointer;
   transition:
-    transform     var(--ease-speed-medium, 300ms) var(--ease-ease, cubic-bezier(0.4, 0, 0.2, 1)),
-    box-shadow    var(--ease-speed-medium, 300ms) var(--ease-ease, cubic-bezier(0.4, 0, 0.2, 1)),
+    transform    var(--ease-speed-medium, 300ms) var(--ease-ease, cubic-bezier(0.4, 0, 0.2, 1)),
+    box-shadow   var(--ease-speed-medium, 300ms) var(--ease-ease, cubic-bezier(0.4, 0, 0.2, 1)),
     border-color var(--ease-speed-medium, 300ms) var(--ease-ease, cubic-bezier(0.4, 0, 0.2, 1));
   will-change: transform, box-shadow;
-  transform: translateZ(0); /* Forces GPU composition to eliminate mobile micro-stuttering */
 }
 
 @media (hover: hover) and (pointer: fine) {
   .ease-card-hover:hover {
-    transform: translateY(-6px) translateZ(0);
+    transform: translateY(-6px);
     box-shadow: var(--ease-shadow-xl, 0 20px 25px -5px rgba(0, 0, 0, 0.45),
                        0 10px 10px -5px rgba(0, 0, 0, 0.30));
     border-color: var(--ease-color-primary-light, #a09af8);
@@ -144,12 +135,11 @@
     transform  var(--ease-speed-medium, 300ms) var(--ease-ease, cubic-bezier(0.4, 0, 0.2, 1)),
     box-shadow var(--ease-speed-medium, 300ms) var(--ease-ease, cubic-bezier(0.4, 0, 0.2, 1));
   will-change: transform, box-shadow;
-  transform: translateZ(0); /* Prevents layout flickering during shift transitions */
 }
 
 @media (hover: hover) and (pointer: fine) {
   .ease-card-neumorphic:hover {
-    transform: translateY(-4px) translateZ(0);
+    transform: translateY(-4px);
     box-shadow:
       12px 12px 26px rgba(15, 23, 42, 0.14),
       -10px -10px 24px rgba(255, 255, 255, 0.86);
