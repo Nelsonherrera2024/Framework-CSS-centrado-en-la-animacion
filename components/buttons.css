@@ -194,6 +194,7 @@
   border-color: var(--ease-color-neutral-200, #e2e8f0) !important;
   cursor: not-allowed;
   box-shadow: none !important;
+  transition: none !important;
 }
 
 .ease-btn:disabled:hover,
