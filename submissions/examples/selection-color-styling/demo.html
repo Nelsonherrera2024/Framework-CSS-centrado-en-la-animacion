@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selection Color Styling</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Selection &amp; Target-Text Styling</h1>
+    <p class="subtitle">Custom <code>::selection</code> and <code>::target-text</code> colors for different content types. Select text to see the effect.</p>
+  </header>
+
+  <section class="demo-section">
+    <h2>Prose Selection</h2>
+    <div class="sample prose">
+      <p>The old bookstore on Elm Street had been there since before anyone could remember. Its windows were dusty, its sign faded, but inside it held a universe of stories waiting to be discovered. Mrs. Chen, the owner, knew every book by its spine and could recommend the perfect read for any mood. <span class="highlight-demo">Try selecting this sentence to see the prose selection color.</span></p>
+    </div>
+  </section>
+
+  <section class="demo-section">
+    <h2>Code Selection</h2>
+    <div class="sample code-sample">
+      <pre><code><span class="kw">function</span> <span class="fn">fibonacci</span>(<span class="var">n</span>) {
+  <span class="kw">if</span> (<span class="var">n</span> &lt;= <span class="num">1</span>) <span class="kw">return</span> <span class="var">n</span>;
+  <span class="kw">return</span> <span class="fn">fibonacci</span>(<span class="var">n</span> - <span class="num">1</span>) + <span class="fn">fibonacci</span>(<span class="var">n</span> - <span class="num">2</span>);
+}
+
+<span class="com">// Select this code to see code selection colors</span>
+<span class="kw">const</span> <span class="var">result</span> = <span class="fn">fibonacci</span>(<span class="num">10</span>);
+<span class="fn">console</span>.<span class="fn">log</span>(<span class="var">result</span>);</code></pre>
+    </div>
+  </section>
+
+  <section class="demo-section">
+    <h2>Heading Selection</h2>
+    <div class="sample headings-sample">
+      <h3 class="heading-select">Select This Heading</h3>
+      <h4 class="heading-select">Subheading Selection Has Different Color</h4>
+      <h5 class="heading-select">Even Smaller Headings Get Unique Selection</h5>
+      <p class="note">Headings have a distinct selection color to separate them from body text visually.</p>
+    </div>
+  </section>
+
+  <section class="demo-section">
+    <h2>Blockquote Selection</h2>
+    <div class="sample quote-samples">
+      <blockquote class="quote-select">
+        "The only way to do great work is to love what you do. If you haven't found it yet, keep looking. Don't settle."
+        <cite>&mdash; Steve Jobs</cite>
+      </blockquote>
+      <blockquote class="quote-select">
+        "In the middle of difficulty lies opportunity. Select this quote to see the distinct blockquote selection highlight."
+        <cite>&mdash; Albert Einstein</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="demo-section">
+    <h2>Error / Warning Selection</h2>
+    <div class="sample status-samples">
+      <div class="status status--error">&#9888; Error: Connection timed out after 30 seconds. Please check your network settings and try again.</div>
+      <div class="status status--warning">&#9888; Warning: Disk space is below 10%. Consider cleaning up temporary files.</div>
+      <div class="status status--success">&#10003; Success: Operation completed without errors. All systems are functioning normally.</div>
+    </div>
+  </section>
+
+  <section class="demo-section">
+    <h2>::target-text Demo</h2>
+    <p><a href="#target-demo" class="target-link">Click here to scroll to the target demo</a> — when the page scrolls, the <code>::target-text</code> style will highlight the targeted text. (Requires fragment navigation support.)</p>
+    <div class="target-spacer" id="target-demo">
+      <p class="target-text-demo">This paragraph is the <code>#target-demo</code> anchor. When navigated to via the link above, <code>::target-text</code> applies a custom highlight. The <code>::target-text</code> pseudo-element allows authors to style text that has been targeted by a URL fragment.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p><code>::selection</code> and <code>::target-text</code> styling &mdash; select any text to see the custom highlight colors.</p>
+  </footer>
+</body>
+</html>
