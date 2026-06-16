@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS attr() Content Demo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>CSS <code>attr()</code> in Content</h1>
+    <p class="subtitle">Dynamic content from data attributes via <code>attr()</code> in pseudo-element <code>content</code> properties.</p>
+  </header>
+
+  <section class="demo-section">
+    <h2>Data Badges</h2>
+    <p class="section-desc">Badges display data attribute values using <code>attr()</code> — no JavaScript required.</p>
+    <div class="badge-grid">
+      <span class="badge" data-label="Status" data-value="Active">Active</span>
+      <span class="badge badge--warn" data-label="Status" data-value="Pending">Pending</span>
+      <span class="badge badge--error" data-label="Status" data-value="Failed">Failed</span>
+      <span class="badge badge--info" data-label="Version" data-value="2.4.1">v2.4.1</span>
+      <span class="badge badge--success" data-label="Build" data-value="Passing">Passing</span>
+      <span class="badge badge--neutral" data-label="Priority" data-value="Low">Low</span>
+      <span class="badge badge--high" data-label="Priority" data-value="High">High</span>
+      <span class="badge badge--critical" data-label="Priority" data-value="Critical">Critical</span>
+    </div>
+  </section>
+
+  <section class="demo-section">
+    <h2>Tooltips with attr()</h2>
+    <p class="section-desc">Pseudo-element tooltips read their content from <code>data-tip</code> attributes using <code>attr()</code>.</p>
+    <div class="tooltip-group">
+      <a href="#" class="tooltip-link" data-tip="View user profile settings">User Settings</a>
+      <a href="#" class="tooltip-link" data-tip="Browse notification history">Notifications</a>
+      <a href="#" class="tooltip-link" data-tip="Manage team members and roles">Team</a>
+      <a href="#" class="tooltip-link" data-tip="Configure API keys and tokens">API Keys</a>
+      <a href="#" class="tooltip-link" data-tip="View billing and subscription details">Billing</a>
+    </div>
+  </section>
+
+  <section class="demo-section">
+    <h2>Progress Labels</h2>
+    <p class="section-desc">Bars display their percentage from <code>data-progress</code> using <code>attr()</code> in <code>::after</code>.</p>
+    <div class="progress-group">
+      <div class="progress-item">
+        <span class="progress-label">Project Alpha</span>
+        <div class="progress-bar" data-progress="75">
+          <div class="progress-fill" style="width: 75%;"></div>
+        </div>
+      </div>
+      <div class="progress-item">
+        <span class="progress-label">Project Beta</span>
+        <div class="progress-bar" data-progress="42">
+          <div class="progress-fill" style="width: 42%;"></div>
+        </div>
+      </div>
+      <div class="progress-item">
+        <span class="progress-label">Project Gamma</span>
+        <div class="progress-bar" data-progress="90">
+          <div class="progress-fill" style="width: 90%;"></div>
+        </div>
+      </div>
+      <div class="progress-item">
+        <span class="progress-label">Project Delta</span>
+        <div class="progress-bar" data-progress="18">
+          <div class="progress-fill" style="width: 18%;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="demo-section">
+    <h2>Link Type Indicators</h2>
+    <p class="section-desc">External links and file type links show their destination type via <code>attr(href)</code>.</p>
+    <ul class="link-list">
+      <li><a href="https://example.com/documentation" class="link--external">Documentation</a></li>
+      <li><a href="https://example.com/guide.pdf" class="link--pdf">Installation Guide</a></li>
+      <li><a href="https://example.com/source.zip" class="link--zip">Source Code</a></li>
+      <li><a href="https://example.com/image.png" class="link--image">Screenshot</a></li>
+      <li><a href="https://example.com/presentation.pptx" class="link--slide">Slides</a></li>
+      <li><a href="https://example.com/spreadsheet.xlsx" class="link--sheet">Data Export</a></li>
+    </ul>
+  </section>
+
+  <section class="demo-section">
+    <h2>Button with Shortcut Hint</h2>
+    <p class="section-desc">Buttons show keyboard shortcut hints read from <code>data-key</code>.</p>
+    <div class="button-group">
+      <button class="shortcut-btn" data-key="Ctrl+S">Save</button>
+      <button class="shortcut-btn" data-key="Ctrl+Z">Undo</button>
+      <button class="shortcut-btn" data-key="Ctrl+Shift+Z">Redo</button>
+      <button class="shortcut-btn" data-key="Ctrl+P">Print</button>
+      <button class="shortcut-btn" data-key="Ctrl+K">Search</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>All dynamic content uses <code>attr()</code> in <code>::before</code> / <code>::after</code> &mdash; no JavaScript data binding.</p>
+  </footer>
+</body>
+</html>
