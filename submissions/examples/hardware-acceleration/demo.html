@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hardware Acceleration Demo</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background-color: #f4f4f9;
+    }
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: #3498db;
+      border-radius: 8px;
+      margin-top: 20px;
+      animation: spin 3s infinite linear;
+    }
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <h1>GPU Hardware Acceleration Demo</h1>
+  <p>The box below uses the <code>.ease-gpu</code> utility class to force GPU rendering, avoiding stuttering on mobile devices.</p>
+  
+  <!-- Applying your utility class here -->
+  <div class="box ease-gpu"></div>
+</body>
+</html>
