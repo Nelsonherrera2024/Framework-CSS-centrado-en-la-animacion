@@ -1,0 +1,239 @@
+/* ============================================================
+   EaseMotion CSS — ease-toggle-switch
+   Submission: #10455
+   Animated CSS-only toggle switch using checkbox hack
+   ============================================================ */
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+  min-height: 100vh;
+  margin: 0;
+  padding: 2rem 1rem;
+}
+
+.demo-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.demo-wrapper h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  color: #64748b;
+  font-size: 0.95rem;
+  margin-bottom: 2.5rem;
+}
+
+.demo-section {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 14px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.demo-section h2 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0 0 1rem 0;
+}
+
+/* ============================================================
+   Toggle Switch Base
+   ============================================================ */
+
+.ease-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+}
+
+/* Hide the native checkbox */
+.ease-toggle-input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.ease-toggle-slider {
+  position: relative;
+  width: 48px;
+  height: 26px;
+  background: #334155;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  transition:
+    background 300ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 300ms ease;
+  flex-shrink: 0;
+}
+
+.ease-toggle-knob {
+  position: absolute;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  transition:
+    transform 300ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 300ms ease;
+}
+
+/* Checked state: slide knob right + color change */
+.ease-toggle-input:checked ~ .ease-toggle-slider {
+  background: #6c63ff;
+  box-shadow: 0 0 0 2px rgba(108, 99, 255, 0.25);
+}
+
+.ease-toggle-input:checked ~ .ease-toggle-slider .ease-toggle-knob {
+  transform: translateX(22px);
+  box-shadow: 0 1px 6px rgba(108, 99, 255, 0.4);
+}
+
+/* Focus visible */
+.ease-toggle-input:focus-visible ~ .ease-toggle-slider {
+  outline: 2px solid #a5b4fc;
+  outline-offset: 2px;
+}
+
+/* Hover: brighten slider */
+.ease-toggle:hover .ease-toggle-slider {
+  box-shadow: 0 0 0 2px rgba(108, 99, 255, 0.15);
+}
+
+/* Text label */
+.ease-toggle-text {
+  font-size: 0.9rem;
+  color: #cbd5e1;
+  transition: color 200ms ease;
+}
+
+.ease-toggle-input:checked ~ .ease-toggle-text {
+  color: #e2e8f0;
+}
+
+/* Disabled */
+.ease-toggle-input:disabled ~ .ease-toggle-slider {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.ease-toggle-input:disabled ~ .ease-toggle-text {
+  color: #475569;
+}
+
+/* ============================================================
+   Size Variants
+   ============================================================ */
+
+/* Large */
+.ease-toggle-lg .ease-toggle-slider {
+  width: 56px;
+  height: 30px;
+}
+
+.ease-toggle-lg .ease-toggle-knob {
+  width: 24px;
+  height: 24px;
+}
+
+.ease-toggle-lg .ease-toggle-input:checked ~ .ease-toggle-slider .ease-toggle-knob {
+  transform: translateX(26px);
+}
+
+/* Small */
+.ease-toggle-sm .ease-toggle-slider {
+  width: 40px;
+  height: 22px;
+}
+
+.ease-toggle-sm .ease-toggle-knob {
+  width: 16px;
+  height: 16px;
+  left: 3px;
+}
+
+.ease-toggle-sm .ease-toggle-input:checked ~ .ease-toggle-slider .ease-toggle-knob {
+  transform: translateX(18px);
+}
+
+/* ============================================================
+   Outline Variant
+   ============================================================ */
+
+.ease-toggle-outline .ease-toggle-slider {
+  background: transparent;
+  border: 2px solid #475569;
+  box-shadow: none;
+  transition:
+    border-color 300ms ease,
+    background 300ms ease,
+    box-shadow 300ms ease;
+}
+
+.ease-toggle-outline .ease-toggle-knob {
+  background: #64748b;
+  box-shadow: none;
+}
+
+.ease-toggle-outline .ease-toggle-input:checked ~ .ease-toggle-slider {
+  border-color: #6c63ff;
+  background: rgba(108, 99, 255, 0.1);
+  box-shadow: 0 0 0 2px rgba(108, 99, 255, 0.2);
+}
+
+.ease-toggle-outline .ease-toggle-input:checked ~ .ease-toggle-slider .ease-toggle-knob {
+  background: #6c63ff;
+  box-shadow: 0 1px 6px rgba(108, 99, 255, 0.4);
+}
+
+/* ============================================================
+   Settings Row
+   ============================================================ */
+
+.ease-toggle-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* ============================================================
+   Reduced Motion
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .ease-toggle-slider {
+    transition: none;
+  }
+  .ease-toggle-knob {
+    transition: none;
+  }
+  .ease-toggle-input:checked ~ .ease-toggle-slider .ease-toggle-knob {
+    transform: translateX(22px);
+  }
+  .ease-toggle-lg .ease-toggle-input:checked ~ .ease-toggle-slider .ease-toggle-knob {
+    transform: translateX(26px);
+  }
+  .ease-toggle-sm .ease-toggle-input:checked ~ .ease-toggle-slider .ease-toggle-knob {
+    transform: translateX(18px);
+  }
+}
