@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>round-mod-math</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>CSS <code>round()</code> <code>mod()</code> <code>rem()</code></h1>
+    <p>Calculations on numeric values with visual bar output</p>
+  </header>
+
+  <main class="grid">
+    <section class="panel" id="panel-round">
+      <h2><code>round()</code></h2>
+      <p class="desc">Rounds <var>value</var> to the nearest multiple of <var>step</var></p>
+      <div class="calc">
+        <span class="expr">round(17, 5)</span>
+        <span class="result">→ 15</span>
+      </div>
+      <div class="bar-group">
+        <div class="bar-row"><span class="label">value (17)</span><span class="bar bar-value" style="--w: 17"></span></div>
+        <div class="bar-row"><span class="label">step (5)</span><span class="bar bar-step" style="--w: 5"></span></div>
+        <div class="bar-row"><span class="label">result (15)</span><span class="bar bar-result" style="--w: 15"></span></div>
+      </div>
+    </section>
+
+    <section class="panel" id="panel-mod">
+      <h2><code>mod()</code></h2>
+      <p class="desc">Remainder (always non-negative)</p>
+      <div class="calc">
+        <span class="expr">mod(17, 5)</span>
+        <span class="result">→ 2</span>
+      </div>
+      <div class="bar-group">
+        <div class="bar-row"><span class="label">value (17)</span><span class="bar bar-value" style="--w: 17"></span></div>
+        <div class="bar-row"><span class="label">divisor (5)</span><span class="bar bar-step" style="--w: 5"></span></div>
+        <div class="bar-row"><span class="label">result (2)</span><span class="bar bar-result" style="--w: 2"></span></div>
+      </div>
+    </section>
+
+    <section class="panel" id="panel-rem">
+      <h2><code>rem()</code></h2>
+      <p class="desc">Remainder (sign matches dividend)</p>
+      <div class="calc">
+        <span class="expr">rem(-17, 5)</span>
+        <span class="result">→ -2</span>
+      </div>
+      <div class="bar-group">
+        <div class="bar-row"><span class="label">value (-17)</span><span class="bar bar-value" style="--w: 17"></span></div>
+        <div class="bar-row"><span class="label">divisor (5)</span><span class="bar bar-step" style="--w: 5"></span></div>
+        <div class="bar-row"><span class="label">result (-2)</span><span class="bar bar-result" style="--w: 2"></span></div>
+      </div>
+    </section>
+
+    <section class="panel extra">
+      <h2>More examples</h2>
+      <table class="examples-table">
+        <thead><tr><th>Expression</th><th>Result</th></tr></thead>
+        <tbody>
+          <tr><td><code>round(up, 23, 10)</code></td><td>30</td></tr>
+          <tr><td><code>round(down, 23, 10)</code></td><td>20</td></tr>
+          <tr><td><code>round(nearest, 23, 10)</code></td><td>20</td></tr>
+          <tr><td><code>mod(-17, 5)</code></td><td>3</td></tr>
+          <tr><td><code>rem(-17, 5)</code></td><td>-2</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <p>CSS round-mod-math example &mdash; EaseMotion</p>
+  </footer>
+</body>
+</html>
