@@ -1,0 +1,14 @@
+/* EaseMotion-css: Hardware Acceleration Utility
+  Addresses Issue #10700: Smoother animation performance on mobile and Safari.
+*/
+
+.ease-gpu {
+  /* Hint the browser rendering engine to prepare optimization for these properties */
+  will-change: transform, opacity;
+  
+  /* Force the browser to offload rendering to the GPU by triggering a new composite layer */
+  transform: translate3d(0, 0, 0);
+  
+  /* Fallback property ensuring hardware acceleration triggers smoothly across older mobile rendering engines */
+  backface-visibility: hidden;
+}
