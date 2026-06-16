@@ -1,0 +1,39 @@
+.corner-border-btn {
+  position: relative;
+  padding: 12px 28px;
+  background: transparent;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+}
+
+.corner-border-btn::before,
+.corner-border-btn::after {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-color: #fff;
+  border-style: solid;
+  transition: width 0.3s ease, height 0.3s ease;
+}
+
+.corner-border-btn::before {
+  top: 0;
+  left: 0;
+  border-width: 2px 0 0 2px;
+}
+
+.corner-border-btn::after {
+  bottom: 0;
+  right: 0;
+  border-width: 0 2px 2px 0;
+}
+
+.corner-border-btn:hover::before,
+.corner-border-btn:hover::after {
+  width: 100%;
+  height: 100%;
+}
