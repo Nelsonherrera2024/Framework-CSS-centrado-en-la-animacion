@@ -82,7 +82,7 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .ease-card-hover:hover {
+  .ease-card-hover:not(:has(.ease-btn:hover)):hover {
     transform: translateY(-6px);
     box-shadow: var(--ease-shadow-xl, 0 20px 25px -5px rgba(0, 0, 0, 0.45),
                        0 10px 10px -5px rgba(0, 0, 0, 0.30));
