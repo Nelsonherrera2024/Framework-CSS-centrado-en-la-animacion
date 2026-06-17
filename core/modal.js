@@ -1,13 +1,21 @@
 (function () {
   'use strict';
 
+  let lastFocusedElement = null;
+
   function checkModal() {
     const hash = window.location.hash;
     const body = document.body;
 
-    // Remove active class from all overlays just in case
+    // Remove active class from all overlays just in case, tracking if any were active
+    let wasModalActive = false;
     const overlays = document.querySelectorAll('.ease-modal-overlay');
-    overlays.forEach((overlay) => overlay.classList.remove('is-active'));
+    overlays.forEach((overlay) => {
+      if (overlay.classList.contains('is-active')) {
+        wasModalActive = true;
+      }
+      overlay.classList.remove('is-active');
+    });
 
     if (hash) {
       // Find overlay by hash (pure CSS `:target` fallback)
@@ -20,6 +28,9 @@
 
           const modal = overlay.querySelector('.ease-modal');
           if (modal) {
+            if (!wasModalActive && document.activeElement) {
+              lastFocusedElement = document.activeElement;
+            }
             modal.setAttribute('tabindex', '-1');
             modal.focus();
           }
@@ -32,6 +43,16 @@
 
     // If no active modal is found
     body.style.overflow = '';
+
+    // Restore focus when closing
+    if (wasModalActive && lastFocusedElement) {
+      setTimeout(() => {
+        if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+          lastFocusedElement.focus();
+        }
+        lastFocusedElement = null;
+      }, 0);
+    }
   }
 
   // Setup event listeners for hash changes (opening/closing via anchors)
