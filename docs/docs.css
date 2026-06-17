@@ -136,6 +136,15 @@ body {
   margin: 0;
 }
 
+.docs-header-links li {
+  display: flex;
+  align-items: center;
+}
+
+.docs-header-links a {
+  white-space: nowrap;
+}
+
 .docs-header-links a:not(.ease-btn) {
   color: var(--nav-link-color);
   font-size: var(--ease-text-sm);
@@ -286,7 +295,9 @@ body {
 }
 
 .docs-sidebar::-webkit-scrollbar-thumb {
-  background: var(--border-color); /* Reuses their existing border color variable */
+  background: var(
+    --border-color
+  ); /* Reuses their existing border color variable */
   border-radius: 4px;
 }
 
