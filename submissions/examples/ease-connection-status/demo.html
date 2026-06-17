@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EaseMotion — Connection Status Demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- =====================================================
+       CONNECTION STATUS BANNER
+       ===================================================== -->
+  <div
+    id="connection-status"
+    class="connection-status is-hidden"
+    role="status"
+    aria-live="polite"
+    aria-atomic="true"
+    aria-label="Network status"
+  >
+    <div class="cs-inner">
+
+      <!-- Status dot -->
+      <span class="cs-dot" aria-hidden="true"></span>
+
+      <!-- Icon (swaps between states via CSS) -->
+      <span class="cs-icon" aria-hidden="true">
+        <!-- Online: check circle -->
+        <svg class="icon-online" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="8" cy="8" r="7.25" stroke="#00C97A" stroke-width="1.5"/>
+          <path d="M5 8.5l2 2 4-4" stroke="#00C97A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <!-- Offline: warning triangle -->
+        <svg class="icon-offline" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M8 2.5L14.5 13.5H1.5L8 2.5Z" stroke="#FF4757" stroke-width="1.5" stroke-linejoin="round"/>
+          <path d="M8 6.5V9.5" stroke="#FF4757" stroke-width="1.6" stroke-linecap="round"/>
+          <circle cx="8" cy="11.5" r="0.75" fill="#FF4757"/>
+        </svg>
+      </span>
+
+      <!-- Message -->
+      <span class="cs-message">Connection Restored</span>
+
+      <!-- Dismiss (online state only) -->
+      <button class="cs-dismiss" aria-label="Dismiss notification" tabindex="0">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+          <path d="M1 1l10 10M11 1L1 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+    </div>
+
+    <!-- Animated progress bar -->
+    <div class="cs-progress" aria-hidden="true"></div>
+  </div>
+
+  <!-- =====================================================
+       DEMO APP SHELL — SaaS Dashboard
+       ===================================================== -->
+  <div class="demo-app">
+
+    <!-- Top bar -->
+    <header class="demo-topbar">
+      <div class="demo-topbar-brand">
+        <span class="demo-topbar-brand-dot"></span>
+        Nexus&nbsp;Analytics
+      </div>
+      <div class="demo-topbar-actions">
+        <span class="demo-topbar-badge">Pro Plan</span>
+        <div class="demo-avatar" aria-label="User avatar">SA</div>
+      </div>
+    </header>
+
+    <!-- Sidebar -->
+    <nav class="demo-sidebar" aria-label="Main navigation">
+      <span class="demo-nav-label">Workspace</span>
+
+      <div class="demo-nav-item active" tabindex="0">
+        <svg class="demo-nav-icon" viewBox="0 0 15 15" fill="none">
+          <rect x="1" y="1" width="5.5" height="5.5" rx="1.25" stroke="currentColor" stroke-width="1.3"/>
+          <rect x="8.5" y="1" width="5.5" height="5.5" rx="1.25" stroke="currentColor" stroke-width="1.3"/>
+          <rect x="1" y="8.5" width="5.5" height="5.5" rx="1.25" stroke="currentColor" stroke-width="1.3"/>
+          <rect x="8.5" y="8.5" width="5.5" height="5.5" rx="1.25" stroke="currentColor" stroke-width="1.3"/>
+        </svg>
+        Dashboard
+      </div>
+
+      <div class="demo-nav-item" tabindex="0">
+        <svg class="demo-nav-icon" viewBox="0 0 15 15" fill="none">
+          <path d="M1 11.5L5 7l3 3 3-4 3 5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Analytics
+      </div>
+
+      <div class="demo-nav-item" tabindex="0">
+        <svg class="demo-nav-icon" viewBox="0 0 15 15" fill="none">
+          <circle cx="7.5" cy="5.5" r="2.8" stroke="currentColor" stroke-width="1.3"/>
+          <path d="M2 13c0-2.5 2.5-4 5.5-4s5.5 1.5 5.5 4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+        Users
+      </div>
+
+      <span class="demo-nav-label">System</span>
+
+      <div class="demo-nav-item" tabindex="0">
+        <svg class="demo-nav-icon" viewBox="0 0 15 15" fill="none">
+          <path d="M7.5 1v2M7.5 12v2M1 7.5h2M12 7.5h2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+          <circle cx="7.5" cy="7.5" r="3" stroke="currentColor" stroke-width="1.3"/>
+        </svg>
+        Settings
+      </div>
+
+      <div class="demo-nav-item" tabindex="0">
+        <svg class="demo-nav-icon" viewBox="0 0 15 15" fill="none">
+          <path d="M2 4h11M2 7.5h8M2 11h5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+        Logs
+      </div>
+    </nav>
+
+    <!-- Main content -->
+    <main class="demo-main" id="main-content">
+
+      <div class="demo-page-header">
+        <h1 class="demo-page-title">Overview</h1>
+        <p class="demo-page-sub">Last updated just now · Workspace: Production</p>
+      </div>
+
+      <!-- KPI grid -->
+      <div class="demo-kpi-grid" aria-label="Key metrics">
+
+        <div class="demo-kpi">
+          <div class="demo-kpi-label">Monthly Revenue</div>
+          <div class="demo-kpi-value">$84.2k</div>
+          <div class="demo-kpi-delta">↑ 12.4% vs last month</div>
+          <div class="demo-kpi-accent" style="background:#667eea;"></div>
+        </div>
+
+        <div class="demo-kpi">
+          <div class="demo-kpi-label">Active Users</div>
+          <div class="demo-kpi-value">3,419</div>
+          <div class="demo-kpi-delta">↑ 8.1% vs last month</div>
+          <div class="demo-kpi-accent" style="background:#00C97A;"></div>
+        </div>
+
+        <div class="demo-kpi">
+          <div class="demo-kpi-label">Conversion Rate</div>
+          <div class="demo-kpi-value">5.7%</div>
+          <div class="demo-kpi-delta">↑ 0.9pp vs last month</div>
+          <div class="demo-kpi-accent" style="background:#ffc832;"></div>
+        </div>
+
+        <div class="demo-kpi">
+          <div class="demo-kpi-label">Avg. Session</div>
+          <div class="demo-kpi-value">4m 22s</div>
+          <div class="demo-kpi-delta">↑ 6.3% vs last month</div>
+          <div class="demo-kpi-accent" style="background:#ff6b81;"></div>
+        </div>
+
+      </div>
+
+      <!-- Chart placeholder -->
+      <div class="demo-chart-card">
+        <div class="demo-chart-header">
+          <span class="demo-chart-title">Revenue — Last 14 Days</span>
+          <span class="demo-chart-pill">Daily</span>
+        </div>
+        <div class="demo-chart-bars" aria-label="Revenue bar chart (decorative)">
+          <div class="demo-bar" style="height:54%"></div>
+          <div class="demo-bar" style="height:66%"></div>
+          <div class="demo-bar" style="height:48%"></div>
+          <div class="demo-bar" style="height:72%"></div>
+          <div class="demo-bar" style="height:58%"></div>
+          <div class="demo-bar" style="height:81%"></div>
+          <div class="demo-bar" style="height:76%"></div>
+          <div class="demo-bar" style="height:63%"></div>
+          <div class="demo-bar" style="height:70%"></div>
+          <div class="demo-bar" style="height:85%"></div>
+          <div class="demo-bar" style="height:78%"></div>
+          <div class="demo-bar" style="height:91%"></div>
+          <div class="demo-bar" style="height:87%"></div>
+          <div class="demo-bar" style="height:100%"></div>
+        </div>
+      </div>
+
+      <!-- Transactions table -->
+      <div class="demo-table-card">
+        <table class="demo-table" aria-label="Recent transactions">
+          <thead>
+            <tr>
+              <th>Customer</th>
+              <th>Plan</th>
+              <th>Amount</th>
+              <th>Status</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Aria Systems</td>
+              <td>Enterprise</td>
+              <td>$2,400</td>
+              <td><span class="demo-status-chip success">Paid</span></td>
+              <td>Jun 17, 2026</td>
+            </tr>
+            <tr>
+              <td>Helix Corp</td>
+              <td>Pro</td>
+              <td>$149</td>
+              <td><span class="demo-status-chip pending">Pending</span></td>
+              <td>Jun 16, 2026</td>
+            </tr>
+            <tr>
+              <td>Nimbus Labs</td>
+              <td>Pro</td>
+              <td>$149</td>
+              <td><span class="demo-status-chip success">Paid</span></td>
+              <td>Jun 15, 2026</td>
+            </tr>
+            <tr>
+              <td>Vortex IO</td>
+              <td>Enterprise</td>
+              <td>$2,400</td>
+              <td><span class="demo-status-chip success">Paid</span></td>
+              <td>Jun 14, 2026</td>
+            </tr>
+            <tr>
+              <td>Solstice Dev</td>
+              <td>Starter</td>
+              <td>$29</td>
+              <td><span class="demo-status-chip success">Paid</span></td>
+              <td>Jun 13, 2026</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- =====================================================
+       DEMO CONTROLS (floating, bottom-right)
+       ===================================================== -->
+  <div class="demo-controls" role="group" aria-label="Demo simulation controls">
+    <button
+      id="demo-btn-offline"
+      class="demo-btn demo-btn-offline"
+      aria-label="Simulate going offline"
+    >
+      ⚡ Go Offline
+    </button>
+    <button
+      id="demo-btn-online"
+      class="demo-btn demo-btn-online"
+      aria-label="Simulate coming back online"
+    >
+      ✓ Go Online
+    </button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
