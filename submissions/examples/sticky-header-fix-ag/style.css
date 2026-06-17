@@ -14,3 +14,22 @@
   margin-bottom: 2rem;
 }
 
+.scroll-content {
+  padding: 1rem 2rem 15rem 2rem; /* Ensure scroll height */
+}
+
+/* ── Sticky Header Base ──────────────────────────────────── */
+.header-simulated {
+  height: 60px;
+  background-color: rgba(26, 25, 38, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
