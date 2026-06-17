@@ -1,2 +1,9 @@
 # Sticky Navigation Header Fix
 
+## What does this do?
+
+Keeps the top navigation header stuck to the top of the viewport (`position: sticky`) as users scroll down the page, preventing it from scrolling out of view.
+
+## How is it used?
+
+Apply a sticky position and top constraint to your navigation container, making sure no parent element overrides its display/positioning styles:
