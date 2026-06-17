@@ -1,0 +1,155 @@
+:root {
+    --cyan: #00f7ff;
+    --pink: #ff00c8;
+    --bg: #0a0a0a;
+    --yellow: #fcee09;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--bg);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+.cyber-btn {
+    position: relative;
+    padding: 18px 50px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--yellow);
+    background: transparent;
+    border: 2px solid var(--cyan);
+    cursor: pointer;
+    overflow: hidden;
+
+    clip-path: polygon(
+        0 0,
+        92% 0,
+        100% 25%,
+        100% 100%,
+        8% 100%,
+        0 75%
+    );
+
+    box-shadow:
+        0 0 8px var(--cyan),
+        0 0 16px var(--cyan);
+
+    transition: 0.3s ease;
+}
+
+.cyber-btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 0 12px var(--pink),
+        0 0 25px var(--pink),
+        0 0 40px var(--cyan);
+}
+
+.glitch-text {
+    position: relative;
+    display: inline-block;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+.glitch-text::before {
+    color: var(--pink);
+    animation: glitch1 1.5s infinite;
+}
+
+.glitch-text::after {
+    color: var(--cyan);
+    animation: glitch2 1.5s infinite;
+}
+
+.cyber-btn:hover .glitch-text::before,
+.cyber-btn:hover .glitch-text::after {
+    content: "LAUNCH";
+}
+
+@keyframes glitch1 {
+    0% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translate(-2px, 2px);
+    }
+    40% {
+        transform: translate(-3px, -2px);
+    }
+    60% {
+        transform: translate(2px, 1px);
+    }
+    80% {
+        transform: translate(-1px, -1px);
+    }
+    100% {
+        transform: translate(0);
+    }
+}
+
+@keyframes glitch2 {
+    0% {
+        transform: translate(0);
+    }
+    20% {
+        transform: translate(2px, -2px);
+    }
+    40% {
+        transform: translate(3px, 2px);
+    }
+    60% {
+        transform: translate(-2px, -1px);
+    }
+    80% {
+        transform: translate(1px, 1px);
+    }
+    100% {
+        transform: translate(0);
+    }
+}
+
+.cyber-btn::before {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: -50%;
+    width: 200%;
+    height: 250%;
+    background: repeating-linear-gradient(
+        transparent,
+        transparent 3px,
+        rgba(255,255,255,0.05) 4px
+    );
+    animation: scanline 5s linear infinite;
+}
+
+@keyframes scanline {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(100%);
+    }
+}
