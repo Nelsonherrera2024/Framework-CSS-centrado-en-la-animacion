@@ -26,3 +26,8 @@ Style list items inside navigation bars to center their children vertically, and
   display: flex;
   align-items: center;
 }
+
+.docs-header-links a {
+  white-space: nowrap;
+}
+```
