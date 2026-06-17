@@ -80,7 +80,7 @@
       top: 0;
       left: 0;
       height: 100vh;
-      z-index: 100;
+      z-index: var(--ease-z-overlay, 100);
       width: var(--ease-sidebar-width, 260px);
       visibility: hidden;
       transform: translateX(-100%);
