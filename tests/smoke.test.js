@@ -128,6 +128,12 @@ const modals = readFileSync(resolve(componentsDir, 'modals.css'), 'utf8');
     expect(css).toContain('.ease-modal-header');
   });
 
+  it('should use --ease-modal-blur variable for modal backdrop blur', () => {
+    expect(css).toContain('--ease-modal-blur: 4px');
+    expect(css).toContain('backdrop-filter: blur(var(--ease-modal-blur, 4px))');
+    expect(css).toContain('-webkit-backdrop-filter: blur(var(--ease-modal-blur, 4px))');
+  });
+
   it('should have dark mode variables via prefers-color-scheme', () => {
     expect(css).toContain('@media (prefers-color-scheme: dark)');
     expect(css).toContain('--ease-color-surface: #141e33');

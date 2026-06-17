@@ -72,6 +72,7 @@
   /* Glassmorphism tokens (fallback values) */
    --ease-glass-bg: rgba(255, 255, 255, 0.12);
   --ease-glass-border: rgba(255, 255, 255, 0.20);
+  --ease-modal-blur: 4px;
 
   /* ── Spacing Scale ─────────────────────────────────────── */
   --ease-space-1:  0.25rem;   /*  4px */

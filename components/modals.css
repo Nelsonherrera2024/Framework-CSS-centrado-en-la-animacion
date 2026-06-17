@@ -12,8 +12,8 @@
     right: 0;
     bottom: 0;
     background: rgba(15, 23, 42, 0.6); /* Slate 900 base opacity */
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(var(--ease-modal-blur, 4px));
+    -webkit-backdrop-filter: blur(var(--ease-modal-blur, 4px));
     display: flex;
     justify-content: center;
     align-items: center;
