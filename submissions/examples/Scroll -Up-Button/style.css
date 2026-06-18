@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+section {
+    max-width: 800px;
+    margin: auto;
+    padding: 1rem;
+}
+
+section p {
+    margin: 1rem 0;
+}
+
+.spacer {
+    height: 2000px;
+}
+
+/* ===== BUTTON THEME (IMPORTANT) ===== */
+#scrollTopBtn {
+    font-size: 26px;
+    font-weight: 900;
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+
+    width: 56px;
+    height: 56px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: linear-gradient(135deg, #6c63ff, #a78bfa);
+    color: white;
+
+    font-size: 24px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 24px rgba(108, 99, 255, 0.4);
+    z-index: 9999;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+
+    transition: all 0.3s ease;
+}
+
+/* SHOW */
+#scrollTopBtn.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* HOVER */
+#scrollTopBtn:hover {
+    transform: translateY(-4px) scale(1.08);
+}
+
+/* LIGHT THEME SUPPORT */
+[data-theme="light"] #scrollTopBtn {
+    box-shadow: 0 8px 24px rgba(79, 70, 229, 0.25);
+}
+
+/* MOBILE */
+@media (max-width: 640px) {
+    #scrollTopBtn {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+        bottom: 20px;
+        right: 20px;
+    }
+}
