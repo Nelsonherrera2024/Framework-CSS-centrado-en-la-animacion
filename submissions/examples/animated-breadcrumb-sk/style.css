@@ -1,140 +1,91 @@
-/* style.css */
-
-:root {
-  --bc-text-muted: #6b7280;
-  --bc-text-active: #111827;
-  --bc-accent: #3b82f6;
-  --bc-bg: #f9fafb;
-  --bc-border: #e5e7eb;
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  background-color: #f3f4f6;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #0f172a;
   min-height: 100vh;
-}
-
-.container {
-  max-width: 800px;
-  width: 90%;
-  padding: 2rem 0;
-}
-
-h1 {
-  margin-bottom: 0.5rem;
-  color: #1f2937;
-}
-
-p {
-  color: #6b7280;
-  margin-bottom: 2rem;
-}
-
-.card {
-  background: white;
+  display: grid;
+  place-items: center;
   padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  transition: transform 0.3s ease;
 }
 
-/* Breadcrumb Layout */
 .breadcrumb {
+  width: 100%;
+  max-width: 800px;
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+}
+
+.breadcrumb ol {
+  list-style: none;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  list-style: none;
-  padding: 0.75rem 1.25rem;
-  margin: 0;
-  background: var(--bc-bg);
-  border: 1px solid var(--bc-border);
-  border-radius: 8px;
+  gap: 0.35rem;
 }
 
-.breadcrumb-item {
+.breadcrumb li {
   display: flex;
   align-items: center;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  color: #64748b;
 }
 
-/* Animated Separators */
-.breadcrumb-item + .breadcrumb-item::before {
-  content: "›"; /* Chevron separator */
-  color: #9ca3af;
-  margin: 0 0.75rem;
-  font-size: 1.25rem;
+.breadcrumb li + li::before {
+  content: "\203A";
+  margin: 0 0.5rem;
+  color: #475569;
+  font-size: 1.1rem;
   line-height: 1;
-  transition: transform 0.2s ease, color 0.2s ease;
 }
 
-/* Subtle micro-animation when hovering an adjacent breadcrumb link */
-.breadcrumb-item:hover + .breadcrumb-item::before {
-  transform: translateX(3px);
-  color: var(--bc-accent);
-}
-
-/* Links */
-.breadcrumb-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  color: var(--bc-text-muted);
+.breadcrumb a {
+  color: #94a3b8;
   text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s ease, transform 0.2s ease;
+  padding: 0.2rem 0;
+  position: relative;
+  transition: color 0.25s;
 }
 
-.breadcrumb-link:hover,
-.breadcrumb-link:focus-visible {
-  color: var(--bc-accent);
-  outline: none;
+.breadcrumb a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1.5px;
+  background: #38bdf8;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
 }
 
-.breadcrumb-link:focus-visible {
-  text-decoration: underline;
-  text-underline-offset: 4px;
+.breadcrumb a:hover {
+  color: #f1f5f9;
 }
 
-/* Slide hover effect logic */
-.slide-hover:hover {
-  transform: translateY(-1px);
+.breadcrumb a:hover::after {
+  transform: scaleX(1);
 }
 
-.home-icon {
-  margin-bottom: 2px;
-}
-
-/* Active State */
-.breadcrumb-current {
-  color: var(--bc-text-active);
+.breadcrumb li[aria-current="page"] {
+  color: #38bdf8;
   font-weight: 600;
-  background-image: linear-gradient(120deg, var(--bc-accent) 0%, var(--bc-accent) 100%);
-  background-repeat: no-repeat;
-  background-size: 0% 2px;
-  background-position: 0 100%;
-  transition: background-size 0.3s ease;
-}
-
-.breadcrumb-item.active:hover .breadcrumb-current {
-  background-size: 100% 2px;
-}
-
-/* Accessible focus prevention on current page span */
-.breadcrumb-item.active {
   cursor: default;
 }
 
-/* Prefers Reduced Motion Support */
-@media (prefers-reduced-motion: reduce) {
-  .breadcrumb-item + .breadcrumb-item::before,
-  .breadcrumb-link,
-  .slide-hover:hover,
-  .breadcrumb-current {
-    transition: none !important;
-    transform: none !important;
+@media (max-width: 480px) {
+  .breadcrumb {
+    padding: 0.75rem 1rem;
+  }
+
+  .breadcrumb li {
+    font-size: 0.8rem;
   }
 }
