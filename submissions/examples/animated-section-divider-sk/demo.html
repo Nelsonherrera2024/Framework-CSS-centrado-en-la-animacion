@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animated Section Divider | EaseMotion CSS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <section class="divider-demo">
+    <h1 class="divider-demo__title">Section Dividers</h1>
+    <p class="divider-demo__desc">Six decorative divider styles to separate your content sections</p>
+
+    <!-- 1. Gradient Line -->
+    <div class="divider-demo__section">
+      <div class="divider-demo__content">
+        <span class="divider-demo__label">Gradient Line</span>
+        <h2 class="divider-demo__heading">Minimal &amp; Clean</h2>
+        <p class="divider-demo__text">A simple gradient line that stretches across the full width. Subtle and elegant.</p>
+      </div>
+      <div class="divider divider--gradient-line"></div>
+      <div class="divider-demo__content">
+        <p class="divider-demo__text">The gradient transitions smoothly from purple to blue to pink, creating a gentle visual separation.</p>
+      </div>
+    </div>
+
+    <!-- 2. Wave -->
+    <div class="divider-demo__section divider-demo__section--dark">
+      <div class="divider-demo__content">
+        <span class="divider-demo__label">Wave Pattern</span>
+        <h2 class="divider-demo__heading">Organic Flow</h2>
+        <p class="divider-demo__text">A fluid wave shape that adds movement and personality between sections.</p>
+      </div>
+      <div class="divider divider--wave">
+        <svg class="divider__wave-svg" viewBox="0 0 1440 120" preserveAspectRatio="none">
+          <path d="M0,60 C360,120 720,0 1080,60 C1260,90 1350,75 1440,60 L1440,120 L0,120 Z" fill="currentColor"/>
+        </svg>
+      </div>
+      <div class="divider-demo__content">
+        <p class="divider-demo__text">The wave divider uses an SVG path with a smooth bezier curve. The color inherits from the parent section.</p>
+      </div>
+    </div>
+
+    <!-- 3. Angled Clip -->
+    <div class="divider-demo__section">
+      <div class="divider-demo__content">
+        <span class="divider-demo__label">Angled Clip</span>
+        <h2 class="divider-demo__heading">Sharp Transition</h2>
+        <p class="divider-demo__text">A diagonal clip-path creates a sharp, dynamic angle between sections.</p>
+      </div>
+      <div class="divider divider--angled"></div>
+      <div class="divider-demo__content">
+        <p class="divider-demo__text">Pure CSS clip-path with no images or SVGs. The angle direction can be flipped with a modifier class.</p>
+      </div>
+    </div>
+
+    <!-- 4. Dotted Pattern -->
+    <div class="divider-demo__section divider-demo__section--dark">
+      <div class="divider-demo__content">
+        <span class="divider-demo__label">Dotted Pattern</span>
+        <h2 class="divider-demo__heading">Playful Rhythm</h2>
+        <p class="divider-demo__text">A repeating dotted line that creates a rhythmic, playful separation.</p>
+      </div>
+      <div class="divider divider--dotted"></div>
+      <div class="divider-demo__content">
+        <p class="divider-demo__text">Uses CSS repeating gradients to create the dotted effect. The dot size and spacing are customizable via custom properties.</p>
+      </div>
+    </div>
+
+    <!-- 5. Arrow Divider -->
+    <div class="divider-demo__section">
+      <div class="divider-demo__content">
+        <span class="divider-demo__label">Arrow Divider</span>
+        <h2 class="divider-demo__heading">Directional Cue</h2>
+        <p class="divider-demo__text">A centered arrow icon with lines on both sides, suggesting forward motion.</p>
+      </div>
+      <div class="divider divider--arrow">
+        <span class="divider__arrow-icon">&#8595;</span>
+      </div>
+      <div class="divider-demo__content">
+        <p class="divider-demo__text">The arrow bounces gently to draw the eye downward, encouraging the user to continue scrolling.</p>
+      </div>
+    </div>
+
+    <!-- 6. Geometric Pattern -->
+    <div class="divider-demo__section divider-demo__section--dark">
+      <div class="divider-demo__content">
+        <span class="divider-demo__label">Geometric Pattern</span>
+        <h2 class="divider-demo__heading">Modern Structure</h2>
+        <p class="divider-demo__text">A repeating geometric diamond pattern for a modern, tech-forward look.</p>
+      </div>
+      <div class="divider divider--geometric"></div>
+      <div class="divider-demo__content">
+        <p class="divider-demo__text">Built with CSS repeating conic gradients. The pattern scale and colors are adjustable via custom properties.</p>
+      </div>
+    </div>
+
+  </section>
+
+</body>
+</html>
