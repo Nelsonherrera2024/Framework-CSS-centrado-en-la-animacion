@@ -42,6 +42,7 @@ jobs:
             const casingErrors = [];
             const folderCaseMap = new Map();
             const coreFiles = [];
+            const unsupportedFiles = [];
 
             for (const file of files) {
               if (file.status === 'removed') continue;
@@ -58,12 +59,16 @@ jobs:
                     folderName = parts[2];
                     if (parts.length === 4) {
                       baseName = parts[3];
+                    } else if (parts.length > 4) {
+                      unsupportedFiles.push(`File \`${filename}\` is nested inside a submission folder. Submissions must contain only \`demo.html\`, \`style.css\`, and \`README.md\` at the folder root.`);
                     }
                   } else if (parts[1] !== 'examples' && parts[1] !== 'docs') {
                     folderPath = `${parts[0]}/${parts[1]}`;
                     folderName = parts[1];
                     if (parts.length === 3) {
                       baseName = parts[2];
+                    } else if (parts.length > 3) {
+                      unsupportedFiles.push(`File \`${filename}\` is nested inside a submission folder. Submissions must contain only \`demo.html\`, \`style.css\`, and \`README.md\` at the folder root.`);
                     }
                   }
                   
@@ -90,6 +95,10 @@ jobs:
                     }
                     if (baseName.toLowerCase() === 'demo.html' && baseName !== 'demo.html') {
                       casingErrors.push(`File \`${filename}\` must be named exactly \`demo.html\` (all lowercase).`);
+                    }
+                    const allowedSubmissionFiles = ['demo.html', 'style.css', 'README.md'];
+                    if (!allowedSubmissionFiles.includes(baseName)) {
+                      unsupportedFiles.push(`File \`${filename}\` is not part of the supported submission structure. Use only \`demo.html\`, \`style.css\`, and \`README.md\`.`);
                     }
                   }
                 }
@@ -139,6 +148,15 @@ jobs:
               failures.push({
                 folder: 'Casing Violations (Windows Compatibility)',
                 casingErrors,
+                missing: [],
+                present: []
+              });
+            }
+
+            if (unsupportedFiles.length > 0) {
+              failures.push({
+                folder: 'Unsupported Submission Files',
+                casingErrors: unsupportedFiles,
                 missing: [],
                 present: []
               });
