@@ -15,14 +15,22 @@
     line-height: 1.4;
     white-space: nowrap;
   }
-  
+
   .ease-kbd-sm { font-size: 0.65rem; padding: 0.1rem 0.35rem; }
-  
+
   .ease-kbd-lg { font-size: 0.9rem; padding: 0.25rem 0.65rem; }
-  
+
   .ease-kbd-group {
     display: inline-flex;
     align-items: center;
     gap: 0.25rem;
+  }
+
+  /* Dark mode */
+  [data-theme="dark"] .ease-kbd {
+    color: #e2e8f0;
+    background: #1e293b;
+    border-color: #334155;
+    box-shadow: 0 1px 0 #475569;
   }
 }
