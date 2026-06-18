@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scroll Snap Container Utilities — EaseMotion CSS</title>
+  <link rel="stylesheet" href="../../easemotion.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body style="background: #f1f5f9; padding: 4rem 1rem; margin: 0;">
+
+  <div class="ease-showcase-viewport">
+    
+    <div>
+      <h3 style="margin: 0 0 0.5rem 0; color: #0f172a; font-weight: 800; font-size: 1.25rem;">Horizontal Center Snapping</h3>
+      <p style="margin: 0 0 1rem 0; color: #64748b; font-size: 0.9rem;">Swipe smoothly; tiles lock precisely into the container's center coordinate track.</p>
+      
+      <div class="ease-snap-x ease-snap-pad-md">
+        <div class="ease-carousel-card ease-snap-align-center" style="border-left: 4px solid #3b82f6;">
+          <h4 style="margin: 0 0 0.25rem 0; color: #1e293b;">01 / Asset Stream</h4>
+          <p style="margin: 0; color: #64748b; font-size: 0.85rem;">Hardware-optimized render layer blocks.</p>
+        </div>
+        <div class="ease-carousel-card ease-snap-align-center" style="border-left: 4px solid #8b5cf6;">
+          <h4 style="margin: 0 0 0.25rem 0; color: #1e293b;">02 / Motion Buffer</h4>
+          <p style="margin: 0; color: #64748b; font-size: 0.85rem;">Stagger loops bypassing repaint cycles.</p>
+        </div>
+        <div class="ease-carousel-card ease-snap-align-center" style="border-left: 4px solid #ec4899;">
+          <h4 style="margin: 0 0 0.25rem 0; color: #1e293b;">03 / Matrix State</h4>
+          <p style="margin: 0; color: #64748b; font-size: 0.85rem;">Isolated sibling element calculations.</p>
+        </div>
+        <div class="ease-carousel-card ease-snap-align-center" style="border-left: 4px solid #10b981;">
+          <h4 style="margin: 0 0 0.25rem 0; color: #1e293b;">04 / Pipeline Flush</h4>
+          <p style="margin: 0; color: #64748b; font-size: 0.85rem;">Zero-reflow text adjustments complete.</p>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h3 style="margin: 0 0 0.5rem 0; color: #0f172a; font-weight: 800; font-size: 1.25rem;">Vertical Start Snapping</h3>
+      <p style="margin: 0 0 1rem 0; color: #64748b; font-size: 0.9rem;">Scroll vertically; panels lock flush against the top container ceiling.</p>
+      
+      <div class="ease-snap-y ease-vertical-scroller">
+        <div class="ease-vertical-panel ease-snap-align-start">
+          <h4 style="margin: 0 0 0.5rem 0; color: #0f172a;">Overview Paradigm</h4>
+          <p style="margin: 0; color: #334155; font-size: 0.95rem; line-height: 1.5;">
+            By matching rigid container dimension bounds with native alignment keywords, mobile touches maintain uniform fluid travel properties without software positioning lags.
+          </p>
+        </div>
+        <div class="ease-vertical-panel ease-snap-align-start">
+          <h4 style="margin: 0 0 0.5rem 0; color: #0f172a;">Isolation Boundaries</h4>
+          <p style="margin: 0; color: #334155; font-size: 0.95rem; line-height: 1.5;">
+            Each child element enforces structural parameters inside distinct container scopes, keeping sibling frames organized away from outer layout variables.
+          </p>
+        </div>
+        <div class="ease-vertical-panel ease-snap-align-start">
+          <h4 style="margin: 0 0 0.5rem 0; color: #0f172a;">Performance Blueprint</h4>
+          <p style="margin: 0; color: #334155; font-size: 0.95rem; line-height: 1.5;">
+            Enforcing native thread snapping eliminates the need for scroll event listener loops, saving cycles and safeguarding animation frame targets.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

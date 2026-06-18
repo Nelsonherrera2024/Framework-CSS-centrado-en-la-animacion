@@ -1,0 +1,108 @@
+/* ============================================================
+   ease-snap-* — Scroll Snap Container Layout Utilities
+
+   Features micro-interactions including:
+     - Strict coordinate track snapping definitions (x/y alignment)
+     - Proximity vs mandatory locking threshold overrides
+     - Inset padding alignment guards to prevent boundary cropping
+   ============================================================ */
+
+/* --- Parent Slider Track Containers --- */
+
+.ease-snap-x {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch; /* Enforce smooth inertia on iOS */
+  gap: 1rem;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.ease-snap-y {
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  -webkit-overflow-scrolling: touch;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  box-sizing: border-box;
+}
+
+/* Proximity override variant */
+.ease-snap-proximity {
+  scroll-snap-type: both proximity;
+}
+
+/* --- Downstream Child Tile Elements --- */
+
+.ease-snap-align-start {
+  scroll-snap-align: start;
+}
+
+.ease-snap-align-center {
+  scroll-snap-align: center;
+}
+
+.ease-snap-align-end {
+  scroll-snap-align: end;
+}
+
+/* --- Inset Scroll Padding Guards --- */
+.ease-snap-pad-md {
+  scroll-padding: 1rem;
+}
+
+.ease-snap-pad-lg {
+  scroll-padding: 2rem;
+}
+
+
+/* ============================================================
+   SHOWCASE AND PRESENTATION CLASSES (Demo Specific)
+   ============================================================ */
+
+.ease-showcase-viewport {
+  max-width: 700px;
+  margin: 0 auto;
+  font-family: var(--ease-font-sans, sans-serif);
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.ease-carousel-card {
+  flex: 0 0 280px; /* Rigid width to allow safe spillover horizontal scrolling */
+  height: 200px;
+  background: var(--ease-color-surface, #ffffff);
+  border: 1px solid #e2e8f0;
+  border-radius: var(--ease-radius-xl, 0.75rem);
+  padding: 1.5rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+  transition: transform 0.2s ease;
+}
+
+.ease-vertical-scroller {
+  height: 320px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--ease-radius-2xl, 1rem);
+}
+
+.ease-vertical-panel {
+  width: 100%;
+  height: 260px;
+  flex-shrink: 0;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--ease-radius-xl, 0.75rem);
+  padding: 2rem;
+  box-sizing: border-box;
+}
