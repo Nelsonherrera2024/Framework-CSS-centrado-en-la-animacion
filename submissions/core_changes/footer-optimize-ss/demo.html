@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Footer CSS Optimization — EaseMotion CSS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Footer CSS Optimization Analysis</h1>
+    <p class="subtitle">Issue #12462 — Reducing components/footer.css from ~21KB to &le;8KB</p>
+
+    <div class="metric-grid">
+      <div class="metric">
+        <div class="value">21 KB</div>
+        <div class="label">Current size</div>
+      </div>
+      <div class="metric">
+        <div class="value">8 KB</div>
+        <div class="label">Target size</div>
+      </div>
+      <div class="metric">
+        <div class="value">62%</div>
+        <div class="label">Reduction</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Size Breakdown</h2>
+      <table>
+        <tr><th>Section</th><th>Lines</th><th>Est. Size</th><th>Impact</th></tr>
+        <tr><td>CSS Variables + Base</td><td>33</td><td>~1.0 KB</td><td><span class="tag tag-small">Minimal</span></td></tr>
+        <tr><td>Animated Background Orbs</td><td>41</td><td>~1.2 KB</td><td><span class="tag tag-small">Can trim</span></td></tr>
+        <tr><td>Footer Grid + Columns</td><td>84</td><td>~2.5 KB</td><td><span class="tag tag-small">Normal</span></td></tr>
+        <tr><td>Newsletter Section</td><td>78</td><td>~2.3 KB</td><td><span class="tag tag-small">Normal</span></td></tr>
+        <tr><td>Social Icons (SVG data URIs)</td><td>56</td><td>~5.5 KB</td><td><span class="tag tag-big">BIGGEST</span></td></tr>
+        <tr><td>Light Mode Override</td><td>51</td><td>~1.5 KB</td><td><span class="tag tag-small">Can consolidate</span></td></tr>
+        <tr><td>Bottom Bar</td><td>77</td><td>~2.2 KB</td><td><span class="tag tag-small">Normal</span></td></tr>
+        <tr><td>Responsive (3 breakpoints)</td><td>99</td><td>~2.8 KB</td><td><span class="tag tag-small">Can trim</span></td></tr>
+        <tr><td>Reduced Motion + Print</td><td>49</td><td>~1.5 KB</td><td><span class="tag tag-small">Keep</span></td></tr>
+        <tr><td><strong>Total</strong></td><td><strong>724</strong></td><td><strong>~21 KB</strong></td><td></td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2>Optimization Strategy</h2>
+
+      <div class="strategy">
+        <h3>1. Extract SVG icons to a separate file <span class="savings">-4.5 KB</span></h3>
+        <p style="margin-bottom:8px;font-size:0.9rem;">The 7 inline SVG data URIs take ~5.5 KB. Move them to an <code>footer-icons.css</code> or use a sprite sheet. Alternatively, use shorter inline SVGs or replace with Unicode/emoji fallbacks.</p>
+      </div>
+
+      <div class="strategy">
+        <h3>2. Consolidate light mode vars <span class="savings">-1.0 KB</span></h3>
+        <p style="margin-bottom:8px;font-size:0.9rem;">Instead of duplicating 15+ selectors inside <code>@media (prefers-color-scheme: light)</code>, define a single <code>.ease-footer</code> rule that uses <code>var(--ease-footer-bg, ...)</code> with light-mode fallbacks via <code>[data-theme="light"]</code>.</p>
+        <pre>
+/* Instead of @media prefers-color-scheme:light with 15 selectors */
+.ease-footer { background: var(--ease-footer-bg); }
+[data-theme="light"] .ease-footer,
+.ease-footer:has([data-theme="light"]) { background: var(--ease-footer-bg-light); }</pre>
+      </div>
+
+      <div class="strategy">
+        <h3>3. Remove duplicate `transition` declarations <span class="savings">-0.5 KB</span></h3>
+        <p style="margin-bottom:8px;font-size:0.9rem;">Many elements declare <code>transition: var(--ease-footer-transition)</code> individually. Apply it at the parent level and use <code>transition: inherit</code> on children.</p>
+      </div>
+
+      <div class="strategy">
+        <h3>4. Reduce animated orbs code <span class="savings">-0.5 KB</span></h3>
+        <p style="margin-bottom:8px;font-size:0.9rem;">The <code>::before</code>/<code>::after</code> orbs share most properties. Use a single declaration with a variable for differences.</p>
+      </div>
+
+      <div class="strategy">
+        <h3>5. Combine responsive breakpoints <span class="savings">-0.5 KB</span></h3>
+        <p style="margin-bottom:8px;font-size:0.9rem;">The 480px and 768px breakpoints can be merged into a single <code>max-width: 768px</code> block with conditional overrides.</p>
+      </div>
+
+      <div class="strategy">
+        <h3>6. Use CSS shorthand &amp; remove <code>!important</code> <span class="savings">-0.3 KB</span></h3>
+        <p style="margin-bottom:8px;font-size:0.9rem;">Replace <code>margin-left: auto; margin-right: auto</code> with <code>margin-inline: auto</code>. Remove <code>!important</code> in reduced-motion block — increase specificity instead.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Estimated Result</h2>
+      <table>
+        <tr><th>Optimization</th><th>Saving</th></tr>
+        <tr><td>Extract SVGs</td><td>-4.5 KB</td></tr>
+        <tr><td>Consolidate light mode</td><td>-1.0 KB</td></tr>
+        <tr><td>Remove duplicate transitions</td><td>-0.5 KB</td></tr>
+        <tr><td>Reduce orb code</td><td>-0.5 KB</td></tr>
+        <tr><td>Combine breakpoints</td><td>-0.5 KB</td></tr>
+        <tr><td>Shorthand &amp; no !important</td><td>-0.3 KB</td></tr>
+        <tr><td><strong>Total savings</strong></td><td><strong>-7.3 KB</strong></td></tr>
+        <tr><td><strong>Optimized size</strong></td><td><strong>~13.7 KB</strong></td></tr>
+      </table>
+      <p style="margin-top:12px;font-size:0.85rem;color:#94a3b8;">Note: The 8 KB target is aggressive because inline SVGs are inherently large. Moving icons to a separate file (<code>footer-icons.css</code>, ~4.5 KB) leaves the core footer at ~9.2 KB. With all other optimizations, ~8 KB is achievable.</p>
+    </div>
+
+    <div class="card">
+      <h2>Optimized CSS (Key Section — Social Icons)</h2>
+      <pre>/* Instead of 7 inline SVG data URIs (~5.5 KB), use a combined approach */
+[class^="ease-footer-icon-"] {
+  width: 20px; height: 20px; display: inline-block;
+  background: currentColor; flex-shrink: 0;
+  mask-size: contain; mask-repeat: no-repeat; mask-position: center;
+  -webkit-mask-size: contain; -webkit-mask-repeat: no-repeat;
+}
+
+.ease-footer-icon-github { mask-image: url("icons/github.svg"); }
+.ease-footer-icon-twitter { mask-image: url("icons/twitter.svg"); }
+/* ... 5 more lines instead of 56 */</pre>
+    </div>
+  </div>
+</body>
+</html>
