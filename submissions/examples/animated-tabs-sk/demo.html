@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabs | EaseMotion</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section class="tabs">
+    <h1 class="tabs__title">Dashboard</h1>
+
+    <div class="tabs__nav" role="tablist">
+      <input type="radio" name="tabs-group" id="tab-1" class="tabs__radio" checked>
+      <label for="tab-1" class="tabs__label" role="tab" aria-controls="panel-1">Overview</label>
+
+      <input type="radio" name="tabs-group" id="tab-2" class="tabs__radio">
+      <label for="tab-2" class="tabs__label" role="tab" aria-controls="panel-2">Analytics</label>
+
+      <input type="radio" name="tabs-group" id="tab-3" class="tabs__radio">
+      <label for="tab-3" class="tabs__label" role="tab" aria-controls="panel-3">Settings</label>
+
+      <input type="radio" name="tabs-group" id="tab-4" class="tabs__radio">
+      <label for="tab-4" class="tabs__label" role="tab" aria-controls="panel-4">Activity</label>
+
+      <div class="tabs__indicator"></div>
+    </div>
+
+    <div class="tabs__panels">
+      <div class="tabs__panel" id="panel-1" role="tabpanel">
+        <h2 class="tabs__panel-title">Overview</h2>
+        <p class="tabs__panel-text">Welcome to your dashboard. Here you'll find a summary of your recent activity, key metrics, and quick actions. Stay on top of your projects with the latest updates at a glance.</p>
+      </div>
+
+      <div class="tabs__panel" id="panel-2" role="tabpanel">
+        <h2 class="tabs__panel-title">Analytics</h2>
+        <p class="tabs__panel-text">Dive deep into your data with interactive charts and reports. Track user engagement, conversion rates, and revenue trends over customizable time periods.</p>
+      </div>
+
+      <div class="tabs__panel" id="panel-3" role="tabpanel">
+        <h2 class="tabs__panel-title">Settings</h2>
+        <p class="tabs__panel-text">Manage your account preferences, notification settings, team permissions, and billing information. Everything you need to customize your experience in one place.</p>
+      </div>
+
+      <div class="tabs__panel" id="panel-4" role="tabpanel">
+        <h2 class="tabs__panel-title">Activity</h2>
+        <p class="tabs__panel-text">Review your recent actions, system notifications, and team updates. Filter by type or date to quickly find what matters most to you.</p>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
