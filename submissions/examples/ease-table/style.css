@@ -1,0 +1,58 @@
+@import url("https://cdn.jsdelivr.net/npm/easemotion-css@latest/easemotion.min.css");
+
+body {
+  font-family: var(--ease-font-sans, "Inter", system-ui, -apple-system, sans-serif);
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  background: var(--ease-color-bg, #f8fafc);
+  color: var(--ease-color-text, #1e293b);
+  line-height: 1.6;
+}
+
+h1 {
+  font-size: var(--ease-text-3xl, 1.875rem);
+  margin-bottom: 2rem;
+  color: var(--ease-color-text, #1e293b);
+}
+
+h2 {
+  font-size: var(--ease-text-xl, 1.25rem);
+  margin: 2rem 0 1rem;
+  color: var(--ease-color-text, #1e293b);
+}
+
+.ease-table-responsive {
+  margin-bottom: 2rem;
+  border-radius: var(--ease-radius-md, 0.5rem);
+  border: 1px solid var(--ease-border, var(--ease-color-neutral-200, #e2e8f0));
+}
+
+.ease-table {
+  background: var(--ease-color-surface, #ffffff);
+  border-radius: var(--ease-radius-md, 0.5rem);
+}
+
+.ease-table thead th:first-child {
+  border-radius: var(--ease-radius-md, 0.5rem) 0 0 0;
+}
+
+.ease-table thead th:last-child {
+  border-radius: 0 var(--ease-radius-md, 0.5rem) 0 0;
+}
+
+.ease-table-responsive .ease-table {
+  border: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: var(--ease-color-bg, #0b1121);
+    color: var(--ease-color-text, #e2e8f0);
+  }
+}
+
+[data-theme="dark"] body {
+  background: var(--ease-color-bg, #0b1121);
+  color: var(--ease-color-text, #e2e8f0);
+}
