@@ -1,0 +1,32 @@
+body { min-height: 100vh; display: grid; place-items: center; margin: 0; background: #f8fafc; font-family: system-ui, sans-serif; }
+.timeline {
+  list-style: none;
+  margin: 2rem auto;
+  padding: 0 0 0 1.2rem;
+  width: min(360px, 92vw);
+  border-left: 2px solid #e2e8f0;
+}
+.timeline li {
+  position: relative;
+  padding: 0 0 1.2rem 1rem;
+  font: 600 0.85rem system-ui, sans-serif;
+  color: #334155;
+  animation: tl-in 0.45s ease both;
+}
+.timeline li:nth-child(2) { animation-delay: .08s; }
+.timeline li:nth-child(3) { animation-delay: .16s; }
+.timeline li::before {
+  content: "";
+  position: absolute;
+  left: -1.45rem;
+  top: 0.2rem;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  background: #6366f1;
+  box-shadow: 0 0 0 4px #eef2ff;
+}
+@keyframes tl-in {
+  from { opacity: 0; transform: translateX(-6px); }
+  to { opacity: 1; transform: translateX(0); }
+}
