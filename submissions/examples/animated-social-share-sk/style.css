@@ -1,0 +1,176 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.content {
+  max-width: 520px;
+  text-align: center;
+}
+
+.content-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.75rem;
+  background: linear-gradient(135deg, #6c63ff, #a29bfe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.content-subtitle {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.45);
+  margin-bottom: 2rem;
+}
+
+.content-card {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 2rem;
+}
+
+.content-card p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.social-share {
+  position: fixed;
+  left: 2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 50;
+}
+
+.social-share-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.3);
+  margin-bottom: 0.5rem;
+  writing-mode: vertical-lr;
+  text-orientation: mixed;
+}
+
+.share-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease, background 0.35s ease, color 0.35s ease;
+  position: relative;
+}
+
+.share-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.share-label {
+  position: absolute;
+  left: calc(100% + 12px);
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 0.35rem 0.75rem;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  transform: translateY(-50%) translateX(-4px);
+}
+
+.share-btn:hover .share-label {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
+
+.share-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.share-btn:active {
+  transform: translateY(0) scale(0.92);
+}
+
+.share-facebook:hover {
+  background: #1877f2;
+  color: #fff;
+}
+
+.share-twitter:hover {
+  background: #000;
+  color: #fff;
+}
+
+.share-linkedin:hover {
+  background: #0a66c2;
+  color: #fff;
+}
+
+.share-pinterest:hover {
+  background: #e60023;
+  color: #fff;
+}
+
+.share-reddit:hover {
+  background: #ff4500;
+  color: #fff;
+}
+
+.share-whatsapp:hover {
+  background: #25d366;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .social-share {
+    position: static;
+    flex-direction: row;
+    transform: none;
+    justify-content: center;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+  }
+  .social-share-label {
+    writing-mode: horizontal-tb;
+    text-orientation: mixed;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0.25rem;
+  }
+  .share-label {
+    display: none;
+  }
+}
