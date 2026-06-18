@@ -1,0 +1,14 @@
+/* submissions/core_changes/style.css
+ * Issue #12200 — Replace hardcoded outline-offset with CSS variable
+ *
+ * Current (components/buttons.css):
+ *   .ease-btn:focus-visible     { outline-offset: 3px; }
+ *   .ease-btn-link:focus-visible { outline-offset: 3px; }
+ *
+ * Proposed:
+ *   outline-offset: var(--ease-outline-offset, 3px);
+ */
+
+:root {
+  --ease-outline-offset: 3px;
+}
