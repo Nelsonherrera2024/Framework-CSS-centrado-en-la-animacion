@@ -1,23 +1,73 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
-<head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><title>field-sizing Demo</title><link rel="stylesheet" href="style.css"/></head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS field-sizing Demo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
 <body>
-<h1>field-sizing</h1>
-<p class="subtitle">Auto-resizing form controls that grow with their content — no JS.</p>
-<section class="demo">
-  <h2>Auto-grow Textarea</h2>
-  <textarea class="fs-textarea" placeholder="Type here — the textarea grows as you type...">This textarea uses field-sizing: content so it expands automatically as you add more text. No JavaScript measurement needed.</textarea>
-  <p class="note"><code>field-sizing: content</code> makes the textarea grow with its content — no scrollbars, no JS resize handlers.</p>
-</section>
-<section class="demo">
-  <h2>Auto-grow Input</h2>
-  <input type="text" class="fs-input" value="This input expands as you type more..." placeholder="Type here..."/>
-  <p class="note">The input width grows to fit its content. Useful for editable tags, inline editing, and dynamic labels.</p>
-</section>
-<section class="demo">
-  <h2>Select with Content-based Width</h2>
-  <select class="fs-select"><option>Short</option><option>Medium option</option><option>This is a very long option that sets the width</option></select>
-  <p class="note"><code>field-sizing: content</code> on a select makes it width-adjust to the longest option.</p>
-</section>
+  <header>
+    <h1>CSS field-sizing: content</h1>
+    <p>Auto-growing form controls with pure CSS — no JavaScript required.</p>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h2>How it works</h2>
+      <p>The <code>field-sizing: content</code> property makes form elements automatically resize to fit their current content. Textareas grow vertically, inputs grow horizontally, and selects expand to fit options.</p>
+    </section>
+
+    <section class="demo-section">
+      <h2>Auto-growing Textarea</h2>
+      <div class="demo-card">
+        <label for="notes">Notes (type to see it grow)</label>
+        <textarea id="notes" class="grow-textarea" placeholder="Start typing to see the textarea grow..." rows="2"></textarea>
+        <span class="hint">min-height: 4rem • max-height: 16rem • field-sizing: content</span>
+      </div>
+
+      <h2>Auto-growing Input</h2>
+      <div class="demo-card">
+        <label for="title">Title</label>
+        <input type="text" id="title" class="grow-input" value="Short" size="5">
+        <span class="hint">field-sizing: content • Try typing a longer value</span>
+      </div>
+
+      <div class="demo-card">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" class="grow-input" value="user@example.com" size="10">
+        <span class="hint">Field grows with the email value</span>
+      </div>
+
+      <h2>Comparison: Fixed vs Content</h2>
+      <div class="comparison-row">
+        <div class="demo-card">
+          <h3><code>field-sizing: fixed</code></h3>
+          <textarea class="fixed-textarea" placeholder="This textarea has a fixed size and will scroll...">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</textarea>
+        </div>
+        <div class="demo-card">
+          <h3><code>field-sizing: content</code></h3>
+          <textarea class="grow-textarea" placeholder="This one grows automatically...">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</textarea>
+        </div>
+      </div>
+
+      <h2>Select Element</h2>
+      <div class="demo-card">
+        <label for="country">Country</label>
+        <select id="country" class="grow-select">
+          <option>United States of America</option>
+          <option>United Kingdom</option>
+          <option>India</option>
+        </select>
+        <span class="hint">Select width adjusts to the longest option</span>
+      </div>
+    </section>
+  </main>
+  <script>
+    document.querySelector('.grow-input').addEventListener('input', function() {
+      this.style.width = 'auto';
+      this.style.width = this.scrollWidth + 'px';
+    });
+  </script>
 </body>
 </html>
