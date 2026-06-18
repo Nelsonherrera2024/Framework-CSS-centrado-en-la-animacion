@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Footer CSS Optimization</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Footer CSS Optimization</h1>
+    <p class="subtitle">Issue #12462 — Reduce components/footer.css ~21KB to ~8KB</p>
+
+    <div class="metric-grid">
+      <div class="metric"><div class="value">21 KB</div><div class="label">Current</div></div>
+      <div class="metric"><div class="value">8 KB</div><div class="label">Target</div></div>
+      <div class="metric"><div class="value">62%</div><div class="label">Reduction</div></div>
+    </div>
+
+    <div class="card">
+      <h2>Size Breakdown</h2>
+      <table>
+        <tr><th>Section</th><th>Est. Size</th><th>Impact</th></tr>
+        <tr><td>CSS Variables + Base</td><td>~1.0 KB</td><td><span class="tag-small">Keep</span></td></tr>
+        <tr><td>Animated Background Orbs</td><td>~1.2 KB</td><td><span class="tag-small">Trim</span></td></tr>
+        <tr><td>Footer Grid + Columns</td><td>~2.5 KB</td><td><span class="tag-small">Trim</span></td></tr>
+        <tr><td>Newsletter Section</td><td>~2.3 KB</td><td><span class="tag-small">Trim</span></td></tr>
+        <tr><td>Social Icons (SVG data URIs)</td><td>~5.5 KB</td><td><span class="tag-big">BIGGEST</span></td></tr>
+        <tr><td>Light Mode Override</td><td>~1.5 KB</td><td><span class="tag-small">Consolidate</span></td></tr>
+        <tr><td>Bottom Bar</td><td>~2.2 KB</td><td><span class="tag-small">Trim</span></td></tr>
+        <tr><td>Responsive (3 breakpoints)</td><td>~2.8 KB</td><td><span class="tag-small">Merge</span></td></tr>
+        <tr><td>Reduced Motion + Print</td><td>~1.5 KB</td><td><span class="tag-small">Keep</span></td></tr>
+        <tr><td><strong>Total</strong></td><td><strong>~21 KB</strong></td><td></td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h2>6 Optimization Strategies</h2>
+      <table>
+        <tr><th>#</th><th>Strategy</th><th>Saves</th></tr>
+        <tr><td>1</td><td>Extract 7 inline SVG data URIs to separate file</td><td>-4.5 KB</td></tr>
+        <tr><td>2</td><td>Consolidate light mode: use [data-theme] instead of @media</td><td>-1.0 KB</td></tr>
+        <tr><td>3</td><td>Remove duplicate transition declarations, set at parent</td><td>-0.5 KB</td></tr>
+        <tr><td>4</td><td>Merge ::before/::after orb code with CSS variables</td><td>-0.5 KB</td></tr>
+        <tr><td>5</td><td>Combine 480px breakpoint into 768px block</td><td>-0.5 KB</td></tr>
+        <tr><td>6</td><td>Use margin-inline, remove !important, shorthand props</td><td>-0.3 KB</td></tr>
+        <tr><td><strong>Total</strong></td><td></td><td><strong>-7.3 KB</strong></td></tr>
+      </table>
+      <p style="margin-top:12px;font-size:0.85rem;color:#94a3b8;">Optimized size: ~13.7 KB core / ~8 KB with icons externalized</p>
+    </div>
+  </div>
+</body>
+</html>
