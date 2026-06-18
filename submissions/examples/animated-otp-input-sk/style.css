@@ -1,0 +1,125 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: linear-gradient(135deg, #f8fafc 0%, #eef2ff 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.demo-section {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.demo-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e293b;
+  text-align: center;
+}
+
+.demo-subtitle {
+  font-size: 1rem;
+  color: #64748b;
+  text-align: center;
+  margin-top: -0.75rem;
+}
+
+.demo-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.75rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  border: 1px solid #e2e8f0;
+}
+
+.demo-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.25rem;
+}
+
+.otp {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.otp__input {
+  width: 52px;
+  height: 58px;
+  text-align: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1e293b;
+  border: 2px solid #d1d5db;
+  border-radius: 12px;
+  background: #f9fafb;
+  outline: none;
+  transition: all 0.2s ease;
+  caret-color: #6366f1;
+}
+
+.otp__input:focus {
+  border-color: #6366f1;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(99,102,241,0.1);
+  transform: translateY(-2px);
+}
+
+.otp__input--filled {
+  border-color: #6366f1;
+  background: rgba(99,102,241,0.05);
+}
+
+.otp--error .otp__input {
+  border-color: #ef4444;
+  background: #fef2f2;
+  animation: shake 0.4s ease-in-out;
+}
+
+.otp--error .otp__input--filled {
+  background: #fef2f2;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-6px); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+}
+
+.otp__error-msg {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #ef4444;
+  font-weight: 500;
+  margin-top: 0.75rem;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+  .otp { gap: 0.5rem; }
+  .otp__input { width: 44px; height: 50px; font-size: 1.25rem; }
+}

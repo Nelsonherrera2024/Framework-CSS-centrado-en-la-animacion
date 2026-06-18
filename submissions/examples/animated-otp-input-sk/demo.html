@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animated OTP Input | EaseMotion CSS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section class="demo-section">
+    <h1 class="demo-title">Animated OTP Input</h1>
+    <p class="demo-subtitle">CSS-only OTP input with 6 digit boxes, filled states, and error animation.</p>
+    <div class="demo-card">
+      <h2 class="demo-label">Default</h2>
+      <div class="otp">
+        <input type="text" class="otp__input" maxlength="1" value="">
+        <input type="text" class="otp__input" maxlength="1" value="">
+        <input type="text" class="otp__input" maxlength="1" value="">
+        <input type="text" class="otp__input" maxlength="1" value="">
+        <input type="text" class="otp__input" maxlength="1" value="">
+        <input type="text" class="otp__input" maxlength="1" value="">
+      </div>
+    </div>
+    <div class="demo-card">
+      <h2 class="demo-label">Filled</h2>
+      <div class="otp">
+        <input type="text" class="otp__input otp__input--filled" maxlength="1" value="4">
+        <input type="text" class="otp__input otp__input--filled" maxlength="1" value="2">
+        <input type="text" class="otp__input otp__input--filled" maxlength="1" value="8">
+        <input type="text" class="otp__input otp__input--filled" maxlength="1" value="3">
+        <input type="text" class="otp__input" maxlength="1" value="">
+        <input type="text" class="otp__input" maxlength="1" value="">
+      </div>
+    </div>
+    <div class="demo-card">
+      <h2 class="demo-label">Error</h2>
+      <div class="otp otp--error">
+        <input type="text" class="otp__input otp__input--filled" maxlength="1" value="1">
+        <input type="text" class="otp__input otp__input--filled" maxlength="1" value="2">
+        <input type="text" class="otp__input otp__input--filled" maxlength="1" value="3">
+        <input type="text" class="otp__input otp__input--filled" maxlength="1" value="4">
+        <input type="text" class="otp__input otp__input--filled" maxlength="1" value="5">
+        <input type="text" class="otp__input otp__input--filled" maxlength="1" value="6">
+      </div>
+      <p class="otp__error-msg">Invalid code. Please try again.</p>
+    </div>
+  </section>
+</body>
+</html>
