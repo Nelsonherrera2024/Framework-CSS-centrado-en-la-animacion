@@ -1,56 +1,69 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>interpolate-size Demo</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS interpolate-size Demo</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>CSS interpolate-size</h1>
-  <p class="subtitle">Finally animate between <code>height: auto</code> and fixed values — no max-height hacks.</p>
+  <header>
+    <h1>CSS interpolate-size</h1>
+    <p>Smooth height animation between fixed and intrinsic values <code>height: auto</code> — no JavaScript!</p>
+  </header>
 
-  <section class="demo">
-    <h2>Accordion (height: auto)</h2>
-    <div class="accordion">
-      <button class="acc-header" data-target="panel-1">What is interpolate-size? ▾</button>
-      <div class="acc-panel" id="panel-1">
-        <div class="acc-body">
-          <p><code>interpolate-size: allow-keywords</code> is a CSS property that lets you transition or animate between a <code>&lt;length&gt;</code> value and the <code>auto</code> keyword — something that was previously impossible without JavaScript or max-height workarounds.</p>
-        </div>
+  <main>
+    <section class="intro">
+      <h2>What is interpolate-size?</h2>
+      <p>CSS transitions have never been able to animate <code>height: auto</code> — until now. <code>interpolate-size: allow-keywords</code> lets you smoothly transition between any length and intrinsic keyword (<code>auto</code>, <code>min-content</code>, <code>max-content</code>, <code>fit-content</code>).</p>
+    </section>
+
+    <section class="demo-section">
+      <h2>Expandable Cards</h2>
+
+      <div class="card">
+        <details class="expandable" open>
+          <summary>What is EaseMotion CSS?</summary>
+          <div class="card-body">
+            <p>EaseMotion CSS is a modern CSS framework focused on animations and motion design. It provides utility classes for common animation patterns, easing functions, and timing controls.</p>
+          </div>
+        </details>
       </div>
 
-      <button class="acc-header" data-target="panel-2">Why was this hard before? ▾</button>
-      <div class="acc-panel" id="panel-2">
-        <div class="acc-body">
-          <p>The browser needs a numeric start and end value to interpolate. Since <code>auto</code> is a keyword (not a number), CSS couldn't animate it. Developers had to use <code>max-height</code> hacks with arbitrary values — which caused timing mismatches or cut-off content.</p>
-        </div>
+      <div class="card">
+        <details class="expandable">
+          <summary>Browser Support for interpolate-size</summary>
+          <div class="card-body">
+            <p>As of 2026, <code>interpolate-size</code> is supported in Chrome 133+, Edge 133+, and Safari 18.4+. Firefox support is in development. Check caniuse.com for the latest status.</p>
+            <p>The property is safe to use as a progressive enhancement — without it, the content still shows/hides instantly.</p>
+          </div>
+        </details>
       </div>
 
-      <button class="acc-header" data-target="panel-3">Browser support ▾</button>
-      <div class="acc-panel" id="panel-3">
-        <div class="acc-body">
-          <p>Chrome 132+, Edge 132+. Firefox and Safari support are in development. In unsupported browsers, the accordion still works — it just opens instantly without animation.</p>
-        </div>
+      <div class="card">
+        <details class="expandable">
+          <summary>Usage Tips</summary>
+          <div class="card-body">
+            <ul>
+              <li>Set <code>interpolate-size: allow-keywords</code> on <code>:root</code> for global use</li>
+              <li>Apply <code>transition: height 0.3s ease</code> or similar</li>
+              <li>Works with <code>grid-template-rows</code> for expandable grids</li>
+              <li>Combine with <code>@starting-style</code> for entry animations</li>
+            </ul>
+          </div>
+        </details>
       </div>
-    </div>
-    <p class="note">Each panel transitions <code>height: auto</code> smoothly — no max-height guesswork. Check the CSS to see <code>interpolate-size: allow-keywords</code> in action.</p>
-  </section>
 
-  <script>
-    document.querySelectorAll('.acc-header').forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        var target = document.getElementById(this.getAttribute('data-target'));
-        var isOpen = !target.classList.contains('open');
-
-        // Close all
-        document.querySelectorAll('.acc-panel').forEach(function(p) {
-          p.classList.remove('open');
-        });
-
-        if (isOpen) target.classList.add('open');
-      });
-    });
-  </script>
+      <div class="card">
+        <details class="expandable">
+          <summary>How It Works</summary>
+          <div class="card-body">
+            <p>Previously, <code>height: auto</code> was a "<code>discrete</code>" value that couldn't be interpolated. <code>interpolate-size: allow-keywords</code> changes this, allowing the browser to calculate the auto height and animate between it and the specified height.</p>
+            <p>The <code>details</code> element is a natural fit — its height changes when the <code>open</code> attribute toggles. With <code>interpolate-size</code>, this transition becomes smooth.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+  </main>
 </body>
 </html>

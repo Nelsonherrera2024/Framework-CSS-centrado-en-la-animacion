@@ -1,23 +1,20 @@
-# CSS interpolate-size Demo
+﻿# CSS interpolate-size
 
-## What does this do?
+## Overview
+This example demonstrates the CSS interpolate-size: allow-keywords property that enables smooth height/width animations with keyword values like uto, min-content, max-content, and it-content. Previously, CSS transitions couldn't animate to/from these intrinsic sizing keywords.
 
-Demonstrates `interpolate-size: allow-keywords` — a CSS property that enables smooth transitions between `auto` and fixed length values, solving the long-standing problem of animating `height: auto`.
+## Features
+- **interpolate-size: allow-keywords** — enables transition/animation of intrinsic sizing keywords
+- **Height auto transitions** — smooth accordion/card expand without JavaScript
+- **Grid track animations** — works with grid rows/columns too
+- **Safe default** — set on :root to enable globally
 
-## How is it used?
+## How to Use
+1. Add interpolate-size: allow-keywords to :root or the animating element
+2. Use 	ransition: height 0.3s on the element
+3. Toggle between a fixed height and height: auto to animate
 
-```css
-.panel {
-  interpolate-size: allow-keywords;
-  height: 0;
-  transition: height 0.35s ease;
-}
-
-.panel.open {
-  height: auto; /* Now animates smoothly! */
-}
-```
-
-## Why is it useful?
-
-Animating to/from `auto` was one of the oldest unsolved CSS pain points. The old workaround — `max-height` hacks — causes timing mismatches, clipped content, and hard-coded values that break with dynamic content. `interpolate-size: allow-keywords` solves this natively, making accordions, expandable panels, and dropdowns work correctly with zero JavaScript — aligning with EaseMotion CSS's zero-dependency, human-readable philosophy.
+## Browser Support
+- Chrome 133+
+- Edge 133+
+- Safari 18.4+

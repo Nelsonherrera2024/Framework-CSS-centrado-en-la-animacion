@@ -1,131 +1,145 @@
-/* ============================================================
-   CSS interpolate-size Demo
-   ============================================================
-   interpolate-size: allow-keywords enables CSS transitions
-   and animations between a <length> and the keyword 'auto'.
+﻿:root {
+  --bg: #0f172a;
+  --surface: #1e293b;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --radius: 12px;
 
-   Before this, you COULD NOT animate to/from auto because
-   auto isn't a numeric value. Developers used max-height
-   hacks or JavaScript workarounds.
+  interpolate-size: allow-keywords;
+}
 
-   Usage:
-     .element {
-       interpolate-size: allow-keywords;
-       height: 0;
-       transition: height 0.3s;
-     }
-     .element.open { height: auto; }
-   ============================================================ */
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   font-family: system-ui, -apple-system, sans-serif;
-  max-width: 620px;
-  margin: 3rem auto;
-  padding: 0 1.5rem;
-  color: #1e293b;
-  background: #f8fafc;
+  background: var(--bg);
+  color: var(--text);
   line-height: 1.6;
+  min-height: 100vh;
 }
 
-h1 {
-  font-size: 1.8rem;
-  margin-bottom: 0.3rem;
+header {
+  text-align: center;
+  padding: 3rem 1rem 2rem;
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  border-bottom: 1px solid #334155;
 }
 
-.subtitle {
-  color: #64748b;
-  margin-bottom: 2rem;
-  padding-bottom: 1rem;
-  border-bottom: 2px solid #e2e8f0;
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(90deg, #f472b6, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.subtitle code {
-  background: #e2e8f0;
-}
-
-.demo {
-  background: white;
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-}
-
-.demo h2 {
+header p {
+  color: var(--muted);
   font-size: 1.1rem;
+}
+
+main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+section {
+  margin-bottom: 3rem;
+}
+
+section h2 {
+  font-size: 1.25rem;
   margin-bottom: 1rem;
-  color: #334155;
+  color: #f472b6;
 }
 
-/* ── Accordion ── */
-.accordion {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+.intro p {
+  color: var(--muted);
+  font-size: 0.95rem;
 }
 
-.acc-header {
-  width: 100%;
-  text-align: left;
-  padding: 0.8rem 1rem;
-  background: #f1f5f9;
-  border: none;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #334155;
-  cursor: pointer;
-  font-family: inherit;
-}
-
-.acc-header:hover {
-  background: #e2e8f0;
-}
-
-/* ── The key CSS: interpolate-size + height transition ── */
-.acc-panel {
-  /* This is the magic line — enables animating to/from auto */
-  interpolate-size: allow-keywords;
-
-  height: 0;
+.card {
+  background: var(--surface);
+  border: 1px solid #334155;
+  border-radius: var(--radius);
+  margin-bottom: 1rem;
   overflow: hidden;
-  transition: height 0.35s ease;
 }
 
-.acc-panel.open {
+.expandable {
+  display: block;
+}
+
+.expandable summary {
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  color: #e2e8f0;
+  transition: color 0.2s;
+  list-style: none;
+}
+
+.expandable summary::-webkit-details-marker {
+  display: none;
+}
+
+.expandable summary:hover {
+  color: #f472b6;
+}
+
+.expandable summary::before {
+  content: "+";
+  display: inline-block;
+  width: 1.5rem;
+  color: #f472b6;
+  font-weight: 700;
+  transition: transform 0.3s;
+}
+
+.expandable[open] summary::before {
+  transform: rotate(45deg);
+}
+
+.expandable .card-body {
+  padding: 0 1.5rem 1.5rem;
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+.expandable .card-body p {
+  margin-bottom: 0.75rem;
+}
+
+.expandable .card-body ul {
+  padding-left: 1.5rem;
+}
+
+.expandable .card-body li {
+  margin-bottom: 0.5rem;
+}
+
+details {
+  transition: height 0.35s ease;
+  overflow: hidden;
+}
+
+details:not([open]) {
+  height: 3.5rem;
+}
+
+details[open] {
   height: auto;
 }
 
-.acc-body {
-  padding: 0.75rem 1rem;
-}
-
-.acc-body p {
-  font-size: 0.88rem;
-  color: #475569;
-  line-height: 1.6;
-}
-
-.note {
-  font-size: 0.85rem;
-  color: #94a3b8;
-  margin-top: 1rem;
-}
-
 code {
-  background: #f1f5f9;
+  font-size: 0.85rem;
+  background: rgba(255, 255, 255, 0.06);
   padding: 0.15rem 0.4rem;
   border-radius: 4px;
-  font-size: 0.85em;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .acc-panel { transition-duration: 0.01ms !important; }
 }
