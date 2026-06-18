@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>animated-progress-steps-sk · EaseMotion</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="wizard">
+    <input type="radio" name="step" id="step-1" checked />
+    <input type="radio" name="step" id="step-2" />
+    <input type="radio" name="step" id="step-3" />
+    <input type="radio" name="step" id="step-4" />
+
+    <div class="progress-track">
+      <div class="progress-fill"></div>
+    </div>
+
+    <div class="steps">
+      <label for="step-1" class="step completed">
+        <span class="step-circle">&#10003;</span>
+        <span class="step-label">Cart</span>
+      </label>
+      <label for="step-2" class="step current">
+        <span class="step-circle">2</span>
+        <span class="step-label">Shipping</span>
+      </label>
+      <label for="step-3" class="step">
+        <span class="step-circle">3</span>
+        <span class="step-label">Payment</span>
+      </label>
+      <label for="step-4" class="step">
+        <span class="step-circle">4</span>
+        <span class="step-label">Confirm</span>
+      </label>
+    </div>
+
+    <div class="nav-buttons">
+      <label for="step-1" class="btn">Back</label>
+      <label for="step-2" class="btn">Next</label>
+    </div>
+  </div>
+
+</body>
+</html>
