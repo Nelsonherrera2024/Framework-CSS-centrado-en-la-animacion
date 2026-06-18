@@ -17,6 +17,7 @@ This submission adds a custom animated **404 Not Found page** for EaseMotion CSS
 ---
 
 ## 📂 Structure
+```
 EaseMotion-css/
 └── submissions/
     └── examples/
@@ -24,5 +25,5 @@ EaseMotion-css/
             ├── demo.html      # Interactive 404 page demo
             ├── style.css      # Styling (UI design)
             └── README.md      # Feature explanation & usage
-
+```
 
