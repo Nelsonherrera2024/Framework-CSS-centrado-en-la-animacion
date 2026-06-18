@@ -1,0 +1,43 @@
+﻿*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  max-width: 640px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  color: #1e293b;
+  background: #f8fafc;
+  line-height: 1.6;
+}
+h1 { font-size: 1.8rem; margin-bottom: 0.3rem; }
+.subtitle { color: #64748b; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 2px solid #e2e8f0; }
+.subtitle code { background: #f1f5f9; padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 0.85em; }
+.intro { background: #eef2ff; border-radius: 12px; padding: 1.25rem 1.5rem; margin-bottom: 2rem; color: #4338ca; font-size: 0.95rem; }
+.card-list { display: flex; flex-direction: column; gap: 2rem; margin-bottom: 2rem; }
+.scroll-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  animation: card-entry-exit linear both;
+  animation-timeline: view();
+  animation-range: entry 0% exit 100%;
+}
+.scroll-card h2 { font-size: 1.15rem; margin-bottom: 0.5rem; color: #334155; }
+.scroll-card p { font-size: 0.9rem; color: #64748b; }
+@keyframes card-entry-exit {
+  entry 0% { opacity: 0; transform: translateY(60px) scale(0.95); }
+  entry 100% { opacity: 1; transform: translateY(0) scale(1); }
+  exit 0% { opacity: 1; transform: translateY(0) scale(1); }
+  exit 100% { opacity: 0; transform: translateY(-60px) scale(0.95); }
+}
+.note { font-size: 0.85rem; color: #94a3b8; margin-top: 1rem; }
+.note code { background: #f1f5f9; padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 0.85em; }
+@media (prefers-reduced-motion: reduce) {
+  .scroll-card { animation: none; }
+}

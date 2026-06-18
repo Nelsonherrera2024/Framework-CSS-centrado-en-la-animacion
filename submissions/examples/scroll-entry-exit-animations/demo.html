@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scroll Entry + Exit Animations Demo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Scroll Entry + Exit Animations</h1>
+  <p class="subtitle">Cards that animate in when they enter the viewport and animate out when they leave — using <code>animation-timeline: view()</code>.</p>
+
+  <div class="intro">
+    <p>Scroll down to see each card fade + slide in as it enters, and fade + slide out as it exits. All powered by CSS scroll-driven animations with <code>animation-range</code>.</p>
+  </div>
+
+  <div class="card-list">
+    <div class="scroll-card entry-exit">
+      <h2>Scroll-Driven Animations</h2>
+      <p>CSS scroll-driven animations link animation progress to scroll position rather than time. The <code>view()</code> timeline tracks an element's position relative to the viewport.</p>
+    </div>
+
+    <div class="scroll-card entry-exit">
+      <h2>Entry Range</h2>
+      <p><code>animation-range: entry</code> runs the animation from the moment the element starts entering the viewport until it's fully visible.</p>
+    </div>
+
+    <div class="scroll-card entry-exit">
+      <h2>Exit Range</h2>
+      <p><code>animation-range: exit</code> runs the animation as the element leaves the viewport — perfect for exit effects.</p>
+    </div>
+
+    <div class="scroll-card entry-exit">
+      <h2>Combined Entry + Exit</h2>
+      <p>By combining entry and exit animations on the same element, you get a seamless transition — fade in on arrival, fade out on departure.</p>
+    </div>
+
+    <div class="scroll-card entry-exit">
+      <h2>animation-range: entry 0% exit 100%</h2>
+      <p>This shorthand sets the animation to play across the entire visible range — from first pixel entering to last pixel leaving.</p>
+    </div>
+
+    <div class="scroll-card entry-exit">
+      <h2>Cross-browser Support</h2>
+      <p>Scroll-driven animations are supported in Chrome 115+. For other browsers, the cards remain visible as a static fallback.</p>
+    </div>
+  </div>
+
+  <p class="note">
+    Each card uses <code>animation-timeline: view()</code> with <code>animation-range: entry 0% exit 100%</code>. The <code>@keyframes</code> define both the entry state (opacity 0, translateY) and exit state.
+  </p>
+</body>
+</html>
