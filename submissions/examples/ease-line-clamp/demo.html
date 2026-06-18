@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Truncation & Line-Clamp - EaseMotion CSS</title>
+  <!-- Link to EaseMotion CSS -->
+  <link rel="stylesheet" href="../../../easemotion.css">
+  <!-- Link to new utility styles -->
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: var(--ease-color-bg);
+      color: var(--ease-color-text);
+      font-family: var(--ease-font-sans);
+      padding: var(--ease-space-12) var(--ease-space-6);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .demo-section {
+      background: var(--ease-color-surface);
+      padding: var(--ease-space-8);
+      border-radius: var(--ease-radius-lg);
+      box-shadow: var(--ease-shadow-md);
+      margin-bottom: var(--ease-space-12);
+    }
+    
+    .demo-title {
+      border-bottom: 2px solid var(--ease-color-neutral-100);
+      padding-bottom: var(--ease-space-2);
+      margin-bottom: var(--ease-space-6);
+      font-size: var(--ease-text-xl);
+      color: var(--ease-color-primary);
+    }
+    
+    .example-container {
+      background: var(--ease-color-neutral-50);
+      padding: var(--ease-space-4);
+      border: 1px dashed var(--ease-color-neutral-300);
+      border-radius: var(--ease-radius-md);
+      margin-bottom: var(--ease-space-6);
+    }
+
+    .label {
+      display: inline-block;
+      font-family: var(--ease-font-mono);
+      font-size: var(--ease-text-xs);
+      background: var(--ease-color-primary-alpha);
+      color: var(--ease-color-primary-dark);
+      padding: 2px 6px;
+      border-radius: 4px;
+      margin-bottom: var(--ease-space-2);
+    }
+
+    .limited-width {
+      max-width: 300px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Text Truncation & Line-Clamp</h1>
+  <p>New utility classes for handling long text overflow gracefully.</p>
+
+  <div class="demo-section ease-reveal">
+    <h2 class="demo-title">Single Line Truncation</h2>
+    <div class="example-container limited-width">
+      <span class="label">.ease-truncate</span>
+      <p class="ease-truncate">
+        This is a very long sentence that will be truncated with an ellipsis because it exceeds the width of its container.
+      </p>
+    </div>
+    <p style="font-size: var(--ease-text-sm); color: var(--ease-color-muted);">
+      💡 <code>.ease-truncate</code> uses <code>text-overflow: ellipsis</code> and prevents wrapping.
+    </p>
+  </div>
+
+  <div class="demo-section ease-reveal ease-delay-100">
+    <h2 class="demo-title">Multi-Line Clamp</h2>
+    
+    <div class="example-container">
+      <span class="label">.ease-line-clamp-2</span>
+      <p class="ease-line-clamp-2">
+        EaseMotion CSS is a modern, animation-first utility library. This paragraph is clamped to exactly two lines. If there is more text, it will be hidden and replaced with an ellipsis at the end of the second line. This is extremely useful for card descriptions, news previews, and list items where vertical space is at a premium.
+      </p>
+    </div>
+
+    <div class="example-container">
+      <span class="label">.ease-line-clamp-3</span>
+      <p class="ease-line-clamp-3">
+        The line-clamp utility uses the <code>-webkit-line-clamp</code> property, which is widely supported across all modern browsers and has now been standardized in CSS. It provides a clean way to limit text height without needing complex JavaScript or overflow: hidden hacks that cut off text in the middle of a line. By clamping to 3 lines, we ensure a consistent layout while still giving users enough context.
+      </p>
+    </div>
+
+    <div class="example-container">
+      <span class="label">.ease-line-clamp-4</span>
+      <p class="ease-line-clamp-4">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+    </div>
+  </div>
+
+  <script src="../../../core/reveal.js"></script>
+</body>
+</html>
