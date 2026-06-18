@@ -1,0 +1,35 @@
+.file-tree {
+  max-width: 400px;
+  margin: 40px auto;
+  font-family: 'SF Mono', 'Cascadia Code', monospace;
+  font-size: 14px;
+  background: #1e1e2e;
+  border-radius: 8px;
+  padding: 16px;
+  color: #cdd6f4;
+}
+.file-tree__folder {
+  margin-left: 20px;
+  border-left: 1px solid #45475a;
+  padding-left: 12px;
+  margin-top: 4px;
+}
+.file-tree__label {
+  cursor: pointer;
+  color: #89b4fa;
+  list-style: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: background 0.15s;
+}
+.file-tree__label:hover { background: #313244; }
+.file-tree__label::before { content: "📁 "; }
+.file-tree__folder[open] > .file-tree__label::before { content: "📂 "; }
+.file-tree__file {
+  padding: 4px 8px 4px 28px;
+  color: #a6adc8;
+  border-radius: 4px;
+  transition: background 0.15s;
+}
+.file-tree__file:hover { background: #313244; color: #cdd6f4; }
+.file-tree__file::before { content: "📄 "; margin-left: -20px; }
