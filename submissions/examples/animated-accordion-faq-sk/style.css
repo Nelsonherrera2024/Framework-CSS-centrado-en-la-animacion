@@ -1,0 +1,124 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #f8fafc;
+  color: #1e293b;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.faq {
+  width: 100%;
+  max-width: 720px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  padding: 2.5rem;
+}
+
+.faq__title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #0f172a;
+}
+
+.faq__item {
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.faq__item:last-child {
+  border-bottom: none;
+}
+
+.faq__toggle {
+  display: none;
+}
+
+.faq__question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 0;
+  cursor: pointer;
+  user-select: none;
+  gap: 1rem;
+}
+
+.faq__question-text {
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #1e293b;
+}
+
+.faq__icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.faq__icon::before,
+.faq__icon::after {
+  content: '';
+  position: absolute;
+  background: #64748b;
+  border-radius: 2px;
+  top: 50%;
+  left: 50%;
+  transition: transform 0.3s ease;
+}
+
+.faq__icon::before {
+  width: 16px;
+  height: 2px;
+  transform: translate(-50%, -50%);
+}
+
+.faq__icon::after {
+  width: 2px;
+  height: 16px;
+  transform: translate(-50%, -50%);
+}
+
+.faq__toggle:checked + .faq__question .faq__icon {
+  transform: rotate(45deg);
+}
+
+.faq__toggle:checked + .faq__question .faq__icon::after {
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.faq__answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s ease;
+}
+
+.faq__answer > * {
+  overflow: hidden;
+}
+
+.faq__toggle:checked ~ .faq__answer {
+  grid-template-rows: 1fr;
+}
+
+.faq__answer-text {
+  padding-bottom: 1.25rem;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: #475569;
+}
