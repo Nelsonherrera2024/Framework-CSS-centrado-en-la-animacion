@@ -1,0 +1,44 @@
+.drag-select {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 12px;
+  padding: 20px;
+  user-select: none;
+  max-width: 600px;
+  margin: 40px auto;
+}
+.drag-select__item {
+  background: #f0f0f0;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  padding: 24px 16px;
+  text-align: center;
+  font-family: system-ui, sans-serif;
+  cursor: default;
+  transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+  position: relative;
+}
+.drag-select__item::before {
+  content: attr(data-label);
+  font-weight: 600;
+  color: #555;
+}
+.drag-select:active .drag-select__item {
+  border-color: #84a0ff;
+  background: #eef1ff;
+  box-shadow: 0 0 0 3px rgba(80, 130, 255, 0.15);
+}
+.drag-select:active .drag-select__item:hover {
+  border-color: #3b6eff;
+  background: #dce3ff;
+  box-shadow: 0 0 0 3px rgba(80, 130, 255, 0.3);
+}
+.drag-select__item::selection {
+  background: transparent;
+}
+.drag-select:active .drag-select__item:has(~ .drag-select__item:hover),
+.drag-select:active .drag-select__item:hover ~ .drag-select__item {
+  border-color: #84a0ff;
+  background: #eef1ff;
+  box-shadow: 0 0 0 3px rgba(80, 130, 255, 0.15);
+}
