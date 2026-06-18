@@ -5,6 +5,14 @@
 
 @layer easemotion-base {
 :root {
+
+  
+  /* existing variables */
+  --color-primary: #...;
+
+  /* add this */
+  --outline-offset: 3px;
+
   /* ── Transition Speeds ─────────────────────────────────── */
   --ease-speed-fast:    150ms;
   --ease-speed-medium:  300ms;

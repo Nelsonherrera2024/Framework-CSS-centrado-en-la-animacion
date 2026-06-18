@@ -37,7 +37,7 @@
 
 .ease-btn:focus-visible {
   outline: 2px solid var(--ease-btn-focus, var(--ease-color-primary, #6c63ff));
-  outline-offset: 3px;
+  outline-offset: var(--outline-offset, 3px);
 }
 
 /* ── Variants ──────────────────────────────────────────────── */
