@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>anchor-scope Demo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>anchor-scope</h1>
+  <p class="subtitle">Scoped anchor positioning — reuse the same anchor names across multiple cards without conflicts.</p>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="card-header" id="card1-header">
+        <span class="avatar" style="background:#6c63ff">JD</span>
+        <div>
+          <strong>John Doe</strong>
+          <small>Product Designer</small>
+        </div>
+        <button class="menu-trigger" anchor="card1-trigger" id="card1-trigger">...</button>
+      </div>
+      <div class="card-body">
+        <p>Passionate about design systems and motion.</p>
+      </div>
+      <div class="tooltip" anchor="card1-trigger" popover="manual" id="card1-tooltip">
+        <button>Edit</button>
+        <button>Share</button>
+        <button class="danger">Delete</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header" id="card2-header">
+        <span class="avatar" style="background:#22c55e">JS</span>
+        <div>
+          <strong>Jane Smith</strong>
+          <small>Frontend Engineer</small>
+        </div>
+        <button class="menu-trigger" anchor="card2-trigger" id="card2-trigger">...</button>
+      </div>
+      <div class="card-body">
+        <p>Building accessible and performant UIs.</p>
+      </div>
+      <div class="tooltip" anchor="card2-trigger" popover="manual" id="card2-tooltip">
+        <button>Edit</button>
+        <button>Share</button>
+        <button class="danger">Delete</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header" id="card3-header">
+        <span class="avatar" style="background:#f59e0b">AL</span>
+        <div>
+          <strong>Alice Liu</strong>
+          <small>UX Researcher</small>
+        </div>
+        <button class="menu-trigger" anchor="card3-trigger" id="card3-trigger">...</button>
+      </div>
+      <div class="card-body">
+        <p>Exploring user behavior and interaction patterns.</p>
+      </div>
+      <div class="tooltip" anchor="card3-trigger" popover="manual" id="card3-tooltip">
+        <button>Edit</button>
+        <button>Share</button>
+        <button class="danger">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <p class="note">
+    Each card scopes its anchor names with <code>anchor-scope</code>, so the same trigger IDs can be reused across cards without ID conflicts.
+  </p>
+
+  <script>
+    document.querySelectorAll('.menu-trigger').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tooltip = btn.nextElementSibling.nextElementSibling;
+        if (tooltip && tooltip.matches('.tooltip')) {
+          tooltip.togglePopover();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
