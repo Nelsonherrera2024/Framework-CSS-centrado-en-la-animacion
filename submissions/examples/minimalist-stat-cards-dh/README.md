@@ -21,3 +21,11 @@ Apply `.stat-card-wrapper` as a grid container (with responsive utilities like `
     <div class="ease-stat-label">Animations</div>
   </div>
   <div class="stat-card ease-card-stat">
+    <div class="ease-stat-label">Dependencies</div>
+  </div>
+</div>
+```
+
+## 3. Why is it useful?
+
+It prevents key metrics and dashboard statistics from looking heavy or cluttered on landing pages. By converting block-like container boxes into minimalist, floating typography with responsive horizontal layouts, it improves screen space utilization and aligns with modern design trends.
