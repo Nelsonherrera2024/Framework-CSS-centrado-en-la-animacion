@@ -71,3 +71,27 @@ body {
   background-color: var(--nav-bg-light);
   border-bottom: 1px solid var(--nav-border-light);
 }
+
+/* Logo */
+.navbar-logo {
+  font-size: 1.25rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #6c63ff, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+  cursor: pointer;
+}
+
+/* Navigation Links */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  color: var(--nav-text-muted-dark);
+  font-size: 0.9rem;
+  font-weight: 500;
