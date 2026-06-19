@@ -1,0 +1,10 @@
+/* translate-utilities - Utility Classes */
+/* Unique suffix: fv */
+
+.ease-translate-x-0 { translate: 0 !important; }
+.ease-translate-x-50 { translate: 50% !important; }
+.ease-translate-x-100 { translate: 100% !important; }
+.ease-translate-y-0 { translate: 0 0 !important; }
+.ease-translate-y-50 { translate: 0 50% !important; }
+.ease-translate-y-100 { translate: 0 100% !important; }
+.ease-translate-none { translate: none !important; }
