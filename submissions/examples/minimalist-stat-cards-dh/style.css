@@ -122,6 +122,18 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover .stat-value {
+  transform: scale(1.05);
+}
+
+.stat-card .stat-label {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.15em;
   margin: 0;
