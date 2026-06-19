@@ -18,32 +18,35 @@
 .ease-sparkle::after {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
   pointer-events: none;
   z-index: 10;
-  border-radius: inherit; /* Follow parent shape if possible */
 }
 
 /* Each pseudo-element handles 2 sparkle points via box-shadow */
 .ease-sparkle::before {
+  top: 15%;
+  left: 15%;
   animation: ease-kf-sparkle 2s infinite linear;
-  /* Fixed offsets for a "random" look around the element */
-  --ease-s1-x: -12px;
-  --ease-s1-y: -8px;
-  --ease-s2-x: calc(100% + 10px);
-  --ease-s2-y: 5px;
+  /* Fixed offsets relative to the top-left region */
+  --ease-s1-x: -20px;
+  --ease-s1-y: -15px;
+  --ease-s2-x: 50px;
+  --ease-s2-y: -10px;
 }
 
 .ease-sparkle::after {
+  bottom: 15%;
+  right: 15%;
   animation: ease-kf-sparkle 2s infinite linear;
   animation-delay: 0.5s; /* Staggered delay for the second pair */
-  --ease-s1-x: calc(100% + 5px);
-  --ease-s1-y: calc(100% + 8px);
-  --ease-s2-x: -10px;
-  --ease-s2-y: calc(100% - 10px);
+  /* Fixed offsets relative to the bottom-right region */
+  --ease-s1-x: 20px;
+  --ease-s1-y: 15px;
+  --ease-s2-x: -50px;
+  --ease-s2-y: 10px;
 }
 
 /**
