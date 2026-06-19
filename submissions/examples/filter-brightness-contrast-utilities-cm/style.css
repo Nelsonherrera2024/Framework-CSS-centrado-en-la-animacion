@@ -1,0 +1,11 @@
+/* filter-brightness-contrast-utilities - Utility Classes */
+/* Unique suffix: cm */
+
+.ease-brightness-50 { filter: brightness(0.5) !important; }
+.ease-brightness-100 { filter: brightness(1) !important; }
+.ease-brightness-150 { filter: brightness(1.5) !important; }
+.ease-brightness-200 { filter: brightness(2) !important; }
+.ease-contrast-50 { filter: contrast(0.5) !important; }
+.ease-contrast-100 { filter: contrast(1) !important; }
+.ease-contrast-150 { filter: contrast(1.5) !important; }
+.ease-contrast-200 { filter: contrast(2) !important; }
