@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+  background-color: #0f172a;
+  color: #f8fafc;
+  font-family: system-ui, sans-serif;
+}
+
+.spy-navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #1e293b;
+  border-bottom: 2px solid #334155;
+  display: flex;
+  gap: 20px;
+  padding: 15px 40px;
+  z-index: 100;
+}
+
+.spy-link {
+  color: #94a3b8;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.spy-link.active-indicator {
+  color: #38bdf8;
+  border-bottom: 2px solid #38bdf8;
+}
+
+.content-container {
+  padding-top: 80px;
+}
+
+.spy-section {
+  height: 60vh;
+  padding: 40px;
+  border-bottom: 1px dashed #334155;
+}
