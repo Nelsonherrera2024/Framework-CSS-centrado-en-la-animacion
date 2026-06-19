@@ -17,3 +17,7 @@ This component makes a website's navigation header sticky, keeping it locked to 
 </header>
 ```
 
+**Why is it useful?**
+A sticky navigation bar solves a major usability problem where a user must scroll all the way back to the top of a page to access site navigation links. By keeping the header visible, it dramatically improves accessibility and user experience.
+
+This matches EaseMotion CSS's focus on user-centric layouts, offering a reusable structural element that works seamlessly on both desktop (where it is fixed) and mobile/tablet devices (where it acts as a sticky element).
