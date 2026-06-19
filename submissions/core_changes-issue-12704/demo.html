@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Quality CI — EaseMotion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/easemotion-css@latest/easemotion.min.css">
+  <style>
+    body {
+      font-family: "Inter", system-ui, sans-serif;
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+      background: #f8fafc;
+      color: #1e293b;
+      line-height: 1.6;
+    }
+    h1 { font-size: 1.875rem; margin-bottom: 0.25rem; }
+    h2 { font-size: 1.125rem; margin: 2rem 0 0.5rem; }
+    .card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 0.5rem;
+      padding: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.125rem 0.5rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .badge-green { background: #dcfce7; color: #166534; }
+    .badge-red { background: #fef2f2; color: #991b1b; }
+    .badge-blue { background: #eff6ff; color: #1e40af; }
+    code {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 0.85em;
+      background: #f1f5f9;
+      padding: 0.125rem 0.375rem;
+      border-radius: 0.25rem;
+    }
+    pre {
+      background: #0f172a;
+      color: #e2e8f0;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      overflow-x: auto;
+      font-size: 0.8125rem;
+      line-height: 1.5;
+    }
+    .checklist { list-style: none; padding: 0; }
+    .checklist li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid #f1f5f9;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .checklist li:last-child { border-bottom: none; }
+    .icon-check { color: #22c55e; font-weight: 700; }
+    .icon-x { color: #ef4444; font-weight: 700; }
+  </style>
+</head>
+<body>
+
+<h1>CSS Quality Checks</h1>
+<p>CI pipeline configuration for automated CSS validation, bundle size budgeting, naming convention enforcement, and variable reference validation.</p>
+
+<h2>Pipeline Checks</h2>
+
+<div class="card">
+  <ul class="checklist">
+    <li>
+      <span class="icon-check">&#10003;</span>
+      <strong>Stylelint</strong> — Syntax validation on all CSS files
+      <span class="badge badge-green">enforced</span>
+    </li>
+    <li>
+      <span class="icon-check">&#10003;</span>
+      <strong>Bundle Size Budget</strong> — Raw ≤ 180 KB, GZip ≤ 32 KB
+      <span class="badge badge-green">enforced</span>
+    </li>
+    <li>
+      <span class="icon-check">&#10003;</span>
+      <strong>CSS Variable Validation</strong> — All <code>--ease-*</code> refs must exist in <code>core/variables.css</code>
+      <span class="badge badge-green">enforced</span>
+    </li>
+    <li>
+      <span class="icon-check">&#10003;</span>
+      <strong>Naming Convention</strong> — All classes must use <code>ease-</code> prefix
+      <span class="badge badge-blue">warning</span>
+    </li>
+    <li>
+      <span class="icon-check">&#10003;</span>
+      <strong>Nesting Depth</strong> — Warn if CSS nesting exceeds 3 levels
+      <span class="badge badge-blue">warning</span>
+    </li>
+  </ul>
+</div>
+
+<h2>Workflow: <code>css-quality.yml</code></h2>
+<pre>name: CSS Quality Checks
+on:
+  push: { branches: [main] }
+  pull_request: { branches: [main] }
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - run: npm ci
+      - run: npx stylelint "**/*.css" --config .stylelintrc.json
+
+  bundle-size:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          FILE="easemotion.min.css"
+          RAW_LIMIT=180000; GZIP_LIMIT=32000
+          SIZE=$(stat -c%s "$FILE")
+          GZIP=$(gzip -c "$FILE" | wc -c)
+          [ "$SIZE" -gt "$RAW_LIMIT" ] && exit 1
+          [ "$GZIP" -gt "$GZIP_LIMIT" ] && exit 1
+
+  validate-vars:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          grep -oP '--ease-[\w-]+(?=\s*:)' core/variables.css \
+            > /tmp/defined.txt
+          grep -roP '--ease-[\w-]+' core/ components/ \
+            | grep -v core/variables.css \
+            | grep -oP '--ease-[\w-]+' | sort -u > /tmp/used.txt
+          comm -23 /tmp/used.txt /tmp/defined.txt \
+            | awk '{print "Undefined: "$1}'
+          [ -s /tmp/missing.txt ] && exit 1 || echo "OK"</pre>
+
+<h2>Local Usage</h2>
+<p>Run the same checks locally:</p>
+<pre>bash submissions/core_changes-issue-12704/css-quality.sh</pre>
+
+<p>Copy the workflow to enable CI:</p>
+<pre>cp submissions/core_changes-issue-12704/css-quality.yml .github/workflows/</pre>
+
+</body>
+</html>

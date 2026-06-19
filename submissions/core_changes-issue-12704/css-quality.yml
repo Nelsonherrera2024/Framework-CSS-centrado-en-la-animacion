@@ -1,0 +1,142 @@
+name: CSS Quality Checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint:
+    name: Stylelint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      - name: Run Stylelint
+        run: npx stylelint "**/*.css" --config .stylelintrc.json
+
+  bundle-size:
+    name: Bundle Size Budget
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check easemotion.min.css raw size
+        run: |
+          FILE="easemotion.min.css"
+          RAW_LIMIT=180000
+          if [ -f "$FILE" ]; then
+            SIZE=$(stat -c%s "$FILE" 2>/dev/null || stat -f%z "$FILE" 2>/dev/null)
+            echo "Raw size: $SIZE bytes (limit: $RAW_LIMIT)"
+            if [ "$SIZE" -gt "$RAW_LIMIT" ]; then
+              echo "::error::$FILE exceeds raw size budget ($SIZE > $RAW_LIMIT)"
+              exit 1
+            fi
+          else
+            echo "::warning::$FILE not found — skipping size check"
+          fi
+      - name: Check GZip size
+        run: |
+          FILE="easemotion.min.css"
+          GZIP_LIMIT=32000
+          if [ -f "$FILE" ]; then
+            gzip -kf "$FILE" 2>/dev/null || true
+            GZIPPED="${FILE}.gz"
+            if [ -f "$GZIPPED" ]; then
+              SIZE=$(stat -c%s "$GZIPPED" 2>/dev/null || stat -f%z "$GZIPPED" 2>/dev/null)
+              rm -f "$GZIPPED"
+              echo "GZip size: $SIZE bytes (limit: $GZIP_LIMIT)"
+              if [ "$SIZE" -gt "$GZIP_LIMIT" ]; then
+                echo "::error::$FILE exceeds gzip size budget ($SIZE > $GZIP_LIMIT)"
+                exit 1
+              fi
+            fi
+          fi
+
+  validate-vars:
+    name: CSS Variable Validation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check custom property references
+        run: |
+          VARS_FILE="core/variables.css"
+          SEARCH_DIRS="core/ components/"
+
+          if [ ! -f "$VARS_FILE" ]; then
+            echo "::warning::$VARS_FILE not found — skipping variable validation"
+            exit 0
+          fi
+
+          DEFINED=$(grep -oP '--ease-[\w-]+(?=\s*:)' "$VARS_FILE" | sort -u)
+          USED=$(grep -roP '--ease-[\w-]+' $SEARCH_DIRS | grep -v "$VARS_FILE" | grep -oP '--ease-[\w-]+' | sort -u)
+          MISSING=()
+
+          for var in $USED; do
+            if ! echo "$DEFINED" | grep -q "^$var$"; then
+              MISSING+=("$var")
+            fi
+          done
+
+          if [ ${#MISSING[@]} -gt 0 ]; then
+            echo "::error::Undefined CSS variables found:"
+            for m in "${MISSING[@]}"; do
+              echo "  - $m"
+            done
+            exit 1
+          else
+            echo "All custom properties are defined ✓"
+          fi
+
+  naming-convention:
+    name: Naming Convention Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check ease- prefix in core and components
+        run: |
+          EXCLUDE="core/variables.css"
+          ISSUES=0
+          for f in core/*.css components/*.css; do
+            [ "$f" = "$EXCLUDE" ] && continue
+            [ ! -f "$f" ] && continue
+            while IFS= read -r line; do
+              if echo "$line" | grep -qP '\.(?!ease-)[a-z][\w-]*(?=\s*\{)'; then
+                echo "::warning::$f — non ease- prefixed class found"
+                ISSUES=$((ISSUES + 1))
+              fi
+            done < "$f"
+          done
+          if [ "$ISSUES" -gt 0 ]; then
+            echo "Found $ISSUES non-ease- prefixed classes"
+          else
+            echo "All classes use ease- prefix ✓"
+          fi
+
+  nesting-depth:
+    name: Nesting Depth Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check CSS nesting depth
+        run: |
+          MAX_DEPTH=3
+          ISSUES=0
+          for f in core/*.css components/*.css; do
+            [ ! -f "$f" ] && continue
+            DEPTH=0
+            while IFS= read -r line; do
+              case "$(echo "$line" | tr -d ' ')" in
+                \{*) DEPTH=$((DEPTH + 1)) ;;
+                \}*) DEPTH=$((DEPTH - 1)) ;;
+              esac
+              if [ "$DEPTH" -gt "$MAX_DEPTH" ]; then
+                echo "::warning::$f exceeds max nesting depth ($DEPTH > $MAX_DEPTH)"
+                ISSUES=$((ISSUES + 1))
+                DEPTH=$MAX_DEPTH
+              fi
+            done < "$f"
+          done
+          echo "Nesting depth check complete — $ISSUES warnings"
