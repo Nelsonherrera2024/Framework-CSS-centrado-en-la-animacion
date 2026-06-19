@@ -35,3 +35,25 @@ body {
   justify-content: center;
   transition:
     background-color 0.3s ease,
+    color 0.3s ease;
+  overflow-x: hidden;
+}
+
+.demo-container {
+  max-width: 1000px;
+  width: 90%;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.demo-header {
+  margin-bottom: 4rem;
+}
+
+.demo-header h1 {
+  font-size: 2.75rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
