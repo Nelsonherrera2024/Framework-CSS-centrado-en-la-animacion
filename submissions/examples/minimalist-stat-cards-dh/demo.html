@@ -72,3 +72,13 @@
       // Load saved preference or default to dark
       const savedTheme = localStorage.getItem("demo-theme") || "dark";
       htmlElement.setAttribute("data-theme", savedTheme);
+
+      toggleBtn.addEventListener("click", () => {
+        const currentTheme = htmlElement.getAttribute("data-theme");
+        const newTheme = currentTheme === "light" ? "dark" : "light";
+        htmlElement.setAttribute("data-theme", newTheme);
+        localStorage.setItem("demo-theme", newTheme);
+      });
+    </script>
+  </body>
+</html>
