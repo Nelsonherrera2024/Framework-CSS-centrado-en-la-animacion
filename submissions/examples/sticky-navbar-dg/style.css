@@ -95,3 +95,34 @@ body {
   color: var(--nav-text-muted-dark);
   font-size: 0.9rem;
   font-weight: 500;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  position: relative;
+  transition:
+    color 0.3s ease,
+    background-color 0.3s ease;
+}
+
+[data-theme="light"] .nav-link {
+  color: var(--nav-text-muted-light);
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--nav-text-dark);
+  background-color: var(--nav-link-active-bg-dark);
+}
+
+[data-theme="light"] .nav-link:hover,
+[data-theme="light"] .nav-link.active {
+  color: var(--nav-accent);
+  background-color: var(--nav-link-active-bg-light);
+}
+
+/* Underline slide effect on hover/active */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
