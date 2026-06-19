@@ -1,0 +1,8 @@
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ease-bg: #121212;
+    --ease-text: #ffffff;
+    --ease-border: #333333;
+    --ease-primary: #bb86fc;
+  }
+}
