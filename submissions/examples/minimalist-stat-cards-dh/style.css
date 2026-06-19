@@ -1,0 +1,14 @@
+/* minimalist-stat-cards-dh — style.css */
+
+:root {
+  --bg-color: #0f0e17;
+  --text-color: #fffffe;
+  --text-muted: #a7a9be;
+  --primary-color: #ff8906;
+  --secondary-color: #f25f4c;
+  --accent-color: #e53e3e;
+  --card-hover-bg: rgba(255, 255, 255, 0.03);
+  --font-sans:
+    "Outfit", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
