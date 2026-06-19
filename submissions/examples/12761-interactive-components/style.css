@@ -1,0 +1,3 @@
+details.ease-accordion { border: 1px solid #ddd; padding: 0.5rem; }
+summary.ease-accordion-title { cursor: pointer; font-weight: bold; }
+.ease-tabs { display: flex; gap: 1rem; }
