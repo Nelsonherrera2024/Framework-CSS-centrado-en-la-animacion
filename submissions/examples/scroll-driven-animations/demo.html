@@ -1,25 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Scroll Driven Animations - EaseMotion CSS</title>
-  <link rel="stylesheet" href="../../../core/animations.css">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scroll-Driven Animation Utilities — EaseMotion CSS</title>
+  <link rel="stylesheet" href="../../easemotion.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <div class="demo-wrapper">
-    <h1>Scroll Driven Animations</h1>
-    <div class="scroll-stage">
-      <div class="progress-track">
-        <div class="progress-bar"></div>
-      </div>
-      <p class="scroll-hint">Scroll down to drive the animation</p>
-      <div class="scroll-spacer"></div>
-      <div class="animated-reveal">Revealed by scroll!</div>
-    </div>
-    <p class="description">The progress bar animates based on scroll position using animation-timeline.</p>
+<body style="background: #f8fafc; margin: 0; padding-bottom: 20vh;">
+
+  <div class="ease-scroll-progress"></div>
+
+  <div style="position: fixed; right: 2rem; bottom: 2rem; width: 60px; height: 60px; background: #e2e8f0; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; z-index: 500;" class="ease-scroll-rotate">
+    ⚙️
   </div>
-  <script src="script.js"></script>
+
+  <div class="ease-reading-container">
+    
+    <div style="margin: 4rem 0 2rem 0; text-align: center;">
+      <h2 style="color: #0f172a; font-weight: 800; font-size: 2.25rem; margin-bottom: 0.5rem;">Native Scroll Animations</h2>
+      <p style="color: #64748b; margin: 0; font-size: 1.1rem;">Scroll down to test pure-CSS progress tracking and fluid container reveal thresholds.</p>
+    </div>
+
+    <article class="ease-reading-card ease-scroll-reveal">
+      <h3 class="ease-reading-header">1. High-Performance Painting</h3>
+      <p>By mapping keyframe transformations directly into the native <code>animation-timeline</code> pipeline, scroll offsets run asynchronously directly inside the browser compositor layout path.</p>
+    </article>
+
+    <article class="ease-reading-card ease-scroll-reveal">
+      <h3 class="ease-reading-header">2. Zero Main-Thread Overhead</h3>
+      <p>Traditional legacy JavaScript implementations rely heavily on <code>window.addEventListener('scroll')</code> loop captures. This triggers recurring micro-task garbage evaluation, generating severe main-thread blockages and layout stuttering.</p>
+    </article>
+
+    <article class="ease-reading-card ease-scroll-reveal">
+      <h3 class="ease-reading-header">3. Fluid Interpolation Range</h3>
+      <p>Using structural syntax attributes such as <code>animation-range: entry 10% cover 40%;</code> guarantees that fading scales activate cleanly precisely as the element enters the active viewport geometry bounds.</p>
+    </article>
+
+    <article class="ease-reading-card ease-scroll-reveal">
+      <h3 class="ease-reading-header">4. Universal Layout Utility Adaptability</h3>
+      <p>These layout tokens easily stack alongside baseline structural columns, cards, and text components to create interactive reading decks with minimal footprint overrides.</p>
+    </article>
+
+  </div>
+
 </body>
 </html>
