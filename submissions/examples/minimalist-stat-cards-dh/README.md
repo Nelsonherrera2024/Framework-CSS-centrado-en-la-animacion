@@ -21,6 +21,7 @@ Apply `.stat-card-wrapper` as a grid container (with responsive utilities like `
     <div class="ease-stat-label">Animations</div>
   </div>
   <div class="stat-card ease-card-stat">
+    <div class="ease-stat-value">0</div>
     <div class="ease-stat-label">Dependencies</div>
   </div>
 </div>
