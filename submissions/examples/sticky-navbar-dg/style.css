@@ -29,3 +29,22 @@
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 200vh; /* Allow scrolling to demonstrate sticky behavior */
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* ── Sticky Navbar Core ── */
+.sticky-navbar {
+  position: -webkit-sticky; /* Safari support */
+  position: sticky;
+  top: 0;
