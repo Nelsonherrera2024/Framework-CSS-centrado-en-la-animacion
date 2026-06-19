@@ -1,0 +1,159 @@
+name: CSS Quality Checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint:
+    name: CSS Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      - name: Stylelint
+        run: npx stylelint "**/*.css" --config .stylelintrc.json --allow-empty-input
+
+  bundle-size:
+    name: Bundle Size
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check raw bundle size
+        run: |
+          FILE="easemotion.min.css"
+          RAW_LIMIT=180000
+          if [ -f "$FILE" ]; then
+            if [ "$(uname)" = "Darwin" ]; then
+              SIZE=$(stat -f%z "$FILE")
+            else
+              SIZE=$(stat -c%s "$FILE")
+            fi
+            if [ "$SIZE" -gt "$RAW_LIMIT" ]; then
+              echo "❌ $FILE is $SIZE bytes (limit: $RAW_LIMIT)"
+              exit 1
+            else
+              echo "✅ $FILE is $SIZE bytes (limit: $RAW_LIMIT)"
+            fi
+          else
+            echo "⚠️ $FILE not found — skipping raw check"
+          fi
+      - name: Check gzipped bundle size
+        run: |
+          FILE="easemotion.min.css"
+          GZIP_LIMIT=30720
+          if [ -f "$FILE" ]; then
+            GZ_SIZE=$(gzip -c "$FILE" | wc -c | tr -d ' ')
+            if [ "$GZ_SIZE" -gt "$GZIP_LIMIT" ]; then
+              echo "❌ $FILE gzipped is $GZ_SIZE bytes (limit: $GZIP_LIMIT)"
+              exit 1
+            else
+              echo "✅ $FILE gzipped is $GZ_SIZE bytes (limit: $GZIP_LIMIT)"
+            fi
+          else
+            echo "⚠️ $FILE not found — skipping gzip check"
+          fi
+
+  validate-vars:
+    name: Custom Property Validation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check custom property references
+        run: |
+          if [ ! -f "core/variables.css" ]; then
+            echo "⚠️ core/variables.css not found — skipping"
+            exit 0
+          fi
+          DEFINED=$(grep -oP '--ease-[\w-]+(?=\s*:)' core/variables.css | sort -u)
+          ALL_CSS=$(find core components -name '*.css' ! -name 'variables.css' 2>/dev/null || true)
+          if [ -z "$ALL_CSS" ]; then
+            echo "✅ No CSS files found in core/components to check"
+            exit 0
+          fi
+          USED=$(echo "$ALL_CSS" | xargs grep -roP '--ease-[\w-]+' 2>/dev/null | grep -oP '--ease-[\w-]+' | sort -u || true)
+          MISSING=()
+          for var in $USED; do
+            if ! echo "$DEFINED" | grep -qF "$var"; then
+              MISSING+=("$var")
+            fi
+          done
+          if [ ${#MISSING[@]} -gt 0 ]; then
+            echo "❌ Undefined CSS variables:"
+            for v in "${MISSING[@]}"; do echo "  - $v"; done
+            exit 1
+          else
+            echo "✅ All custom properties are defined"
+          fi
+
+  naming-convention:
+    name: Naming Convention Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check ease- prefix on all utility/component classes
+        run: |
+          EXCLUDE_DIRS="node_modules dist .git"
+          CSS_FILES=$(find core components submissions -name '*.css' 2>/dev/null || true)
+          if [ -z "$CSS_FILES" ]; then
+            echo "⚠️ No CSS files found — skipping"
+            exit 0
+          fi
+          ISSUES=0
+          for f in $CSS_FILES; do
+            while IFS= read -r line; do
+              CLASSES=$(echo "$line" | grep -oP '\.[a-zA-Z][\w-]*(?=[\s,{])' || true)
+              for cls in $CLASSES; do
+                cls_name="${cls#.}"
+                case "$cls_name" in
+                  ease-*) ;;
+                  active|hover|focus|visited|focus-visible|focus-within|first-child|last-child|nth-child*) ;;
+                  from|to|0%|100%|50%) ;;
+                  *) echo "⚠️ $f: class '$cls_name' does not use 'ease-' prefix"; ISSUES=$((ISSUES + 1)) ;;
+                esac
+              done
+            done < "$f"
+          done
+          if [ "$ISSUES" -gt 0 ]; then
+            echo "❌ $ISSUES classes without ease- prefix found"
+            exit 1
+          else
+            echo "✅ All classes use the ease- prefix"
+          fi
+
+  nesting-depth:
+    name: Nesting Depth Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Warn on deep CSS nesting
+        run: |
+          CSS_FILES=$(find core components submissions -name '*.css' 2>/dev/null || true)
+          if [ -z "$CSS_FILES" ]; then
+            echo "⚠️ No CSS files found — skipping"
+            exit 0
+          fi
+          MAX_DEPTH=3
+          WARNINGS=0
+          for f in $CSS_FILES; do
+            DEPTH=0
+            while IFS= read -r line; do
+              case "$line" in
+                *{*) DEPTH=$((DEPTH + 1)) ;;
+                *}*) DEPTH=$((DEPTH - 1)) ;;
+              esac
+              if [ "$DEPTH" -gt "$MAX_DEPTH" ] && echo "$line" | grep -qP '^\s+\S'; then
+                echo "⚠️ $f exceeds $MAX_DEPTH nesting levels (depth: $DEPTH)"
+                WARNINGS=$((WARNINGS + 1))
+              fi
+            done < "$f"
+          done
+          if [ "$WARNINGS" -gt 0 ]; then
+            echo "⚠️ $WARNINGS deep nesting warnings — consider refactoring"
+          else
+            echo "✅ Nesting depth is within limits"
+          fi
