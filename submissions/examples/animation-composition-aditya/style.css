@@ -1,0 +1,226 @@
+/* ============================================================
+   EaseMotion CSS — Composable Animation Utilities
+   ============================================================
+   Fixes: Animation Overwriting (Lack of Composition)
+   
+   HOW IT WORKS:
+   Traditional animation utility classes use the animation shorthand,
+   which overrides all other animations on the same element.
+   
+   Instead, this solution defines CSS Custom Property slots for
+   distinct animation categories:
+     --anim-fade      (Opacity)
+     --anim-translate (Translation: slide, bounce, float, shake)
+     --anim-scale     (Scale/Zoom, pulse)
+     --anim-rotate    (Rotation: spin, flip)
+   
+   Applying classes like `.fade-in` and `.slide-up` sets their 
+   respective slots. The browser resolves them to a multi-animation list.
+   Using `animation-composition: accumulate` ensures transforms 
+   chain together (e.g. translateY + scale + rotate) seamlessly.
+   ============================================================ */
+
+/* ── Base Composable Engine ───────────────────────────────── */
+
+.fade-in, .fade-out,
+.slide-up, .slide-down, .slide-left, .slide-right,
+.zoom-in, .zoom-out,
+.spin, .bounce, .pulse, .float, .shake {
+  animation: 
+    var(--anim-fade, none) var(--dur-fade, 0.4s) var(--tf-fade, ease-out) var(--delay-fade, 0s) var(--count-fade, 1) var(--fill-fade, both),
+    var(--anim-translate, none) var(--dur-translate, 0.4s) var(--tf-translate, ease-out) var(--delay-translate, 0s) var(--count-translate, 1) var(--fill-translate, both),
+    var(--anim-scale, none) var(--dur-scale, 0.4s) var(--tf-scale, ease-out) var(--delay-scale, 0s) var(--count-scale, 1) var(--fill-scale, both),
+    var(--anim-rotate, none) var(--dur-rotate, 0.4s) var(--tf-rotate, ease-out) var(--delay-rotate, 0s) var(--count-rotate, 1) var(--fill-rotate, both);
+  
+  animation-composition: accumulate;
+}
+
+/* ── Keyframe Definitions (Single Property-Focused) ──────── */
+
+@keyframes kf-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes kf-fade-out {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+@keyframes kf-slide-up {
+  from { transform: translateY(30px); }
+  to   { transform: translateY(0); }
+}
+
+@keyframes kf-slide-down {
+  from { transform: translateY(-30px); }
+  to   { transform: translateY(0); }
+}
+
+@keyframes kf-slide-left {
+  from { transform: translateX(30px); }
+  to   { transform: translateX(0); }
+}
+
+@keyframes kf-slide-right {
+  from { transform: translateX(-30px); }
+  to   { transform: translateX(0); }
+}
+
+@keyframes kf-zoom-in {
+  from { transform: scale(0.85); }
+  to   { transform: scale(1); }
+}
+
+@keyframes kf-zoom-out {
+  from { transform: scale(1); }
+  to   { transform: scale(0.85); }
+}
+
+@keyframes kf-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes kf-bounce {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-24px); }
+}
+
+@keyframes kf-float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-12px); }
+}
+
+@keyframes kf-pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50%      { transform: scale(0.92); opacity: 0.7; }
+}
+
+@keyframes kf-shake {
+  0%, 100% { transform: translateX(0); }
+  25%      { transform: translateX(-8px); }
+  75%      { transform: translateX(8px); }
+}
+
+/* ── Utility Classes ──────────────────────────────────────── */
+
+/* Fade Slot (Opacity) */
+.fade-in {
+  --anim-fade: kf-fade-in;
+}
+.fade-out {
+  --anim-fade: kf-fade-out;
+}
+
+/* Translate Slot (Translation) */
+.slide-up {
+  --anim-translate: kf-slide-up;
+}
+.slide-down {
+  --anim-translate: kf-slide-down;
+}
+.slide-left {
+  --anim-translate: kf-slide-left;
+}
+.slide-right {
+  --anim-translate: kf-slide-right;
+}
+.bounce {
+  --anim-translate: kf-bounce;
+  --count-translate: infinite;
+  --tf-translate: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.float {
+  --anim-translate: kf-float;
+  --count-translate: infinite;
+  --tf-translate: ease-in-out;
+  --dur-translate: 3s;
+}
+.shake {
+  --anim-translate: kf-shake;
+  --dur-translate: 0.5s;
+}
+
+/* Scale Slot (Scale) */
+.zoom-in {
+  --anim-scale: kf-zoom-in;
+}
+.zoom-out {
+  --anim-scale: kf-zoom-out;
+}
+.pulse {
+  --anim-scale: kf-pulse;
+  --count-scale: infinite;
+  --dur-scale: 2s;
+}
+
+/* Rotate Slot (Rotation) */
+.spin {
+  --anim-rotate: kf-spin;
+  --count-rotate: infinite;
+  --dur-rotate: 2s;
+  --tf-rotate: linear;
+}
+
+/* ── Timing and Control Modifiers ─────────────────────────── */
+
+.duration-fast {
+  --dur-fade: 0.2s;
+  --dur-translate: 0.2s;
+  --dur-scale: 0.2s;
+  --dur-rotate: 0.2s;
+}
+
+.duration-normal {
+  --dur-fade: 0.4s;
+  --dur-translate: 0.4s;
+  --dur-scale: 0.4s;
+  --dur-rotate: 0.4s;
+}
+
+.duration-slow {
+  --dur-fade: 0.8s;
+  --dur-translate: 0.8s;
+  --dur-scale: 0.8s;
+  --dur-rotate: 0.8s;
+}
+
+.delay-100 {
+  --delay-fade: 0.1s;
+  --delay-translate: 0.1s;
+  --delay-scale: 0.1s;
+  --delay-rotate: 0.1s;
+}
+
+.delay-200 {
+  --delay-fade: 0.2s;
+  --delay-translate: 0.2s;
+  --delay-scale: 0.2s;
+  --delay-rotate: 0.2s;
+}
+
+.delay-300 {
+  --delay-fade: 0.3s;
+  --delay-translate: 0.3s;
+  --delay-scale: 0.3s;
+  --delay-rotate: 0.3s;
+}
+
+.delay-500 {
+  --delay-fade: 0.5s;
+  --delay-translate: 0.5s;
+  --delay-scale: 0.5s;
+  --delay-rotate: 0.5s;
+}
+
+/* ── Accessibility ────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in, .fade-out,
+  .slide-up, .slide-down, .slide-left, .slide-right,
+  .zoom-in, .zoom-out,
+  .spin, .bounce, .pulse, .float, .shake {
+    animation: none !important;
+  }
+}
