@@ -1,49 +1,46 @@
-# Responsive Breakpoint Utility Classes
+# Scroll to Top Animated Button
 
-Adds responsive utility classes with breakpoint prefixes for building responsive layouts.
+This submission implements a floating scroll-to-top button that appears after scrolling past 300px (Issue **#14188**).
 
-## Breakpoints
+## What It Does
 
-| Prefix | Min Width | Example |
-|--------|-----------|--------|
-| `sm` | 640px | `.ease-sm-flex` (already exists) |
-| `md` | 768px | `.ease-md-hidden` |
-| `lg` | 1024px | `.ease-lg-grid-cols-3` |
-| `xl` | 1280px | `.ease-xl-flex-row` |
-| `2xl` | 1536px | `.ease-2xl-w-1/2` |
+A fixed-position FAB-style button in the bottom-right corner that fades in + slides up when the user scrolls past 300px. Clicking it smoothly scrolls to the top.
 
-## Utility Categories
+## Features
 
-| Category | Classes |
-|----------|--------|
-| **Display** | `flex`, `grid`, `block`, `hidden`, `inline`, `inline-block` |
-| **Grid columns** | `grid-cols-1`, `grid-cols-2`, `grid-cols-3`, `grid-cols-4`, `grid-cols-6`, `grid-cols-12` |
-| **Flex direction** | `flex-row`, `flex-col`, `flex-wrap`, `flex-nowrap` |
-| **Gap** | `gap-0` through `gap-8` |
-| **Text alignment** | `text-left`, `text-center`, `text-right` |
-| **Width** | `w-1/2`, `w-1/3`, `w-2/3`, `w-1/4`, `w-3/4`, `w-full` |
-| **Order** | `order-first`, `order-1`, `order-2`, `order-3`, `order-last` |
-| **Alignment** | `items-center`, `items-start`, `items-end`, `justify-center`, `justify-between`, `justify-around`, `justify-end` |
+- Fixed position (bottom-right corner)
+- Hidden by default, appears after 300px scroll
+- Fade-in + slide-up entrance animation
+- Smooth scroll to top on click (`window.scrollTo` with `behavior: smooth`)
+- Hover effect with elevated shadow
+- Active press effect (scale down)
+- Focus-visible outline for accessibility
+- `prefers-reduced-motion` disables entrance/active animations
+- Responsive sizing on mobile
 
 ## Usage
 
 ```html
-<!-- 2 cols on md, 4 cols on lg -->
-<div class="ease-grid ease-md-grid-cols-2 ease-lg-grid-cols-4">
-  <div>1</div>
-  <div>2</div>
-  <div>3</div>
-  <div>4</div>
-</div>
+<button class="scroll-top-btn" onclick="scrollToTop()" aria-label="Scroll to top">
+  &uarr;
+</button>
 
-<!-- Hidden on mobile, flex on md+ -->
-<div class="ease-hidden ease-md-flex">
-  <span>Visible on md+</span>
-</div>
+<script>
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > 300) {
+      btn.classList.add('visible');
+    } else {
+      btn.classList.remove('visible');
+    }
+  });
+  function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
 ```
 
-## Generation
+## Files
 
-Classes are generated via CSS `@media (min-width: ...)` queries for each breakpoint. To regenerate, run the Python/SCSS build script in the submission source.
-
-Fixes #12460
+- `demo.html` — Long page with scroll-to-top button, behavior docs, and lorem ipsum filler
+- `style.css` — Button styles, visibility toggle, hover/active/focus states, reduced-motion
+- `README.md` — This documentation
