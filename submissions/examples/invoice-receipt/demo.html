@@ -3,89 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Invoice - EaseMotion CSS</title>
-  <!-- Link to EaseMotion CSS -->
-  <link rel="stylesheet" href="../../../easemotion.css">
-  <!-- Local styles -->
+  <title>Invoice Receipt — EaseMotion CSS</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <div class="invoice-container">
-    <header class="invoice-header ease-fade-down">
-      <div class="company-info">
-        <h1>EASEMOTION</h1>
-        <p>123 Animation Street</p>
-        <p>Motion City, MC 45678</p>
+  <div class="invoice">
+    <header class="inv-header fade-down">
+      <div class="inv-brand">
+        <h1>AcmeCorp</h1>
+        <p class="inv-subtitle">123 Business Ave, Suite 100 · City, ST 12345</p>
       </div>
-      <div class="invoice-details">
-        <h2>INVOICE</h2>
-        <p><strong>Invoice #:</strong> INV-2026-001</p>
-        <p><strong>Date:</strong> June 18, 2026</p>
-        <div class="status-badge status-paid ease-pulse">Paid</div>
+      <div class="inv-meta">
+        <p><strong>Invoice #</strong> INV-2026-0042</p>
+        <p><strong>Date</strong> June 21, 2026</p>
+        <p><strong>Due</strong> July 21, 2026</p>
       </div>
     </header>
 
-    <main>
-      <table class="items-table">
-        <thead>
-          <tr class="ease-fade-in ease-delay-100">
-            <th>Description</th>
-            <th>Quantity</th>
-            <th>Price</th>
-            <th>Total</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="ease-slide-in-left ease-delay-200">
-            <td>Web Design Package</td>
-            <td>1</td>
-            <td>$1,500.00</td>
-            <td>$1,500.00</td>
-          </tr>
-          <tr class="ease-slide-in-left ease-delay-300">
-            <td>UI/UX Consultation</td>
-            <td>5</td>
-            <td>$150.00</td>
-            <td>$750.00</td>
-          </tr>
-          <tr class="ease-slide-in-left ease-delay-400">
-            <td>Performance Optimization</td>
-            <td>1</td>
-            <td>$500.00</td>
-            <td>$500.00</td>
-          </tr>
-          <tr class="ease-slide-in-left ease-delay-500">
-            <td>Annual Support</td>
-            <td>1</td>
-            <td>$250.00</td>
-            <td>$250.00</td>
-          </tr>
-        </tbody>
-      </table>
+    <section class="inv-bill-to">
+      <h2>Bill To</h2>
+      <p>Jane Smith<br>456 Client Road<br>City, ST 67890</p>
+    </section>
 
-      <section class="totals-section ease-fade-in ease-delay-600">
-        <div class="total-row">
-          <span>Subtotal:</span>
-          <span>$ <span class="ease-count-up" style="--ease-count-target: 3000;">0</span>.00</span>
-        </div>
-        <div class="total-row">
-          <span>Tax (10%):</span>
-          <span>$ <span class="ease-count-up" style="--ease-count-target: 300;">0</span>.00</span>
-        </div>
-        <div class="total-row grand-total">
-          <span>Grand Total:</span>
-          <span>$ <span class="ease-count-up" style="--ease-count-target: 3300;">0</span>.00</span>
-        </div>
-      </section>
-    </main>
+    <table class="inv-items">
+      <thead>
+        <tr><th>Description</th><th>Qty</th><th>Rate</th><th>Amount</th></tr>
+      </thead>
+      <tbody>
+        <tr class="slide-in" style="--i:1;"><td>Web Design — Homepage</td><td>1</td><td>$1,200.00</td><td>$1,200.00</td></tr>
+        <tr class="slide-in" style="--i:2;"><td>UI/UX Audit</td><td>3</td><td>$150.00</td><td>$450.00</td></tr>
+        <tr class="slide-in" style="--i:3;"><td>Development — 5 pages</td><td>5</td><td>$350.00</td><td>$1,750.00</td></tr>
+        <tr class="slide-in" style="--i:4;"><td>SEO Optimization</td><td>1</td><td>$600.00</td><td>$600.00</td></tr>
+        <tr class="slide-in" style="--i:5;"><td>Hosting Setup (annual)</td><td>1</td><td>$240.00</td><td>$240.00</td></tr>
+      </tbody>
+    </table>
 
-    <footer class="actions">
-      <button class="btn-print ease-ripple" onclick="window.print()">
-        <span>🖨️</span> Print Invoice
-      </button>
-    </footer>
+    <div class="inv-totals fade-in-up">
+      <div class="total-row"><span>Subtotal</span><span>$4,240.00</span></div>
+      <div class="total-row"><span>Tax (8%)</span><span>$339.20</span></div>
+      <div class="total-row total-final"><span>Total Due</span><span>$4,579.20</span></div>
+    </div>
+
+    <div class="inv-footer">
+      <span class="badge pulse">Paid</span>
+      <button class="print-btn ripple" onclick="window.print()">Print (Ctrl+P)</button>
+    </div>
   </div>
-
 </body>
 </html>

@@ -1,37 +1,31 @@
-# Invoice/Receipt Page with Print-Friendly Animated Layout
+# Invoice Receipt
 
-A professional, clean, and animated invoice/receipt template built using **EaseMotion CSS**. This example demonstrates how to combine entrance animations, looping status indicators, and scroll-triggered (or on-load) count-up animations in a real-world layout that remains fully functional and readable when printed.
+## What does it do?
+A print-friendly invoice/receipt page with animated CSS transitions — pure CSS, no JavaScript (except `window.print()` for the print button).
 
 ## Features
+- Company header with ease-fade-down
+- Line items with staggered ease-slide-in
+- Totals section with ease-fade-in-up
+- Payment status badge with ease-pulse
+- Print button with ripple effect
+- Print-friendly responsive layout with `@media print`
 
-- **Company Header**: Entrance animation using `.ease-fade-down`.
-- **Staggered Line Items**: Row-by-row entrance using `.ease-slide-in-left` combined with staggered `.ease-delay-*` utilities.
-- **Animated Totals**: Dynamic number count-up for Subtotal, Tax, and Grand Total using `.ease-count-up` and `--ease-count-target`.
-- **Status Indicator**: "Paid" badge with a subtle breathing pulse effect using `.ease-pulse`.
-- **Interactive Print Button**: Includes a custom `.ease-ripple` effect on click.
-- **Print-Friendly Layout**: Optimized CSS `@media print` queries that remove interactive elements (buttons) and disable animations for a crisp paper output.
-- **Fully Responsive**: Adapts seamlessly to mobile, tablet, and desktop views.
+## Animations
+| Class | Animation | Description |
+|-------|-----------|-------------|
+| `.fade-down` | fade-down 0.6s | Header slides in from above |
+| `.slide-in` | slide-in 0.4s | Line items slide in from left, staggered |
+| `.fade-in-up` | fade-in-up 0.5s | Totals fade in from below |
+| `.pulse` | pulse 2s | Badge pulses 3 times |
+| `.ripple` | ripple 0.4s | Button ripple on click |
 
-## File Structure
+## Browser Support
+- `@keyframes` + `@media print` — Chrome 26+, Firefox 16+, Safari 6.1+
 
-- `demo.html`: The main markup structure.
-- `style.css`: Custom layout styles and local animation definitions (`ease-fade-down`, `ease-ripple`).
-- `README.md`: Usage and documentation.
+## Tech Stack
+- HTML + CSS only
+- `window.print()` on button (no JS framework)
 
-## How to Use
-
-1. Link to the main `easemotion.css` file in your project.
-2. Apply the `ease-*` classes to your elements as shown in `demo.html`.
-3. For the count-up effect, ensure you set the `--ease-count-target` variable on the element.
-4. For staggered entrances, use the `ease-delay-N` classes (e.g., `ease-delay-100`, `ease-delay-200`) to create a sequential flow.
-
-## EaseMotion Classes Used
-
-| Class | Description |
-|-------|-------------|
-| `.ease-fade-down` | Entrance animation from top with fade. |
-| `.ease-slide-in-left` | Slide entrance from the left. |
-| `.ease-delay-*` | Animation delay utilities for staggering. |
-| `.ease-count-up` | Animated number counter. |
-| `.ease-pulse` | Looping opacity pulse for status. |
-| `.ease-ripple` | Click-triggered ripple effect. |
+## Preview
+Open `demo.html` directly in browser. Use Ctrl+P to see print layout.
