@@ -1078,6 +1078,60 @@
 .ease-duration-medium { animation-duration: var(--ease-speed-medium); transition-duration: var(--ease-speed-medium); }
 .ease-duration-slow   { animation-duration: var(--ease-speed-slow); transition-duration: var(--ease-speed-slow); }
 
+/* ── Ghost Click Prevention ────────────────────────────────── */
+/* Disable pointer events during CSS animations to prevent
+   ghost clicks on elements still animating. */
+.ease-fade-in,
+.ease-fade-out,
+.ease-slide-up,
+.ease-slide-down,
+.ease-slide-in-left,
+.ease-slide-in-right,
+.ease-slide-in-from-top,
+.ease-slide-in-from-bottom,
+.ease-slide-in-from-left,
+.ease-slide-in-from-right,
+.ease-slide-in-from-top-left,
+.ease-slide-in-from-top-right,
+.ease-slide-in-from-bottom-left,
+.ease-slide-in-from-bottom-right,
+.ease-zoom-in,
+.ease-zoom-out,
+.ease-bounce-in,
+.ease-flip,
+.ease-blur-to-focus,
+.ease-contract-bg-exit,
+.ease-contract-image-entrance,
+.ease-shake-card-exit,
+.ease-bounce-button-exit,
+.ease-fade-icon-exit,
+.ease-slide-image-exit,
+.ease-scale-text-exit,
+.ease-glow-shadow-exit,
+.ease-expand-border-exit,
+.ease-contract-shadow-emphasis,
+.ease-pulse-border-emphasis,
+.ease-rotate-image-exit,
+.ease-bounce,
+.ease-pulse,
+.ease-rotate,
+.ease-ping,
+.ease-wave,
+.ease-shake,
+.ease-typewriter-loop,
+.ease-count-up,
+.ease-mask-reveal,
+.ease-mask-reveal-y,
+.ease-mask-reveal-circle,
+.ease-shimmer-text,
+.ease-shimmer-sweep,
+.ease-gradient-rotation,
+.ease-skeleton-shimmer,
+.ease-skeleton-pulse,
+.ease-float {
+  pointer-events: none;
+}
+
 /* ── Reduced Motion: Respect user preference ───────────────── */
 @media (prefers-reduced-motion: reduce) {
   [class*="ease-"] {
