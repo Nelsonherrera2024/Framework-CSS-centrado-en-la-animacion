@@ -1,49 +1,33 @@
-# Responsive Breakpoint Utility Classes
+# .ease-card-info Dark Mode Fix
 
-Adds responsive utility classes with breakpoint prefixes for building responsive layouts.
+This submission demonstrates and fixes a bug where `.ease-card-info` text color is unreadable in dark mode (Issue **#14078**).
 
-## Breakpoints
+## The Bug
 
-| Prefix | Min Width | Example |
-|--------|-----------|--------|
-| `sm` | 640px | `.ease-sm-flex` (already exists) |
-| `md` | 768px | `.ease-md-hidden` |
-| `lg` | 1024px | `.ease-lg-grid-cols-3` |
-| `xl` | 1280px | `.ease-xl-flex-row` |
-| `2xl` | 1536px | `.ease-2xl-w-1/2` |
+`.ease-card-info` sets `color: var(--ease-color-primary-dark, #4b44cc)` with no dark-mode override. In dark mode with a dark background (~#0f172a), the dark purple text renders at approximately 2.3:1 contrast ratio — failing WCAG AA.
 
-## Utility Categories
+## The Fix
 
-| Category | Classes |
-|----------|--------|
-| **Display** | `flex`, `grid`, `block`, `hidden`, `inline`, `inline-block` |
-| **Grid columns** | `grid-cols-1`, `grid-cols-2`, `grid-cols-3`, `grid-cols-4`, `grid-cols-6`, `grid-cols-12` |
-| **Flex direction** | `flex-row`, `flex-col`, `flex-wrap`, `flex-nowrap` |
-| **Gap** | `gap-0` through `gap-8` |
-| **Text alignment** | `text-left`, `text-center`, `text-right` |
-| **Width** | `w-1/2`, `w-1/3`, `w-2/3`, `w-1/4`, `w-3/4`, `w-full` |
-| **Order** | `order-first`, `order-1`, `order-2`, `order-3`, `order-last` |
-| **Alignment** | `items-center`, `items-start`, `items-end`, `justify-center`, `justify-between`, `justify-around`, `justify-end` |
-
-## Usage
-
-```html
-<!-- 2 cols on md, 4 cols on lg -->
-<div class="ease-grid ease-md-grid-cols-2 ease-lg-grid-cols-4">
-  <div>1</div>
-  <div>2</div>
-  <div>3</div>
-  <div>4</div>
-</div>
-
-<!-- Hidden on mobile, flex on md+ -->
-<div class="ease-hidden ease-md-flex">
-  <span>Visible on md+</span>
-</div>
+```css
+@media (prefers-color-scheme: dark) {
+  .ease-card-info,
+  .ease-dark .ease-card-info {
+    color: var(--ease-color-primary-light, #a09af8);
+  }
+}
 ```
 
-## Generation
+This switches to `--ease-color-primary-light` (#a09af8) in dark mode, achieving ≈7.1:1 contrast ratio (WCAG AA ✅).
 
-Classes are generated via CSS `@media (min-width: ...)` queries for each breakpoint. To regenerate, run the Python/SCSS build script in the submission source.
+## Files
 
-Fixes #12460
+- `demo.html` — Side-by-side comparison of broken vs fixed card info text with dark mode and fix toggles
+- `style.css` — The CSS fix, demo styling, contrast table
+- `README.md` — This documentation
+
+## Contrast Comparison
+
+| State | Color | Approx Contrast |
+|-------|-------|----------------|
+| Bug (dark mode) | #4b44cc | ~2.3:1 ❌ |
+| Fix (dark mode) | #a09af8 | ~7.1:1 ✅ |
