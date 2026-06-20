@@ -1040,7 +1040,8 @@ body > .docs-shell {
   font-size: 1.1rem;
   letter-spacing: -0.01em;
   margin-bottom: 0.75rem;
-  color: rgba(255, 255, 255, 0.85);
+  /* Swapped hardcoded white for the dynamic subheading variable */
+  color: var(--heading-sub-color); 
 }
 
 .docs-p {
