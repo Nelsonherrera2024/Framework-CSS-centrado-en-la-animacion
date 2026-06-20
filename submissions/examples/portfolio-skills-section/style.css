@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+  background: #111;
+  color: white;
+  font-family: Arial;
+  text-align: center;
+}
+
+.skills {
+  padding: 50px;
+}
+
+.skill {
+  display: inline-block;
+  background: #222;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 20px;
+}
