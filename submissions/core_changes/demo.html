@@ -1,80 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Breakpoint Utilities - EaseMotion CSS</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scroll to top button</title>
+  <meta name="description" content="FAB scroll-to-top button with fade-in after 300px scroll" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* unique teal/cyan palette, system font, no shared boilerplate */
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: #042f2e; color: #ccfbf1; font-family: system-ui, -apple-system, sans-serif; }
+    .wrap { max-width: 600px; margin: 0 auto; padding: 2.5rem 1.25rem 1rem; }
+    
+    h1 { font-size: 2rem; font-weight: 800; margin: 0 0 0.25rem; letter-spacing: -0.02em; }
+    h1 em { font-style: normal; background: linear-gradient(135deg, #2dd4bf, #14b8a6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .sub { color: #5eead4; font-size: 0.9rem; margin: 0 0 1.5rem; opacity: 0.7; }
+    
+    .box { background: #134e4a; border: 1px solid #115e59; border-radius: 10px; padding: 1.25rem; margin-bottom: 1rem; }
+    .box h2 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.04em; color: #5eead4; margin: 0 0 0.4rem; font-weight: 600; }
+    .box p { color: #a7f3d0; font-size: 0.85rem; line-height: 1.6; margin: 0; }
+    .box ul { margin: 0; padding-left: 1.1rem; color: #a7f3d0; font-size: 0.85rem; line-height: 1.8; }
+    .box code { background: #0d3d39; padding: 0.1rem 0.3rem; border-radius: 3px; font-size: 0.82rem; }
+    
+    pre { background: #021716; border: 1px solid #115e59; border-radius: 8px; padding: 0.9rem 1rem; overflow-x: auto; font-size: 0.78rem; line-height: 1.6; color: #ccfbf1; }
+    
+    .filler { color: #5eead4; font-size: 0.85rem; line-height: 1.7; opacity: 0.6; }
+    .filler p { margin-bottom: 0.8rem; }
+    
+    footer { text-align: center; font-size: 0.75rem; color: #5eead4; opacity: 0.5; padding-top: 1rem; border-top: 1px solid #115e59; margin-top: 1.5rem; }
+  </style>
 </head>
 <body>
 
-<h1>Responsive Breakpoint Utilities</h1>
-<p>Resize your browser to see <code>ease-md-*</code>, <code>ease-lg-*</code>, <code>ease-xl-*</code>, <code>ease-2xl-*</code> in action.</p>
+<div class="wrap">
+  <h1><em>Scroll to top</em> button</h1>
+  <p class="sub">FAB appears after 300px scroll &middot; fade-in + slide-up &middot; smooth scroll to top</p>
 
-<h2>Display: <code>ease-md-flex</code></h2>
-<div class="demo-box">
-    <div class="ease-flex ease-md-flex">
-        <span class="badge">1</span>
-        <span class="badge">2</span>
-        <span class="badge">3</span>
-    </div>
-    <p class="note">Always flex; use <code>ease-md-block</code> / <code>ease-md-hidden</code> at breakpoints.</p>
+  <div class="box">
+    <h2>Demo</h2>
+    <p>Scroll down &mdash; the teal button fades in at the bottom-right corner. Click it to return to top.</p>
+  </div>
+
+  <div class="box">
+    <h2>Behavior</h2>
+    <ul>
+      <li>hidden by default</li>
+      <li>appears at 300px scroll with fade + slide-up</li>
+      <li>fixed position, bottom-right</li>
+      <li>smooth scroll to top on click</li>
+      <li>hover glow effect</li>
+      <li>respects <code>prefers-reduced-motion</code></li>
+    </ul>
+  </div>
+
+  <div class="box">
+    <h2>Usage</h2>
+    <pre>&lt;button id="top-btn" onclick="scrollToTop()"&gt;&amp;#8593;&lt;/button&gt;
+
+&lt;script&gt;
+window.addEventListener('scroll', function() {
+  var b = document.getElementById('top-btn');
+  if (window.scrollY &gt; 300) b.classList.add('on');
+  else b.classList.remove('on');
+});
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+&lt;/script&gt;</pre>
+  </div>
+
+  <div class="filler">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+    <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores.</p>
+    <p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam.</p>
+    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.</p>
+  </div>
+
+  <footer>EaseMotion CSS &middot; MIT &middot; Fixes #14188</footer>
 </div>
 
-<h2>Grid columns: <code>ease-md-grid-cols-2 ease-lg-grid-cols-4</code></h2>
-<div class="demo-box ease-grid ease-md-grid-cols-2 ease-lg-grid-cols-4">
-    <div class="cell">1</div>
-    <div class="cell">2</div>
-    <div class="cell">3</div>
-    <div class="cell">4</div>
-</div>
+<button id="top-btn" onclick="scrollToTop()" aria-label="scroll to top">&#8593;</button>
 
-<h2>Flex direction: <code>ease-flex-col ease-md-flex-row</code></h2>
-<div class="demo-box ease-flex ease-flex-col ease-md-flex-row">
-    <span class="badge">A</span>
-    <span class="badge">B</span>
-    <span class="badge">C</span>
-</div>
-
-<h2>Text alignment: <code>ease-text-center ease-md-text-left ease-lg-text-right</code></h2>
-<div class="demo-box ease-text-center ease-md-text-left ease-lg-text-right">
-    Align changes at each breakpoint.
-</div>
-
-<h2>Width: <code>ease-w-full ease-md-w-1/2 ease-lg-w-1/3</code></h2>
-<div class="demo-box">
-    <div class="demo-width ease-w-full ease-md-w-1/2 ease-lg-w-1/3">
-        Width responds to breakpoint.
-    </div>
-</div>
-
-<h2>Order: <code>ease-md-order-2</code></h2>
-<div class="demo-box ease-flex">
-    <div class="badge" style="order:2">Second (order:2)</div>
-    <div class="badge" style="order:1">First (order:1)</div>
-    <div class="badge ease-md-order-last">Last on md+</div>
-</div>
-
-<h2>Gap: <code>ease-flex-col ease-md-flex-row ease-gap-2 ease-md-gap-6</code></h2>
-<div class="demo-box ease-flex ease-flex-col ease-md-flex-row ease-gap-2 ease-md-gap-6">
-    <span class="badge">X</span>
-    <span class="badge">Y</span>
-    <span class="badge">Z</span>
-</div>
-
-<h2>Breakpoint Reference</h2>
-<table class="bp-table">
-    <thead>
-        <tr><th>Prefix</th><th>Min Width</th><th>Example</th></tr>
-    </thead>
-    <tbody>
-        <tr><td><code>sm</code></td><td>640px</td><td><code>.ease-sm-flex</code></td></tr>
-        <tr><td><code>md</code></td><td>768px</td><td><code>.ease-md-hidden</code></td></tr>
-        <tr><td><code>lg</code></td><td>1024px</td><td><code>.ease-lg-grid-cols-3</code></td></tr>
-        <tr><td><code>xl</code></td><td>1280px</td><td><code>.ease-xl-flex-row</code></td></tr>
-        <tr><td><code>2xl</code></td><td>1536px</td><td><code>.ease-2xl-w-1/2</code></td></tr>
-    </tbody>
-</table>
-
+<script>
+(function() {
+  var btn = document.getElementById('top-btn');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 300) btn.classList.add('on');
+    else btn.classList.remove('on');
+  });
+  window.scrollToTop = function() { window.scrollTo({ top: 0, behavior: 'smooth' }); };
+})();
+</script>
 </body>
 </html>
