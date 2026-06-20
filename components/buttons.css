@@ -114,8 +114,8 @@
 /* Ghost */
 .ease-btn-ghost {
   background-color: transparent;
-  color: var(--ease-color-neutral-700, #334155);
-  border-color: transparent;
+  color: var(--ease-color-neutral-700);
+  border-color: var(--ease-color-neutral-400);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -234,10 +234,9 @@
   top: 50%;
   left: 50%;
   font-size: var(--ease-text-base, 1rem);
-  translate: -50% -50%;
   width: 0.85em;
   height: 0.85em;
-  border: 2px solid currentColor;
+  border: 2px solid var(--ease-btn-spinner-color,rgba(255, 255, 255, 0.85));
   border-top-color: transparent;
   border-radius: 50%;
   animation: ease-kf-btn-spin 0.7s linear infinite;
