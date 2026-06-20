@@ -1,0 +1,14 @@
+/** animation-fill-mode utilities */
+.ease-fill-none     { animation-fill-mode: none !important; }
+.ease-fill-forwards { animation-fill-mode: forwards !important; }
+.ease-fill-backwards{ animation-fill-mode: backwards !important; }
+.ease-fill-both     { animation-fill-mode: both !important; }
+
+/* Demo: fade-in that stays visible using ease-fill-forwards */
+.demo-card {
+  background: var(--ease-color-surface, #fff);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  width: 200px;
+}
