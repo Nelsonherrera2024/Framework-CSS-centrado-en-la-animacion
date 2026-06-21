@@ -1,0 +1,73 @@
+@layer easemotion-components {
+  .ease-progress-ring {
+    --ease-ring-size: 100px;
+    --ease-ring-thickness: 8px;
+    --ease-ring-color: var(--ease-color-primary, #6c63ff);
+    --ease-ring-bg: #e2e8f0;
+    --ease-ring-percent: 0;
+    --ease-ring-speed: 0.5s;
+    
+    width: var(--ease-ring-size);
+    height: var(--ease-ring-size);
+    border-radius: 50%;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: conic-gradient(
+      var(--ease-ring-color) calc(var(--ease-ring-percent) * 1%),
+      var(--ease-ring-bg) calc(var(--ease-ring-percent) * 1%)
+    );
+    transition: --ease-ring-percent var(--ease-ring-speed) ease-in-out;
+  }
+  
+  .ease-progress-ring::before {
+    content: "";
+    position: absolute;
+    inset: var(--ease-ring-thickness);
+    background-color: var(--ease-color-neutral-50, #ffffff);
+    border-radius: 50%;
+  }
+
+  /* Support dark mode inner circle if available */
+  @media (prefers-color-scheme: dark) {
+    .ease-progress-ring::before {
+      background-color: var(--ease-color-neutral-900, #1f2937);
+    }
+  }
+
+  /* The inner content (like text percentage) */
+  .ease-progress-ring-text {
+    position: relative;
+    z-index: 1;
+    font-weight: 600;
+    color: var(--ease-color-neutral-900, #1f2937);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .ease-progress-ring-text {
+      color: var(--ease-color-neutral-50, #ffffff);
+    }
+  }
+
+  /* Indeterminate animated state */
+  .ease-progress-ring[data-animated="true"] {
+    background: conic-gradient(
+      from 0deg,
+      transparent 0%,
+      var(--ease-ring-color) 100%
+    );
+    animation: ease-spin-ring 1s linear infinite;
+  }
+
+  @keyframes ease-spin-ring {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+}
+
+@property --ease-ring-percent {
+  syntax: '<number>';
+  initial-value: 0;
+  inherits: true;
+}
