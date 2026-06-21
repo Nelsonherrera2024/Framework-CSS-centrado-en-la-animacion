@@ -1,27 +1,29 @@
-# Ease Avatar Group
+# Avatar Group (`ease-avatar-group`)
 
-A CSS-only animated avatar group (avatar stack) component for displaying multiple user profiles in a compact, overlapping layout. Perfect for team pages, chat headers, and collaboration tools.
+An overlapping avatar stack component featuring a smooth hover-spread animation. Built for the EaseMotion-css framework.
 
-## Key Features
-- **Overlapping Stack**: Clean overlapping avatars using negative margins and border rings for separation.
-- **Micro-interactions**: Avatars elevate on hover to reveal themselves without breaking the stack.
-- **Overflow Indicator**: Built-in support for showing remaining user counts (`+N`).
-- **Configurable Overlap**: Easily adjust the overlap amount using the `--ease-avatar-overlap` CSS variable.
-- **Responsive & Lightweight**: Pure CSS implementation with zero dependencies.
+## 🚀 Features
 
-## How to Use
-1. Include `easemotion.css` in your project.
-2. Use the `.ease-avatar-group` container with `.ease-avatar-group-item` for each avatar.
-3. Add an `.ease-avatar-group-count` at the end for overflow indicators.
+- **Negative Margin Overlap**: Seamlessly stacks avatars using configurable negative margins.
+- **Group Hover Spread**: Hovering anywhere on the group gently pulls the avatars apart, improving visibility of individual faces.
+- **Individual Hover Pop**: Hovering a specific avatar scales it up and brings it to the front using z-index manipulation.
+- **Responsive Sizes**: Includes base size, Small (`.ease-avatar-sm`), and Large (`.ease-avatar-lg`).
+- **Overflow Support**: Includes a `.ease-avatar-overflow` utility for the classic "+N" remaining indicator.
+- **Zero JavaScript**: Operates purely on CSS `:hover` states and transitions.
+
+## 🛠️ Usage
+
+Wrap individual `.ease-avatar` elements inside an `.ease-avatar-group` container.
 
 ```html
 <div class="ease-avatar-group">
-  <img class="ease-avatar-group-item" src="user1.jpg" alt="User 1">
-  <img class="ease-avatar-group-item" src="user2.jpg" alt="User 2">
-  <div class="ease-avatar-group-count">+3</div>
+  <div class="ease-avatar">
+    <img src="user1.jpg" alt="User 1" />
+  </div>
+  <div class="ease-avatar">
+    <img src="user2.jpg" alt="User 2" />
+  </div>
+  <div class="ease-avatar ease-avatar-overflow">
+    <span>+3</span>
+  </div>
 </div>
-```
-
-## Directory Structure
-- `demo.html`: Interactive showcase of different avatar group variants.
-- `style.css`: Core styles for the stack layout and animations.
