@@ -168,6 +168,42 @@
     border-right-color: var(--ease-tooltip-bg);
   }
 
+  /* ── Edge Alignment Modifiers ───────────────────────────────────────────── */
+
+  /* Shift tooltip left if near right edge */
+  .ease-tooltip[data-align="end"]::after {
+    left: auto;
+    right: 0;
+    transform: translateX(0) translateY(4px);
+  }
+
+  .ease-tooltip[data-align="end"]:hover::after,
+  .ease-tooltip[data-align="end"]:focus-within::after {
+    transform: translateX(0) translateY(0);
+  }
+
+  .ease-tooltip[data-align="end"]::before {
+    left: auto;
+    right: 12px;
+  }
+
+  /* Shift tooltip right if near left edge */
+  .ease-tooltip[data-align="start"]::after {
+    left: 0;
+    right: auto;
+    transform: translateX(0) translateY(4px);
+  }
+
+  .ease-tooltip[data-align="start"]:hover::after,
+  .ease-tooltip[data-align="start"]:focus-within::after {
+    transform: translateX(0) translateY(0);
+  }
+
+  .ease-tooltip[data-align="start"]::before {
+    left: 12px;
+    right: auto;
+  }
+
   /* ── Width Variations ───────────────────────────────────────────────────── */
 
   /* Wide variant for medium text lengths */
