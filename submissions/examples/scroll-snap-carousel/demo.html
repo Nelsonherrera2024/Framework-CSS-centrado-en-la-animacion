@@ -3,128 +3,134 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Scroll-Snap Carousel</title>
+  <title>Scroll Snap Carousel</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Scroll-Snap Carousel</h1>
-    <p>Horizontal scroll-snap carousel with dot indicators and arrow navigation</p>
-  </header>
-
   <main>
-    <div class="carousel-wrapper">
-      <button class="arrow arrow-left" aria-label="Previous slide">&#8249;</button>
+    <h1>Scroll Snap Carousel</h1>
+    <p class="subtitle">Horizontal scroll-snap with snap-type: x mandatory &amp; snap-align: center</p>
 
-      <div class="carousel" id="carousel" role="listbox" aria-label="Image carousel" tabindex="0">
-        <figure class="slide" role="option" aria-selected="true" data-index="0">
-          <img src="https://picsum.photos/seed/slide1/800/500" alt="Mountain landscape" loading="lazy" width="800" height="500">
-          <figcaption>Mountain Vista</figcaption>
+    <div class="carousel-wrapper">
+      <button class="carousel-btn carousel-btn--prev" aria-label="Previous slide">&#10094;</button>
+
+      <div class="carousel" tabindex="0" role="region" aria-label="Image carousel">
+        <figure class="carousel__slide">
+          <div class="carousel__image" style="--img: #1a1f2e">
+            <span class="carousel__emoji">&#127958;</span>
+          </div>
+          <figcaption class="carousel__caption">
+            <h2>Mountain Retreat</h2>
+            <p>Serene landscapes and crisp alpine air await.</p>
+          </figcaption>
         </figure>
-        <figure class="slide" role="option" aria-selected="false" data-index="1">
-          <img src="https://picsum.photos/seed/slide2/800/500" alt="Ocean sunset" loading="lazy" width="800" height="500">
-          <figcaption>Ocean Sunset</figcaption>
+
+        <figure class="carousel__slide">
+          <div class="carousel__image" style="--img: #1e2a3a">
+            <span class="carousel__emoji">&#127754;</span>
+          </div>
+          <figcaption class="carousel__caption">
+            <h2>Ocean Horizon</h2>
+            <p>Endless waves stretching toward the setting sun.</p>
+          </figcaption>
         </figure>
-        <figure class="slide" role="option" aria-selected="false" data-index="2">
-          <img src="https://picsum.photos/seed/slide3/800/500" alt="Forest path" loading="lazy" width="800" height="500">
-          <figcaption>Forest Path</figcaption>
+
+        <figure class="carousel__slide">
+          <div class="carousel__image" style="--img: #2a1e1e">
+            <span class="carousel__emoji">&#127963;</span>
+          </div>
+          <figcaption class="carousel__caption">
+            <h2>Urban Nights</h2>
+            <p>City lights painting stories across the skyline.</p>
+          </figcaption>
         </figure>
-        <figure class="slide" role="option" aria-selected="false" data-index="3">
-          <img src="https://picsum.photos/seed/slide4/800/500" alt="City skyline" loading="lazy" width="800" height="500">
-          <figcaption>City Skyline</figcaption>
+
+        <figure class="carousel__slide">
+          <div class="carousel__image" style="--img: #1e2e1e">
+            <span class="carousel__emoji">&#127811;</span>
+          </div>
+          <figcaption class="carousel__caption">
+            <h2>Forest Canopy</h2>
+            <p>Dappled sunlight through ancient towering trees.</p>
+          </figcaption>
         </figure>
-        <figure class="slide" role="option" aria-selected="false" data-index="4">
-          <img src="https://picsum.photos/seed/slide5/800/500" alt="Northern lights" loading="lazy" width="800" height="500">
-          <figcaption>Northern Lights</figcaption>
+
+        <figure class="carousel__slide">
+          <div class="carousel__image" style="--img: #2e1e2e">
+            <span class="carousel__emoji">&#10024;</span>
+          </div>
+          <figcaption class="carousel__caption">
+            <h2>Starry Expanse</h2>
+            <p>Constellations scattered across the velvet sky.</p>
+          </figcaption>
         </figure>
       </div>
 
-      <button class="arrow arrow-right" aria-label="Next slide">&#8250;</button>
+      <button class="carousel-btn carousel-btn--next" aria-label="Next slide">&#10095;</button>
     </div>
 
-    <div class="dots" id="dots" role="tablist" aria-label="Slide indicators"></div>
+    <div class="carousel-dots" role="tablist" aria-label="Slide indicators"></div>
+
+    <section class="notes">
+      <h3>How it works</h3>
+      <ul>
+        <li><code>scroll-snap-type: x mandatory</code> on the container enforces snap points.</li>
+        <li><code>scroll-snap-align: center</code> on each slide snaps to center.</li>
+        <li>Arrow buttons use <code>element.scrollBy({ behavior: 'smooth' })</code>.</li>
+        <li>Intersection Observer updates dot indicators in real time.</li>
+      </ul>
+    </section>
   </main>
 
   <script>
-    (function() {
-      const carousel = document.getElementById('carousel');
-      const slides = carousel.querySelectorAll('.slide');
-      const dotsContainer = document.getElementById('dots');
-      const leftBtn = document.querySelector('.arrow-left');
-      const rightBtn = document.querySelector('.arrow-right');
-      let currentIndex = 0;
+    const carousel = document.querySelector('.carousel');
+    const slides = carousel.querySelectorAll('.carousel__slide');
+    const prevBtn = document.querySelector('.carousel-btn--prev');
+    const nextBtn = document.querySelector('.carousel-btn--next');
+    const dotsContainer = document.querySelector('.carousel-dots');
 
-      slides.forEach((_, i) => {
-        const dot = document.createElement('button');
-        dot.className = 'dot' + (i === 0 ? ' active' : '');
-        dot.setAttribute('role', 'tab');
-        dot.setAttribute('aria-label', 'Slide ' + (i + 1));
-        dot.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
-        dot.addEventListener('click', () => goTo(i));
-        dotsContainer.appendChild(dot);
+    let currentIndex = 0;
+
+    slides.forEach((_, i) => {
+      const dot = document.createElement('button');
+      dot.className = 'carousel-dot';
+      dot.setAttribute('role', 'tab');
+      dot.setAttribute('aria-label', `Slide ${i + 1}`);
+      dot.addEventListener('click', () => {
+        slides[i].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
       });
+      dotsContainer.appendChild(dot);
+    });
 
-      function updateDots() {
-        dotsContainer.querySelectorAll('.dot').forEach((dot, i) => {
-          dot.classList.toggle('active', i === currentIndex);
-          dot.setAttribute('aria-selected', i === currentIndex ? 'true' : 'false');
-        });
-        slides.forEach((slide, i) => {
-          slide.setAttribute('aria-selected', i === currentIndex ? 'true' : 'false');
-        });
-      }
+    const dots = dotsContainer.querySelectorAll('.carousel-dot');
 
-      function goTo(index) {
-        const slide = slides[index];
-        if (slide) {
-          slide.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
-          currentIndex = index;
-          updateDots();
-        }
-      }
-
-      function getVisibleIndex() {
-        const containerRect = carousel.getBoundingClientRect();
-        let closest = 0;
-        let closestDist = Infinity;
-        slides.forEach((slide, i) => {
-          const rect = slide.getBoundingClientRect();
-          const dist = Math.abs(rect.left - containerRect.left);
-          if (dist < closestDist) {
-            closestDist = dist;
-            closest = i;
-          }
-        });
-        return closest;
-      }
-
-      function onScroll() {
-        const idx = getVisibleIndex();
-        if (idx !== currentIndex) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const idx = Array.from(slides).indexOf(entry.target);
           currentIndex = idx;
-          updateDots();
-        }
-      }
-
-      carousel.addEventListener('scroll', onScroll, { passive: true });
-
-      leftBtn.addEventListener('click', () => {
-        const prev = Math.max(0, currentIndex - 1);
-        goTo(prev);
-      });
-
-      rightBtn.addEventListener('click', () => {
-        const next = Math.min(slides.length - 1, currentIndex + 1);
-        goTo(next);
-      });
-
-      document.addEventListener('keydown', (e) => {
-        if (document.activeElement === carousel || carousel.contains(document.activeElement)) {
-          if (e.key === 'ArrowLeft') { e.preventDefault(); leftBtn.click(); }
-          if (e.key === 'ArrowRight') { e.preventDefault(); rightBtn.click(); }
+          dots.forEach((d, i) => d.classList.toggle('carousel-dot--active', i === idx));
         }
       });
-    })();
+    }, { root: carousel, threshold: 0.6 });
+
+    slides.forEach((s) => observer.observe(s));
+
+    function scrollSlide(dir) {
+      const w = slides[0].getBoundingClientRect().width;
+      const gap = parseFloat(getComputedStyle(carousel).gap) || 16;
+      carousel.scrollBy({ left: (w + gap) * dir, behavior: 'smooth' });
+    }
+
+    prevBtn.addEventListener('click', () => scrollSlide(-1));
+    nextBtn.addEventListener('click', () => scrollSlide(1));
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft' && document.activeElement === carousel) scrollSlide(-1);
+      if (e.key === 'ArrowRight' && document.activeElement === carousel) scrollSlide(1);
+    });
+
+    dots[0]?.classList.add('carousel-dot--active');
   </script>
 </body>
 </html>

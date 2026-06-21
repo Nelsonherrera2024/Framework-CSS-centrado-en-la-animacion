@@ -1,11 +1,19 @@
-## What
+# Scroll Snap Carousel
 
-A CSS scroll-snap horizontal carousel with image cards, dot indicators, and arrow navigation buttons. Uses `scroll-snap-type: x mandatory` for native snapping behavior. The active slide is highlighted with a scale effect and accent border. Keyboard navigation and reduced-motion support included.
+A horizontal carousel built with CSS scroll-snap (`scroll-snap-type: x mandatory`, `scroll-snap-align: center`), arrow navigation, and dot indicators updated via Intersection Observer.
 
-## How
+## How it works
 
-The `.carousel` container has `overflow-x: auto` and `scroll-snap-type: x mandatory`. Each `.slide` is `flex: 0 0 calc(100% - 1rem)` with `scroll-snap-align: start`. Dot indicators and arrow buttons use minimal JS to call `scrollIntoView({ behavior: 'smooth', inline: 'start' })` on the target slide. A passive scroll listener updates the active dot based on the closest slide to the container's left edge. `prefers-reduced-motion` disables smooth scrolling and transitions.
+- The `.carousel` container uses `overflow-x: auto` with `scroll-snap-type: x mandatory`, so each scroll lands on a slide.
+- Each `.carousel__slide` has `scroll-snap-align: center` to snap to the visual center.
+- Arrow buttons call `carousel.scrollBy({ left: (slideWidth + gap) * direction, behavior: 'smooth' })`.
+- An Intersection Observer watches slide visibility (threshold 0.6) and toggles `.carousel-dot--active`.
+- Keyboard support: ArrowLeft / ArrowRight when the carousel is focused.
 
-## Why
+## Key features
 
-CSS `scroll-snap` provides native, performant, inertial scrolling without a JS drag/carousel library. The snapping gives users precise control over which slide is centered. Dot indicators and arrow buttons add familiar navigation affordances. This approach is accessible (keyboard-navigable, ARIA attributes) and works across devices with touch/mouse/scroll wheel.
+- CSS-only snapping behavior; JS used only for arrows, dots, and keyboard nav.
+- Dot indicators as small buttons with an active pill shape (wider + accent color).
+- Smooth `scroll-behavior` on the container (disabled with `prefers-reduced-motion: reduce`).
+- Fully responsive: slides shrink to 85% width on mobile; arrow buttons hidden.
+- Dark theme with `#0a0f1e` background, `#e2e8f0` text, and a blue accent.
