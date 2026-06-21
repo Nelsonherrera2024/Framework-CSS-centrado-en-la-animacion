@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View Transitions — Gallery</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="page-nav">
+  <a href="demo.html" class="nav-link" data-page="home">Home</a>
+  <a href="gallery.html" class="nav-link active" data-page="gallery">Gallery</a>
+  <a href="details.html" class="nav-link" data-page="details">Details</a>
+</nav>
+
+<main class="page gallery-page">
+  <h1 class="page-title">Gallery</h1>
+  <div class="card-grid">
+    <div class="card" style="view-transition-name: card-1;">
+      <div class="card-image" style="background: linear-gradient(135deg, #6366f1, #a855f7);"></div>
+      <p>Abstract gradient</p>
+    </div>
+    <div class="card" style="view-transition-name: card-2;">
+      <div class="card-image" style="background: linear-gradient(135deg, #f59e0b, #ef4444);"></div>
+      <p>Warm sunset</p>
+    </div>
+    <div class="card" style="view-transition-name: card-3;">
+      <div class="card-image" style="background: linear-gradient(135deg, #10b981, #3b82f6);"></div>
+      <p>Ocean depths</p>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <p>EaseMotion CSS — View Transitions Nav Demo</p>
+</footer>
+
+</body>
+</html>

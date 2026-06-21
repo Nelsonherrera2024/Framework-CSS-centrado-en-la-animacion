@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View Transitions — Details</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="page-nav">
+  <a href="demo.html" class="nav-link" data-page="home">Home</a>
+  <a href="gallery.html" class="nav-link" data-page="gallery">Gallery</a>
+  <a href="details.html" class="nav-link active" data-page="details">Details</a>
+</nav>
+
+<main class="page details-page">
+  <h1 class="page-title">Details</h1>
+  <div class="card-grid">
+    <div class="card detail-card" style="view-transition-name: card-1;">
+      <h2>@view-transition Rule</h2>
+      <p>The <code>@view-transition</code> at-rule enables navigation-based transitions. Use <code>navigation: auto;</code> to opt in.</p>
+    </div>
+    <div class="card detail-card" style="view-transition-name: card-2;">
+      <h2>view-transition-name</h2>
+      <p>Assign matching names across pages so elements morph rather than fade. Each named element gets its own pseudo-element tree.</p>
+    </div>
+    <div class="card detail-card" style="view-transition-name: card-3;">
+      <h2>Browser Support</h2>
+      <p>Chrome 111+, Edge 111+. Firefox and Safari are actively developing support.</p>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <p>EaseMotion CSS — View Transitions Nav Demo</p>
+</footer>
+
+</body>
+</html>
