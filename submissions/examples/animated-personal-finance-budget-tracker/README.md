@@ -1,65 +1,58 @@
 # Animated Personal Finance Budget Tracker
 
-## What does this do?
+1. **What does this do?**  
+   An interactive personal finance budget tracker dashboard designed to display monthly income, expenses, remaining balances, budget category breakdowns (Housing, Dining, Shopping, Entertainment) with custom animatable progress bars, recent transactions, and an animated circular SVG savings goal progress ring.
 
-This component is an animated personal finance budget tracker dashboard that displays monthly income, expenses, remaining balances, budget category breakdowns (Housing, Dining, Shopping, Entertainment) with custom grow progress bars, recent transaction previews, and an animated circular SVG savings goal progress ring using pure HTML and CSS.
+2. **How is it used?**  
+   The component is written to be self-contained and modular. All class names are isolated with the `apf-` prefix to prevent namespace collisions.
 
-## How is it used?
+   ### HTML Dashboard Outline
+   ```html
+   <main class="apf-dashboard-shell">
+     <div class="apf-card">
+       <!-- Header & theme controls -->
+       <header class="apf-header">
+         <h1 class="apf-title">Personal Finance Tracker</h1>
+       </header>
 
-The component structure is self-contained. Below is an example structure of the dashboard elements and styling classes:
+       <!-- Stats block -->
+       <section class="apf-summary-grid">
+         <div class="apf-summary-card">
+           <strong id="totalIncome">$4,800.00</strong>
+           <span>Monthly Income</span>
+         </div>
+       </section>
 
-```html
-<div class="apf-card">
-  <header class="apf-header">
-    <h1 class="apf-title">Personal Budget & Spending Tracker</h1>
-    <div class="apf-status-badge">
-      <span class="apf-pulse-dot" aria-hidden="true"></span>
-      <span>Budget On Track</span>
-    </div>
-  </header>
+       <!-- Two column content grid -->
+       <div class="apf-grid">
+         <!-- Left side: Category limits & creation forms -->
+         <section class="apf-left-col">
+           <div class="apf-panel">
+             <h2 class="apf-section-title">Spending Categories</h2>
+             <div class="apf-category-item">
+               <div class="apf-progress-track">
+                 <div class="apf-progress-fill" id="fill-housing" style="width: 80%;"></div>
+               </div>
+             </div>
+           </div>
+         </section>
 
-  <!-- Summary Grid -->
-  <section class="apf-summary-grid">
-    <div class="apf-summary-card">
-      <strong>$4,800.00</strong>
-      <span>Monthly Income</span>
-    </div>
-  </section>
+         <!-- Right side: Savings circle & recent transactions list -->
+         <section class="apf-right-col">
+           <div class="apf-panel apf-savings-panel">
+             <!-- Circular SVG Ring Progress -->
+             <svg class="apf-progress-ring" width="140" height="140">
+               <circle class="apf-progress-ring-fill" stroke-width="10" r="58" cx="70" cy="70" id="progressRingFill" />
+             </svg>
+           </div>
+         </section>
+       </div>
+     </div>
+   </main>
+   ```
 
-  <div class="apf-grid">
-    <!-- Main Info Column -->
-    <section class="apf-left-col">
-      <div class="apf-panel">
-        <div class="apf-category-item">
-          <strong>Housing & Utilities</strong>
-          <div class="apf-progress-track">
-            <div
-              class="apf-progress-fill"
-              style="--apf-pct: 80;"
-              aria-label="Housing: 80%"
-            ></div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-</div>
-```
-
-## Why is it useful?
-
-It provides a professional, zero-JavaScript dashboard module designed for personal finance settings, banking systems, expense sheets, and billing tools. By utilizing pure CSS variables, keyframe animations for circular progress ring velocity and category progressions, hover transforms on metric blocks, and media query controls (for responsiveness and accessibility overrides), it delivers accessible, high-performance interactions that match the EaseMotion CSS framework rules.
-
-## Tech Stack
-
-- HTML5 (Semantic fintech layout, tabindex accessibility hooks)
-- CSS3 (Custom keyframe animations, SVG circular offset calculations, CSS Grid/Flexbox layouts, media query overrides for responsiveness and reduced-motion states)
-
-## Preview
-
-Open [demo.html](file:///c:/Users/LENOVO/Desktop/GSSoC/Ease%20Motion/EaseMotion-css-gssoc/submissions/examples/animated-personal-finance-budget-tracker/demo.html) directly in your browser to see the effect.
-
-## Contribution Notes
-
-- Class naming uses the `apf-` prefix to prevent collision.
-- Maintainers will standardize classes to the `ease-*` convention before merge.
+3. **Why is it useful?**  
+   - **Full Interactive Mockup**: Unlike static examples, this dashboard has a built-in transaction logger, a dark/light mode toggle with smooth transitions, and live updates.
+   - **State-Synchronized CSS Animations**: Transitions are managed by CSS transition and animation engines (triggered by JS state changes setting variables like `--apf-pct` and SVG `stroke-dashoffset`).
+   - **Hardware Accelerated**: Visual states are optimized for rendering speed.
+   - **A11y Compliant**: Focus indicators are styled specifically for keyboard navigation (`:focus-visible`), and a full `@media (prefers-reduced-motion: reduce)` block disables layout transforms and velocity calculations for users with motion sensitivities.

@@ -1,233 +1,506 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Animated Personal Finance Budget Tracker (EaseMotion CSS)</title>
-    <link rel="stylesheet" href="./style.css" />
-  </head>
-  <body>
-    <main class="apf-dashboard-shell">
-      <div class="apf-card">
-        <!-- Dashboard Header -->
-        <header class="apf-header">
-          <div class="apf-header-left">
-            <h1 class="apf-title">Personal Budget & Spending Tracker</h1>
-            <p class="apf-subtitle">
-              Monitor monthly budgets, category spendings, savings progress, and
-              overall financial health.
-            </p>
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animated Personal Finance Budget Tracker — EaseMotion CSS</title>
+  <meta name="description" content="An interactive Fintech dashboard demonstrating advanced layout transitions, circular SVG dashoffsets, and state-synchronized CSS animations.">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  
+  <main class="apf-dashboard-shell">
+    <div class="apf-card">
+      
+      <!-- Dashboard Header -->
+      <header class="apf-header">
+        <div class="apf-header-left">
+          <h1 class="apf-title" id="dashboard-heading">Personal Finance Tracker</h1>
+          <p class="apf-subtitle">Monitor monthly budgets, category spendings, savings progress, and overall financial health.</p>
+        </div>
+        
+        <div class="apf-actions-bar">
+          <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Light/Dark Theme">
+            🌙 Dark Mode
+          </button>
+          
+          <div class="apf-status-badge" id="budgetStatus">
+            <span class="apf-pulse-dot" aria-hidden="true"></span>
+            <span id="statusText">Budget On Track</span>
           </div>
-          <div class="apf-header-right">
-            <div class="apf-status-badge">
-              <span class="apf-pulse-dot" aria-hidden="true"></span>
-              <span>Budget On Track</span>
-            </div>
-          </div>
-        </header>
+        </div>
+      </header>
 
-        <!-- Income/Expense Stats Grid -->
-        <section class="apf-summary-grid">
-          <div class="apf-summary-card" tabindex="0">
-            <span class="apf-summary-icon" aria-hidden="true">📥</span>
-            <div class="apf-summary-info">
-              <strong>$4,800.00</strong>
-              <span>Monthly Income</span>
+      <!-- Income/Expense Stats Grid -->
+      <section class="apf-summary-grid" aria-label="Financial Summary Cards">
+        <div class="apf-summary-card" tabindex="0">
+          <span class="apf-summary-icon" aria-hidden="true">📥</span>
+          <div class="apf-summary-info">
+            <strong id="totalIncome">$4,800.00</strong>
+            <span>Monthly Income</span>
+          </div>
+        </div>
+
+        <div class="apf-summary-card" tabindex="0">
+          <span class="apf-summary-icon" aria-hidden="true">📤</span>
+          <div class="apf-summary-info">
+            <strong id="totalExpenses">$2,180.00</strong>
+            <span>Monthly Expenses</span>
+          </div>
+        </div>
+
+        <div class="apf-summary-card apf-summary-card--remaining" tabindex="0">
+          <span class="apf-summary-icon" aria-hidden="true">💰</span>
+          <div class="apf-summary-info">
+            <strong id="totalRemaining">$2,620.00</strong>
+            <span>Remaining Budget</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Main Grid Layout -->
+      <div class="apf-grid">
+        
+        <!-- Left Column: Spending Categories & Transactions -->
+        <section class="apf-left-col">
+          
+          <!-- Spending Categories -->
+          <div class="apf-panel">
+            <h2 class="apf-section-title">Spending Categories</h2>
+            
+            <div class="apf-categories-list">
+              <!-- Housing -->
+              <div class="apf-category-item" tabindex="0" id="cat-housing">
+                <div class="apf-category-header">
+                  <strong>Housing & Utilities</strong>
+                  <span id="label-housing">$1,200 / $1,500</span>
+                </div>
+                <div class="apf-progress-track">
+                  <div class="apf-progress-fill" id="fill-housing" style="width: 80%;" aria-label="Housing: 80% spent"></div>
+                </div>
+                <span class="apf-category-meta" id="meta-housing">80.0% of limit spent</span>
+              </div>
+
+              <!-- Food & Dining -->
+              <div class="apf-category-item" tabindex="0" id="cat-dining">
+                <div class="apf-category-header">
+                  <strong>Food & Dining</strong>
+                  <span id="label-dining">$450 / $600</span>
+                </div>
+                <div class="apf-progress-track">
+                  <div class="apf-progress-fill" id="fill-dining" style="width: 75%;" aria-label="Dining: 75% spent"></div>
+                </div>
+                <span class="apf-category-meta" id="meta-dining">75.0% of limit spent</span>
+              </div>
+
+              <!-- Shopping -->
+              <div class="apf-category-item" tabindex="0" id="cat-shopping">
+                <div class="apf-category-header">
+                  <strong>Shopping</strong>
+                  <span id="label-shopping">$350 / $400</span>
+                </div>
+                <div class="apf-progress-track">
+                  <div class="apf-progress-fill" id="fill-shopping" style="width: 87.5%;" aria-label="Shopping: 87.5% spent"></div>
+                </div>
+                <span class="apf-category-meta" id="meta-shopping">87.5% of limit spent</span>
+              </div>
+
+              <!-- Entertainment -->
+              <div class="apf-category-item" tabindex="0" id="cat-entertainment">
+                <div class="apf-category-header">
+                  <strong>Entertainment</strong>
+                  <span id="label-entertainment">$180 / $300</span>
+                </div>
+                <div class="apf-progress-track">
+                  <div class="apf-progress-fill" id="fill-entertainment" style="width: 60%;" aria-label="Entertainment: 60% spent"></div>
+                </div>
+                <span class="apf-category-meta" id="meta-entertainment">60.0% of limit spent</span>
+              </div>
             </div>
           </div>
 
-          <div class="apf-summary-card" tabindex="0">
-            <span class="apf-summary-icon" aria-hidden="true">📤</span>
-            <div class="apf-summary-info">
-              <strong>$3,240.00</strong>
-              <span>Monthly Expenses</span>
-            </div>
-          </div>
-
-          <div
-            class="apf-summary-card apf-summary-card--remaining"
-            tabindex="0"
-          >
-            <span class="apf-summary-icon" aria-hidden="true">💰</span>
-            <div class="apf-summary-info">
-              <strong>$1,560.00</strong>
-              <span>Remaining Budget</span>
-            </div>
+          <!-- Add Transaction Form Panel -->
+          <div class="apf-panel">
+            <h2 class="apf-section-title">Add New Transaction</h2>
+            <form class="apf-form" id="transactionForm" onsubmit="addTransaction(event)">
+              <div class="apf-form-row">
+                <div class="apf-form-group">
+                  <label for="transTitle">Description</label>
+                  <input type="text" id="transTitle" class="apf-input" placeholder="e.g. Market Grocery" required>
+                </div>
+                <div class="apf-form-group">
+                  <label for="transAmount">Amount ($)</label>
+                  <input type="number" id="transAmount" class="apf-input" step="0.01" min="0.01" placeholder="0.00" required>
+                </div>
+              </div>
+              
+              <div class="apf-form-row">
+                <div class="apf-form-group">
+                  <label for="transCategory">Category</label>
+                  <select id="transCategory" class="apf-input">
+                    <option value="housing">Housing & Utilities</option>
+                    <option value="dining">Food & Dining</option>
+                    <option value="shopping">Shopping</option>
+                    <option value="entertainment">Entertainment</option>
+                  </select>
+                </div>
+                <div class="apf-form-group">
+                  <label for="transType">Type</label>
+                  <select id="transType" class="apf-input">
+                    <option value="expense">Expense</option>
+                    <option value="income">Income</option>
+                  </select>
+                </div>
+              </div>
+              
+              <button type="submit" class="apf-btn">Record Transaction</button>
+            </form>
           </div>
         </section>
 
-        <!-- Main Grid Layout -->
-        <div class="apf-grid">
-          <!-- Left Column: Spending Categories & Transactions -->
-          <section class="apf-left-col">
-            <!-- Spending Categories -->
-            <div class="apf-panel">
-              <h2 class="apf-section-title">Spending Categories</h2>
-              <div class="apf-categories-list">
-                <!-- Housing -->
-                <div class="apf-category-item" tabindex="0">
-                  <div class="apf-category-header">
-                    <strong>Housing & Utilities</strong>
-                    <span>$1,200 / $1,500</span>
-                  </div>
-                  <div class="apf-progress-track">
-                    <div
-                      class="apf-progress-fill"
-                      style="--apf-pct: 80"
-                      aria-label="Housing: 80%"
-                    ></div>
-                  </div>
-                  <span class="apf-category-meta">80.0% of limit spent</span>
-                </div>
-
-                <!-- Food & Dining -->
-                <div class="apf-category-item" tabindex="0">
-                  <div class="apf-category-header">
-                    <strong>Food & Dining</strong>
-                    <span>$450 / $600</span>
-                  </div>
-                  <div class="apf-progress-track">
-                    <div
-                      class="apf-progress-fill"
-                      style="--apf-pct: 75"
-                      aria-label="Dining: 75%"
-                    ></div>
-                  </div>
-                  <span class="apf-category-meta">75.0% of limit spent</span>
-                </div>
-
-                <!-- Shopping -->
-                <div class="apf-category-item" tabindex="0">
-                  <div class="apf-category-header">
-                    <strong>Shopping</strong>
-                    <span>$350 / $400</span>
-                  </div>
-                  <div class="apf-progress-track">
-                    <div
-                      class="apf-progress-fill"
-                      style="--apf-pct: 87.5"
-                      aria-label="Shopping: 87.5%"
-                    ></div>
-                  </div>
-                  <span class="apf-category-meta">87.5% of limit spent</span>
-                </div>
-
-                <!-- Entertainment -->
-                <div class="apf-category-item" tabindex="0">
-                  <div class="apf-category-header">
-                    <strong>Entertainment</strong>
-                    <span>$180 / $300</span>
-                  </div>
-                  <div class="apf-progress-track">
-                    <div
-                      class="apf-progress-fill"
-                      style="--apf-pct: 60"
-                      aria-label="Entertainment: 60%"
-                    ></div>
-                  </div>
-                  <span class="apf-category-meta">60.0% of limit spent</span>
-                </div>
+        <!-- Right Column: Savings Goals & Health Score -->
+        <section class="apf-right-col">
+          
+          <!-- Savings Goal Circular Tracker -->
+          <div class="apf-panel apf-savings-panel" tabindex="0">
+            <h3 class="apf-section-title">Savings Goal Progress</h3>
+            <div class="apf-progress-ring-wrapper">
+              <svg class="apf-progress-ring" width="140" height="140" aria-hidden="true">
+                <circle
+                  class="apf-progress-ring-bg"
+                  stroke="rgba(255,255,255,0.06)"
+                  stroke-width="10"
+                  fill="transparent"
+                  r="58"
+                  cx="70"
+                  cy="70"
+                />
+                <circle
+                  id="progressRingFill"
+                  class="apf-progress-ring-fill"
+                  stroke="url(#apf-ring-grad)"
+                  stroke-width="10"
+                  fill="transparent"
+                  r="58"
+                  cx="70"
+                  cy="70"
+                  style="stroke-dashoffset: 116.615;" 
+                /> <!-- Calculated initial offset: 364.424 * (1 - 68/100) = 116.615 -->
+                <defs>
+                  <linearGradient id="apf-ring-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#10b981" />
+                    <stop offset="100%" stop-color="#00f2fe" />
+                  </linearGradient>
+                </defs>
+              </svg>
+              <!-- Central Progress Text -->
+              <div class="apf-ring-text">
+                <strong class="apf-ring-num" id="savingsPctText">68%</strong>
+                <span class="apf-ring-unit">Saved</span>
               </div>
             </div>
-
-            <!-- Recent Transactions -->
-            <div class="apf-panel">
-              <h2 class="apf-section-title">Recent Transactions</h2>
-              <div class="apf-transactions-list">
-                <div class="apf-transaction-row" tabindex="0">
-                  <div class="apf-trans-meta">
-                    <strong>Target Stores</strong>
-                    <span>Today &bull; Shopping</span>
-                  </div>
-                  <span class="apf-trans-amount">- $68.42</span>
-                </div>
-
-                <div class="apf-transaction-row" tabindex="0">
-                  <div class="apf-trans-meta">
-                    <strong>Metropolitan Rent</strong>
-                    <span>Jun 15 &bull; Housing</span>
-                  </div>
-                  <span class="apf-trans-amount">- $1,200.00</span>
-                </div>
-
-                <div class="apf-transaction-row" tabindex="0">
-                  <div class="apf-trans-meta">
-                    <strong>Organic Food Market</strong>
-                    <span>Jun 14 &bull; Food & Dining</span>
-                  </div>
-                  <span class="apf-trans-amount">- $145.20</span>
-                </div>
-              </div>
+            <div class="apf-target-summary" id="savingsGoalSummary">
+              Target: <strong>$10,000</strong> &bull; Saved: <strong id="savingsSavedVal">$6,800</strong>
             </div>
-          </section>
+          </div>
 
-          <!-- Right Column: Savings Goals & Health Score -->
-          <aside class="apf-right-col">
-            <!-- Savings Goal Circular Tracker -->
-            <div class="apf-panel apf-savings-panel" tabindex="0">
-              <h3 class="apf-section-title">Savings Goal Progress</h3>
-              <div class="apf-progress-ring-wrapper">
-                <svg class="apf-progress-ring" width="140" height="140">
-                  <circle
-                    class="apf-progress-ring-bg"
-                    stroke="rgba(255,255,255,0.06)"
-                    stroke-width="10"
-                    fill="transparent"
-                    r="58"
-                    cx="70"
-                    cy="70"
-                  />
-                  <circle
-                    class="apf-progress-ring-fill"
-                    stroke="url(#apf-ring-grad)"
-                    stroke-width="10"
-                    fill="transparent"
-                    r="58"
-                    cx="70"
-                    cy="70"
-                    style="--apf-ring-pct: 68"
-                  />
-                  <defs>
-                    <linearGradient
-                      id="apf-ring-grad"
-                      x1="0%"
-                      y1="0%"
-                      x2="100%"
-                      y2="100%"
-                    >
-                      <stop offset="0%" stop-color="#10b981" />
-                      <stop offset="100%" stop-color="#00f2fe" />
-                    </linearGradient>
-                  </defs>
-                </svg>
-                <!-- Central Progress Text -->
-                <div class="apf-ring-text">
-                  <strong class="apf-ring-num">68%</strong>
-                  <span class="apf-ring-unit">Saved</span>
+          <!-- Financial Health Score & Advice -->
+          <div class="apf-panel apf-health-panel" tabindex="0">
+            <h3 class="apf-section-title">Financial Health</h3>
+            <div class="apf-health-header">
+              <span class="apf-health-score" id="healthScore">85</span>
+              <span class="apf-tag-success" id="healthScoreTag">Excellent Score</span>
+            </div>
+            <ul class="apf-advice-list" id="adviceList">
+              <li>Your emergency fund goal is 68% met.</li>
+              <li>Shopping spending is close to the budget limit (87.5%).</li>
+              <li>Savings target contributions are on track for Q2.</li>
+            </ul>
+          </div>
+
+          <!-- Recent Transactions -->
+          <div class="apf-panel">
+            <h3 class="apf-section-title">Recent Transactions</h3>
+            <div class="apf-transactions-list" id="transactionsList">
+              
+              <div class="apf-transaction-row" tabindex="0">
+                <div class="apf-trans-meta">
+                  <strong>Target Stores</strong>
+                  <span>Today &bull; Shopping</span>
                 </div>
+                <span class="apf-trans-amount expense">- $68.42</span>
               </div>
-              <div class="apf-target-summary">
-                Target: <strong>$10,000</strong> &bull; Saved:
-                <strong>$6,800</strong>
-              </div>
-            </div>
 
-            <!-- Financial Health Score & Advice -->
-            <div class="apf-panel apf-health-panel" tabindex="0">
-              <h3 class="apf-section-title">Financial Health</h3>
-              <div class="apf-health-header">
-                <span class="apf-health-score">85</span>
-                <span class="apf-tag-success">Excellent Score</span>
+              <div class="apf-transaction-row" tabindex="0">
+                <div class="apf-trans-meta">
+                  <strong>Metropolitan Rent</strong>
+                  <span>Jun 15 &bull; Housing</span>
+                </div>
+                <span class="apf-trans-amount expense">- $1,200.00</span>
               </div>
-              <ul class="apf-advice-list">
-                <li>Your emergency fund goal is 68% met.</li>
-                <li>Shopping spending is close to the budget limit (87.5%).</li>
-                <li>Savings target contributions are on track for Q2.</li>
-              </ul>
+
+              <div class="apf-transaction-row" tabindex="0">
+                <div class="apf-trans-meta">
+                  <strong>Organic Food Market</strong>
+                  <span>Jun 14 &bull; Food & Dining</span>
+                </div>
+                <span class="apf-trans-amount expense">- $145.20</span>
+              </div>
+
             </div>
-          </aside>
-        </div>
+          </div>
+          
+        </section>
       </div>
-    </main>
-  </body>
+
+    </div>
+  </main>
+
+  <script>
+    // ── Theme Switcher ──────────────────────────────────────────────
+    const themeToggleBtn = document.getElementById('themeToggleBtn');
+    const htmlDoc = document.documentElement;
+
+    themeToggleBtn.addEventListener('click', () => {
+      const currentTheme = htmlDoc.getAttribute('data-theme');
+      if (currentTheme === 'dark') {
+        htmlDoc.setAttribute('data-theme', 'light');
+        themeToggleBtn.innerHTML = '☀️ Light Mode';
+      } else {
+        htmlDoc.setAttribute('data-theme', 'dark');
+        themeToggleBtn.innerHTML = '🌙 Dark Mode';
+      }
+    });
+
+    // ── Global State ────────────────────────────────────────────────
+    let state = {
+      income: 4800.00,
+      expenses: {
+        housing: 1200.00,
+        dining: 450.00,
+        shopping: 350.00,
+        entertainment: 180.00
+      },
+      limits: {
+        housing: 1500.00,
+        dining: 600.00,
+        shopping: 400.00,
+        entertainment: 300.00
+      },
+      savingsTarget: 10000.00,
+      savingsSavedBase: 6800.00
+    };
+
+    // Calculate sum of category expenses
+    function getExpenseTotal() {
+      return Object.values(state.expenses).reduce((a, b) => a + b, 0);
+    }
+
+    // Format money values helper
+    function formatMoney(amount) {
+      return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(amount);
+    }
+
+    // ── Update Dashboard Elements ──────────────────────────────────
+    function updateDashboard() {
+      const totalExpense = getExpenseTotal();
+      const remaining = state.income - totalExpense;
+      
+      // Update basic values
+      document.getElementById('totalIncome').innerText = formatMoney(state.income);
+      document.getElementById('totalExpenses').innerText = formatMoney(totalExpense);
+      document.getElementById('totalRemaining').innerText = formatMoney(remaining);
+
+      // Adjust remaining budget status warning levels
+      const budgetStatus = document.getElementById('budgetStatus');
+      const statusText = document.getElementById('statusText');
+      if (remaining < 0) {
+        statusText.innerText = 'Budget Overspent';
+        budgetStatus.style.background = 'rgba(239,68,68,0.1)';
+        budgetStatus.style.borderColor = 'rgba(239,68,68,0.3)';
+        budgetStatus.style.color = 'var(--apf-danger)';
+      } else if (remaining < 500) {
+        statusText.innerText = 'Budget Low';
+        budgetStatus.style.background = 'rgba(245,158,11,0.1)';
+        budgetStatus.style.borderColor = 'rgba(245,158,11,0.3)';
+        budgetStatus.style.color = 'var(--apf-warning)';
+      } else {
+        statusText.innerText = 'Budget On Track';
+        budgetStatus.style.background = '';
+        budgetStatus.style.borderColor = '';
+        budgetStatus.style.color = '';
+      }
+
+      // Update category items, fills, and metadata
+      const categories = ['housing', 'dining', 'shopping', 'entertainment'];
+      categories.forEach(cat => {
+        const spent = state.expenses[cat];
+        const limit = state.limits[cat];
+        const pct = Math.min((spent / limit) * 100, 100);
+        
+        document.getElementById(`label-${cat}`).innerText = `${formatMoney(spent)} / ${formatMoney(limit)}`;
+        
+        const fill = document.getElementById(`fill-${cat}`);
+        fill.style.width = `${pct}%`;
+        fill.setAttribute('aria-label', `${cat.charAt(0).toUpperCase() + cat.slice(1)}: ${pct.toFixed(1)}% spent`);
+        
+        // Dynamic warning styles on progress bars
+        if (pct >= 90) {
+          fill.style.background = 'linear-gradient(90deg, var(--apf-danger) 0%, #ff7b7b 100%)';
+          fill.style.boxShadow = '0 0 10px rgba(239,68,68,0.4)';
+        } else if (pct >= 75) {
+          fill.style.background = 'linear-gradient(90deg, var(--apf-warning) 0%, #ffd000 100%)';
+          fill.style.boxShadow = '0 0 10px rgba(245,158,11,0.4)';
+        } else {
+          fill.style.background = '';
+          fill.style.boxShadow = '';
+        }
+
+        document.getElementById(`meta-${cat}`).innerText = `${((spent / limit) * 100).toFixed(1)}% of limit spent`;
+      });
+
+      // Update Savings Ring
+      // We assume saved amount increases by a portion of our income/remaining ratio
+      const additionalSaved = Math.max(0, (state.income - 4800) * 0.6);
+      const savingsSavedTotal = Math.min(state.savingsSavedBase + additionalSaved, state.savingsTarget);
+      const savingsPct = Math.round((savingsSavedTotal / state.savingsTarget) * 100);
+      
+      document.getElementById('savingsPctText').innerText = `${savingsPct}%`;
+      document.getElementById('savingsSavedVal').innerText = formatMoney(savingsSavedTotal);
+      
+      // Ring circumference = 2 * Math.PI * 58 = 364.424
+      const offset = 364.424 - (364.424 * savingsPct) / 100;
+      document.getElementById('progressRingFill').style.strokeDashoffset = offset;
+
+      // Update Health Score and Advice list
+      let health = 100;
+      let advice = [];
+
+      // Deduct health for overspending categories
+      categories.forEach(cat => {
+        const pct = (state.expenses[cat] / state.limits[cat]) * 100;
+        if (pct > 100) {
+          health -= 15;
+          advice.push(`Over limit in ${cat.charAt(0).toUpperCase() + cat.slice(1)}! Reduce spending immediately.`);
+        } else if (pct > 85) {
+          health -= 6;
+          advice.push(`${cat.charAt(0).toUpperCase() + cat.slice(1)} is approaching the limit (${pct.toFixed(1)}%).`);
+        }
+      });
+
+      if (remaining < 0) {
+        health -= 20;
+        advice.push("Monthly budget is overspent! Revise subscriptions or utility usage.");
+      }
+
+      if (savingsPct >= 80) {
+        advice.push("Excellent work! Emergency fund target is almost complete.");
+      } else {
+        advice.push(`Emergency fund target is ${savingsPct}% met. Consider making extra savings contributions.`);
+      }
+
+      health = Math.max(10, health);
+      document.getElementById('healthScore').innerText = health;
+      
+      const healthTag = document.getElementById('healthScoreTag');
+      if (health >= 85) {
+        healthTag.innerText = 'Excellent Score';
+        healthTag.style.background = 'rgba(16, 185, 129, 0.08)';
+        healthTag.style.borderColor = 'rgba(16, 185, 129, 0.2)';
+        healthTag.style.color = 'var(--apf-primary)';
+      } else if (health >= 65) {
+        healthTag.innerText = 'Fair Health';
+        healthTag.style.background = 'rgba(245,158,11,0.08)';
+        healthTag.style.borderColor = 'rgba(245,158,11,0.2)';
+        healthTag.style.color = 'var(--apf-warning)';
+      } else {
+        healthTag.innerText = 'Critical Budget';
+        healthTag.style.background = 'rgba(239,68,68,0.08)';
+        healthTag.style.borderColor = 'rgba(239,68,68,0.2)';
+        healthTag.style.color = 'var(--apf-danger)';
+      }
+
+      // Update Advice DOM List
+      const list = document.getElementById('adviceList');
+      list.innerHTML = '';
+      advice.forEach(txt => {
+        const li = document.createElement('li');
+        li.innerText = txt;
+        list.appendChild(li);
+      });
+    }
+
+    // ── Add Transaction ─────────────────────────────────────────────
+    function addTransaction(event) {
+      event.preventDefault();
+      
+      const titleInput = document.getElementById('transTitle');
+      const amountInput = document.getElementById('transAmount');
+      const catInput = document.getElementById('transCategory');
+      const typeInput = document.getElementById('transType');
+
+      const title = titleInput.value.trim();
+      const amount = parseFloat(amountInput.value);
+      const cat = catInput.value;
+      const type = typeInput.value;
+
+      if (!title || isNaN(amount) || amount <= 0) return;
+
+      // Update state
+      if (type === 'income') {
+        state.income += amount;
+      } else {
+        state.expenses[cat] += amount;
+      }
+
+      // Create new transaction row element
+      const list = document.getElementById('transactionsList');
+      const row = document.createElement('div');
+      row.className = 'apf-transaction-row';
+      row.setAttribute('tabindex', '0');
+
+      const meta = document.createElement('div');
+      meta.className = 'apf-trans-meta';
+      
+      const strong = document.createElement('strong');
+      strong.innerText = title;
+      
+      const span = document.createElement('span');
+      // Format category label
+      const catLabel = cat.charAt(0).toUpperCase() + cat.slice(1);
+      span.innerHTML = `Today &bull; ${catLabel}`;
+      
+      meta.appendChild(strong);
+      meta.appendChild(span);
+
+      const amtSpan = document.createElement('span');
+      if (type === 'income') {
+        amtSpan.className = 'apf-trans-amount income';
+        amtSpan.innerText = `+ ${formatMoney(amount)}`;
+      } else {
+        amtSpan.className = 'apf-trans-amount expense';
+        amtSpan.innerText = `- ${formatMoney(amount)}`;
+      }
+
+      row.appendChild(meta);
+      row.appendChild(amtSpan);
+
+      // Insert at the top of list
+      list.insertBefore(row, list.firstChild);
+
+      // Remove last transaction if more than 6 transactions to keep clean mockup list
+      if (list.children.length > 5) {
+        list.removeChild(list.lastChild);
+      }
+
+      // Refresh numbers
+      updateDashboard();
+
+      // Reset form fields
+      titleInput.value = '';
+      amountInput.value = '';
+      titleInput.focus();
+    }
+  </script>
+</body>
 </html>
