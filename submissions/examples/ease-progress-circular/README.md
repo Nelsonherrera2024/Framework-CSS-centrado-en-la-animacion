@@ -23,3 +23,4 @@ Wrap the SVG structure inside a container div with the `.ease-progress-circular`
   </svg>
   <span class="ease-progress-text">75%</span>
 </div>
+```

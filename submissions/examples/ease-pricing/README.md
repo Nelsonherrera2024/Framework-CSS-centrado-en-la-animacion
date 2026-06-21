@@ -9,7 +9,9 @@ A pricing tier card set with a lift + border-highlight hover state, a "Most Popu
 ```html
 <div class="tier-card">
   <div class="tier-name">Starter</div>
-  <div class="tier-price"><span class="tier-currency">$</span>9<span class="tier-period">/mo</span></div>
+  <div class="tier-price">
+    <span class="tier-currency">$</span>9<span class="tier-period">/mo</span>
+  </div>
   <ul class="tier-features">
     <li>5 projects</li>
   </ul>
@@ -20,7 +22,9 @@ A pricing tier card set with a lift + border-highlight hover state, a "Most Popu
 <div class="tier-card tier-card--popular">
   <span class="tier-badge">★ Most Popular</span>
   <div class="tier-name">Pro</div>
-  <div class="tier-price"><span class="tier-currency">$</span>29<span class="tier-period">/mo</span></div>
+  <div class="tier-price">
+    <span class="tier-currency">$</span>29<span class="tier-period">/mo</span>
+  </div>
   <ul class="tier-features">
     <li>Unlimited projects</li>
   </ul>

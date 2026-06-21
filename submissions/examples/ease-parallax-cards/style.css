@@ -16,9 +16,12 @@
   padding: 2.5rem 2rem;
   box-shadow: var(--ease-shadow-md, 0 4px 6px -1px rgba(0, 0, 0, 0.05));
   color: #0f172a;
-  
+
   /* Smooth transition tracking interface adjustments */
-  transition: transform 150ms cubic-bezier(0.1, 0.8, 0.2, 1), background-color 300ms ease, border-color 300ms ease;
+  transition:
+    transform 150ms cubic-bezier(0.1, 0.8, 0.2, 1),
+    background-color 300ms ease,
+    border-color 300ms ease;
   will-change: transform;
   display: flex;
   flex-direction: column;
@@ -26,7 +29,7 @@
 }
 
 .ease-parallax-card h3 {
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
   font-size: 1.35rem;
   font-weight: 700;
 }
@@ -49,9 +52,18 @@
   border-radius: var(--ease-radius-sm, 0.25rem);
 }
 
-.speed-slow { background-color: rgba(99, 102, 241, 0.1); color: #6366f1; }
-.speed-normal { background-color: rgba(16, 185, 129, 0.1); color: #10b981; }
-.speed-fast { background-color: rgba(236, 72, 153, 0.1); color: #ec4899; }
+.speed-slow {
+  background-color: rgba(99, 102, 241, 0.1);
+  color: #6366f1;
+}
+.speed-normal {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+}
+.speed-fast {
+  background-color: rgba(236, 72, 153, 0.1);
+  color: #ec4899;
+}
 
 /* ─── Layered Custom Velocity Properties ───────────── */
 .ease-parallax-card--slow {
@@ -63,7 +75,7 @@
 }
 
 .ease-parallax-card--fast {
-  --parallax-speed: 1.0;
+  --parallax-speed: 1;
 }
 
 /* ─── Responsive Media Alignments ──────────────────── */

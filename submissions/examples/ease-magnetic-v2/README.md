@@ -10,29 +10,29 @@ Magnetic pull hover effect using CSS directional translate with spring easing. Z
 
 ## Intensity Variants
 
-| Class | Shift distance |
-|---|---|
-| `ease-magnetic-weak` | 3px |
-| `ease-magnetic` | 6px (default) |
-| `ease-magnetic-strong` | 12px |
+| Class                  | Shift distance |
+| ---------------------- | -------------- |
+| `ease-magnetic-weak`   | 3px            |
+| `ease-magnetic`        | 6px (default)  |
+| `ease-magnetic-strong` | 12px           |
 
 ## Directional Variants
 
-| Class | Direction |
-|---|---|
-| `ease-magnetic` | Up (default) |
-| `ease-magnetic-left` | Left |
-| `ease-magnetic-right` | Right |
-| `ease-magnetic-down` | Down |
-| `ease-magnetic-tl` | Top-left diagonal |
-| `ease-magnetic-tr` | Top-right diagonal |
-| `ease-magnetic-bl` | Bottom-left diagonal |
-| `ease-magnetic-br` | Bottom-right diagonal |
+| Class                 | Direction             |
+| --------------------- | --------------------- |
+| `ease-magnetic`       | Up (default)          |
+| `ease-magnetic-left`  | Left                  |
+| `ease-magnetic-right` | Right                 |
+| `ease-magnetic-down`  | Down                  |
+| `ease-magnetic-tl`    | Top-left diagonal     |
+| `ease-magnetic-tr`    | Top-right diagonal    |
+| `ease-magnetic-bl`    | Bottom-left diagonal  |
+| `ease-magnetic-br`    | Bottom-right diagonal |
 
 ## Special Variants
 
-| Class | Description |
-|---|---|
+| Class                | Description              |
+| -------------------- | ------------------------ |
 | `ease-magnetic-glow` | Pull up + glowing shadow |
 
 ## How It Works

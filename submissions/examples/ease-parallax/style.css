@@ -9,33 +9,59 @@
 /* ---------- Base keyframes ---------- */
 
 @keyframes ease-parallax-up {
-  from { transform: translateY(0); }
-  to   { transform: translateY(var(--ease-parallax-distance, -80px)); }
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(var(--ease-parallax-distance, -80px));
+  }
 }
 
 @keyframes ease-parallax-down {
-  from { transform: translateY(0); }
-  to   { transform: translateY(var(--ease-parallax-distance, 80px)); }
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(var(--ease-parallax-distance, 80px));
+  }
 }
 
 @keyframes ease-parallax-left {
-  from { transform: translateX(0); }
-  to   { transform: translateX(var(--ease-parallax-distance, -80px)); }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(var(--ease-parallax-distance, -80px));
+  }
 }
 
 @keyframes ease-parallax-right {
-  from { transform: translateX(0); }
-  to   { transform: translateX(var(--ease-parallax-distance, 80px)); }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(var(--ease-parallax-distance, 80px));
+  }
 }
 
 @keyframes ease-parallax-fade {
-  from { transform: translateY(0); opacity: 1; }
-  to   { transform: translateY(var(--ease-parallax-distance, -80px)); opacity: 0.2; }
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(var(--ease-parallax-distance, -80px));
+    opacity: 0.2;
+  }
 }
 
 @keyframes ease-parallax-scale {
-  from { transform: translateY(0) scale(1); }
-  to   { transform: translateY(var(--ease-parallax-distance, -60px)) scale(0.9); }
+  from {
+    transform: translateY(0) scale(1);
+  }
+  to {
+    transform: translateY(var(--ease-parallax-distance, -60px)) scale(0.9);
+  }
 }
 
 /* ---------- Base class (scroll up -- default) ---------- */

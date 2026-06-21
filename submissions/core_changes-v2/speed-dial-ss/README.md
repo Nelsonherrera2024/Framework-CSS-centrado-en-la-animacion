@@ -3,18 +3,28 @@
 1. **What does this do?**  
    A floating action button that expands into multiple secondary action buttons with staggered entrance animation, 4 direction variants, tooltip labels, click-outside and Escape-to-close, and proper ARIA attributes.
 
-2. **How is it used?**  
+2. **How is it used?**
 
    ```html
-   <div class="speed-dial-ss speed-dial-ss-up" role="group" aria-label="Quick actions">
-     <button class="speed-dial-ss-trigger"
-             aria-expanded="false"
-             aria-haspopup="true"
-             aria-label="Open actions">
+   <div
+     class="speed-dial-ss speed-dial-ss-up"
+     role="group"
+     aria-label="Quick actions"
+   >
+     <button
+       class="speed-dial-ss-trigger"
+       aria-expanded="false"
+       aria-haspopup="true"
+       aria-label="Open actions"
+     >
        <span class="icon-plus" aria-hidden="true">+</span>
      </button>
      <div class="speed-dial-ss-actions" role="menu">
-       <button class="speed-dial-ss-action" role="menuitem" aria-label="Add file">
+       <button
+         class="speed-dial-ss-action"
+         role="menuitem"
+         aria-label="Add file"
+       >
          <span aria-hidden="true">📄</span>
          <span class="speed-dial-ss-label">Add file</span>
        </button>

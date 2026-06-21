@@ -1,9 +1,11 @@
 # Rating / Star Component
 
 ## What does this do?
+
 Adds a star rating component with readonly display (supports decimal/half-star ratings like 3.5), interactive click-to-rate mode, size variants (sm, md, lg), and color variants (warning, success, danger).
 
 ## How is it used?
+
 ```html
 <!-- Readonly display -->
 <div class="ease-rating ease-rating-readonly" data-rating="3.5">
@@ -24,7 +26,9 @@ Adds a star rating component with readonly display (supports decimal/half-star r
 ```
 
 ## Why is it useful?
+
 EaseMotion CSS lacked a star rating component essential for reviews, product ratings, and feedback forms. This component provides:
+
 - **Display mode** — shows ratings with half-star support via CSS gradient clip
 - **Interactive mode** — hover preview + click to select, updates ARIA attributes
 - **3 sizes** — sm (16px), md (24px), lg (32px)

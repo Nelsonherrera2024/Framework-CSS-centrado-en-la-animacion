@@ -12,39 +12,43 @@ Scroll-driven parallax depth effect using `animation-timeline: scroll()` and tra
 <div class="ease-parallax ease-parallax-fast">Faster parallax</div>
 
 <!-- Custom distance -->
-<div class="ease-parallax" style="--ease-parallax-distance: -120px;">Custom</div>
+<div class="ease-parallax" style="--ease-parallax-distance: -120px;">
+  Custom
+</div>
 ```
 
 ## Speed / Distance Variants
 
-| Class | Distance |
-|---|---|
-| `ease-parallax-slow` | −30px |
-| `ease-parallax` (default) | −80px |
-| `ease-parallax-fast` | −150px |
+| Class                     | Distance |
+| ------------------------- | -------- |
+| `ease-parallax-slow`      | −30px    |
+| `ease-parallax` (default) | −80px    |
+| `ease-parallax-fast`      | −150px   |
 
 ## Direction Variants
 
-| Class | Direction |
-|---|---|
-| `ease-parallax` | Up (default) |
-| `ease-parallax-down` | Down |
-| `ease-parallax-left` | Left |
-| `ease-parallax-right` | Right |
+| Class                 | Direction    |
+| --------------------- | ------------ |
+| `ease-parallax`       | Up (default) |
+| `ease-parallax-down`  | Down         |
+| `ease-parallax-left`  | Left         |
+| `ease-parallax-right` | Right        |
 
 ## Special Effect Variants
 
-| Class | Effect |
-|---|---|
-| `ease-parallax-fade` | Moves up + fades to 0.2 opacity |
-| `ease-parallax-scale` | Moves up + scales down to 0.9 |
+| Class                 | Effect                          |
+| --------------------- | ------------------------------- |
+| `ease-parallax-fade`  | Moves up + fades to 0.2 opacity |
+| `ease-parallax-scale` | Moves up + scales down to 0.9   |
 
 ## Custom Distance
 
 Override the travel distance per element using a CSS variable:
 
 ```html
-<div class="ease-parallax" style="--ease-parallax-distance: -200px;">Deep parallax</div>
+<div class="ease-parallax" style="--ease-parallax-distance: -200px;">
+  Deep parallax
+</div>
 ```
 
 ## Staggered Depth Layers

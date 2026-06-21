@@ -21,7 +21,10 @@ startBtn.addEventListener("click", () => {
     startBtn.textContent = "Start";
     return;
   }
-  if (count <= 0) { count = 10; display.classList.remove("done"); }
+  if (count <= 0) {
+    count = 10;
+    display.classList.remove("done");
+  }
   startBtn.textContent = "Pause";
   interval = setInterval(() => {
     count--;

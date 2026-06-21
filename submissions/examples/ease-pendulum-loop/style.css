@@ -5,7 +5,7 @@
   --panel-dark: #090c16;
   --neon-cyan: #06b6d4;
   --neon-purple: #a855f7;
-  
+
   /* DEFAULT BASE PENDULUM PARAMETERS */
   --pendulum-speed: 2.5s;
   --pendulum-angle: 25deg;
@@ -22,7 +22,8 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   gap: 40px;
   color: #ffffff;
 }
@@ -80,11 +81,11 @@ body {
   display: inline-block;
   font-size: 3.5rem;
   line-height: 1;
-  
+
   /* CRITICAL ANCHORING: Pins the rotation axis to the absolute top center */
   transform-origin: top center;
   will-change: transform;
-  
+
   /* Loop uses ease-in-out to perfectly map deceleration at gravity apex extremities */
   animation: purePendulumSwing var(--pendulum-speed) ease-in-out infinite;
 }

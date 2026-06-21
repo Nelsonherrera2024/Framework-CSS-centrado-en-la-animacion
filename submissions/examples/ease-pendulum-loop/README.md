@@ -9,8 +9,10 @@ A performance-first rhythmic typography/icon loop component that simulates an or
 - **Reduced Motion Support Matrix:** Seamlessly integrates a native `@media (prefers-reduced-motion: reduce)` override layout that gently cushions the translation angles down to `4deg` to safeguard accessible screen reading conditions.
 
 ## Project Workspace Manifest
+
 - `demo.html`: Independent, self-contained visual playground staging panel.
 - `style.css`: Configured framework module utility rule sheets.
 
 ## By
+
 [Pari Dubey](https://github.com/pari-dubey1)

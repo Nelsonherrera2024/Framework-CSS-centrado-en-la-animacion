@@ -8,7 +8,6 @@ Provides an animated onboarding stepper component for multi-step workflows and u
 
 ```html
 <div class="stepper">
-
   <div class="step completed">
     <div class="circle">✓</div>
     <span>Create Account</span>
@@ -18,7 +17,6 @@ Provides an animated onboarding stepper component for multi-step workflows and u
     <div class="circle">2</div>
     <span>Profile Setup</span>
   </div>
-
 </div>
 ```
 

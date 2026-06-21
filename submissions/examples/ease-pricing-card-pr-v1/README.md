@@ -28,20 +28,21 @@ A pricing plan card component for SaaS landing pages.
 
 ## Classes
 
-| Class | Description |
-|---|---|
-| `ease-pricing-card` | Base card wrapper |
+| Class                        | Description                 |
+| ---------------------------- | --------------------------- |
+| `ease-pricing-card`          | Base card wrapper           |
 | `ease-pricing-card-featured` | Highlighted popular variant |
-| `ease-pricing-plan` | Plan name label |
-| `ease-pricing-price` | Price wrapper |
-| `ease-pricing-currency` | Currency symbol |
-| `ease-pricing-amount` | Price number |
-| `ease-pricing-period` | Billing period |
-| `ease-pricing-features` | Feature list |
-| `ease-pricing-badge` | Popular badge |
-| `ease-pricing-btn` | CTA button |
+| `ease-pricing-plan`          | Plan name label             |
+| `ease-pricing-price`         | Price wrapper               |
+| `ease-pricing-currency`      | Currency symbol             |
+| `ease-pricing-amount`        | Price number                |
+| `ease-pricing-period`        | Billing period              |
+| `ease-pricing-features`      | Feature list                |
+| `ease-pricing-badge`         | Popular badge               |
+| `ease-pricing-btn`           | CTA button                  |
 
 ## Features
+
 - Hover lift animation
 - Featured variant with primary border
 - Respects prefers-reduced-motion

@@ -22,7 +22,9 @@
   color: #e2e8f0;
   background: #1e293b;
   border: 1px solid #334155;
-  transition: background 0.2s ease, border-color 0.2s ease;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
   user-select: none;
 }
 
@@ -34,7 +36,7 @@
 
 /* Arrow indicator */
 .ease-dropdown-trigger::after {
-  content: '▾';
+  content: "▾";
   font-size: 0.75rem;
   transition: transform 0.2s ease;
   display: inline-block;
@@ -63,9 +65,10 @@
   visibility: hidden;
   pointer-events: none;
   transform: translateY(10px);
-  transition: opacity 0.2s ease,
-              transform 0.2s ease,
-              visibility 0.2s ease;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s ease;
 }
 
 /* ── Reveal on hover OR keyboard focus ───────────────────────── */
@@ -84,7 +87,9 @@
   color: #cbd5e1;
   text-decoration: none;
   font-size: 0.88rem;
-  transition: background 0.15s ease, color 0.15s ease;
+  transition:
+    background 0.15s ease,
+    color 0.15s ease;
   white-space: nowrap;
 }
 
@@ -186,7 +191,9 @@
 /* ── Prefers reduced motion ──────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   .ease-dropdown-menu {
-    transition: opacity 0.1s ease, visibility 0.1s ease;
+    transition:
+      opacity 0.1s ease,
+      visibility 0.1s ease;
     transform: none !important;
   }
 }

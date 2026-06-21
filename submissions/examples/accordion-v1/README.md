@@ -6,29 +6,23 @@ Provides a CSS-only accordion component built using native `<details>` and `<sum
 
 The utility includes multiple variants:
 
-* `ease-accordion-group` — groups multiple accordion items together
-* `ease-accordion-bordered` — card-style bordered accordion
-* `ease-accordion-flush` — minimal borderless appearance
-* `ease-accordion-arrow` — rotating arrow indicator
-* `ease-accordion-plus` — plus/minus indicator
+- `ease-accordion-group` — groups multiple accordion items together
+- `ease-accordion-bordered` — card-style bordered accordion
+- `ease-accordion-flush` — minimal borderless appearance
+- `ease-accordion-arrow` — rotating arrow indicator
+- `ease-accordion-plus` — plus/minus indicator
 
 ## How is it used?
 
 ```html
 <div class="ease-accordion-group">
-
   <details class="ease-accordion ease-accordion-bordered ease-accordion-arrow">
-    <summary class="ease-accordion-trigger">
-      What is EaseMotion CSS?
-    </summary>
+    <summary class="ease-accordion-trigger">What is EaseMotion CSS?</summary>
 
     <div class="ease-accordion-content">
-      <div>
-        EaseMotion CSS is a pure CSS animation utility library.
-      </div>
+      <div>EaseMotion CSS is a pure CSS animation utility library.</div>
     </div>
   </details>
-
 </div>
 ```
 

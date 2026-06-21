@@ -4,19 +4,20 @@
 **Zero JavaScript — CSS-only**
 
 ## Overview
+
 Fully animated dropdown and mega menu components using only
 CSS `:hover` and `:focus-within`. No JS event listeners needed.
 
 ## Variants
 
-| Class | Effect |
-|---|---|
-| `ease-dropdown-slide-up` | Slides up into position (default) |
-| `ease-dropdown-slide-down` | Slides down (for mega menus) |
-| `ease-dropdown-fade` | Fade only, no transform |
-| `ease-dropdown-scale` | Scale + slide in |
-| `ease-dropdown-menu--right` | Right-aligned panel |
-| `ease-mega-menu` | Full-width mega menu panel |
+| Class                       | Effect                            |
+| --------------------------- | --------------------------------- |
+| `ease-dropdown-slide-up`    | Slides up into position (default) |
+| `ease-dropdown-slide-down`  | Slides down (for mega menus)      |
+| `ease-dropdown-fade`        | Fade only, no transform           |
+| `ease-dropdown-scale`       | Scale + slide in                  |
+| `ease-dropdown-menu--right` | Right-aligned panel               |
+| `ease-mega-menu`            | Full-width mega menu panel        |
 
 ## Basic Usage
 
@@ -33,14 +34,16 @@ CSS `:hover` and `:focus-within`. No JS event listeners needed.
 ```
 
 ## Accessibility
+
 - `:focus-within` opens dropdown on keyboard Tab
 - `tabindex="0"` on trigger makes it focusable
 - `prefers-reduced-motion` disables transforms
 - Semantic link elements inside menu
 
 ## Files
-| File | Purpose |
-|---|---|
-| `style.css` | Full component styles |
+
+| File        | Purpose                |
+| ----------- | ---------------------- |
+| `style.css` | Full component styles  |
 | `demo.html` | All variants live demo |
-| `README.md` | This file |
+| `README.md` | This file              |

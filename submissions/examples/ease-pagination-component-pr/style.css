@@ -21,7 +21,10 @@
   text-decoration: none;
   color: #475569;
   background: #f1f5f9;
-  transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.15s ease;
 }
 
 .ease-page-link:hover {

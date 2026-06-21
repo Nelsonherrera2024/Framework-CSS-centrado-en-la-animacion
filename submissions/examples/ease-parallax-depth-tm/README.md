@@ -4,11 +4,11 @@ CSS scroll-linked parallax depth effect for EaseMotion CSS.
 
 ## Layer Speed Multipliers
 
-| Layer | Speed | Description |
-|---|---|---|
-| Background | 0.15 | Slowest |
-| Midground | 0.35 | Medium |
-| Foreground | 0.55 | Fastest |
+| Layer      | Speed | Description |
+| ---------- | ----- | ----------- |
+| Background | 0.15  | Slowest     |
+| Midground  | 0.35  | Medium      |
+| Foreground | 0.55  | Fastest     |
 
 ## Usage
 
@@ -21,8 +21,8 @@ CSS scroll-linked parallax depth effect for EaseMotion CSS.
 ```
 
 ```js
-window.addEventListener('scroll', () => {
-  bg.style.transform = 'translateY(' + (scrollProgress * 0.15) + 'px)';
-  mid.style.transform = 'translateY(' + (scrollProgress * 0.35) + 'px)';
+window.addEventListener("scroll", () => {
+  bg.style.transform = "translateY(" + scrollProgress * 0.15 + "px)";
+  mid.style.transform = "translateY(" + scrollProgress * 0.35 + "px)";
 });
 ```

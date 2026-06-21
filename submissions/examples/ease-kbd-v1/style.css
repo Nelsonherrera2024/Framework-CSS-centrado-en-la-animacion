@@ -17,7 +17,9 @@
   line-height: 1.4;
   white-space: nowrap;
   user-select: none;
-  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  transition:
+    transform 0.1s ease,
+    box-shadow 0.1s ease;
 }
 
 /* Press animation on click */

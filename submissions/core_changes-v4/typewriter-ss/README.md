@@ -3,13 +3,13 @@
 1. **What does this do?**  
    A single-pass typewriter animation that types text character-by-character with a blinking cursor, using CSS `steps()` timing.
 
-2. **How is it used?**  
+2. **How is it used?**
 
    ```html
    <span class="typewriter-ss" id="hero">Build beautiful UIs</span>
    <script>
-     document.querySelectorAll('.typewriter-ss').forEach(function (el) {
-       el.style.setProperty('--tw-chars', el.textContent.trim().length);
+     document.querySelectorAll(".typewriter-ss").forEach(function (el) {
+       el.style.setProperty("--tw-chars", el.textContent.trim().length);
      });
    </script>
    ```

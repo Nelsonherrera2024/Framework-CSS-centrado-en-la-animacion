@@ -19,9 +19,10 @@
   border-radius: var(--ease-radius-md, 8px);
   background: var(--ease-color-surface, #fff);
   color: var(--ease-color-text, #1e1e2e);
-  transition: border-color var(--ease-speed-fast, 0.2s) var(--ease-ease, ease),
-              box-shadow var(--ease-speed-fast, 0.2s) var(--ease-ease, ease),
-              transform var(--ease-speed-fast, 0.15s) var(--ease-ease, ease);
+  transition:
+    border-color var(--ease-speed-fast, 0.2s) var(--ease-ease, ease),
+    box-shadow var(--ease-speed-fast, 0.2s) var(--ease-ease, ease),
+    transform var(--ease-speed-fast, 0.15s) var(--ease-ease, ease);
 }
 
 .ease-otp-input:focus {
@@ -41,9 +42,16 @@
 }
 
 @keyframes ease-otp-shake {
-  0%, 100% { transform: translateX(0); }
-  25%      { transform: translateX(-6px); }
-  75%      { transform: translateX(6px); }
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-6px);
+  }
+  75% {
+    transform: translateX(6px);
+  }
 }
 
 /* Size variants */

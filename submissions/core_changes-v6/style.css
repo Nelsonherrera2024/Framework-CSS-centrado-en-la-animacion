@@ -15,24 +15,30 @@
     border-radius: var(--ease-radius-xl, 1.5rem);
     padding: var(--ease-space-8, 2rem);
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
     position: relative;
   }
 
   .ease-pricing-plan:hover {
     transform: translateY(-2px);
-    box-shadow: var(--ease-shadow-lg, 0 10px 15px -3px rgba(0, 0, 0, 0.10));
+    box-shadow: var(--ease-shadow-lg, 0 10px 15px -3px rgba(0, 0, 0, 0.1));
   }
 
   .ease-pricing-featured {
     border-color: var(--ease-color-primary, #6c63ff);
-    box-shadow: 0 0 0 1px var(--ease-color-primary, #6c63ff), var(--ease-shadow-lg, 0 10px 15px -3px rgba(0, 0, 0, 0.10));
+    box-shadow:
+      0 0 0 1px var(--ease-color-primary, #6c63ff),
+      var(--ease-shadow-lg, 0 10px 15px -3px rgba(0, 0, 0, 0.1));
     transform: scale(1.02);
   }
 
   .ease-pricing-featured:hover {
     transform: scale(1.03) translateY(-4px);
-    box-shadow: 0 0 0 1px var(--ease-color-primary, #6c63ff), var(--ease-shadow-xl, 0 20px 25px -5px rgba(0, 0, 0, 0.10));
+    box-shadow:
+      0 0 0 1px var(--ease-color-primary, #6c63ff),
+      var(--ease-shadow-xl, 0 20px 25px -5px rgba(0, 0, 0, 0.1));
   }
 
   .ease-pricing-badge {
@@ -161,7 +167,13 @@
 @import url("https://cdn.jsdelivr.net/npm/easemotion-css@latest/easemotion.min.css");
 
 body {
-  font-family: var(--ease-font-sans, "Inter", system-ui, -apple-system, sans-serif);
+  font-family: var(
+    --ease-font-sans,
+    "Inter",
+    system-ui,
+    -apple-system,
+    sans-serif
+  );
   max-width: 960px;
   margin: 2rem auto;
   padding: 0 1.5rem;

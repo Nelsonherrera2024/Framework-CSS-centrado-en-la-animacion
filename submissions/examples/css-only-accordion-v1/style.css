@@ -40,7 +40,8 @@ details[open] > .ease-accordion-header .ease-accordion-icon {
 
 details[open] > .ease-accordion-content {
   grid-template-rows: 1fr;
-  animation: ease-accordion-fade-in var(--ease-speed-medium) var(--ease-ease-out) forwards;
+  animation: ease-accordion-fade-in var(--ease-speed-medium)
+    var(--ease-ease-out) forwards;
 }
 
 .ease-accordion-content > * {

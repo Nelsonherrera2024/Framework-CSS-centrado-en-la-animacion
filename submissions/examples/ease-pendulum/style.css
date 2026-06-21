@@ -8,7 +8,8 @@
 .pendulum {
   display: inline-block;
   transform-origin: top center;
-  animation: pendulum var(--pendulum-duration) var(--pendulum-easing) infinite alternate;
+  animation: pendulum var(--pendulum-duration) var(--pendulum-easing) infinite
+    alternate;
 }
 
 @keyframes pendulum {
@@ -23,18 +24,34 @@
 }
 
 /* angle variants */
-.pendulum-narrow { --pendulum-angle: 12deg; }
-.pendulum-wide   { --pendulum-angle: 40deg; }
+.pendulum-narrow {
+  --pendulum-angle: 12deg;
+}
+.pendulum-wide {
+  --pendulum-angle: 40deg;
+}
 
 /* speed variants */
-.pendulum-fast   { --pendulum-duration: 0.8s; }
-.pendulum-slow   { --pendulum-duration: 4s; }
+.pendulum-fast {
+  --pendulum-duration: 0.8s;
+}
+.pendulum-slow {
+  --pendulum-duration: 4s;
+}
 
 /* color variants */
-.pendulum-purple { --pendulum-glow: rgba(124, 110, 247, 0.5); }
-.pendulum-pink   { --pendulum-glow: rgba(236, 72, 153, 0.5); }
-.pendulum-green  { --pendulum-glow: rgba(34, 197, 94, 0.5); }
-.pendulum-gold   { --pendulum-glow: rgba(217, 119, 6, 0.5); }
+.pendulum-purple {
+  --pendulum-glow: rgba(124, 110, 247, 0.5);
+}
+.pendulum-pink {
+  --pendulum-glow: rgba(236, 72, 153, 0.5);
+}
+.pendulum-green {
+  --pendulum-glow: rgba(34, 197, 94, 0.5);
+}
+.pendulum-gold {
+  --pendulum-glow: rgba(217, 119, 6, 0.5);
+}
 
 /* pause on hover */
 .pendulum-pause:hover {

@@ -9,13 +9,13 @@ with a spring overshoot entrance — zero JavaScript required.
 
 ## Classes
 
-| Class | Description |
-|---|---|
-| `ease-pop` | Default spring pop (0 → 1.1 → 1) |
-| `ease-pop--subtle` | Gentle overshoot (0 → 1.03 → 1) |
-| `ease-pop--hard` | Strong overshoot (0 → 1.25 → 0.95 → 1) |
-| `ease-pop--fast` | 0.25s duration |
-| `ease-pop--slow` | 0.9s duration |
+| Class              | Description                            |
+| ------------------ | -------------------------------------- |
+| `ease-pop`         | Default spring pop (0 → 1.1 → 1)       |
+| `ease-pop--subtle` | Gentle overshoot (0 → 1.03 → 1)        |
+| `ease-pop--hard`   | Strong overshoot (0 → 1.25 → 0.95 → 1) |
+| `ease-pop--fast`   | 0.25s duration                         |
+| `ease-pop--slow`   | 0.9s duration                          |
 
 ## Usage
 
@@ -32,11 +32,11 @@ with a spring overshoot entrance — zero JavaScript required.
 
 ## Cubic Bezier Values
 
-| Variant | Curve |
-|---|---|
+| Variant | Curve                             |
+| ------- | --------------------------------- |
 | Default | cubic-bezier(0.34, 1.56, 0.64, 1) |
-| Subtle  | cubic-bezier(0.22, 1, 0.36, 1) |
-| Hard    | cubic-bezier(0.34, 1.8, 0.64, 1) |
+| Subtle  | cubic-bezier(0.22, 1, 0.36, 1)    |
+| Hard    | cubic-bezier(0.34, 1.8, 0.64, 1)  |
 
 ## Accessibility
 

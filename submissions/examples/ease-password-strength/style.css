@@ -29,7 +29,8 @@
   Strength 2: Orange 
   The 1st and 2nd segments fill
 */
-.ease-password-meter[data-strength="2"] .ease-password-segment:nth-child(-n+2) {
+.ease-password-meter[data-strength="2"]
+  .ease-password-segment:nth-child(-n + 2) {
   background-color: #f97316; /* Orange */
 }
 
@@ -37,7 +38,8 @@
   Strength 3: Yellow 
   The 1st, 2nd, and 3rd segments fill
 */
-.ease-password-meter[data-strength="3"] .ease-password-segment:nth-child(-n+3) {
+.ease-password-meter[data-strength="3"]
+  .ease-password-segment:nth-child(-n + 3) {
   background-color: #eab308; /* Yellow */
 }
 
@@ -63,7 +65,10 @@ body {
   max-width: 900px;
   margin: 0 auto;
   padding: 2rem;
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
 }
 
 .demo-header {
@@ -106,7 +111,9 @@ body {
   font-size: 1rem;
   font-family: inherit;
   outline: none;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .password-input:focus {
@@ -124,7 +131,15 @@ body {
   color: #94a3b8; /* Default */
 }
 
-.strength-text[data-strength="1"] { color: #ef4444; }
-.strength-text[data-strength="2"] { color: #f97316; }
-.strength-text[data-strength="3"] { color: #eab308; }
-.strength-text[data-strength="4"] { color: #22c55e; }
+.strength-text[data-strength="1"] {
+  color: #ef4444;
+}
+.strength-text[data-strength="2"] {
+  color: #f97316;
+}
+.strength-text[data-strength="3"] {
+  color: #eab308;
+}
+.strength-text[data-strength="4"] {
+  color: #22c55e;
+}

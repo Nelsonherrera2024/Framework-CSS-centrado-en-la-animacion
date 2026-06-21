@@ -15,10 +15,12 @@ A keyboard shortcut display component for EaseMotion CSS.
 <kbd class="ease-kbd">Enter</kbd>
 
 <!-- Key combination -->
-<kbd class="ease-kbd">Ctrl</kbd> + <kbd class="ease-kbd">Shift</kbd> + <kbd class="ease-kbd">P</kbd>
+<kbd class="ease-kbd">Ctrl</kbd> + <kbd class="ease-kbd">Shift</kbd> +
+<kbd class="ease-kbd">P</kbd>
 ```
 
 ## Features
+
 - 3D press-down border effect
 - Click animation (press down)
 - Dark mode support
@@ -28,6 +30,6 @@ A keyboard shortcut display component for EaseMotion CSS.
 
 ## Classes
 
-| Class | Description |
-|---|---|
+| Class      | Description         |
+| ---------- | ------------------- |
 | `ease-kbd` | Styled keyboard key |

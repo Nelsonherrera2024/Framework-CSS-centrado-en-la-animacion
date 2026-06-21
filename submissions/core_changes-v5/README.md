@@ -16,8 +16,11 @@ A responsive, CSS-only drawer component that slides in from any edge (left, righ
 ## Usage
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/easemotion-css@latest/easemotion.min.css">
-<link rel="stylesheet" href="style.css">
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/easemotion-css@latest/easemotion.min.css"
+/>
+<link rel="stylesheet" href="style.css" />
 
 <div class="ease-drawer ease-drawer-left" id="my-drawer">
   <div class="ease-drawer-overlay" data-close></div>
@@ -40,7 +43,7 @@ A responsive, CSS-only drawer component that slides in from any edge (left, righ
 ## Toggle JS (minimal)
 
 ```js
-document.querySelector(".open-drawer").addEventListener("click", function() {
+document.querySelector(".open-drawer").addEventListener("click", function () {
   document.getElementById("my-drawer").classList.add("open");
   document.body.classList.add("ease-drawer-open");
 });

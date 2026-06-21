@@ -17,17 +17,18 @@ A popover component with directional arrow pointers for EaseMotion CSS.
 
 ## Classes
 
-| Class | Description |
-|---|---|
-| `ease-popover-wrapper` | Relative position wrapper |
-| `ease-popover` | Base popover |
-| `ease-popover-top` | Arrow points down, popover appears above |
-| `ease-popover-bottom` | Arrow points up, popover appears below |
-| `ease-popover-left` | Arrow points right, popover appears left |
-| `ease-popover-right` | Arrow points left, popover appears right |
-| `ease-visible` | Toggles popover visibility |
+| Class                  | Description                              |
+| ---------------------- | ---------------------------------------- |
+| `ease-popover-wrapper` | Relative position wrapper                |
+| `ease-popover`         | Base popover                             |
+| `ease-popover-top`     | Arrow points down, popover appears above |
+| `ease-popover-bottom`  | Arrow points up, popover appears below   |
+| `ease-popover-left`    | Arrow points right, popover appears left |
+| `ease-popover-right`   | Arrow points left, popover appears right |
+| `ease-visible`         | Toggles popover visibility               |
 
 ## Features
+
 - Directional arrow pointers for all 4 positions
 - Toggle with ease-visible class
 - Smooth fade transition

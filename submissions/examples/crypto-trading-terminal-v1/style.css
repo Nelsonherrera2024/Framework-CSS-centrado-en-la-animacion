@@ -141,8 +141,13 @@ body {
 }
 
 @keyframes ticker-glow {
-  0%, 100% { box-shadow: 0 0 4px transparent; }
-  50% { box-shadow: 0 0 8px var(--accent-glow); }
+  0%,
+  100% {
+    box-shadow: 0 0 4px transparent;
+  }
+  50% {
+    box-shadow: 0 0 8px var(--accent-glow);
+  }
 }
 
 .terminal-grid {

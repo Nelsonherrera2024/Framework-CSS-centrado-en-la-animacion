@@ -1,6 +1,7 @@
 /* Rating/Star Component — Issue #12450 */
 
-:root, [data-theme="light"] {
+:root,
+[data-theme="light"] {
   --ease-star-empty: #d1d5db;
   --ease-star-filled: #f59e0b;
   --ease-star-half: #f59e0b;
@@ -27,20 +28,30 @@
 
 .ease-star {
   position: relative;
-  transition: color 0.2s ease, transform 0.2s ease;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
   user-select: none;
 }
 
-.ease-star.filled { color: var(--rating-color); }
+.ease-star.filled {
+  color: var(--rating-color);
+}
 
 .ease-star.half {
-  background: linear-gradient(90deg, var(--ease-star-half) 50%, var(--ease-star-empty) 50%);
+  background: linear-gradient(
+    90deg,
+    var(--ease-star-half) 50%,
+    var(--ease-star-empty) 50%
+  );
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.ease-star.empty { color: var(--ease-star-empty); }
+.ease-star.empty {
+  color: var(--ease-star-empty);
+}
 
 /* Interactive */
 .ease-rating-interactive .ease-star {
@@ -57,13 +68,25 @@
 }
 
 /* Sizes */
-.ease-rating-sm { --rating-size: 16px; }
-.ease-rating-md { --rating-size: 24px; }
-.ease-rating-lg { --rating-size: 32px; }
+.ease-rating-sm {
+  --rating-size: 16px;
+}
+.ease-rating-md {
+  --rating-size: 24px;
+}
+.ease-rating-lg {
+  --rating-size: 32px;
+}
 
 /* Color variants */
-.ease-rating-success { --rating-color: #22c55e; --ease-star-half: #22c55e; }
-.ease-rating-danger  { --rating-color: #ef4444; --ease-star-half: #ef4444; }
+.ease-rating-success {
+  --rating-color: #22c55e;
+  --ease-star-half: #22c55e;
+}
+.ease-rating-danger {
+  --rating-color: #ef4444;
+  --ease-star-half: #ef4444;
+}
 
 /* Rating value text */
 .ease-rating-value {
@@ -75,7 +98,10 @@
 
 /* Demo page */
 body {
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
   max-width: 800px;
   margin: 2rem auto;
   padding: 0 1rem;
@@ -96,7 +122,10 @@ body {
   padding: 1.25rem;
 }
 
-.card h2 { margin: 0 0 0.75rem; font-size: 1rem; }
+.card h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+}
 
 .hint {
   margin: 0.5rem 0 0;
@@ -119,9 +148,17 @@ code {
   font-size: 0.9em;
 }
 
-hr { border: none; border-top: 1px solid #e2e8f0; margin: 1.5rem 0; }
+hr {
+  border: none;
+  border-top: 1px solid #e2e8f0;
+  margin: 1.5rem 0;
+}
 
 @media (prefers-reduced-motion: reduce) {
-  .ease-star { transition: none; }
-  .ease-rating-interactive .ease-star:hover { transform: none; }
+  .ease-star {
+    transition: none;
+  }
+  .ease-rating-interactive .ease-star:hover {
+    transform: none;
+  }
 }

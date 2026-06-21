@@ -5,7 +5,13 @@
 */
 
 /* ── Reset ── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 /* ── Page layout ── */
 .ease-pricing-section {
@@ -49,7 +55,9 @@
   background: rgba(99, 102, 241, 0.25);
   border: 1px solid rgba(99, 102, 241, 0.4);
   border-radius: 999px;
-  transition: background 0.3s ease, border-color 0.3s ease;
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .ease-pricing-toggle-label .ease-toggle-thumb {
@@ -60,8 +68,9 @@
   height: 20px;
   background: #6366f1;
   border-radius: 50%;
-  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
-              background 0.3s ease;
+  transition:
+    transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+    background 0.3s ease;
   box-shadow: 0 2px 8px rgba(99, 102, 241, 0.5);
 }
 
@@ -129,9 +138,10 @@
   backdrop-filter: blur(16px) saturate(1.4);
   -webkit-backdrop-filter: blur(16px) saturate(1.4);
   overflow: hidden;
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 0.35s ease,
-              box-shadow 0.35s ease;
+  transition:
+    transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -140,8 +150,9 @@
 .ease-pricing-card:hover {
   transform: translateY(-6px);
   border-color: rgba(99, 102, 241, 0.4);
-  box-shadow: 0 20px 60px rgba(99, 102, 241, 0.15),
-              0 0 0 1px rgba(99, 102, 241, 0.1);
+  box-shadow:
+    0 20px 60px rgba(99, 102, 241, 0.15),
+    0 0 0 1px rgba(99, 102, 241, 0.1);
 }
 
 /* Popular card — glow accent */
@@ -151,22 +162,29 @@
 }
 
 .ease-pricing-card.ease-pricing-popular:hover {
-  box-shadow: 0 20px 60px rgba(99, 102, 241, 0.25),
-              0 0 0 1px rgba(99, 102, 241, 0.25);
+  box-shadow:
+    0 20px 60px rgba(99, 102, 241, 0.25),
+    0 0 0 1px rgba(99, 102, 241, 0.25);
 }
 
 /* Ambient glow orb — tracks hover via CSS */
 .ease-pricing-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -60px;
   right: -60px;
   width: 180px;
   height: 180px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(99,102,241,0.18) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(99, 102, 241, 0.18) 0%,
+    transparent 70%
+  );
   opacity: 0;
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
   pointer-events: none;
 }
 
@@ -200,7 +218,9 @@
   color: #6366f1;
 }
 
-.ease-pricing-popular .ease-card-tier { color: #a78bfa; }
+.ease-pricing-popular .ease-card-tier {
+  color: #a78bfa;
+}
 
 .ease-card-name {
   font-size: 1.3rem;
@@ -237,7 +257,9 @@
   font-weight: 800;
   color: #f1f5f9;
   line-height: 1;
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
 }
 
 /* Annual price — hidden by default */
@@ -249,7 +271,9 @@
   position: absolute;
   opacity: 0;
   transform: scale(0.85) translateY(8px);
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
   pointer-events: none;
 }
 
@@ -260,17 +284,13 @@
 }
 
 /* When annual toggled — swap prices */
-.ease-pricing-toggle-input:checked
-  ~ .ease-pricing-grid
-  .ease-price-monthly {
+.ease-pricing-toggle-input:checked ~ .ease-pricing-grid .ease-price-monthly {
   opacity: 0;
   transform: scale(0.85) translateY(-8px);
   pointer-events: none;
 }
 
-.ease-pricing-toggle-input:checked
-  ~ .ease-pricing-grid
-  .ease-price-annual {
+.ease-pricing-toggle-input:checked ~ .ease-pricing-grid .ease-price-annual {
   opacity: 1;
   transform: scale(1) translateY(0);
   pointer-events: auto;
@@ -299,7 +319,7 @@
 }
 
 .ease-feature-list li::before {
-  content: '';
+  content: "";
   display: inline-block;
   width: 16px;
   height: 16px;
@@ -332,11 +352,12 @@
   border: 1px solid rgba(99, 102, 241, 0.4);
   background: rgba(99, 102, 241, 0.12);
   color: #a5b4fc;
-  transition: background 0.25s ease,
-              border-color 0.25s ease,
-              color 0.25s ease,
-              box-shadow 0.25s ease,
-              transform 0.2s ease;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.2s ease;
   margin-top: auto;
   text-decoration: none;
 }
@@ -363,7 +384,9 @@
 }
 
 /* ── backdrop-filter fallback ── */
-@supports not ((backdrop-filter: blur(0)) or (-webkit-backdrop-filter: blur(0))) {
+@supports not (
+  (backdrop-filter: blur(0)) or (-webkit-backdrop-filter: blur(0))
+) {
   .ease-pricing-card {
     background: rgba(15, 23, 42, 0.92);
   }

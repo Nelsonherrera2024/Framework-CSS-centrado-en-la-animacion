@@ -6,25 +6,25 @@ Interactive playground for experimenting with EaseMotion animation utilities in 
 
 ## Features
 
-* Animation selection
-* Duration control
-* Delay control
-* Iteration count selection
-* Direction selection
-* Timing function selection
-* Fill mode selection
-* Animation restart button
-* Copy configuration button
-* Live preview panel
-* Reduced-motion support
-* Keyboard-accessible controls
-* ARIA labels for accessibility
+- Animation selection
+- Duration control
+- Delay control
+- Iteration count selection
+- Direction selection
+- Timing function selection
+- Fill mode selection
+- Animation restart button
+- Copy configuration button
+- Live preview panel
+- Reduced-motion support
+- Keyboard-accessible controls
+- ARIA labels for accessibility
 
 ## Available Animations
 
-* Bounce
-* Fade
-* Slide
+- Bounce
+- Fade
+- Slide
 
 ## Configuration Options
 
@@ -56,10 +56,10 @@ Determines how styles are applied before and after execution.
 
 The playground includes:
 
-* Keyboard navigation support
-* ARIA labels
-* Focusable preview element
-* Reduced-motion preference handling
+- Keyboard navigation support
+- ARIA labels
+- Focusable preview element
+- Reduced-motion preference handling
 
 ## Usage
 

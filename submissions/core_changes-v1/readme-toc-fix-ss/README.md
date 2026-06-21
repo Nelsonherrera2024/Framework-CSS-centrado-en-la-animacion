@@ -42,9 +42,9 @@
 
 ## Issues Found
 
-| Problem | Location | Fix |
-|---------|----------|-----|
-| `## Alternative CDN Providers` missing from TOC | Line 234 | Add `- [Alternative CDN Providers](#alternative-cdn-providers)` |
-| `## Issue Labels 🏷️` missing from TOC | Line 886 | Add `- [Issue Labels 🏷️](#issue-labels-)` |
-| `## Accessibility` missing from TOC | Line 1024 | Add `- [Accessibility](#accessibility)` |
-| No quick-install sub-links in TOC | Lines 207–343 | Add indented entries for CDN / npm / granular / modular / full-bundle |
+| Problem                                         | Location      | Fix                                                                   |
+| ----------------------------------------------- | ------------- | --------------------------------------------------------------------- |
+| `## Alternative CDN Providers` missing from TOC | Line 234      | Add `- [Alternative CDN Providers](#alternative-cdn-providers)`       |
+| `## Issue Labels 🏷️` missing from TOC           | Line 886      | Add `- [Issue Labels 🏷️](#issue-labels-)`                             |
+| `## Accessibility` missing from TOC             | Line 1024     | Add `- [Accessibility](#accessibility)`                               |
+| No quick-install sub-links in TOC               | Lines 207–343 | Add indented entries for CDN / npm / granular / modular / full-bundle |

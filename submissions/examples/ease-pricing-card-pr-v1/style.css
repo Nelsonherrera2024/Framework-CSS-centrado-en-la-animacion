@@ -9,7 +9,9 @@
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 /* Hover lift animation */
@@ -117,7 +119,9 @@
   font-weight: 600;
   cursor: pointer;
   text-align: center;
-  transition: background 0.2s ease, color 0.2s ease;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
 }
 
 .ease-pricing-btn:hover {

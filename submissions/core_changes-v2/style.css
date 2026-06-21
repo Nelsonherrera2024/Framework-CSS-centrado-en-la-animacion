@@ -23,12 +23,17 @@
 }
 
 body {
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
   margin: 0;
   padding: 0;
   background: var(--bg);
   color: var(--text);
-  transition: background 0.3s ease, color 0.3s ease;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
 }
 
 header {
@@ -40,7 +45,10 @@ header {
   border-bottom: 1px solid var(--card-border);
 }
 
-header h1 { margin: 0; font-size: 1.25rem; }
+header h1 {
+  margin: 0;
+  font-size: 1.25rem;
+}
 
 main {
   max-width: 720px;
@@ -61,7 +69,9 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: border-color 0.2s ease, transform 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
   color: var(--text);
   background: var(--bg);
 }
@@ -71,7 +81,9 @@ main {
   transform: scale(1.1);
 }
 
-.ease-theme-icon { line-height: 1; }
+.ease-theme-icon {
+  line-height: 1;
+}
 
 /* Card */
 .card {
@@ -80,10 +92,14 @@ main {
   border-radius: 0.75rem;
   padding: 1.5rem;
   margin-top: 1rem;
-  transition: background 0.3s ease, border-color 0.3s ease;
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease;
 }
 
-.card h3 { margin: 0 0 0.5rem; }
+.card h3 {
+  margin: 0 0 0.5rem;
+}
 
 .demo-btn {
   background: var(--btn-bg);
@@ -97,12 +113,27 @@ main {
   transition: opacity 0.2s ease;
 }
 
-.demo-btn:hover { opacity: 0.9; }
+.demo-btn:hover {
+  opacity: 0.9;
+}
 
-hr { border: none; border-top: 1px solid var(--card-border); margin: 1.5rem 0; }
-code { background: var(--card-bg); padding: 0.125rem 0.375rem; border-radius: 0.25rem; font-size: 0.9em; }
+hr {
+  border: none;
+  border-top: 1px solid var(--card-border);
+  margin: 1.5rem 0;
+}
+code {
+  background: var(--card-bg);
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+  font-size: 0.9em;
+}
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  body, .card, .ease-theme-toggle { transition: none; }
+  body,
+  .card,
+  .ease-theme-toggle {
+    transition: none;
+  }
 }

@@ -9,6 +9,7 @@
 ## What this adds
 
 A SaaS-style glassmorphic pricing card component with:
+
 - Pure CSS Monthly/Annual billing toggle (hidden checkbox hack)
 - Smooth price swap micro-animation (scale-fade)
 - Ambient gradient glow that activates on hover
@@ -21,6 +22,7 @@ A SaaS-style glassmorphic pricing card component with:
 ## How It Works
 
 ### 1. Pure CSS Toggle — Hidden Checkbox Hack
+
 A visually hidden `<input type="checkbox">` is placed as a sibling to
 both the toggle UI and the pricing grid. CSS general sibling selectors
 (`~`) target `.ease-price-monthly` and `.ease-price-annual` inside the
@@ -38,16 +40,19 @@ grid when the checkbox is `:checked`:
 ```
 
 ### 2. Price Swap Micro-animation
+
 Both `.ease-price-monthly` and `.ease-price-annual` are absolutely
 positioned in the same space. Toggling switches opacity + scale + translateY
 simultaneously, producing a clean scale-fade cross-dissolve.
 
 ### 3. Ambient Glow on Hover
+
 Each card has a `::before` pseudo-element — a radial gradient orb —
 that fades in and scales up on `:hover`, giving the illusion of an
 ambient light source tracking the card.
 
 ### 4. Fallback
+
 `@supports not (backdrop-filter: blur(0))` provides a solid dark
 background for Firefox < 103 and other unsupporting browsers.
 
@@ -57,7 +62,11 @@ background for Firefox < 103 and other unsupporting browsers.
 
 ```html
 <!-- Input MUST be a sibling of both toggle-wrap AND pricing-grid -->
-<input type="checkbox" id="ease-billing-toggle" class="ease-pricing-toggle-input" />
+<input
+  type="checkbox"
+  id="ease-billing-toggle"
+  class="ease-pricing-toggle-input"
+/>
 
 <section class="ease-pricing-section">
   <div class="ease-pricing-toggle-wrap">
@@ -88,20 +97,20 @@ background for Firefox < 103 and other unsupporting browsers.
 
 ## Classes
 
-| Class | Purpose |
-|---|---|
+| Class                        | Purpose                             |
+| ---------------------------- | ----------------------------------- |
 | `.ease-pricing-toggle-input` | Hidden checkbox — powers the toggle |
-| `.ease-pricing-toggle-wrap` | Toggle UI container |
-| `.ease-pricing-toggle-label` | Clickable slider track + thumb |
-| `.ease-pricing-section` | Page section wrapper |
-| `.ease-pricing-grid` | Responsive card grid |
-| `.ease-pricing-card` | Glass card base |
-| `.ease-pricing-popular` | Popular/highlighted card variant |
-| `.ease-popular-badge` | "Most Popular" badge pill |
-| `.ease-price-monthly` | Monthly price (default visible) |
-| `.ease-price-annual` | Annual price (revealed on toggle) |
-| `.ease-feature-list` | Checkmark feature list |
-| `.ease-pricing-cta` | Call-to-action button |
+| `.ease-pricing-toggle-wrap`  | Toggle UI container                 |
+| `.ease-pricing-toggle-label` | Clickable slider track + thumb      |
+| `.ease-pricing-section`      | Page section wrapper                |
+| `.ease-pricing-grid`         | Responsive card grid                |
+| `.ease-pricing-card`         | Glass card base                     |
+| `.ease-pricing-popular`      | Popular/highlighted card variant    |
+| `.ease-popular-badge`        | "Most Popular" badge pill           |
+| `.ease-price-monthly`        | Monthly price (default visible)     |
+| `.ease-price-annual`         | Annual price (revealed on toggle)   |
+| `.ease-feature-list`         | Checkmark feature list              |
+| `.ease-pricing-cta`          | Call-to-action button               |
 
 ---
 

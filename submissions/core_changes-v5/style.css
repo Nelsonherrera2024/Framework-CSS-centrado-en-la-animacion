@@ -9,7 +9,9 @@
     z-index: var(--ease-z-overlay, 40);
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+    transition:
+      opacity 0.3s ease,
+      visibility 0.3s ease;
   }
 
   body.ease-drawer-open .ease-drawer-overlay {
@@ -21,7 +23,7 @@
     position: fixed;
     z-index: calc(var(--ease-z-overlay, 40) + 10);
     background: var(--ease-color-surface, #ffffff);
-    box-shadow: var(--ease-shadow-xl, 0 20px 25px -5px rgba(0, 0, 0, 0.10));
+    box-shadow: var(--ease-shadow-xl, 0 20px 25px -5px rgba(0, 0, 0, 0.1));
     transition: transform 0.3s ease;
     display: flex;
     flex-direction: column;
@@ -166,7 +168,13 @@
 @import url("https://cdn.jsdelivr.net/npm/easemotion-css@latest/easemotion.min.css");
 
 body {
-  font-family: var(--ease-font-sans, "Inter", system-ui, -apple-system, sans-serif);
+  font-family: var(
+    --ease-font-sans,
+    "Inter",
+    system-ui,
+    -apple-system,
+    sans-serif
+  );
   max-width: 640px;
   margin: 2rem auto;
   padding: 0 1.5rem;

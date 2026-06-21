@@ -16,8 +16,11 @@ A feature comparison / pricing table component built with CSS Grid, featuring pl
 ## Usage
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/easemotion-css@latest/easemotion.min.css">
-<link rel="stylesheet" href="style.css">
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/easemotion-css@latest/easemotion.min.css"
+/>
+<link rel="stylesheet" href="style.css" />
 
 <div class="ease-pricing-table">
   <div class="ease-pricing-plan">

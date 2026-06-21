@@ -20,3 +20,4 @@ Set up the HTML structure with 4 child segments:
   <div class="ease-password-segment"></div>
   <div class="ease-password-segment"></div>
 </div>
+```
