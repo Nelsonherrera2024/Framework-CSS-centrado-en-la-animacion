@@ -1,0 +1,27 @@
+:root {
+  --em-sk-bg: #e0e0e0;
+  --em-sk-shimmer: #f0f0f0;
+  --em-sk-duration: 1.6s;
+  --em-sk-radius: 4px;
+}
+
+@keyframes em-shimmer-loop {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.em-skeleton {
+  background: linear-gradient(90deg, var(--em-sk-bg) 25%, var(--em-sk-shimmer) 50%, var(--em-sk-bg) 75%);
+  background-size: 200% 100%;
+  animation: em-shimmer-loop var(--em-sk-duration) infinite linear;
+  display: inline-block;
+  border-radius: var(--em-sk-radius);
+  color: transparent !important;
+  pointer-events: none;
+  user-select: none;
+}
+
+.em-skeleton-avatar { width: var(--em-sk-avatar-size, 48px); height: var(--em-sk-avatar-size, 48px); border-radius: 50%; }
+.em-skeleton-media { width: 100%; height: var(--em-sk-media-height, 180px); }
+.em-skeleton-line { width: var(--em-sk-line-width, 100%); height: var(--em-sk-line-height, 16px); margin-bottom: var(--em-sk-line-gap, 8px); }
+.em-skeleton-line:last-child { margin-bottom: 0; width: var(--em-sk-line-last-width, 65%); }
