@@ -19,17 +19,19 @@
   <body>
     <div class="attendance-dashboard ease-fade-in">
 
+      <!-- Dashboard Header -->
       <header class="dashboard-header ease-slide-up">
         <div class="header-left">
           <h1 class="dashboard-title">HR Dashboard</h1>
           <p class="dashboard-subtitle">Attendance Overview — June 2026</p>
         </div>
         <div class="header-right">
-          <span class="live-badge ease-pulse">● Live</span>
-          <span class="header-date">Thu, 18 Jun 2026</span>
+          <span class="live-badge ease-pulse">&#9679; Live</span>
+          <span class="header-date">Fri, 19 Jun 2026</span>
         </div>
       </header>
 
+      <!-- Employee Profile Summary -->
       <section class="profile-section ease-slide-up ease-delay-100">
         <div class="profile-avatar">
           <span class="avatar-initials">AR</span>
@@ -38,7 +40,7 @@
         <div class="profile-info">
           <h2 class="profile-name">Arjun Rao</h2>
           <p class="profile-role">Senior Software Engineer</p>
-          <p class="profile-dept">Engineering · Team Alpha</p>
+          <p class="profile-dept">Engineering &middot; Team Alpha</p>
         </div>
         <div class="profile-badges">
           <span class="status-badge badge-present">Present</span>
@@ -46,11 +48,12 @@
         </div>
       </section>
 
+      <!-- Animated Progress Rings: Attendance · Punctuality · Avg Hours -->
       <section class="stats-grid ease-slide-up ease-delay-200">
 
         <div class="stat-card ease-hover-lift">
           <div class="stat-ring-wrapper">
-            <svg class="stat-ring" viewBox="0 0 120 120">
+            <svg class="stat-ring" viewBox="0 0 120 120" aria-label="Attendance 92%">
               <circle class="ring-track" cx="60" cy="60" r="50" />
               <circle class="ring-fill ring-attendance" cx="60" cy="60" r="50" />
             </svg>
@@ -63,7 +66,7 @@
 
         <div class="stat-card ease-hover-lift">
           <div class="stat-ring-wrapper">
-            <svg class="stat-ring" viewBox="0 0 120 120">
+            <svg class="stat-ring" viewBox="0 0 120 120" aria-label="Punctuality 87%">
               <circle class="ring-track" cx="60" cy="60" r="50" />
               <circle class="ring-fill ring-punctuality" cx="60" cy="60" r="50" />
             </svg>
@@ -76,7 +79,7 @@
 
         <div class="stat-card ease-hover-lift">
           <div class="stat-ring-wrapper">
-            <svg class="stat-ring" viewBox="0 0 120 120">
+            <svg class="stat-ring" viewBox="0 0 120 120" aria-label="Average Hours 9.2">
               <circle class="ring-track" cx="60" cy="60" r="50" />
               <circle class="ring-fill ring-hours" cx="60" cy="60" r="50" />
             </svg>
@@ -89,39 +92,42 @@
 
       </section>
 
+      <!-- Weekly Attendance Overview -->
       <section class="weekly-section ease-slide-up ease-delay-300">
         <h3 class="section-title">Weekly Attendance</h3>
         <div class="weekly-grid">
           <div class="day-card day-present ease-hover-grow">
             <span class="day-name">Mon</span>
-            <span class="day-icon">✓</span>
+            <span class="day-icon">&#10003;</span>
             <span class="day-hours">9h 10m</span>
           </div>
           <div class="day-card day-present ease-hover-grow">
             <span class="day-name">Tue</span>
-            <span class="day-icon">✓</span>
+            <span class="day-icon">&#10003;</span>
             <span class="day-hours">8h 45m</span>
           </div>
           <div class="day-card day-late ease-hover-grow">
             <span class="day-name">Wed</span>
-            <span class="day-icon">◷</span>
+            <span class="day-icon">&#9711;</span>
             <span class="day-hours">7h 30m</span>
           </div>
           <div class="day-card day-present ease-hover-grow">
             <span class="day-name">Thu</span>
-            <span class="day-icon">✓</span>
+            <span class="day-icon">&#10003;</span>
             <span class="day-hours">9h 00m</span>
           </div>
           <div class="day-card day-absent ease-hover-grow">
             <span class="day-name">Fri</span>
-            <span class="day-icon">✕</span>
+            <span class="day-icon">&#10005;</span>
             <span class="day-hours">Leave</span>
           </div>
         </div>
       </section>
 
+      <!-- Leave Balance + Working Hours -->
       <section class="bottom-grid ease-slide-up ease-delay-400">
 
+        <!-- Leave Balance -->
         <div class="leave-card ease-hover-lift">
           <h3 class="section-title">Leave Balance</h3>
           <div class="leave-list">
@@ -149,6 +155,7 @@
           </div>
         </div>
 
+        <!-- Working Hours -->
         <div class="hours-card ease-hover-lift">
           <h3 class="section-title">Working Hours</h3>
           <div class="hours-bars">

@@ -1,61 +1,101 @@
 # Animated Employee Attendance Dashboard
 
-A self-contained HR dashboard component built with pure HTML and CSS, using EaseMotion CSS utility classes for entrance animations and hover interactions.
+A self-contained, animated HR dashboard component built with pure HTML and CSS.  
+Submitted to [EaseMotion CSS](https://github.com/SAPTARSHI-coder/EaseMotion-css) as a contribution under `submissions/examples/`.
+
+---
 
 ## Preview
 
-Open `demo.html` directly in any modern browser — no build step required.
+Open `demo.html` directly in any modern browser — no build step, no dependencies.
 
-## Features
+---
 
-- Animated SVG progress rings (attendance, punctuality, avg hours)
-- Animated leave balance bars
-- Animated working hours bars
-- Weekly attendance day cards with status colours (present / late / absent)
-- Employee profile section with online status indicator
-- Status badges (Present, On Time)
-- Hover lift and grow interactions on all cards
-- Responsive layout — adapts to mobile screens
-- Dark theme with CSS custom properties
+## What It Includes
 
-## EaseMotion CSS classes used
-
-| Class | Purpose |
+| Section | Description |
 |---|---|
-| `ease-fade-in` | Dashboard entrance |
-| `ease-slide-up` | Section entrance with delay |
-| `ease-delay-100` to `ease-delay-400` | Staggered section reveals |
-| `ease-pulse` | Live indicator badge |
-| `ease-hover-lift` | Stat and leave cards |
-| `ease-hover-grow` | Weekly day cards |
+| **Dashboard Header** | Title, subtitle, live badge with pulse animation, current date |
+| **Employee Profile** | Avatar with online indicator, name, role, department, status badges |
+| **Progress Rings** | Animated SVG rings for Attendance (92%), Punctuality (87%), Avg Hours (9.2h) |
+| **Weekly Overview** | 5-day grid showing Present / Late / Absent status with icons and hours |
+| **Leave Balance** | Animated progress bars for Casual, Sick, and Earned leave |
+| **Working Hours** | Per-day bar chart with gradient fills and animated entry |
 
-## File structure
+---
+
+## Animations Used
+
+- `ease-fade-in` — full dashboard entrance
+- `ease-slide-up` — staggered section entries (`ease-delay-100` through `ease-delay-400`)
+- `ease-pulse` — live badge
+- `ease-hover-lift` — stat cards and bottom cards
+- `ease-hover-grow` — weekly day cards
+- Custom `@keyframes` — SVG ring fill, bar-grow, hours-bar-grow
+
+---
+
+## File Structure
 
 ```
 animated-employee-attendance-dashboard/
-├── demo.html
-├── style.css
-└── README.md
+├── demo.html   ← full self-contained demo
+├── style.css   ← all component styles
+└── README.md   ← this file
 ```
 
-## How to use
+---
+
+## How to Use
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/SAPTARSHI-coder/EaseMotion-css@main/easemotion.min.css" />
+<!-- 1. Load EaseMotion CSS from CDN -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/SAPTARSHI-coder/EaseMotion-css@main/easemotion.min.css"
+/>
+
+<!-- 2. Load the component stylesheet -->
 <link rel="stylesheet" href="style.css" />
+
+<!-- 3. Copy the HTML from demo.html into your project -->
 ```
 
-Then copy the HTML structure from `demo.html` into your project.
+No JavaScript required. All animations are pure CSS.
 
-## Customisation
+---
 
-All colours are CSS custom properties defined in `:root` inside `style.css`. Override any token to retheme the component:
+## Design Decisions
 
-```css
-:root {
-  --clr-primary: #f97316;   /* swap accent colour */
-  --clr-bg: #ffffff;        /* light mode background */
-  --clr-surface: #f1f5f9;
-  --clr-text: #0f172a;
-}
-```
+- **Dark theme only** — matches modern HR platform aesthetics (Workday, Rippling, Gusto dark modes)
+- **CSS custom properties** — all colors are tokens under `:root`, easy to retheme
+- **SVG rings** — `stroke-dashoffset` animation is the most reliable cross-browser method for circular progress
+- **Staggered delays** — each section animates in sequence using `ease-delay-*` utilities from EaseMotion CSS
+- **No JavaScript** — hover effects, animations, and layout are fully CSS-driven
+
+---
+
+## Responsive Behaviour
+
+| Breakpoint | Change |
+|---|---|
+| `≤ 680px` | Bottom grid goes to single column; header stacks vertically |
+| `≤ 480px` | Ring grid goes to single column; rings shrink to 80px |
+
+---
+
+## Checklist
+
+- [x] Placed inside `submissions/examples/` only
+- [x] Does not modify `core/` or `components/`
+- [x] Self-contained — works by opening `demo.html` in a browser
+- [x] Uses EaseMotion CSS animation classes
+- [x] Includes `demo.html`, `style.css`, and `README.md`
+- [x] One feature per PR
+- [x] No duplicate of an existing EaseMotion CSS class
+
+---
+
+## Inspired By
+
+BambooHR · Workday · Zoho People · Gusto · Rippling · ADP

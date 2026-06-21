@@ -1,3 +1,8 @@
+/* ============================================================
+   Animated Employee Attendance Dashboard
+   Submission for EaseMotion CSS — submissions/examples/
+   ============================================================ */
+
 :root {
   --clr-bg: #0f1117;
   --clr-surface: #1a1d27;
@@ -131,7 +136,7 @@ body {
 .profile-name {
   font-size: 1.1rem;
   font-weight: 600;
-  color: #faf9f9;
+  color: #ffffff;
 }
 
 .profile-role {
@@ -220,7 +225,6 @@ body {
   stroke-linecap: round;
   stroke-dasharray: var(--ring-circumference);
   stroke-dashoffset: var(--ring-circumference);
-  transition: stroke-dashoffset 1.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .ring-attendance {
@@ -238,18 +242,21 @@ body {
   animation: fill-ring-hours 1.4s 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
+/* 92% attendance → offset = 314.16 * (1 - 0.92) = 25.13 */
 @keyframes fill-ring-attendance {
   to {
     stroke-dashoffset: calc(var(--ring-circumference) * (1 - 0.92));
   }
 }
 
+/* 87% punctuality → offset = 314.16 * (1 - 0.87) = 40.84 */
 @keyframes fill-ring-punctuality {
   to {
     stroke-dashoffset: calc(var(--ring-circumference) * (1 - 0.87));
   }
 }
 
+/* 77% hours target (9.2h / 12h max) → offset = 314.16 * (1 - 0.77) = 72.26 */
 @keyframes fill-ring-hours {
   to {
     stroke-dashoffset: calc(var(--ring-circumference) * (1 - 0.77));
@@ -279,7 +286,7 @@ body {
   letter-spacing: 0.05em;
 }
 
-/* ── Weekly ── */
+/* ── Weekly Attendance ── */
 .weekly-section {
   background: var(--clr-surface);
   border: 1px solid var(--clr-border);
@@ -358,7 +365,7 @@ body {
   color: var(--clr-muted);
 }
 
-/* ── Bottom Grid ── */
+/* ── Bottom Grid: Leave + Hours ── */
 .bottom-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -379,6 +386,7 @@ body {
   border-color: var(--clr-primary);
 }
 
+/* ── Leave Balance ── */
 .leave-list {
   display: flex;
   flex-direction: column;
@@ -412,18 +420,21 @@ body {
   animation: bar-grow 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
+/* 6/12 = 50% */
 .leave-casual {
   background: var(--clr-primary);
   animation-delay: 0.4s;
   --bar-target: 50%;
 }
 
+/* 3/10 = 30% */
 .leave-sick {
   background: var(--clr-yellow);
   animation-delay: 0.6s;
   --bar-target: 30%;
 }
 
+/* 14/20 = 70% */
 .leave-earned {
   background: var(--clr-green);
   animation-delay: 0.8s;
@@ -444,6 +455,7 @@ body {
   text-align: right;
 }
 
+/* ── Working Hours ── */
 .hours-bars {
   display: flex;
   flex-direction: column;
@@ -492,18 +504,14 @@ body {
   text-align: right;
 }
 
-/* ── Responsive ── */
+/* ── Responsive: Tablet ── */
 @media (max-width: 680px) {
   .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 0.75rem;
   }
 
-  .stat-ring-wrapper {
-    width: 90px;
-    height: 90px;
-  }
-
+  .stat-ring-wrapper,
   .stat-ring {
     width: 90px;
     height: 90px;
@@ -532,6 +540,7 @@ body {
   }
 }
 
+/* ── Responsive: Mobile ── */
 @media (max-width: 480px) {
   .stats-grid {
     grid-template-columns: 1fr;
@@ -541,5 +550,19 @@ body {
     flex-direction: row;
     gap: 1rem;
     justify-content: flex-start;
+  }
+
+  .stat-ring-wrapper,
+  .stat-ring {
+    width: 80px;
+    height: 80px;
+  }
+
+  .ring-value {
+    font-size: 0.9rem;
+  }
+
+  .ring-text {
+    font-size: 0.6rem;
   }
 }
