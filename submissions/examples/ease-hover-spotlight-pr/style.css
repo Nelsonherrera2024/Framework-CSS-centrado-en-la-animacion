@@ -1,0 +1,69 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #0b1020;
+    font-family: Arial, sans-serif;
+}
+
+.spotlight-card {
+    position: relative;
+    width: 320px;
+    padding: 2rem;
+    border-radius: 16px;
+    background: #161b33;
+    color: white;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.spotlight-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.spotlight-card::before {
+    content: "";
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        rgba(255, 255, 255, 0.25) 0%,
+        rgba(255, 255, 255, 0.1) 40%,
+        transparent 70%
+    );
+    transition: transform 0.4s ease;
+    pointer-events: none;
+}
+
+.spotlight-card:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.spotlight-card h2,
+.spotlight-card p {
+    position: relative;
+    z-index: 1;
+}
+
+.spotlight-card h2 {
+    margin-bottom: 12px;
+}
+
+.spotlight-card p {
+    color: #d6d6d6;
+    line-height: 1.5;
+}
