@@ -1,0 +1,130 @@
+name: "🐛 Bug Report"
+description: Report a broken class, unexpected visual glitch, or broken animation
+title: "[BUG] "
+labels: ["bug"]
+assignees:
+  - SAPTARSHI-coder
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug! Please fill out the fields below as completely as possible.
+        If you have a general question instead, please use our [Discord Server](https://discord.gg/hWSdGrccBU).
+
+  - type: textarea
+    id: whats-broken
+    attributes:
+      label: What's broken?
+      description: Describe the bug clearly in one or two sentences.
+      placeholder: e.g. "The .ease-hover-rotate-ccw class snaps back instead of easing out on mouse-leave."
+    validations:
+      required: true
+
+  - type: input
+    id: affected-class
+    attributes:
+      label: Affected class / animation name
+      description: The specific EaseMotion CSS class or animation involved.
+      placeholder: e.g. ease-hover-rotate-ccw
+    validations:
+      required: true
+
+  - type: dropdown
+    id: animation-category
+    attributes:
+      label: Animation category
+      description: Which category does the affected class belong to?
+      options:
+        - Hover effect
+        - Entrance / exit animation
+        - Scroll-triggered animation
+        - Loading / skeleton state
+        - Button / interactive component
+        - Layout / utility (non-animation)
+        - Other / not sure
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction-steps
+    attributes:
+      label: Steps to reproduce
+      description: Exact steps so a maintainer can reproduce the bug.
+      placeholder: |
+        1. Link EaseMotion CSS (specify version or CDN link used)
+        2. Add this HTML: <element class="ease-...">
+        3. ...
+        4. See the issue
+      value: |
+        1. 
+        2. 
+        3. 
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected behavior
+      description: What should happen?
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: Actual behavior
+      description: What actually happens?
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction-snippet
+    attributes:
+      label: Reproduction
+      description: Paste a minimal HTML snippet or a link to a CodePen / JSFiddle.
+      render: html
+      value: |
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/easemotion-css/easemotion.css" />
+        </head>
+        <body>
+          <!-- Your reproduction here -->
+        </body>
+        </html>
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: EaseMotion CSS version
+      placeholder: e.g. 1.0.0 or CDN link used
+    validations:
+      required: true
+
+  - type: input
+    id: browser
+    attributes:
+      label: Browser
+      placeholder: e.g. Chrome 124, Safari 17
+    validations:
+      required: true
+
+  - type: input
+    id: os
+    attributes:
+      label: Operating System
+      placeholder: e.g. Windows 11, macOS 14
+    validations:
+      required: false
+
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: Screenshot (optional)
+      description: Drag and drop an image here if helpful.
+    validations:
+      required: false
