@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS Line Clamp — Text Truncation #15571</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../../easemotion.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--ease-color-surface, #f8fafc);
+      color: var(--ease-color-text, #1e293b);
+      margin: 0;
+      padding: 3rem 1.5rem;
+
+      --ease-color-surface: #f8fafc;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body { background: #0f0f17; --ease-color-surface: #1e1e2e; }
+    }
+
+    .page { max-width: 780px; margin: 0 auto; }
+
+    h1 { font-size: 1.5rem; margin-bottom: 0.25rem; }
+
+    h2 {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ease-color-text-muted, #64748b);
+      margin: 2.5rem 0 0.75rem;
+      border-bottom: 1px solid var(--ease-color-border, #e2e8f0);
+      padding-bottom: 0.4rem;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    /* Range slider */
+    .slider-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    input[type=range] { flex: 1; accent-color: #6c63ff; }
+
+    #line-count-display {
+      font-weight: 600;
+      min-width: 1.5rem;
+      color: #6c63ff;
+    }
+
+    .note {
+      background: var(--ease-color-surface, #fff);
+      border-left: 3px solid #6c63ff;
+      border-radius: 0 8px 8px 0;
+      padding: 0.875rem 1rem;
+      font-size: 0.875rem;
+      margin-top: 1.5rem;
+      line-height: 1.65;
+    }
+
+    .note code {
+      background: rgba(0,0,0,0.06);
+      border-radius: 4px;
+      padding: 0.1rem 0.35rem;
+      font-size: 0.82em;
+      font-family: ui-monospace, monospace;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .note code { background: rgba(255,255,255,0.08); }
+    }
+
+    pre {
+      background: #0f172a;
+      color: #e2e8f0;
+      border-radius: 8px;
+      padding: 1.25rem;
+      overflow-x: auto;
+      font-size: 0.82rem;
+      line-height: 1.6;
+      font-family: ui-monospace, monospace;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <h1>CSS Line Clamp — Text Truncation</h1>
+  <p style="color:var(--ease-color-text-muted,#64748b); margin-top:0.25rem;">
+    Fixes <strong>#15571</strong> — self-contained example under
+    <code>submissions/examples/line-clamp-text/</code>.
+    Pure CSS multi-line truncation. Zero JavaScript for the clamp itself.
+  </p>
+
+  <!-- Fixed line-count classes -->
+  <h2>Fixed Line-Count Classes</h2>
+  <div class="card-grid">
+
+    <div class="clamp-card">
+      <span class="clamp-badge">.ease-clamp-1</span>
+      <p class="clamp-card-text ease-clamp-1">
+        This paragraph will be truncated after exactly one line no matter
+        how much content is written inside it. The ellipsis appears at the end.
+      </p>
+    </div>
+
+    <div class="clamp-card">
+      <span class="clamp-badge">.ease-clamp-2</span>
+      <p class="clamp-card-text ease-clamp-2">
+        This paragraph will be truncated after exactly two lines. It gives a
+        bit more context than a single line while still keeping the card height
+        predictable and consistent across a grid layout.
+      </p>
+    </div>
+
+    <div class="clamp-card">
+      <span class="clamp-badge">.ease-clamp-3</span>
+      <p class="clamp-card-text ease-clamp-3">
+        Three lines of text are commonly used in blog post cards and article
+        previews. This gives enough content to understand the topic without
+        overwhelming the reader. The rest is hidden with an ellipsis at the end
+        of line three, keeping layout tight and scannable.
+      </p>
+    </div>
+
+    <div class="clamp-card">
+      <span class="clamp-badge">.ease-clamp-4</span>
+      <p class="clamp-card-text ease-clamp-4">
+        Four lines work well for product descriptions or long summary text
+        where a bit more context is beneficial. The card height remains uniform
+        because all cards in the grid clamp at the same number of lines,
+        regardless of the actual text length inside each card.
+      </p>
+    </div>
+
+    <div class="clamp-card">
+      <span class="clamp-badge">.ease-clamp-5</span>
+      <p class="clamp-card-text ease-clamp-5">
+        Five lines are sometimes used for longer previews like news articles,
+        email summaries, or support ticket descriptions. Even with five lines,
+        the layout stays predictable and the grid remains aligned. Any content
+        beyond five lines is hidden by overflow:hidden and the ellipsis
+        character is displayed to signal truncation to the reader.
+      </p>
+    </div>
+
+    <div class="clamp-card">
+      <span class="clamp-badge">.ease-clamp-6</span>
+      <p class="clamp-card-text ease-clamp-6">
+        Six lines provide a generous preview for content-heavy components like
+        README excerpts, changelog entries, or comment threads. The height is
+        still capped and predictable. Combined with a "Read more" link, this
+        pattern avoids both truncating too aggressively and exposing walls of
+        text in a UI component designed for scanning rather than reading.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- CSS custom property / dynamic demo -->
+  <h2>Dynamic — CSS Custom Property</h2>
+  <div class="slider-row">
+    <label>Lines:</label>
+    <input type="range" min="1" max="8" value="3" id="line-slider"
+      oninput="document.getElementById('line-count-display').textContent=this.value;
+               document.getElementById('dynamic-text').style.setProperty('--ease-clamp-lines', this.value)" />
+    <span id="line-count-display">3</span>
+  </div>
+  <div class="clamp-card">
+    <p class="clamp-card-text ease-clamp" id="dynamic-text"
+       style="--ease-clamp-lines: 3;">
+      This paragraph responds to the slider above. Set
+      <code>--ease-clamp-lines</code> on any element that has the
+      <code>.ease-clamp</code> class and the line count updates instantly.
+      No JavaScript animation — just a CSS custom property being changed.
+      You can set this on a parent element to control multiple children,
+      or set it inline as shown here for per-element control. This makes
+      the line clamp utility flexible enough for any design system or
+      component library without hardcoding any specific line count.
+    </p>
+  </div>
+
+  <!-- Read more pattern -->
+  <h2>Pure CSS "Read more" Expand Toggle</h2>
+  <p style="font-size:0.85rem; color:var(--ease-color-text-muted,#64748b);">
+    No JavaScript — uses hidden checkbox + <code>:checked</code> selector.
+  </p>
+
+  <div class="clamp-card" style="max-width:480px;">
+    <div class="ease-clamp-expand">
+      <input type="checkbox" id="expand-demo" class="ease-clamp-toggle" />
+      <p class="clamp-card-text ease-clamp-3 ease-clamp-content">
+        EaseMotion CSS is a lightweight, animation-first CSS framework
+        built for the modern web. It provides utility classes for fade,
+        slide, zoom, bounce, float, typewriter, and skeleton effects —
+        all with zero JavaScript, full dark mode support, and
+        prefers-reduced-motion accessibility built in. Every component
+        follows the ease-* naming convention for predictable, collision-free
+        class names. The framework is designed to be dropped into any project
+        without build tools, bundlers, or configuration.
+      </p>
+      <label for="expand-demo" class="ease-clamp-btn"></label>
+    </div>
+  </div>
+
+  <!-- Code reference -->
+  <h2>Quick Reference</h2>
+  <pre><code>&lt;!-- Fixed classes --&gt;
+&lt;p class="ease-clamp-1"&gt;One line&lt;/p&gt;
+&lt;p class="ease-clamp-2"&gt;Two lines&lt;/p&gt;
+&lt;p class="ease-clamp-3"&gt;Three lines&lt;/p&gt;
+
+&lt;!-- CSS custom property (any number) --&gt;
+&lt;p class="ease-clamp" style="--ease-clamp-lines: 4"&gt;Four lines&lt;/p&gt;
+
+&lt;!-- Read more toggle (no JS) --&gt;
+&lt;div class="ease-clamp-expand"&gt;
+  &lt;input type="checkbox" id="expand-1" class="ease-clamp-toggle" /&gt;
+  &lt;p class="ease-clamp-3 ease-clamp-content"&gt;Long text...&lt;/p&gt;
+  &lt;label for="expand-1" class="ease-clamp-btn"&gt;&lt;/label&gt;
+&lt;/div&gt;</code></pre>
+
+  <div class="note">
+    <strong>Browser support:</strong> <code>-webkit-line-clamp</code> is supported
+    in Chrome 14+, Firefox 68+, Safari 5+, and Edge 17+ — effectively all modern
+    browsers. The <code>-webkit-</code> prefix is still required even in non-WebKit
+    browsers because the unprefixed <code>line-clamp</code> property is part of the
+    CSS Overflow Level 4 spec and not yet widely available.<br /><br />
+    <strong>The three required properties</strong> must always appear together:
+    <code>overflow: hidden</code>, <code>display: -webkit-box</code>, and
+    <code>-webkit-box-orient: vertical</code>.
+  </div>
+
+</div>
+</body>
+</html>
