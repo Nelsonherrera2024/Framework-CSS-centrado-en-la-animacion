@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enhanced Skeleton Loading Variants - Showcase</title>
+  <!-- Framework CSS -->
+  <link rel="stylesheet" href="../../../easemotion.css">
+  <!-- Local Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="showcase-container">
+    <header>
+      <span class="badge">Component</span>
+      <h1>Enhanced Skeleton Loading Variants</h1>
+      <p>Modern visual placeholders designed to indicate page loading state. Supports shimmer, wave, and pulse animations, plus prebuilt layouts.</p>
+    </header>
+
+    <!-- Section 1: Animation Variants -->
+    <section class="showcase-section">
+      <h2 class="section-title">Animation Effects</h2>
+      <div class="grid">
+        <div class="demo-card">
+          <span class="card-title">Shimmer (Sweep reflection)</span>
+          <div class="ease-skeleton ease-skeleton-shimmer" style="height: 40px; border-radius: 8px;"></div>
+          <div class="ease-skeleton ease-skeleton-shimmer" style="height: 20px; border-radius: 6px; width: 80%;"></div>
+        </div>
+
+        <div class="demo-card">
+          <span class="card-title">Wave (Flowing gradient)</span>
+          <div class="ease-skeleton ease-skeleton-wave" style="height: 40px; border-radius: 8px;"></div>
+          <div class="ease-skeleton ease-skeleton-wave" style="height: 20px; border-radius: 6px; width: 80%;"></div>
+        </div>
+
+        <div class="demo-card">
+          <span class="card-title">Pulse (Opacity fading)</span>
+          <div class="ease-skeleton ease-skeleton-pulse" style="height: 40px; border-radius: 8px;"></div>
+          <div class="ease-skeleton ease-skeleton-pulse" style="height: 20px; border-radius: 6px; width: 80%;"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Shapes & Blocks -->
+    <section class="showcase-section">
+      <h2 class="section-title">Shapes & Layout Blocks</h2>
+      <div class="grid">
+        <!-- Text & Headings -->
+        <div class="demo-card">
+          <span class="card-title">Text Lines & Heading</span>
+          <div class="ease-skeleton ease-skeleton-shimmer ease-skeleton-heading"></div>
+          <div class="ease-skeleton ease-skeleton-shimmer ease-skeleton-text"></div>
+          <div class="ease-skeleton ease-skeleton-shimmer ease-skeleton-text"></div>
+          <div class="ease-skeleton ease-skeleton-shimmer ease-skeleton-text-short"></div>
+        </div>
+
+        <!-- Avatar & Thumbnail -->
+        <div class="demo-card" style="align-items: center; justify-content: center; gap: 2rem;">
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
+            <div class="ease-skeleton ease-skeleton-shimmer ease-skeleton-avatar"></div>
+            <span style="font-size: 0.75rem; color: var(--text-muted);">Avatar (Circle)</span>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
+            <div class="ease-skeleton ease-skeleton-shimmer ease-skeleton-thumbnail"></div>
+            <span style="font-size: 0.75rem; color: var(--text-muted);">Thumbnail</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Pre-built Templates -->
+    <section class="showcase-section">
+      <h2 class="section-title">Preassembled Layout Templates</h2>
+      <div class="grid">
+        <!-- 1. Card Layout Template -->
+        <div>
+          <span style="display:block; margin-bottom: 0.75rem; font-weight:700; color: var(--text-muted);">Card Loader</span>
+          <div class="ease-skeleton-card">
+            <div class="ease-skeleton ease-skeleton-wave" style="width: 100%; height: 160px; border-radius: 8px;"></div>
+            <div class="ease-skeleton ease-skeleton-wave ease-skeleton-heading" style="width: 60%;"></div>
+            <div class="ease-skeleton ease-skeleton-wave ease-skeleton-text"></div>
+            <div class="ease-skeleton ease-skeleton-wave ease-skeleton-text-short"></div>
+          </div>
+        </div>
+
+        <!-- 2. Article Loader -->
+        <div>
+          <span style="display:block; margin-bottom: 0.75rem; font-weight:700; color: var(--text-muted);">Article / Document Loader</span>
+          <div class="ease-skeleton-article">
+            <div class="ease-skeleton ease-skeleton-shimmer" style="width: 100%; height: 200px; border-radius: 8px; margin-bottom: 1rem;"></div>
+            <div class="ease-skeleton ease-skeleton-shimmer ease-skeleton-heading" style="width: 35%;"></div>
+            <div class="ease-skeleton ease-skeleton-shimmer ease-skeleton-text"></div>
+            <div class="ease-skeleton ease-skeleton-shimmer ease-skeleton-text"></div>
+            <div class="ease-skeleton ease-skeleton-shimmer ease-skeleton-text"></div>
+            <div class="ease-skeleton ease-skeleton-shimmer ease-skeleton-text-short"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Table Row Loader -->
+      <div style="margin-top: 3rem; width: 100%;">
+        <span style="display:block; margin-bottom: 0.75rem; font-weight:700; color: var(--text-muted);">Table Row Loaders</span>
+        <div style="background: var(--surface-color); border: 1px solid var(--border-color); padding: 0.5rem 2rem; border-radius: 12px;">
+          <div class="ease-skeleton-row">
+            <div class="ease-skeleton ease-skeleton-pulse ease-skeleton-cell"></div>
+            <div class="ease-skeleton ease-skeleton-pulse ease-skeleton-cell"></div>
+            <div class="ease-skeleton ease-skeleton-pulse ease-skeleton-cell"></div>
+          </div>
+          <div class="ease-skeleton-row">
+            <div class="ease-skeleton ease-skeleton-pulse ease-skeleton-cell"></div>
+            <div class="ease-skeleton ease-skeleton-pulse ease-skeleton-cell"></div>
+            <div class="ease-skeleton ease-skeleton-pulse ease-skeleton-cell"></div>
+          </div>
+          <div class="ease-skeleton-row" style="border-bottom: none;">
+            <div class="ease-skeleton ease-skeleton-pulse ease-skeleton-cell"></div>
+            <div class="ease-skeleton ease-skeleton-pulse ease-skeleton-cell"></div>
+            <div class="ease-skeleton ease-skeleton-pulse ease-skeleton-cell"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+</body>
+</html>

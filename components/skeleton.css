@@ -1,47 +1,199 @@
+/* ============================================================
+   EaseMotion CSS — skeleton.css
+   Enhanced Skeleton Loading Component with animation variants
+   (Shimmer, Wave, Pulse) and common templates.
+   ============================================================ */
+
+:root {
+  --ease-skeleton-bg: var(--ease-color-neutral-200, #e5e7eb);
+  --ease-skeleton-highlight: var(--ease-color-neutral-100, #f3f4f6);
+  --ease-skeleton-pulse-speed: 1.5s;
+  --ease-skeleton-shimmer-speed: 1.5s;
+  --ease-skeleton-wave-speed: 1.8s;
+}
+
 @layer easemotion-components {
+  /* Base Skeleton Element */
   .ease-skeleton {
-    background: linear-gradient(90deg, #e2e8f0 25%, #f1f5f9 50%, #e2e8f0 75%);
-    background-size: 200% 100%;
-    animation: ease-kf-shimmer 1.5s ease-in-out infinite;
+    background-color: var(--ease-skeleton-bg);
     border-radius: var(--ease-radius-md, 0.5rem);
     min-height: 1rem;
+    display: block;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
   }
-  
-  .ease-skeleton-text { height: 0.8em; margin-bottom: 0.5rem; width: 100%; }
-  
-  .ease-skeleton-circle { border-radius: 50%; aspect-ratio: 1; }
-  
-  .ease-skeleton-sm { height: 0.75rem; }
-  
-  .ease-skeleton-lg { height: 2rem; }
 
-.ease-skeleton-card {
-  height: 200px;
-  border-radius: 0.5rem;
+  /* Shimmer sweep effect (sweeping light) */
+  .ease-skeleton-shimmer {
+    background: linear-gradient(
+      90deg,
+      var(--ease-skeleton-bg) 25%,
+      var(--ease-skeleton-highlight) 50%,
+      var(--ease-skeleton-bg) 75%
+    );
+    background-size: 200% 100%;
+    animation: ease-kf-skeleton-shimmer var(--ease-skeleton-shimmer-speed) infinite linear;
+  }
+
+  /* Wave animation (flowing gradient) */
+  .ease-skeleton-wave {
+    background: linear-gradient(
+      90deg,
+      var(--ease-skeleton-bg) 0%,
+      var(--ease-skeleton-highlight) 50%,
+      var(--ease-skeleton-bg) 100%
+    );
+    background-size: 200% 100%;
+    animation: ease-kf-skeleton-wave var(--ease-skeleton-wave-speed) infinite ease-in-out;
+  }
+
+  /* Pulse opacity fade effect */
+  .ease-skeleton-pulse {
+    animation: ease-kf-skeleton-pulse var(--ease-skeleton-pulse-speed) infinite ease-in-out;
+  }
+
+  /* Text block layouts */
+  .ease-skeleton-text {
+    height: 0.875rem;
+    width: 100%;
+    margin-bottom: 0.625rem;
+  }
+
+  .ease-skeleton-text-short {
+    height: 0.875rem;
+    width: 60%;
+    margin-bottom: 0.625rem;
+  }
+
+  .ease-skeleton-heading {
+    height: 1.5rem;
+    width: 40%;
+    margin-bottom: 1rem;
+  }
+
+  /* Shape/Layout variants */
+  .ease-skeleton-circle,
+  .ease-skeleton-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .ease-skeleton-thumbnail,
+  .ease-skeleton-image {
+    width: 80px;
+    height: 80px;
+    border-radius: var(--ease-radius-md, 0.5rem);
+  }
+
+  .ease-skeleton-cell {
+    height: 1.25rem;
+    width: 100%;
+  }
+
+  .ease-skeleton-sm {
+    height: 0.75rem;
+  }
+
+  .ease-skeleton-lg {
+    height: 2rem;
+  }
+
+  /* Pre-built Templates */
+
+  /* 1. Card Layout */
+  .ease-skeleton-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem;
+    border: 1px solid var(--ease-color-neutral-200, #e5e7eb);
+    border-radius: var(--ease-radius-lg, 0.75rem);
+    background-color: var(--ease-color-surface, #ffffff);
+  }
+
+  /* 2. Table Row Layout */
+  .ease-skeleton-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--ease-color-neutral-200, #e5e7eb);
+    align-items: center;
+  }
+
+  /* 3. Article Layout */
+  .ease-skeleton-article {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+  }
+
+  /* Animations Keyframes */
+  @keyframes ease-kf-skeleton-shimmer {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+
+  @keyframes ease-kf-skeleton-wave {
+    0% {
+      background-position: 100% 0;
+    }
+    100% {
+      background-position: -100% 0;
+    }
+  }
+
+  @keyframes ease-kf-skeleton-pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.45;
+    }
+  }
+
+  /* Reduced Motion Override */
+  @media (prefers-reduced-motion: reduce) {
+    .ease-skeleton-shimmer,
+    .ease-skeleton-wave,
+    .ease-skeleton-pulse {
+      animation: none !important;
+      background: var(--ease-skeleton-bg) !important;
+    }
+  }
 }
 
-.ease-skeleton-text:last-child {
-  width: 60%;
+/* Dark Mode Overrides */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ease-skeleton-bg: var(--ease-color-neutral-800, #1f2937);
+    --ease-skeleton-highlight: var(--ease-color-neutral-700, #374151);
+  }
+  .ease-skeleton-card {
+    border-color: var(--ease-color-neutral-800, #1f2937);
+    background-color: var(--ease-color-surface, #111827);
+  }
+  .ease-skeleton-row {
+    border-color: var(--ease-color-neutral-800, #1f2937);
+  }
 }
 
-.ease-skeleton-avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 9999px;
-  flex-shrink: 0;
-}
-
-.ease-skeleton-image {
-  width: 100%;
-  height: 140px;
-  border-radius: 0.5rem;
-}
-
-.skeleton-card-header .ease-skeleton-text {
-  flex: 1;
-}
-
-.skeleton-card-header .ease-skeleton-text:first-child {
-  width: 40%;
-}
+[data-theme="dark"] {
+  --ease-skeleton-bg: var(--ease-color-neutral-800, #1f2937);
+  --ease-skeleton-highlight: var(--ease-color-neutral-700, #374151);
+  .ease-skeleton-card {
+    border-color: var(--ease-color-neutral-800, #1f2937);
+    background-color: var(--ease-color-surface, #111827);
+  }
+  .ease-skeleton-row {
+    border-color: var(--ease-color-neutral-800, #1f2937);
+  }
 }
