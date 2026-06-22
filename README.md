@@ -403,10 +403,12 @@ Every class in the framework has passed through this process. The curation is wh
 ## Usage and Examples
 
 ### Development
+
 Use the non-minified version for debugging and development:
 
 ```html
 <link rel="stylesheet" href="easemotion.css" />
+```
 
 ### Animations
 
@@ -504,14 +506,6 @@ Applies a quick squish animation during hover, focus, and active interactions.
 <div class="ease-flex ease-flex-wrap ease-gap-3">Wrap</div>
 <div class="ease-flex ease-flex-nowrap ease-gap-3">No wrap</div>
 <div class="ease-flex ease-flex-wrap-reverse ease-gap-3">Reverse wrap</div>
-
-<!-- Align self utilities -->
-<div class="ease-flex ease-items-stretch ease-gap-3">
-  <span class="ease-self-start">Start</span>
-  <span class="ease-self-center">Center</span>
-  <span class="ease-self-end">End</span>
-  <span class="ease-self-stretch">Stretch</span>
-</div>
 
 <!-- Responsive auto-fit grid (no media queries needed) -->
 <div class="ease-grid ease-grid-auto ease-gap-6">
@@ -904,16 +898,16 @@ The project encourages creative variations and parallel implementations rather t
 
 <div align="center">
 
-| Platform                | Link                                                                                                          |
-| ----------------------- | ------------------------------------------------------------------------------------------------------------- |
-| 🐛 **Bug Reports**      | [Open an issue](https://github.com/SAPTARSHI-coder/EaseMotion-css/issues/new?template=bug_report.md)          |
-| 💡 **Feature Requests** | [Request a feature](https://github.com/SAPTARSHI-coder/EaseMotion-css/issues/new?template=feature_request.md) |
-| 🔀 **Pull Requests**    | [Submit a contribution](https://github.com/SAPTARSHI-coder/EaseMotion-css/pulls)                              |
-| 📖 **Documentation**    | [Full docs site](https://saptarshi-coder.github.io/EaseMotion-css/)                                           |
-| 📦 **npm Package**      | [easemotion-css on npm](https://www.npmjs.com/package/easemotion-css)                                         |
-| 🌐 **CDN**              | [jsDelivr (GitHub CDN)](https://cdn.jsdelivr.net/gh/SAPTARSHI-coder/EaseMotion-css@main/easemotion.min.css)   |
-| 🏆 **GSSoC 2026**       | [GirlScript Summer of Code](https://gssoc.girlscript.tech/)                                                   |
-| 💬 **Discord Server (Optional)**   | [Join Discord (Optional)](https://discord.gg/hWSdGrccBU)                                                                 |
+| Platform                         | Link                                                                                                          |
+| -------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| 🐛 **Bug Reports**               | [Open an issue](https://github.com/SAPTARSHI-coder/EaseMotion-css/issues/new?template=bug_report.md)          |
+| 💡 **Feature Requests**          | [Request a feature](https://github.com/SAPTARSHI-coder/EaseMotion-css/issues/new?template=feature_request.md) |
+| 🔀 **Pull Requests**             | [Submit a contribution](https://github.com/SAPTARSHI-coder/EaseMotion-css/pulls)                              |
+| 📖 **Documentation**             | [Full docs site](https://saptarshi-coder.github.io/EaseMotion-css/)                                           |
+| 📦 **npm Package**               | [easemotion-css on npm](https://www.npmjs.com/package/easemotion-css)                                         |
+| 🌐 **CDN**                       | [jsDelivr (GitHub CDN)](https://cdn.jsdelivr.net/gh/SAPTARSHI-coder/EaseMotion-css@main/easemotion.min.css)   |
+| 🏆 **GSSoC 2026**                | [GirlScript Summer of Code](https://gssoc.girlscript.tech/)                                                   |
+| 💬 **Discord Server (Optional)** | [Join Discord (Optional)](https://discord.gg/hWSdGrccBU)                                                      |
 
 </div>
 
@@ -965,7 +959,7 @@ Everyone who has submitted a PR, opened an issue, or contributed an idea. This w
 <tr><td align="center"><a href="https://github.com/Malusnow"><img src="https://avatars.githubusercontent.com/Malusnow?s=64" width="52" height="52" alt="Malusnow" style="border-radius:50%;margin:4px"/><br/><sub><b>Malusnow</b></sub><br/><sub>1 commits</sub></a></td><td align="center"><a href="https://github.com/maheshbhojane1"><img src="https://avatars.githubusercontent.com/maheshbhojane1?s=64" width="52" height="52" alt="maheshbhojane1" style="border-radius:50%;margin:4px"/><br/><sub><b>maheshbhojane1</b></sub><br/><sub>1 commits</sub></a></td><td align="center"><a href="https://github.com/Krithikakannan"><img src="https://avatars.githubusercontent.com/Krithikakannan?s=64" width="52" height="52" alt="Krithikakannan" style="border-radius:50%;margin:4px"/><br/><sub><b>Krithikakannan</b></sub><br/><sub>1 commits</sub></a></td><td align="center"><a href="https://github.com/Krish0703-irl"><img src="https://avatars.githubusercontent.com/Krish0703-irl?s=64" width="52" height="52" alt="Krish0703-irl" style="border-radius:50%;margin:4px"/><br/><sub><b>Krish0703-irl</b></sub><br/><sub>1 commits</sub></a></td></tr>
 </table>
 
-*Auto-updated daily · [View all →](https://github.com/SAPTARSHI-coder/EaseMotion-css/graphs/contributors)*
+_Auto-updated daily · [View all →](https://github.com/SAPTARSHI-coder/EaseMotion-css/graphs/contributors)_
 
 </div>
 <!-- CONTRIBUTOR-WALL-END -->
