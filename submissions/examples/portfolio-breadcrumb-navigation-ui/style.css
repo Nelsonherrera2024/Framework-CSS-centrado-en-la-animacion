@@ -1,0 +1,17 @@
+.breadcrumb .active {
+  color: white;
+  font-weight: bold;
+}
+
+/* content cards */
+.card {
+  background: #222;
+  padding: 15px;
+  margin-top: 15px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  background: #00c853;
+}
