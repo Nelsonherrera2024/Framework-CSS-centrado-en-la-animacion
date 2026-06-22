@@ -26,6 +26,18 @@ This PR improves the project's README documentation by fixing formatting issues 
 
 ---
 
+Changes
+
+```bash
+| Browser | Minimum Version | `backdrop-filter`                                 | `aspect-ratio` | CSS variables | Animations | Notes     |
+| ------- | --------------- | ------------------------------------------------- | -------------- | ------------- | ---------- | --------- |
+| Chrome  | 49+             | Supported                                         | Supported      | Supported     | Supported  |           |
+| Firefox | 31+             | Supported                                         | Supported      | Supported     | Supported  |           |
+| Safari  | 9.1+            | Supported with `-webkit-backdrop-filter` fallback | Supported      | Supported     | Supported  |Supported  |
+| Edge    | 15+             | Supported                                         | Supported      | Supported     | Supported  |           |
+| Opera   | 36+             | Supported                                         | Supported      | Supported     | Supported  |           |
+```
+
 ### 🎯 Benefits
 
 * Better user and contributor experience.
