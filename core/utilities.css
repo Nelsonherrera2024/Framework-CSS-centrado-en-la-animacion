@@ -1464,4 +1464,9 @@
   .ease-contain-style { contain: style !important; }
   
   .ease-contain-layout-paint { contain: layout paint !important; }
+
+/* ── Issue #15202: Core Changes — Add Invert Filter Utility Classes ── */
+  .ease-filter-invert   { filter: invert(100%) !important; }
+  .ease-filter-invert-0 { filter: invert(0) !important; }
 }
+
