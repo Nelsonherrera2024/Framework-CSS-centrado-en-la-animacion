@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print PDF Docs — EaseMotion CSS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📄 Print PDF Docs</h1>
+            <p class="subtitle">Generate a print-friendly PDF version of the full EaseMotion CSS documentation.</p>
+        </header>
+
+        <section class="card">
+            <h2>Overview</h2>
+            <p>This tool builds a single PDF from the project's documentation files, making them easy to share, print, or read offline.</p>
+        </section>
+
+        <section class="card">
+            <h2>How It Works</h2>
+            <ol>
+                <li><strong>Detect</strong> available PDF engine (Playwright, WeasyPrint, or wkhtmltopdf)</li>
+                <li><strong>Read</strong> all documentation files from the <code>docs/</code> directory</li>
+                <li><strong>Convert</strong> them into a single print-friendly PDF</li>
+                <li><strong>Output</strong> <code>EaseMotion-CSS-Docs.pdf</code></li>
+            </ol>
+        </section>
+
+        <section class="card">
+            <h2>Usage</h2>
+            <pre><code>bash build-pdf.sh</code></pre>
+            <p>Make sure you have one of these installed:</p>
+            <ul>
+                <li><strong>Playwright</strong> — <code>npm install playwright && npx playwright install chromium</code></li>
+                <li><strong>WeasyPrint</strong> — <code>pip install weasyprint</code></li>
+                <li><strong>wkhtmltopdf</strong> — <code>apt install wkhtmltopdf</code></li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>Output</h2>
+            <div class="output-preview">
+                <div class="mock-pdf">
+                    <div class="mock-pdf-header">EaseMotion CSS Docs</div>
+                    <div class="mock-pdf-body">
+                        <div class="mock-line"></div>
+                        <div class="mock-line"></div>
+                        <div class="mock-line short"></div>
+                        <div class="mock-line"></div>
+                        <div class="mock-line medium"></div>
+                    </div>
+                </div>
+                <p class="file-name">EaseMotion-CSS-Docs.pdf</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>EaseMotion CSS — PDF Documentation Generator</p>
+        </footer>
+    </div>
+</body>
+</html>
