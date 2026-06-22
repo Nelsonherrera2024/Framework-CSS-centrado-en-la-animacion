@@ -12,7 +12,7 @@
     <p class="site-desc">Fixed nav anchor offset comparison</p>
   </header>
 
-  <nav class="nav-bar" id="top-nav">
+  <nav class="nav-bar" id="top-nav" aria-label="Section navigation">
     <div class="nav-inner">
       <span class="nav-brand">scroll-padding</span>
       <div class="nav-links">
@@ -30,8 +30,8 @@
       <h2>Toggle scroll-padding</h2>
       <p>Use the buttons below to enable or disable <code>scroll-padding-top</code>. The nav bar is <strong>fixed at the top (60px)</strong>. Without scroll-padding, anchor targets hide behind the nav.</p>
       <div class="toggle-group">
-        <button class="toggle-btn active" id="enable-padding">scroll-padding: ON</button>
-        <button class="toggle-btn" id="disable-padding">scroll-padding: OFF</button>
+        <button class="toggle-btn active" id="enable-padding" aria-pressed="true">scroll-padding: ON</button>
+        <button class="toggle-btn" id="disable-padding" aria-pressed="false">scroll-padding: OFF</button>
       </div>
       <p class="hint">Click section links above — with padding ON, the section heading appears below the nav; with padding OFF, it hides underneath.</p>
     </section>
