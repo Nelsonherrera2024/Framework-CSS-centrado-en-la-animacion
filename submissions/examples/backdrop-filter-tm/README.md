@@ -1,54 +1,48 @@
-# Backdrop Filter Utilities
+# Backdrop Filter
 
-## What does this do?
+Backdrop blur brightness contrast grayscale saturate utilities using ease variables. This submission demonstrates how to leverage the EaseMotion CSS design token system (--ease-* variables) for consistent styling across your project.
 
-Provides CSS utility classes for backdrop-filter effects including blur, brightness, contrast, saturation, and grayscale — enabling frosted glass and visual depth effects for modern UI.
+## Features
 
-## How is it used?
+- **Design token integration** — Uses --ease-color-*, --ease-space-*, --ease-radius-*, and --ease-shadow-* tokens from the EaseMotion CSS variables file
+- **Multiple variants** — Includes primary/secondary/success/warning/danger/info color variants
+- **Dark mode support** — Respects prefers-color-scheme: dark via CSS custom properties
+- **Reduced motion support** — Respects prefers-reduced-motion: reduce for accessibility
+- **Responsive design** — Mobile-first approach with responsive breakpoint utilities
+
+## Usage
 
 ```html
-<!-- Frosted glass card -->
-<div class="glass-card backdrop-blur-md">
-  This card has a frosted glass effect.
-</div>
-
-<!-- Full glassmorphism card -->
-<div class="glass-card backdrop-glassmorphism">
-  Full glassmorphism with blur + brightness + saturation.
+<div class="container">
+  <div class="demo-grid">
+    <div class="demo-card">
+      <p class="demo-label">Example</p>
+      <p class="demo-value">Primary variant</p>
+    </div>
+  </div>
 </div>
 ```
 
-### Available Blur Classes
-
-| Class               | Effect           |
-|---------------------|------------------|
-| `.backdrop-blur-sm` | blur(4px)        |
-| `.backdrop-blur-md` | blur(8px)        |
-| `.backdrop-blur-lg` | blur(16px)       |
-| `.backdrop-blur-xl` | blur(24px)       |
-
-### Available Filter Classes
-
-| Class                  | Effect                      |
-|------------------------|-----------------------------|
-| `.backdrop-brightness` | brightness(0.6)             |
-| `.backdrop-contrast`   | contrast(1.2)              |
-| `.backdrop-saturate`   | saturate(1.8)              |
-| `.backdrop-grayscale`  | grayscale(0.6)             |
-| `.backdrop-glassmorphism` | Combined blur + brightness + saturate |
-
 ## Why is it useful?
 
-- Creates premium frosted glass and depth UI effects
-- Works entirely in CSS — no canvas or WebGL required
-- Hardware-accelerated on modern browsers
-- Combined with semantic HTML structure for accessible overlays
-- Useful for modals, toolbars, navigation overlays, and card backgrounds
+The EaseMotion CSS framework provides a comprehensive set of CSS custom properties (design tokens) that ensure visual consistency across components. This submission leverages tokens like --ease-color-primary, --ease-shadow-md, and --ease-radius-md to create a backdrop-based utility that works seamlessly within the existing design system.
 
-## Browser Support
+## CSS Tokens Used
 
-`backdrop-filter` is supported in Chrome 76+, Safari 9+, Edge 17+. WebKit prefix (`-webkit-backdrop-filter`) is included for Safari compatibility. Falls back to transparent/solid background on unsupported browsers.
-
-## Tech Stack
-
-Pure HTML + CSS. No JavaScript dependencies.
+- --ease-color-primary — Primary brand color
+- --ease-color-secondary — Secondary accent color
+- --ease-color-success — Success state color
+- --ease-color-warning — Warning state color
+- --ease-color-danger — Danger/error state color
+- --ease-color-info — Informational color
+- --ease-color-surface — Card/panel background
+- --ease-color-text — Primary text color
+- --ease-color-muted — Muted/secondary text
+- --ease-color-neutral-200 — Border color
+- --ease-radius-sm, --ease-radius-md, --ease-radius-lg — Border radius tokens
+- --ease-shadow-sm, --ease-shadow-md, --ease-shadow-lg — Shadow tokens
+- --ease-speed-fast, --ease-speed-medium, --ease-speed-slow — Animation speed tokens
+- --ease-ease, --ease-ease-out, --ease-ease-bounce — Easing tokens
+- --ease-font-sans, --ease-font-mono — Font family tokens
+- --ease-text-xs, --ease-text-sm, --ease-text-base, --ease-text-lg — Font size tokens
+- --ease-leading-normal — Line height token
