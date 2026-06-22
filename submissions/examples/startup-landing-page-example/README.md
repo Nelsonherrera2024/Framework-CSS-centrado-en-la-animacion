@@ -6,3 +6,11 @@ A premium landing page design showcasing a detailed pricing section. Contains cl
 - **Simple Flex Grids:** Balanced cards that scale cleanly on mobile devices.
 - **Featured States:** Distinctive accent borders for high priority plans.
 - **Micro-interactions:** Hover offsets on card components.
+
+
+---
+## 📝 Submission Info
+- **Submitted by:** [@saidai-bhuvanesh](https://github.com/saidai-bhuvanesh)
+- **Phase:** 69
+- **Issue:** [#14506](https://github.com/SAPTARSHI-coder/EaseMotion-css/issues/14506)
+- **Submitted at:** 2026-06-22T08:32:12.647Z
