@@ -6,17 +6,6 @@
   <title>Animated Timeline — EaseMotion CSS</title>
   <link rel="stylesheet" href="../../easemotion.css" />
   <link rel="stylesheet" href="style.css" />
-  <style>
-    body { font-family: var(--ease-font-sans); margin: 0; padding: 2rem; max-width: 720px; margin: 0 auto; }
-    h2 { margin-bottom: 0.5rem; }
-    p  { color: var(--ease-color-muted); margin-bottom: 2rem; }
-    h3 { font-size: 0.875rem; font-weight: 600; text-transform: uppercase;
-         letter-spacing: 0.05em; color: var(--ease-color-muted);
-         margin: 3rem 0 1.5rem; border-top: 1px solid var(--ease-color-neutral-200);
-         padding-top: 1.5rem; }
-    h3:first-of-type { border-top: none; padding-top: 0; }
-    .controls { display: flex; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap; }
-  </style>
 </head>
 <body>
   <h2>Animated Timeline Component</h2>
@@ -165,7 +154,8 @@
     </div>
   </div>
 
-  <script>
+  <!-- Scroll reveal animation -->
+   <script>
     // Tiny IntersectionObserver to add .is-visible when items enter viewport
     const observer = new IntersectionObserver(
       (entries) => entries.forEach((e) => {

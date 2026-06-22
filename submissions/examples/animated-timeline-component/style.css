@@ -66,6 +66,26 @@
     100% { transform: translate(-50%, -50%) scale(1); }
   }
 
+  @keyframes ease-timeline-dot-glow {
+  0% {
+    box-shadow:
+      0 0 0 2px var(--ease-timeline-dot-color),
+      0 0 8px var(--ease-timeline-dot-color);
+  }
+
+  50% {
+    box-shadow:
+      0 0 0 4px var(--ease-timeline-dot-color),
+      0 0 20px var(--ease-timeline-dot-color);
+  }
+
+  100% {
+    box-shadow:
+      0 0 0 2px var(--ease-timeline-dot-color),
+      0 0 8px var(--ease-timeline-dot-color);
+  }
+}
+
   /* ── Container ───────────────────────────────────────────── */
   .ease-timeline {
     position: relative;
@@ -130,16 +150,21 @@
     border-radius: var(--ease-radius-full, 9999px);
     background: var(--ease-timeline-dot-color, #6c63ff);
     border: 3px solid var(--ease-timeline-dot-border, #fff);
-    box-shadow: 0 0 0 2px var(--ease-timeline-dot-color, #6c63ff);
+    box-shadow:
+      0 0 0 2px var(--ease-timeline-dot-color, #6c63ff),
+      0 0 12px var(--ease-timeline-dot-color, #6c63ff),
+      0 0 20px rgba(108, 99, 255, 0.5);
     flex-shrink: 0;
     margin-top: var(--ease-space-1, 0.25rem);
     transition: transform var(--ease-timeline-duration, 0.5s) var(--ease-ease-bounce, cubic-bezier(0.34,1.56,0.64,1));
   }
 
   .ease-timeline-item.is-visible .ease-timeline-dot {
-    animation: ease-timeline-dot-pop var(--ease-timeline-duration, 0.5s)
-               var(--ease-ease-bounce, cubic-bezier(0.34,1.56,0.64,1)) both;
-  }
+  animation:
+    ease-timeline-dot-pop var(--ease-timeline-duration, 0.5s)
+    var(--ease-ease-bounce, cubic-bezier(0.34,1.56,0.64,1)) both,
+    ease-timeline-dot-glow 2s ease-in-out infinite;
+}
 
   /* ── Card ────────────────────────────────────────────────── */
   .ease-timeline-card {
