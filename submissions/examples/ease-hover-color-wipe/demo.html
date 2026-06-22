@@ -3,34 +3,54 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Submission - Ease Hover Color Wipe</title>
+  <title>Ease Hover Color Wipe</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <main class="demo-shell">
     <section class="intro">
-      <p class="eyebrow">Text hover motion</p>
+      <p class="eyebrow">Text Hover Animation</p>
       <h1>Ease Hover Color Wipe</h1>
       <p>
-        A left-to-right text color sweep using background-clip and CSS variables,
-        designed for links, headings, and call-to-action labels.
+        A customizable text color wipe animation using CSS gradients,
+        background clipping, and smooth transitions.
       </p>
     </section>
 
-    <section class="wipe-stack" aria-label="Hover color wipe examples">
-      <a class="wipe-line ease-hover-color-wipe" href="#" style="--ease-wipe-to: #14b8a6;">
-        Documentation link
+    <section class="wipe-stack">
+      <a class="wipe-line ease-hover-color-wipe" href="#">
+        Documentation Link
       </a>
 
-      <button class="wipe-button ease-hover-color-wipe" style="--ease-wipe-from: #f8fafc; --ease-wipe-to: #f59e0b;">
-        Button label wipe
+      <button
+        class="wipe-button ease-hover-color-wipe"
+        style="--ease-wipe-to:#f59e0b;"
+      >
+        Button Label Wipe
       </button>
 
-      <h2 class="wipe-heading ease-hover-color-wipe" style="--ease-wipe-from: #cbd5e1; --ease-wipe-to: #a3e635;">
-        Gradient text reveal
+      <h2
+        class="wipe-heading ease-hover-color-wipe"
+        style="--ease-wipe-to:#a3e635;"
+      >
+        Gradient Text Reveal
       </h2>
+
+      <p
+        class="wipe-paragraph ease-hover-color-wipe"
+        style="--ease-wipe-to:#38bdf8;"
+      >
+        This paragraph demonstrates that the utility works on standard text
+        content as well.
+      </p>
+
+      <span
+        class="wipe-inline ease-hover-color-wipe"
+        style="--ease-wipe-direction:270deg; --ease-wipe-to:#f472b6;"
+      >
+        Right-to-left wipe effect
+      </span>
     </section>
   </main>
 </body>
 </html>
-
