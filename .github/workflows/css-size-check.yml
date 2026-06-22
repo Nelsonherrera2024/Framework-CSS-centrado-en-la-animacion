@@ -1,0 +1,35 @@
+name: CSS Size Check
+
+on:
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  check-size:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout PR Branch
+        uses: actions/checkout@v4
+
+      - name: Check CSS Size
+        run: |
+          # Finds the file anywhere in the repository
+          FILE_PATH=$(find . -name "easemotion.min.css" | head -n 1)
+          
+          if [ -z "$FILE_PATH" ]; then
+            echo "Error: easemotion.min.css not found!"
+            exit 1
+          fi
+          
+          SIZE_BYTES=$(stat -c%s "$FILE_PATH")
+          SIZE_KB=$(echo "scale=2; $SIZE_BYTES / 1024" | bc)
+          
+          echo "File found at: $FILE_PATH"
+          echo "File size: ${SIZE_KB} KB (${SIZE_BYTES} bytes)"
+          
+          # Limit set to 2KB (2048 bytes)
+          LIMIT_BYTES=2048
+          
+          if [ $SIZE_BYTES -gt $LIMIT_BYTES ]; then
+            echo "::warning file=$FILE_PATH::easemotion.min.css exceeds the 2KB limit! Current size: ${SIZE_KB} KB"
+          fi
