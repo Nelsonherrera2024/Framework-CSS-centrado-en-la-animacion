@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ease-loader-progress-dots Demo</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      gap: 3rem;
+      background: #f8fafc;
+      font-family: sans-serif;
+    }
+    h2 { color: #1e293b; }
+    .variant-red { --ease-loader-color: #ef4444; }
+    .variant-green { --ease-loader-color: #22c55e; }
+    .variant-lg { --ease-loader-size: 16px; }
+  </style>
+</head>
+<body>
+  <h2>ease-loader-progress-dots</h2>
+  <div class="ease-loader-progress-dots">
+    <span></span><span></span><span></span>
+  </div>
+  <div class="ease-loader-progress-dots variant-red">
+    <span></span><span></span><span></span>
+  </div>
+  <div class="ease-loader-progress-dots variant-green variant-lg">
+    <span></span><span></span><span></span>
+  </div>
+</body>
+</html>
