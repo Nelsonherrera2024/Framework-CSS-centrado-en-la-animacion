@@ -1,67 +1,9 @@
-# ease-stretch-in-vertical
+# Ease Stretch In Vertical
 
-A lightweight CSS animation that smoothly stretches an element into view vertically — scaling from 0 to full height with a fade-in effect.
+A CSS-only dropdown menu that reveals itself by stretching vertically from a thin line at the top.
 
----
-
-## Preview
-
-The element scales in from the top, expanding vertically while fading in.
-
----
+Uses `transform: scaleY(0)` to `scaleY(1)` with `transform-origin: top` for a natural drop-down reveal effect. Ideal for menus, notifications, and dropdown panels.
 
 ## Usage
 
-1. Link the stylesheet in your HTML:
-
-```html
-<link rel="stylesheet" href="style.css">
-```
-
-2. Add the class to any element:
-
-```html
-<div class="ease-stretch-in-vertical">
-  Hello World
-</div>
-```
-
----
-
-## Animation Details
-
-| Property         | Value         |
-|------------------|---------------|
-| Duration         | 0.5s          |
-| Easing           | ease          |
-| Transform        | scaleY(0 → 1) |
-| Opacity          | 0 → 1         |
-| Transform Origin | top           |
-| Fill Mode        | forwards      |
-
----
-
-## Files
-
-| File        | Description                       |
-|-------------|-----------------------------------|
-| `style.css` | Contains the animation keyframes  |
-| `demo.html` | Live demo of the animation        |
-
----
-
-## Contributing
-
-Contributions are welcome! Feel free to open an issue or submit a pull request.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/my-animation`)
-3. Commit your changes (`git commit -m 'Add my animation'`)
-4. Push to the branch (`git push origin feature/my-animation`)
-5. Open a Pull Request
-
----
-
-## License
-
-MIT
+Wrap a `.trigger` element and a `.dropdown` container in a `.dropdown-wrapper`. Hovering the wrapper triggers the vertical stretch animation.
