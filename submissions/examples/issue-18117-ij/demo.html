@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ease-particles-bg - EaseMotion</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Particles BG</h1>
+    <div class="particles-wrap" id="particlesWrap">
+      <p style="position:relative;z-index:1;color:var(--text-primary);font-size:1.3rem;font-weight:500;top:40%;">Floating Particles</p>
+    </div>
+  </div>
+  <script>
+    const wrap = document.getElementById('particlesWrap');
+    const count = 50;
+    const particles = [];
+    for (let i = 0; i < count; i++) {
+      const p = document.createElement('div');
+      p.className = 'particle';
+      const size = 2 + Math.random() * 6;
+      p.style.width = size + 'px';
+      p.style.height = size + 'px';
+      p.style.background = 'hsl(' + (240 + Math.random() * 60) + ', 70%, ' + (50 + Math.random() * 40) + '%)';
+      p.style.opacity = 0.2 + Math.random() * 0.5;
+      p.style.left = Math.random() * 100 + '%';
+      p.style.top = Math.random() * 100 + '%';
+      wrap.appendChild(p);
+      particles.push({
+        el: p,
+        x: parseFloat(p.style.left),
+        y: parseFloat(p.style.top),
+        vx: (Math.random() - 0.5) * 0.4,
+        vy: (Math.random() - 0.5) * 0.4,
+        size: parseFloat(size)
+      });
+    }
+    function animateParticles() {
+      for (const p of particles) {
+        p.x += p.vx;
+        p.y += p.vy;
+        if (p.x < 0 || p.x > 100) p.vx *= -1;
+        if (p.y < 0 || p.y > 100) p.vy *= -1;
+        p.el.style.left = p.x + '%';
+        p.el.style.top = p.y + '%';
+      }
+      requestAnimationFrame(animateParticles);
+    }
+    animateParticles();
+  </script>
+</body>
+</html>
