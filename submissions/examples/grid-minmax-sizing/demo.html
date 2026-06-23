@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid minmax() Sizing</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1><code>minmax()</code> for Grid Track Sizing</h1>
+    <p>Flexible track sizing with minimum and maximum constraints.</p>
+  </header>
+
+  <section class="demo-section">
+    <h2><code>minmax(100px, 1fr)</code> — Flexible Columns</h2>
+    <div class="grid grid-flex">
+      <div class="cell">A</div>
+      <div class="cell">B</div>
+      <div class="cell">C</div>
+      <div class="cell">D</div>
+      <div class="cell">E</div>
+    </div>
+  </section>
+
+  <section class="demo-section">
+    <h2><code>auto-fill</code> with <code>minmax(120px, 1fr)</code></h2>
+    <div class="grid grid-fill">
+      <div class="cell">1</div>
+      <div class="cell">2</div>
+      <div class="cell">3</div>
+      <div class="cell">4</div>
+      <div class="cell">5</div>
+      <div class="cell">6</div>
+      <div class="cell">7</div>
+      <div class="cell">8</div>
+    </div>
+  </section>
+
+  <section class="demo-section">
+    <h2><code>auto-fit</code> with <code>minmax(120px, 1fr)</code></h2>
+    <div class="grid grid-fit">
+      <div class="cell">1</div>
+      <div class="cell">2</div>
+      <div class="cell">3</div>
+      <div class="cell">4</div>
+      <div class="cell">5</div>
+    </div>
+  </section>
+
+  <section class="demo-section">
+    <h2>Mixed Track Pattern</h2>
+    <div class="grid grid-mixed">
+      <div class="cell sidebar">Sidebar</div>
+      <div class="cell main">Main</div>
+      <div class="cell extra">Extra</div>
+      <div class="cell footer">Footer</div>
+    </div>
+  </section>
+
+  <footer>
+    <p><code>minmax()</code> accepts any length, percentage, <code>fr</code>, <code>auto</code>, <code>min-content</code>, <code>max-content</code>.</p>
+  </footer>
+</body>
+</html>
