@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Overscroll Behavior — EaseMotion CSS Demo</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../core/variables.css">
+</head>
+<body>
+  <div class="container">
+    <div class="page-header">
+      <span class="feature-tag">Overscroll Behavior</span>
+      <h1>Control Scroll Chaining and Bounce</h1>
+      <p>The overscroll-behavior property controls what happens when a scroll boundary is reached. Prevents scroll chaining in nested containers and stops unwanted browser pull-to-refresh.</p>
+    </div>
+
+    <!-- Demo 1: Scroll Chaining Comparison -->
+    <div class="demo-section">
+      <div class="section-title">Scroll Chaining Comparison</div>
+      <div class="section-desc">Scroll the inner blue list below. With <code>overscroll-behavior: auto</code>, scrolling past the end propagates to the parent page. With <code>overscroll-behavior: contain</code>, it stops at the boundary.</div>
+
+      <div class="info-box">
+        <strong>Instructions:</strong> Scroll down inside the inner scroll area below. Notice how <code>contain</code> prevents the outer page from scrolling.
+      </div>
+
+      <div class="comparison-grid">
+        <div class="comparison-item">
+          <h4>overscroll-behavior: auto</h4>
+          <span class="label-tag">default — chaining ON</span>
+          <div class="scroll-wrapper">
+            <span class="scroll-indicator">outer page</span>
+            <div class="scroll-inner ease-overscroll-auto">
+              <div class="item-block">Item 01 — keep scrolling</div>
+              <div class="item-block">Item 02 — keep scrolling</div>
+              <div class="item-block">Item 03 — keep scrolling</div>
+              <div class="item-block">Item 04 — keep scrolling</div>
+              <div class="item-block">Item 05 — keep scrolling</div>
+              <div class="item-block">Item 06 — keep scrolling</div>
+              <div class="item-block">Item 07 — keep scrolling</div>
+              <div class="item-block">Item 08 — keep scrolling</div>
+              <div class="item-block">Item 09 — keep scrolling</div>
+              <div class="item-block">Item 10 — try scrolling past here</div>
+            </div>
+          </div>
+        </div>
+        <div class="comparison-item">
+          <h4>overscroll-behavior: contain</h4>
+          <span class="label-tag">chaining blocked</span>
+          <div class="scroll-wrapper">
+            <span class="scroll-indicator">outer page</span>
+            <div class="scroll-inner ease-overscroll-contain">
+              <div class="item-block">Item 01 — scroll stops here</div>
+              <div class="item-block">Item 02 — scroll stops here</div>
+              <div class="item-block">Item 03 — scroll stops here</div>
+              <div class="item-block">Item 04 — scroll stops here</div>
+              <div class="item-block">Item 05 — scroll stops here</div>
+              <div class="item-block">Item 06 — scroll stops here</div>
+              <div class="item-block">Item 07 — scroll stops here</div>
+              <div class="item-block">Item 08 — scroll stops here</div>
+              <div class="item-block">Item 09 — scroll stops here</div>
+              <div class="item-block">Item 10 — scroll stops here</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Demo 2: Pull-to-Refresh Prevention -->
+    <div class="demo-section">
+      <div class="section-title">Pull-to-Refresh Suppression</div>
+      <div class="section-desc">On mobile, <code>overscroll-behavior: contain</code> on the body prevents the pull-to-refresh gesture from triggering on non-refreshable pages.</div>
+
+      <div class="demo-card ease-overscroll-contain" style="height: 200px; overflow-y: auto; padding: 1rem;">
+        <div class="demo-label">overscroll-behavior: contain on body</div>
+        <p>This container captures all scroll events. Scrolling to the top or bottom stops here — the browser chrome will not pull down or up. Useful for embedded feeds, chat interfaces, and game canvases.</p>
+      </div>
+    </div>
+
+    <hr style="border:none;border-top:1px solid #e2e8f0;margin:2rem 0;">
+
+    <div class="footer-note">
+      EaseMotion CSS utilities use <code>!important</code> to ensure overscroll behavior applies consistently across all nested scroll containers. Dark mode and reduced-motion are fully supported.
+    </div>
+  </div>
+</body>
+</html>

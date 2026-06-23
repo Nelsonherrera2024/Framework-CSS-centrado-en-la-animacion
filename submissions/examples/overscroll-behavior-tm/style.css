@@ -1,0 +1,204 @@
+/* ── Reset ─────────────────────────────────────────────── */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--ease-space-10);
+  background: var(--ease-color-bg);
+  color: var(--ease-color-text);
+  font-family: var(--ease-font-sans);
+  line-height: var(--ease-leading-relaxed);
+}
+
+.container {
+  width: 100%;
+  max-width: var(--ease-container-max);
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: var(--ease-space-12);
+  padding-bottom: var(--ease-space-8);
+  border-bottom: 2px solid var(--ease-color-neutral-200);
+}
+
+.page-header h1 {
+  font-size: var(--ease-text-4xl);
+  font-weight: 800;
+  color: var(--ease-color-primary);
+  margin-bottom: var(--ease-space-3);
+  letter-spacing: -0.02em;
+}
+
+.page-header p {
+  font-size: var(--ease-text-lg);
+  color: var(--ease-color-muted);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.feature-tag {
+  display: inline-block;
+  padding: var(--ease-space-1) var(--ease-space-4);
+  background: var(--ease-color-primary-alpha);
+  color: var(--ease-color-primary);
+  border-radius: var(--ease-radius-full);
+  font-size: var(--ease-text-sm);
+  font-weight: 600;
+  margin-bottom: var(--ease-space-4);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ── Utility Classes ─────────────────────────────────────── */
+.ease-overscroll-auto     { overscroll-behavior: auto !important; }
+.ease-overscroll-contain { overscroll-behavior: contain !important; }
+.ease-overscroll-none    { overscroll-behavior: none !important; }
+
+/* ── Demo Sections ───────────────────────────────────────── */
+.demo-section {
+  margin-bottom: var(--ease-space-16);
+  padding: var(--ease-space-8);
+  background: var(--ease-color-surface);
+  border-radius: var(--ease-radius-xl);
+  border: 1px solid var(--ease-color-neutral-200);
+}
+
+.section-title {
+  font-size: var(--ease-text-xl);
+  font-weight: 700;
+  color: var(--ease-color-text);
+  margin-bottom: var(--ease-space-4);
+}
+
+.section-desc {
+  font-size: var(--ease-text-base);
+  color: var(--ease-color-muted);
+  margin-bottom: var(--ease-space-6);
+}
+
+/* ── Scrollable Container Demo ────────────────────────────── */
+.scroll-wrapper {
+  height: 280px;
+  overflow: hidden;
+  border-radius: var(--ease-radius-lg);
+  border: 2px solid var(--ease-color-neutral-200);
+  position: relative;
+}
+
+.scroll-inner {
+  height: 600px;
+  padding: var(--ease-space-6);
+  overflow-y: auto;
+  background: var(--ease-color-bg);
+}
+
+.scroll-inner::-webkit-scrollbar { width: 6px; }
+.scroll-inner::-webkit-scrollbar-track { background: var(--ease-color-neutral-100); }
+.scroll-inner::-webkit-scrollbar-thumb { background: var(--ease-color-primary); border-radius: 3px; }
+
+.scroll-indicator {
+  position: absolute;
+  top: var(--ease-space-3);
+  right: var(--ease-space-3);
+  padding: var(--ease-space-1) var(--ease-space-3);
+  background: var(--ease-color-primary);
+  color: white;
+  border-radius: var(--ease-radius-full);
+  font-size: var(--ease-text-xs);
+  font-weight: 700;
+  z-index: 10;
+}
+
+.item-block {
+  height: 60px;
+  border-radius: var(--ease-radius-md);
+  margin-bottom: var(--ease-space-3);
+  display: flex;
+  align-items: center;
+  padding: 0 var(--ease-space-4);
+  font-weight: 600;
+  font-size: var(--ease-text-sm);
+}
+
+.item-block:nth-child(odd) { background: var(--ease-color-primary-light); color: var(--ease-color-primary-dark); }
+.item-block:nth-child(even) { background: var(--ease-color-secondary-light); color: var(--ease-color-secondary-dark); }
+
+/* ── Comparison Grid ─────────────────────────────────────── */
+.comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--ease-space-6);
+  margin-top: var(--ease-space-6);
+}
+
+.comparison-item {
+  padding: var(--ease-space-5);
+  background: var(--ease-color-bg);
+  border-radius: var(--ease-radius-lg);
+  border: 1px solid var(--ease-color-neutral-200);
+}
+
+.comparison-item h4 {
+  font-size: var(--ease-text-base);
+  font-weight: 700;
+  color: var(--ease-color-primary);
+  margin-bottom: var(--ease-space-2);
+}
+
+/* ── Labels ─────────────────────────────────────────────── */
+.label-tag {
+  display: inline-block;
+  padding: var(--ease-space-1) var(--ease-space-3);
+  background: var(--ease-color-neutral-100);
+  color: var(--ease-color-muted);
+  border-radius: var(--ease-radius-full);
+  font-size: var(--ease-text-xs);
+  font-weight: 600;
+  font-family: var(--ease-font-mono);
+  margin-bottom: var(--ease-space-3);
+}
+
+/* ── Info Box ───────────────────────────────────────────── */
+.info-box {
+  padding: var(--ease-space-4) var(--ease-space-5);
+  background: var(--ease-color-info-light);
+  color: var(--ease-color-info-dark);
+  border-radius: var(--ease-radius-md);
+  font-size: var(--ease-text-sm);
+  border-left: 4px solid var(--ease-color-info);
+  margin-bottom: var(--ease-space-6);
+}
+
+/* ── Footer ──────────────────────────────────────────────── */
+.footer-note {
+  margin-top: var(--ease-space-8);
+  padding: var(--ease-space-5);
+  background: var(--ease-color-primary-alpha);
+  border-radius: var(--ease-radius-lg);
+  font-size: var(--ease-text-sm);
+  color: var(--ease-color-muted);
+  text-align: center;
+}
+
+/* ── Dark Mode ──────────────────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+  .demo-section,
+  .scroll-inner,
+  .comparison-item {
+    background: var(--ease-color-surface-dark);
+    border-color: var(--ease-color-neutral-700);
+  }
+  .page-header { border-color: var(--ease-color-neutral-700); }
+  .scroll-inner::-webkit-scrollbar-track { background: var(--ease-color-neutral-800); }
+  .item-block:nth-child(odd) { background: var(--ease-color-primary-dark); color: var(--ease-color-primary-light); }
+  .item-block:nth-child(even) { background: var(--ease-color-secondary-dark); color: var(--ease-color-secondary-light); }
+}
+
+/* ── Reduced Motion ─────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
