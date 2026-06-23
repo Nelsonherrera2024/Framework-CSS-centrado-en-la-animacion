@@ -8,8 +8,8 @@ on:
       - '**/*.html'
       - 'scripts/**'
       - '.github/workflows/ci.yml'
-      - 'stylelint.config.json'
-      - 'htmlhint.config.json'
+      - '.github/workflows/stylelint.config.json'
+      - '.github/workflows/htmlhint.config.json'
   pull_request:
     branches: [ main ]
     paths:
@@ -17,8 +17,8 @@ on:
       - '**/*.html'
       - 'scripts/**'
       - '.github/workflows/ci.yml'
-      - 'stylelint.config.json'
-      - 'htmlhint.config.json'
+      - '.github/workflows/stylelint.config.json'
+      - '.github/workflows/htmlhint.config.json'
 
 permissions:
   contents: read
@@ -83,3 +83,4 @@ jobs:
           else
             echo "No CSS files to lint."
           fi
+
