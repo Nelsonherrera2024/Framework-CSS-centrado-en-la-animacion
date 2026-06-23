@@ -1,0 +1,99 @@
+name: Feature Request
+description: Propose a new utility, animation, or component for EaseMotion CSS
+title: "[FEATURE] "
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Feature Name
+  - type: input
+    id: feature-name
+    attributes:
+      label: Feature Name
+      description: A short, descriptive name for your proposed feature.
+      placeholder: e.g. Hover Shimmer Effect
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: "---"
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Describe the effect or utility you are proposing. What does it look like? What does it do?
+      placeholder: Describe the animation and the visual result.
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: "---"
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Why is this useful for EaseMotion CSS?
+      description: Explain how this fits the EaseMotion CSS design philosophy: human-readable, animation-first, composable.
+      placeholder: This would be useful because...
+  - type: markdown
+    attributes:
+      value: "---"
+  - type: textarea
+    id: html-snippet
+    attributes:
+      label: HTML Snippet
+      description: Show exactly how a developer would use this in their HTML.
+      placeholder: |
+        <div class="ease-your-feature">
+          Content
+        </div>
+      render: html
+  - type: textarea
+    id: css-snippet
+    attributes:
+      label: CSS Snippet
+      description: Paste your raw CSS. You do NOT need to use ease- naming yet.
+      placeholder: |
+        .ease-your-feature {
+          /* your CSS */
+        }
+      render: css
+  - type: markdown
+    attributes:
+      value: "---"
+  - type: dropdown
+    id: animation-category
+    attributes:
+      label: Animation Category
+      description: Which category does your feature belong to?
+      options:
+        - Fade / Reveal
+        - Hover / Interaction
+        - Scroll-driven
+        - Skeleton / Loader
+        - Text / Typography
+        - Component / Layout
+        - Tooling / DX
+        - Other
+  - type: markdown
+    attributes:
+      value: "---"
+  - type: textarea
+    id: visual-ref
+    attributes:
+      label: Visual Reference (optional)
+      description: Link a screenshot, GIF, CodePen, or video showing the effect.
+  - type: markdown
+    attributes:
+      value: "---"
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: This feature does not duplicate an existing EaseMotion CSS class
+          required: true
+        - label: I understand my naming will be standardized by the maintainer
+          required: true
+        - label: I will submit code inside `submissions/examples/` only
+          required: true

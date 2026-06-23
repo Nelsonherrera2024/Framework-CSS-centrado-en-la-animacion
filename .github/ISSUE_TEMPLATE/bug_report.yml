@@ -1,0 +1,112 @@
+name: 🐛 Bug Report
+description: Report a broken class, unexpected visual glitch, or broken animation
+title: "[BUG] "
+labels: [bug]
+assignees: SAPTARSHI-coder
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🐛 What's broken?
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Describe the bug clearly in one or two sentences.
+      placeholder: e.g. The ease-fade-in animation doesn't play when using the CDN version 1.2.0.
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: "---"
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: Provide the exact HTML and CSS needed to reproduce the issue.
+      placeholder: |
+        1. Link EaseMotion CSS (specify version or CDN link used)
+        2. Add this HTML: `<element class="ease-...">`
+        3. See the issue
+      value: |
+        1. Link EaseMotion CSS:
+           `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/easemotion-css/easemotion.css" />`
+        2. Add this HTML:
+        ```html
+        <div class="ease-...">
+          Test
+        </div>
+        ```
+        3. Observe the bug.
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: "---"
+  - type: input
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What should happen?
+    validations:
+      required: true
+  - type: input
+    id: actual
+    attributes:
+      label: Actual Behavior
+      description: What actually happens?
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: "---"
+  - type: dropdown
+    id: animation-category
+    attributes:
+      label: Animation Category
+      description: Which animation category does this bug relate to?
+      options:
+        - Fade / Reveal
+        - Hover / Interaction
+        - Scroll-driven
+        - Skeleton / Loader
+        - Text / Typography
+        - Component / Layout
+        - Core CSS / Build
+        - Documentation
+        - Other
+  - type: markdown
+    attributes:
+      value: "---"
+  - type: markdown
+    attributes:
+      value: |
+        ## 🌍 Environment
+  - type: input
+    id: version
+    attributes:
+      label: EaseMotion CSS Version
+      placeholder: e.g. 1.0.0 or CDN link
+  - type: input
+    id: browser
+    attributes:
+      label: Browser
+      placeholder: e.g. Chrome 124, Safari 17
+  - type: input
+    id: os
+    attributes:
+      label: OS
+      placeholder: e.g. Windows 11, macOS 14
+  - type: markdown
+    attributes:
+      value: "---"
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: Screenshot (optional)
+      description: Drag and drop an image here if helpful.
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        > **Note:** Please do not open bug reports for feature ideas. Use the Feature Request template for those.
