@@ -17,6 +17,8 @@
         const escapedHashSelector = '#' + CSS.escape(hash.substring(1));
         const overlay = document.querySelector(escapedHashSelector + '.ease-modal-overlay');
         if (overlay) {
+          const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+          body.style.paddingRight = scrollbarWidth + 'px';
           body.style.overflow = 'hidden';
 
           previousFocusedElement = document.activeElement;
@@ -41,6 +43,7 @@
 
     // If no active modal is found
     body.style.overflow = '';
+    body.style.paddingRight = '';
 
     if (
       previousFocusedElement &&
@@ -128,3 +131,4 @@
     checkModal();
   }
 })();
+
