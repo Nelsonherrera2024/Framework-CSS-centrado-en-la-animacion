@@ -1,20 +1,12 @@
-# Accordion Component
+# Accordion
 
-A reusable accordion component for EaseMotion CSS.
+**What does this do?**
+A CSS-only accordion component.
 
-## Features
+**How is it used?**
+``html
+<details><summary>Section 1</summary><p>Content</p></details><details><summary>Section 2</summary><p>Content</p></details>
+`` 
 
-- Smooth expand/collapse animation
-- Responsive layout
-- Clean modern design
-- Easy customization
-- Vanilla HTML/CSS/JavaScript
-
-## Files
-
-- index.html
-- style.css
-
-## Preview
-
-Accordion component with animated content reveal and modern UI styling.
+**Why is it useful?**
+Lightweight, zero-dependency implementation.
