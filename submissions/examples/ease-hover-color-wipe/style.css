@@ -1,151 +1,119 @@
-:root {
-  color-scheme: light dark;
-  --page-bg: #101418;
-  --ink: #f8fafc;
-  --muted: #a9b4c3;
-  --surface: #1a222d;
-  --accent: #14b8a6;
-  --ease-wipe-from: currentColor;
-  --ease-wipe-to: var(--accent);
-  --ease-wipe-duration: 420ms;
-}
+/* ========================================================================
+   Component: ease-hover-color-wipe
+   ======================================================================== */
 
-* {
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, sans-serif;
+  background-color: #f8fafc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 40px 20px;
   box-sizing: border-box;
 }
 
-body {
-  min-height: 100vh;
-  margin: 0;
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background:
-    linear-gradient(135deg, rgba(20, 184, 166, 0.16), transparent 34rem),
-    linear-gradient(315deg, rgba(245, 158, 11, 0.12), transparent 30rem),
-    var(--page-bg);
-  color: var(--ink);
+/* Demo UI Styles */
+.demo-container {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  width: 100%;
+  max-width: 700px;
+  padding: 50px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
-.demo-shell {
-  width: min(980px, calc(100% - 32px));
-  margin: 0 auto;
-  padding: 64px 0;
+.demo-header {
+  text-align: center;
 }
 
-.intro {
-  max-width: 720px;
-  margin-bottom: 44px;
+.demo-header h2 { margin-top: 0; color: #0f172a; font-size: 2rem; margin-bottom: 12px;}
+.demo-header p { color: #64748b; margin: 0; font-size: 1.05rem; line-height: 1.6;}
+.demo-header code { background: #f1f5f9; padding: 4px 8px; border-radius: 6px; color: #dc2626;}
+
+.demo-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  background: #f8fafc;
+  padding: 32px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
 }
 
-.eyebrow {
-  margin: 0 0 10px;
-  color: var(--accent);
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
+.demo-section h3 { margin: 0; color: #334155; font-size: 1.25rem; }
+.description { margin: 0 0 16px 0; font-size: 0.95rem; color: #64748b; line-height: 1.5; }
 
-h1,
-h2,
-p {
-  margin-top: 0;
-}
-
-h1 {
-  max-width: 11ch;
-  margin-bottom: 18px;
-  font-size: clamp(2.45rem, 8vw, 5rem);
-  line-height: 0.98;
-  letter-spacing: 0;
-}
-
-.intro p:not(.eyebrow) {
-  max-width: 60ch;
-  color: var(--muted);
-  font-size: 1.05rem;
-  line-height: 1.7;
-}
-
-.wipe-stack {
-  display: grid;
+.nav-links {
+  display: flex;
   gap: 24px;
-  padding: 30px;
-  border: 1px solid rgba(20, 184, 166, 0.28);
-  border-radius: 22px;
-  background:
-    linear-gradient(145deg, rgba(20, 184, 166, 0.12), transparent 52%),
-    var(--surface);
-  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.32);
+  font-weight: 700;
+  font-size: 1.1rem;
 }
 
-.wipe-line,
-.wipe-heading,
-.wipe-button {
-  width: fit-content;
-}
-
-.wipe-line {
-  color: #e2e8f0;
-  font-size: clamp(1.5rem, 4vw, 2.4rem);
-  font-weight: 900;
+.nav-links a {
   text-decoration: none;
 }
 
-.wipe-button {
-  min-height: 48px;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  color: #f8fafc;
-  cursor: pointer;
-  font: inherit;
-  font-size: clamp(1.25rem, 3vw, 1.8rem);
-  font-weight: 900;
-}
-
-.wipe-heading {
-  margin-bottom: 0;
-  color: #cbd5e1;
-  font-size: clamp(2rem, 6vw, 4rem);
-  line-height: 1;
-  letter-spacing: 0;
-}
+/* ------------------------------------------------------------------------
+   Core Animation: Hover Color Wipe
+   ------------------------------------------------------------------------ */
 
 .ease-hover-color-wipe {
+  /* Default fallback colors if variables aren't provided */
+  --ease-wipe-from: #0f172a;
+  --ease-wipe-to: #3b82f6;
+  
+  /* Make the text transparent so the background shows through */
+  color: transparent !important;
+  
+  /* Create a background gradient that is twice as wide as the element.
+     Left half is the TO color, Right half is the FROM color.
+     The hard color stop at 50% creates a sharp wiping edge. */
   background-image: linear-gradient(
-    90deg,
-    var(--ease-wipe-to) 0%,
-    var(--ease-wipe-to) 50%,
-    var(--ease-wipe-from) 50%,
+    to right, 
+    var(--ease-wipe-to) 0%, 
+    var(--ease-wipe-to) 50%, 
+    var(--ease-wipe-from) 50%, 
     var(--ease-wipe-from) 100%
   );
+  background-size: 200% 100%;
+  /* Start the background shifted completely to the right so we only see the FROM color */
   background-position: 100% 0;
-  background-size: 220% 100%;
+  
+  /* Clip the background to the exact shape of the text */
   -webkit-background-clip: text;
   background-clip: text;
-  color: transparent;
-  transition: background-position var(--ease-wipe-duration) cubic-bezier(0.16, 1, 0.3, 1);
+  
+  /* Smoothly animate the background position */
+  transition: background-position 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  
+  /* Reset cursor/margins for demo */
+  cursor: pointer;
+  margin: 0;
 }
 
 .ease-hover-color-wipe:hover,
 .ease-hover-color-wipe:focus-visible {
+  /* Shift the background leftwards to reveal the TO color wiping across */
   background-position: 0 0;
 }
 
 .ease-hover-color-wipe:focus-visible {
-  outline: 2px solid color-mix(in srgb, var(--ease-wipe-to), white 22%);
-  outline-offset: 6px;
+  outline: 2px solid var(--ease-wipe-to);
+  outline-offset: 4px;
+  border-radius: 4px;
 }
 
+/* Accessibility Fallback */
 @media (prefers-reduced-motion: reduce) {
   .ease-hover-color-wipe {
-    transition-duration: 1ms;
+    transition: none !important;
   }
 }
-
-@media (max-width: 620px) {
-  .wipe-stack {
-    padding: 22px;
-  }
-}
-

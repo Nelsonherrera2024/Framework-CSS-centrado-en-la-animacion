@@ -1,36 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Submission - Ease Hover Color Wipe</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Hover Color Wipe | EaseMotion CSS</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-  <main class="demo-shell">
-    <section class="intro">
-      <p class="eyebrow">Text hover motion</p>
-      <h1>Ease Hover Color Wipe</h1>
-      <p>
-        A left-to-right text color sweep using background-clip and CSS variables,
-        designed for links, headings, and call-to-action labels.
-      </p>
-    </section>
+  
+  <div class="demo-container">
+    <div class="demo-header">
+      <h2>Hover Color Wipe Animation</h2>
+      <p>Using <code>background-clip: text</code> and <code>background-position</code> to create a smooth text color sweep from left to right on hover.</p>
+    </div>
 
-    <section class="wipe-stack" aria-label="Hover color wipe examples">
-      <a class="wipe-line ease-hover-color-wipe" href="#" style="--ease-wipe-to: #14b8a6;">
-        Documentation link
-      </a>
+    <!-- Example 1: Dark to Brand Wipe -->
+    <div class="demo-section">
+      <h3>1. Classic Color Reveal</h3>
+      <p class="description">Hover the text below to see it wipe from dark slate to vibrant blue.</p>
+      
+      <!-- The utility class handles the animation -->
+      <h1 class="ease-hover-color-wipe" style="--ease-wipe-from: #0f172a; --ease-wipe-to: #3b82f6;">
+        Hover Me To Reveal Color
+      </h1>
+    </div>
 
-      <button class="wipe-button ease-hover-color-wipe" style="--ease-wipe-from: #f8fafc; --ease-wipe-to: #f59e0b;">
-        Button label wipe
-      </button>
-
-      <h2 class="wipe-heading ease-hover-color-wipe" style="--ease-wipe-from: #cbd5e1; --ease-wipe-to: #a3e635;">
-        Gradient text reveal
+    <!-- Example 2: The Gradient Wipe -->
+    <div class="demo-section">
+      <h3>2. The Gradient Sweep</h3>
+      <p class="description">Because the effect uses gradients under the hood, we can wipe into complex multi-colors.</p>
+      
+      <h2 class="ease-hover-color-wipe" style="--ease-wipe-from: #64748b; --ease-wipe-to: #ec4899;">
+        Hover For Magenta Sweep
       </h2>
-    </section>
-  </main>
+    </div>
+
+    <!-- Example 3: Small Text Links -->
+    <div class="demo-section">
+      <h3>3. Inline Navigation Links</h3>
+      <p class="description">It works beautifully on small navigation links as well.</p>
+      
+      <div class="nav-links">
+        <a href="#" class="ease-hover-color-wipe" style="--ease-wipe-from: #475569; --ease-wipe-to: #10b981;">Features</a>
+        <a href="#" class="ease-hover-color-wipe" style="--ease-wipe-from: #475569; --ease-wipe-to: #10b981;">Pricing</a>
+        <a href="#" class="ease-hover-color-wipe" style="--ease-wipe-from: #475569; --ease-wipe-to: #10b981;">Contact</a>
+      </div>
+    </div>
+
+  </div>
+
 </body>
 </html>
-

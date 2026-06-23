@@ -1,22 +1,19 @@
-# Ease Hover Color Wipe
+# Hover Color Wipe Animation (`ease-hover-color-wipe`)
 
-`ease-hover-color-wipe` changes text color through a left-to-right gradient sweep on hover. It uses `background-clip: text`, animated `background-position`, and CSS variables for the start and end colors.
+A smooth, customizable text color sweep animation using CSS `background-clip: text` and animated `background-position`.
 
-## Usage
+## 🚀 Features & EaseMotion Showcase
 
+- **Sharp Edge Sweep**: Uses a hard-stop CSS `linear-gradient` at 50% combined with a 200% `background-size`. When the `background-position` is animated, it pulls the new color across the text from left to right like a physical wipe.
+- **Customizable Properties**: Driven by CSS custom properties (`--ease-wipe-from` and `--ease-wipe-to`), allowing developers to easily set the start and end colors directly in their HTML markup without writing custom CSS classes.
+- **Cross-Browser Compatible**: Relies on `-webkit-background-clip: text` which is deeply supported across modern engines.
+
+## 🛠️ Usage
+
+This demo is self-contained. Open `demo.html` in your browser. All required CSS is inside `style.css`.
+
+To apply a color wipe animation to any text element:
 ```html
-<a class="ease-hover-color-wipe" href="#">
-  Hover color wipe
-</a>
-```
-
-## Custom Properties
-
-| Variable | Default | Purpose |
-|---|---|---|
-| `--ease-wipe-from` | `currentColor` | Starting text color. |
-| `--ease-wipe-to` | `#14b8a6` | Revealed hover color. |
-| `--ease-wipe-duration` | `420ms` | Sweep duration. |
-
-The class works on headings, links, buttons, and inline text. It also supports keyboard focus and includes a reduced-motion fallback.
-
+<h1 class="ease-hover-color-wipe" style="--ease-wipe-from: black; --ease-wipe-to: blue;">
+  Hover Me
+</h1>
