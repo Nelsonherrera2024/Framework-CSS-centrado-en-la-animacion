@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Text Rendering Optimize — EaseMotion CSS Demo</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../core/variables.css">
+</head>
+<body>
+  <div class="container">
+    <div class="page-header">
+      <span class="feature-tag">text-rendering</span>
+      <h1>Text Rendering Optimization</h1>
+      <p>The text-rendering property gives browsers a hint for optimizing text drawing performance and quality tradeoffs. Essential for high-performance web apps and precise typography.</p>
+    </div>
+
+    <!-- Demo 1: Rendering Modes Comparison -->
+    <div class="demo-section">
+      <div class="section-title">Rendering Mode Comparison</div>
+      <div class="section-desc">Each text-rendering value tells the browser to prioritize different aspects: speed, legibility, or geometric precision.</div>
+
+      <div class="info-box">
+        <strong>Note:</strong> text-rendering is a hint, not a guarantee. Browsers may ignore it or apply it differently. The effects are most noticeable at large font sizes and in SVG contexts.
+      </div>
+
+      <div class="compare-card ease-text-auto">
+        <div class="compare-label label-auto">text-rendering: auto — Browser's default heuristic</div>
+        <p class="sample-body">The browser balances rendering speed and visual quality based on font size, language, and device pixel ratio. For most UI text, this is the optimal setting. Auto allows the browser to make intelligent decisions about when to apply kerning, ligatures, and hinting.</p>
+      </div>
+
+      <div class="compare-card ease-text-optimizespeed">
+        <div class="compare-label label-speed">text-rendering: optimizeSpeed — Prioritize render speed</div>
+        <p class="sample-headline">WAVY HEADLINES</p>
+        <p class="sample-body">The browser skips kerning and ligature rendering, drawing text as quickly as possible. Best for large amounts of text where visual refinement is less important than smooth scrolling performance. Common in real-time data displays and financial tickers.</p>
+      </div>
+
+      <div class="compare-card ease-text-optimizelegibility">
+        <div class="compare-label label-legibility">text-rendering: optimizeLegibility — Prioritize readability</div>
+        <p class="sample-body">The browser enables kerning and ligatures for better readability, especially at small text sizes. Essential for body text, multilingual content, and design systems where letterform quality matters. This is the recommended setting for most text-heavy web applications.</p>
+      </div>
+
+      <div class="compare-card ease-text-geometricprecision">
+        <div class="compare-label label-geometric">text-rendering: geometricPrecision — Exact geometry</div>
+        <p class="sample-body">The browser renders text with geometric precision, scaling letterforms without rounding to pixel boundaries. Critical for SVG text, responsive typography, and designs where exact proportions are required. Note: this may impact rendering performance on some devices.</p>
+      </div>
+    </div>
+
+    <!-- Demo 2: Performance vs Quality Tradeoff -->
+    <div class="demo-section">
+      <div class="section-title">Performance vs Quality Visualization</div>
+      <div class="section-desc">Visualize the browser's rendering priority shift between the modes. The meter shows the approximate tradeoff level.</div>
+
+      <div class="perf-grid">
+        <div class="perf-item">
+          <h4>Rendering Speed</h4>
+          <div class="meter"><div class="meter-fill" style="width: 100%; background: var(--ease-color-success);"></div></div>
+          <div class="meter-label">auto: 80%</div>
+          <br>
+          <div class="meter"><div class="meter-fill" style="width: 100%; background: var(--ease-color-success);"></div></div>
+          <div class="meter-label">optimizeSpeed: 100%</div>
+          <br>
+          <div class="meter"><div class="meter-fill" style="width: 60%; background: var(--ease-color-warning);"></div></div>
+          <div class="meter-label">optimizeLegibility: 60%</div>
+          <br>
+          <div class="meter"><div class="meter-fill" style="width: 50%; background: var(--ease-color-danger);"></div></div>
+          <div class="meter-label">geometricPrecision: 50%</div>
+        </div>
+
+        <div class="perf-item">
+          <h4>Visual Quality</h4>
+          <div class="meter"><div class="meter-fill" style="width: 80%; background: var(--ease-color-success);"></div></div>
+          <div class="meter-label">auto: 80%</div>
+          <br>
+          <div class="meter"><div class="meter-fill" style="width: 40%; background: var(--ease-color-warning);"></div></div>
+          <div class="meter-label">optimizeSpeed: 40%</div>
+          <br>
+          <div class="meter"><div class="meter-fill" style="width: 100%; background: var(--ease-color-success);"></div></div>
+          <div class="meter-label">optimizeLegibility: 100%</div>
+          <br>
+          <div class="meter"><div class="meter-fill" style="width: 95%; background: var(--ease-color-info);"></div></div>
+          <div class="meter-label">geometricPrecision: 95%</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      EaseMotion CSS utilities make it easy to apply the right text-rendering mode per context. Dark mode and reduced-motion are fully supported.
+    </div>
+  </div>
+</body>
+</html>

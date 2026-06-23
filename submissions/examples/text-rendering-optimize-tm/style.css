@@ -1,0 +1,205 @@
+/* ── Reset ─────────────────────────────────────────────── */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--ease-space-10);
+  background: var(--ease-color-bg);
+  color: var(--ease-color-text);
+  font-family: var(--ease-font-sans);
+  line-height: var(--ease-leading-relaxed);
+}
+
+.container {
+  width: 100%;
+  max-width: var(--ease-container-max);
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: var(--ease-space-12);
+  padding-bottom: var(--ease-space-8);
+  border-bottom: 2px solid var(--ease-color-neutral-200);
+}
+
+.page-header h1 {
+  font-size: var(--ease-text-4xl);
+  font-weight: 800;
+  color: var(--ease-color-primary);
+  margin-bottom: var(--ease-space-3);
+  letter-spacing: -0.02em;
+}
+
+.page-header p {
+  font-size: var(--ease-text-lg);
+  color: var(--ease-color-muted);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.feature-tag {
+  display: inline-block;
+  padding: var(--ease-space-1) var(--ease-space-4);
+  background: var(--ease-color-primary-alpha);
+  color: var(--ease-color-primary);
+  border-radius: var(--ease-radius-full);
+  font-size: var(--ease-text-sm);
+  font-weight: 600;
+  margin-bottom: var(--ease-space-4);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ── Utility Classes ─────────────────────────────────────── */
+.ease-text-auto              { text-rendering: auto !important; }
+.ease-text-optimizespeed     { text-rendering: optimizeSpeed !important; }
+.ease-text-optimizelegibility { text-rendering: optimizeLegibility !important; }
+.ease-text-geometricprecision { text-rendering: geometricPrecision !important; }
+
+/* ── Demo Sections ───────────────────────────────────────── */
+.demo-section {
+  margin-bottom: var(--ease-space-16);
+  padding: var(--ease-space-8);
+  background: var(--ease-color-surface);
+  border-radius: var(--ease-radius-xl);
+  border: 1px solid var(--ease-color-neutral-200);
+}
+
+.section-title {
+  font-size: var(--ease-text-xl);
+  font-weight: 700;
+  color: var(--ease-color-text);
+  margin-bottom: var(--ease-space-4);
+}
+
+.section-desc {
+  font-size: var(--ease-text-base);
+  color: var(--ease-color-muted);
+  margin-bottom: var(--ease-space-6);
+}
+
+/* ── Comparison Cards ─────────────────────────────────────── */
+.compare-card {
+  padding: var(--ease-space-6);
+  background: var(--ease-color-bg);
+  border-radius: var(--ease-radius-lg);
+  border: 1px solid var(--ease-color-neutral-200);
+  margin-bottom: var(--ease-space-4);
+}
+
+.compare-label {
+  font-size: var(--ease-text-xs);
+  font-weight: 700;
+  font-family: var(--ease-font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: var(--ease-space-3);
+}
+
+.label-auto { color: var(--ease-color-primary); }
+.label-speed { color: var(--ease-color-warning); }
+.label-legibility { color: var(--ease-color-success); }
+.label-geometric { color: var(--ease-color-info); }
+
+/* ── Typography Samples ───────────────────────────────────── */
+.sample-body {
+  font-size: var(--ease-text-base);
+  line-height: var(--ease-leading-relaxed);
+  margin-bottom: var(--ease-space-4);
+}
+
+.sample-headline {
+  font-size: var(--ease-text-4xl);
+  font-weight: 800;
+  margin-bottom: var(--ease-space-4);
+  letter-spacing: -0.02em;
+}
+
+.sample-ui {
+  font-size: var(--ease-text-sm);
+  font-weight: 600;
+  margin-bottom: var(--ease-space-3);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* ── Performance Meter ────────────────────────────────────── */
+.perf-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--ease-space-6);
+  margin-top: var(--ease-space-6);
+}
+
+.perf-item {
+  padding: var(--ease-space-5);
+  background: var(--ease-color-bg);
+  border-radius: var(--ease-radius-lg);
+  border: 1px solid var(--ease-color-neutral-200);
+}
+
+.perf-item h4 {
+  font-size: var(--ease-text-base);
+  font-weight: 700;
+  color: var(--ease-color-primary);
+  margin-bottom: var(--ease-space-4);
+}
+
+.meter {
+  height: 8px;
+  background: var(--ease-color-neutral-200);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: var(--ease-space-2);
+}
+
+.meter-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.3s ease;
+}
+
+.meter-label {
+  font-size: var(--ease-text-xs);
+  color: var(--ease-color-muted);
+  font-family: var(--ease-font-mono);
+}
+
+/* ── Info Box ───────────────────────────────────────────── */
+.info-box {
+  padding: var(--ease-space-4) var(--ease-space-5);
+  background: var(--ease-color-info-light);
+  color: var(--ease-color-info-dark);
+  border-radius: var(--ease-radius-md);
+  font-size: var(--ease-text-sm);
+  border-left: 4px solid var(--ease-color-info);
+  margin-bottom: var(--ease-space-6);
+}
+
+/* ── Footer ─────────────────────────────────────────────── */
+.footer-note {
+  margin-top: var(--ease-space-8);
+  padding: var(--ease-space-5);
+  background: var(--ease-color-primary-alpha);
+  border-radius: var(--ease-radius-lg);
+  font-size: var(--ease-text-sm);
+  color: var(--ease-color-muted);
+  text-align: center;
+}
+
+/* ── Dark Mode ──────────────────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+  .demo-section,
+  .compare-card,
+  .perf-item { background: var(--ease-color-surface-dark); border-color: var(--ease-color-neutral-700); }
+  .page-header { border-color: var(--ease-color-neutral-700); }
+  .meter { background: var(--ease-color-neutral-700); }
+}
+
+/* ── Reduced Motion ─────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
