@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ease-number-countup - EaseMotion</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Number Countup</h1>
+    <div class="countup-value" id="countup">0</div>
+    <div class="countup-label">Downloads (thousands)</div>
+  </div>
+  <script>
+    const el = document.getElementById('countup');
+    const target = 9850;
+    const duration = 2000;
+    const start = performance.now();
+    function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+    function animate(now) {
+      const t = Math.min((now - start) / duration, 1);
+      el.textContent = Math.round(easeOutCubic(t) * target);
+      if (t < 1) requestAnimationFrame(animate);
+    }
+    requestAnimationFrame(animate);
+  </script>
+</body>
+</html>
