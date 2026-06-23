@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Break Inside Avoid — EaseMotion CSS Demo</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../core/variables.css">
+</head>
+<body>
+  <div class="container">
+    <div class="page-header">
+      <span class="feature-tag">break-inside</span>
+      <h1>Preventing Unwanted Breaks in Columns</h1>
+      <p>The break-inside property controls how elements behave across column, page, and region breaks. Essential for multi-column layouts where cards should not be split.</p>
+    </div>
+
+    <!-- Demo 1: Column Cards With and Without Avoid -->
+    <div class="demo-section">
+      <div class="section-title">Card Grid: break-inside Comparison</div>
+      <div class="section-desc">Notice how the "avoid" cards stay intact across columns while the "auto" cards may be split. Resize the browser to see the effect more clearly.</div>
+
+      <div class="warning-box">
+        <strong>Hint:</strong> Resize the browser window to a narrow width to trigger more column breaks. Compare how cards behave with and without <code>break-inside: avoid</code>.
+      </div>
+
+      <div class="comparison-grid">
+        <div class="comparison-item">
+          <h4>break-inside: auto (default)</h4>
+          <span style="font-size: var(--ease-text-xs); color: var(--ease-color-muted); font-family: monospace;">cards may be cut at column boundary</span>
+          <div class="cols-2" style="margin-top: 1rem;">
+            <div style="break-inside: auto; padding: 1rem; background: var(--ease-color-bg); border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 1rem;">
+              <div class="card-num">1</div>
+              <h3>Introduction to CSS</h3>
+              <p>Cascading Style Sheets control the visual presentation of HTML documents.</p>
+            </div>
+            <div style="break-inside: auto; padding: 1rem; background: var(--ease-color-bg); border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 1rem;">
+              <div class="card-num">2</div>
+              <h3>Flexbox Layout</h3>
+              <p>A one-dimensional layout method for arranging items in rows or columns.</p>
+            </div>
+            <div style="break-inside: auto; padding: 1rem; background: var(--ease-color-bg); border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 1rem;">
+              <div class="card-num">3</div>
+              <h3>CSS Grid System</h3>
+              <p>Two-dimensional layout system for complex web layouts with rows and columns.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="comparison-item">
+          <h4>break-inside: avoid</h4>
+          <span style="font-size: var(--ease-text-xs); color: var(--ease-color-success); font-family: monospace;">cards stay intact — no split</span>
+          <div class="cols-2" style="margin-top: 1rem;">
+            <div class="col-card ease-break-avoid">
+              <div class="card-num">1</div>
+              <h3>Introduction to CSS</h3>
+              <p>Cascading Style Sheets control the visual presentation of HTML documents.</p>
+            </div>
+            <div class="col-card ease-break-avoid">
+              <div class="card-num">2</div>
+              <h3>Flexbox Layout</h3>
+              <p>A one-dimensional layout method for arranging items in rows or columns.</p>
+            </div>
+            <div class="col-card ease-break-avoid">
+              <div class="card-num">3</div>
+              <h3>CSS Grid System</h3>
+              <p>Two-dimensional layout system for complex web layouts with rows and columns.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Demo 2: 3-Column Magazine Layout -->
+    <div class="demo-section">
+      <div class="section-title">3-Column Magazine Layout</div>
+      <div class="section-desc">Real-world magazine layout with article cards. Each card uses break-inside: avoid to ensure cards never get split across columns.</div>
+
+      <div class="cols-3">
+        <div class="col-card ease-break-avoid">
+          <div class="card-num">1</div>
+          <h3>Typography Fundamentals</h3>
+          <p>Typography is the art of arranging type to make written language legible, readable, and visually appealing when displayed.</p>
+        </div>
+        <div class="col-card ease-break-avoid">
+          <div class="card-num">2</div>
+          <h3>Color Theory Basics</h3>
+          <p>Understanding color relationships, contrast ratios, and the psychological impact of different hues in design.</p>
+        </div>
+        <div class="col-card ease-break-avoid">
+          <div class="card-num">3</div>
+          <h3>Grid Systems</h3>
+          <p>Grid-based design provides structure and alignment, creating visual rhythm and consistency across layouts.</p>
+        </div>
+        <div class="col-card ease-break-avoid">
+          <div class="card-num">4</div>
+          <h3>Whitespace Usage</h3>
+          <p>Empty space is not wasted — it provides breathing room, directs attention, and improves overall readability.</p>
+        </div>
+        <div class="col-card ease-break-avoid">
+          <div class="card-num">5</div>
+          <h3>Responsive Design</h3>
+          <p>Creating websites that adapt gracefully to different screen sizes and device capabilities.</p>
+        </div>
+        <div class="col-card ease-break-avoid">
+          <div class="card-num">6</div>
+          <h3>Accessibility First</h3>
+          <p>Designing for all users means considering contrast, keyboard navigation, screen readers, and motion sensitivity.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      This demo uses EaseMotion CSS custom properties. The break-inside: avoid property works across CSS columns, paged media (print), and CSS regions. Dark mode and reduced-motion are fully supported.
+    </div>
+  </div>
+</body>
+</html>
