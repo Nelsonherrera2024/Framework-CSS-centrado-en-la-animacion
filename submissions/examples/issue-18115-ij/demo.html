@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ease-magnetic-hover - EaseMotion</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Magnetic Hover</h1>
+    <p style="color:var(--text-secondary);margin-bottom:20px;">Move your cursor over the button</p>
+    <div class="magnetic-area">
+      <button class="magnetic" id="magneticBtn">Hover Me</button>
+    </div>
+  </div>
+  <script>
+    const btn = document.getElementById('magneticBtn');
+    const area = btn.parentElement;
+    let raf = null;
+    area.addEventListener('mousemove', (e) => {
+      if (raf) cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        const rect = btn.getBoundingClientRect();
+        const cx = rect.left + rect.width / 2;
+        const cy = rect.top + rect.height / 2;
+        const dx = e.clientX - cx;
+        const dy = e.clientY - cy;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        const maxDist = 150;
+        const strength = Math.min(dist / maxDist, 1);
+        const pull = 0.3;
+        btn.style.transform = 'translate(' + (dx * pull * strength) + 'px,' + (dy * pull * strength) + 'px)';
+      });
+    });
+    area.addEventListener('mouseleave', () => {
+      btn.style.transform = 'translate(0,0)';
+    });
+  </script>
+</body>
+</html>
