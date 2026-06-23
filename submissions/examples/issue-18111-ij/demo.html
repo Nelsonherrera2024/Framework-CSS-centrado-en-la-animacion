@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ease-text-reveal-char - EaseMotion</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Text Reveal (Char)</h1>
+    <div class="reveal-text" id="revealText">EaseMotion brings each character to life with a smooth staggered entrance.</div>
+  </div>
+  <script>
+    const el = document.getElementById('revealText');
+    const txt = el.textContent.trim();
+    el.textContent = '';
+    [...txt].forEach((ch, i) => {
+      const s = document.createElement('span');
+      s.className = 'char';
+      s.textContent = ch === ' ' ? '\u00A0' : ch;
+      s.style.transitionDelay = i * 30 + 'ms';
+      el.appendChild(s);
+    });
+    requestAnimationFrame(() => document.querySelectorAll('.char').forEach(c => c.classList.add('revealed')));
+  </script>
+</body>
+</html>
