@@ -1,19 +1,24 @@
 # Workflow Swimlane Board Showcase
 
-1. **What does this do?**  
-   It creates a multi-lane workflow board showcase for operations, planning, approvals, and delivery pipeline interfaces.
+## What does this do?
 
-2. **How is it used?**  
-   Use a board container with a summary header and multiple workflow lanes that contain task cards:
+This adds a premium, self-contained interactive Workflow Swimlane Board component that shows dynamic horizontal rows (swimlanes representing cross-functional projects or categories) mapped across vertical stages (columns representing Todo, In Progress, In Review, Completed).
 
-   ```html
-   <section class="workflow-board">
-     <header class="workflow-summary">...</header>
-     <div class="lane-strip">
-       <article class="workflow-lane">...</article>
-     </div>
-   </section>
-   ```
+## How is it used?
 
-3. **Why is it useful?**  
-   It adds a more advanced, readable, motion-forward workflow interface to EaseMotion CSS and works naturally with project boards, content pipelines, admin dashboards, and structured team coordination UIs.
+The component can be integrated as a dashboard widget or canvas view:
+
+```html
+<div class="swimlane-board">
+  <div class="swimlane-row">
+    <div class="swimlane-row-header">...</div>
+    <div class="board-cell">
+      <div class="task-card card-purple">...</div>
+    </div>
+  </div>
+</div>
+```
+
+## Why is it useful?
+
+It provides teams with a multi-dimensional way to organize and track workflows by priority/project streams and progress states on a single layout. The design features beautiful CSS custom property variable scaling, accessibility-focused `:focus-visible` outline treatments, dark mode adaptability, and `prefers-reduced-motion` compliance.

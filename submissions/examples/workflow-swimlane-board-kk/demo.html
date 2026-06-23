@@ -1,207 +1,334 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Workflow Swimlane Board Showcase</title>
-    <link rel="stylesheet" href="./style.css" />
+    <title>Premium Workflow Swimlane Board</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <main class="page-shell">
-      <section class="hero">
-        <p class="eyebrow">Workflow Swimlane Board Showcase</p>
-        <h1>Turn busy delivery pipelines into something calm and scannable.</h1>
-        <p class="intro">
-          This demo presents a multi-lane workflow board with summary stats,
-          task states, ownership, and blockers for operations, planning, and
-          review-heavy interfaces.
-        </p>
-      </section>
-
-      <section class="workflow-board" aria-labelledby="board-title">
-        <header class="workflow-summary">
-          <div>
-            <p class="section-label">Content Operations</p>
-            <h2 id="board-title">Launch Week Workflow Board</h2>
-          </div>
-          <div class="summary-pills">
-            <span class="summary-pill">12 Tasks</span>
-            <span class="summary-pill summary-active">4 In Review</span>
-            <span class="summary-pill summary-blocked">2 Blocked</span>
-            <span class="summary-pill summary-done">5 Completed</span>
-          </div>
-        </header>
-
-        <div class="lane-strip" aria-label="Workflow lanes">
-          <article class="workflow-lane">
-            <header class="lane-header">
-              <h3>Backlog</h3>
-              <span class="lane-count">03</span>
-            </header>
-
-            <div class="task-card priority-high">
-              <div class="task-head">
-                <span class="task-title">Finalize launch copy</span>
-                <span class="task-badge">High</span>
-              </div>
-              <p class="task-copy">
-                Review hero messaging and CTA language for the product update page.
-              </p>
-              <div class="task-meta">
-                <span>Owner: Kriti</span>
-                <span>Due: Today</span>
-              </div>
-            </div>
-
-            <div class="task-card">
-              <div class="task-head">
-                <span class="task-title">Approve mobile screenshots</span>
-                <span class="task-badge neutral">UI</span>
-              </div>
-              <p class="task-copy">
-                Confirm device crops and final caption ordering for the release post.
-              </p>
-              <div class="task-meta">
-                <span>Owner: Neha</span>
-                <span>ETA: 2h</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="workflow-lane lane-review">
-            <header class="lane-header">
-              <h3>In Review</h3>
-              <span class="lane-count">04</span>
-            </header>
-
-            <div class="task-card state-review">
-              <div class="task-head">
-                <span class="task-title">QA release notes</span>
-                <span class="task-badge review">Review</span>
-              </div>
-              <p class="task-copy">
-                Validate changelog tone, version formatting, and external links.
-              </p>
-              <div class="task-meta">
-                <span>Owner: Asha</span>
-                <span>Reviewer: Dev</span>
-              </div>
-            </div>
-
-            <div class="task-card state-review">
-              <div class="task-head">
-                <span class="task-title">Email sequence sign-off</span>
-                <span class="task-badge review">Review</span>
-              </div>
-              <p class="task-copy">
-                Check timing, segmentation, and subject line consistency before send.
-              </p>
-              <div class="task-meta">
-                <span>Owner: Raman</span>
-                <span>Round: 2</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="workflow-lane lane-blocked">
-            <header class="lane-header">
-              <h3>Blocked</h3>
-              <span class="lane-count">02</span>
-            </header>
-
-            <div class="task-card state-blocked">
-              <div class="task-head">
-                <span class="task-title">Pricing banner update</span>
-                <span class="task-badge blocked">Blocked</span>
-              </div>
-              <p class="task-copy">
-                Waiting for legal approval on discount disclosure language.
-              </p>
-              <div class="task-meta">
-                <span>Owner: Mira</span>
-                <span>Blocked by: Legal</span>
-              </div>
-            </div>
-
-            <div class="task-card state-blocked">
-              <div class="task-head">
-                <span class="task-title">Partner logo refresh</span>
-                <span class="task-badge blocked">Blocked</span>
-              </div>
-              <p class="task-copy">
-                Missing final SVG exports from brand team.
-              </p>
-              <div class="task-meta">
-                <span>Owner: Kabir</span>
-                <span>Risk: Medium</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="workflow-lane lane-done">
-            <header class="lane-header">
-              <h3>Completed</h3>
-              <span class="lane-count">05</span>
-            </header>
-
-            <div class="task-card state-done">
-              <div class="task-head">
-                <span class="task-title">Analytics tags verified</span>
-                <span class="task-badge done">Done</span>
-              </div>
-              <p class="task-copy">
-                Event tracking confirmed for signup, pricing, and docs CTA paths.
-              </p>
-              <div class="task-meta">
-                <span>Owner: Priya</span>
-                <span>Closed: 10:12</span>
-              </div>
-            </div>
-
-            <div class="task-card state-done">
-              <div class="task-head">
-                <span class="task-title">Social media kit export</span>
-                <span class="task-badge done">Done</span>
-              </div>
-              <p class="task-copy">
-                Final image sizes exported and shared with the marketing team.
-              </p>
-              <div class="task-meta">
-                <span>Owner: Devika</span>
-                <span>Closed: 09:30</span>
-              </div>
-            </div>
-          </article>
+    <div class="board-container">
+      <header class="board-header">
+        <div>
+          <span class="board-badge">Interactive Process Component</span>
+          <h1 class="board-title">Workflow Swimlane Board</h1>
+          <p class="board-subtitle">
+            Visualize cross-functional team processes with horizontal priority
+            swimlanes and vertical progress stages.
+          </p>
         </div>
-      </section>
-
-      <section class="variant-panel" aria-labelledby="variant-title">
-        <h2 id="variant-title">Advanced workflow patterns</h2>
-        <div class="variant-grid">
-          <article class="variant-card">
-            <p class="variant-label">Summary header</p>
-            <p>Surface totals and state counts before users scan individual tasks.</p>
-          </article>
-          <article class="variant-card">
-            <p class="variant-label">Lane-based structure</p>
-            <p>Separate work by stage so handoffs and blockers stay visually obvious.</p>
-          </article>
-          <article class="variant-card">
-            <p class="variant-label">State-rich cards</p>
-            <p>Use owner, priority, blockers, and completion cues inside each task.</p>
-          </article>
+        <div class="theme-toggle-container">
+          <label class="theme-toggle">
+            <input type="checkbox" id="theme-checkbox" />
+            <span class="theme-slider"></span>
+          </label>
+          <span class="theme-label">Toggle Dark Mode</span>
         </div>
-      </section>
+      </header>
 
-      <section class="usage-panel" aria-labelledby="usage-title">
-        <h2 id="usage-title">Suggested usage</h2>
-        <pre><code>&lt;section class="workflow-board"&gt;
-  &lt;header class="workflow-summary"&gt;...&lt;/header&gt;
-  &lt;div class="lane-strip"&gt;
-    &lt;article class="workflow-lane"&gt;...&lt;/article&gt;
-  &lt;/div&gt;
-&lt;/section&gt;</code></pre>
-      </section>
-    </main>
+      <!-- The Board Grid -->
+      <div class="swimlane-board">
+        <!-- Column Headers -->
+        <div class="board-grid-header">
+          <div class="corner-label">Swimlanes</div>
+          <div class="column-header-title col-todo">
+            <span class="column-indicator"></span>
+            To Do
+            <span class="column-count">3</span>
+          </div>
+          <div class="column-header-title col-progress">
+            <span class="column-indicator"></span>
+            In Progress
+            <span class="column-count">2</span>
+          </div>
+          <div class="column-header-title col-review">
+            <span class="column-indicator"></span>
+            Under Review
+            <span class="column-count">2</span>
+          </div>
+          <div class="column-header-title col-done">
+            <span class="column-indicator"></span>
+            Completed
+            <span class="column-count">3</span>
+          </div>
+        </div>
+
+        <!-- Swimlane 1: Core Product Features -->
+        <div class="swimlane-row">
+          <div class="swimlane-row-header">
+            <h3 class="swimlane-name">🚀 Core Product</h3>
+            <p class="swimlane-desc">User-facing enhancements</p>
+          </div>
+
+          <!-- Column 1: Todo -->
+          <div class="board-cell">
+            <div class="task-card card-purple">
+              <div class="card-meta">
+                <span class="card-tag">Feature</span>
+                <span class="card-estimate">8h</span>
+              </div>
+              <h4 class="card-title">Interactive Sidebar Integration</h4>
+              <p class="card-body">
+                Add fluid spring transitions on sidebar collapse/expand states.
+              </p>
+              <div class="card-footer">
+                <div class="avatar-stack">
+                  <div class="avatar">SS</div>
+                  <div class="avatar">KK</div>
+                </div>
+                <span class="card-priority high">High</span>
+              </div>
+            </div>
+
+            <div class="task-card card-purple">
+              <div class="card-meta">
+                <span class="card-tag">Feature</span>
+                <span class="card-estimate">5h</span>
+              </div>
+              <h4 class="card-title">Tab Navigation Active Indicator</h4>
+              <p class="card-body">
+                Implement sliding background indicator for tab switching
+                animations.
+              </p>
+              <div class="card-footer">
+                <div class="avatar-stack">
+                  <div class="avatar">AM</div>
+                </div>
+                <span class="card-priority medium">Medium</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 2: In Progress -->
+          <div class="board-cell">
+            <div class="task-card card-purple">
+              <div class="card-meta">
+                <span class="card-tag">Feature</span>
+                <span class="card-estimate">13h</span>
+              </div>
+              <h4 class="card-title">Holographic Glass Card Component</h4>
+              <p class="card-body">
+                Crafting glassmorphism card designs with responsive dynamic
+                light-glare sweeps.
+              </p>
+              <div class="card-footer">
+                <div class="avatar-stack">
+                  <div class="avatar">KK</div>
+                </div>
+                <span class="card-priority high">High</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 3: Under Review -->
+          <div class="board-cell">
+            <div class="task-card card-purple">
+              <div class="card-meta">
+                <span class="card-tag">Feature</span>
+                <span class="card-estimate">3h</span>
+              </div>
+              <h4 class="card-title">Animated Star Rating System</h4>
+              <p class="card-body">
+                Micro-animations for SVG stars scaling up and down on hover
+                states.
+              </p>
+              <div class="card-footer">
+                <div class="avatar-stack">
+                  <div class="avatar">JP</div>
+                </div>
+                <span class="card-priority low">Low</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 4: Completed -->
+          <div class="board-cell">
+            <div class="task-card card-purple completed">
+              <div class="card-meta">
+                <span class="card-tag">Feature</span>
+                <span class="card-estimate">8h</span>
+              </div>
+              <h4 class="card-title">Command Palette Component</h4>
+              <p class="card-body">
+                Designed modal launcher with smooth drop-in animations and
+                keyboard controls.
+              </p>
+              <div class="card-footer">
+                <div class="avatar-stack">
+                  <div class="avatar">SS</div>
+                </div>
+                <span class="card-priority done">Done</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Swimlane 2: Optimization & Tech Debt -->
+        <div class="swimlane-row">
+          <div class="swimlane-row-header">
+            <h3 class="swimlane-name">⚡ Performance & Debt</h3>
+            <p class="swimlane-desc">Speed, linting, and bug fixes</p>
+          </div>
+
+          <!-- Column 1: Todo -->
+          <div class="board-cell">
+            <div class="task-card card-orange">
+              <div class="card-meta">
+                <span class="card-tag">Refactor</span>
+                <span class="card-estimate">4h</span>
+              </div>
+              <h4 class="card-title">Clean CSS Keyframe Duplicates</h4>
+              <p class="card-body">
+                Remove overlapping keyframes from bundled distributions to
+                reduce build bloat.
+              </p>
+              <div class="card-footer">
+                <div class="avatar-stack">
+                  <div class="avatar">TM</div>
+                </div>
+                <span class="card-priority medium">Medium</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 2: In Progress -->
+          <div class="board-cell">
+            <div class="task-card card-orange">
+              <div class="card-meta">
+                <span class="card-tag">Bug</span>
+                <span class="card-estimate">6h</span>
+              </div>
+              <h4 class="card-title">Reduced-Motion Preferences Audit</h4>
+              <p class="card-body">
+                Ensure all keyframes globally check prefers-reduced-motion media
+                query.
+              </p>
+              <div class="card-footer">
+                <div class="avatar-stack">
+                  <div class="avatar">AM</div>
+                </div>
+                <span class="card-priority high">High</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 3: Under Review -->
+          <div class="board-cell">
+            <div class="task-card card-orange">
+              <div class="card-meta">
+                <span class="card-tag">Bug</span>
+                <span class="card-estimate">2h</span>
+              </div>
+              <h4 class="card-title">File Input Focus Ring Fix</h4>
+              <p class="card-body">
+                Restricting rogue focus outline overriding to keyboard
+                navigation.
+              </p>
+              <div class="card-footer">
+                <div class="avatar-stack">
+                  <div class="avatar">WK</div>
+                </div>
+                <span class="card-priority high">High</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 4: Completed -->
+          <div class="board-cell">
+            <div class="task-card card-orange completed">
+              <div class="card-meta">
+                <span class="card-tag">Optimization</span>
+                <span class="card-estimate">12h</span>
+              </div>
+              <h4 class="card-title">GPU Acceleration Layers</h4>
+              <p class="card-body">
+                Apply will-change and transform3d overlays to eliminate
+                scroll-lag on layout rendering.
+              </p>
+              <div class="card-footer">
+                <div class="avatar-stack">
+                  <div class="avatar">KK</div>
+                </div>
+                <span class="card-priority done">Done</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Swimlane 3: Design System & Docs -->
+        <div class="swimlane-row">
+          <div class="swimlane-row-header">
+            <h3 class="swimlane-name">🎨 Design System</h3>
+            <p class="swimlane-desc">Documentation & guidelines</p>
+          </div>
+
+          <!-- Column 1: Todo -->
+          <div class="board-cell">
+            <!-- Empty state -->
+            <div class="empty-state">
+              <span>All clear</span>
+            </div>
+          </div>
+
+          <!-- Column 2: In Progress -->
+          <div class="board-cell">
+            <!-- Empty state -->
+            <div class="empty-state">
+              <span>No active tasks</span>
+            </div>
+          </div>
+
+          <!-- Column 3: Under Review -->
+          <div class="board-cell">
+            <!-- Empty state -->
+            <div class="empty-state">
+              <span>No submissions</span>
+            </div>
+          </div>
+
+          <!-- Column 4: Completed -->
+          <div class="board-cell">
+            <div class="task-card card-blue completed">
+              <div class="card-meta">
+                <span class="card-tag">Docs</span>
+                <span class="card-estimate">3h</span>
+              </div>
+              <h4 class="card-title">Responsive Navigation Guidelines</h4>
+              <p class="card-body">
+                Updated layout and accessibility examples in the central docs
+                section.
+              </p>
+              <div class="card-footer">
+                <div class="avatar-stack">
+                  <div class="avatar">JP</div>
+                </div>
+                <span class="card-priority done">Done</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Inline script just to handle Dark Mode toggle class -->
+    <script>
+      const themeCheckbox = document.getElementById("theme-checkbox");
+      themeCheckbox.addEventListener("change", () => {
+        if (themeCheckbox.checked) {
+          document.body.classList.add("dark-theme");
+        } else {
+          document.body.classList.remove("dark-theme");
+        }
+      });
+
+      // Synchronize with OS setting initially
+      if (
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+      ) {
+        themeCheckbox.checked = true;
+        document.body.classList.add("dark-theme");
+      }
+    </script>
   </body>
 </html>
