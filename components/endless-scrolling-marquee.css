@@ -1,0 +1,195 @@
+/* ============================================
+   endless-scrolling-marquee.css
+   CSS-Only Endless Scrolling Marquee
+   Version: 1.0.0
+   Description: A seamlessly looping horizontal (or vertical)
+                text / logo marquee that never stutters on reset.
+                Uses a duplicated-track technique so the animation
+                always loops from an identical visual state.
+   License: MIT
+   ============================================ */
+
+@layer easemotion-components {
+
+  /* ──────────────────────────────────────────────
+     MAIN CONTAINER
+     ────────────────────────────────────────────── */
+  .ease-endless-scrolling-marquee {
+    --esm-speed: 25s;
+    --esm-gap: 2rem;
+    --esm-direction: normal;
+    --esm-play-state: running;
+
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    /* Prevent content from wrapping / collapsing */
+    white-space: nowrap;
+  }
+
+  /* ──────────────────────────────────────────────
+     SCROLLING WRAPPER
+     Holds TWO identical copies of the track so the
+     loop is visually seamless.
+     ────────────────────────────────────────────── */
+  .ease-endless-scrolling-marquee-wrapper {
+    display: flex;
+    width: max-content;
+    animation: ease-endless-scroll var(--esm-speed) linear infinite;
+    animation-direction: var(--esm-direction);
+    animation-play-state: var(--esm-play-state);
+
+    /* GPU compositing — eliminates paint jank */
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+
+  /* ──────────────────────────────────────────────
+     INDIVIDUAL TRACK
+     Each track is an inline-flex row of items.
+     The user duplicates the track markup once so
+     the wrapper contains two identical copies.
+     ────────────────────────────────────────────── */
+  .ease-endless-scrolling-marquee-track {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--esm-gap);
+    /* Right padding ensures the gap between the
+       last item of track-1 and first item of track-2 */
+    padding-right: var(--esm-gap);
+    flex-shrink: 0;
+  }
+
+  /* Items should never shrink or wrap */
+  .ease-endless-scrolling-marquee-track > * {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
+  /* ──────────────────────────────────────────────
+     KEYFRAMES
+     Translate by exactly -50% of the wrapper width.
+     Because the wrapper contains two identical tracks,
+     -50% is always the width of ONE track — producing
+     a pixel-perfect seamless loop with zero stutter.
+     ────────────────────────────────────────────── */
+  @keyframes ease-endless-scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  /* ============================================
+     HOVER: PAUSE
+     ============================================ */
+  .ease-endless-scrolling-marquee.esm-pause-on-hover:hover
+    .ease-endless-scrolling-marquee-wrapper {
+    animation-play-state: paused;
+  }
+
+  /* ============================================
+     SPEED VARIANTS
+     ============================================ */
+  .ease-endless-scrolling-marquee.esm-x-slow  { --esm-speed: 60s; }
+  .ease-endless-scrolling-marquee.esm-slow     { --esm-speed: 40s; }
+  .ease-endless-scrolling-marquee.esm-normal   { --esm-speed: 25s; }
+  .ease-endless-scrolling-marquee.esm-fast     { --esm-speed: 12s; }
+  .ease-endless-scrolling-marquee.esm-x-fast   { --esm-speed: 5s;  }
+
+  /* ============================================
+     DIRECTION VARIANTS
+     ============================================ */
+  .ease-endless-scrolling-marquee.esm-reverse {
+    --esm-direction: reverse;
+  }
+
+  /* ============================================
+     GAP VARIANTS
+     ============================================ */
+  .ease-endless-scrolling-marquee.esm-gap-none { --esm-gap: 0;     }
+  .ease-endless-scrolling-marquee.esm-gap-sm   { --esm-gap: 1rem;  }
+  .ease-endless-scrolling-marquee.esm-gap-md   { --esm-gap: 2rem;  }
+  .ease-endless-scrolling-marquee.esm-gap-lg   { --esm-gap: 3rem;  }
+  .ease-endless-scrolling-marquee.esm-gap-xl   { --esm-gap: 5rem;  }
+
+  /* ============================================
+     FADE EDGES  (gradient mask)
+     ============================================ */
+  .ease-endless-scrolling-marquee.esm-fade-edges {
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 8%,
+      black 92%,
+      transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 8%,
+      black 92%,
+      transparent 100%
+    );
+  }
+
+  /* ============================================
+     VERTICAL VARIANT
+     Scrolls top → bottom (or reverse) instead
+     of left → right.
+     ============================================ */
+  .ease-endless-scrolling-marquee.esm-vertical {
+    /* Switch to a column layout */
+    flex-direction: column;
+    overflow: hidden;
+    white-space: normal;
+    /* Set a visible height; user can override */
+    height: var(--esm-height, 200px);
+  }
+
+  .ease-endless-scrolling-marquee.esm-vertical
+    .ease-endless-scrolling-marquee-wrapper {
+    flex-direction: column;
+    animation-name: ease-endless-scroll-vertical;
+  }
+
+  .ease-endless-scrolling-marquee.esm-vertical
+    .ease-endless-scrolling-marquee-track {
+    flex-direction: column;
+    padding-right: 0;
+    padding-bottom: var(--esm-gap);
+  }
+
+  @keyframes ease-endless-scroll-vertical {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-50%);
+    }
+  }
+
+  /* ============================================
+     ACCESSIBILITY
+     ============================================ */
+  @media (prefers-reduced-motion: reduce) {
+    .ease-endless-scrolling-marquee-wrapper {
+      animation: none !important;
+    }
+  }
+
+  .ease-endless-scrolling-marquee:focus-visible {
+    outline: 2px solid var(--ease-color-primary, #6366f1);
+    outline-offset: 2px;
+  }
+
+  /* Let screen readers know this is decorative motion */
+  .ease-endless-scrolling-marquee[aria-hidden="true"] {
+    user-select: none;
+    pointer-events: none;
+  }
+}

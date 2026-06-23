@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EaseMotion – Endless Scrolling Marquee Demo</title>
+    <meta name="description" content="CSS-only endless scrolling marquee component demos for EaseMotion CSS framework.">
+    <link rel="stylesheet" href="../easemotion.css">
+    <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: #e0e0e0;
+            min-height: 100vh;
+            padding: 2rem 1rem;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(90deg, #a78bfa, #60a5fa, #34d399);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #9ca3af;
+            margin-bottom: 2.5rem;
+            font-size: 1rem;
+        }
+
+        .demo-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .demo-section {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(12px);
+        }
+
+        .demo-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.4rem;
+            color: #f3f4f6;
+        }
+
+        .demo-description {
+            color: #9ca3af;
+            margin-bottom: 1.25rem;
+            font-size: 0.875rem;
+            line-height: 1.5;
+        }
+
+        .demo-label {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 0.25rem 0.6rem;
+            border-radius: 0.25rem;
+            margin-bottom: 0.75rem;
+            background: rgba(167, 139, 250, 0.15);
+            color: #a78bfa;
+        }
+
+        /* ── Shared item styles ─────────────────── */
+        .logo-pill {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.8rem 1.8rem;
+            border-radius: 0.625rem;
+            font-weight: 700;
+            font-size: 1rem;
+            background: linear-gradient(135deg, #6366f1, #8b5cf6);
+            color: #fff;
+            box-shadow: 0 4px 14px rgba(99, 102, 241, 0.35);
+        }
+
+        .text-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.5rem 1.2rem;
+            border-radius: 2rem;
+            font-weight: 500;
+            font-size: 0.875rem;
+            background: rgba(255, 255, 255, 0.07);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #e5e7eb;
+        }
+
+        .brand-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.35rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, #60a5fa, #34d399);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .news-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.55rem 1.3rem;
+            border-radius: 0.4rem;
+            font-weight: 600;
+            font-size: 0.85rem;
+            background: rgba(239, 68, 68, 0.12);
+            border: 1px solid rgba(239, 68, 68, 0.25);
+            color: #fca5a5;
+        }
+
+        .vertical-card {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1.25rem;
+            border-radius: 0.6rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            font-size: 0.875rem;
+            color: #d1d5db;
+            white-space: nowrap;
+        }
+
+        code {
+            background: rgba(255, 255, 255, 0.06);
+            padding: 0.15rem 0.5rem;
+            border-radius: 0.25rem;
+            font-family: 'Cascadia Code', 'Fira Code', monospace;
+            font-size: 0.8rem;
+            color: #a78bfa;
+        }
+
+        .code-block {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 0.5rem;
+            padding: 1rem 1.25rem;
+            margin-top: 1rem;
+            overflow-x: auto;
+            font-family: 'Cascadia Code', 'Fira Code', monospace;
+            font-size: 0.8rem;
+            line-height: 1.6;
+            color: #d1d5db;
+            white-space: pre;
+        }
+
+        .speed-row {
+            margin-bottom: 1.25rem;
+        }
+
+        hr.divider {
+            border: none;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            margin: 1.5rem 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="demo-container">
+        <h1>♾️ Endless Scrolling Marquee</h1>
+        <p class="subtitle">A stutter-free, CSS-only infinite loop — no JavaScript required.</p>
+
+        <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+             DEMO 1 – Basic Logo Strip
+             ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+        <section class="demo-section" id="demo-basic">
+            <div class="demo-title">🎨 1. Basic Logo Strip</div>
+            <div class="demo-description">
+                Duplicate your content inside two identical
+                <code>.ease-endless-scrolling-marquee-track</code> elements.
+                The wrapper auto-scrolls the pair and loops seamlessly.
+            </div>
+
+            <div class="ease-endless-scrolling-marquee" aria-hidden="true">
+                <div class="ease-endless-scrolling-marquee-wrapper">
+                    <!-- Track 1 (original) -->
+                    <div class="ease-endless-scrolling-marquee-track">
+                        <span class="logo-pill">Acme Inc</span>
+                        <span class="logo-pill">Globex</span>
+                        <span class="logo-pill">Initech</span>
+                        <span class="logo-pill">Umbrella</span>
+                        <span class="logo-pill">Stark Ind</span>
+                        <span class="logo-pill">Wayne Ent</span>
+                    </div>
+                    <!-- Track 2 (exact duplicate) -->
+                    <div class="ease-endless-scrolling-marquee-track">
+                        <span class="logo-pill">Acme Inc</span>
+                        <span class="logo-pill">Globex</span>
+                        <span class="logo-pill">Initech</span>
+                        <span class="logo-pill">Umbrella</span>
+                        <span class="logo-pill">Stark Ind</span>
+                        <span class="logo-pill">Wayne Ent</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="code-block">&lt;div class="ease-endless-scrolling-marquee"&gt;
+  &lt;div class="ease-endless-scrolling-marquee-wrapper"&gt;
+    &lt;div class="ease-endless-scrolling-marquee-track"&gt;…items…&lt;/div&gt;
+    &lt;div class="ease-endless-scrolling-marquee-track"&gt;…items (duplicate)…&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</div>
+        </section>
+
+        <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+             DEMO 2 – Speed Variants
+             ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+        <section class="demo-section" id="demo-speeds">
+            <div class="demo-title">⚡ 2. Speed Variants</div>
+            <div class="demo-description">
+                Add <code>esm-x-slow</code>, <code>esm-slow</code>,
+                <code>esm-normal</code>, <code>esm-fast</code>, or
+                <code>esm-x-fast</code> to the container.
+            </div>
+
+            <!-- X-Slow -->
+            <div class="speed-row">
+                <div class="demo-label">x-slow · 60 s</div>
+                <div class="ease-endless-scrolling-marquee esm-x-slow" aria-hidden="true">
+                    <div class="ease-endless-scrolling-marquee-wrapper">
+                        <div class="ease-endless-scrolling-marquee-track">
+                            <span class="text-chip">🐢 Super Chill</span>
+                            <span class="text-chip">🌊 Smooth Vibes</span>
+                            <span class="text-chip">✨ Zero Rush</span>
+                            <span class="text-chip">🧘 Easy Motion</span>
+                        </div>
+                        <div class="ease-endless-scrolling-marquee-track">
+                            <span class="text-chip">🐢 Super Chill</span>
+                            <span class="text-chip">🌊 Smooth Vibes</span>
+                            <span class="text-chip">✨ Zero Rush</span>
+                            <span class="text-chip">🧘 Easy Motion</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fast -->
+            <div class="speed-row">
+                <div class="demo-label">fast · 12 s</div>
+                <div class="ease-endless-scrolling-marquee esm-fast" aria-hidden="true">
+                    <div class="ease-endless-scrolling-marquee-wrapper">
+                        <div class="ease-endless-scrolling-marquee-track">
+                            <span class="text-chip">⚡ Turbo Mode</span>
+                            <span class="text-chip">🚀 Launch Speed</span>
+                            <span class="text-chip">💨 Whoooosh</span>
+                            <span class="text-chip">🏎️ Fast Lane</span>
+                        </div>
+                        <div class="ease-endless-scrolling-marquee-track">
+                            <span class="text-chip">⚡ Turbo Mode</span>
+                            <span class="text-chip">🚀 Launch Speed</span>
+                            <span class="text-chip">💨 Whoooosh</span>
+                            <span class="text-chip">🏎️ Fast Lane</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- X-Fast -->
+            <div class="speed-row">
+                <div class="demo-label">x-fast · 5 s</div>
+                <div class="ease-endless-scrolling-marquee esm-x-fast" aria-hidden="true">
+                    <div class="ease-endless-scrolling-marquee-wrapper">
+                        <div class="ease-endless-scrolling-marquee-track">
+                            <span class="text-chip">🔥 Blazing</span>
+                            <span class="text-chip">⚡ Instant</span>
+                            <span class="text-chip">💥 Boom</span>
+                            <span class="text-chip">🚀 Warp Speed</span>
+                        </div>
+                        <div class="ease-endless-scrolling-marquee-track">
+                            <span class="text-chip">🔥 Blazing</span>
+                            <span class="text-chip">⚡ Instant</span>
+                            <span class="text-chip">💥 Boom</span>
+                            <span class="text-chip">🚀 Warp Speed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+             DEMO 3 – Reverse Direction
+             ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+        <section class="demo-section" id="demo-reverse">
+            <div class="demo-title">🔄 3. Reverse Direction</div>
+            <div class="demo-description">
+                Add <code>esm-reverse</code> to scroll right → left instead.
+            </div>
+
+            <div class="ease-endless-scrolling-marquee esm-reverse" aria-hidden="true">
+                <div class="ease-endless-scrolling-marquee-wrapper">
+                    <div class="ease-endless-scrolling-marquee-track">
+                        <span class="text-chip">← Flowing Backwards</span>
+                        <span class="text-chip">🔄 Reversed</span>
+                        <span class="text-chip">◀ Other Way</span>
+                        <span class="text-chip">🌀 Opposite Flow</span>
+                        <span class="text-chip">⏪ Rewind</span>
+                    </div>
+                    <div class="ease-endless-scrolling-marquee-track">
+                        <span class="text-chip">← Flowing Backwards</span>
+                        <span class="text-chip">🔄 Reversed</span>
+                        <span class="text-chip">◀ Other Way</span>
+                        <span class="text-chip">🌀 Opposite Flow</span>
+                        <span class="text-chip">⏪ Rewind</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+             DEMO 4 – Fade Edges
+             ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+        <section class="demo-section" id="demo-fade">
+            <div class="demo-title">🌊 4. Fade Edges</div>
+            <div class="demo-description">
+                Add <code>esm-fade-edges</code> for smooth gradient masks at both ends.
+            </div>
+
+            <div class="ease-endless-scrolling-marquee esm-fade-edges" aria-hidden="true">
+                <div class="ease-endless-scrolling-marquee-wrapper">
+                    <div class="ease-endless-scrolling-marquee-track">
+                        <span class="brand-badge">✨ EaseMotion</span>
+                        <span class="brand-badge">🎨 CSS Framework</span>
+                        <span class="brand-badge">🚀 Zero Dependencies</span>
+                        <span class="brand-badge">💡 Animation First</span>
+                    </div>
+                    <div class="ease-endless-scrolling-marquee-track">
+                        <span class="brand-badge">✨ EaseMotion</span>
+                        <span class="brand-badge">🎨 CSS Framework</span>
+                        <span class="brand-badge">🚀 Zero Dependencies</span>
+                        <span class="brand-badge">💡 Animation First</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+             DEMO 5 – Pause on Hover
+             ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+        <section class="demo-section" id="demo-hover">
+            <div class="demo-title">⏸️ 5. Pause on Hover</div>
+            <div class="demo-description">
+                Add <code>esm-pause-on-hover</code> — hover over the strip to pause the animation.
+            </div>
+
+            <div class="ease-endless-scrolling-marquee esm-fast esm-pause-on-hover esm-fade-edges" aria-hidden="true">
+                <div class="ease-endless-scrolling-marquee-wrapper">
+                    <div class="ease-endless-scrolling-marquee-track">
+                        <span class="news-tag">🔴 LIVE: EaseMotion v2 is here!</span>
+                        <span class="news-tag">📦 200+ contributors and growing</span>
+                        <span class="news-tag">✨ New: Endless Scrolling Marquee</span>
+                        <span class="news-tag">🎯 GSSOC 2026 now accepting contributions</span>
+                    </div>
+                    <div class="ease-endless-scrolling-marquee-track">
+                        <span class="news-tag">🔴 LIVE: EaseMotion v2 is here!</span>
+                        <span class="news-tag">📦 200+ contributors and growing</span>
+                        <span class="news-tag">✨ New: Endless Scrolling Marquee</span>
+                        <span class="news-tag">🎯 GSSOC 2026 now accepting contributions</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+             DEMO 6 – Vertical Scroll
+             ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+        <section class="demo-section" id="demo-vertical">
+            <div class="demo-title">↕️ 6. Vertical Scroll</div>
+            <div class="demo-description">
+                Add <code>esm-vertical</code> to scroll content vertically. Set
+                <code>--esm-height</code> to control the visible window.
+            </div>
+
+            <div class="ease-endless-scrolling-marquee esm-vertical esm-slow" style="--esm-height: 180px;" aria-hidden="true">
+                <div class="ease-endless-scrolling-marquee-wrapper">
+                    <div class="ease-endless-scrolling-marquee-track">
+                        <div class="vertical-card">📌 New pull request merged</div>
+                        <div class="vertical-card">⭐ Repository starred by @dev</div>
+                        <div class="vertical-card">🐛 Bug fix deployed to production</div>
+                        <div class="vertical-card">🚀 v2.4.0 release published</div>
+                        <div class="vertical-card">🔔 CI/CD pipeline passed</div>
+                    </div>
+                    <div class="ease-endless-scrolling-marquee-track">
+                        <div class="vertical-card">📌 New pull request merged</div>
+                        <div class="vertical-card">⭐ Repository starred by @dev</div>
+                        <div class="vertical-card">🐛 Bug fix deployed to production</div>
+                        <div class="vertical-card">🚀 v2.4.0 release published</div>
+                        <div class="vertical-card">🔔 CI/CD pipeline passed</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+             DEMO 7 – Combined: Dual Rows
+             ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+        <section class="demo-section" id="demo-combined">
+            <div class="demo-title">🎯 7. Dual-Row Showcase</div>
+            <div class="demo-description">
+                Combine two marquees — one forward, one reversed — for a dynamic brand wall.
+            </div>
+
+            <div class="ease-endless-scrolling-marquee esm-fade-edges" style="margin-bottom: 1rem;" aria-hidden="true">
+                <div class="ease-endless-scrolling-marquee-wrapper">
+                    <div class="ease-endless-scrolling-marquee-track">
+                        <span class="logo-pill">React</span>
+                        <span class="logo-pill">Vue</span>
+                        <span class="logo-pill">Svelte</span>
+                        <span class="logo-pill">Angular</span>
+                        <span class="logo-pill">Next.js</span>
+                        <span class="logo-pill">Nuxt</span>
+                        <span class="logo-pill">Astro</span>
+                    </div>
+                    <div class="ease-endless-scrolling-marquee-track">
+                        <span class="logo-pill">React</span>
+                        <span class="logo-pill">Vue</span>
+                        <span class="logo-pill">Svelte</span>
+                        <span class="logo-pill">Angular</span>
+                        <span class="logo-pill">Next.js</span>
+                        <span class="logo-pill">Nuxt</span>
+                        <span class="logo-pill">Astro</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ease-endless-scrolling-marquee esm-reverse esm-fade-edges" aria-hidden="true">
+                <div class="ease-endless-scrolling-marquee-wrapper">
+                    <div class="ease-endless-scrolling-marquee-track">
+                        <span class="logo-pill" style="background: linear-gradient(135deg, #10b981, #059669);">Tailwind</span>
+                        <span class="logo-pill" style="background: linear-gradient(135deg, #10b981, #059669);">Bootstrap</span>
+                        <span class="logo-pill" style="background: linear-gradient(135deg, #10b981, #059669);">EaseMotion</span>
+                        <span class="logo-pill" style="background: linear-gradient(135deg, #10b981, #059669);">Bulma</span>
+                        <span class="logo-pill" style="background: linear-gradient(135deg, #10b981, #059669);">Pico CSS</span>
+                        <span class="logo-pill" style="background: linear-gradient(135deg, #10b981, #059669);">Open Props</span>
+                    </div>
+                    <div class="ease-endless-scrolling-marquee-track">
+                        <span class="logo-pill" style="background: linear-gradient(135deg, #10b981, #059669);">Tailwind</span>
+                        <span class="logo-pill" style="background: linear-gradient(135deg, #10b981, #059669);">Bootstrap</span>
+                        <span class="logo-pill" style="background: linear-gradient(135deg, #10b981, #059669);">EaseMotion</span>
+                        <span class="logo-pill" style="background: linear-gradient(135deg, #10b981, #059669);">Bulma</span>
+                        <span class="logo-pill" style="background: linear-gradient(135deg, #10b981, #059669);">Pico CSS</span>
+                        <span class="logo-pill" style="background: linear-gradient(135deg, #10b981, #059669);">Open Props</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+</body>
+</html>

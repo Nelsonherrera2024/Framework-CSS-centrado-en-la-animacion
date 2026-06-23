@@ -27,6 +27,7 @@
 @import "./core/animations.css";
 @import "./core/utilities.css";
 @import "./components/ease-marquee.css";
+@import "./components/endless-scrolling-marquee.css";
 
 /* ── Components (tree-shakeable in future versions) ──────── */
 @import "./components/buttons.css";
