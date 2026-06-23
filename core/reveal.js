@@ -15,9 +15,13 @@
   if (prefersReducedMotion) {
     var readyReduced = function () {
       var els = document.querySelectorAll('.' + revealClass);
-      Array.prototype.forEach.call(els, function (el) {
-        el.classList.add(activeClass);
-      });
+      var handleFallbackScroll = function() {
+        Array.prototype.forEach.call(els, function (el) {
+          if (isCentered(el)) el.classList.add(activeClass);
+        });
+      };
+      window.addEventListener('scroll', handleFallbackScroll);
+      handleFallbackScroll();
     };
 
     if (document.readyState === 'loading') {
@@ -62,9 +66,13 @@
   } else {
     var readyFallback = function () {
       var els = document.querySelectorAll('.' + revealClass);
-      Array.prototype.forEach.call(els, function (el) {
-        el.classList.add(activeClass);
-      });
+      var handleFallbackScroll = function() {
+        Array.prototype.forEach.call(els, function (el) {
+          if (isCentered(el)) el.classList.add(activeClass);
+        });
+      };
+      window.addEventListener('scroll', handleFallbackScroll);
+      handleFallbackScroll();
     };
 
     if (document.readyState === 'loading') {
@@ -74,3 +82,4 @@
     }
   }
 })();
+
