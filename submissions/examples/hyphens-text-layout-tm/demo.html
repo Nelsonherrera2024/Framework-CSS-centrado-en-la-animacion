@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hyphens Text Layout — EaseMotion CSS Demo</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../core/variables.css">
+</head>
+<body>
+  <div class="container">
+    <div class="page-header">
+      <span class="feature-tag">CSS Hyphens</span>
+      <h1>Hyphenation for Better Text Layout</h1>
+      <p>Control word breaking and hyphenation in your text with the ease-hyphens utility classes. Supports manual, auto, and none modes.</p>
+    </div>
+
+    <!-- Demo 1: Basic Hyphens Comparison -->
+    <div class="demo-section">
+      <div class="section-title">Basic Hyphens Comparison</div>
+      <div class="section-desc">Switch between hyphens: none, auto, and manual modes to see how text reflows across narrow columns.</div>
+
+      <div class="control-row">
+        <button class="control-btn" onclick="setHyphens('none')">hyphens: none</button>
+        <button class="control-btn" onclick="setHyphens('auto')">hyphens: auto</button>
+        <button class="control-btn" onclick="setHyphens('manual')">hyphens: manual</button>
+      </div>
+
+      <div class="demo-card" id="hyphens-demo" style="hyphens: auto; -webkit-hyphens: auto;">
+        <div class="demo-label">hyphens: auto</div>
+        <p>Typography is the art and technique of arranging type to make written language legible, readable, and appealing when displayed. The arrangement of type involves selecting typefaces, point sizes, line lengths, line-spacing (leading), and letter-spacing (tracking).</p>
+        <p>Good hyphenation improves reading comfort and saves horizontal space, especially in narrow columns like sidebars and footnotes. The CSS hyphens property gives developers fine-grained control without touching the source HTML.</p>
+        <p>In multilingual layouts supporting German or Arabic, automatic hyphenation is essential because these languages have long compound words that frequently require breaking at line ends. The browser dictionary handles the linguistic rules automatically.</p>
+      </div>
+    </div>
+
+    <!-- Demo 2: Multilingual Arabic Text -->
+    <div class="demo-section">
+      <div class="section-title">RTL Arabic Text with Hyphenation</div>
+      <div class="section-desc">Automatic hyphenation is particularly valuable for Arabic and Hebrew, where words are long and line-breaking without hyphenation creates awkward gaps.</div>
+
+      <div class="demo-card" style="hyphens: auto; -webkit-hyphens: auto; -moz-hyphens: auto; direction: rtl; text-align: right; language: ar;">
+        <div class="demo-label">Arabic — hyphens: auto (RTL)</div>
+        <p>البرمجة هي عملية كتابة تعليمات وتوجيهات بلغة يفهمها الحاسوب لأداء مهام محددة. تُعتبر مهارة البرمجة من أهم المهارات في عصر المعلومات، حيث تعتمد عليها معظم التقنيات الحديثة التي نستخدمها يومياً.</p>
+        <p>تتضمن لغات البرمجة الشائعة بايثون وجافاسكربت وسي بلس بلس وجافا. كل لغة لها نقاط قوة واستخدامات محددة تناسب أنواعاً معينة من المشاريع والتطبيقات.</p>
+      </div>
+    </div>
+
+    <!-- Demo 3: Multi-column Magazine Layout -->
+    <div class="demo-section">
+      <div class="section-title">Magazine Column Layout</div>
+      <div class="section-desc">Automatic hyphenation makes multi-column magazine layouts look professional. Compare hyphenated vs. non-hyphenated in a 2-column grid.</div>
+
+      <div class="comparison-grid">
+        <div class="comparison-item">
+          <h4>Without Hyphens</h4>
+          <div class="demo-card" style="hyphens: none; column-width: 16em; column-gap: 2em;">
+            <p>Exceptional craftsmanship defines every piece in this collection. The artisans have spent decades perfecting their techniques, passing knowledge through generations of dedicated practitioners who understand that true quality cannot be rushed.</p>
+          </div>
+        </div>
+        <div class="comparison-item">
+          <h4>With Hyphens: auto</h4>
+          <div class="demo-card" style="hyphens: auto; -webkit-hyphens: auto; column-width: 16em; column-gap: 2em;">
+            <p>Exceptional craftsmanship defines every piece in this collection. The artisans have spent decades perfecting their techniques, passing knowledge through generations of dedicated practitioners who understand that true quality cannot be rushed.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="footer-note">
+      This demo uses EaseMotion CSS custom properties for consistent theming. Resize the browser window to see how hyphenation adapts to column width.
+    </div>
+  </div>
+
+  <script>
+    function setHyphens(mode) {
+      var demo = document.getElementById('hyphens-demo');
+      demo.style.hyphens = mode;
+      demo.style.WebkitHyphens = mode;
+      demo.style.MozHyphens = mode;
+      document.querySelectorAll('.control-btn').forEach(function(btn) {
+        btn.classList.remove('active');
+      });
+      event.target.classList.add('active');
+    }
+  </script>
+</body>
+</html>

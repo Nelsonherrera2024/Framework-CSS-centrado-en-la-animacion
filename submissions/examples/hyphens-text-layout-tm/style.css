@@ -1,0 +1,247 @@
+/* ── Reset ─────────────────────────────────────────────── */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--ease-space-10);
+  background: var(--ease-color-bg);
+  color: var(--ease-color-text);
+  font-family: var(--ease-font-sans);
+  line-height: var(--ease-leading-relaxed);
+}
+
+.container {
+  width: 100%;
+  max-width: var(--ease-container-max);
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: var(--ease-space-12);
+  padding-bottom: var(--ease-space-8);
+  border-bottom: 2px solid var(--ease-color-neutral-200);
+}
+
+.page-header h1 {
+  font-size: var(--ease-text-4xl);
+  font-weight: 800;
+  color: var(--ease-color-primary);
+  margin-bottom: var(--ease-space-3);
+  letter-spacing: -0.02em;
+}
+
+.page-header p {
+  font-size: var(--ease-text-lg);
+  color: var(--ease-color-muted);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.feature-tag {
+  display: inline-block;
+  padding: var(--ease-space-1) var(--ease-space-4);
+  background: var(--ease-color-primary-alpha);
+  color: var(--ease-color-primary);
+  border-radius: var(--ease-radius-full);
+  font-size: var(--ease-text-sm);
+  font-weight: 600;
+  margin-bottom: var(--ease-space-4);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.demo-section {
+  margin-bottom: var(--ease-space-16);
+  padding: var(--ease-space-8);
+  background: var(--ease-color-surface);
+  border-radius: var(--ease-radius-xl);
+  border: 1px solid var(--ease-color-neutral-200);
+}
+
+.section-title {
+  font-size: var(--ease-text-xl);
+  font-weight: 700;
+  color: var(--ease-color-text);
+  margin-bottom: var(--ease-space-4);
+}
+
+.section-desc {
+  font-size: var(--ease-text-base);
+  color: var(--ease-color-muted);
+  margin-bottom: var(--ease-space-6);
+}
+
+/* ── Hyphens Utility Classes ─────────────────────────────── */
+.ease-hyphens-none { hyphens: none !important; }
+.ease-hyphens-auto { hyphens: auto !important; }
+.ease-hyphens-manual { hyphens: manual !important; }
+
+/* ── Demo Card ───────────────────────────────────────────── */
+.demo-card {
+  padding: var(--ease-space-6);
+  background: var(--ease-color-bg);
+  border-radius: var(--ease-radius-lg);
+  border: 1px solid var(--ease-color-neutral-200);
+  margin-bottom: var(--ease-space-4);
+}
+
+.demo-label {
+  font-size: var(--ease-text-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--ease-color-primary);
+  margin-bottom: var(--ease-space-3);
+  font-family: var(--ease-font-mono);
+}
+
+/* ── Language Tag ────────────────────────────────────────── */
+.lang-ar { language: ar; direction: rtl; }
+.lang-de { language: de; }
+.lang-en { language: en; }
+
+/* ── Column Layout Demo ──────────────────────────────────── */
+.column-text {
+  column-width: 18em;
+  column-gap: var(--ease-space-8);
+  column-rule: 1px solid var(--ease-color-neutral-200);
+}
+
+/* ── Typography ─────────────────────────────────────────── */
+p {
+  font-size: var(--ease-text-base);
+  color: var(--ease-color-text);
+  margin-bottom: var(--ease-space-4);
+}
+
+h2 {
+  font-size: var(--ease-text-2xl);
+  font-weight: 700;
+  color: var(--ease-color-primary-dark);
+  margin-bottom: var(--ease-space-4);
+  margin-top: var(--ease-space-6);
+}
+
+h3 {
+  font-size: var(--ease-text-lg);
+  font-weight: 600;
+  color: var(--ease-color-text);
+  margin-bottom: var(--ease-space-3);
+  margin-top: var(--ease-space-4);
+}
+
+/* ── Control Buttons ─────────────────────────────────────── */
+.control-row {
+  display: flex;
+  gap: var(--ease-space-3);
+  margin-bottom: var(--ease-space-6);
+  flex-wrap: wrap;
+}
+
+.control-btn {
+  padding: var(--ease-space-2) var(--ease-space-5);
+  background: var(--ease-color-primary);
+  color: white;
+  border: none;
+  border-radius: var(--ease-radius-md);
+  font-size: var(--ease-text-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--ease-speed-fast) var(--ease-ease);
+  font-family: var(--ease-font-sans);
+}
+
+.control-btn:hover {
+  background: var(--ease-color-primary-dark);
+}
+
+.control-btn.active {
+  background: var(--ease-color-secondary-dark);
+  box-shadow: 0 0 0 2px var(--ease-color-secondary-light);
+}
+
+/* ── Comparison Grid ─────────────────────────────────────── */
+.comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--ease-space-6);
+  margin-top: var(--ease-space-6);
+}
+
+.comparison-item {
+  padding: var(--ease-space-5);
+  background: var(--ease-color-bg);
+  border-radius: var(--ease-radius-lg);
+  border: 1px solid var(--ease-color-neutral-200);
+}
+
+.comparison-item h4 {
+  font-size: var(--ease-text-base);
+  font-weight: 700;
+  color: var(--ease-color-primary);
+  margin-bottom: var(--ease-space-2);
+}
+
+/* ── Badge ──────────────────────────────────────────────── */
+.badge {
+  display: inline-block;
+  padding: var(--ease-space-1) var(--ease-space-3);
+  background: var(--ease-color-success-light);
+  color: var(--ease-color-success-dark);
+  border-radius: var(--ease-radius-full);
+  font-size: var(--ease-text-xs);
+  font-weight: 600;
+  margin-bottom: var(--ease-space-3);
+}
+
+/* ── Divider ─────────────────────────────────────────────── */
+.divider {
+  border: none;
+  border-top: 1px solid var(--ease-color-neutral-200);
+  margin: var(--ease-space-8) 0;
+}
+
+/* ── Footer Note ────────────────────────────────────────── */
+.footer-note {
+  margin-top: var(--ease-space-8);
+  padding: var(--ease-space-5);
+  background: var(--ease-color-primary-alpha);
+  border-radius: var(--ease-radius-lg);
+  font-size: var(--ease-text-sm);
+  color: var(--ease-color-muted);
+  text-align: center;
+}
+
+/* ── Dark Mode ──────────────────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+  .demo-card,
+  .comparison-item,
+  .demo-section {
+    border-color: var(--ease-color-neutral-700);
+    background: var(--ease-color-surface-dark);
+  }
+  .page-header {
+    border-color: var(--ease-color-neutral-700);
+  }
+  .column-text {
+    column-rule-color: var(--ease-color-neutral-700);
+  }
+  .control-btn {
+    background: var(--ease-color-primary-light);
+    color: var(--ease-color-neutral-900);
+  }
+  .control-btn:hover {
+    background: var(--ease-color-primary);
+    color: white;
+  }
+}
+
+/* ── Reduced Motion ─────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .control-btn {
+    transition: none;
+  }
+}
