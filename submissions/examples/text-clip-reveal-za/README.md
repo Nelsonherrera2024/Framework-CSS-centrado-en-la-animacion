@@ -10,5 +10,3 @@ Lines of text reveal from left to right using CSS clip-path animations with stag
 ## Usage
 
 Open `demo.html` to see each line of text sweep in from left to right.
-
-Closes #19193
