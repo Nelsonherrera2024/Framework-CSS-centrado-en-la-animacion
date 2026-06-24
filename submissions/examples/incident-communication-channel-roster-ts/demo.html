@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Incident Communication Channel Roster</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="header">
+    <h1>Incident Communication Channels</h1>
+    <p>Active roster for incident response coordination</p>
+  </div>
+
+  <div class="roster">
+    <div class="channel-card primary">
+      <div class="channel-icon" style="background:rgba(34,197,94,0.12);color:#22c55e">&#x1F4E1;</div>
+      <div class="channel-info">
+        <div class="channel-name">Status Page</div>
+        <div class="channel-owner">Infrastructure Team</div>
+      </div>
+      <div class="channel-meta">
+        <span class="channel-status primary">Primary</span>
+        <div class="channel-response">ETA: <strong>1 min</strong></div>
+      </div>
+    </div>
+
+    <div class="channel-card primary">
+      <div class="channel-icon" style="background:rgba(34,197,94,0.12);color:#22c55e">&#x1F4AC;</div>
+      <div class="channel-info">
+        <div class="channel-name">Slack Incident Channel</div>
+        <div class="channel-owner">On-Call Engineering</div>
+      </div>
+      <div class="channel-meta">
+        <span class="channel-status primary">Primary</span>
+        <div class="channel-response">ETA: <strong>30 sec</strong></div>
+      </div>
+    </div>
+
+    <div class="channel-card backup">
+      <div class="channel-icon" style="background:rgba(59,130,246,0.12);color:#60a5fa">&#x260E;</div>
+      <div class="channel-info">
+        <div class="channel-name">Conference Bridge</div>
+        <div class="channel-owner">INC Commander</div>
+      </div>
+      <div class="channel-meta">
+        <span class="channel-status backup">Backup</span>
+        <div class="channel-response">ETA: <strong>2 min</strong></div>
+      </div>
+    </div>
+
+    <div class="channel-card backup">
+      <div class="channel-icon" style="background:rgba(59,130,246,0.12);color:#60a5fa">&#x2709;</div>
+      <div class="channel-info">
+        <div class="channel-name">Email Updates</div>
+        <div class="channel-owner">Communications Lead</div>
+      </div>
+      <div class="channel-meta">
+        <span class="channel-status backup">Backup</span>
+        <div class="channel-response">ETA: <strong>5 min</strong></div>
+      </div>
+    </div>
+
+    <div class="channel-card degraded">
+      <div class="channel-icon" style="background:rgba(234,179,8,0.12);color:#eab308">&#x1F4F1;</div>
+      <div class="channel-info">
+        <div class="channel-name">SMS Alert Gateway</div>
+        <div class="channel-owner">SRE Team</div>
+      </div>
+      <div class="channel-meta">
+        <span class="channel-status degraded">Degraded</span>
+        <div class="channel-response">ETA: <strong>10 min</strong></div>
+      </div>
+    </div>
+
+    <div class="channel-card unavailable">
+      <div class="channel-icon" style="background:rgba(239,68,68,0.12);color:#ef4444">&#x1F6A8;</div>
+      <div class="channel-info">
+        <div class="channel-name">PagerDuty Integration</div>
+        <div class="channel-owner">Platform Team</div>
+      </div>
+      <div class="channel-meta">
+        <span class="channel-status unavailable">Unavailable</span>
+        <div class="channel-response">ETA: <strong>Investigating</strong></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
