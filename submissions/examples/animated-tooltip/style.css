@@ -1,0 +1,160 @@
+﻿/* ============================================================
+   animated-tooltip – CSS‑Only Tooltip & Popover
+   ============================================================ */
+
+/* ---------- Tooltip base ---------- */
+.tooltip-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-box {
+  position: absolute;
+  background: #1e293b;
+  color: #fff;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.5rem;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1), transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Arrow (pointer) */
+.tooltip-box::after {
+  content: '';
+  position: absolute;
+  border: 6px solid transparent;
+}
+
+/* ---- Position variants ---- */
+/* Top */
+.tooltip-wrapper[data-tooltip-pos="top"] .tooltip-box {
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-8px);
+}
+.tooltip-wrapper[data-tooltip-pos="top"] .tooltip-box::after {
+  top: 100%;
+  left: 50%;
+  margin-left: -6px;
+  border-top-color: #1e293b;
+}
+
+/* Right */
+.tooltip-wrapper[data-tooltip-pos="right"] .tooltip-box {
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%) translateX(8px);
+}
+.tooltip-wrapper[data-tooltip-pos="right"] .tooltip-box::after {
+  right: 100%;
+  top: 50%;
+  margin-top: -6px;
+  border-right-color: #1e293b;
+}
+
+/* Bottom */
+.tooltip-wrapper[data-tooltip-pos="bottom"] .tooltip-box {
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+}
+.tooltip-wrapper[data-tooltip-pos="bottom"] .tooltip-box::after {
+  bottom: 100%;
+  left: 50%;
+  margin-left: -6px;
+  border-bottom-color: #1e293b;
+}
+
+/* Left */
+.tooltip-wrapper[data-tooltip-pos="left"] .tooltip-box {
+  top: 50%;
+  right: 100%;
+  transform: translateY(-50%) translateX(-8px);
+}
+.tooltip-wrapper[data-tooltip-pos="left"] .tooltip-box::after {
+  left: 100%;
+  top: 50%;
+  margin-top: -6px;
+  border-left-color: #1e293b;
+}
+
+/* Hover reveal */
+.tooltip-wrapper:hover .tooltip-box {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);  /* for top/bottom */ 
+}
+
+/* Position‑specific hover transforms */
+.tooltip-wrapper[data-tooltip-pos="top"]:hover .tooltip-box,
+.tooltip-wrapper[data-tooltip-pos="bottom"]:hover .tooltip-box {
+  transform: translateX(-50%) translateY(0);
+}
+.tooltip-wrapper[data-tooltip-pos="right"]:hover .tooltip-box,
+.tooltip-wrapper[data-tooltip-pos="left"]:hover .tooltip-box {
+  transform: translateY(-50%) translateX(0);
+}
+
+/* ---------- Popover (checkbox hack) ---------- */
+.popover-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.popover-checkbox {
+  display: none;   /* hidden checkbox */
+}
+
+.popover-box {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+  padding: 1.2rem;
+  width: 280px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1), transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: auto;
+  z-index: 20;
+}
+
+.popover-box .popover-close {
+  position: absolute;
+  top: 0.3rem;
+  right: 0.6rem;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: #64748b;
+  line-height: 1;
+}
+
+.popover-checkbox:checked ~ .popover-box {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(4px);
+}
+
+/* Dismiss popover by clicking outside (via label on overlay) is omitted for simplicity; the close button works. */
+
+/* Accessibility: respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .tooltip-box,
+  .popover-box {
+    transition: none;
+  }
+  .tooltip-wrapper:hover .tooltip-box,
+  .tooltip-wrapper:hover .tooltip-box,
+  .popover-checkbox:checked ~ .popover-box {
+    transition: none;
+  }
+}

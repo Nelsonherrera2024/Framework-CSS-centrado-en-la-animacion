@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>animated-tooltip – CSS‑Only Tooltip & Popover</title>
+  <link rel="stylesheet" href="../../core/easemotion.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="ease-bg-gray-50 ease-min-h-screen ease-flex ease-items-center ease-justify-center">
+
+  <div class="ease-container ease-text-center ease-py-16">
+
+    <h1 class="ease-text-3xl ease-font-bold ease-mb-4 ease-fade-in">Animated Tooltip & Popover</h1>
+    <p class="ease-text-gray-500 ease-mb-8 ease-fade-in ease-delay-200">Hover over the buttons to see tooltips. Click the "More Info" for a popover.</p>
+
+    <div class="ease-flex ease-justify-center ease-gap-6 ease-flex-wrap ease-mb-12">
+
+      <!-- Top tooltip -->
+      <div class="tooltip-wrapper" data-tooltip-pos="top">
+        <button class="ease-btn ease-btn-primary">Top</button>
+        <span class="tooltip-box">Tooltip on top</span>
+      </div>
+
+      <!-- Right tooltip -->
+      <div class="tooltip-wrapper" data-tooltip-pos="right">
+        <button class="ease-btn ease-btn-primary">Right</button>
+        <span class="tooltip-box">Tooltip on right</span>
+      </div>
+
+      <!-- Bottom tooltip -->
+      <div class="tooltip-wrapper" data-tooltip-pos="bottom">
+        <button class="ease-btn ease-btn-primary">Bottom</button>
+        <span class="tooltip-box">Tooltip on bottom</span>
+      </div>
+
+      <!-- Left tooltip -->
+      <div class="tooltip-wrapper" data-tooltip-pos="left">
+        <button class="ease-btn ease-btn-primary">Left</button>
+        <span class="tooltip-box">Tooltip on left</span>
+      </div>
+
+    </div>
+
+    <!-- Popover (checkbox hack) -->
+    <div class="popover-wrapper">
+      <input type="checkbox" id="popover-toggle" class="popover-checkbox">
+      <label for="popover-toggle" class="ease-btn ease-btn-secondary">More Info</label>
+      <div class="popover-box">
+        <h3 class="ease-text-lg ease-font-semibold ease-mb-2">About This Feature</h3>
+        <p class="ease-text-sm ease-text-gray-600">This popover demonstrates a larger content container that can be dismissed by clicking outside or the close button.</p>
+        <label for="popover-toggle" class="popover-close">&times;</label>
+      </div>
+    </div>
+
+    <p class="ease-text-sm ease-text-gray-400 ease-mt-12 ease-fade-in ease-delay-500">Pure CSS — no JavaScript. <code>prefers-reduced-motion</code> friendly.</p>
+  </div>
+
+</body>
+</html>
