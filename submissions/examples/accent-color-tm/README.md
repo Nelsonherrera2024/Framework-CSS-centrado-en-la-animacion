@@ -1,60 +1,27 @@
-# Accent Color
+# Accent Color Utilities (`accent-color-tm`)
 
-A self-contained EaseMotion-css submission that demonstrates the `accent color` pattern using the framework's design tokens.
+A robust, token-driven utility set for leveraging the CSS `accent-color` property. This allows instant theming of native form controls (checkboxes, radio buttons, ranges, and progress bars) without the need for complex custom CSS replacements.
 
-## Features
+## 🚀 Features
 
-- Default `.accent-color` rule backed by `--ease-color-primary-alpha` and `--ease-color-primary-dark`
-- Four size variants (`-sm`, `-md`, `-lg`, `-xl`) using `--ease-space-*` and `--ease-radius-*` tokens
-- Six color variants (`-primary`, `-secondary`, `-success`, `-danger`, `-warning`, `-info`) that map directly to `--ease-color-*` tokens
-- Three shape variants (`-pill`, `-rounded`, `-square`) using `--ease-radius-*` tokens
-- Light variants (`-primary-light`, `-success-light`, `-danger-light`) using `--ease-color-*-alpha` tokens for subtle backgrounds
-- Hover, focus-visible, and active states animated with `--ease-speed-fast` + `--ease-ease-out`
-- Disabled state via `[disabled]` attribute selector
-- Full dark mode support via `prefers-color-scheme: dark`
-- Reduced-motion support via `prefers-reduced-motion: reduce`
-- Inline and block display helpers
+- **Token-Driven Design**: Uses CSS variables (`--ease-color-*`) to seamlessly integrate with EaseMotion's broader design system.
+- **Dark Mode Support**: Colors automatically adapt when `@media (prefers-color-scheme: dark)` is triggered, ensuring legibility and contrast.
+- **Reduced Motion Support**: Included hover effects on the demo cards gracefully degrade for users with motion sensitivity.
+- **Extensible**: Includes a `.ease-accent-custom` class that accepts an inline CSS variable (`--ease-accent-custom`) for on-the-fly component overrides.
 
-## Usage
+## 🛠️ Usage
+
+Open `demo.html` in your browser. All code is contained within `style.css`.
+
+### Available Utilities
 
 ```html
-<div class="accent-color accent-color-md accent-color-primary">
-  Hello world
+<!-- Primary Theme -->
+<div class="ease-accent-primary">
+  <input type="checkbox" checked>
 </div>
-```
 
-## Why is it useful?
-
-EaseMotion-css already provides a comprehensive token system (`--ease-color-*`, `--ease-space-*`, `--ease-radius-*`, `--ease-shadow-*`). This submission turns `accent color` into a composable class set so designers and engineers can mix and match variants without writing new CSS. Each rule references a real design token, so the entire pattern automatically respects the maintainer's design system decisions — including any future token additions.
-
-The submission also demonstrates two important EaseMotion patterns:
-
-1. **Token-first composition** — every visual property (`color`, `background`, `border-radius`, `padding`) comes from a `--ease-*` variable, never a hard-coded value.
-2. **Motion-respectful defaults** — `prefers-reduced-motion` zeros out transitions, and `prefers-color-scheme: dark` swaps the surface tokens for the dark palette.
-
-## Token reference
-
-| Variant | Token(s) used |
-| --- | --- |
-| Default | --ease-color-primary-alpha, --ease-color-primary-dark |
-| Primary | --ease-color-primary |
-| Secondary | --ease-color-secondary |
-| Success | --ease-color-success |
-| Danger | --ease-color-danger |
-| Warning | --ease-color-warning |
-| Info | --ease-color-info |
-| Sizes | --ease-space-*, --ease-radius-{sm,md,lg,xl} |
-| Shapes | --ease-radius-{sm,md,full} |
-| Motion | --ease-speed-fast, --ease-ease-out |
-
-## Accessibility
-
-- `:focus-visible` outline uses `--ease-color-primary` at 2px width for clear keyboard focus.
-- Disabled state halves opacity and disables pointer events.
-- Reduced-motion preference disables all transitions.
-
-## Files
-
-- `style.css` — All rules for `.accent-color` and variants, plus layout, dark mode, and reduced motion.
-- `demo.html` — Six interactive demo cards showing every variant in context.
-- `README.md` — This file.
+<!-- Extensible Custom Variable Override -->
+<div class="ease-accent-custom" style="--ease-accent-custom: #8b5cf6;">
+  <input type="radio" checked>
+</div>

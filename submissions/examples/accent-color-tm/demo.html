@@ -3,94 +3,90 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Accent Color Demo</title>
+  <title>Accent Color Tokens | EaseMotion CSS</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="container">
-    <h1>Accent Color</h1>
-    <p class="subtitle">A real-world demonstration of accent color with EaseMotion-css design tokens.</p>
+  
+  <div class="demo-container">
+    <div class="demo-header">
+      <h2>Accent Color Utilities</h2>
+      <p>A set of token-driven utility classes to effortlessly theme native HTML form controls using the <code>accent-color</code> CSS property. Fully supports dark mode.</p>
+    </div>
 
-    <section class="demo-grid">
-      <div class="demo-card">
-        <h2 class="demo-card-title">Default</h2>
-        <p class="demo-card-body">The base .accent-color uses the framework's primary alpha token.</p>
-        <div class="accent-color">Default Accent Color</div>
-      </div>
-
-      <div class="demo-card">
-        <h2 class="demo-card-title">Sizes</h2>
-        <p class="demo-card-body">Size variants use --ease-space-* and --ease-radius-* tokens.</p>
-        <div class="col">
-          <div class="accent-color accent-color-sm">Small</div>
-          <div class="accent-color accent-color-md">Medium</div>
-          <div class="accent-color accent-color-lg">Large</div>
-          <div class="accent-color accent-color-xl">Extra Large</div>
+    <!-- 6 Interactive Demo Cards -->
+    <div class="card-grid">
+      
+      <!-- Primary -->
+      <div class="card ease-accent-primary">
+        <h4>Primary Accent</h4>
+        <div class="controls">
+          <label><input type="checkbox" checked> Checkbox</label>
+          <label><input type="radio" name="r1" checked> Radio</label>
+          <input type="range" min="0" max="100" value="70">
+          <progress max="100" value="60"></progress>
         </div>
       </div>
 
-      <div class="demo-card">
-        <h2 class="demo-card-title">Color variants</h2>
-        <p class="demo-card-body">All variants consume --ease-color-* tokens.</p>
-        <div class="col">
-          <div class="accent-color accent-color-primary">Primary</div>
-          <div class="accent-color accent-color-secondary">Secondary</div>
-          <div class="accent-color accent-color-success">Success</div>
-          <div class="accent-color accent-color-danger">Danger</div>
-          <div class="accent-color accent-color-warning">Warning</div>
-          <div class="accent-color accent-color-info">Info</div>
+      <!-- Success -->
+      <div class="card ease-accent-success">
+        <h4>Success Accent</h4>
+        <div class="controls">
+          <label><input type="checkbox" checked> Checkbox</label>
+          <label><input type="radio" name="r2" checked> Radio</label>
+          <input type="range" min="0" max="100" value="40">
+          <progress max="100" value="85"></progress>
         </div>
       </div>
 
-      <div class="demo-card">
-        <h2 class="demo-card-title">Shapes</h2>
-        <p class="demo-card-body">Shape variants use --ease-radius-* tokens.</p>
-        <div class="col">
-          <div class="accent-color accent-color-pill">Pill shape</div>
-          <div class="accent-color accent-color-rounded">Rounded</div>
-          <div class="accent-color accent-color-square">Square</div>
+      <!-- Warning -->
+      <div class="card ease-accent-warning">
+        <h4>Warning Accent</h4>
+        <div class="controls">
+          <label><input type="checkbox" checked> Checkbox</label>
+          <label><input type="radio" name="r3" checked> Radio</label>
+          <input type="range" min="0" max="100" value="60">
+          <progress max="100" value="45"></progress>
         </div>
       </div>
 
-      <div class="demo-card">
-        <h2 class="demo-card-title">Light variants</h2>
-        <p class="demo-card-body">Lower contrast via alpha tokens for subtle UI affordances.</p>
-        <div class="col">
-          <div class="accent-color accent-color-primary-light">Primary light</div>
-          <div class="accent-color accent-color-success-light">Success light</div>
-          <div class="accent-color accent-color-danger-light">Danger light</div>
+      <!-- Danger -->
+      <div class="card ease-accent-danger">
+        <h4>Danger Accent</h4>
+        <div class="controls">
+          <label><input type="checkbox" checked> Checkbox</label>
+          <label><input type="radio" name="r4" checked> Radio</label>
+          <input type="range" min="0" max="100" value="90">
+          <progress max="100" value="20"></progress>
         </div>
       </div>
 
-      <div class="demo-card">
-        <h2 class="demo-card-title">Interactive</h2>
-        <p class="demo-card-body">Hover, focus, and active states powered by --ease-ease transitions.</p>
-        <div class="col">
-          <button class="accent-color feature-interactive">Hover me</button>
-          <a href="#0" class="accent-color accent-color-primary feature-interactive">Focus me</a>
-          <button class="accent-color accent-color-success" disabled>Disabled</button>
+      <!-- Info -->
+      <div class="card ease-accent-info">
+        <h4>Info Accent</h4>
+        <div class="controls">
+          <label><input type="checkbox" checked> Checkbox</label>
+          <label><input type="radio" name="r5" checked> Radio</label>
+          <input type="range" min="0" max="100" value="30">
+          <progress max="100" value="75"></progress>
         </div>
       </div>
-    </section>
 
-    <section class="demo-card">
-      <h2 class="demo-card-title">Row layout</h2>
-      <p class="demo-card-body">Inline grouping of variants.</p>
-      <div class="row">
-        <span class="accent-color accent-color-sm">One</span>
-        <span class="accent-color accent-color-md">Two</span>
-        <span class="accent-color accent-color-lg">Three</span>
-        <span class="accent-color accent-color-pill accent-color-primary">Pill</span>
+      <!-- Custom -->
+      <div class="card ease-accent-custom" style="--ease-accent-custom: #8b5cf6;">
+        <h4>Custom Accent</h4>
+        <div class="controls">
+          <label><input type="checkbox" checked> Checkbox</label>
+          <label><input type="radio" name="r6" checked> Radio</label>
+          <input type="range" min="0" max="100" value="50">
+          <progress max="100" value="50"></progress>
+        </div>
+        <small style="color: var(--ease-text-muted); margin-top: auto;">Powered by CSS variable override</small>
       </div>
-    </section>
 
-    <section class="demo-card mt-6">
-      <h2 class="demo-card-title">Usage</h2>
-      <p class="demo-card-body">Drop any .accent-color class on a block-level element.</p>
-      <pre class="code-preview">&lt;div class="accent-color accent-color-md accent-color-primary"&gt;
-  Hello world
-&lt;/div&gt;</pre>
-    </section>
+    </div>
   </div>
+
 </body>
 </html>
