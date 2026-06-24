@@ -1,42 +1,41 @@
-# ease-spotlight
+# Spotlight Hover Effect Proposal (`ease-spotlight`)
 
-A CSS-first spotlight effect — dark overlay with a radial-gradient
-"torch" that follows the mouse cursor.
+A proposal for `core/utilities.css` adding a dramatic radial spotlight that tracks the mouse cursor over dark elements.
 
-## How it works
-- `@property` defines `--ease-x`, `--ease-y`, `--ease-radius`
-  as typed, animatable CSS custom properties
-- `radial-gradient(circle var(--ease-radius) at var(--ease-x) var(--ease-y))`
-  creates the spotlight hole dynamically
-- CSS `transition` on `--ease-x` and `--ease-y` gives smooth
-  cursor-follow feel
-- JS only sets two CSS variables on mousemove — all rendering is CSS
+## 🚀 Features
 
-## Usage
+- **Cursor Tracking**: Minimal JS updates custom CSS properties to allow a radial gradient to follow the mouse.
+- **`.em-spotlight`**: Base class that applies the hidden pseudo-element gradient.
+- **Color Variants**: Includes modifiers like `.em-spotlight-blue`, `.em-spotlight-purple`, and `.em-spotlight-gold`.
+- **Smooth Fade**: Gracefully fades in and out when entering/leaving the element.
+- **Motion Safe**: Fully respects `prefers-reduced-motion: reduce` by disabling the opacity transition.
+
+## 🛠️ Usage
+
+Open `demo.html` in your browser. All code is contained within `style.css`. Hover over the cards to see the spotlight track your cursor!
+
+You can apply the proposed utility classes to any card or hero section. It requires a small snippet of JS to map the `mousemove` event to the CSS custom properties `--spotlight-x` and `--spotlight-y`:
+
 ```html
-<div class="ease-spotlight-scene">
-  <!-- your content here -->
-  <div class="ease-spotlight" id="spotlight"></div>
+<div class="em-spotlight em-spotlight-blue">
+  <div class="content">My Card Content</div>
 </div>
-
-<script>
-  const scene = document.querySelector('.ease-spotlight-scene');
-  const overlay = document.getElementById('spotlight');
-
-  scene.addEventListener('mousemove', e => {
-    const r = scene.getBoundingClientRect();
-    overlay.style.setProperty('--ease-x',
-      ((e.clientX - r.left) / r.width * 100).toFixed(2) + '%');
-    overlay.style.setProperty('--ease-y',
-      ((e.clientY - r.top) / r.height * 100).toFixed(2) + '%');
-  });
-</script>
 ```
 
-## Variables
-| Variable        | Default | Description          |
-|-----------------|---------|----------------------|
-| `--ease-x`      | 50%     | Spotlight X position |
-| `--ease-y`      | 50%     | Spotlight Y position |
-| `--ease-radius` | 18%     | Spotlight size       |
-| `--ease-dark`   | 0.88    | Overlay darkness     |
+```javascript
+// Map mouse coordinates to CSS variables
+document.querySelectorAll('.em-spotlight').forEach(el => {
+  el.addEventListener('mousemove', e => {
+    const rect = el.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    el.style.setProperty('--spotlight-x', `${x}px`);
+    el.style.setProperty('--spotlight-y', `${y}px`);
+  });
+});
+```
+
+*Note: This is submitted via the `submissions/examples/` directory to adhere to the strict CI/CD guidelines preventing external modification of `core/` files. The maintainer can easily merge these rules into `core/utilities.css`.*
+
+## 🔗 Related Issue
+Resolves Issue #15992

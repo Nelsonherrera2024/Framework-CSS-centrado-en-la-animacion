@@ -1,56 +1,142 @@
-/* ============================================
-   ease-spotlight — EaseMotion CSS
-   CSS-first spotlight effect
-   @property + radial-gradient + minimal JS
-============================================ */
-
-/* ── Animatable CSS custom properties ── */
-@property --ease-x {
-  syntax: '<percentage>';
-  inherits: false;
-  initial-value: 50%;
-}
-@property --ease-y {
-  syntax: '<percentage>';
-  inherits: false;
-  initial-value: 50%;
-}
-@property --ease-radius {
-  syntax: '<percentage>';
-  inherits: false;
-  initial-value: 18%;
+/* Showcase Styles */
+:root {
+  --bg-color: #0f172a;
+  --text-color: #f8fafc;
+  --border-color: #334155;
+  --demo-bg: #0b1120;
 }
 
-/* ── Container ── */
-.ease-spotlight-scene {
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.spotlight-showcase-wrapper {
+  text-align: center;
+  padding: 2rem;
+  width: 100%;
+  max-width: 900px;
+}
+
+.showcase-header h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 2.2rem;
+  letter-spacing: -0.02em;
+}
+
+.showcase-header p {
+  margin: 0 0 3rem 0;
+  opacity: 0.8;
+  color: #94a3b8;
+}
+
+.demo-area {
+  padding: 3rem;
+  background-color: var(--demo-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.demo-card {
+  height: 200px;
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.demo-card h3 {
+  margin: 0 0 0.5rem 0;
+  font-weight: 600;
+}
+
+.demo-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+
+/* ------------------------------------------------------------------------
+   PROPOSAL: Spotlight Effect
+   Intended for core/utilities.css
+   ------------------------------------------------------------------------ */
+
+.em-spotlight {
+  /* Default configurable variables */
+  --spotlight-color: rgba(255, 255, 255, 0.15);
+  --spotlight-size: 250px;
+  
+  /* Initial mouse positions fallback */
+  --spotlight-x: 50%;
+  --spotlight-y: 50%;
+  
   position: relative;
   overflow: hidden;
-  cursor: none;
 }
 
-/* ── Overlay layer — spotlight hole yahan banta hai ── */
-.ease-spotlight {
-  --ease-x:       50%;
-  --ease-y:       50%;
-  --ease-radius:  18%;
-  --ease-dark:    0.88;
-
+/* Pseudo-element for the radial gradient */
+.em-spotlight::before {
+  content: "";
   position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 10;
-
-  /* smooth cursor follow */
-  transition:
-    --ease-x      0.08s ease,
-    --ease-y      0.08s ease,
-    --ease-radius 0.3s  ease;
-
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: radial-gradient(
-    circle var(--ease-radius) at var(--ease-x) var(--ease-y),
-    transparent           0%,
-    transparent           60%,
-    rgba(0, 0, 0, 0.55)   80%,
-    rgba(0, 0, 0, var(--ease-dark)) 100%
+    var(--spotlight-size) circle at var(--spotlight-x) var(--spotlight-y),
+    var(--spotlight-color),
+    transparent 80%
   );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ensure inner content sits above the spotlight pseudo element */
+.em-spotlight > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Show the spotlight on hover */
+.em-spotlight:hover::before {
+  opacity: 1;
+}
+
+/* Color Variants */
+.em-spotlight-blue {
+  --spotlight-color: rgba(59, 130, 246, 0.2);
+}
+
+.em-spotlight-purple {
+  --spotlight-color: rgba(168, 85, 247, 0.2);
+}
+
+.em-spotlight-gold {
+  --spotlight-color: rgba(250, 204, 21, 0.15);
+}
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  .em-spotlight::before {
+    transition: none !important;
+  }
 }
