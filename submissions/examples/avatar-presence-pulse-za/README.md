@@ -11,4 +11,4 @@ Avatars with pulsing presence indicator rings showing online, idle, and offline 
 
 Open `demo.html` to see avatars with animated presence indicators.
 
-Closes #19256
+Closes #19267
