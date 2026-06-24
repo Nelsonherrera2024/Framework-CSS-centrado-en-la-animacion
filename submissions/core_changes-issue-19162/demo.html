@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bid Comparison &mdash; Procurement Evaluation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bid-wrapper">
+    <header class="bid-header">
+      <h1>Bid Comparison</h1>
+      <p>Procurement evaluation across vendors</p>
+    </header>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Vendor</th>
+            <th>Price</th>
+            <th>Delivery</th>
+            <th>Warranty</th>
+            <th>Compliance</th>
+            <th>Score</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- TechNova Solutions -->
+          <tr>
+            <td>
+              <div class="vendor-cell">
+                <span class="vendor-icon t1">TN</span>
+                <div class="vendor-info">
+                  <span class="vendor-name">TechNova Solutions</span>
+                  <span class="vendor-sub">Enterprise IT</span>
+                </div>
+              </div>
+            </td>
+            <td>&#x20B9;12,50,000</td>
+            <td>6 weeks</td>
+            <td>3 years</td>
+            <td>
+              <div class="compliance-cell">
+                <span class="indicator check">&#10003;</span>
+                <span class="compliance-label">Compliant</span>
+              </div>
+            </td>
+            <td>
+              <div class="score-cell">
+                <div class="score-bar"><div class="score-fill high" style="width:92%"></div></div>
+                <span class="score-value">92</span>
+              </div>
+            </td>
+            <td><span class="state-tag best-value">Best Value</span></td>
+          </tr>
+          <!-- GlobalSys Corp -->
+          <tr>
+            <td>
+              <div class="vendor-cell">
+                <span class="vendor-icon t2">GS</span>
+                <div class="vendor-info">
+                  <span class="vendor-name">GlobalSys Corp</span>
+                  <span class="vendor-sub">Cloud Infrastructure</span>
+                </div>
+              </div>
+            </td>
+            <td>&#x20B9;15,80,000</td>
+            <td>4 weeks</td>
+            <td>5 years</td>
+            <td>
+              <div class="compliance-cell">
+                <span class="indicator warn">&#9888;</span>
+                <span class="compliance-label">Partial</span>
+              </div>
+            </td>
+            <td>
+              <div class="score-cell">
+                <div class="score-bar"><div class="score-fill mid" style="width:68%"></div></div>
+                <span class="score-value">68</span>
+              </div>
+            </td>
+            <td><span class="state-tag review">Review</span></td>
+          </tr>
+          <!-- QuantumBase Ltd -->
+          <tr>
+            <td>
+              <div class="vendor-cell">
+                <span class="vendor-icon t3">QB</span>
+                <div class="vendor-info">
+                  <span class="vendor-name">QuantumBase Ltd</span>
+                  <span class="vendor-sub">Data Analytics</span>
+                </div>
+              </div>
+            </td>
+            <td>&#x20B9;9,20,000</td>
+            <td>10 weeks</td>
+            <td>1 year</td>
+            <td>
+              <div class="compliance-cell">
+                <span class="indicator cross">&#10007;</span>
+                <span class="compliance-label">Non-compliant</span>
+              </div>
+            </td>
+            <td>
+              <div class="score-cell">
+                <div class="score-bar"><div class="score-fill low" style="width:35%"></div></div>
+                <span class="score-value">35</span>
+              </div>
+            </td>
+            <td><span class="state-tag disqualified">Disqualified</span></td>
+          </tr>
+          <!-- NexGen Infra -->
+          <tr>
+            <td>
+              <div class="vendor-cell">
+                <span class="vendor-icon t4">NI</span>
+                <div class="vendor-info">
+                  <span class="vendor-name">NexGen Infra</span>
+                  <span class="vendor-sub">Infrastructure</span>
+                </div>
+              </div>
+            </td>
+            <td>&#x20B9;11,30,000</td>
+            <td>5 weeks</td>
+            <td>4 years</td>
+            <td>
+              <div class="compliance-cell">
+                <span class="indicator check">&#10003;</span>
+                <span class="compliance-label">Compliant</span>
+              </div>
+            </td>
+            <td>
+              <div class="score-cell">
+                <div class="score-bar"><div class="score-fill high" style="width:85%"></div></div>
+                <span class="score-value">85</span>
+              </div>
+            </td>
+            <td><span class="state-tag best-value">Best Value</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
