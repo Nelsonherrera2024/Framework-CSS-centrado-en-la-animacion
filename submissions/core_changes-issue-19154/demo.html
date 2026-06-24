@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seat Utilization</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="glass-wrapper">
+    <div class="header">
+      <h1>Seat Utilization</h1>
+      <p>Real-time subscription seat usage across teams</p>
+    </div>
+
+    <div class="summary-row">
+      <span class="chip">
+        <span class="chip-dot chip-dot--green"></span>
+        Assigned <span class="chip-value">82</span>
+      </span>
+      <span class="chip">
+        <span class="chip-dot chip-dot--blue"></span>
+        Available <span class="chip-value">24</span>
+      </span>
+      <span class="chip">
+        <span class="chip-dot chip-dot--yellow"></span>
+        Pending <span class="chip-value">6</span>
+      </span>
+      <span class="chip">
+        <span class="chip-dot chip-dot--red"></span>
+        Over Limit <span class="chip-value">8</span>
+      </span>
+    </div>
+
+    <div class="table-container">
+      <table class="seat-table">
+        <thead>
+          <tr>
+            <th>Team</th>
+            <th>Total Seats</th>
+            <th>Utilization</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div class="team-cell">
+                <span class="team-icon" style="background:#4a8cff;">E</span>
+                Engineering
+              </div>
+            </td>
+            <td>25</td>
+            <td>
+              <div class="meter">
+                <div class="meter-bar">
+                  <div class="meter-fill meter-fill--green" style="width:80%"></div>
+                </div>
+                <span class="meter-text">20/25</span>
+              </div>
+            </td>
+            <td><span class="tag tag--assigned">Assigned</span></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="team-cell">
+                <span class="team-icon" style="background:#2ed573;">M</span>
+                Marketing
+              </div>
+            </td>
+            <td>15</td>
+            <td>
+              <div class="meter">
+                <div class="meter-bar">
+                  <div class="meter-fill meter-fill--blue" style="width:53.33%"></div>
+                </div>
+                <span class="meter-text">8/15</span>
+              </div>
+            </td>
+            <td><span class="tag tag--available">Available</span></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="team-cell">
+                <span class="team-icon" style="background:#f7b731;">S</span>
+                Sales
+              </div>
+            </td>
+            <td>20</td>
+            <td>
+              <div class="meter">
+                <div class="meter-bar">
+                  <div class="meter-fill meter-fill--yellow" style="width:15%"></div>
+                </div>
+                <span class="meter-text">3/20</span>
+              </div>
+            </td>
+            <td><span class="tag tag--pending">Pending</span></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="team-cell">
+                <span class="team-icon" style="background:#ff4757;">D</span>
+                Design
+              </div>
+            </td>
+            <td>10</td>
+            <td>
+              <div class="meter">
+                <div class="meter-bar">
+                  <div class="meter-fill meter-fill--red" style="width:100%"></div>
+                </div>
+                <span class="meter-text">13/10</span>
+              </div>
+            </td>
+            <td><span class="tag tag--over">Over Limit</span></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="team-cell">
+                <span class="team-icon" style="background:#a55eea;">O</span>
+                Operations
+              </div>
+            </td>
+            <td>50</td>
+            <td>
+              <div class="meter">
+                <div class="meter-bar">
+                  <div class="meter-fill meter-fill--green" style="width:76%"></div>
+                </div>
+                <span class="meter-text">38/50</span>
+              </div>
+            </td>
+            <td><span class="tag tag--assigned">Assigned</span></td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr class="total-row">
+            <td>Total</td>
+            <td>120</td>
+            <td>
+              <div class="meter">
+                <div class="meter-bar">
+                  <div class="meter-fill meter-fill--green" style="width:68%"></div>
+                </div>
+                <span class="meter-text">82/120 · 68% utilized</span>
+              </div>
+            </td>
+            <td><span class="tag tag--assigned">Assigned</span></td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

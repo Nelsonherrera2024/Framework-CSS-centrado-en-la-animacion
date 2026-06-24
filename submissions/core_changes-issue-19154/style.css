@@ -1,0 +1,322 @@
+/* ===== Reset & Base ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, sans-serif;
+  background: #0a0e17;
+  color: #e1e7f0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+
+/* ===== Glassmorphism Wrapper ===== */
+.glass-wrapper {
+  width: 100%;
+  max-width: 960px;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8);
+}
+
+/* ===== Header ===== */
+.header {
+  margin-bottom: 1.75rem;
+}
+
+.header h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #f0f4ff;
+}
+
+.header p {
+  font-size: 0.875rem;
+  color: #8892a8;
+  margin-top: 0.25rem;
+}
+
+/* ===== Summary Chips Row ===== */
+.summary-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.75rem;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 100px;
+  padding: 0.45rem 1rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #c8d0e0;
+}
+
+.chip-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.chip-dot--green {
+  background: #2ed573;
+}
+
+.chip-dot--blue {
+  background: #4a8cff;
+}
+
+.chip-dot--yellow {
+  background: #f7b731;
+}
+
+.chip-dot--red {
+  background: #ff4757;
+}
+
+.chip-value {
+  font-weight: 700;
+  color: #f0f4ff;
+}
+
+/* ===== Table Container (horizontal scroll) ===== */
+.table-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ===== Table ===== */
+.seat-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  min-width: 540px;
+}
+
+.seat-table th,
+.seat-table td {
+  padding: 0.8rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  white-space: nowrap;
+}
+
+/* ===== Sticky Header ===== */
+.seat-table thead tr {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.seat-table th {
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #8892a8;
+  background: rgba(10, 14, 23, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* ===== Hover Rows ===== */
+.seat-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.seat-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+/* ===== Team Cell ===== */
+.team-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.team-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+/* ===== Meter Bar ===== */
+.meter {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.meter-bar {
+  width: 120px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.meter-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.4s ease;
+}
+
+.meter-fill--green {
+  background: #2ed573;
+}
+
+.meter-fill--blue {
+  background: #4a8cff;
+}
+
+.meter-fill--yellow {
+  background: #f7b731;
+}
+
+.meter-fill--red {
+  background: #ff4757;
+}
+
+.meter-text {
+  font-size: 0.8125rem;
+  color: #c8d0e0;
+  font-weight: 500;
+}
+
+/* ===== Status Tags ===== */
+.tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.65rem;
+  border-radius: 6px;
+  text-transform: capitalize;
+}
+
+.tag--assigned {
+  background: rgba(46, 213, 115, 0.15);
+  color: #2ed573;
+}
+
+.tag--available {
+  background: rgba(74, 140, 255, 0.15);
+  color: #4a8cff;
+}
+
+.tag--pending {
+  background: rgba(247, 183, 49, 0.15);
+  color: #f7b731;
+}
+
+.tag--over {
+  background: rgba(255, 71, 87, 0.15);
+  color: #ff4757;
+}
+
+/* ===== Total Row ===== */
+.total-row td {
+  font-weight: 700;
+  border-bottom: none;
+  color: #f0f4ff;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.total-row .meter-text {
+  color: #f0f4ff;
+}
+
+/* ===== Staggered Row Fade-in ===== */
+.seat-table tbody tr {
+  opacity: 0;
+  animation: fadeInRow 0.4s ease forwards;
+}
+
+.seat-table tbody tr:nth-child(1) {
+  animation-delay: 0.05s;
+}
+
+.seat-table tbody tr:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.seat-table tbody tr:nth-child(3) {
+  animation-delay: 0.15s;
+}
+
+.seat-table tbody tr:nth-child(4) {
+  animation-delay: 0.2s;
+}
+
+.seat-table tbody tr:nth-child(5) {
+  animation-delay: 0.25s;
+}
+
+@keyframes fadeInRow {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Reduced Motion ===== */
+@media (prefers-reduced-motion: reduce) {
+  .seat-table tbody tr,
+  .meter-fill {
+    animation: none;
+    transition: none;
+  }
+
+  .seat-table tbody tr {
+    opacity: 1;
+  }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 640px) {
+  .glass-wrapper {
+    padding: 1.25rem 0.75rem;
+    border-radius: 14px;
+  }
+
+  .header h1 {
+    font-size: 1.25rem;
+  }
+
+  .chip {
+    font-size: 0.75rem;
+    padding: 0.35rem 0.75rem;
+  }
+}
