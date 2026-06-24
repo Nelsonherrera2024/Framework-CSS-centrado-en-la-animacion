@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subscription Seat Utilization Table</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="header">
+    <h1>Seat Utilization</h1>
+    <p>Subscription seat allocation across teams</p>
+  </div>
+
+  <div class="summary-row">
+    <div class="summary-chip">
+      <span class="dot assigned"></span>
+      Assigned: <span class="count">82</span>
+    </div>
+    <div class="summary-chip">
+      <span class="dot available"></span>
+      Available: <span class="count">24</span>
+    </div>
+    <div class="summary-chip">
+      <span class="dot pending"></span>
+      Pending: <span class="count">6</span>
+    </div>
+    <div class="summary-chip">
+      <span class="dot over"></span>
+      Over Limit: <span class="count">8</span>
+    </div>
+  </div>
+
+  <div class="table-wrap">
+    <div class="table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th>Team</th>
+            <th>Total Seats</th>
+            <th>Utilization</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div class="team-cell">
+                <div class="team-icon" style="background:linear-gradient(135deg,#6366f1,#818cf8)">E</div>
+                <span class="team-name">Engineering</span>
+              </div>
+            </td>
+            <td>25</td>
+            <td>
+              <div class="seat-meter">
+                <div class="meter-track"><div class="meter-fill green" style="width:80%"></div></div>
+                <span class="meter-text">20/25</span>
+              </div>
+            </td>
+            <td><span class="seat-tag assigned">Assigned</span></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="team-cell">
+                <div class="team-icon" style="background:linear-gradient(135deg,#f59e0b,#fbbf24)">M</div>
+                <span class="team-name">Marketing</span>
+              </div>
+            </td>
+            <td>15</td>
+            <td>
+              <div class="seat-meter">
+                <div class="meter-track"><div class="meter-fill blue" style="width:53%"></div></div>
+                <span class="meter-text">8/15</span>
+              </div>
+            </td>
+            <td><span class="seat-tag available">Available</span></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="team-cell">
+                <div class="team-icon" style="background:linear-gradient(135deg,#10b981,#34d399)">S</div>
+                <span class="team-name">Sales</span>
+              </div>
+            </td>
+            <td>20</td>
+            <td>
+              <div class="seat-meter">
+                <div class="meter-track"><div class="meter-fill yellow" style="width:15%"></div></div>
+                <span class="meter-text">3/20</span>
+              </div>
+            </td>
+            <td><span class="seat-tag pending">Pending</span></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="team-cell">
+                <div class="team-icon" style="background:linear-gradient(135deg,#ef4444,#f87171)">D</div>
+                <span class="team-name">Design</span>
+              </div>
+            </td>
+            <td>10</td>
+            <td>
+              <div class="seat-meter">
+                <div class="meter-track"><div class="meter-fill red" style="width:130%"></div></div>
+                <span class="meter-text">13/10</span>
+              </div>
+            </td>
+            <td><span class="seat-tag over">Over Limit</span></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="team-cell">
+                <div class="team-icon" style="background:linear-gradient(135deg,#8b5cf6,#a78bfa)">O</div>
+                <span class="team-name">Operations</span>
+              </div>
+            </td>
+            <td>50</td>
+            <td>
+              <div class="seat-meter">
+                <div class="meter-track"><div class="meter-fill green" style="width:76%"></div></div>
+                <span class="meter-text">38/50</span>
+              </div>
+            </td>
+            <td><span class="seat-tag assigned">Assigned</span></td>
+          </tr>
+          <tr class="total-row">
+            <td><strong>Total</strong></td>
+            <td><strong>120</strong></td>
+            <td>
+              <div class="seat-meter">
+                <div class="meter-track"><div class="meter-fill" style="width:82%;background:linear-gradient(90deg,#6366f1,#22d3ee)"></div></div>
+                <span class="meter-text">82/120</span>
+              </div>
+            </td>
+            <td><span class="seat-tag assigned">68% utilized</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
