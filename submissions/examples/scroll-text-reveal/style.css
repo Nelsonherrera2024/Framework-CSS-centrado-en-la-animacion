@@ -1,0 +1,66 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #020617;
+  color: white;
+}
+
+.container {
+  padding: 100px 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* TEXT BLOCK */
+.text-block p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin: 20px 0;
+}
+
+/* ======================
+   REVEAL ANIMATION
+====================== */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ======================
+   UTILITY CLASSES
+====================== */
+
+.ease-fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+.ease-hover-grow {
+  transition: transform 0.3s ease;
+}
+
+.ease-hover-grow:hover {
+  transform: scale(1.05);
+}
+
+/* ======================
+   KEYFRAMES
+====================== */
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}

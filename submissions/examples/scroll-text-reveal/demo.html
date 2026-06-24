@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Scroll Text Reveal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section class="container">
+  <h1 class="ease-fade-in">Scroll Reveal Animation</h1>
+
+  <div class="text-block">
+    <p class="reveal">Modern interfaces rely on smooth motion to guide user attention.</p>
+    <p class="reveal">This animation reveals text line by line as you scroll.</p>
+    <p class="reveal">It creates a cinematic storytelling experience.</p>
+    <p class="reveal">Perfect for landing pages and product descriptions.</p>
+  </div>
+</section>
+
+<script>
+  const reveals = document.querySelectorAll(".reveal");
+
+  window.addEventListener("scroll", () => {
+    reveals.forEach((el, index) => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 50) {
+        setTimeout(() => {
+          el.classList.add("active");
+        }, index * 150);
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
