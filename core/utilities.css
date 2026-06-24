@@ -1464,4 +1464,22 @@
   .ease-contain-style { contain: style !important; }
   
   .ease-contain-layout-paint { contain: layout paint !important; }
+
+  /* ── Issue #16542: Add Break-Inside Utility Classes ── */
+  .ease-break-inside-auto {
+    break-inside: auto !important;
+  }
+  .ease-break-inside-avoid {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    -webkit-column-break-inside: avoid !important;
+  }
+  .ease-break-inside-avoid-page {
+    break-inside: avoid-page !important;
+    page-break-inside: avoid !important;
+  }
+  .ease-break-inside-avoid-column {
+    break-inside: avoid-column !important;
+    -webkit-column-break-inside: avoid !important;
+  }
 }

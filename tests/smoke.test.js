@@ -195,6 +195,13 @@ const modals = readFileSync(resolve(componentsDir, 'modals.css'), 'utf8');
     expect(foundEaseRevealInMedia).toBe(true);
   });
 
+  it('should have break-inside utilities defined', () => {
+    expect(css).toContain('.ease-break-inside-auto');
+    expect(css).toContain('.ease-break-inside-avoid');
+    expect(css).toContain('.ease-break-inside-avoid-page');
+    expect(css).toContain('.ease-break-inside-avoid-column');
+  });
+
   it('should not have duplicate @keyframes definitions', () => {
     const keyframeCounts = {};
     const keyframeRegex = /@keyframes\s+([^\s{]+)/g;
