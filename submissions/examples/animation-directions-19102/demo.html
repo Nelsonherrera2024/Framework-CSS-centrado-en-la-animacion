@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animation Direction Showcase</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h1>Animation Directions</h1>
+
+  <div class="grid">
+    <div class="card">
+      <h2>Fade From Left</h2>
+      <div class="demo-box">
+        <div class="anim-block anim-block--indigo anim-fade-from-left"></div>
+      </div>
+      <button class="btn" data-anim="anim-fade-from-left">Replay</button>
+    </div>
+
+    <div class="card">
+      <h2>Fade From Right</h2>
+      <div class="demo-box">
+        <div class="anim-block anim-block--teal anim-fade-from-right"></div>
+      </div>
+      <button class="btn" data-anim="anim-fade-from-right">Replay</button>
+    </div>
+
+    <div class="card">
+      <h2>Fade From Up</h2>
+      <div class="demo-box">
+        <div class="anim-block anim-block--amber anim-fade-from-up"></div>
+      </div>
+      <button class="btn" data-anim="anim-fade-from-up">Replay</button>
+    </div>
+
+    <div class="card">
+      <h2>Fade From Down</h2>
+      <div class="demo-box">
+        <div class="anim-block anim-block--red anim-fade-from-down"></div>
+      </div>
+      <button class="btn" data-anim="anim-fade-from-down">Replay</button>
+    </div>
+
+    <div class="card">
+      <h2>Slide From Left</h2>
+      <div class="demo-box">
+        <div class="anim-block anim-block--purple anim-slide-from-left"></div>
+      </div>
+      <button class="btn" data-anim="anim-slide-from-left">Replay</button>
+    </div>
+
+    <div class="card">
+      <h2>Slide From Right</h2>
+      <div class="demo-box">
+        <div class="anim-block anim-block--cyan anim-slide-from-right"></div>
+      </div>
+      <button class="btn" data-anim="anim-slide-from-right">Replay</button>
+    </div>
+
+    <div class="card">
+      <h2>Slide From Up</h2>
+      <div class="demo-box">
+        <div class="anim-block anim-block--green anim-slide-from-up"></div>
+      </div>
+      <button class="btn" data-anim="anim-slide-from-up">Replay</button>
+    </div>
+
+    <div class="card">
+      <h2>Slide From Down</h2>
+      <div class="demo-box">
+        <div class="anim-block anim-block--orange anim-slide-from-down"></div>
+      </div>
+      <button class="btn" data-anim="anim-slide-from-down">Replay</button>
+    </div>
+  </div>
+
+  <section class="usage">
+    <h2>Usage</h2>
+    <pre><code>&lt;div class="anim-fade-from-left"&gt;...&lt;/div&gt;
+&lt;div class="anim-fade-from-right"&gt;...&lt;/div&gt;
+&lt;div class="anim-fade-from-up"&gt;...&lt;/div&gt;
+&lt;div class="anim-fade-from-down"&gt;...&lt;/div&gt;
+&lt;div class="anim-slide-from-left"&gt;...&lt;/div&gt;
+&lt;div class="anim-slide-from-right"&gt;...&lt;/div&gt;
+&lt;div class="anim-slide-from-up"&gt;...&lt;/div&gt;
+&lt;div class="anim-slide-from-down"&gt;...&lt;/div&gt;</code></pre>
+  </section>
+
+  <script>
+    document.querySelectorAll('.btn[data-anim]').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var className = this.getAttribute('data-anim');
+        var block = this.parentNode.querySelector('.anim-block');
+        if (block) {
+          block.classList.remove(className);
+          void block.offsetWidth;
+          block.classList.add(className);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
