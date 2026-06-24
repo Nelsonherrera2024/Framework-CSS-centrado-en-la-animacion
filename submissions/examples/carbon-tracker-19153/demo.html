@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carbon Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="header-group">
+    <h1>Carbon Tracker</h1>
+    <p class="header-sub">Real-time emissions monitoring dashboard</p>
+  </header>
+
+  <div class="summary-row">
+    <div class="summary-card">
+      <div class="summary-value">1,840 <span class="summary-unit">tCO₂</span></div>
+      <p class="summary-label">Current Emissions</p>
+    </div>
+    <div class="summary-card">
+      <div class="summary-value">2,400 <span class="summary-unit">tCO₂</span></div>
+      <p class="summary-label">Annual Target</p>
+    </div>
+    <div class="summary-card">
+      <div class="summary-value">23<span class="summary-unit">%</span></div>
+      <p class="summary-label">Reduction vs Baseline</p>
+    </div>
+  </div>
+
+  <section class="progress-section">
+    <h2>Emission Sources</h2>
+
+    <div class="track-card">
+      <div class="bar-row">
+        <span class="bar-label">Energy Consumption</span>
+        <span class="bar-value">820 tCO₂</span>
+      </div>
+      <div class="bar-track warn" style="--bar-width: 68%;"></div>
+    </div>
+
+    <div class="track-card">
+      <div class="bar-row">
+        <span class="bar-label">Supply Chain</span>
+        <span class="bar-value">560 tCO₂</span>
+      </div>
+      <div class="bar-track" style="--bar-width: 47%;"></div>
+    </div>
+
+    <div class="track-card">
+      <div class="bar-row">
+        <span class="bar-label">Transportation</span>
+        <span class="bar-value">460 tCO₂</span>
+      </div>
+      <div class="bar-track danger" style="--bar-width: 82%;"></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Site Status</h2>
+
+    <div class="states-row">
+      <div class="state-card good">
+        <p class="state-title">Regional Office</p>
+        <p class="state-status good">On Track</p>
+        <p class="state-delta">−90 tCO₂ vs target</p>
+      </div>
+
+      <div class="state-card attention">
+        <p class="state-title">Manufacturing Plant</p>
+        <p class="state-status attention">Attention</p>
+        <p class="state-delta">±0 tCO₂ vs target</p>
+      </div>
+
+      <div class="state-card bad">
+        <p class="state-title">Data Center</p>
+        <p class="state-status bad">Off Track</p>
+        <p class="state-delta">+70 tCO₂ vs target</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="legend">
+    <span class="legend-item">
+      <span class="legend-swatch good"></span>
+      On Track
+    </span>
+    <span class="legend-item">
+      <span class="legend-swatch attention"></span>
+      Needs Attention
+    </span>
+    <span class="legend-item">
+      <span class="legend-swatch bad"></span>
+      Off Track
+    </span>
+  </div>
+
+</div>
+
+</body>
+</html>
