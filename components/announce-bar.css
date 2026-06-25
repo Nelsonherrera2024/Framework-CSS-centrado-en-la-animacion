@@ -6,7 +6,7 @@
     color: #fff;
     text-align: center;
     font-size: 0.875rem;
-    animation: ease-slide-down 0.3s ease;
+    animation: ease-kf-slide-down 0.3s ease both;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -75,5 +75,11 @@
     left: 0;
     right: 0;
     z-index: 1000;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ease-announce-bar {
+      animation: none;
+    }
   }
 }
