@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ease-cursor-spotlight – Cursor Spotlight</title>
+  <link rel="stylesheet" href="../../core/easemotion.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="ease-min-h-screen ease-flex ease-items-center ease-justify-center">
+
+  <div id="spotlight-section" class="spotlight-section ease-flex ease-items-center ease-justify-center ease-text-center ease-p-8">
+    <div class="content ease-fade-in">
+      <h1 class="ease-text-5xl ease-font-bold ease-text-white ease-mb-4">Move your cursor</h1>
+      <p class="ease-text-xl ease-text-slate-300">The spotlight follows you</p>
+    </div>
+  </div>
+
+  <script>
+    const section = document.getElementById('spotlight-section');
+
+    function updateSpotlight(e) {
+      const rect = section.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      section.style.setProperty('--ease-cursor-x', ${x}%);
+      section.style.setProperty('--ease-cursor-y', ${y}%);
+    }
+
+    section.addEventListener('mousemove', updateSpotlight);
+    section.addEventListener('touchmove', (e) => {
+      e.preventDefault();
+      updateSpotlight(e.touches[0]);
+    });
+  </script>
+
+</body>
+</html>

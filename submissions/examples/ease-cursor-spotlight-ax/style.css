@@ -1,0 +1,42 @@
+﻿/* ============================================================
+   ease-cursor-spotlight – Cursor‑following spotlight
+   ============================================================ */
+
+/* The dark section with a transparent "hole" that reveals a spotlight */
+.spotlight-section {
+  --ease-cursor-x: 50%;
+  --ease-cursor-y: 50%;
+  background: radial-gradient(
+    circle 200px at var(--ease-cursor-x) var(--ease-cursor-y),
+    transparent 0%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  background-color: #111827;          /* fallback / base dark */
+  background-blend-mode: normal;
+  transition: background 0.15s ease;   /* smooth follow */
+  width: 100%;
+  max-width: 800px;
+  height: 400px;
+  margin: 0 auto;
+  border-radius: 1rem;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Content styling */
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Accessibility: respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .spotlight-section {
+    transition: none;
+    background: radial-gradient(
+      circle 200px at 50% 50%,
+      transparent 0%,
+      rgba(0, 0, 0, 0.8) 100%
+    );
+  }
+}
