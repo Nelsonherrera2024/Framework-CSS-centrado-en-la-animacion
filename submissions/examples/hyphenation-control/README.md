@@ -1,21 +1,31 @@
-# Hyphenation &amp; Breaking Control
+# Hyphenation Control Example (`hyphenation-control`)
 
-## Feature Overview
-This demo covers three CSS properties that control how text breaks across lines:
-- **hyphens** (`auto`, `manual`, `none`) — dictionary-based hyphenation at syllable boundaries, requires the `lang` attribute to work properly
-- **word-break** (`normal`, `break-all`, `keep-all`) — controls whether lines may break at character boundaries, useful for long unbroken strings
-- **overflow-wrap** (`normal`, `break-word`, `anywhere`) — emergency word breaking when content would otherwise overflow
+This proposal introduces a set of CSS utility classes to manage the `hyphens` typography property, targeted for integration into `core/utilities.css`.
 
-The demo includes English, German, and French samples to show language-specific hyphenation differences.
+## 📌 Feature Overview
 
-## Usage
-Open `demo.html` in any browser. Each card applies one CSS value to identical text so the visual difference is clear. Narrow the viewport to trigger more line breaks. The German text (`Donaudampfschifffahrtsgesellschaft...`) is intentionally long to stress-test hyphenation dictionaries. Language-specific hyphenation uses the `lang` attribute on individual elements.
+These utilities provide developers with direct control over how text breaks across lines. This is critical for preventing awkward layout shifts or horizontal scrolling when dealing with long words (like URLs or technical terms) inside narrow containers (like sidebars or mobile screens).
+Included classes:
+- `.hyphens-none` (Never hyphenate, even if it overflows)
+- `.hyphens-manual` (Only hyphenate where soft-hyphens `&shy;` are placed)
+- `.hyphens-auto` (Automatically insert hyphens based on the browser's dictionary)
 
-## Browser Support
-- `hyphens: none|manual` — supported everywhere
-- `hyphens: auto` — Chrome 55+, Firefox 43+, Safari 5.1+ (Edge requires Windows language pack)
-- `word-break: normal|break-all` — supported everywhere
-- `word-break: keep-all` — Chrome 44+, Firefox 15+, Safari 9+
-- `overflow-wrap: normal|break-word` — supported everywhere
-- `overflow-wrap: anywhere` — Chrome 80+, Firefox 80+, Safari 15.4+
-- Language-specific hyphenation requires OS hyphenation dictionaries to be installed
+## ⚙️ How to Use
+
+To test this feature locally, simply open the `demo.html` file in your web browser. The styles are contained in `style.css`. 
+
+You can apply the proposed utilities to any text container:
+
+```html
+<!-- Automatically break words in a narrow mobile card -->
+<div class="hyphens-auto w-64" lang="en">
+  A very long scientific word like Pneumonoultramicroscopicsilicovolcanoconiosis will now break gracefully.
+</div>
+```
+
+*Tip: `hyphens-auto` relies on the browser knowing the language of the text. Always ensure your HTML or container has a `lang` attribute (e.g., `lang="en"`).*
+
+*Note: As per the contributing guidelines, this proposal is implemented inside `submissions/examples/hyphenation-control/` to avoid directly modifying core files and causing zero deletions. The maintainer can safely migrate these classes to the core utility stylesheet.*
+
+## 🔗 Related Issue
+Closes Issue #15569
