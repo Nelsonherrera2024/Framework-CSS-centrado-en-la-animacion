@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Animated Scroll‑Reveal Timeline Demo</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* Minimal vanilla JS – placed here for simplicity */
+    .timeline-item { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .timeline-item.revealed { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+  <section class="timeline">
+    <div class="timeline-item" data-title="Project Kickoff" data-date="Jan 2022">
+      <div class="content">
+        <h3>Project Kickoff</h3>
+        <p>Initial meeting and requirements gathering.</p>
+      </div>
+    </div>
+    <div class="timeline-item" data-title="First Release" data-date="Jun 2022">
+      <div class="content">
+        <h3>First Release</h3>
+        <p>Public beta launched with core features.</p>
+      </div>
+    </div>
+    <div class="timeline-item" data-title="Major Update" data-date="Dec 2022">
+      <div class="content">
+        <h3>Major Update</h3>
+        <p>Added analytics and performance improvements.</p>
+      </div>
+    </div>
+    <div class="timeline-item" data-title="Current Version" data-date="Apr 2023">
+      <div class="content">
+        <h3>Current Version</h3>
+        <p>Stability fixes and UI polish.</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // IntersectionObserver for scroll‑reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.timeline-item').forEach(item => observer.observe(item));
+  </script>
+</body>
+</html>
