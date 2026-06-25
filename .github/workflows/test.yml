@@ -2,6 +2,30 @@ name: Test and Validation
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "**/*.css"
+      - "**/*.js"
+      - "scss/**"
+      - "scripts/**"
+      - "tests/**"
+      - "package.json"
+      - "package-lock.json"
+      - "vitest.config.js"
+      - ".github/workflows/test.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "**/*.css"
+      - "**/*.js"
+      - "scss/**"
+      - "scripts/**"
+      - "tests/**"
+      - "package.json"
+      - "package-lock.json"
+      - "vitest.config.js"
+      - ".github/workflows/test.yml"
 
 jobs:
   test:
@@ -15,8 +39,8 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'npm'
+          node-version: "20"
+          cache: "npm"
 
       - name: Install dependencies
         run: npm ci
@@ -29,4 +53,3 @@ jobs:
 
       - name: Run Smoke Tests
         run: npm test
-
