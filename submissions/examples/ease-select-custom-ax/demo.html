@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ease-select-custom – Styled Custom Select</title>
+  <link rel="stylesheet" href="../../core/easemotion.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="ease-bg-gray-50 ease-min-h-screen ease-flex ease-items-center ease-justify-center">
+
+  <div class="ease-container ease-text-center ease-py-16">
+    <h1 class="ease-text-3xl ease-font-bold ease-mb-4 ease-fade-in">Custom Select</h1>
+    <p class="ease-text-gray-500 ease-mb-8 ease-fade-in ease-delay-200">
+      Click the trigger to open the dropdown. Arrow keys, enter, and escape work.
+    </p>
+
+    <!-- Custom Select Component -->
+    <div class="custom-select-wrapper ease-mx-auto ease-max-w-xs">
+      <!-- Hidden checkbox controls open/close -->
+      <input type="checkbox" id="dropdown-toggle" class="dropdown-checkbox sr-only" role="button" aria-haspopup="listbox" aria-expanded="false">
+      
+      <!-- Trigger button -->
+      <label for="dropdown-toggle" class="select-trigger ease-btn ease-btn-primary ease-flex ease-justify-between ease-items-center ease-w-full" tabindex="0">
+        <span id="selected-text">Select a fruit</span>
+        <span class="arrow ease-transition">▼</span>
+      </label>
+
+      <!-- Dropdown list -->
+      <div class="select-dropdown ease-card">
+        <ul class="options-list" role="listbox">
+          <li>
+            <input type="radio" name="fruit" value="apple" id="opt-apple" class="sr-only">
+            <label for="opt-apple" class="option-item" data-value="Apple">🍎 Apple</label>
+          </li>
+          <li>
+            <input type="radio" name="fruit" value="banana" id="opt-banana" class="sr-only">
+            <label for="opt-banana" class="option-item" data-value="Banana">🍌 Banana</label>
+          </li>
+          <li>
+            <input type="radio" name="fruit" value="cherry" id="opt-cherry" class="sr-only">
+            <label for="opt-cherry" class="option-item" data-value="Cherry">🍒 Cherry</label>
+          </li>
+          <li>
+            <input type="radio" name="fruit" value="grape" id="opt-grape" class="sr-only">
+            <label for="opt-grape" class="option-item" data-value="Grape">🍇 Grape</label>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="ease-text-sm ease-text-gray-400 ease-mt-8 ease-fade-in ease-delay-500">
+      Animated dropdown via <code>scaleY</code>, checkmark on selected, keyboard accessible.
+    </p>
+  </div>
+
+  <script>
+    const toggle = document.getElementById('dropdown-toggle');
+    const trigger = document.querySelector('.select-trigger');
+    const selectedText = document.getElementById('selected-text');
+    const options = document.querySelectorAll('.option-item');
+    const dropdown = document.querySelector('.select-dropdown');
+    let currentFocus = -1;
+
+    // Update selected text on click
+    options.forEach((opt, index) => {
+      opt.addEventListener('click', (e) => {
+        selectedText.textContent = e.target.dataset.value;
+        toggle.checked = false;
+        toggle.setAttribute('aria-expanded', 'false');
+        currentFocus = -1;
+      });
+    });
+
+    // Keyboard navigation
+    trigger.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggle.checked = !toggle.checked;
+        toggle.setAttribute('aria-expanded', toggle.checked);
+        if (toggle.checked) {
+          currentFocus = 0;
+          addActiveClass(currentFocus);
+        } else {
+          removeActiveClass();
+          currentFocus = -1;
+        }
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (!toggle.checked) return;
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        currentFocus = (currentFocus + 1) % options.length;
+        addActiveClass(currentFocus);
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault();
+        currentFocus = (currentFocus - 1 + options.length) % options.length;
+        addActiveClass(currentFocus);
+      } else if (e.key === 'Enter') {
+        e.preventDefault();
+        if (currentFocus >= 0) {
+          const label = options[currentFocus];
+          selectedText.textContent = label.dataset.value;
+          toggle.checked = false;
+          toggle.setAttribute('aria-expanded', 'false');
+          removeActiveClass();
+          currentFocus = -1;
+        }
+      } else if (e.key === 'Escape') {
+        toggle.checked = false;
+        toggle.setAttribute('aria-expanded', 'false');
+        removeActiveClass();
+        currentFocus = -1;
+      }
+    });
+
+    function addActiveClass(index) {
+      options.forEach(opt => opt.classList.remove('active'));
+      if (index >= 0) {
+        options[index].classList.add('active');
+      }
+    }
+
+    function removeActiveClass() {
+      options.forEach(opt => opt.classList.remove('active'));
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+﻿/* ============================================================
+   ease-select-custom – Styled custom select dropdown
+   ============================================================ */
+
+/* Hide utility */
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0,0,0,0); border: 0;
+}
+
+/* Wrapper */
+.custom-select-wrapper {
+  position: relative;
+}
+
+/* Trigger button */
+.select-trigger {
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Arrow rotation on open */
+.dropdown-checkbox:checked ~ .select-trigger .arrow {
+  transform: rotate(180deg);
+}
+
+/* Dropdown container */
+.select-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 0.5rem;
+  background: #ffffff;
+  border-radius: 0.75rem;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  overflow: hidden;
+  transform-origin: top;
+  transform: scaleY(0);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.25s ease, opacity 0.25s ease, visibility 0.25s ease;
+  z-index: 10;
+}
+
+.dropdown-checkbox:checked ~ .select-dropdown {
+  transform: scaleY(1);
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Options list */
+.options-list {
+  list-style: none;
+  margin: 0;
+  padding: 0.25rem 0;
+}
+
+/* Individual option */
+.option-item {
+  display: block;
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background 0.15s ease;
+  border-left: 3px solid transparent;
+}
+
+.option-item:hover,
+.option-item.active {
+  background: #f0f9ff;
+  border-left-color: #3b82f6;
+}
+
+/* Checkmark on selected radio */
+input[type="radio"]:checked + .option-item {
+  font-weight: 600;
+  color: #2563eb;
+}
+input[type="radio"]:checked + .option-item::after {
+  content: ' ✓';
+  color: #16a34a;
+}
+
+/* Accessibility: respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .select-dropdown {
+    transition: none;
+  }
+}
