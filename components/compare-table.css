@@ -79,6 +79,18 @@
     height: 1.5rem;
     animation: ease-icon-pop 0.3s ease both;
   }
+
+  @keyframes ease-icon-pop {
+    from {
+      opacity: 0;
+      transform: scale(0.75);
+    }
+
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
   
   .ease-icon-check::after {
     content: '';
@@ -108,6 +120,16 @@
 
     to {
       opacity: 1;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ease-icon-check,
+    .ease-icon-cross,
+    .ease-icon-check::after,
+    .ease-icon-cross::before,
+    .ease-icon-cross::after {
+      animation: none;
     }
   }
 }
