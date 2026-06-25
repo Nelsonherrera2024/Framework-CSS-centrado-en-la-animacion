@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Parallax Background</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="background"></div>
+
+    <div class="content">
+        <h1>Mouse Parallax Background</h1>
+        <p>Move your mouse to experience the depth effect.</p>
+    </div>
+    <script>
+    <script>
+        document.addEventListener("mousemove", (e) => {
+            const x = (window.innerWidth / 2 - e.clientX) / 40;
+            const y = (window.innerHeight / 2 - e.clientY) / 40;
+
+            document.documentElement.style.setProperty("--ease-mouse-x", `${x}px`);
+            document.documentElement.style.setProperty("--ease-mouse-y", `${y}px`);
+    });
+
+    </script>
+</body>
+</html>

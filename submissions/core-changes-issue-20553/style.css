@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #111827;
+    color: white;
+    height: 100vh;
+}
+
+.background {
+    position: fixed;
+    inset: 0;
+
+    background:
+        radial-gradient(circle at 20% 20%, #60a5fa55, transparent 30%),
+        radial-gradient(circle at 80% 70%, #a855f755, transparent 30%),
+        linear-gradient(135deg, #111827, #1e293b);
+
+    transform: translate(
+        var(--ease-mouse-x, 0px),
+        var(--ease-mouse-y, 0px)
+    );
+    transition: transform 0.15s ease-out;
+
+    z-index: -1;
+}
+
+.content {
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 20px;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 16px;
+}
+
+p {
+    font-size: 1.2rem;
+    opacity: 0.85;
+}
