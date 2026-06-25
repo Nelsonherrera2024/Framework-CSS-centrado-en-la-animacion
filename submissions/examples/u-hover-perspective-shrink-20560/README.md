@@ -69,11 +69,14 @@ Works in all modern browsers supporting:
 * CSS Variables
 * CSS Transitions
 
+
 ## Accessibility
+
 
 * Keyboard focus indicator included.
 * Honors the `prefers-reduced-motion` media query.
 * Does not rely on JavaScript or hover-only interaction for usability.
+
 
 ## License
 
