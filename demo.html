@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Keyboard Shortcuts - EaseMotion CSS Submission</title>
+
+    <!-- EaseMotion CSS (CDN) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/SAPTARSHI-coder/EaseMotion-css@main/easemotion.min.css" />
+
+    <!-- Custom Demo Styles -->
+    <style>
+        body {
+            padding: 3rem 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .demo-section {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 1rem;
+            background: #fafafa;
+        }
+
+        .demo-section h2 {
+            margin-top: 0;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .shortcut-badge {
+            display: inline-block;
+            background: #1f2937;
+            color: #fff;
+            font-size: 0.7rem;
+            padding: 0.15rem 0.6rem;
+            border-radius: 0.4rem;
+            margin-left: 0.5rem;
+            font-family: monospace;
+        }
+
+        .key-press-feedback {
+            margin-top: 1rem;
+            padding: 0.75rem 1rem;
+            background: #dbeafe;
+            border-radius: 0.5rem;
+            color: #1e3a8a;
+            font-size: 0.9rem;
+            display: none;
+        }
+
+        .key-press-feedback.show {
+            display: block;
+        }
+
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.4);
+            align-items: center;
+            justify-content: center;
+            z-index: 999;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-box {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 1rem;
+            max-width: 400px;
+            width: 90%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="ease-fade-in">⌨️ Keyboard Shortcuts</h1>
+    <p class="ease-slide-up">Proposed feature for EaseMotion CSS — human-readable shortcut classes.</p>
+
+    <!-- SECTION 1: Save Shortcut -->
+    <section class="demo-section">
+        <h2>1. Save Button <span class="shortcut-badge">Ctrl+S</span></h2>
+        <button id="saveBtn" class="ease-btn ease-btn-primary ease-shortcut-save">
+            💾 Save
+        </button>
+        <div id="saveFeedback" class="key-press-feedback">✅ Saved! (Ctrl+S pressed)</div>
+    </section>
+
+    <!-- SECTION 2: Undo / Redo -->
+    <section class="demo-section">
+        <h2>2. Undo / Redo <span class="shortcut-badge">Ctrl+Z</span> <span class="shortcut-badge">Ctrl+Shift+Z</span></h2>
+        <button id="undoBtn" class="ease-btn ease-btn-outline ease-shortcut-undo">↩️ Undo</button>
+        <button id="redoBtn" class="ease-btn ease-btn-outline ease-shortcut-redo">↪️ Redo</button>
+        <div id="undoFeedback" class="key-press-feedback">↩️ Undo triggered</div>
+        <div id="redoFeedback" class="key-press-feedback">↪️ Redo triggered</div>
+    </section>
+
+    <!-- SECTION 3: Search Focus -->
+    <section class="demo-section">
+        <h2>3. Search Input <span class="shortcut-badge">Ctrl+K</span></h2>
+        <input id="searchInput" type="text" class="ease-shortcut-ctrl-k" placeholder="Press Ctrl+K to focus me..." style="width:100%; padding:0.75rem; border:1px solid #d1d5db; border-radius:0.5rem; font-size:1rem;" />
+        <div id="searchFeedback" class="key-press-feedback">🔍 Search input focused!</div>
+    </section>
+
+    <!-- SECTION 4: Escape to Close Modal -->
+    <section class="demo-section">
+        <h2>4. Modal (Escape to Close) <span class="shortcut-badge">Esc</span></h2>
+        <button id="openModalBtn" class="ease-btn ease-btn-primary">Open Modal</button>
+
+        <div id="demoModal" class="modal-overlay ease-shortcut-escape">
+            <div class="modal-box">
+                <h3>📦 Modal</h3>
+                <p>Press <strong>Esc</strong> to close this modal.</p>
+                <button id="closeModalBtn" class="ease-btn ease-btn-secondary">Close</button>
+            </div>
+        </div>
+        <div id="modalFeedback" class="key-press-feedback">❌ Modal closed with Escape</div>
+    </section>
+
+    <!-- SECTION 5: Enter to Submit -->
+    <section class="demo-section">
+        <h2>5. Form Submit <span class="shortcut-badge">Enter</span></h2>
+        <form id="demoForm" style="display:flex; gap:0.5rem; flex-wrap:wrap;">
+            <input type="text" id="formInput" class="ease-shortcut-enter" placeholder="Type and press Enter..." style="flex:1; padding:0.75rem; border:1px solid #d1d5db; border-radius:0.5rem; font-size:1rem;" />
+            <button type="submit" class="ease-btn ease-btn-success">Submit</button>
+        </form>
+        <div id="formFeedback" class="key-press-feedback">✅ Form submitted via Enter!</div>
+    </section>
+
+    <!-- SHORTCUTS.JS - The core logic -->
+    <script>
+        (function() {
+            'use strict';
+
+            // ----- Helper to detect OS (Cmd vs Ctrl) -----
+            const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
+            const modKey = isMac ? 'metaKey' : 'ctrlKey';
+
+            // ----- Map shortcuts to actions -----
+            const shortcuts = {
+                'save': { key: 's', mod: true },
+                'undo': { key: 'z', mod: true },
+                'redo': { key: 'z', mod: true, shift: true },
+                'search': { key: 'k', mod: true },
+                'escape': { key: 'Escape', mod: false },
+                'enter': { key: 'Enter', mod: false }
+            };
+
+            // ----- Store elements with shortcut classes -----
+            const elements = {
+                save: document.querySelectorAll('.ease-shortcut-save'),
+                undo: document.querySelectorAll('.ease-shortcut-undo'),
+                redo: document.querySelectorAll('.ease-shortcut-redo'),
+                search: document.querySelectorAll('.ease-shortcut-ctrl-k'),
+                escape: document.querySelectorAll('.ease-shortcut-escape'),
+                enter: document.querySelectorAll('.ease-shortcut-enter')
+            };
+
+            // ----- Show feedback helper -----
+            function showFeedback(id) {
+                const el = document.getElementById(id);
+                if (el) {
+                    el.classList.add('show');
+                    setTimeout(() => el.classList.remove('show'), 2000);
+                }
+            }
+
+            // ----- Trigger click on all matching elements -----
+            function triggerAction(selector, feedbackId) {
+                const els = document.querySelectorAll(selector);
+                els.forEach(el => el.click());
+                if (feedbackId) showFeedback(feedbackId);
+            }
+
+            // ----- Focus first matching input -----
+            function focusAction(selector, feedbackId) {
+                const el = document.querySelector(selector);
+                if (el) el.focus();
+                if (feedbackId) showFeedback(feedbackId);
+            }
+
+            // ----- Close modals (escape) -----
+            function closeModals() {
+                document.querySelectorAll('.modal-overlay.active').forEach(modal => {
+                    modal.classList.remove('active');
+                });
+                showFeedback('modalFeedback');
+            }
+
+            // ----- Keyboard event listener -----
+            document.addEventListener('keydown', function(e) {
+                const ctrl = e.ctrlKey || e.metaKey;
+                const shift = e.shiftKey;
+                const key = e.key;
+
+                // --- Ctrl+S (Save) ---
+                if (ctrl && key === 's') {
+                    e.preventDefault();
+                    triggerAction('.ease-shortcut-save', 'saveFeedback');
+                    return;
+                }
+
+                // --- Ctrl+Z (Undo) ---
+                if (ctrl && !shift && key === 'z') {
+                    e.preventDefault();
+                    triggerAction('.ease-shortcut-undo', 'undoFeedback');
+                    return;
+                }
+
+                // --- Ctrl+Shift+Z (Redo) ---
+                if (ctrl && shift && key === 'z') {
+                    e.preventDefault();
+                    triggerAction('.ease-shortcut-redo', 'redoFeedback');
+                    return;
+                }
+
+                // --- Ctrl+K (Search focus) ---
+                if (ctrl && key === 'k') {
+                    e.preventDefault();
+                    focusAction('.ease-shortcut-ctrl-k', 'searchFeedback');
+                    return;
+                }
+
+                // --- Escape (Close modals) ---
+                if (key === 'Escape') {
+                    closeModals();
+                    return;
+                }
+
+                // --- Enter (Submit forms) ---
+                if (key === 'Enter') {
+                    const target = e.target;
+                    // Only if the target has the class or is inside a form with the class
+                    const isShortcutEnter = target.closest('.ease-shortcut-enter') || target.closest('form')?.querySelector('.ease-shortcut-enter');
+                    if (isShortcutEnter) {
+                        e.preventDefault();
+                        const form = target.closest('form');
+                        if (form) {
+                            const submitBtn = form.querySelector('button[type="submit"]');
+                            if (submitBtn) submitBtn.click();
+                            else form.submit();
+                        } else {
+                            // If no form, trigger click on element itself
+                            const el = target.closest('.ease-shortcut-enter');
+                            if (el) el.click();
+                        }
+                        showFeedback('formFeedback');
+                        return;
+                    }
+                }
+            });
+
+            // ----- DEMO: Button click handlers for feedback -----
+            document.getElementById('saveBtn')?.addEventListener('click', function() {
+                showFeedback('saveFeedback');
+            });
+
+            document.getElementById('undoBtn')?.addEventListener('click', function() {
+                showFeedback('undoFeedback');
+            });
+
+            document.getElementById('redoBtn')?.addEventListener('click', function() {
+                showFeedback('redoFeedback');
+            });
+
+            document.getElementById('openModalBtn')?.addEventListener('click', function() {
+                document.getElementById('demoModal').classList.add('active');
+            });
+
+            document.getElementById('closeModalBtn')?.addEventListener('click', function() {
+                document.getElementById('demoModal').classList.remove('active');
+                showFeedback('modalFeedback');
+            });
+
+            document.getElementById('demoForm')?.addEventListener('submit', function(e) {
+                e.preventDefault();
+                showFeedback('formFeedback');
+            });
+
+            // Close modal on overlay click
+            document.getElementById('demoModal')?.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    this.classList.remove('active');
+                    showFeedback('modalFeedback');
+                }
+            });
+
+            console.log('⌨️ EaseMotion Keyboard Shortcuts demo loaded!');
+            console.log('Try: Ctrl+S, Ctrl+Z, Ctrl+Shift+Z, Ctrl+K, Escape, Enter');
+        })();
+    </script>
+
+</body>
+</html>
