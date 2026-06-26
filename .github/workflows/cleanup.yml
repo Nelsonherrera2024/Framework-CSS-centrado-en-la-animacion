@@ -1,0 +1,37 @@
+name: Cross-Platform Path Cleanup Protocol
+
+on:
+  workflow_dispatch: # Allows you to trigger this manually with a single click
+
+jobs:
+  purge-invalid-paths:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Target Index
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Execute Filesystem Purge
+        run: |
+          echo "Initializing surgical directory purge..."
+          # Forcefully delete the directories using wildcards on Linux
+          rm -rf submissions/examples/phase-351-*
+          rm -rf submissions/examples/phase-352-*
+          rm -rf submissions/examples/phase-353-*
+          rm -rf submissions/examples/phase-354-*
+          
+      - name: Commit Changes Globally
+        run: |
+          git config --global user.name "Ishwinder Kaur"
+          git config --global user.email "ishwinderkaur.dev@gmail.com"
+          git add submissions/examples/
+          
+          # Only commit if changes were actually made
+          git diff-index --quiet HEAD || git commit -m "fix: purge invalid asterisk directory paths for cross-platform compliance"
+          
+      - name: Push Fixed History
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
