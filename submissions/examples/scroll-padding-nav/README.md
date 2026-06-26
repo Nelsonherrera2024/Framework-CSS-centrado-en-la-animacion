@@ -1,19 +1,34 @@
-# scroll-padding-top for Fixed Nav Anchors
+# CSS Scroll-Padding Anchor Navigation (`scroll-padding-nav`)
 
-## Feature Overview
-The `scroll-padding-top` CSS property (part of the CSS Scroll Snap module) defines the scroll offset applied when a scroll target is navigated to via anchor links. This demo shows:
-- A **fixed 60px navigation bar** at the top of the viewport
-- Five content sections with anchor links in the nav
-- `scroll-padding-top: 70px` to offset anchor targets below the fixed nav
-- A **toggle button** to dynamically enable/disable `scroll-padding-top` for a side-by-side comparison
+This proposal demonstrates an elegant, pure CSS approach to handling anchor link navigation with fixed headers using `scroll-padding` and `scroll-behavior: smooth`.
 
-Without scroll-padding, clicking a nav link scrolls the section heading behind the fixed nav bar. With scroll-padding, the heading appears below the nav with 10px breathing room.
+## 📌 Feature Overview
 
-## Usage
-Open `demo.html` and click the section links in the fixed nav bar. Use the toggle buttons to turn `scroll-padding-top` on and off — the difference is immediately visible: with padding OFF, section headings are hidden under the nav; with padding ON, they appear correctly positioned below it. Resize the viewport to confirm the responsive behavior works at all widths.
+When navigating to a hash/anchor link on a page with a fixed header (like a sticky navbar), browsers natively scroll the element to the very top of the viewport. This often results in the fixed header visually obscuring the top of the content (like the section title).
 
-## Browser Support
-- `scroll-padding-top` — Chrome 69+, Edge 79+, Firefox 68+, Safari 14.1+, Opera 56+
-- The property applies to the scroll container (`html` element in this demo)
-- The toggle uses inline `style.scrollPaddingTop` via JavaScript — same property, so support matches the CSS version
-- In older browsers, anchor scrolling still works but without the offset — content may be slightly hidden behind the nav, which is a graceful degradation (user can still scroll manually)
+Historically, this required JavaScript scroll calculations or pseudo-element hacks (`::before` with negative margins). We can solve this elegantly with one modern CSS property: `scroll-padding-top`.
+
+Features:
+- `scroll-behavior: smooth` on `html` for native smooth scrolling.
+- `scroll-padding-top` on `html` to offset the native scroll position by the height of the fixed header plus extra padding.
+- Zero JavaScript required.
+- Dark mode compatible.
+
+## ⚙️ How to Use
+
+To test this feature locally, open the `demo.html` file in your web browser. Click on the navigation links in the fixed header to see the smooth, properly aligned scrolling behavior. The styles are contained in `style.css`.
+
+Example usage on your core `html` or `body`:
+
+```css
+html {
+  scroll-behavior: smooth;
+  /* Adjust this to match your fixed header height */
+  scroll-padding-top: 6rem; 
+}
+```
+
+*Note: As per the contributing guidelines, this proposal is implemented inside a unique `submissions/examples/scroll-padding-nav/` directory to avoid directly modifying core files and causing zero deletions.*
+
+## 🔗 Related Issue
+Closes Issue #15572
