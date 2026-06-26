@@ -68,3 +68,5 @@ Animate.propTypes = {
   style: PropTypes.object,
   children: PropTypes.node,
 };
+
+export default Animate;
