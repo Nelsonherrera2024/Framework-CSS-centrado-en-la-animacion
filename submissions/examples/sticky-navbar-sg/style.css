@@ -1,0 +1,42 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f8fafc;
+}
+
+.ease-sticky-navbar{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    display:flex;
+    justify-content:center;
+    gap:2rem;
+
+    padding:1rem;
+
+    background:#1f2937;
+}
+
+.ease-sticky-navbar a{
+    color:#fff;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.ease-sticky-navbar a:hover{
+    color:#38bdf8;
+}
+
+section{
+    min-height:100vh;
+    display:grid;
+    place-items:center;
+    font-size:2rem;
+}
+
