@@ -1,35 +1,279 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Tooltip Component</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EaseMotion CSS — Interactive Tooltips Showcase</title>
+  
+  <!-- Import Framework CSS -->
+  <link rel="stylesheet" href="../../../easemotion.min.css">
+  
+  <!-- Local Styles -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Modern Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<div class="container">
+  <div class="showcase-wrapper">
+    <!-- Header Section -->
+    <header class="header-section">
+      <h1 class="header-title">EaseMotion CSS Tooltips</h1>
+      <p class="header-subtitle">A highly performant, accessible, pure-CSS tooltip system utilizing custom positions, entrance animations, and rich color modes.</p>
+    </header>
 
-    <button class="ease-tooltip" data-tooltip="Tooltip on top">
-        Top
-    </button>
+    <!-- Main Showcase Grid -->
+    <div class="showcase-grid">
 
-    <button class="ease-tooltip ease-tooltip-bottom"
-            data-tooltip="Tooltip on bottom">
-        Bottom
-    </button>
+      <!-- Section 1: Interactive Tooltip Playground (Full Width) -->
+      <div class="showcase-card full-width-card">
+        <h2 class="card-title">1. Interactive Playground</h2>
+        <p class="card-desc">Configure the options below to customize the tooltip in real-time. Hover or focus the preview button to see your configuration in action.</p>
+        
+        <div style="display: grid; grid-template-columns: 1fr; gap: 2rem; margin-bottom: 2rem;">
+          <!-- Controls Panel -->
+          <div style="background: rgba(100, 116, 139, 0.05); padding: 1.5rem; border-radius: var(--ease-radius-lg); border: 1px solid var(--card-border);">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+              
+              <!-- Position Selector -->
+              <div>
+                <label for="pos-select" style="display: block; font-size: 0.875rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--heading-color);">Tooltip Position</label>
+                <select id="pos-select" class="demo-btn" style="width: 100%;" onchange="updatePlayground()">
+                  <option value="ease-tooltip-top" selected>Top (Default)</option>
+                  <option value="ease-tooltip-bottom">Bottom</option>
+                  <option value="ease-tooltip-left">Left</option>
+                  <option value="ease-tooltip-right">Right</option>
+                </select>
+              </div>
 
-    <button class="ease-tooltip ease-tooltip-left"
-            data-tooltip="Tooltip on left">
-        Left
-    </button>
+              <!-- Theme/Color Selector -->
+              <div>
+                <label for="theme-select" style="display: block; font-size: 0.875rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--heading-color);">Color Theme</label>
+                <select id="theme-select" class="demo-btn" style="width: 100%;" onchange="updatePlayground()">
+                  <option value="" selected>Default (Neutral)</option>
+                  <option value="ease-tooltip-primary">Primary (Indigo)</option>
+                  <option value="ease-tooltip-success">Success (Green)</option>
+                  <option value="ease-tooltip-danger">Danger (Red)</option>
+                  <option value="ease-tooltip-warning">Warning (Orange)</option>
+                  <option value="ease-tooltip-info">Info (Blue)</option>
+                </select>
+              </div>
 
-    <button class="ease-tooltip ease-tooltip-right"
-            data-tooltip="Tooltip on right">
-        Right
-    </button>
+              <!-- Content/Width Selector -->
+              <div>
+                <label for="width-select" style="display: block; font-size: 0.875rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--heading-color);">Content Style & Width</label>
+                <select id="width-select" class="demo-btn" style="width: 100%;" onchange="updatePlayground()">
+                  <option value="normal" selected>Standard (Single Line)</option>
+                  <option value="ease-tooltip-multiline">Multiline (Medium Width)</option>
+                  <option value="ease-tooltip-wide">Wide (Detailed Text)</option>
+                </select>
+              </div>
 
-</div>
+            </div>
 
+            <!-- Custom Input Text -->
+            <div style="margin-top: 1.5rem;">
+              <label for="tooltip-text" style="display: block; font-size: 0.875rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--heading-color);">Tooltip Text Content</label>
+              <input type="text" id="tooltip-text" value="Welcome to EaseMotion UI! Custom tooltip text here." style="width: 100%; box-sizing: border-box; padding: 0.625rem 1rem; border-radius: var(--ease-radius-md); border: 1px solid var(--card-border); background-color: var(--card-bg); color: var(--page-text); font-family: inherit; font-size: 0.875rem;" oninput="updatePlayground()">
+            </div>
+          </div>
+
+          <!-- Preview Area -->
+          <div class="card-demo-area" style="min-height: 180px;">
+            <button id="playground-trigger" class="demo-btn demo-btn-primary ease-tooltip" data-tooltip="Welcome to EaseMotion UI! Custom tooltip text here." tabindex="0">
+              Hover / Focus Me
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 2: Position Directions -->
+      <div class="showcase-card">
+        <h2 class="card-title">2. Positioning Variations</h2>
+        <p class="card-desc">Tooltips can be positioned relative to their trigger element along the cardinal directions. Position flips automatically on mobile to fit the viewport.</p>
+        <div class="card-demo-area">
+          
+          <button class="demo-btn ease-tooltip ease-tooltip-top" data-tooltip="Tooltip positioned at top" tabindex="0">
+            Top Tooltip
+          </button>
+          
+          <button class="demo-btn ease-tooltip ease-tooltip-bottom" data-tooltip="Tooltip positioned at bottom" tabindex="0">
+            Bottom Tooltip
+          </button>
+
+          <button class="demo-btn ease-tooltip ease-tooltip-left" data-tooltip="Tooltip positioned at left" tabindex="0">
+            Left Tooltip
+          </button>
+
+          <button class="demo-btn ease-tooltip ease-tooltip-right" data-tooltip="Tooltip positioned at right" tabindex="0">
+            Right Tooltip
+          </button>
+
+        </div>
+      </div>
+
+      <!-- Section 3: Semantic Triggers & Contexts -->
+      <div class="showcase-card">
+        <h2 class="card-title">3. Inline Text & Icon Triggers</h2>
+        <p class="card-desc">Embed tooltips seamlessly on icons, inline text snippets, and badges. They are built using keyboard accessible focus-within events.</p>
+        <div class="card-demo-area" style="flex-direction: column; align-items: flex-start; justify-content: center; gap: 1rem;">
+          
+          <p style="margin: 0; line-height: 1.6; font-size: 0.95rem;">
+            Hover over this <span class="text-trigger ease-tooltip ease-tooltip-top" data-tooltip="This is an explanation of a term." tabindex="0">specialized term</span> to learn what it means. You can also view details of our 
+            <a href="#" class="ease-tooltip ease-tooltip-bottom" data-tooltip="Directs to documentation page" style="color: var(--ease-tooltip-primary-bg); font-weight: 600;" tabindex="0">online API system</a> inline.
+          </p>
+
+          <div style="display: flex; gap: 1rem; align-items: center; width: 100%; border-top: 1px solid var(--card-border); padding-top: 1rem; margin-top: 0.5rem;">
+            <span style="font-size: 0.875rem; font-weight: 600; color: var(--heading-color);">Quick Actions:</span>
+            
+            <!-- Help Icon Trigger -->
+            <button class="demo-btn icon-trigger ease-tooltip ease-tooltip-top" data-tooltip="Get quick support & instructions" aria-label="Help" tabindex="0">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="12" x2="12.01" y2="12"></line></svg>
+            </button>
+
+            <!-- Settings Icon Trigger -->
+            <button class="demo-btn icon-trigger ease-tooltip ease-tooltip-top" data-tooltip="Configure user preferences" aria-label="Settings" tabindex="0">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+            </button>
+
+            <!-- Warning Icon Trigger -->
+            <button class="demo-btn icon-trigger ease-tooltip ease-tooltip-top ease-tooltip-danger" data-tooltip="Caution: This operation is destructive!" aria-label="Danger Alert" tabindex="0">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Section 4: Color Themes -->
+      <div class="showcase-card">
+        <h2 class="card-title">4. Semantic Colors & Branding</h2>
+        <p class="card-desc">Color tooltips match their trigger action types, boosting usability and offering explicit cues for user operations.</p>
+        <div class="card-demo-area">
+          
+          <button class="demo-btn demo-btn-primary ease-tooltip ease-tooltip-primary ease-tooltip-top" data-tooltip="Primary info tooltip" tabindex="0">
+            Primary
+          </button>
+          
+          <button class="demo-btn demo-btn-success ease-tooltip ease-tooltip-success ease-tooltip-top" data-tooltip="Successful action tooltip" tabindex="0">
+            Success
+          </button>
+
+          <button class="demo-btn demo-btn-danger ease-tooltip ease-tooltip-danger ease-tooltip-bottom" data-tooltip="Dangerous warning tooltip" tabindex="0">
+            Danger
+          </button>
+
+          <button class="demo-btn demo-btn-warning ease-tooltip ease-tooltip-warning ease-tooltip-bottom" data-tooltip="Pending action warning tooltip" tabindex="0">
+            Warning
+          </button>
+
+          <button class="demo-btn demo-btn-info ease-tooltip ease-tooltip-info ease-tooltip-top" data-tooltip="Helpful description tooltip" tabindex="0">
+            Info
+          </button>
+
+        </div>
+      </div>
+
+      <!-- Section 5: Rich Formatting & Multi-line layouts -->
+      <div class="showcase-card">
+        <h2 class="card-title">5. Multi-line & Wide Layouts</h2>
+        <p class="card-desc">Standard tooltips clip long paragraphs. Multi-line and Wide classes add paragraph formatting with automatic line wrapping.</p>
+        <div class="card-demo-area">
+          
+          <button class="demo-btn ease-tooltip ease-tooltip-multiline ease-tooltip-top" data-tooltip="This is a medium-sized paragraph that wraps text across multiple lines for better readability." tabindex="0">
+            Medium Wrap
+          </button>
+
+          <button class="demo-btn ease-tooltip ease-tooltip-wide ease-tooltip-bottom ease-tooltip-primary" data-tooltip="Detailed Description: This wide tooltip variant allows you to present structured descriptions, warnings, or instructions containing several long-form sentences inside an elegant, non-intrusive panel." tabindex="0">
+            Detailed Wide Block
+          </button>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- API Reference Guide (Footer Box) -->
+    <div style="background-color: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--ease-radius-xl); padding: 2rem; margin-top: 3rem;">
+      <h3 style="margin-top: 0; color: var(--heading-color); font-weight: 700;">API Quick Reference</h3>
+      <p style="font-size: 0.9rem; color: var(--ease-color-neutral-500, #64748b); margin-bottom: 1.5rem;">Use standard combinations of HTML classes and attributes to configure tooltip behaviors:</p>
+      
+      <div style="overflow-x: auto;">
+        <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.85rem;">
+          <thead>
+            <tr style="border-bottom: 2px solid var(--card-border);">
+              <th style="padding: 0.75rem 0.5rem; color: var(--heading-color); font-weight: 700;">Class / Attribute</th>
+              <th style="padding: 0.75rem 0.5rem; color: var(--heading-color); font-weight: 700;">Role</th>
+              <th style="padding: 0.75rem 0.5rem; color: var(--heading-color); font-weight: 700;">Syntax Example</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid var(--card-border);">
+              <td style="padding: 0.75rem 0.5rem;"><code style="color: var(--ease-tooltip-primary-bg); font-weight: 700;">.ease-tooltip</code></td>
+              <td style="padding: 0.75rem 0.5rem; color: var(--page-text);">Base component class wrapper</td>
+              <td style="padding: 0.75rem 0.5rem;"><code>&lt;button class="ease-tooltip" ...&gt;</code></td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--card-border);">
+              <td style="padding: 0.75rem 0.5rem;"><code style="color: var(--ease-tooltip-primary-bg); font-weight: 700;">data-tooltip="..."</code></td>
+              <td style="padding: 0.75rem 0.5rem; color: var(--page-text);">Defines the text inside the tooltip box</td>
+              <td style="padding: 0.75rem 0.5rem;"><code>data-tooltip="Hello world!"</code></td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--card-border);">
+              <td style="padding: 0.75rem 0.5rem;"><code style="color: var(--ease-tooltip-primary-bg); font-weight: 700;">.ease-tooltip-top/bottom/left/right</code></td>
+              <td style="padding: 0.75rem 0.5rem; color: var(--page-text);">Positions the tooltip block around the trigger</td>
+              <td style="padding: 0.75rem 0.5rem;"><code>class="ease-tooltip ease-tooltip-bottom"</code></td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--card-border);">
+              <td style="padding: 0.75rem 0.5rem;"><code style="color: var(--ease-tooltip-primary-bg); font-weight: 700;">.ease-tooltip-primary/success/...</code></td>
+              <td style="padding: 0.75rem 0.5rem; color: var(--page-text);">Color themes corresponding to feedback statuses</td>
+              <td style="padding: 0.75rem 0.5rem;"><code>class="ease-tooltip ease-tooltip-success"</code></td>
+            </tr>
+            <tr>
+              <td style="padding: 0.75rem 0.5rem;"><code style="color: var(--ease-tooltip-primary-bg); font-weight: 700;">.ease-tooltip-multiline/wide</code></td>
+              <td style="padding: 0.75rem 0.5rem; color: var(--page-text);">Enables multi-line wrapping and expanded text widths</td>
+              <td style="padding: 0.75rem 0.5rem;"><code>class="ease-tooltip ease-tooltip-wide"</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive JavaScript Controller -->
+  <script>
+    function updatePlayground() {
+      const trigger = document.getElementById('playground-trigger');
+      const posSelect = document.getElementById('pos-select');
+      const themeSelect = document.getElementById('theme-select');
+      const widthSelect = document.getElementById('width-select');
+      const textInput = document.getElementById('tooltip-text');
+
+      // Clear existing classes
+      trigger.className = "demo-btn demo-btn-primary ease-tooltip";
+
+      // Add position class
+      const posVal = posSelect.value;
+      trigger.classList.add(posVal);
+
+      // Add theme class
+      const themeVal = themeSelect.value;
+      if (themeVal) {
+        trigger.classList.add(themeVal);
+      }
+
+      // Add width/multiline class
+      const widthVal = widthSelect.value;
+      if (widthVal !== 'normal') {
+        trigger.classList.add(widthVal);
+      }
+
+      // Update tooltip text
+      const newText = textInput.value || "Default Tooltip Text";
+      trigger.setAttribute('data-tooltip', newText);
+    }
+  </script>
 </body>
 </html>

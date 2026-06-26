@@ -1,96 +1,578 @@
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+/* ==========================================================================
+   EaseMotion CSS - Tooltip Component
+   Submission Showcase Style
+   ========================================================================== */
+
+:root {
+  /* Tooltip design variables */
+  --ease-tooltip-bg: var(--ease-color-neutral-900, #1e293b);
+  --ease-tooltip-color: var(--ease-color-neutral-50, #f8fafc);
+  --ease-tooltip-font-size: var(--ease-text-xs, 0.75rem);
+  --ease-tooltip-padding-y: 0.375rem;
+  --ease-tooltip-padding-x: 0.75rem;
+  --ease-tooltip-radius: var(--ease-radius-md, 0.375rem);
+  --ease-tooltip-arrow-size: 6px;
+  --ease-tooltip-offset: 8px;
+  --ease-tooltip-transition-speed: var(--ease-speed-fast, 150ms);
+  --ease-tooltip-z-index: var(--ease-z-tooltip, 1070);
+  
+  /* Theme-specific tooltip backgrounds */
+  --ease-tooltip-primary-bg: var(--ease-color-primary, #6366f1);
+  --ease-tooltip-success-bg: var(--ease-color-success, #10b981);
+  --ease-tooltip-danger-bg: var(--ease-color-danger, #ef4444);
+  --ease-tooltip-warning-bg: var(--ease-color-warning, #f59e0b);
+  --ease-tooltip-info-bg: var(--ease-color-info, #3b82f6);
+
+  /* Page design variables */
+  --page-bg: #f8fafc;
+  --page-text: #1e293b;
+  --card-bg: #ffffff;
+  --card-border: #e2e8f0;
+  --heading-color: #0f172a;
 }
 
-body{
-  min-height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  background:#f5f5f5;
-  font-family:Arial, sans-serif;
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ease-tooltip-bg: var(--ease-color-neutral-100, #f1f5f9);
+    --ease-tooltip-color: var(--ease-color-neutral-900, #0f172a);
+    --page-bg: #0f172a;
+    --page-text: #cbd5e1;
+    --card-bg: #1e293b;
+    --card-border: #334155;
+    --heading-color: #ffffff;
+  }
 }
 
-.container{
-  display:flex;
-  gap:20px;
-  flex-wrap:wrap;
+/* Base Body Styles for Showcase */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--ease-font-sans, 'Inter', system-ui, -apple-system, sans-serif);
+  background-color: var(--page-bg);
+  color: var(--page-text);
+  min-height: 100vh;
 }
 
-.ease-tooltip{
-  position:relative;
-  padding:12px 24px;
-  border:none;
-  background:#2563eb;
-  color:#fff;
-  border-radius:6px;
-  cursor:pointer;
-  font-size:16px;
+/* ==========================================================================
+   Core Tooltip Classes
+   ========================================================================== */
+
+/* Parent element for tooltips */
+.ease-tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
 }
 
-.ease-tooltip::after{
-  content:attr(data-tooltip);
-  position:absolute;
-  background:#222;
-  color:#fff;
-  padding:8px 12px;
-  border-radius:4px;
-  white-space:nowrap;
-  opacity:0;
-  visibility:hidden;
-  transition:all 0.3s ease;
+/* Tooltip Container/Box - ::before is used for the box as requested */
+.ease-tooltip::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  background-color: var(--ease-tooltip-bg);
+  color: var(--ease-tooltip-color);
+  font-size: var(--ease-tooltip-font-size);
+  font-weight: 500;
+  padding: var(--ease-tooltip-padding-y) var(--ease-tooltip-padding-x);
+  border-radius: var(--ease-tooltip-radius);
+  white-space: nowrap;
+  z-index: var(--ease-tooltip-z-index);
+  pointer-events: none;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  opacity: 0;
+  visibility: hidden;
+  transition: 
+    opacity var(--ease-tooltip-transition-speed) cubic-bezier(0.4, 0, 0.2, 1),
+    visibility var(--ease-tooltip-transition-speed) cubic-bezier(0.4, 0, 0.2, 1),
+    transform var(--ease-tooltip-transition-speed) cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Top */
-.ease-tooltip::after{
-  bottom:120%;
-  left:50%;
-  transform:translateX(-50%) translateY(10px);
+/* Tooltip Arrow - ::after is used for the arrow as requested */
+.ease-tooltip::after {
+  content: "";
+  position: absolute;
+  border-width: var(--ease-tooltip-arrow-size);
+  border-style: solid;
+  border-color: transparent;
+  z-index: var(--ease-tooltip-z-index);
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: 
+    opacity var(--ease-tooltip-transition-speed) cubic-bezier(0.4, 0, 0.2, 1),
+    visibility var(--ease-tooltip-transition-speed) cubic-bezier(0.4, 0, 0.2, 1),
+    transform var(--ease-tooltip-transition-speed) cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.ease-tooltip:hover::after{
-  opacity:1;
-  visibility:visible;
-  transform:translateX(-50%) translateY(0);
+/* Show States */
+.ease-tooltip:hover::before,
+.ease-tooltip:focus-within::before,
+.ease-tooltip:focus-visible::before,
+.ease-tooltip.is-active::before {
+  opacity: 1;
+  visibility: visible;
 }
 
-/* Bottom */
-.ease-tooltip-bottom::after{
-  top:120%;
-  left:50%;
-  transform:translateX(-50%) translateY(-10px);
+.ease-tooltip:hover::after,
+.ease-tooltip:focus-within::after,
+.ease-tooltip:focus-visible::after,
+.ease-tooltip.is-active::after {
+  opacity: 1;
+  visibility: visible;
 }
 
-.ease-tooltip-bottom:hover::after{
-  opacity:1;
-  visibility:visible;
-  transform:translateX(-50%) translateY(0);
+/* ==========================================================================
+   Position Variants
+   ========================================================================== */
+
+/* 1. TOP TOOLTIP (Default) */
+.ease-tooltip-top::before,
+.ease-tooltip:not([class*="ease-tooltip-"])::before {
+  bottom: calc(100% + var(--ease-tooltip-offset));
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
 }
 
-/* Left */
-.ease-tooltip-left::after{
-  right:120%;
-  top:50%;
-  transform:translateY(-50%) translateX(10px);
+.ease-tooltip-top::after,
+.ease-tooltip:not([class*="ease-tooltip-"])::after {
+  bottom: calc(100% + var(--ease-tooltip-offset) - (var(--ease-tooltip-arrow-size) * 2));
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  border-top-color: var(--ease-tooltip-bg);
 }
 
-.ease-tooltip-left:hover::after{
-  opacity:1;
-  visibility:visible;
-  transform:translateY(-50%) translateX(0);
+/* TOP TOOLTIP Active States */
+.ease-tooltip-top:hover::before,
+.ease-tooltip-top:focus-within::before,
+.ease-tooltip-top:focus-visible::before,
+.ease-tooltip-top.is-active::before,
+.ease-tooltip:not([class*="ease-tooltip-"]):hover::before,
+.ease-tooltip:not([class*="ease-tooltip-"]):focus-within::before,
+.ease-tooltip:not([class*="ease-tooltip-"]):focus-visible::before,
+.ease-tooltip:not([class*="ease-tooltip-"]).is-active::before {
+  transform: translateX(-50%) translateY(0);
 }
 
-/* Right */
-.ease-tooltip-right::after{
-  left:120%;
-  top:50%;
-  transform:translateY(-50%) translateX(-10px);
+.ease-tooltip-top:hover::after,
+.ease-tooltip-top:focus-within::after,
+.ease-tooltip-top:focus-visible::after,
+.ease-tooltip-top.is-active::after,
+.ease-tooltip:not([class*="ease-tooltip-"]):hover::after,
+.ease-tooltip:not([class*="ease-tooltip-"]):focus-within::after,
+.ease-tooltip:not([class*="ease-tooltip-"]):focus-visible::after,
+.ease-tooltip:not([class*="ease-tooltip-"]).is-active::after {
+  transform: translateX(-50%) translateY(0);
 }
 
-.ease-tooltip-right:hover::after{
-  opacity:1;
-  visibility:visible;
-  transform:translateY(-50%) translateX(0);
+
+/* 2. BOTTOM TOOLTIP */
+.ease-tooltip-bottom::before {
+  top: calc(100% + var(--ease-tooltip-offset));
+  left: 50%;
+  transform: translateX(-50%) translateY(-4px);
+}
+
+.ease-tooltip-bottom::after {
+  top: calc(100% + var(--ease-tooltip-offset) - (var(--ease-tooltip-arrow-size) * 2));
+  left: 50%;
+  transform: translateX(-50%) translateY(-4px);
+  border-bottom-color: var(--ease-tooltip-bg);
+}
+
+/* BOTTOM TOOLTIP Active States */
+.ease-tooltip-bottom:hover::before,
+.ease-tooltip-bottom:focus-within::before,
+.ease-tooltip-bottom:focus-visible::before,
+.ease-tooltip-bottom.is-active::before {
+  transform: translateX(-50%) translateY(0);
+}
+
+.ease-tooltip-bottom:hover::after,
+.ease-tooltip-bottom:focus-within::after,
+.ease-tooltip-bottom:focus-visible::after,
+.ease-tooltip-bottom.is-active::after {
+  transform: translateX(-50%) translateY(0);
+}
+
+
+/* 3. LEFT TOOLTIP */
+.ease-tooltip-left::before {
+  right: calc(100% + var(--ease-tooltip-offset));
+  top: 50%;
+  transform: translateY(-50%) translateX(4px);
+}
+
+.ease-tooltip-left::after {
+  right: calc(100% + var(--ease-tooltip-offset) - (var(--ease-tooltip-arrow-size) * 2));
+  top: 50%;
+  transform: translateY(-50%) translateX(4px);
+  border-left-color: var(--ease-tooltip-bg);
+}
+
+/* LEFT TOOLTIP Active States */
+.ease-tooltip-left:hover::before,
+.ease-tooltip-left:focus-within::before,
+.ease-tooltip-left:focus-visible::before,
+.ease-tooltip-left.is-active::before {
+  transform: translateY(-50%) translateX(0);
+}
+
+.ease-tooltip-left:hover::after,
+.ease-tooltip-left:focus-within::after,
+.ease-tooltip-left:focus-visible::after,
+.ease-tooltip-left.is-active::after {
+  transform: translateY(-50%) translateX(0);
+}
+
+
+/* 4. RIGHT TOOLTIP */
+.ease-tooltip-right::before {
+  left: calc(100% + var(--ease-tooltip-offset));
+  top: 50%;
+  transform: translateY(-50%) translateX(-4px);
+}
+
+.ease-tooltip-right::after {
+  left: calc(100% + var(--ease-tooltip-offset) - (var(--ease-tooltip-arrow-size) * 2));
+  top: 50%;
+  transform: translateY(-50%) translateX(-4px);
+  border-right-color: var(--ease-tooltip-bg);
+}
+
+/* RIGHT TOOLTIP Active States */
+.ease-tooltip-right:hover::before,
+.ease-tooltip-right:focus-within::before,
+.ease-tooltip-right:focus-visible::before,
+.ease-tooltip-right.is-active::before {
+  transform: translateY(-50%) translateX(0);
+}
+
+.ease-tooltip-right:hover::after,
+.ease-tooltip-right:focus-within::after,
+.ease-tooltip-right:focus-visible::after,
+.ease-tooltip-right.is-active::after {
+  transform: translateY(-50%) translateX(0);
+}
+
+/* ==========================================================================
+   Color Theme Variants
+   ========================================================================== */
+
+/* Primary Theme */
+.ease-tooltip-primary::before {
+  background-color: var(--ease-tooltip-primary-bg);
+  color: #ffffff;
+}
+.ease-tooltip-primary.ease-tooltip-top::after,
+.ease-tooltip-primary:not([class*="ease-tooltip-"])::after {
+  border-top-color: var(--ease-tooltip-primary-bg);
+}
+.ease-tooltip-primary.ease-tooltip-bottom::after {
+  border-bottom-color: var(--ease-tooltip-primary-bg);
+}
+.ease-tooltip-primary.ease-tooltip-left::after {
+  border-left-color: var(--ease-tooltip-primary-bg);
+}
+.ease-tooltip-primary.ease-tooltip-right::after {
+  border-right-color: var(--ease-tooltip-primary-bg);
+}
+
+/* Success Theme */
+.ease-tooltip-success::before {
+  background-color: var(--ease-tooltip-success-bg);
+  color: #ffffff;
+}
+.ease-tooltip-success.ease-tooltip-top::after,
+.ease-tooltip-success:not([class*="ease-tooltip-"])::after {
+  border-top-color: var(--ease-tooltip-success-bg);
+}
+.ease-tooltip-success.ease-tooltip-bottom::after {
+  border-bottom-color: var(--ease-tooltip-success-bg);
+}
+.ease-tooltip-success.ease-tooltip-left::after {
+  border-left-color: var(--ease-tooltip-success-bg);
+}
+.ease-tooltip-success.ease-tooltip-right::after {
+  border-right-color: var(--ease-tooltip-success-bg);
+}
+
+/* Danger Theme */
+.ease-tooltip-danger::before {
+  background-color: var(--ease-tooltip-danger-bg);
+  color: #ffffff;
+}
+.ease-tooltip-danger.ease-tooltip-top::after,
+.ease-tooltip-danger:not([class*="ease-tooltip-"])::after {
+  border-top-color: var(--ease-tooltip-danger-bg);
+}
+.ease-tooltip-danger.ease-tooltip-bottom::after {
+  border-bottom-color: var(--ease-tooltip-danger-bg);
+}
+.ease-tooltip-danger.ease-tooltip-left::after {
+  border-left-color: var(--ease-tooltip-danger-bg);
+}
+.ease-tooltip-danger.ease-tooltip-right::after {
+  border-right-color: var(--ease-tooltip-danger-bg);
+}
+
+/* Warning Theme */
+.ease-tooltip-warning::before {
+  background-color: var(--ease-tooltip-warning-bg);
+  color: #ffffff;
+}
+.ease-tooltip-warning.ease-tooltip-top::after,
+.ease-tooltip-warning:not([class*="ease-tooltip-"])::after {
+  border-top-color: var(--ease-tooltip-warning-bg);
+}
+.ease-tooltip-warning.ease-tooltip-bottom::after {
+  border-bottom-color: var(--ease-tooltip-warning-bg);
+}
+.ease-tooltip-warning.ease-tooltip-left::after {
+  border-left-color: var(--ease-tooltip-warning-bg);
+}
+.ease-tooltip-warning.ease-tooltip-right::after {
+  border-right-color: var(--ease-tooltip-warning-bg);
+}
+
+/* Info Theme */
+.ease-tooltip-info::before {
+  background-color: var(--ease-tooltip-info-bg);
+  color: #ffffff;
+}
+.ease-tooltip-info.ease-tooltip-top::after,
+.ease-tooltip-info:not([class*="ease-tooltip-"])::after {
+  border-top-color: var(--ease-tooltip-info-bg);
+}
+.ease-tooltip-info.ease-tooltip-bottom::after {
+  border-bottom-color: var(--ease-tooltip-info-bg);
+}
+.ease-tooltip-info.ease-tooltip-left::after {
+  border-left-color: var(--ease-tooltip-info-bg);
+}
+.ease-tooltip-info.ease-tooltip-right::after {
+  border-right-color: var(--ease-tooltip-info-bg);
+}
+
+/* ==========================================================================
+   Size/Width Variations
+   ========================================================================== */
+
+/* Multi-line & wide variants */
+.ease-tooltip-multiline::before {
+  white-space: normal;
+  width: max-content;
+  max-width: 200px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.ease-tooltip-wide::before {
+  white-space: normal;
+  width: max-content;
+  max-width: 320px;
+  line-height: 1.4;
+  text-align: left;
+}
+
+/* ==========================================================================
+   Reduced Motion
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .ease-tooltip::before,
+  .ease-tooltip::after {
+    transition: none;
+    transform: translate(-50%, 0) !important;
+  }
+  
+  .ease-tooltip-left::before,
+  .ease-tooltip-left::after,
+  .ease-tooltip-right::before,
+  .ease-tooltip-right::after {
+    transform: translateY(-50%) !important;
+  }
+}
+
+/* ==========================================================================
+   Showcase Dashboard Layout & Styling
+   ========================================================================== */
+
+.showcase-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+}
+
+.header-section {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.header-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  color: var(--heading-color);
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, var(--ease-tooltip-primary-bg), var(--ease-tooltip-info-bg));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.header-subtitle {
+  font-size: 1.125rem;
+  color: var(--ease-color-neutral-500, #64748b);
+}
+
+.showcase-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .showcase-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .full-width-card {
+    grid-column: span 2;
+  }
+}
+
+.showcase-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--ease-radius-xl, 0.75rem);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  padding: 2rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.showcase-card:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--heading-color);
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.card-desc {
+  font-size: 0.875rem;
+  color: var(--ease-color-neutral-500, #64748b);
+  margin-bottom: 1.75rem;
+}
+
+.card-demo-area {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  min-height: 120px;
+  background: rgba(100, 116, 139, 0.04);
+  border-radius: var(--ease-radius-lg, 0.5rem);
+  padding: 1.5rem;
+}
+
+/* Styled trigger elements for demo */
+.demo-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: var(--ease-radius-lg, 0.5rem);
+  border: 1px solid var(--card-border);
+  background-color: var(--card-bg);
+  color: var(--heading-color);
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.demo-btn:focus-visible {
+  outline: 2px solid var(--ease-tooltip-primary-bg);
+  outline-offset: 2px;
+}
+
+.demo-btn:hover {
+  background-color: var(--ease-color-neutral-100, #f1f5f9);
+  border-color: var(--ease-color-neutral-300, #cbd5e1);
+}
+
+@media (prefers-color-scheme: dark) {
+  .demo-btn:hover {
+    background-color: #334155;
+    border-color: #475569;
+  }
+}
+
+.demo-btn-primary {
+  background-color: var(--ease-tooltip-primary-bg);
+  border-color: var(--ease-tooltip-primary-bg);
+  color: #ffffff;
+}
+
+.demo-btn-primary:hover {
+  background-color: #4f46e5;
+  border-color: #4f46e5;
+}
+
+.demo-btn-success {
+  background-color: var(--ease-tooltip-success-bg);
+  border-color: var(--ease-tooltip-success-bg);
+  color: #ffffff;
+}
+.demo-btn-success:hover {
+  background-color: #059669;
+  border-color: #059669;
+}
+
+.demo-btn-danger {
+  background-color: var(--ease-tooltip-danger-bg);
+  border-color: var(--ease-tooltip-danger-bg);
+  color: #ffffff;
+}
+.demo-btn-danger:hover {
+  background-color: #dc2626;
+  border-color: #dc2626;
+}
+
+.demo-btn-warning {
+  background-color: var(--ease-tooltip-warning-bg);
+  border-color: var(--ease-tooltip-warning-bg);
+  color: #ffffff;
+}
+.demo-btn-warning:hover {
+  background-color: #d97706;
+  border-color: #d97706;
+}
+
+.demo-btn-info {
+  background-color: var(--ease-tooltip-info-bg);
+  border-color: var(--ease-tooltip-info-bg);
+  color: #ffffff;
+}
+.demo-btn-info:hover {
+  background-color: #2563eb;
+  border-color: #2563eb;
+}
+
+.icon-trigger {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.125rem;
+}
+
+.text-trigger {
+  font-weight: 700;
+  text-decoration: underline dashed var(--ease-tooltip-primary-bg);
+  text-underline-offset: 4px;
 }
