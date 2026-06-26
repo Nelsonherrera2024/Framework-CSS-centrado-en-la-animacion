@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ease Mention Dropdown</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Ease Mention Dropdown</h2>
+
+    <div class="input-wrapper">
+
+        <textarea
+            id="message"
+            placeholder="Type @ to mention someone..."
+            rows="5"
+        ></textarea>
+
+        <div id="mentionBox" class="mention-box">
+
+            <div class="mention-item active" data-name="Vidheendu">
+
+                <div class="avatar">V</div>
+
+                <div class="info">
+                    <strong><span class="highlight">Vi</span>dheendu</strong>
+                    <small>@vidheendu</small>
+                </div>
+
+            </div>
+
+            <div class="mention-item" data-name="Vikas">
+
+                <div class="avatar">V</div>
+
+                <div class="info">
+                    <strong><span class="highlight">Vi</span>kas</strong>
+                    <small>@vikas</small>
+                </div>
+
+            </div>
+
+            <div class="mention-item" data-name="Vivek">
+
+                <div class="avatar">V</div>
+
+                <div class="info">
+                    <strong><span class="highlight">Vi</span>vek</strong>
+                    <small>@vivek</small>
+                </div>
+
+            </div>
+
+            <div class="mention-item" data-name="Vinay">
+
+                <div class="avatar">V</div>
+
+                <div class="info">
+                    <strong><span class="highlight">Vi</span>nay</strong>
+                    <small>@vinay</small>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+const textarea = document.getElementById("message");
+const box = document.getElementById("mentionBox");
+const items = [...document.querySelectorAll(".mention-item")];
+
+let active = 0;
+
+box.style.display = "none";
+
+textarea.addEventListener("input", () => {
+
+    const value = textarea.value;
+    const match = value.match(/@(\w*)$/);
+
+    if (!match) {
+        box.style.display = "none";
+        return;
+    }
+
+    box.style.display = "block";
+
+    const keyword = match[1].toLowerCase();
+
+    items.forEach(item => {
+
+        const username = item.dataset.name.toLowerCase();
+
+        item.style.display =
+            username.includes(keyword)
+            ? "flex"
+            : "none";
+
+    });
+
+});
+
+textarea.addEventListener("keydown", e => {
+
+    const visible = items.filter(
+        i => i.style.display !== "none"
+    );
+
+    if (!visible.length) return;
+
+    if (e.key === "ArrowDown") {
+
+        e.preventDefault();
+
+        visible[active].classList.remove("active");
+
+        active = (active + 1) % visible.length;
+
+        visible[active].classList.add("active");
+
+    }
+
+    if (e.key === "ArrowUp") {
+
+        e.preventDefault();
+
+        visible[active].classList.remove("active");
+
+        active =
+            (active - 1 + visible.length) %
+            visible.length;
+
+        visible[active].classList.add("active");
+
+    }
+
+    if (e.key === "Enter") {
+
+        if (box.style.display === "block") {
+
+            e.preventDefault();
+
+            const name =
+                visible[active].dataset.name;
+
+            textarea.value =
+                textarea.value.replace(
+                    /@\w*$/,
+                    "@" + name + " "
+                );
+
+            box.style.display = "none";
+
+        }
+
+    }
+
+    if (e.key === "Escape") {
+
+        box.style.display = "none";
+
+    }
+
+});
+
+items.forEach(item => {
+
+    item.onclick = () => {
+
+        textarea.value =
+            textarea.value.replace(
+                /@\w*$/,
+                "@" + item.dataset.name + " "
+            );
+
+        box.style.display = "none";
+
+        textarea.focus();
+
+    };
+
+});
+
+</script>
+
+</body>
+</html>
