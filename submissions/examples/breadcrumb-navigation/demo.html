@@ -1,22 +1,253 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Breadcrumb Navigation with Chevrons</title>
-  <link rel="stylesheet" href="../../easemotion.css">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EaseMotion CSS — Breadcrumb Navigation Component Showcase</title>
+  <meta name="description" content="Interactive demo showcasing the EaseMotion CSS breadcrumb component styling variants, separators, and mobile responsiveness." />
+  
+  <!-- EaseMotion CSS Core -->
+  <link rel="stylesheet" href="../../../easemotion.min.css" />
+  
+  <!-- Custom Style Modifications -->
+  <link rel="stylesheet" href="style.css" />
+  
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 </head>
-<body>
-  <div class="ease-flex ease-center" style="min-height: 100vh; background: #f8fafc;">
-    <nav aria-label="Breadcrumb">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="#">Home</a></li>
-        <li class="breadcrumb-item"><a href="#">Products</a></li>
-        <li class="breadcrumb-item"><a href="#">Electronics</a></li>
-        <li class="breadcrumb-item active" aria-current="page">Wireless Headphones</li>
-      </ol>
-    </nav>
+<body class="ease-fade-in">
+
+  <div class="showcase-container">
+    <!-- Header -->
+    <div class="ease-flex ease-justify-between ease-items-center ease-mb-8">
+      <div>
+        <span class="ease-badge ease-badge-info ease-uppercase ease-font-bold">Navigation Component</span>
+        <h1 style="margin: var(--ease-space-2) 0 0; font-weight: 800; font-size: 2rem; color: var(--heading-color);">Breadcrumb Navigation</h1>
+      </div>
+      <span class="ease-badge ease-badge-warning ease-font-bold">GSSoC-2026</span>
+    </div>
+
+    <p class="ease-text-muted ease-mb-8" style="line-height: 1.6;">
+      Breadcrumbs provide secondary navigation, helping users identify their current location in a site hierarchy. This showcase demonstrates the core `.ease-breadcrumb` styling, sizing variations, custom separator properties, and mobile collapsing.
+    </p>
+
+    <!-- Section 1: Sizing Variants -->
+    <div class="ease-card ease-card-outlined ease-mb-6">
+      <div class="ease-card-header">
+        <h3 style="margin: 0; font-weight: 700; color: var(--heading-color);">1. Sizing Variants</h3>
+        <span class="ease-text-muted ease-text-xs">Adjusting breadcrumbs to different typography levels</span>
+      </div>
+      <div class="ease-card-body ease-stack-lg">
+        
+        <!-- Small size -->
+        <div>
+          <span class="ease-text-xs ease-text-muted ease-block ease-mb-2">Small Breadcrumb (<code>.ease-breadcrumb-sm</code>)</span>
+          <nav aria-label="Breadcrumb" class="ease-breadcrumb ease-breadcrumb-sm">
+            <ol class="ease-breadcrumb-list">
+              <li class="ease-breadcrumb-item">
+                <a href="#" class="ease-breadcrumb-link animated-link">Home</a>
+              </li>
+              <li class="ease-breadcrumb-separator" aria-hidden="true">/</li>
+              <li class="ease-breadcrumb-item">
+                <a href="#" class="ease-breadcrumb-link animated-link">Documents</a>
+              </li>
+              <li class="ease-breadcrumb-separator" aria-hidden="true">/</li>
+              <li class="ease-breadcrumb-item">
+                <span class="ease-breadcrumb-active">Reports</span>
+              </li>
+            </ol>
+          </nav>
+        </div>
+
+        <!-- Medium size -->
+        <div>
+          <span class="ease-text-xs ease-text-muted ease-block ease-mb-2">Medium / Standard Breadcrumb (Default)</span>
+          <nav aria-label="Breadcrumb" class="ease-breadcrumb">
+            <ol class="ease-breadcrumb-list">
+              <li class="ease-breadcrumb-item">
+                <a href="#" class="ease-breadcrumb-link animated-link">Home</a>
+              </li>
+              <li class="ease-breadcrumb-separator" aria-hidden="true">/</li>
+              <li class="ease-breadcrumb-item">
+                <a href="#" class="ease-breadcrumb-link animated-link">Documents</a>
+              </li>
+              <li class="ease-breadcrumb-separator" aria-hidden="true">/</li>
+              <li class="ease-breadcrumb-item">
+                <span class="ease-breadcrumb-active">Reports</span>
+              </li>
+            </ol>
+          </nav>
+        </div>
+
+        <!-- Large size -->
+        <div>
+          <span class="ease-text-xs ease-text-muted ease-block ease-mb-2">Large Breadcrumb (<code>.ease-breadcrumb-lg</code>)</span>
+          <nav aria-label="Breadcrumb" class="ease-breadcrumb ease-breadcrumb-lg">
+            <ol class="ease-breadcrumb-list">
+              <li class="ease-breadcrumb-item">
+                <a href="#" class="ease-breadcrumb-link animated-link">Home</a>
+              </li>
+              <li class="ease-breadcrumb-separator" aria-hidden="true">/</li>
+              <li class="ease-breadcrumb-item">
+                <a href="#" class="ease-breadcrumb-link animated-link">Documents</a>
+              </li>
+              <li class="ease-breadcrumb-separator" aria-hidden="true">/</li>
+              <li class="ease-breadcrumb-item">
+                <span class="ease-breadcrumb-active">Reports</span>
+              </li>
+            </ol>
+          </nav>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Section 2: Custom Separator Configurator -->
+    <div class="ease-card ease-card-outlined ease-mb-6">
+      <div class="ease-card-header">
+        <h3 style="margin: 0; font-weight: 700; color: var(--heading-color);">2. Custom Separator Configurations</h3>
+        <span class="ease-text-muted ease-text-xs">Tailoring separators using HTML variables or CSS styling rules</span>
+      </div>
+      <div class="ease-card-body ease-stack-lg">
+        
+        <!-- Arrow Separator -->
+        <div>
+          <span class="ease-text-xs ease-text-muted ease-block ease-mb-2">Arrow Separator</span>
+          <nav aria-label="Breadcrumb" class="ease-breadcrumb">
+            <ol class="ease-breadcrumb-list">
+              <li class="ease-breadcrumb-item">
+                <a href="#" class="ease-breadcrumb-link animated-link">Home</a>
+              </li>
+              <li class="ease-breadcrumb-separator" aria-hidden="true">→</li>
+              <li class="ease-breadcrumb-item">
+                <a href="#" class="ease-breadcrumb-link animated-link">Documents</a>
+              </li>
+              <li class="ease-breadcrumb-separator" aria-hidden="true">→</li>
+              <li class="ease-breadcrumb-item">
+                <span class="ease-breadcrumb-active">Reports</span>
+              </li>
+            </ol>
+          </nav>
+        </div>
+
+        <!-- Double Chevron Separator -->
+        <div>
+          <span class="ease-text-xs ease-text-muted ease-block ease-mb-2">Double Chevron Separator</span>
+          <nav aria-label="Breadcrumb" class="ease-breadcrumb">
+            <ol class="ease-breadcrumb-list">
+              <li class="ease-breadcrumb-item">
+                <a href="#" class="ease-breadcrumb-link animated-link">Home</a>
+              </li>
+              <li class="ease-breadcrumb-separator" aria-hidden="true">»</li>
+              <li class="ease-breadcrumb-item">
+                <a href="#" class="ease-breadcrumb-link animated-link">Documents</a>
+              </li>
+              <li class="ease-breadcrumb-separator" aria-hidden="true">»</li>
+              <li class="ease-breadcrumb-item">
+                <span class="ease-breadcrumb-active">Reports</span>
+              </li>
+            </ol>
+          </nav>
+        </div>
+
+        <!-- Dot Separator -->
+        <div>
+          <span class="ease-text-xs ease-text-muted ease-block ease-mb-2">Dot Separator</span>
+          <nav aria-label="Breadcrumb" class="ease-breadcrumb">
+            <ol class="ease-breadcrumb-list">
+              <li class="ease-breadcrumb-item">
+                <a href="#" class="ease-breadcrumb-link animated-link">Home</a>
+              </li>
+              <li class="ease-breadcrumb-separator" aria-hidden="true">•</li>
+              <li class="ease-breadcrumb-item">
+                <a href="#" class="ease-breadcrumb-link animated-link">Documents</a>
+              </li>
+              <li class="ease-breadcrumb-separator" aria-hidden="true">•</li>
+              <li class="ease-breadcrumb-item">
+                <span class="ease-breadcrumb-active">Reports</span>
+              </li>
+            </ol>
+          </nav>
+        </div>
+
+        <!-- Live interactive selector -->
+        <div class="ease-card ease-card-flat ease-padding-4 ease-mt-4" style="border-radius: var(--ease-radius-md);">
+          <span class="ease-font-bold ease-text-sm ease-block ease-mb-4" style="color: var(--heading-color);">Interactive Configurator</span>
+          <p class="ease-text-xs ease-text-muted ease-mb-4">Click to dynamically change the separator characters in the breadcrumb path below:</p>
+          
+          <div class="ease-flex ease-flex-wrap ease-gap-2 ease-mb-6">
+            <button class="ease-btn ease-btn-outline ease-btn-sm ease-btn-hover" onclick="updateSeparator('/')">Slash ( / )</button>
+            <button class="ease-btn ease-btn-outline ease-btn-sm ease-btn-hover" onclick="updateSeparator('→')">Arrow ( → )</button>
+            <button class="ease-btn ease-btn-outline ease-btn-sm ease-btn-hover" onclick="updateSeparator('»')">Chevron ( » )</button>
+            <button class="ease-btn ease-btn-outline ease-btn-sm ease-btn-hover" onclick="updateSeparator('•')">Bullet ( • )</button>
+          </div>
+
+          <nav aria-label="Breadcrumb" class="ease-breadcrumb">
+            <ol class="ease-breadcrumb-list">
+              <li class="ease-breadcrumb-item">
+                <a href="#" class="ease-breadcrumb-link animated-link">Dojo</a>
+              </li>
+              <li class="ease-breadcrumb-separator interactive-sep" aria-hidden="true">/</li>
+              <li class="ease-breadcrumb-item">
+                <a href="#" class="ease-breadcrumb-link animated-link">Intermediate Belts</a>
+              </li>
+              <li class="ease-breadcrumb-separator interactive-sep" aria-hidden="true">/</li>
+              <li class="ease-breadcrumb-item">
+                <span class="ease-breadcrumb-active">Black Belt</span>
+              </li>
+            </ol>
+          </nav>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Section 3: Collapsible Responsiveness -->
+    <div class="ease-card ease-card-outlined">
+      <div class="ease-card-header">
+        <h3 style="margin: 0; font-weight: 700; color: var(--heading-color);">3. Mobile Collapsible Responsiveness</h3>
+        <span class="ease-text-muted ease-text-xs">Collapses deep path links to prevent text wrap errors on mobile</span>
+      </div>
+      <div class="ease-card-body">
+        
+        <p class="ease-text-xs ease-text-muted ease-mb-4">
+          Resizing your viewport below <code>640px</code> will trigger the collapsible rule, hiding intermediate directories and replacing them with a cleaner ellipsis:
+        </p>
+
+        <nav aria-label="Breadcrumb" class="ease-breadcrumb collapsible-breadcrumb">
+          <ol class="ease-breadcrumb-list">
+            <li class="ease-breadcrumb-item">
+              <a href="#" class="ease-breadcrumb-link animated-link">Enterprise Project</a>
+            </li>
+            <li class="ease-breadcrumb-separator" aria-hidden="true">/</li>
+            <li class="ease-breadcrumb-item">
+              <a href="#" class="ease-breadcrumb-link animated-link">Submissions</a>
+            </li>
+            <li class="ease-breadcrumb-separator" aria-hidden="true">/</li>
+            <li class="ease-breadcrumb-item">
+              <a href="#" class="ease-breadcrumb-link animated-link">Examples</a>
+            </li>
+            <li class="ease-breadcrumb-separator" aria-hidden="true">/</li>
+            <li class="ease-breadcrumb-item">
+              <span class="ease-breadcrumb-active">Breadcrumb Showcase</span>
+            </li>
+          </ol>
+        </nav>
+
+      </div>
+    </div>
+
   </div>
+
+  <script>
+    function updateSeparator(char) {
+      const seps = document.querySelectorAll('.interactive-sep');
+      seps.forEach(sep => {
+        sep.textContent = char;
+      });
+    }
+  </script>
 </body>
 </html>
