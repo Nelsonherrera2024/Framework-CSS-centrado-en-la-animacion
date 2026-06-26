@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0f172a;
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.media-preview {
+    width: min(420px, 100%);
+    background: #111827;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid #334155;
+    box-shadow: 0 14px 35px rgba(0,0,0,.45);
+}
+
+.thumbnail {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.thumbnail img {
+    width: 100%;
+    display: block;
+    transition: transform .4s ease;
+}
+
+.thumbnail:hover img {
+    transform: scale(1.08);
+}
+
+/* Play Overlay */
+
+.play-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    color: white;
+    background: rgba(0,0,0,.35);
+    opacity: 0;
+    transform: scale(.7);
+    transition: opacity .3s ease, transform .3s ease;
+}
+
+.thumbnail:hover .play-overlay {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Duration Badge */
+
+.duration {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+    background: rgba(0,0,0,.8);
+    color: white;
+    font-size: .8rem;
+    padding: .35rem .6rem;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+/* Info */
+
+.media-info {
+    padding: 1.25rem;
+}
+
+.media-info h3 {
+    color: #f8fafc;
+    margin-bottom: .5rem;
+    font-size: 1.1rem;
+}
+
+.media-info p {
+    color: #94a3b8;
+    line-height: 1.6;
+    font-size: .95rem;
+}
+
+/* Animation */
+
+.ease-scale-in {
+    animation: ease-scale-in .3s ease;
+}
+
+@keyframes ease-scale-in {
+
+    from {
+        opacity: 0;
+        transform: scale(.7);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+/* Responsive */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 1rem;
+    }
+
+    .media-info {
+        padding: 1rem;
+    }
+
+    .play-overlay {
+        font-size: 2.5rem;
+    }
+
+}
