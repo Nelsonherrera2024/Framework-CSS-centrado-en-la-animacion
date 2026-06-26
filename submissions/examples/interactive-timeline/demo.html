@@ -1,73 +1,164 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Interactive Timeline</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="tl-wrapper">
+      <header class="tl-header">
+        <h1 class="tl-title">Project Milestones</h1>
+        <p class="tl-subtitle">
+          Track key events and achievements throughout the development lifecycle
+        </p>
+      </header>
+      <div class="tl-container">
+        <div class="tl-line"></div>
+        <article class="tl-entry tl-left">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-card-inner">
+              <time class="tl-date">Q1 2026</time>
+              <h2 class="tl-heading">Project Kickoff</h2>
+              <p class="tl-text">
+                Initial planning session with stakeholders. Defined project
+                scope, key deliverables, and established the development roadmap
+                for the coming quarters.
+              </p>
+              <div class="tl-tags">
+                <span class="tl-tag">Planning</span>
+                <span class="tl-tag">Research</span>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="tl-entry tl-right">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-card-inner">
+              <time class="tl-date">Q2 2026</time>
+              <h2 class="tl-heading">Design System Complete</h2>
+              <p class="tl-text">
+                Finalized the component library with 50+ reusable UI components.
+                Established design tokens for colors, typography, and spacing.
+                Completed accessibility audit.
+              </p>
+              <div class="tl-tags">
+                <span class="tl-tag">Design</span>
+                <span class="tl-tag">Components</span>
+                <span class="tl-tag">A11y</span>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="tl-entry tl-left">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-card-inner">
+              <time class="tl-date">Q3 2026</time>
+              <h2 class="tl-heading">Alpha Release v0.1</h2>
+              <p class="tl-text">
+                First internal release with core functionality. Implemented
+                authentication, data layer, and basic CRUD operations. Team demo
+                received positive feedback.
+              </p>
+              <div class="tl-tags">
+                <span class="tl-tag">Development</span>
+                <span class="tl-tag">Testing</span>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="tl-entry tl-right">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-card-inner">
+              <time class="tl-date">Q4 2026</time>
+              <h2 class="tl-heading">Beta Launch & User Testing</h2>
+              <p class="tl-text">
+                Opened beta to 500 users. Collected 200+ feedback submissions.
+                Identified and resolved 45 bugs. Performance optimization
+                reduced page load time by 40%.
+              </p>
+              <div class="tl-tags">
+                <span class="tl-tag">Beta</span>
+                <span class="tl-tag">Performance</span>
+                <span class="tl-tag">QA</span>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="tl-entry tl-left">
+          <div class="tl-dot"></div>
+          <div class="tl-card">
+            <div class="tl-card-inner">
+              <time class="tl-date">Q1 2027</time>
+              <h2 class="tl-heading">Feature Expansion</h2>
+              <p class="tl-text">
+                Added advanced analytics dashboard, real-time collaboration
+                features, and integrated third-party APIs. Expanded test
+                coverage to 85%.
+              </p>
+              <div class="tl-tags">
+                <span class="tl-tag">Features</span>
+                <span class="tl-tag">Integration</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      <article class="tl-entry tl-right">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-card-inner">
+            <time class="tl-date">Q2 2027</time>
+            <h2 class="tl-heading">Public Launch v1.0</h2>
+            <p class="tl-text">General availability release. Press coverage from 12 publications. 10,000 signups in the first week. Infrastructure scaled to handle 100k concurrent users.</p>
+            <div class="tl-tags">
+              <span class="tl-tag">Launch</span>
+              <span class="tl-tag">Infrastructure</span>
+              <span class="tl-tag">Growth</span>
+            </div>
+          </div>
+        </div>
+      </article>
 
-<section class="timeline-section">
+      <article class="tl-entry tl-left">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-card-inner">
+            <time class="tl-date">Q3 2027</time>
+            <h2 class="tl-heading">Enterprise Tier Launch</h2>
+            <p class="tl-text">Released enterprise plan with SSO, dedicated support, custom SLAs. Onboarded 15 enterprise customers including Fortune 500 companies within the first month.</p>
+            <div class="tl-tags">
+              <span class="tl-tag">Enterprise</span>
+              <span class="tl-tag">Sales</span>
+            </div>
+          </div>
+        </div>
+      </article>
 
-    <div class="heading">
-        <h1>Project Roadmap Timeline</h1>
-        <p>Track important milestones and achievements.</p>
+      <article class="tl-entry tl-right">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-card-inner">
+            <time class="tl-date">Q4 2027</time>
+            <h2 class="tl-heading">Mobile App & API v2</h2>
+            <p class="tl-text">Launched native iOS and Android apps with 4.8 star ratings. Released REST API v2 with GraphQL support. Open-sourced core SDK under MIT license.</p>
+            <div class="tl-tags">
+              <span class="tl-tag">Mobile</span>
+              <span class="tl-tag">API</span>
+              <span class="tl-tag">Open Source</span>
+            </div>
+          </div>
+        </div>
+      </article>
     </div>
-
-    <div class="timeline">
-
-        <div class="timeline-item left">
-            <div class="content">
-                <span class="date">Jan 2026</span>
-                <h3>Project Planning</h3>
-                <p>Requirement gathering, research, roadmap creation and architecture discussions.</p>
             </div>
-        </div>
-
-        <div class="timeline-item right">
-            <div class="content">
-                <span class="date">Feb 2026</span>
-                <h3>UI Design</h3>
-                <p>Wireframes, design system, color palette and user experience planning.</p>
-            </div>
-        </div>
-
-        <div class="timeline-item left">
-            <div class="content">
-                <span class="date">Mar 2026</span>
-                <h3>Frontend Development</h3>
-                <p>Responsive layouts, reusable components and interactive pages.</p>
-            </div>
-        </div>
-
-        <div class="timeline-item right">
-            <div class="content">
-                <span class="date">Apr 2026</span>
-                <h3>Backend Integration</h3>
-                <p>API integration, authentication, database setup and optimization.</p>
-            </div>
-        </div>
-
-        <div class="timeline-item left">
-            <div class="content">
-                <span class="date">May 2026</span>
-                <h3>Testing Phase</h3>
-                <p>Unit testing, bug fixing, performance improvements and QA.</p>
-            </div>
-        </div>
-
-        <div class="timeline-item right">
-            <div class="content">
-                <span class="date">Jun 2026</span>
-                <h3>Final Launch</h3>
-                <p>Deployment, monitoring, documentation and public release.</p>
-            </div>
-        </div>
-
+          </div>
+        </article>
+      </div>
     </div>
-
-</section>
-
-</body>
+  </body>
 </html>

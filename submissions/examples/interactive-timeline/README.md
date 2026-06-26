@@ -1,54 +1,14 @@
 # Interactive Timeline Component
 
-A modern responsive timeline component built using pure HTML and CSS.
+An alternating vertical timeline with animated entry cards, hover effects, and responsive mobile layout. Built with pure CSS.
 
-## Features
+### GSSoC 2026 Contribution
 
-- Vertical timeline layout
-- Animated milestone cards
-- Date indicators
-- Hover animations
-- Responsive design
-- Pure HTML and CSS
-- Smooth transitions
-- Modern roadmap style UI
+**Features:**
 
-## Folder Structure
-
-```text
-interactive-timeline/
-├── demo.html
-├── style.css
-└── README.md
-```
-
-## Usage
-
-1. Open demo.html in a browser.
-2. Ensure style.css is in the same directory.
-3. Customize milestones, dates and colors.
-
-## Technologies
-
-- HTML5
-- CSS3
-- Flexbox
-- CSS Animations
-- Responsive Design
-
-## Included Milestones
-
-- Project Planning
-- UI Design
-- Frontend Development
-- Backend Integration
-- Testing Phase
-- Final Launch
-
-## Responsive Support
-
-The component automatically converts to a single-column timeline on smaller screens.
-
-## Author
-
-Created for EaseMotion CSS under GSSoC 2026.
+- Alternating left/right card layout with central line
+- Staggered slide-in animations for each entry
+- Hover effects: card lift, dot pulse glow, tag highlight
+- Gradient vertical connector line
+- Responsive single-column mobile layout
+- Date badges, tags, and detailed descriptions per milestone
