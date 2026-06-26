@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Kubernetes Operations Hub</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dark-mode">
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar sticky">
+            <div class="logo">
+                <i class="fas fa-dharmachakra"></i>
+                <span>K8s Ops Hub</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="#" class="nav-item active"><i class="fas fa-home"></i> Dashboard</a>
+                <a href="#" class="nav-item"><i class="fas fa-server"></i> Clusters</a>
+                <a href="#" class="nav-item"><i class="fas fa-cube"></i> Namespaces</a>
+                <a href="#" class="nav-item"><i class="fas fa-layer-group"></i> Workloads</a>
+                <a href="#" class="nav-item"><i class="fas fa-network-wired"></i> Services</a>
+                <a href="#" class="nav-item"><i class="fas fa-hdd"></i> Storage</a>
+                <a href="#" class="nav-item"><i class="fas fa-shield-alt"></i> Security</a>
+                <a href="#" class="nav-item"><i class="fas fa-chart-line"></i> Analytics</a>
+            </nav>
+            <div class="cluster-selector">
+                <label>Active Cluster</label>
+                <select>
+                    <option>prod-eks-01</option>
+                    <option>dev-aks-01</option>
+                    <option>staging-gke-01</option>
+                </select>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search pods, services, nodes...">
+                </div>
+                <div class="top-bar-actions">
+                    <button class="icon-btn"><i class="fas fa-bell"></i><span class="badge">5</span></button>
+                    <button class="icon-btn"><i class="fas fa-terminal"></i></button>
+                    <div class="user-profile">
+                        <div class="avatar"><i class="fas fa-user"></i></div>
+                        <span>DevOps</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Hero Section - KPI Cards -->
+            <section class="hero-section">
+                <div class="kpi-card glass-card">
+                    <div class="kpi-icon cluster-health"><i class="fas fa-heartbeat"></i></div>
+                    <div class="kpi-info">
+                        <span class="kpi-label">Cluster Health</span>
+                        <span class="kpi-value">99.2%</span>
+                        <span class="kpi-trend positive"><i class="fas fa-arrow-up"></i> +0.5%</span>
+                    </div>
+                </div>
+                <div class="kpi-card glass-card">
+                    <div class="kpi-icon pods"><i class="fas fa-circle"></i></div>
+                    <div class="kpi-info">
+                        <span class="kpi-label">Running Pods</span>
+                        <span class="kpi-value">1,847</span>
+                        <span class="kpi-trend positive"><i class="fas fa-arrow-up"></i> +124</span>
+                    </div>
+                </div>
+                <div class="kpi-card glass-card">
+                    <div class="kpi-icon nodes"><i class="fas fa-server"></i></div>
+                    <div class="kpi-info">
+                        <span class="kpi-label">Active Nodes</span>
+                        <span class="kpi-value">48</span>
+                        <span class="kpi-trend neutral"><i class="fas fa-minus"></i> 0</span>
+                    </div>
+                </div>
+                <div class="kpi-card glass-card">
+                    <div class="kpi-icon deployments"><i class="fas fa-rocket"></i></div>
+                    <div class="kpi-info">
+                        <span class="kpi-label">Deployment Success</span>
+                        <span class="kpi-value">98.7%</span>
+                        <span class="kpi-trend positive"><i class="fas fa-arrow-up"></i> +1.2%</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Dashboard Sections Grid -->
+            <section class="dashboard-grid">
+                <!-- Cluster Overview -->
+                <div class="dashboard-card glass-card gradient-border cluster-overview">
+                    <div class="card-header">
+                        <div class="provider-logo k8s"><i class="fas fa-dharmachakra"></i></div>
+                        <h3>Cluster Overview</h3>
+                        <span class="status-badge healthy">Healthy</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="cluster-stats">
+                            <div class="stat-item"><span class="label">Cluster Name</span><span class="value">prod-eks-01</span></div>
+                            <div class="stat-item"><span class="label">Version</span><span class="value">v1.28.2</span></div>
+                            <div class="stat-item"><span class="label">Region</span><span class="value">us-east-1</span></div>
+                            <div class="stat-item"><span class="label">Uptime</span><span class="value">45d 12h</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Node Management -->
+                <div class="dashboard-card glass-card gradient-border node-management">
+                    <div class="card-header">
+                        <h3><i class="fas fa-server"></i> Node Management</h3>
+                        <div class="node-status-summary"><span class="ready">48 Ready</span><span class="not-ready">0 Not Ready</span></div>
+                    </div>
+                    <div class="card-body">
+                        <div class="node-list">
+                            <div class="node-item"><span class="name">node-01</span><span class="cpu">45%</span><span class="mem">62%</span><span class="status ready">Ready</span></div>
+                            <div class="node-item"><span class="name">node-02</span><span class="cpu">78%</span><span class="mem">85%</span><span class="status ready">Ready</span></div>
+                            <div class="node-item"><span class="name">node-master-01</span><span class="cpu">34%</span><span class="mem">48%</span><span class="status ready">Ready</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pod Analytics -->
+                <div class="dashboard-card glass-card gradient-border pod-analytics">
+                    <div class="card-header"><h3><i class="fas fa-chart-pie"></i> Pod Analytics</h3></div>
+                    <div class="card-body chart-container"><canvas id="podAnalyticsChart"></canvas></div>
+                </div>
+
+                <!-- Deployment Monitor -->
+                <div class="dashboard-card glass-card gradient-border deployment-monitor">
+                    <div class="card-header"><h3><i class="fas fa-rocket"></i> Deployment Monitor</h3><span class="current-value">24/day</span></div>
+                    <div class="card-body chart-container"><canvas id="deployMonitorChart"></canvas></div>
+                </div>
+
+                <!-- Namespace Explorer -->
+                <div class="dashboard-card glass-card gradient-border namespace-explorer">
+                    <div class="card-header"><h3><i class="fas fa-folder"></i> Namespace Explorer</h3></div>
+                    <div class="card-body">
+                        <div class="namespace-list">
+                            <div class="namespace-item"><span class="name">production</span><div class="namespace-bar"><div class="fill" style="width: 85%"></div></div><span class="pods">456 pods</span></div>
+                            <div class="namespace-item"><span class="name">staging</span><div class="namespace-bar"><div class="fill" style="width: 45%"></div></div><span class="pods">234 pods</span></div>
+                            <div class="namespace-item"><span class="name">development</span><div class="namespace-bar"><div class="fill" style="width: 62%"></div></div><span class="pods">312 pods</span></div>
+                            <div class="namespace-item"><span class="name">monitoring</span><div class="namespace-bar"><div class="fill" style="width: 28%"></div></div><span class="pods">89 pods</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Container Status -->
+                <div class="dashboard-card glass-card gradient-border container-status">
+                    <div class="card-header"><h3><i class="fas fa-box"></i> Container Status</h3></div>
+                    <div class="card-body">
+                        <div class="container-stats"><div class="stat"><i class="fas fa-check-circle running"></i><span class="count">1,823</span><span class="label">Running</span></div><div class="stat"><i class="fas fa-pause-circle stopped"></i><span class="count">24</span><span class="label">Stopped</span></div></div>
+                    </div>
+                </div>
+
+                <!-- Resource Allocation -->
+                <div class="dashboard-card glass-card gradient-border resource-allocation">
+                    <div class="card-header"><h3><i class="fas fa-sliders-h"></i> Resource Allocation</h3></div>
+                    <div class="card-body">
+                        <div class="resource-grid">
+                            <div class="resource-item"><div class="resource-header"><span>CPU Cores</span><span>32 / 48</span></div><div class="progress-bar"><div class="progress-fill" style="width: 67%"></div></div></div>
+                            <div class="resource-item"><div class="resource-header"><span>Memory</span><span>164 GB / 192 GB</span></div><div class="progress-bar"><div class="progress-fill" style="width: 85%"></div></div></div>
+                            <div class="resource-item"><div class="resource-header"><span>Storage</span><span>2.4 TB / 4 TB</span></div><div class="progress-bar"><div class="progress-fill" style="width: 60%"></div></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Persistent Volumes -->
+                <div class="dashboard-card glass-card gradient-border persistent-volumes">
+                    <div class="card-header"><h3><i class="fas fa-database"></i> Persistent Volumes</h3><span class="pv-count">12 Active</span></div>
+                    <div class="card-body">
+                        <div class="pv-list">
+                            <div class="pv-item"><span class="name">pv-data-01</span><span class="capacity">100Gi</span><span class="status bound">Bound</span></div>
+                            <div class="pv-item"><span class="name">pv-logs-02</span><span class="capacity">50Gi</span><span class="status bound">Bound</span></div>
+                            <div class="pv-item"><span class="name">pv-cache-03</span><span class="capacity">200Gi</span><span class="status available">Available</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Mesh -->
+                <div class="dashboard-card glass-card gradient-border service-mesh">
+                    <div class="card-header"><h3><i class="fas fa-project-diagram"></i> Service Mesh</h3><span class="mesh-status connected">Connected</span></div>
+                    <div class="card-body">
+                        <div class="mesh-stats"><div class="mesh-stat"><i class="fas fa-exchange-alt"></i><span class="value">45.2K</span><span class="label">req/sec</span></div><div class="mesh-stat"><i class="fas fa-clock"></i><span class="value">12ms</span><span class="label">p99 Latency</span></div><div class="mesh-stat"><i class="fas fa-check-circle"></i><span class="value">99.9%</span><span class="label">Success Rate</span></div></div>
+                    </div>
+                </div>
+
+                <!-- Ingress Controller -->
+                <div class="dashboard-card glass-card gradient-border ingress-controller">
+                    <div class="card-header"><h3><i class="fas fa-door-open"></i> Ingress Controller</h3></div>
+                    <div class="card-body">
+                        <div class="ingress-list">
+                            <div class="ingress-item"><span class="name">api-ingress</span><span class="rules">12 rules</span><span class="status healthy">Active</span></div>
+                            <div class="ingress-item"><span class="name">web-ingress</span><span class="rules">8 rules</span><span class="status healthy">Active</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job Scheduler -->
+                <div class="dashboard-card glass-card gradient-border job-scheduler">
+                    <div class="card-header"><h3><i class="fas fa-clock"></i> Job Scheduler</h3></div>
+                    <div class="card-body">
+                        <div class="job-list">
+                            <div class="job-item"><span class="name">backup-daily</span><span class="schedule">0 2 * * *</span><span class="status completed">Completed</span></div>
+                            <div class="job-item"><span class="name">reports-weekly</span><span class="schedule">0 0 * * 0</span><span class="status running">Running</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cluster Events -->
+                <div class="dashboard-card glass-card gradient-border cluster-events">
+                    <div class="card-header"><h3><i class="fas fa-history"></i> Cluster Events</h3><span class="live-indicator"><span class="pulse"></span> Live</span></div>
+                    <div class="card-body">
+                        <div class="event-list">
+                            <div class="event-item"><div class="event-icon normal"><i class="fas fa-check"></i></div><div class="event-content"><span class="message">Pod nginx-deployment-abc123 scaled to 5</span><span class="time">2 min ago</span></div></div>
+                            <div class="event-item"><div class="event-icon warning"><i class="fas fa-exclamation"></i></div><div class="event-content"><span class="message">High memory pressure on node-03</span><span class="time">5 min ago</span></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Security Policies -->
+                <div class="dashboard-card glass-card gradient-border security-policies">
+                    <div class="card-header"><h3><i class="fas fa-shield-alt"></i> Security Policies</h3><span class="policy-status compliant">Compliant</span></div>
+                    <div class="card-body">
+                        <div class="policy-stats">
+                            <div class="policy-item"><i class="fas fa-check-circle"></i><span>Network Policies: 24</span></div>
+                            <div class="policy-item"><i class="fas fa-check-circle"></i><span>Pod Security: Enforced</span></div>
+                            <div class="policy-item warning"><i class="fas fa-exclamation-triangle"></i><span>RBAC: 3 pending reviews</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Helm Releases -->
+                <div class="dashboard-card glass-card gradient-border helm-releases">
+                    <div class="card-header"><h3><i class="fas fa-box-open"></i> Helm Releases</h3><span class="release-count">18 Installed</span></div>
+                    <div class="card-body">
+                        <div class="release-list">
+                            <div class="release-item"><span class="name">nginx-ingress</span><span class="version">v4.7.0</span><span class="status deployed">Deployed</span></div>
+                            <div class="release-item"><span class="name">prometheus</span><span class="version">v25.0.0</span><span class="status deployed">Deployed</span></div>
+                            <div class="release-item"><span class="name">cert-manager</span><span class="version">v1.13.0</span><span class="status deployed">Deployed</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Performance Dashboard -->
+                <div class="dashboard-card glass-card gradient-border performance-dashboard">
+                    <div class="card-header"><h3><i class="fas fa-tachometer-alt"></i> Performance Dashboard</h3></div>
+                    <div class="card-body chart-container"><canvas id="performanceChart"></canvas></div>
+                </div>
+
+                <!-- Incident Monitor -->
+                <div class="dashboard-card glass-card gradient-border incident-monitor">
+                    <div class="card-header"><h3><i class="fas fa-exclamation-circle"></i> Incident Monitor</h3><span class="incident-count critical">2 Critical</span></div>
+                    <div class="card-body">
+                        <div class="incident-list">
+                            <div class="incident-item critical"><i class="fas fa-exclamation-triangle"></i><span>Pod restart loop detected in production</span></div>
+                            <div class="incident-item warning"><i class="fas fa-exclamation-circle"></i><span>Memory threshold exceeded on node-05</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts -->
+                <div class="dashboard-card glass-card gradient-border chart-card">
+                    <div class="card-header"><h3><i class="fas fa-microchip"></i> CPU Usage</h3><span class="current-value">67%</span></div>
+                    <div class="card-body chart-container"><canvas id="cpuChart"></canvas></div>
+                </div>
+
+                <div class="dashboard-card glass-card gradient-border chart-card">
+                    <div class="card-header"><h3><i class="fas fa-memory"></i> Memory Usage</h3><span class="current-value">82%</span></div>
+                    <div class="card-body chart-container"><canvas id="memoryChart"></canvas></div>
+                </div>
+
+                <div class="dashboard-card glass-card gradient-border chart-card">
+                    <div class="card-header"><h3><i class="fas fa-chart-line"></i> Node Health</h3></div>
+                    <div class="card-body chart-container"><canvas id="nodeHealthChart"></canvas></div>
+                </div>
+
+                <div class="dashboard-card glass-card gradient-border chart-card">
+                    <div class="card-header"><h3><i class="fas fa-chart-area"></i> Workload Trend</h3></div>
+                    <div class="card-body chart-container"><canvas id="workloadTrendChart"></canvas></div>
+                </div>
+
+                <!-- Tables -->
+                <div class="dashboard-card glass-card gradient-border table-card pods-table">
+                    <div class="card-header"><h3><i class="fas fa-circle"></i> Pods</h3><select class="namespace-filter"><option>All Namespaces</option><option>production</option></select></div>
+                    <div class="card-body">
+                        <table class="data-table">
+                            <thead><tr><th>Name</th><th>Namespace</th><th>Status</th><th>CPU</th><th>Memory</th><th>Age</th></tr></thead>
+                            <tbody>
+                                <tr><td>api-server-7d8f9c</td><td>production</td><td><span class="status running">Running</span></td><td>250m</td><td>512Mi</td><td>15d</td></tr>
+                                <tr><td>web-frontend-9c2d1</td><td>production</td><td><span class="status running">Running</span></td><td>100m</td><td>256Mi</td><td>8d</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="dashboard-card glass-card gradient-border table-card deployments-table">
+                    <div class="card-header"><h3><i class="fas fa-rocket"></i> Deployments</h3><button class="btn-primary"><i class="fas fa-plus"></i> New</button></div>
+                    <div class="card-body">
+                        <table class="data-table">
+                            <thead><tr><th>Name</th><th>Namespace</th><th>Replicas</th><th>Status</th><th>Image</th></tr></thead>
+                            <tbody>
+                                <tr><td>api-server</td><td>production</td><td>5/5</td><td><span class="status available">Available</span></td><td>v2.4.1</td></tr>
+                                <tr><td>web-frontend</td><td>production</td><td>3/3</td><td><span class="status available">Available</span></td><td>v1.8.3</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="dashboard-card glass-card gradient-border table-card nodes-table">
+                    <div class="card-header"><h3><i class="fas fa-server"></i> Nodes</h3><button class="btn-secondary">View All</button></div>
+                    <div class="card-body">
+                        <table class="data-table">
+                            <thead><tr><th>Name</th><th>Status</th><th>Role</th><th>CPU</th><th>Memory</th></tr></thead>
+                            <tbody>
+                                <tr><td>node-01</td><td><span class="status ready">Ready</span></td><td>worker</td><td>45%</td><td>62%</td></tr>
+                                <tr><td>node-02</td><td><span class="status ready">Ready</span></td><td>worker</td><td>78%</td><td>85%</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="dashboard-card glass-card gradient-border table-card events-table">
+                    <div class="card-header"><h3><i class="fas fa-list"></i> Events</h3><button class="btn-secondary">View All</button></div>
+                    <div class="card-body">
+                        <table class="data-table">
+                            <thead><tr><th>Type</th><th>Reason</th><th>Object</th><th>Message</th><th>Age</th></tr></thead>
+                            <tbody>
+                                <tr><td><span class="type normal">Normal</span></td><td>Scheduled</td><td>Pod/api-server</td><td>Successfully assigned...</td><td>2m</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Widgets -->
+                <div class="dashboard-card glass-card gradient-border widget cluster-status-widget">
+                    <div class="card-header"><h3><i class="fas fa-heartbeat"></i> Cluster Status</h3></div>
+                    <div class="card-body">
+                        <div class="status-ring"><svg viewBox="0 0 100 100"><circle class="bg" cx="50" cy="50" r="45"/><circle class="progress" cx="50" cy="50" r="45" stroke-dasharray="283" stroke-dashoffset="4"/></svg><div class="status-value">99.2%</div></div>
+                    </div>
+                </div>
+
+                <div class="dashboard-card glass-card gradient-border widget quick-deploy">
+                    <div class="card-header"><h3><i class="fas fa-rocket"></i> Quick Deploy</h3></div>
+                    <div class="card-body">
+                        <div class="deploy-form">
+                            <select class="deploy-select"><option>Select Deployment</option><option>api-server</option><option>web-frontend</option></select>
+                            <input type="text" placeholder="Image tag" value="latest">
+                            <button class="btn-primary full-width"><i class="fas fa-play"></i> Deploy</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-card glass-card gradient-border widget notifications">
+                    <div class="card-header"><h3><i class="fas fa-bell"></i> Notifications</h3><span class="notif-count">5 new</span></div>
+                    <div class="card-body">
+                        <div class="notification-list">
+                            <div class="notification-item unread"><i class="fas fa-exclamation-circle"></i><span>Deployment completed</span></div>
+                            <div class="notification-item"><i class="fas fa-info-circle"></i><span>Node memory alert resolved</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-card glass-card gradient-border widget recent-changes">
+                    <div class="card-header"><h3><i class="fas fa-history"></i> Recent Changes</h3></div>
+                    <div class="card-body">
+                        <div class="changes-timeline">
+                            <div class="change-item"><div class="dot success"></div><div class="change-content"><span class="action">Deployed</span><span class="target">api-server:v2.4.1</span><span class="time">10 min ago</span></div></div>
+                            <div class="change-item"><div class="dot info"></div><div class="change-content"><span class="action">Scaled</span><span class="target">web-frontend → 5 pods</span><span class="time">1 hour ago</span></div></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>
