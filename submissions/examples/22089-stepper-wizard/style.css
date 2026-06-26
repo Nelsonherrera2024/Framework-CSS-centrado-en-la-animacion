@@ -1,0 +1,179 @@
+/* Stepper / Wizard Component */
+.stepper {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  width: 100%;
+  margin: 2rem 0;
+}
+
+.stepper-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  position: relative;
+}
+
+/* Connector line between steps */
+.stepper-step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  width: 100%;
+  height: 2px;
+  background: #2d2d44;
+  z-index: 0;
+  transition: background 0.4s ease;
+}
+
+.stepper-step.completed:not(:last-child)::after {
+  background: #6c63ff;
+}
+
+/* Step circle */
+.stepper-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.9rem;
+  position: relative;
+  z-index: 1;
+  border: 2px solid #2d2d44;
+  background: #0f0f13;
+  color: #6b7280;
+  transition: all 0.3s ease;
+}
+
+.stepper-step.completed .stepper-circle {
+  background: #6c63ff;
+  border-color: #6c63ff;
+  color: #fff;
+}
+
+.stepper-step.active .stepper-circle {
+  border-color: #6c63ff;
+  color: #6c63ff;
+  box-shadow: 0 0 0 4px rgba(108, 99, 255, 0.2);
+}
+
+.stepper-step.error .stepper-circle {
+  border-color: #ef4444;
+  color: #ef4444;
+  box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.2);
+}
+
+/* Step label */
+.stepper-label {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: #6b7280;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+.stepper-step.active .stepper-label {
+  color: #a78bfa;
+  font-weight: 600;
+}
+
+.stepper-step.completed .stepper-label {
+  color: #e2e2e2;
+}
+
+.stepper-step.error .stepper-label {
+  color: #ef4444;
+}
+
+/* Vertical stepper */
+.stepper.vertical {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.stepper.vertical .stepper-step {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1rem;
+  flex: unset;
+  width: 100%;
+  padding-bottom: 2rem;
+}
+
+.stepper.vertical .stepper-step:not(:last-child)::after {
+  top: 36px;
+  left: 17px;
+  width: 2px;
+  height: 100%;
+}
+
+.stepper.vertical .stepper-label {
+  margin-top: 0.4rem;
+  text-align: left;
+}
+
+/* Demo page styles */
+body {
+  font-family: sans-serif;
+  background: #0f0f13;
+  color: #e2e2e2;
+  padding: 2rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+h1 { color: #a78bfa; margin-bottom: 0.5rem; }
+h2 { color: #c4b5fd; margin-top: 2.5rem; }
+p  { color: #9ca3af; font-size: 0.95rem; }
+
+.demo-badge {
+  display: inline-block;
+  background: #1e1b4b;
+  color: #a78bfa;
+  border: 1px solid #4c1d95;
+  border-radius: 4px;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.75rem;
+  font-family: monospace;
+  margin-bottom: 1rem;
+}
+
+.demo-box {
+  background: #1a1a2e;
+  border: 1px solid #2d2d44;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin: 1rem 0;
+}
+
+.note {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin-top: 1rem;
+  font-style: italic;
+}
+
+.btn-row {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.btn {
+  padding: 0.5rem 1.25rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: opacity 0.2s;
+}
+
+.btn-primary { background: #6c63ff; color: #fff; }
+.btn-secondary { background: #2d2d44; color: #e2e2e2; }
+.btn:disabled { opacity: 0.4; cursor: not-allowed; }

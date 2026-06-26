@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stepper/Wizard Component — EaseMotion CSS Submission</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <h1>Stepper / Wizard Component</h1>
+  <span class="demo-badge">stepper · stepper-step · completed · active · error</span>
+  <p>Multi-step progress indicator for checkout flows, onboarding wizards, and multi-page forms.</p>
+
+  <h2>Example 1 — Horizontal Stepper (Interactive)</h2>
+  <div class="demo-box">
+    <div class="stepper" id="stepper1">
+      <div class="stepper-step completed">
+        <div class="stepper-circle">✓</div>
+        <div class="stepper-label">Account</div>
+      </div>
+      <div class="stepper-step active">
+        <div class="stepper-circle">2</div>
+        <div class="stepper-label">Details</div>
+      </div>
+      <div class="stepper-step">
+        <div class="stepper-circle">3</div>
+        <div class="stepper-label">Payment</div>
+      </div>
+      <div class="stepper-step">
+        <div class="stepper-circle">4</div>
+        <div class="stepper-label">Confirm</div>
+      </div>
+    </div>
+    <div class="btn-row">
+      <button class="btn btn-secondary" id="prevBtn" onclick="changeStep(-1)" disabled>← Back</button>
+      <button class="btn btn-primary" id="nextBtn" onclick="changeStep(1)">Next →</button>
+    </div>
+    <p class="note">Click Next/Back to animate through steps.</p>
+  </div>
+
+  <h2>Example 2 — With Error State</h2>
+  <div class="demo-box">
+    <div class="stepper">
+      <div class="stepper-step completed">
+        <div class="stepper-circle">✓</div>
+        <div class="stepper-label">Info</div>
+      </div>
+      <div class="stepper-step error">
+        <div class="stepper-circle">!</div>
+        <div class="stepper-label">Verify</div>
+      </div>
+      <div class="stepper-step">
+        <div class="stepper-circle">3</div>
+        <div class="stepper-label">Submit</div>
+      </div>
+    </div>
+    <p class="note">Step 2 shows an error state — e.g. validation failed.</p>
+  </div>
+
+  <h2>Example 3 — Vertical Stepper</h2>
+  <div class="demo-box">
+    <div class="stepper vertical">
+      <div class="stepper-step completed">
+        <div class="stepper-circle">✓</div>
+        <div class="stepper-label">Order Placed</div>
+      </div>
+      <div class="stepper-step completed">
+        <div class="stepper-circle">✓</div>
+        <div class="stepper-label">Processing</div>
+      </div>
+      <div class="stepper-step active">
+        <div class="stepper-circle">3</div>
+        <div class="stepper-label">Shipped</div>
+      </div>
+      <div class="stepper-step">
+        <div class="stepper-circle">4</div>
+        <div class="stepper-label">Delivered</div>
+      </div>
+    </div>
+    <p class="note">Vertical variant — ideal for order tracking or sidebar progress.</p>
+  </div>
+
+  <script>
+    let current = 1;
+    const steps = document.querySelectorAll('#stepper1 .stepper-step');
+    const total = steps.length;
+
+    function changeStep(dir) {
+      steps[current].classList.remove('active');
+      if (current < total - 1 && dir === 1) steps[current].classList.add('completed');
+      if (current > 0 && dir === -1) steps[current].classList.remove('completed');
+
+      current += dir;
+
+      steps[current].classList.remove('completed');
+      steps[current].classList.add('active');
+      steps[current].querySelector('.stepper-circle').textContent =
+        current === total - 1 ? '✓' : current + 1;
+
+      document.getElementById('prevBtn').disabled = current === 0;
+      document.getElementById('nextBtn').disabled = current === total - 1;
+    }
+  </script>
+
+</body>
+</html>
