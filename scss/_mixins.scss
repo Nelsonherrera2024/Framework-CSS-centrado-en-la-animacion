@@ -1,15 +1,16 @@
-// ============================================
+// ==========================================================================
 // EaseMotion CSS — Reusable SCSS Mixins
-// ============================================
-@use 'variables' as *;
+// Refactored to use namespaced Sass module imports
+// ==========================================================================
+@use 'variables';
 
 // --- Base Animation Mixin ---
 @mixin animate(
   $name,
-  $duration: $duration-normal,
-  $easing: $ease-in-out-cubic,
-  $delay: $delay-none,
-  $fill: $fill-both,
+  $duration: variables.$duration-normal,
+  $easing: variables.$ease-in-out-cubic,
+  $delay: variables.$delay-none,
+  $fill: variables.$fill-both,
   $iteration: 1
 ) {
   animation-name:            $name;
@@ -23,30 +24,65 @@
 // --- Transition Mixin ---
 @mixin transition(
   $property: all,
-  $duration: $duration-fast,
-  $easing: $ease-out-cubic,
-  $delay: $delay-none
+  $duration: variables.$duration-fast,
+  $easing: variables.$ease-out-cubic,
+  $delay: variables.$delay-none
 ) {
   transition: $property $duration $easing $delay;
 }
 
 // --- Named Animation Mixins (ease-kf-* convention) ---
 
-@mixin fade-in($duration: $duration-normal, $easing: $ease-in-out-cubic, $delay: $delay-none, $fill: $fill-both) {
+@mixin fade-in(
+  $duration: variables.$duration-normal, 
+  $easing: variables.$ease-in-out-cubic, 
+  $delay: variables.$delay-none, 
+  $fill: variables.$fill-both
+) {
   @include animate(ease-kf-fade-in, $duration, $easing, $delay, $fill);
 }
-@mixin fade-out($duration: $duration-normal, $easing: $ease-in-out-cubic, $delay: $delay-none, $fill: $fill-both) {
+
+@mixin fade-out(
+  $duration: variables.$duration-normal, 
+  $easing: variables.$ease-in-out-cubic, 
+  $delay: variables.$delay-none, 
+  $fill: variables.$fill-both
+) {
   @include animate(ease-kf-fade-out, $duration, $easing, $delay, $fill);
 }
-@mixin slide-up($duration: $duration-normal, $easing: $ease-in-out-cubic, $delay: $delay-none, $fill: $fill-both) {
+
+@mixin slide-up(
+  $duration: variables.$duration-normal, 
+  $easing: variables.$ease-in-out-cubic, 
+  $delay: variables.$delay-none, 
+  $fill: variables.$fill-both
+) {
   @include animate(ease-kf-slide-up, $duration, $easing, $delay, $fill);
 }
-@mixin slide-down($duration: $duration-normal, $easing: $ease-in-out-cubic, $delay: $delay-none, $fill: $fill-both) {
+
+@mixin slide-down(
+  $duration: variables.$duration-normal, 
+  $easing: variables.$ease-in-out-cubic, 
+  $delay: variables.$delay-none, 
+  $fill: variables.$fill-both
+) {
   @include animate(ease-kf-slide-down, $duration, $easing, $delay, $fill);
 }
-@mixin zoom-in($duration: $duration-normal, $easing: $ease-out-cubic, $delay: $delay-none, $fill: $fill-both) {
+
+@mixin zoom-in(
+  $duration: variables.$duration-normal, 
+  $easing: variables.$ease-out-cubic, 
+  $delay: variables.$delay-none, 
+  $fill: variables.$fill-both
+) {
   @include animate(ease-kf-zoom-in, $duration, $easing, $delay, $fill);
 }
-@mixin zoom-out($duration: $duration-normal, $easing: $ease-in-cubic, $delay: $delay-none, $fill: $fill-both) {
+
+@mixin zoom-out(
+  $duration: variables.$duration-normal, 
+  $easing: variables.$ease-in-cubic, 
+  $delay: variables.$delay-none, 
+  $fill: variables.$fill-both
+) {
   @include animate(ease-kf-zoom-out, $duration, $easing, $delay, $fill);
 }

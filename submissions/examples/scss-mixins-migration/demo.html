@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EaseMotion CSS — SCSS Mixins Migration Showcase</title>
+  
+  <!-- Local Styles -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Modern Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="showcase-wrapper">
+    <!-- Header Section -->
+    <header class="header-section">
+      <h1 class="header-title" style="font-family: 'Outfit', sans-serif;">SCSS Module Mixins Migration</h1>
+      <p class="header-subtitle">Exposing keyframe animations and transition helpers using modern namespaced Sass mixins.</p>
+    </header>
+
+    <!-- Interactive Demonstration -->
+    <div class="showcase-card">
+      <h2 class="card-title">1. Namespaced Mixins Playground</h2>
+      <p class="card-desc">Click the trigger button below to see components compile and animate using namespaced mixin overrides (`@include mixins.fade-in()`, `@include mixins.slide-up()`, and `@include mixins.zoom-in()`).</p>
+      
+      <div id="demo-area" class="demo-grid">
+        <!-- Box 1: Fade In -->
+        <div class="box-container">
+          <div class="animate-box fade-box"></div>
+          <span style="font-size: 0.85rem; font-weight: 700; color: var(--heading-color);">Fade In</span>
+          <span style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.25rem;">Default (250ms)</span>
+        </div>
+
+        <!-- Box 2: Slide Up -->
+        <div class="box-container">
+          <div class="animate-box slide-box"></div>
+          <span style="font-size: 0.85rem; font-weight: 700; color: var(--heading-color);">Slide Up</span>
+          <span style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.25rem;">Customized (800ms)</span>
+        </div>
+
+        <!-- Box 3: Zoom In -->
+        <div class="box-container">
+          <div class="animate-box zoom-box"></div>
+          <span style="font-size: 0.85rem; font-weight: 700; color: var(--heading-color);">Zoom In</span>
+          <span style="font-size: 0.75rem; opacity: 0.7; margin-top: 0.25rem;">Customized (400ms)</span>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 2rem;">
+        <button class="demo-btn" onclick="toggleActive()">Trigger Animations</button>
+      </div>
+    </div>
+
+    <!-- Implementation Reference -->
+    <div class="showcase-card">
+      <h2 class="card-title">2. Mixins Configuration Guide</h2>
+      <p class="card-desc">Here is how the mixins are structured and included inside custom stylesheets under the namespaced module system:</p>
+      
+      <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem;">
+        <!-- Code snippet 1 -->
+        <div>
+          <span style="display: block; font-size: 0.85rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--heading-color);">Exposed Mixins Structure (<code>scss/_mixins.scss</code>)</span>
+          <pre style="background: rgba(100, 116, 139, 0.05); padding: 1.25rem; border-radius: 8px; border: 1px solid var(--card-border); font-size: 0.825rem; overflow-x: auto; margin: 0; line-height: 1.5;"><code>// Namespaced import of variables module
+@use 'variables';
+
+@mixin animate($name, $duration: variables.$duration-normal, ...) {
+  animation-name:            $name;
+  animation-duration:        $duration;
+  ...
+}
+
+@mixin slide-up($duration: variables.$duration-normal, ...) {
+  @include animate(ease-kf-slide-up, $duration, ...);
+}</code></pre>
+        </div>
+
+        <!-- Code snippet 2 -->
+        <div>
+          <span style="display: block; font-size: 0.85rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--heading-color);">Importing and Including Mixins (<code>style.scss</code>)</span>
+          <pre style="background: rgba(100, 116, 139, 0.05); padding: 1.25rem; border-radius: 8px; border: 1px solid var(--card-border); font-size: 0.825rem; overflow-x: auto; margin: 0; line-height: 1.5;"><code>// Load mixins cleanly as a namespaced package
+@use '../../../scss/mixins';
+
+.active {
+  .slide-box {
+    // Invoke mixin using namespaced prefix
+    @include mixins.slide-up($duration: 800ms);
+  }
+}</code></pre>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleActive() {
+      const container = document.getElementById('demo-area');
+      container.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
