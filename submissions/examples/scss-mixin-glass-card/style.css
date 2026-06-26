@@ -1,0 +1,185 @@
+/* ==========================================================================
+   EaseMotion CSS - SCSS Glassmorphism Card Showcase
+   Sass Source File
+   ========================================================================== */
+:root {
+  --page-bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+  --page-text: #f8fafc;
+  --heading-color: #ffffff;
+  --primary-color: #818cf8;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  background: var(--page-bg-gradient);
+  color: var(--page-text);
+  min-height: 100vh;
+}
+
+.showcase-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+
+.header-section {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.header-title {
+  font-size: 2.75rem;
+  font-weight: 800;
+  letter-spacing: -0.05em;
+  color: var(--heading-color);
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.header-subtitle {
+  font-size: 1.125rem;
+  opacity: 0.85;
+}
+
+.demo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.glass-card-default {
+  background-color: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease, background-color 0.3s ease;
+}
+.glass-card-default:hover, .glass-card-default:focus-within {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 16px 36px 0 rgba(0, 0, 0, 0.15);
+}
+@media (prefers-reduced-motion: reduce) {
+  .glass-card-default {
+    transition: none !important;
+  }
+  .glass-card-default:hover, .glass-card-default:focus-within {
+    transform: none !important;
+  }
+}
+.glass-card-default {
+  padding: 2.25rem 2rem;
+}
+
+.glass-card-deep-frost {
+  background-color: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease, background-color 0.3s ease;
+}
+.glass-card-deep-frost:hover, .glass-card-deep-frost:focus-within {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 16px 36px 0 rgba(0, 0, 0, 0.15);
+}
+@media (prefers-reduced-motion: reduce) {
+  .glass-card-deep-frost {
+    transition: none !important;
+  }
+  .glass-card-deep-frost:hover, .glass-card-deep-frost:focus-within {
+    transform: none !important;
+  }
+}
+.glass-card-deep-frost {
+  padding: 2.25rem 2rem;
+}
+
+.glass-card-indigo-tint {
+  background-color: rgba(99, 102, 241, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(129, 140, 248, 0.25);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease, background-color 0.3s ease;
+}
+.glass-card-indigo-tint:hover, .glass-card-indigo-tint:focus-within {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px 0 rgba(99, 102, 241, 0.25);
+}
+@media (prefers-reduced-motion: reduce) {
+  .glass-card-indigo-tint {
+    transition: none !important;
+  }
+  .glass-card-indigo-tint:hover, .glass-card-indigo-tint:focus-within {
+    transform: none !important;
+  }
+}
+.glass-card-indigo-tint {
+  padding: 2.25rem 2rem;
+}
+
+.card-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--heading-color);
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.card-desc {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  line-height: 1.6;
+  margin-bottom: 1.75rem;
+}
+
+.action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.625rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.action-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: var(--primary-color);
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+code {
+  font-family: monospace;
+  font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+}
+
+/*# sourceMappingURL=style.css.map */

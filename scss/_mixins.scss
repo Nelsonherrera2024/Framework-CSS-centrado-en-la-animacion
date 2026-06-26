@@ -50,3 +50,45 @@
 @mixin zoom-out($duration: $duration-normal, $easing: $ease-in-cubic, $delay: $delay-none, $fill: $fill-both) {
   @include animate(ease-kf-zoom-out, $duration, $easing, $delay, $fill);
 }
+
+// --- Glassmorphism Card Mixin ---
+@mixin glass-card(
+  $blur: 10px,
+  $background-color: rgba(255, 255, 255, 0.07),
+  $border-color: rgba(255, 255, 255, 0.15),
+  $border-radius: 16px,
+  $box-shadow: (0 8px 32px 0 rgba(0, 0, 0, 0.08)),
+  $hover-transform: translateY(-6px) scale(1.01),
+  $hover-shadow: (0 16px 36px 0 rgba(0, 0, 0, 0.15))
+) {
+  background-color: $background-color;
+  backdrop-filter: blur($blur);
+  -webkit-backdrop-filter: blur($blur);
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  
+  // Transition parameters for smooth animation
+  transition: 
+    transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.3s ease,
+    background-color 0.3s ease;
+
+  &:hover,
+  &:focus-within {
+    @if $hover-transform != none {
+      transform: $hover-transform;
+    }
+    @if $hover-shadow != none {
+      box-shadow: $hover-shadow;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none !important;
+    &:hover,
+    &:focus-within {
+      transform: none !important;
+    }
+  }
+}

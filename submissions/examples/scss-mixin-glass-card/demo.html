@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EaseMotion CSS — SCSS Glassmorphism Card Showcase</title>
+  
+  <!-- Local Styles -->
+  <link rel="stylesheet" href="style.css">
+  
+  <!-- Modern Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="showcase-wrapper">
+    <!-- Header Section -->
+    <header class="header-section">
+      <h1 class="header-title" style="font-family: 'Outfit', sans-serif;">SCSS Glassmorphism Cards</h1>
+      <p class="header-subtitle">Build sophisticated, responsive layouts using high-performance CSS backdrop filters, border reflections, and custom hover states.</p>
+    </header>
+
+    <!-- Glassmorphic Grid -->
+    <div class="demo-grid">
+      <!-- 1. Default Glass Card -->
+      <div class="glass-card-default">
+        <span class="badge">Default Spec</span>
+        <h2 class="card-title">Analytics Snapshot</h2>
+        <p class="card-desc">Standard translucent card with subtle background blur, designed for clear data visualization overlays inside dark interfaces.</p>
+        <button class="action-btn">View Metrics</button>
+      </div>
+
+      <!-- 2. Deep Frost Slate Card -->
+      <div class="glass-card-deep-frost">
+        <span class="badge" style="color: #60a5fa;">Heavy Frost</span>
+        <h2 class="card-title">System Firewalls</h2>
+        <p class="card-desc">Features an opacity slate background and increased backdrop filter blur (20px), ideal for heavy depth hierarchies and controls panels.</p>
+        <button class="action-btn">Configure</button>
+      </div>
+
+      <!-- 3. Indigo Tint Card -->
+      <div class="glass-card-indigo-tint">
+        <span class="badge" style="color: #a78bfa;">Branded Glow</span>
+        <h2 class="card-title">Active Workspace</h2>
+        <p class="card-desc">Applies an indigo tint, customized hover scaling (1.02), and a vibrant glowing shadow. Best suited for featured lists or callouts.</p>
+        <button class="action-btn">Enter Workspace</button>
+      </div>
+    </div>
+
+    <!-- Technical Guide -->
+    <div class="glass-card-default" style="backdrop-filter: blur(15px); border-radius: 16px;">
+      <h2 class="card-title">2. SCSS Architecture Integration</h2>
+      <p class="card-desc" style="margin-bottom: 2rem;">Integrate glassmorphism across components cleanly using Sass mixins, default arguments, and responsive media helpers:</p>
+      
+      <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem;">
+        <!-- Code snippet 1 -->
+        <div>
+          <span style="display: block; font-size: 0.85rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--primary-color);">Mixin API Definition (<code>scss/_mixins.scss</code>)</span>
+          <pre style="background: rgba(255, 255, 255, 0.05); padding: 1.25rem; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.1); font-size: 0.825rem; overflow-x: auto; margin: 0; line-height: 1.5; color: #cbd5e1;"><code>@mixin glass-card(
+  $blur: 10px,
+  $background-color: rgba(255, 255, 255, 0.07),
+  $border-color: rgba(255, 255, 255, 0.15),
+  $border-radius: 16px,
+  $box-shadow: (0 8px 32px 0 rgba(0, 0, 0, 0.08)),
+  $hover-transform: translateY(-6px) scale(1.01),
+  $hover-shadow: (0 16px 36px 0 rgba(0, 0, 0, 0.15))
+) {
+  background-color: $background-color;
+  backdrop-filter: blur($blur);
+  -webkit-backdrop-filter: blur($blur);
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+
+  &:hover {
+    transform: $hover-transform;
+    box-shadow: $hover-shadow;
+  }
+}</code></pre>
+        </div>
+
+        <!-- Code snippet 2 -->
+        <div>
+          <span style="display: block; font-size: 0.85rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--primary-color);">Applying the Mixin (<code>style.scss</code>)</span>
+          <pre style="background: rgba(255, 255, 255, 0.05); padding: 1.25rem; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.1); font-size: 0.825rem; overflow-x: auto; margin: 0; line-height: 1.5; color: #cbd5e1;"><code>@use '../../../scss/mixins';
+
+.glass-card-deep-frost {
+  // Overriding default blur, background, and shadow values
+  @include mixins.glass-card(
+    $blur: 20px,
+    $background-color: rgba(15, 23, 42, 0.45),
+    $border-color: rgba(255, 255, 255, 0.08)
+  );
+}</code></pre>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
