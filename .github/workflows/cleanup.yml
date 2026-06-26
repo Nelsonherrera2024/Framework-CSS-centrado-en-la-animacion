@@ -1,37 +1,35 @@
-name: Cross-Platform Path Cleanup Protocol
+name: Surgical Folder Purge
 
 on:
-  workflow_dispatch: # Allows you to trigger this manually with a single click
+  workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
-  purge-invalid-paths:
+  purge-paths:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Target Index
+      - name: Checkout Repository
         uses: actions/checkout@v4
-        with:
-          persist-credentials: true
 
-      - name: Execute Filesystem Purge
+      - name: Delete Asterisk Folders
         run: |
-          echo "Initializing surgical directory purge..."
-          # Forcefully delete the directories using wildcards on Linux
+          echo "Purging forbidden directories..."
           rm -rf submissions/examples/phase-351-*
           rm -rf submissions/examples/phase-352-*
           rm -rf submissions/examples/phase-353-*
           rm -rf submissions/examples/phase-354-*
           
-      - name: Commit Changes Globally
+      - name: Commit and Push Changes Directly
         run: |
           git config --global user.name "Ishwinder Kaur"
           git config --global user.email "ishwinderkaur.dev@gmail.com"
           git add submissions/examples/
           
-          # Only commit if changes were actually made
-          git diff-index --quiet HEAD || git commit -m "fix: purge invalid asterisk directory paths for cross-platform compliance"
-          
-      - name: Push Fixed History
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main
+          if ! git diff-index --quiet HEAD; then
+            git commit -m "fix: remove invalid directory paths from git index"
+            git push origin main
+          else
+            echo "No changes detected to push."
+          fi
