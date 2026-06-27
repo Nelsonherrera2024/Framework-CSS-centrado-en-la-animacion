@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anderson Notary Services — Certified Notary Public</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/SAPTARSHI-coder/EaseMotion-css@main/core/animations.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #0f2044;
+      --navy-light: #1a3460;
+      --gold: #c9a84c;
+      --gold-light: #e8c97a;
+      --gray: #f4f6f9;
+      --text: #2d3748;
+      --muted: #6b7280;
+      --white: #ffffff;
+      --radius: 12px;
+      --shadow: 0 4px 24px rgba(15,32,68,0.10);
+      --shadow-lg: 0 12px 40px rgba(15,32,68,0.16);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Segoe UI', Georgia, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--navy);
+      padding: 0 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--white);
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .nav-logo-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--gold);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--gold); }
+
+    .nav-cta {
+      background: var(--gold);
+      color: var(--navy) !important;
+      padding: 8px 20px;
+      border-radius: 8px;
+      font-weight: 700 !important;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 60%, #1e4080 100%);
+      color: white;
+      padding: 100px 5% 80px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      min-height: 90vh;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: rgba(201,168,76,0.06);
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: -150px;
+      left: -150px;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: rgba(201,168,76,0.04);
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(201,168,76,0.15);
+      border: 1px solid rgba(201,168,76,0.3);
+      color: var(--gold-light);
+      padding: 6px 16px;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.25rem, 4vw, 3.5rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero h1 span { color: var(--gold); }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 2rem;
+      max-width: 480px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--navy);
+      padding: 14px 32px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      display: inline-block;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: white;
+      border: 2px solid rgba(255,255,255,0.3);
+      padding: 14px 32px;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 20px;
+      padding: 2rem;
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-stat {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .stat-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem;
+      background: rgba(255,255,255,0.06);
+      border-radius: 12px;
+    }
+
+    .stat-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--gold);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+
+    .stat-num { font-size: 1.5rem; font-weight: 800; color: white; }
+    .stat-label { font-size: 0.8rem; color: rgba(255,255,255,0.6); }
+
+    .availability {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.7);
+    }
+
+    .avail-dot {
+      width: 10px;
+      height: 10px;
+      background: #10b981;
+      border-radius: 50%;
+    }
+
+    /* ── TRUST BAR ── */
+    .trust-bar {
+      background: var(--gray);
+      padding: 1.25rem 5%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--navy);
+    }
+
+    /* ── SECTIONS ── */
+    section { padding: 80px 5%; }
+
+    .section-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .section-sub {
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 560px;
+      margin-bottom: 3rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 2rem;
+      align-items: center;
+    }
+
+    /* ── SERVICE CARDS ── */
+    .service-card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      box-shadow: var(--shadow);
+    }
+
+    .service-icon {
+      width: 52px;
+      height: 52px;
+      background: rgba(15,32,68,0.06);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .service-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
+
+    .service-card p { color: var(--muted); font-size: 0.875rem; }
+
+    /* ── PRICING ── */
+    .pricing-section { background: var(--gray); }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .pricing-card {
+      background: white;
+      border: 2px solid #e2e8f0;
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .pricing-card.featured {
+      border-color: var(--gold);
+      background: var(--navy);
+      color: white;
+    }
+
+    .pricing-card.featured h3,
+    .pricing-card.featured .price { color: white; }
+
+    .pricing-card.featured .price-sub { color: rgba(255,255,255,0.6); }
+    .pricing-card.featured p { color: rgba(255,255,255,0.75); }
+
+    .pricing-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.75rem;
+    }
+
+    .price {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--navy);
+    }
+
+    .price-sub {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .pricing-card p {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .price-badge {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 9999px;
+      margin-bottom: 0.75rem;
+    }
+
+    /* ── ABOUT ── */
+    .about-img {
+      background: linear-gradient(135deg, var(--navy), var(--navy-light));
+      border-radius: 20px;
+      padding: 3rem 2rem;
+      color: white;
+      text-align: center;
+    }
+
+    .about-avatar {
+      width: 100px;
+      height: 100px;
+      background: var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+      margin: 0 auto 1.5rem;
+    }
+
+    .credential-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+
+    .credential-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+
+    .cred-icon {
+      width: 32px;
+      height: 32px;
+      background: rgba(15,32,68,0.08);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* ── REVIEWS ── */
+    .reviews-section { background: var(--navy); }
+    .reviews-section .section-title { color: white; }
+    .reviews-section .section-sub { color: rgba(255,255,255,0.6); }
+
+    .review-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+    }
+
+    .review-stars { color: var(--gold); font-size: 1rem; margin-bottom: 0.75rem; }
+
+    .review-text {
+      color: rgba(255,255,255,0.85);
+      font-size: 0.9rem;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
+
+    .reviewer {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .reviewer-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: var(--navy);
+      font-size: 0.9rem;
+    }
+
+    .reviewer-name { color: white; font-weight: 600; font-size: 0.875rem; }
+    .reviewer-role { color: rgba(255,255,255,0.5); font-size: 0.75rem; }
+
+    /* ── SERVICE AREA ── */
+    .area-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1rem;
+    }
+
+    .area-card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 1rem;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .area-card h4 { font-size: 0.9rem; color: var(--navy); font-weight: 700; }
+    .area-card p  { font-size: 0.75rem; color: var(--muted); margin-top: 2px; }
+
+    /* ── BOOKING CTA ── */
+    .booking-section {
+      background: linear-gradient(135deg, var(--gold) 0%, #e8a020 100%);
+      text-align: center;
+      padding: 80px 5%;
+    }
+
+    .booking-section h2 {
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 1rem;
+    }
+
+    .booking-section p {
+      color: rgba(15,32,68,0.75);
+      font-size: 1.05rem;
+      margin-bottom: 2rem;
+    }
+
+    .booking-options {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-dark {
+      background: var(--navy);
+      color: white;
+      padding: 14px 32px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      display: inline-block;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-white {
+      background: white;
+      color: var(--navy);
+      padding: 14px 32px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: #070f1e;
+      color: rgba(255,255,255,0.6);
+      padding: 3rem 5% 2rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-brand p {
+      font-size: 0.875rem;
+      line-height: 1.7;
+      margin-top: 0.75rem;
+    }
+
+    .footer-col h4 {
+      color: white;
+      font-size: 0.875rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .footer-col a  { color: rgba(255,255,255,0.55); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+    .footer-col a:hover { color: var(--gold); }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.8rem;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; padding: 60px 5%; }
+      .hero-card { display: none; }
+      .nav-links { display: none; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .trust-bar { gap: 1.5rem; }
+    }
+
+    @media (max-width: 480px) {
+      .footer-grid { grid-template-columns: 1fr; }
+      .pricing-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo ease-fade-in">
+      <div class="nav-logo-icon">⚖️</div>
+      Anderson Notary
+    </a>
+    <ul class="nav-links ease-fade-in ease-delay-100">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#book" class="nav-cta ease-hover-grow">Book Now</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div>
+      <div class="hero-badge ease-fade-in">
+        <span class="avail-dot ease-pulse"></span>
+        Available Today — Same-Day Appointments
+      </div>
+      <h1 class="ease-fade-in ease-delay-100">
+        Trusted <span>Notary</span><br>Services You Can<br>Count On
+      </h1>
+      <p class="ease-fade-in ease-delay-200">
+        State-commissioned notary public serving the Greater Metro area.
+        Real estate closings, legal documents, affidavits, and mobile notary services.
+      </p>
+      <div class="hero-buttons ease-fade-in ease-delay-300">
+        <a href="#book" class="btn-primary ease-hover-glow">Schedule Appointment</a>
+        <a href="tel:+15551234567" class="btn-outline ease-hover-grow">📞 (555) 123-4567</a>
+      </div>
+      <div class="availability ease-fade-in ease-delay-500">
+        <div class="avail-dot ease-pulse"></div>
+        Mon–Sat 8AM–7PM · Sunday by appointment
+      </div>
+    </div>
+    <div class="hero-card ease-slide-in-right ease-delay-200">
+      <div class="hero-stat">
+        <div class="stat-item ease-hover-grow">
+          <div class="stat-icon">📄</div>
+          <div>
+            <div class="stat-num">15,000+</div>
+            <div class="stat-label">Documents Notarized</div>
+          </div>
+        </div>
+        <div class="stat-item ease-hover-grow">
+          <div class="stat-icon">⭐</div>
+          <div>
+            <div class="stat-num">4.9/5</div>
+            <div class="stat-label">Average Rating</div>
+          </div>
+        </div>
+        <div class="stat-item ease-hover-grow">
+          <div class="stat-icon">🚗</div>
+          <div>
+            <div class="stat-num">30 mi</div>
+            <div class="stat-label">Mobile Service Radius</div>
+          </div>
+        </div>
+        <div class="stat-item ease-hover-grow">
+          <div class="stat-icon">✅</div>
+          <div>
+            <div class="stat-num">12 yrs</div>
+            <div class="stat-label">Commissioned Experience</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-item ease-fade-in">🏛️ State Commissioned</div>
+    <div class="trust-item ease-fade-in ease-delay-100">🔒 NNA Certified</div>
+    <div class="trust-item ease-fade-in ease-delay-200">📋 Background Checked</div>
+    <div class="trust-item ease-fade-in ease-delay-300">🚗 Mobile Notary Available</div>
+    <div class="trust-item ease-fade-in ease-delay-500">⚡ Same-Day Service</div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="section-tag ease-fade-in">What We Do</div>
+    <h2 class="section-title ease-slide-up">Complete Notary Services</h2>
+    <p class="section-sub ease-slide-up ease-delay-100">
+      From everyday documents to complex real estate closings,
+      we handle it all with professionalism and precision.
+    </p>
+    <div class="grid-3">
+      <div class="service-card ease-hover-lift ease-slide-up ease-delay-100">
+        <div class="service-icon">🏠</div>
+        <h3>Real Estate Closings</h3>
+        <p>Purchase agreements, deeds, refinancing documents, and mortgage packages handled with care and accuracy.</p>
+      </div>
+      <div class="service-card ease-hover-lift ease-slide-up ease-delay-200">
+        <div class="service-icon">⚖️</div>
+        <h3>Power of Attorney</h3>
+        <p>General, limited, and durable POA documents for healthcare, financial, and legal matters.</p>
+      </div>
+      <div class="service-card ease-hover-lift ease-slide-up ease-delay-300">
+        <div class="service-icon">📜</div>
+        <h3>Affidavits & Oaths</h3>
+        <p>Sworn statements, depositions, and affidavits for court proceedings and legal requirements.</p>
+      </div>
+      <div class="service-card ease-hover-lift ease-slide-up ease-delay-100">
+        <div class="service-icon">🚗</div>
+        <h3>Mobile Notary</h3>
+        <p>We come to you — homes, offices, hospitals, or wherever you need us within 30 miles.</p>
+      </div>
+      <div class="service-card ease-hover-lift ease-slide-up ease-delay-200">
+        <div class="service-icon">🌐</div>
+        <h3>Remote Online Notary</h3>
+        <p>RON-commissioned for secure audio-visual notarization from anywhere in the state.</p>
+      </div>
+      <div class="service-card ease-hover-lift ease-slide-up ease-delay-300">
+        <div class="service-icon">✈️</div>
+        <h3>Apostille Assistance</h3>
+        <p>Document authentication for international use, coordinated with the Secretary of State.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section id="pricing" class="pricing-section">
+    <div class="section-tag ease-fade-in">Transparent Pricing</div>
+    <h2 class="section-title ease-slide-up">No Hidden Fees</h2>
+    <p class="section-sub ease-slide-up ease-delay-100">
+      Flat rates per document type. Know exactly what you'll pay before your appointment.
+    </p>
+    <div class="pricing-grid">
+      <div class="pricing-card ease-zoom-in ease-hover-lift ease-delay-100">
+        <h3>Standard Notarization</h3>
+        <div class="price">$15</div>
+        <div class="price-sub">per signature/seal</div>
+        <p>Acknowledgments, jurats, oaths, and copy certifications.</p>
+        <a href="#book" class="btn-primary ease-hover-grow">Book Now</a>
+      </div>
+      <div class="pricing-card featured ease-zoom-in ease-hover-lift ease-delay-200">
+        <div class="price-badge">Most Popular</div>
+        <h3>Real Estate Package</h3>
+        <div class="price">$150</div>
+        <div class="price-sub">full closing package</div>
+        <p>Unlimited signatures for purchase, refinance, or HELOC closings.</p>
+        <a href="#book" class="btn-primary ease-hover-glow">Book Now</a>
+      </div>
+      <div class="pricing-card ease-zoom-in ease-hover-lift ease-delay-300">
+        <h3>Mobile Notary</h3>
+        <div class="price">$50</div>
+        <div class="price-sub">travel fee + doc fees</div>
+        <p>We come to you. Travel fee covers up to 15 miles. $1/mile beyond.</p>
+        <a href="#book" class="btn-primary ease-hover-grow">Book Now</a>
+      </div>
+      <div class="pricing-card ease-zoom-in ease-hover-lift ease-delay-100">
+        <h3>Remote Online (RON)</h3>
+        <div class="price">$25</div>
+        <div class="price-sub">per session</div>
+        <p>Secure video notarization. Platform fee may apply.</p>
+        <a href="#book" class="btn-primary ease-hover-grow">Book Now</a>
+      </div>
+      <div class="pricing-card ease-zoom-in ease-hover-lift ease-delay-200">
+        <h3>Power of Attorney</h3>
+        <div class="price">$30</div>
+        <div class="price-sub">per document</div>
+        <p>All POA types. Includes notarization and witness coordination.</p>
+        <a href="#book" class="btn-primary ease-hover-grow">Book Now</a>
+      </div>
+      <div class="pricing-card ease-zoom-in ease-hover-lift ease-delay-300">
+        <h3>Apostille Service</h3>
+        <div class="price">$75</div>
+        <div class="price-sub">per document</div>
+        <p>Includes notarization and state submission coordination.</p>
+        <a href="#book" class="btn-primary ease-hover-grow">Book Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="grid-2">
+      <div class="about-img ease-slide-in-left">
+        <div class="about-avatar">👨‍💼</div>
+        <h3 style="color:white; font-size:1.25rem; font-weight:800;">James R. Anderson</h3>
+        <p style="color:rgba(255,255,255,0.7); margin-top:0.5rem;">
+          Commissioned Notary Public · NNA Certified Signing Agent
+        </p>
+        <ul class="credential-list">
+          <li>
+            <div class="cred-icon" style="background:rgba(201,168,76,0.2);">🏛️</div>
+            State Commission #NP-2024-08847
+          </li>
+          <li>
+            <div class="cred-icon" style="background:rgba(201,168,76,0.2);">🔒</div>
+            NNA Certified & Background Screened
+          </li>
+          <li>
+            <div class="cred-icon" style="background:rgba(201,168,76,0.2);">📋</div>
+            E&O Insured — $100,000 Coverage
+          </li>
+          <li>
+            <div class="cred-icon" style="background:rgba(201,168,76,0.2);">🌐</div>
+            RON Commissioned — Notarize Platform
+          </li>
+        </ul>
+      </div>
+      <div class="ease-slide-in-right">
+        <div class="section-tag">About Us</div>
+        <h2 class="section-title">12 Years of Trusted Service</h2>
+        <p style="color:var(--muted); margin-bottom:1rem; line-height:1.7;">
+          James Anderson has been serving the Greater Metro community as a state-commissioned
+          notary public since 2012. With over 15,000 documents notarized, he brings
+          precision and professionalism to every appointment.
+        </p>
+        <p style="color:var(--muted); margin-bottom:2rem; line-height:1.7;">
+          Whether you need a simple acknowledgment or a complex real estate closing package,
+          James ensures every document is properly executed, legally compliant, and completed
+          with the highest standards of accuracy.
+        </p>
+        <div style="display:flex; gap:1.5rem; flex-wrap:wrap;">
+          <div class="ease-hover-grow" style="text-align:center;">
+            <div style="font-size:2rem; font-weight:800; color:var(--navy);">15K+</div>
+            <div style="font-size:0.8rem; color:var(--muted);">Documents</div>
+          </div>
+          <div class="ease-hover-grow" style="text-align:center;">
+            <div style="font-size:2rem; font-weight:800; color:var(--navy);">4.9★</div>
+            <div style="font-size:0.8rem; color:var(--muted);">Rating</div>
+          </div>
+          <div class="ease-hover-grow" style="text-align:center;">
+            <div style="font-size:2rem; font-weight:800; color:var(--navy);">12yr</div>
+            <div style="font-size:0.8rem; color:var(--muted);">Experience</div>
+          </div>
+          <div class="ease-hover-grow" style="text-align:center;">
+            <div style="font-size:2rem; font-weight:800; color:var(--navy);">30mi</div>
+            <div style="font-size:0.8rem; color:var(--muted);">Service Radius</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews" class="reviews-section">
+    <div class="section-tag" style="color:var(--gold-light);">Client Reviews</div>
+    <h2 class="section-title ease-slide-up">What Clients Say</h2>
+    <p class="section-sub ease-slide-up ease-delay-100">
+      Over 500 verified reviews across Google, Yelp, and Notary Café.
+    </p>
+    <div class="grid-3">
+      <div class="review-card ease-card-lift ease-slide-up ease-delay-100">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"James came to our home for our real estate closing and handled everything perfectly. He was on time, professional, and explained each document clearly. We'll definitely use him again."</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">SM</div>
+          <div>
+            <div class="reviewer-name">Sarah M.</div>
+            <div class="reviewer-role">Home Buyer · Real Estate Closing</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card ease-card-lift ease-slide-up ease-delay-200">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"I needed a power of attorney notarized urgently for my mother's medical situation. James was at the hospital within 2 hours and handled everything with compassion and efficiency."</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">RT</div>
+          <div>
+            <div class="reviewer-name">Robert T.</div>
+            <div class="reviewer-role">Healthcare POA</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card ease-card-lift ease-slide-up ease-delay-300">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Used the remote online notary service for an international document. The process was seamless and James walked me through every step. Highly recommend for anyone needing RON services."</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">LC</div>
+          <div>
+            <div class="reviewer-name">Linda C.</div>
+            <div class="reviewer-role">Remote Online Notarization</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE AREA -->
+  <section>
+    <div class="section-tag ease-fade-in">Coverage</div>
+    <h2 class="section-title ease-slide-up">Service Area</h2>
+    <p class="section-sub ease-slide-up ease-delay-100">
+      In-office appointments in downtown Metro City. Mobile service within 30 miles.
+    </p>
+    <div class="area-grid">
+      <div class="area-card ease-hover-grow ease-slide-up ease-delay-100">
+        <h4>🏙️ Metro City</h4>
+        <p>In-office available</p>
+      </div>
+      <div class="area-card ease-hover-grow ease-slide-up ease-delay-200">
+        <h4>🏘️ Westside</h4>
+        <p>Mobile service</p>
+      </div>
+      <div class="area-card ease-hover-grow ease-slide-up ease-delay-300">
+        <h4>🌳 Northbrook</h4>
+        <p>Mobile service</p>
+      </div>
+      <div class="area-card ease-hover-grow ease-slide-up ease-delay-100">
+        <h4>🏡 Riverside</h4>
+        <p>Mobile service</p>
+      </div>
+      <div class="area-card ease-hover-grow ease-slide-up ease-delay-200">
+        <h4>🏢 Eastgate</h4>
+        <p>Mobile service</p>
+      </div>
+      <div class="area-card ease-hover-grow ease-slide-up ease-delay-300">
+        <h4>🌐 Anywhere</h4>
+        <p>Remote online (RON)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING CTA -->
+  <section id="book" class="booking-section">
+    <h2 class="ease-slide-up">Ready to Get Your Documents Notarized?</h2>
+    <p class="ease-slide-up ease-delay-100">
+      Same-day appointments available. Mobile service within 30 miles. Remote online notary for anywhere in the state.
+    </p>
+    <div class="booking-options ease-slide-up ease-delay-200">
+      <a href="tel:+15551234567" class="btn-dark ease-hover-lift">📞 Call (555) 123-4567</a>
+      <a href="mailto:james@andersonnotary.com" class="btn-dark ease-hover-lift">✉️ Email Us</a>
+      <a href="#" class="btn-white ease-hover-grow">📅 Book Online</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand ease-fade-in">
+        <div class="nav-logo" style="margin-bottom:0.75rem;">
+          <div class="nav-logo-icon">⚖️</div>
+          <span style="color:white; font-weight:700;">Anderson Notary Services</span>
+        </div>
+        <p>State-commissioned notary public serving Metro City and surrounding areas since 2012. NNA certified, background checked, and E&O insured.</p>
+      </div>
+      <div class="footer-col ease-fade-in ease-delay-100">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#">Real Estate Closings</a></li>
+          <li><a href="#">Power of Attorney</a></li>
+          <li><a href="#">Affidavits</a></li>
+          <li><a href="#">Mobile Notary</a></li>
+          <li><a href="#">Remote Online (RON)</a></li>
+          <li><a href="#">Apostille</a></li>
+        </ul>
+      </div>
+      <div class="footer-col ease-fade-in ease-delay-200">
+        <h4>Info</h4>
+        <ul>
+          <li><a href="#">About James</a></li>
+          <li><a href="#">Pricing</a></li>
+          <li><a href="#">Service Area</a></li>
+          <li><a href="#">Reviews</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col ease-fade-in ease-delay-300">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+15551234567">📞 (555) 123-4567</a></li>
+          <li><a href="mailto:james@andersonnotary.com">✉️ Email Us</a></li>
+          <li><a href="#">📍 123 Main St, Suite 400</a></li>
+          <li><a href="#">Mon–Sat 8AM–7PM</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 Anderson Notary Services. All rights reserved.</span>
+      <span>Commission #NP-2024-08847 · NNA Certified · E&O Insured</span>
+    </div>
+  </footer>
+
+</body>
+</html>
