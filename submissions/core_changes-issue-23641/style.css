@@ -1,0 +1,165 @@
+/* ============================================================
+   EaseMotion CSS Tooltip Edge Fix — style.css
+   ============================================================ */
+
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --font-sans: "Outfit", -apple-system, BlinkMacSystemFont, sans-serif;
+  --bg-primary: #09090b;
+  --bg-secondary: #121217;
+  --text-primary: #f4f4f5;
+  --text-secondary: #a1a1aa;
+  --border-color: rgba(255, 255, 255, 0.08);
+  --accent-gradient: linear-gradient(135deg, #10b981 0%, #059669 100%);
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  margin: 0;
+  padding: 3rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+header {
+  text-align: center;
+  max-width: 600px;
+  margin-bottom: 3rem;
+}
+
+h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Demo container */
+.demo-container {
+  width: 100%;
+  max-width: 650px;
+  background: rgba(18, 18, 23, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.demo-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #34d399;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.showcase-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.showcase-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.row-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  max-width: 70%;
+}
+
+.row-name {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.row-desc {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.btn-trigger {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* ── PROPOSED TOOLTIP CSS FIXES ── */
+.ease-tooltip::after {
+  width: max-content;
+  max-width: min(300px, 90vw);
+  overflow-wrap: break-word;
+  word-break: break-word;
+  white-space: normal;
+}
+
+/* Right-Edge Auto Alignment */
+.ease-tooltip-edge-right[data-position="top"]::after,
+.ease-tooltip-edge-right:not([data-position])::after {
+  left: auto;
+  right: 0;
+  transform: translateY(4px);
+}
+
+.ease-tooltip-edge-right[data-position="top"]:hover::after,
+.ease-tooltip-edge-right:not([data-position]):hover::after,
+.ease-tooltip-edge-right[data-position="top"]:focus-within::after,
+.ease-tooltip-edge-right:not([data-position]):focus-within::after {
+  transform: translateY(0);
+}
+
+.ease-tooltip-edge-right[data-position="top"]::before,
+.ease-tooltip-edge-right:not([data-position])::before {
+  left: auto;
+  right: 12px;
+  margin-left: 0;
+}
+
+/* Right-Edge Auto Alignment for Bottom Position */
+.ease-tooltip-edge-right[data-position="bottom"]::after {
+  left: auto;
+  right: 0;
+  transform: translateY(-4px);
+}
+
+.ease-tooltip-edge-right[data-position="bottom"]:hover::after,
+.ease-tooltip-edge-right[data-position="bottom"]:focus-within::after {
+  transform: translateY(0);
+}
+
+.ease-tooltip-edge-right[data-position="bottom"]::before {
+  left: auto;
+  right: 12px;
+  margin-left: 0;
+}

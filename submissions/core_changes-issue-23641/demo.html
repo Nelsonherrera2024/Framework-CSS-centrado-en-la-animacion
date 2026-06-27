@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EaseMotion CSS — Tooltip Overflow Fix Demo</title>
+    <!-- Link EaseMotion Framework relative to submissions directory -->
+    <link rel="stylesheet" href="../../easemotion.css" />
+    <!-- Custom Proposal Styles -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Tooltip Viewport Overflow</h1>
+      <p>
+        Pure CSS improvements protecting tooltips from overflowing on long
+        descriptions or near viewport edges.
+      </p>
+    </header>
+
+    <main class="demo-container">
+      <div class="demo-title">Showcase Showcase</div>
+
+      <!-- Long text wrap check -->
+      <div class="showcase-row">
+        <div class="row-info">
+          <span class="row-name">Long Description Wrapping</span>
+          <span class="row-desc"
+            >Using max-width and word-wrap properties to constrain
+            descriptions.</span
+          >
+        </div>
+        <div>
+          <span
+            class="ease-tooltip btn-trigger"
+            data-tooltip="This is an extremely long tooltip description designed to wrap onto multiple lines once it reaches the maximum width boundary."
+          >
+            Hover Me
+          </span>
+        </div>
+      </div>
+
+      <!-- Right edge alignment check -->
+      <div class="showcase-row">
+        <div class="row-info">
+          <span class="row-name"
+            >Right Edge - Default Centered (Overflow Risk)</span
+          >
+          <span class="row-desc"
+            >If this trigger sits on the right-most edge, the tooltip is
+            centered and cuts off or overflows.</span
+          >
+        </div>
+        <div style="display: flex; justify-content: flex-end">
+          <span
+            class="ease-tooltip btn-trigger"
+            data-tooltip="Default centered layout overflows."
+          >
+            Centered
+          </span>
+        </div>
+      </div>
+
+      <!-- Right edge fix check -->
+      <div class="showcase-row">
+        <div class="row-info">
+          <span class="row-name"
+            >Right Edge - Edge Alignment (.ease-tooltip-edge-right)</span
+          >
+          <span class="row-desc"
+            >Aligns the tooltip body flush to the right of the trigger,
+            preventing any right viewport boundary overflow.</span
+          >
+        </div>
+        <div style="display: flex; justify-content: flex-end">
+          <span
+            class="ease-tooltip ease-tooltip-edge-right btn-trigger"
+            data-tooltip="This tooltip body is aligned flush-right to prevent viewport overflow."
+          >
+            Aligned Right
+          </span>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
