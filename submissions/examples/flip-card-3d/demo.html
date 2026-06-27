@@ -3,65 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D Flip Card</title>
+    <title>3D Flip Card Component</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="flip-grid">
-        <div class="flip-card" aria-pressed="false" role="button" tabindex="0">
-            <div class="flip-inner">
-                <div class="flip-front">Front</div>
-                <div class="flip-back">Back</div>
+    <div class="container">
+        <h1>3D Flip Card with Dynamic Face Swap</h1>
+        
+        <div class="cards-grid">
+            <!-- Flip Card 1 -->
+            <div class="flip-card" role="button" tabindex="0" aria-pressed="false">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="https://via.placeholder.com/200?text=Front+Face" alt="Front">
+                        <h2>Front Side</h2>
+                    </div>
+                    <div class="flip-card-back">
+                        <img src="https://via.placeholder.com/200?text=Back+Face" alt="Back">
+                        <h2>Back Side</h2>
+                        <p>Click or press Enter to flip</p>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="flip-card" aria-pressed="false" role="button" tabindex="0">
-            <div class="flip-inner">
-                <div class="flip-front">Front</div>
-                <div class="flip-back">Back</div>
+
+            <!-- Flip Card 2 -->
+            <div class="flip-card" role="button" tabindex="0" aria-pressed="false">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <h2>Card 2 Front</h2>
+                        <p>3D Transform</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <h2>Card 2 Back</h2>
+                        <p>Pure CSS Animation</p>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="flip-card" aria-pressed="false" role="button" tabindex="0">
-            <div class="flip-inner">
-                <div class="flip-front">Front</div>
-                <div class="flip-back">Back</div>
-            </div>
-        </div>
-        <div class="flip-card" aria-pressed="false" role="button" tabindex="0">
-            <div class="flip-inner">
-                <div class="flip-front">Front</div>
-                <div class="flip-back">Back</div>
-            </div>
-        </div>
-        <div class="flip-card" aria-pressed="false" role="button" tabindex="0">
-            <div class="flip-inner">
-                <div class="flip-front">Front</div>
-                <div class="flip-back">Back</div>
-            </div>
-        </div>
-        <div class="flip-card" aria-pressed="false" role="button" tabindex="0">
-            <div class="flip-inner">
-                <div class="flip-front">Front</div>
-                <div class="flip-back">Back</div>
-            </div>
-        </div>
-        <div class="flip-card" aria-pressed="false" role="button" tabindex="0">
-            <div class="flip-inner">
-                <div class="flip-front">Front</div>
-                <div class="flip-back">Back</div>
-            </div>
-        </div>
-        <div class="flip-card" aria-pressed="false" role="button" tabindex="0">
-            <div class="flip-inner">
-                <div class="flip-front">Front</div>
-                <div class="flip-back">Back</div>
-            </div>
-        </div>
-        <div class="flip-card" aria-pressed="false" role="button" tabindex="0">
-            <div class="flip-inner">
-                <div class="flip-front">Front</div>
-                <div class="flip-back">Back</div>
+
+            <!-- Flip Card 3 -->
+            <div class="flip-card" role="button" tabindex="0" aria-pressed="false">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <h2>Card 3 Front</h2>
+                        <p>Accessibility Ready</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <h2>Card 3 Back</h2>
+                        <p>Keyboard Support</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
+    <script>
+        // Add keyboard and click interactivity
+        document.querySelectorAll('.flip-card').forEach(card => {
+            const handleFlip = () => {
+                card.classList.toggle('flipped');
+                card.setAttribute('aria-pressed', card.classList.contains('flipped'));
+            };
+
+            card.addEventListener('click', handleFlip);
+            card.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    handleFlip();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
