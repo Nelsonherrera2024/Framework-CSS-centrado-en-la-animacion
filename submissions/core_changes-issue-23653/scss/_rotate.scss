@@ -1,0 +1,16 @@
+// ============================================
+// EaseMotion CSS — SCSS Rotate Animation Partial
+// ============================================
+@use "variables" as *;
+
+@mixin rotate($duration: $speed-medium, $delay: 0s, $easing: $ease-ease) {
+  @include animate(ease-kf-rotate, $duration, $easing, $delay);
+}
+
+@mixin rotate-image-exit($duration: $speed-medium, $delay: 0s, $easing: $ease-ease) {
+  @include animate(ease-kf-rotate-image-exit, $duration, $easing, $delay);
+}
+
+@mixin gradient-rotation($duration: $speed-slow, $delay: 0s, $easing: $ease-ease) {
+  @include animate(ease-kf-gradient-rotation, $duration, $easing, $delay);
+}

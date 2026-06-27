@@ -1,0 +1,20 @@
+// ============================================
+// EaseMotion CSS — SCSS Fade Animation Partial
+// ============================================
+@use "variables" as *;
+
+@mixin fade-in($duration: $speed-medium, $delay: 0s, $easing: $ease-ease) {
+  @include animate(ease-kf-fade-in, $duration, $easing, $delay);
+}
+
+@mixin fade-out($duration: $speed-medium, $delay: 0s, $easing: $ease-ease) {
+  @include animate(ease-kf-fade-out, $duration, $easing, $delay);
+}
+
+@mixin blur-to-focus($duration: $speed-medium, $delay: 0s, $easing: $ease-ease) {
+  @include animate(ease-kf-blur-to-focus, $duration, $easing, $delay);
+}
+
+@mixin fade-icon-exit($duration: $speed-medium, $delay: 0s, $easing: $ease-ease) {
+  @include animate(ease-kf-fade-icon-exit, $duration, $easing, $delay);
+}

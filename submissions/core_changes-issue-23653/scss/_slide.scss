@@ -1,0 +1,32 @@
+// ============================================
+// EaseMotion CSS — SCSS Slide Animation Partial
+// ============================================
+@use "variables" as *;
+
+@mixin slide-up($duration: $speed-medium, $delay: 0s, $easing: $ease-ease) {
+  @include animate(ease-kf-slide-up, $duration, $easing, $delay);
+}
+
+@mixin slide-down($duration: $speed-medium, $delay: 0s, $easing: $ease-ease) {
+  @include animate(ease-kf-slide-down, $duration, $easing, $delay);
+}
+
+@mixin slide-in-left($duration: $speed-medium, $delay: 0s, $easing: $ease-ease) {
+  @include animate(ease-kf-slide-in-left, $duration, $easing, $delay);
+}
+
+@mixin slide-in-right($duration: $speed-medium, $delay: 0s, $easing: $ease-ease) {
+  @include animate(ease-kf-slide-in-right, $duration, $easing, $delay);
+}
+
+@mixin slide-in-from-top($duration: $speed-medium, $delay: 0s, $easing: $ease-ease) {
+  @include animate(ease-kf-slide-in-from-top, $duration, $easing, $delay);
+}
+
+@mixin slide-in-from-bottom($duration: $speed-medium, $delay: 0s, $easing: $ease-ease) {
+  @include animate(ease-kf-slide-in-from-bottom, $duration, $easing, $delay);
+}
+
+@mixin slide-image-exit($duration: $speed-medium, $delay: 0s, $easing: $ease-ease) {
+  @include animate(ease-kf-slide-image-exit, $duration, $easing, $delay);
+}
