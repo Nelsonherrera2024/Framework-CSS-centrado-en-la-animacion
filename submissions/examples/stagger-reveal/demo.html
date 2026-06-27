@@ -3,23 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Stagger Animation System</title>
+    <title>CSS Stagger Animation for List/Grid Reveal</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="gallery-grid">
-        <div class="card" style="--delay: calc(0 * 80ms)">Card 1</div>
-        <div class="card" style="--delay: calc(1 * 80ms)">Card 2</div>
-        <div class="card" style="--delay: calc(2 * 80ms)">Card 3</div>
-        <div class="card" style="--delay: calc(3 * 80ms)">Card 4</div>
-        <div class="card" style="--delay: calc(4 * 80ms)">Card 5</div>
-        <div class="card" style="--delay: calc(5 * 80ms)">Card 6</div>
-        <div class="card" style="--delay: calc(6 * 80ms)">Card 7</div>
-        <div class="card" style="--delay: calc(7 * 80ms)">Card 8</div>
-        <div class="card" style="--delay: calc(8 * 80ms)">Card 9</div>
-        <div class="card" style="--delay: calc(9 * 80ms)">Card 10</div>
-        <div class="card" style="--delay: calc(10 * 80ms)">Card 11</div>
-        <div class="card" style="--delay: calc(11 * 80ms)">Card 12</div>
+    <div class="container">
+        <h1>CSS Stagger Animation System</h1>
+        <p class="subtitle">Items reveal on scroll with staggered timing</p>
+
+        <section class="section">
+            <h2>Grid Layout (3 Columns)</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <div class="card-icon">🎨</div>
+                    <h3>Design</h3>
+                    <p>Beautiful and responsive layouts</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">⚡</div>
+                    <h3>Performance</h3>
+                    <p>Fast and optimized animations</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🔐</div>
+                    <h3>Security</h3>
+                    <p>Safe and reliable code</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📱</div>
+                    <h3>Responsive</h3>
+                    <p>Works on all devices</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🎯</div>
+                    <h3>Focused</h3>
+                    <p>Laser sharp attention to detail</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">✨</div>
+                    <h3>Polish</h3>
+                    <p>Refined and elegant solutions</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>List Layout (Vertical)</h2>
+            <ul class="list-vertical">
+                <li class="list-item">First item with smooth entrance</li>
+                <li class="list-item">Second item slides in slightly delayed</li>
+                <li class="list-item">Third item continues the pattern</li>
+                <li class="list-item">Fourth item maintains the rhythm</li>
+                <li class="list-item">Fifth item completes the sequence</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>Horizontal List</h2>
+            <div class="list-horizontal">
+                <div class="badge">HTML5</div>
+                <div class="badge">CSS3</div>
+                <div class="badge">Animation</div>
+                <div class="badge">Scroll-Triggered</div>
+                <div class="badge">Pure CSS</div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Text Content</h2>
+            <div class="paragraph-block">
+                <p>This section demonstrates how staggered animations work with text content, creating a progressive reveal effect that guides the viewer's attention.</p>
+            </div>
+        </section>
     </div>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.card, .list-item, .badge, .paragraph-block').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>
