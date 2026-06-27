@@ -37,6 +37,7 @@
       }
     }
 
+    /* ── Page layout ──────────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
@@ -52,9 +53,23 @@
       padding: 2rem 1rem;
     }
 
-    .page-header { text-align: center; max-width: 560px; }
-    .page-header h1 { font-size: 1.6rem; font-weight: 700; margin-bottom: 0.5rem; }
-    .page-header p { color: var(--ease-color-muted); font-size: 0.95rem; line-height: 1.6; }
+    .page-header {
+      text-align: center;
+      max-width: 560px;
+    }
+
+    .page-header h1 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--ease-color-text);
+      margin-bottom: 0.5rem;
+    }
+
+    .page-header p {
+      color: var(--ease-color-muted);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
 
     code {
       background: rgba(108, 99, 255, 0.1);
@@ -65,6 +80,7 @@
       font-size: 0.85em;
     }
 
+    /* ── Section labels ───────────────────────────────────────── */
     .section {
       display: flex;
       flex-direction: column;
@@ -82,6 +98,7 @@
       color: var(--ease-color-muted);
     }
 
+    /* ── Demo grid ────────────────────────────────────────────── */
     .demo-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -89,6 +106,7 @@
       width: 100%;
     }
 
+    /* ── Demo cards ───────────────────────────────────────────── */
     .demo-card {
       padding: 2rem 1.5rem;
       text-align: center;
@@ -110,10 +128,13 @@
       margin-top: 0.4rem;
     }
 
+    /* ── Bug demonstration: card WITHOUT the fix ──────────────── */
     .broken-demo .demo-card:hover {
+      /* References the undefined keyframe — does nothing visually */
       animation: ease-kf-hover-pulse-glow 300ms cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
     }
 
+    /* ── Status badges ────────────────────────────────────────── */
     .badge {
       display: inline-block;
       padding: 0.2rem 0.65rem;
@@ -127,6 +148,7 @@
     .badge-fixed  { background: rgba(21,128,61,0.12);  color: #15803d; }
   </style>
 
+  <!-- Load the submission fix -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -139,35 +161,68 @@
     </p>
   </header>
 
+  <!-- BEFORE: Broken (keyframe undefined, animation does nothing) -->
   <section class="section broken-demo">
     <div style="display:flex;align-items:center;gap:0.5rem;">
       <span class="badge badge-broken">Before — Broken</span>
       <span class="section-label">Hover has no effect (keyframe missing)</span>
     </div>
     <div class="demo-grid">
-      <div class="demo-card" aria-label="Broken card">Card A<span>No pulse, no glow</span></div>
-      <div class="demo-card" aria-label="Broken card">Card B<span>No pulse, no glow</span></div>
-      <div class="demo-card" aria-label="Broken card">Card C<span>No pulse, no glow</span></div>
+      <div class="demo-card" aria-label="Broken card — hover does nothing">
+        Card A
+        <span>No pulse, no glow</span>
+      </div>
+      <div class="demo-card" aria-label="Broken card — hover does nothing">
+        Card B
+        <span>No pulse, no glow</span>
+      </div>
+      <div class="demo-card" aria-label="Broken card — hover does nothing">
+        Card C
+        <span>No pulse, no glow</span>
+      </div>
     </div>
   </section>
 
+  <!-- AFTER: Fixed (keyframe defined in style.css, animation runs) -->
   <section class="section">
     <div style="display:flex;align-items:center;gap:0.5rem;">
       <span class="badge badge-fixed">After — Fixed</span>
       <span class="section-label">Hover triggers pulse + glow animation</span>
     </div>
     <div class="demo-grid">
-      <div class="demo-card hover-pulse-glow" aria-label="Fixed card">Card A<span>Pulse + glow on hover ✓</span></div>
-      <div class="demo-card hover-pulse-glow" aria-label="Fixed card">Card B<span>Pulse + glow on hover ✓</span></div>
-      <div class="demo-card hover-pulse-glow" aria-label="Fixed card">Card C<span>Pulse + glow on hover ✓</span></div>
+      <div class="demo-card hover-pulse-glow" aria-label="Fixed card — hover shows pulse glow">
+        Card A
+        <span>Pulse + glow on hover ✓</span>
+      </div>
+      <div class="demo-card hover-pulse-glow" aria-label="Fixed card — hover shows pulse glow">
+        Card B
+        <span>Pulse + glow on hover ✓</span>
+      </div>
+      <div class="demo-card hover-pulse-glow" aria-label="Fixed card — hover shows pulse glow">
+        Card C
+        <span>Pulse + glow on hover ✓</span>
+      </div>
     </div>
   </section>
 
+  <!-- Works on buttons too -->
   <section class="section">
     <span class="section-label">Works on any element — here on buttons</span>
     <div style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;">
-      <button class="hover-pulse-glow" style="padding:0.75rem 2rem;border:2px solid var(--ease-color-primary);border-radius:var(--ease-radius-md);background:var(--ease-color-primary);color:#fff;font-weight:600;font-size:0.9rem;cursor:pointer;">Primary Button</button>
-      <button class="hover-pulse-glow" style="padding:0.75rem 2rem;border:2px solid var(--ease-color-primary);border-radius:var(--ease-radius-md);background:transparent;color:var(--ease-color-primary);font-weight:600;font-size:0.9rem;cursor:pointer;">Outline Button</button>
+      <button
+        class="hover-pulse-glow"
+        style="padding:0.75rem 2rem;border:2px solid var(--ease-color-primary);border-radius:var(--ease-radius-md);background:var(--ease-color-primary);color:#fff;font-weight:600;font-size:0.9rem;cursor:pointer;"
+        aria-label="Primary button with pulse glow on hover"
+      >
+        Primary Button
+      </button>
+      <button
+        class="hover-pulse-glow"
+        style="padding:0.75rem 2rem;border:2px solid var(--ease-color-primary);border-radius:var(--ease-radius-md);background:transparent;color:var(--ease-color-primary);font-weight:600;font-size:0.9rem;cursor:pointer;"
+        aria-label="Outline button with pulse glow on hover"
+      >
+        Outline Button
+      </button>
     </div>
   </section>
 
