@@ -1,0 +1,122 @@
+/* ============================================================
+   ease-carousel — CSS-only Image Carousel with Scroll-Snap
+   Submission for EaseMotion CSS · Issue #23908
+   ============================================================ */
+
+@layer easemotion-components {
+  .ease-carousel {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--ease-radius-lg, 1rem);
+  }
+
+  .ease-carousel-track {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .ease-carousel-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .ease-carousel-slide {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    position: relative;
+  }
+
+  .ease-carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .ease-carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: var(--ease-space-2, 0.5rem);
+    padding: var(--ease-space-3, 0.75rem);
+  }
+
+  .ease-carousel-dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: var(--ease-radius-full, 9999px);
+    background: var(--ease-color-neutral-300, #cbd5e1);
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s, width 0.2s;
+  }
+
+  .ease-carousel-dot.active {
+    background: var(--ease-color-primary, #6c63ff);
+    width: 1rem;
+  }
+
+  .ease-carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: var(--ease-radius-full, 9999px);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    opacity: 0;
+    transition: opacity 0.2s;
+    z-index: 2;
+  }
+
+  .ease-carousel:hover .ease-carousel-btn {
+    opacity: 1;
+  }
+
+  .ease-carousel-btn-prev { left: var(--ease-space-3, 0.75rem); }
+  .ease-carousel-btn-next { right: var(--ease-space-3, 0.75rem); }
+
+  .ease-carousel-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--ease-space-4, 1rem);
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+    color: #fff;
+    font-size: var(--ease-text-sm, 0.875rem);
+  }
+
+  .ease-carousel-rounded {
+    border-radius: var(--ease-radius-xl, 1.5rem);
+  }
+
+  .ease-carousel-shadow {
+    box-shadow: var(--ease-shadow-lg, 0 10px 15px -3px rgba(0,0,0,0.1));
+  }
+
+  @media (max-width: 640px) {
+    .ease-carousel-btn {
+      width: 2rem;
+      height: 2rem;
+      font-size: 1rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ease-carousel-track {
+      scroll-behavior: auto !important;
+    }
+    .ease-carousel-dot {
+      transition: none !important;
+    }
+  }
+}

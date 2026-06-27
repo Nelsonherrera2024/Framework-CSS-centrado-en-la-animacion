@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ease-carousel — Demo · Issue #23908</title>
+  <link rel="stylesheet" href="../../core/variables.css" />
+  <link rel="stylesheet" href="../../core/base.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      background: #0f172a;
+      color: #f1f5f9;
+      min-height: 100vh;
+    }
+    .demo-header {
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+      border-bottom: 1px solid #1e293b;
+    }
+    .demo-header h1 {
+      font-size: clamp(1.75rem, 4vw, 2.75rem);
+      font-weight: 700;
+      background: linear-gradient(135deg, #6c63ff, #e040fb);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .demo-header p {
+      color: #94a3b8;
+      margin-top: 0.75rem;
+      font-size: 0.95rem;
+      max-width: 620px;
+      margin-inline: auto;
+      line-height: 1.6;
+    }
+    .demo-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem 1rem 3rem;
+    }
+    .demo-content h2 {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #6c63ff;
+      margin-bottom: 0.75rem;
+      margin-top: 2rem;
+    }
+    .section-desc {
+      color: #64748b;
+      font-size: 0.8rem;
+      margin-bottom: 0.75rem;
+      line-height: 1.5;
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+    .feature {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+    }
+    .feature .icon { font-size: 1.25rem; margin-bottom: 0.3rem; }
+    .feature .label { font-size: 0.7rem; color: #94a3b8; }
+    .feature .value { font-size: 0.6rem; color: #22c55e; margin-top: 0.2rem; }
+    .demo-footer {
+      text-align: center;
+      padding: 2rem;
+      color: #475569;
+      font-size: 0.75rem;
+      border-top: 1px solid #1e293b;
+    }
+    .slide-content {
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .slide-1 { background: linear-gradient(135deg, #6c63ff, #e040fb); }
+    .slide-2 { background: linear-gradient(135deg, #22c55e, #16a34a); }
+    .slide-3 { background: linear-gradient(135deg, #f59e0b, #d97706); }
+    .slide-4 { background: linear-gradient(135deg, #3b82f6, #1d4ed8); }
+    .slide-5 { background: linear-gradient(135deg, #ef4444, #dc2626); }
+    .slide-content .sub {
+      font-size: 0.9rem;
+      font-weight: 400;
+      opacity: 0.8;
+      margin-top: 0.5rem;
+    }
+    .code-block {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+    .code-block pre {
+      color: #e2e8f0;
+      font-size: 0.8rem;
+      overflow-x: auto;
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body>
+  <header class="demo-header">
+    <h1>ease-carousel</h1>
+    <p>CSS-only carousel component using <code>scroll-snap-type</code>. Includes navigation dots, prev/next buttons, captions, and variants. No JavaScript required for scrolling — dots and buttons are enhanced with minimal JS for click navigation.</p>
+  </header>
+
+  <div class="demo-content">
+    <h2>Features</h2>
+    <div class="feature-grid">
+      <div class="feature"><div class="icon">📜</div><div class="label">Scroll Snap</div><div class="value">x mandatory</div></div>
+      <div class="feature"><div class="icon">⬅️</div><div class="label">Nav Buttons</div><div class="value">Prev / Next</div></div>
+      <div class="feature"><div class="icon">⚪</div><div class="label">Nav Dots</div><div class="value">Active indicator</div></div>
+      <div class="feature"><div class="icon">🏷️</div><div class="label">Captions</div><div class="value">Gradient overlay</div></div>
+      <div class="feature"><div class="icon">📱</div><div class="label">Touch</div><div class="value">Swipe support</div></div>
+      <div class="feature"><div class="icon">♿</div><div class="label">Reduced Motion</div><div class="value">Scroll behavior off</div></div>
+    </div>
+
+    <h2>Default Carousel</h2>
+    <p class="section-desc">Swipe or use buttons to navigate. Dots show active slide.</p>
+    <div class="ease-carousel" id="carousel-1">
+      <div class="ease-carousel-track">
+        <div class="ease-carousel-slide"><div class="slide-content slide-1">Slide 1<div class="sub">Welcome to the carousel</div></div></div>
+        <div class="ease-carousel-slide"><div class="slide-content slide-2">Slide 2<div class="sub">Swipe or click buttons</div></div></div>
+        <div class="ease-carousel-slide"><div class="slide-content slide-3">Slide 3<div class="sub">CSS-only scroll-snap</div></div></div>
+        <div class="ease-carousel-slide"><div class="slide-content slide-4">Slide 4<div class="sub">Smooth scrolling</div></div></div>
+        <div class="ease-carousel-slide"><div class="slide-content slide-5">Slide 5<div class="sub">Final slide</div></div></div>
+      </div>
+      <button class="ease-carousel-btn ease-carousel-btn-prev" onclick="scrollCarousel('carousel-1', -1)" aria-label="Previous slide">&#8249;</button>
+      <button class="ease-carousel-btn ease-carousel-btn-next" onclick="scrollCarousel('carousel-1', 1)" aria-label="Next slide">&#8250;</button>
+      <div class="ease-carousel-dots" id="dots-carousel-1"></div>
+    </div>
+
+    <h2>With Captions</h2>
+    <p class="section-desc">Slides can include overlay captions.</p>
+    <div class="ease-carousel ease-carousel-rounded ease-carousel-shadow" id="carousel-2">
+      <div class="ease-carousel-track">
+        <div class="ease-carousel-slide"><div class="slide-content slide-1">Nature<div class="sub">Mountain landscapes</div></div><div class="ease-carousel-caption">Explore scenic mountain views</div></div>
+        <div class="ease-carousel-slide"><div class="slide-content slide-2">Ocean<div class="sub">Coastal beauty</div></div><div class="ease-carousel-caption">Discover ocean horizons</div></div>
+        <div class="ease-carousel-slide"><div class="slide-content slide-3">Forest<div class="sub">Woodland trails</div></div><div class="ease-carousel-caption">Wander through forests</div></div>
+      </div>
+      <button class="ease-carousel-btn ease-carousel-btn-prev" onclick="scrollCarousel('carousel-2', -1)" aria-label="Previous slide">&#8249;</button>
+      <button class="ease-carousel-btn ease-carousel-btn-next" onclick="scrollCarousel('carousel-2', 1)" aria-label="Next slide">&#8250;</button>
+      <div class="ease-carousel-dots" id="dots-carousel-2"></div>
+    </div>
+
+    <h2>Usage</h2>
+    <div class="code-block">
+      <pre>
+<span style="color:#64748b;">&lt;!-- Basic carousel with dots and buttons --&gt;</span>
+&lt;div class="ease-carousel" id="my-carousel"&gt;
+  &lt;div class="ease-carousel-track"&gt;
+    &lt;div class="ease-carousel-slide"&gt;
+      &lt;img src="slide1.jpg" alt="Slide 1" /&gt;
+    &lt;/div&gt;
+    &lt;div class="ease-carousel-slide"&gt;
+      &lt;img src="slide2.jpg" alt="Slide 2" /&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;button class="ease-carousel-btn ease-carousel-btn-prev"
+    onclick="scrollCarousel('my-carousel', -1)"&gt;&amp;#8249;&lt;/button&gt;
+  &lt;button class="ease-carousel-btn ease-carousel-btn-next"
+    onclick="scrollCarousel('my-carousel', 1)"&gt;&amp;#8250;&lt;/button&gt;
+
+  &lt;div class="ease-carousel-dots" id="dots-my-carousel"&gt;&lt;/div&gt;
+&lt;/div&gt;</pre>
+    </div>
+  </div>
+
+  <footer class="demo-footer">
+    Issue #23908 &middot; ease-carousel &middot; EaseMotion CSS
+  </footer>
+
+  <script>
+    function initDots(id) {
+      var carousel = document.getElementById(id);
+      var track = carousel.querySelector('.ease-carousel-track');
+      var slides = track.querySelectorAll('.ease-carousel-slide');
+      var dotsContainer = document.getElementById('dots-' + id);
+      if (!dotsContainer) return;
+
+      dotsContainer.innerHTML = '';
+      slides.forEach(function (_, i) {
+        var dot = document.createElement('button');
+        dot.className = 'ease-carousel-dot' + (i === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+        dot.onclick = function () {
+          slides[i].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+        };
+        dotsContainer.appendChild(dot);
+      });
+
+      track.addEventListener('scroll', function () {
+        var scrollLeft = track.scrollLeft;
+        var width = track.clientWidth;
+        var activeIdx = Math.round(scrollLeft / width);
+        dotsContainer.querySelectorAll('.ease-carousel-dot').forEach(function (d, i) {
+          d.classList.toggle('active', i === activeIdx);
+        });
+      });
+    }
+
+    function scrollCarousel(id, dir) {
+      var carousel = document.getElementById(id);
+      var track = carousel.querySelector('.ease-carousel-track');
+      var width = track.clientWidth;
+      track.scrollBy({ left: width * dir, behavior: 'smooth' });
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      initDots('carousel-1');
+      initDots('carousel-2');
+    });
+  </script>
+</body>
+</html>
