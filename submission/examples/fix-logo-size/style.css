@@ -1,0 +1,54 @@
+/* Custom component layout overrides for Issue #25832 */
+
+.branding-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 2.5rem;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+/* Core Bug Fix Layout Properties */
+.brand-logo-element {
+    height: 42px !important;       /* Establishes an optimal, visible fixed height boundary */
+    width: auto !important;         /* Forces natural aspect ratio constraint retention */
+    max-height: 100% !important;   /* Safeguards against parent component boundary overflow */
+    object-fit: contain !important; /* Preserves branding graphics geometry clear of warping */
+    display: block;
+}
+
+.navigation-links-list {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-item-link {
+    text-decoration: none;
+    color: #4a5568;
+    font-weight: 550;
+    font-size: 0.95rem;
+    transition: color 0.2s ease-in-out;
+}
+
+.nav-item-link:hover {
+    color: #1a202c;
+}
+
+/* Supplemental container arrangement for testing layout integration */
+.demo-viewport-container {
+    padding: 4rem 2rem;
+    background-color: #f7fafc;
+    min-height: 40vh;
+}
+
+.status-card {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
