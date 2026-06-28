@@ -1,0 +1,32 @@
+/* Forensic Accountant Template for #24602 */
+
+:root {
+    --investigation-slate: #334155;
+    --accuracy-blue: #0284c7;
+    --evidence-bg: #f8fafc;
+    --text-dark: #0f172a;
+}
+
+.hero-forensic {
+    padding: 140px 20px;
+    background: var(--investigation-slate);
+    color: white;
+    text-align: center;
+    border-bottom: 6px solid var(--accuracy-blue);
+}
+
+.audit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    padding: 80px 20px;
+    background: var(--evidence-bg);
+}
+
+.audit-card {
+    padding: 30px;
+    background: white;
+    border-radius: 4px;
+    border-left: 5px solid var(--investigation-slate);
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+}
