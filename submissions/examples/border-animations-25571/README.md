@@ -30,4 +30,4 @@ All animations respect `prefers-reduced-motion: reduce` and fall back to static 
 
 ## 3. Why is this useful?
 
-Animated borders draw attention to important UI elements — CTAs, featured cards, notifications, loading states — without adding extra DOM elements. They follow the EaseMotion philosophy of human-readable class names that describe behavior. The effects use CSS-only techniques (`@property`, `border-image`, masks) and require zero JavaScript.
+Animated borders draw attention to important UI elements without adding extra DOM elements. They follow the EaseMotion philosophy of human-readable class names that describe behavior. The effects use CSS-only techniques (`@property`, `border-image`, masks) and require zero JavaScript.

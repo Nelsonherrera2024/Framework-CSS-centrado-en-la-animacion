@@ -103,64 +103,10 @@
 
   /* ── Animated Dashed Border ─────────────────────────────── */
 
-  @keyframes border-dash-kf {
-    to {
-      stroke-dashoffset: -24;
-    }
-  }
-
-  .border-dash {
+  .border-dash-running {
+    position: relative;
     border: 2px dashed #6c63ff;
     border-radius: 8px;
-  }
-
-  .border-dash-running {
-    border: none;
-    position: relative;
-  }
-
-  .border-dash-running::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border: 2px dashed #6c63ff;
-    border-radius: inherit;
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    padding: 2px;
-    animation: border-dash-march 1s linear infinite;
-  }
-
-  @keyframes border-dash-march {
-    0% { background-position: 0 0; }
-    100% { background-position: 24px 0; }
-  }
-
-  .border-dash-running {
-    background: repeating-linear-gradient(
-      90deg,
-      #6c63ff 0,
-      #6c63ff 8px,
-      transparent 8px,
-      transparent 16px
-    );
-    background-size: 16px 100%;
-    animation: border-dash-march 0.8s linear infinite;
-  }
-
-  .border-dash-running {
-    border: none;
-    background: none;
-  }
-
-  .border-dash-running::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border: 2px dashed #6c63ff;
-    border-radius: inherit;
-    pointer-events: none;
   }
 
   .border-dash-running::after {
@@ -182,24 +128,6 @@
 
   @keyframes border-dash-rotate {
     to { transform: rotate(360deg); }
-  }
-
-  /* ── Color Variants (optional, for demo purposes) ───────── */
-  .border-gradient-rotate-success {
-    --border-gradient-from: #15803d;
-    --border-gradient-via: #22c55e;
-    --border-gradient-to: #15803d;
-    border-image: linear-gradient(
-      var(--border-angle),
-      var(--border-gradient-from) 0%,
-      var(--border-gradient-via) 50%,
-      var(--border-gradient-to) 100%
-    ) 1;
-  }
-
-  .border-pulse-success {
-    border-color: #15803d;
-    animation-name: border-pulse-kf;
   }
 
   /* ── Reduced Motion ─────────────────────────────────────── */
@@ -228,7 +156,6 @@
       border: 2px dashed #6c63ff;
     }
 
-    .border-dash-running::before,
     .border-dash-running::after {
       display: none;
     }
