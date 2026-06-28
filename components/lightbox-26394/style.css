@@ -1,0 +1,43 @@
+/* Pure CSS Lightbox Component #26394 */
+
+.lightbox-trigger {
+    cursor: zoom-in;
+    transition: transform 0.2s;
+}
+
+.lightbox-trigger:hover {
+    transform: scale(1.02);
+}
+
+/* Lightbox Modal Overlay */
+.lightbox-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-modal:target {
+    display: flex;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 90%;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.close-lightbox {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: white;
+    font-size: 40px;
+    text-decoration: none;
+}
