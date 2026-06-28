@@ -1,0 +1,26 @@
+@layer easemotion-components {
+  @keyframes ease-kf-wobble {
+    0%   { transform: translateX(0%) rotate(0deg); }
+    15%  { transform: translateX(-25%) rotate(-5deg); }
+    30%  { transform: translateX(20%) rotate(3deg); }
+    45%  { transform: translateX(-15%) rotate(-3deg); }
+    60%  { transform: translateX(10%) rotate(2deg); }
+    75%  { transform: translateX(-5%) rotate(-1deg); }
+    100% { transform: translateX(0%) rotate(0deg); }
+  }
+
+  .ease-wobble {
+    animation: ease-kf-wobble 1s ease-in-out both;
+    animation-iteration-count: var(--ease-animation-iterations, 1);
+  }
+
+  .ease-wobble.ease-infinite {
+    animation-iteration-count: infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ease-wobble {
+      animation: none !important;
+    }
+  }
+}
