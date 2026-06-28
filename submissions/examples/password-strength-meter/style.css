@@ -1,68 +1,94 @@
-*, *::before, *::after {
+* {
   box-sizing: border-box;
 }
 
+:root {
+  --accent: #059669;
+  --page: #ecfdf5;
+}
+
 body {
+  min-height: 100vh;
   margin: 0;
+  display: grid;
+  place-items: center;
+  background: var(--page);
+  color: #172033;
+  font-family: Arial, sans-serif;
 }
 
-.psm-card {
-  background: #ffffff;
-  border-radius: 14px;
-  padding: 1.5rem;
-  max-width: 360px;
-  width: 100%;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+.demo-shell {
+  width: min(92vw, 430px);
 }
 
-.psm-label {
-  display: block;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: #334155;
-  margin-bottom: 0.5rem;
-}
-
-.psm-input {
-  width: 100%;
-  padding: 0.625rem 0.75rem;
-  font-size: 0.9rem;
-  border: 1px solid #e2e8f0;
+.demo-card {
+  padding: 28px;
+  border: 1px solid rgba(23, 32, 51, 0.12);
   border-radius: 8px;
-  outline: none;
-  transition: border-color 0.2s ease;
+  background: #ffffff;
+  box-shadow: 0 20px 48px rgba(23, 32, 51, 0.13);
 }
 
-.psm-input:focus {
-  border-color: #6366f1;
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
-.psm-bar {
-  height: 6px;
-  background: #e2e8f0;
-  border-radius: 3px;
-  margin-top: 0.75rem;
-  overflow: hidden;
+h1 {
+  margin: 0 0 20px;
+  font-size: 1.72rem;
 }
 
-.psm-fill {
-  height: 100%;
-  width: 0%;
-  border-radius: 3px;
-  transition: width 0.3s ease, background 0.3s ease;
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
-.psm-hint {
-  font-size: 0.8rem;
-  color: #94a3b8;
-  margin-top: 0.5rem;
-  transition: color 0.2s ease;
+li {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  gap: 12px;
+  align-items: center;
+  padding: 13px 0;
+  border-top: 1px solid rgba(23, 32, 51, 0.1);
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .psm-input,
-  .psm-fill,
-  .psm-hint {
-    transition: none;
-  }
+li:first-child {
+  border-top: 0;
+}
+
+li:hover {
+  color: var(--accent);
+  transform: translateX(3px);
+}
+
+i {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 6px color-mix(in srgb, var(--accent) 14%, white);
+}
+
+button {
+  width: 100%;
+  margin-top: 22px;
+  padding: 12px 16px;
+  border: 0;
+  border-radius: 6px;
+  background: var(--accent);
+  color: #ffffff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 22px rgba(23, 32, 51, 0.18);
 }
