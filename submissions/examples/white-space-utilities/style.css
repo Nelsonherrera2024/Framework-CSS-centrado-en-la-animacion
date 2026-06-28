@@ -1,0 +1,96 @@
+.white-space-utilities-wrap {}
+.white-space-utilities-card {
+  background: hsl(271,71%,60%);
+  color: #fff;
+  border-radius: 19px;
+  padding: 2.22rem 1.55rem;
+  margin: 1.00rem;
+  box-shadow: 0 3px 9px rgba(0,0,0,0.12);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  animation: white-space-utilities-breathe 2.8s ease-in-out infinite;
+}
+.white-space-utilities-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.18);
+}
+.white-space-utilities-card-alt {
+  background: hsl(296,66%,52%);
+  border-radius: 15px;
+  padding: 1.55rem 1.00rem;
+  margin: 0.56rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+.white-space-utilities-card-alt:hover { transform: scale(1.04); }
+.white-space-utilities-card-ghost {
+  border: 2.5px solid hsl(271,71%,60%);
+  background: transparent;
+  color: hsl(271,71%,60%);
+  border-radius: 6px;
+  padding: 1.00rem;
+  font-weight: 600;
+}
+.white-space-utilities-card-glow {
+  background: hsl(271,61%,78%);
+  border-radius: 19px;
+  padding: 2.22rem 1.55rem;
+  margin: 1.00rem;
+  box-shadow: 0 0 12px hsl(271,61%,78%);
+  color: hsl(271,56%,38%);
+}
+.white-space-utilities-card-featured {
+  background: linear-gradient(135deg, hsl(271,71%,60%), hsl(296,66%,52%));
+  border-radius: 19px;
+  padding: 2.22rem 1.55rem;
+  color: #fff;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+.white-space-utilities-card-sm { border-radius: 6px; padding: 0.56rem 1.00rem; font-size: 13px; }
+.white-space-utilities-card-md { border-radius: 15px; padding: 1.55rem 1.00rem; font-size: 13px; }
+.white-space-utilities-card-lg { border-radius: 19px; padding: 2.22rem 1.55rem; font-size: 20px; font-weight: 700; }
+.white-space-utilities-v-1 { opacity: 1.0; }
+.white-space-utilities-v-2 { opacity: 0.82; }
+.white-space-utilities-v-3 { opacity: 0.65; }
+.white-space-utilities-v-4 { opacity: 0.5; }
+.white-space-utilities-v-5 { opacity: 0.35; }
+.white-space-utilities-shd-xs { box-shadow: 0 1px 3px rgba(0,0,0,0.07); }
+.white-space-utilities-shd-sm { box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+.white-space-utilities-shd-md { box-shadow: 0 4px 14px rgba(0,0,0,0.12); }
+.white-space-utilities-shd-lg { box-shadow: 0 8px 28px rgba(0,0,0,0.16); }
+.white-space-utilities-shd-xl { box-shadow: 0 16px 52px rgba(0,0,0,0.2); }
+.white-space-utilities-hover-lift:hover { transform: translateY(-6px); box-shadow: 0 12px 36px rgba(0,0,0,0.15); }
+.white-space-utilities-hover-scale:hover { transform: scale(1.05); }
+.white-space-utilities-hover-glow:hover { box-shadow: 0 0 28px hsl(271,61%,78%); }
+
+.white-space-utilities-text-white { color: #fff; }
+.white-space-utilities-text-dark { color: #1a1a2e; }
+.white-space-utilities-text-accent { color: hsl(256,81%,65%); }
+.white-space-utilities-bg-tint { background: hsl(271,61%,78%); color: hsl(271,56%,38%); }
+.white-space-utilities-border-pri { border: 2px solid hsl(271,71%,60%); }
+.white-space-utilities-border-alt { border: 2px solid hsl(296,66%,52%); }
+.white-space-utilities-border-radius-none { border-radius: 0; }
+.white-space-utilities-border-radius-full { border-radius: 9999px; }
+.white-space-utilities-rotate-5:hover { transform: rotate(5deg); }
+.white-space-utilities-translate-x:hover { transform: translateX(6px); }
+@keyframes white-space-utilities-breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.03); opacity: 0.88; }
+}
+@keyframes white-space-utilities-slide-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.white-space-utilities-slide-in { animation: white-space-utilities-slide-up 0.35s ease-out; }
+@media (min-width: 640px) {
+  .white-space-utilities-card { padding: 1.55rem; }
+  .white-space-utilities-card-featured { padding: 2.22rem; font-size: 20px; }
+}
+@media (min-width: 768px) {
+  .white-space-utilities-card-lg { font-size: 22px; }
+}
+@media (prefers-color-scheme: dark) {
+  .white-space-utilities-card { background: hsl(271,56%,38%); color: #f0f0f0; }
+  .white-space-utilities-card-alt { background: hsl(296, 50%, 45%); }
+  .white-space-utilities-card-ghost { border-color: hsl(271,61%,78%); color: hsl(271,61%,78%); }
+  .white-space-utilities-card-glow { background: hsl(271, 30%, 25%); color: hsl(271,61%,78%); }
+}
