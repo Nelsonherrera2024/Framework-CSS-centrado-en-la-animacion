@@ -1,289 +1,73 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Inter, sans-serif;
+/* ============================================================
+   EaseMotion CSS — ease-reveal
+   Submission by: sudha09-git
+   Description: Scroll-triggered entrance animations using
+                IntersectionObserver + CSS transitions.
+                Zero dependencies. JS is a copy-paste snippet.
+   ============================================================ */
+
+/* ─── Base: hidden by default ────────────────────────────── */
+
+.ease-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity var(--ease-speed-slow) var(--ease-ease-out),
+    transform var(--ease-speed-slow) var(--ease-ease-out);
 }
 
+/* ─── Visible state (toggled by JS observer) ─────────────── */
 
-body {
-    min-height: 100vh;
-    background:
-        radial-gradient(circle at top, #1e293b, #020617);
-    color: #f8fafc;
+.ease-reveal.is-visible {
+  opacity: 1;
+  transform: none;
 }
 
+/* ─── Direction variants ─────────────────────────────────── */
 
-.demo-container {
-    padding: 80px 10%;
+.ease-reveal-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition:
+    opacity var(--ease-speed-slow) var(--ease-ease-out),
+    transform var(--ease-speed-slow) var(--ease-ease-out);
 }
 
-
-/* Hero */
-
-.hero {
-    text-align: center;
-    max-width: 700px;
-    margin: auto;
+.ease-reveal-left.is-visible {
+  opacity: 1;
+  transform: none;
 }
 
-
-.tag {
-    display: inline-block;
-    padding: 8px 18px;
-    border-radius: 50px;
-
-    background: rgba(56,189,248,0.15);
-    color: #38bdf8;
-
-    font-size: 14px;
-    margin-bottom: 20px;
+.ease-reveal-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition:
+    opacity var(--ease-speed-slow) var(--ease-ease-out),
+    transform var(--ease-speed-slow) var(--ease-ease-out);
 }
 
-
-.hero h1 {
-    font-size: 55px;
-    background: linear-gradient(
-        90deg,
-        #38bdf8,
-        #a78bfa
-    );
-
-    -webkit-background-clip: text;
-    color: transparent;
+.ease-reveal-right.is-visible {
+  opacity: 1;
+  transform: none;
 }
 
-
-.hero p {
-    margin-top: 20px;
-    color: #94a3b8;
-    font-size: 18px;
+.ease-reveal-zoom {
+  opacity: 0;
+  transform: scale(0.9);
+  transition:
+    opacity var(--ease-speed-slow) var(--ease-ease-out),
+    transform var(--ease-speed-slow) var(--ease-ease-out);
 }
 
-
-/* Cards */
-
-.cards {
-
-    margin-top: 70px;
-
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    gap: 25px;
+.ease-reveal-zoom.is-visible {
+  opacity: 1;
+  transform: none;
 }
 
-
-.card {
-
-    padding: 35px 25px;
-
-    background:
-        rgba(255,255,255,0.05);
-
-    border:1px solid rgba(255,255,255,0.1);
-
-    border-radius:20px;
-
-    backdrop-filter: blur(15px);
-
-    transition:
-        transform .4s ease,
-        box-shadow .4s ease;
-
-}
-
-
-.card:hover {
-
-    transform: translateY(-12px);
-
-    box-shadow:
-    0 20px 40px rgba(56,189,248,.2);
-
-}
-
-
-.icon {
-
-    width:55px;
-    height:55px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    border-radius:50%;
-
-    background:
-    linear-gradient(135deg,#38bdf8,#a78bfa);
-
-    color:white;
-
-    font-size:25px;
-
-    margin-bottom:25px;
-}
-
-
-.card h3 {
-
-    font-size:22px;
-    margin-bottom:12px;
-
-}
-
-
-.card p {
-
-    color:#94a3b8;
-    line-height:1.6;
-
-}
-
-
-/* Reveal Animations */
-
-
-.reveal {
-
-    opacity:0;
-
-    animation-duration:.9s;
-
-    animation-fill-mode:forwards;
-
-    animation-timing-function:cubic-bezier(.22,1,.36,1);
-
-}
-
-
-.reveal-up {
-
-    animation-name:up;
-
-}
-
-
-.reveal-left {
-
-    animation-name:left;
-
-}
-
-
-.reveal-right {
-
-    animation-name:right;
-
-}
-
-
-.reveal-zoom {
-
-    animation-name:zoom;
-
-}
-
-
-
-@keyframes up {
-
-    from {
-
-        opacity:0;
-        transform:translateY(60px);
-
-    }
-
-    to {
-
-        opacity:1;
-        transform:translateY(0);
-
-    }
-
-}
-
-
-@keyframes left {
-
-    from {
-
-        opacity:0;
-        transform:translateX(-60px);
-
-    }
-
-    to {
-
-        opacity:1;
-        transform:translateX(0);
-
-    }
-
-}
-
-
-
-@keyframes right {
-
-    from {
-
-        opacity:0;
-        transform:translateX(60px);
-
-    }
-
-    to {
-
-        opacity:1;
-        transform:translateX(0);
-
-    }
-
-}
-
-
-
-@keyframes zoom {
-
-    from {
-
-        opacity:0;
-        transform:scale(.8);
-
-    }
-
-    to {
-
-        opacity:1;
-        transform:scale(1);
-
-    }
-
-}
-
-
-
-/* Responsive */
-
-@media(max-width:900px){
-
-    .cards{
-        grid-template-columns:1fr 1fr;
-    }
-
-    .hero h1{
-        font-size:40px;
-    }
-
-}
-
-
-@media(max-width:600px){
-
-    .cards{
-        grid-template-columns:1fr;
-    }
-
-}
+/* ─── Delay helpers ──────────────────────────────────────── */
+
+.ease-reveal-delay-100 { transition-delay: 100ms; }
+.ease-reveal-delay-200 { transition-delay: 200ms; }
+.ease-reveal-delay-300 { transition-delay: 300ms; }
+.ease-reveal-delay-400 { transition-delay: 400ms; }
+.ease-reveal-delay-500 { transition-delay: 500ms; }
