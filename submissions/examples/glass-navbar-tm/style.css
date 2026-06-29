@@ -1,0 +1,134 @@
+/* ============================================================
+   Glass Morphism Navbar Utilities — glass-navbar-tm
+   CSS Framework: EaseMotion-css Design Tokens
+   Generated for EaseMotion-css Competition
+   ============================================================ */
+
+/* ── Glass Navbar Base ───────────────────────────────────── */
+.navbar-glass {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.7);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: background var(--ease-speed-fast) var(--ease-ease);
+}
+
+/* ── Glass Navbar Dark ──────────────────────────────────── */
+.navbar-glass-dark {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(30, 41, 59, 0.7);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* ── Navbar Sizes ───────────────────────────────────────── */
+.navbar-glass-sm {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: var(--ease-space-2) 0;
+}
+.navbar-glass-md {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: var(--ease-space-3) 0;
+}
+.navbar-glass-lg {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: var(--ease-space-4) 0;
+}
+
+/* ── Navbar Container ────────────────────────────────────── */
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--ease-space-6);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ease-space-4);
+}
+
+/* ── Nav Brand ──────────────────────────────────────────── */
+.nav-brand {
+  font-weight: 700;
+  font-size: var(--ease-text-xl);
+  color: var(--ease-color-primary);
+  text-decoration: none;
+}
+
+/* ── Nav Links ──────────────────────────────────────────── */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: var(--ease-space-6);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.nav-links a {
+  color: var(--ease-color-text);
+  text-decoration: none;
+  font-size: var(--ease-text-sm);
+  font-weight: 500;
+  transition: color var(--ease-speed-fast) var(--ease-ease);
+  padding: var(--ease-space-1) 0;
+  border-bottom: 2px solid transparent;
+}
+.nav-links a:hover {
+  color: var(--ease-color-primary);
+  border-bottom-color: var(--ease-color-primary);
+}
+
+/* ── Nav Active Link ────────────────────────────────────── */
+.nav-links a.active {
+  color: var(--ease-color-primary);
+  border-bottom-color: var(--ease-color-primary);
+}
+
+/* ── Nav Action Buttons ────────────────────────────────── */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--ease-space-3);
+}
+
+/* ── Dark Mode Navbar ──────────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+  .navbar-glass {
+    background: rgba(15, 23, 42, 0.8);
+    border-bottom-color: rgba(255, 255, 255, 0.1);
+  }
+  .navbar-glass-dark {
+    background: rgba(15, 23, 42, 0.85);
+  }
+  .nav-links a {
+    color: var(--ease-color-neutral-300);
+  }
+  .nav-links a:hover {
+    color: var(--ease-color-primary-light);
+  }
+  .nav-links a.active {
+    color: var(--ease-color-primary-light);
+    border-bottom-color: var(--ease-color-primary-light);
+  }
+}
+
+/* ── Responsive Navbar ─────────────────────────────────── */
+@media (max-width: 768px) {
+  .navbar-container {
+    padding: 0 var(--ease-space-4);
+  }
+  .nav-links {
+    gap: var(--ease-space-4);
+  }
+  .nav-links a {
+    font-size: var(--ease-text-xs);
+  }
+}
