@@ -1,0 +1,63 @@
+// ================================================================
+// ease-aspect-ratio — Responsive Aspect Ratio Utility Mixins
+// Submission for EaseMotion CSS · Issue #27688
+// ================================================================
+// SCSS mixins for aspect-ratio boxes with responsive overrides.
+// ================================================================
+
+@use 'sass:map';
+
+// -----------------------------------------------
+// Configuration
+// -----------------------------------------------
+$ease-aspect-config: (
+  'default-ratio': 16 / 9,
+  'breakpoints': (
+    'sm': 640px,
+    'md': 768px,
+    'lg': 1024px,
+    'xl': 1280px
+  )
+) !default;
+
+// -----------------------------------------------
+// Mixins
+// -----------------------------------------------
+
+/// Fixed aspect ratio container (padding-bottom hack fallback)
+@mixin ease-aspect-box($ratio: map.get($ease-aspect-config, 'default-ratio')) {
+  position: relative !important;
+  width: 100% !important;
+  padding-bottom: calc(100% / $ratio) !important;
+  overflow: hidden !important;
+
+  > * {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+  }
+}
+
+/// Modern aspect-ratio property (CSS property)
+@mixin ease-aspect-ratio($ratio: map.get($ease-aspect-config, 'default-ratio')) {
+  aspect-ratio: $ratio !important;
+}
+
+/// Responsive aspect ratio override
+@mixin ease-aspect-responsive(
+  $default: map.get($ease-aspect-config, 'default-ratio'),
+  $overrides: ()
+) {
+  @include ease-aspect-ratio($default);
+
+  $bps: map.get($ease-aspect-config, 'breakpoints');
+  @each $bp-name, $bp-val in $bps {
+    @if map.has-key($overrides, $bp-name) {
+      @media (min-width: $bp-val) {
+        aspect-ratio: map.get($overrides, $bp-name) !important;
+      }
+    }
+  }
+}

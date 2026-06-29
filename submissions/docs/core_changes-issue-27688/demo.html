@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ease-aspect-ratio — Demo</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #f8fafc; color: #1e293b; padding: 3rem 1.5rem;
+    }
+    @media (prefers-color-scheme: dark) {
+      body { background: #0f172a; color: #f1f5f9; }
+    }
+    .demo-header { text-align: center; margin-bottom: 3rem; }
+    .demo-header h1 { font-size: clamp(2rem, 5vw, 3rem); }
+    .demo-header p { color: #64748b; margin-top: 0.5rem; }
+    .demo-section { max-width: 800px; margin: 0 auto 2.5rem; }
+    .demo-section h2 {
+      font-size: 0.75rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: 0.1em; color: #6c63ff; margin-bottom: 0.75rem;
+    }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .ratio-box {
+      border-radius: 0.5rem; display: flex; align-items: center; justify-content: center;
+      color: white; font-weight: 600; font-size: 0.85rem;
+    }
+    .r16-9 { aspect-ratio: 16/9; background: linear-gradient(135deg, #6c5ce7, #a29bfe); }
+    .r4-3 { aspect-ratio: 4/3; background: linear-gradient(135deg, #fd79a8, #fdcb6e); }
+    .r1-1 { aspect-ratio: 1/1; background: linear-gradient(135deg, #00b894, #00cec9); }
+    .r9-16 { aspect-ratio: 9/16; background: linear-gradient(135deg, #e17055, #fab1a0); }
+    .r21-9 { aspect-ratio: 21/9; background: linear-gradient(135deg, #0984e3, #74b9ff); }
+    .r3-2 { aspect-ratio: 3/2; background: linear-gradient(135deg, #e84393, #fd79a8); }
+    .tag {
+      display: inline-block; font-size: 0.6rem; font-family: monospace;
+      background: rgba(108,99,255,0.1); border: 1px solid rgba(108,99,255,0.2);
+      border-radius: 999px; padding: 0.25em 0.75em; color: #6c63ff;
+      margin-top: 0.5rem; text-align: center;
+    }
+    .card {
+      background: white; border: 1px solid #e2e8f0; border-radius: 0.5rem; padding: 1rem;
+      text-align: center;
+    }
+    @media (prefers-color-scheme: dark) { .card { background: #1e293b; border-color: #334155; } }
+    .card .label { font-size: 0.65rem; font-family: monospace; color: #6c63ff; margin-bottom: 0.5rem; }
+  </style>
+</head>
+<body>
+<header class="demo-header">
+  <h1>ease-aspect-ratio</h1>
+  <p>Responsive aspect ratio SCSS mixins</p>
+</header>
+<section class="demo-section">
+  <h2>Aspect Ratios</h2>
+  <div class="grid">
+    <div class="card"><div class="label">16:9 (ease-aspect-ratio(16/9))</div><div class="ratio-box r16-9">16:9</div></div>
+    <div class="card"><div class="label">4:3</div><div class="ratio-box r4-3">4:3</div></div>
+    <div class="card"><div class="label">1:1</div><div class="ratio-box r1-1">1:1</div></div>
+    <div class="card"><div class="label">9:16</div><div class="ratio-box r9-16">9:16</div></div>
+    <div class="card"><div class="label">21:9</div><div class="ratio-box r21-9">21:9</div></div>
+    <div class="card"><div class="label">3:2</div><div class="ratio-box r3-2">3:2</div></div>
+  </div>
+  <p style="text-align:center;color:#64748b;font-size:0.8rem;margin-top:1.5rem;">
+    SCSS: <code>@include ease-aspect-ratio(16/9)</code> or <code>ease-aspect-responsive</code> with breakpoint overrides.
+  </p>
+</section>
+</body>
+</html>

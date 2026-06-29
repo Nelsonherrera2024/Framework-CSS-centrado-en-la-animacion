@@ -1,0 +1,28 @@
+// ================================================================
+// ease-aspect-ratio — Demo SCSS
+// Submission for EaseMotion CSS · Issue #27688
+// ================================================================
+
+@use 'mixins' as aspect;
+
+.ratio-16-9 {
+  @include aspect.ease-aspect-ratio(16/9);
+  background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+}
+
+.ratio-1-1 {
+  @include aspect.ease-aspect-ratio(1/1);
+  background: linear-gradient(135deg, #fd79a8, #fdcb6e);
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+}
