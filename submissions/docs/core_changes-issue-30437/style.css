@@ -1,0 +1,69 @@
+@layer easemotion-components {
+@property --ease-counter-num {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+
+.ease-number-counter {
+  --ease-counter-from: 0;
+  --ease-counter-to: 100;
+  --ease-counter-duration: 2s;
+  --ease-counter-delay: 0s;
+  --ease-counter-font-size: 2.5rem;
+  --ease-counter-color: var(--ease-primary, #3b82f6);
+
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.ease-counter-value {
+  --ease-counter-num: var(--ease-counter-from);
+  font-size: var(--ease-counter-font-size);
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  color: var(--ease-counter-color);
+  line-height: 1;
+  counter-reset: ease-counter var(--ease-counter-num);
+}
+
+.ease-counter-value::after {
+  content: counter(ease-counter);
+}
+
+.ease-counter-animate .ease-counter-value {
+  animation: ease-counter-count var(--ease-counter-duration) var(--ease-counter-delay) ease-out forwards;
+}
+
+.ease-counter-label {
+  font-size: 0.8rem;
+  color: var(--ease-text-secondary, #4b5563);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.ease-counter-prefix::before {
+  content: var(--ease-counter-prefix, "");
+}
+
+.ease-counter-suffix::after {
+  content: var(--ease-counter-suffix, "") !important;
+}
+
+.ease-counter-sm { --ease-counter-font-size: 1.5rem; }
+.ease-counter-lg { --ease-counter-font-size: 3.5rem; }
+
+@keyframes ease-counter-count {
+  from { --ease-counter-num: var(--ease-counter-from); }
+  to   { --ease-counter-num: var(--ease-counter-to); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ease-counter-animate .ease-counter-value {
+    animation: none;
+    --ease-counter-num: var(--ease-counter-to);
+  }
+}
+}

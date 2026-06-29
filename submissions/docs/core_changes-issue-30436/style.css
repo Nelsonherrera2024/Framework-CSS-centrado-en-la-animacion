@@ -1,0 +1,75 @@
+@layer easemotion-components {
+.ease-theme-switcher {
+  --ease-ts-gap: 0.25rem;
+  --ease-ts-radius: 0.5rem;
+  --ease-ts-bg: var(--ease-bg-secondary, #f3f4f6);
+  --ease-ts-active: var(--ease-surface, #fff);
+  --ease-ts-shadow: 0 1px 3px rgba(0,0,0,.1);
+
+  display: inline-flex;
+  gap: var(--ease-ts-gap);
+  padding: 0.25rem;
+  background: var(--ease-ts-bg);
+  border-radius: var(--ease-ts-radius);
+}
+
+.ease-theme-option {
+  padding: 0.375rem 0.75rem;
+  border: none;
+  border-radius: calc(var(--ease-ts-radius) - 2px);
+  background: transparent;
+  color: var(--ease-text-secondary, #4b5563);
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  white-space: nowrap;
+}
+
+.ease-theme-option:hover {
+  color: var(--ease-text, #111827);
+}
+
+.ease-theme-option.is-active {
+  background: var(--ease-ts-active);
+  color: var(--ease-text, #111827);
+  box-shadow: var(--ease-ts-shadow);
+}
+
+.ease-theme-system,
+.ease-theme-light,
+.ease-theme-dark,
+.ease-theme-sepia,
+.ease-theme-high-contrast {
+  /* Theme classes applied to html element */
+}
+
+html.ease-theme-sepia {
+  --ease-bg: #fbf3d9;
+  --ease-bg-secondary: #f5e9c4;
+  --ease-text: #5b4636;
+  --ease-text-secondary: #7d6b55;
+  --ease-border: #d5c4a1;
+  --ease-primary: #af6f4b;
+  color-scheme: light;
+}
+
+html.ease-theme-high-contrast {
+  --ease-bg: #000;
+  --ease-bg-secondary: #1a1a1a;
+  --ease-text: #fff;
+  --ease-text-secondary: #ccc;
+  --ease-border: #666;
+  --ease-primary: #ff0;
+  --ease-primary-text: #000;
+  --ease-focus-ring-color: #ff0;
+  color-scheme: dark;
+}
+
+.ease-theme-transition,
+.ease-theme-transition * {
+  transition: background-color 0.3s ease,
+              color 0.3s ease,
+              border-color 0.3s ease,
+              box-shadow 0.3s ease !important;
+}
+}

@@ -1,0 +1,45 @@
+@layer easemotion-components {
+.ease-pull-refresh {
+  --ease-pr-indicator-size: 2.5rem;
+  --ease-pr-color: var(--ease-primary, #3b82f6);
+  --ease-pr-track: var(--ease-bg-tertiary, #e5e7eb);
+
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  position: relative;
+}
+
+.ease-pull-refresh-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.2s;
+  color: var(--ease-pr-color);
+}
+
+.ease-pull-refresh.is-pulling .ease-pull-refresh-indicator {
+  height: var(--ease-pr-indicator-size);
+}
+
+.ease-pull-refresh-spinner {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 2px solid var(--ease-pr-track);
+  border-top-color: var(--ease-pr-color);
+  border-radius: 50%;
+  animation: ease-pr-spin 0.6s linear infinite;
+}
+
+@keyframes ease-pr-spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ease-pull-refresh-spinner {
+    animation: none;
+    opacity: 0.5;
+  }
+}
+}

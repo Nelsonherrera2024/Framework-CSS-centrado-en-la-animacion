@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Number Counter — EaseMotion CSS</title>
+<link rel="stylesheet" href="style.css">
+<style>
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 600px; margin: 0 auto; padding: 2rem; background: #f9fafb; color: #111; }
+h1 { margin-bottom: .5rem; }
+section { background: #fff; padding: 1.5rem; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,.08); margin-bottom: 1.5rem; }
+h2 { margin: 0 0 1rem; font-size: 1rem; color: #374151; }
+.grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; text-align: center; }
+code { background: #e5e7eb; padding: .15em .4em; border-radius: 4px; }
+.btn { padding: .5rem 1rem; border: 1px solid #d1d5db; border-radius: 6px; background: #fff; cursor: pointer; }
+</style>
+</head>
+<body>
+<h1>Animated Number Counter</h1>
+<button class="btn" onclick="document.querySelectorAll('.ease-counter-value').forEach(e=>{e.style.animation='none';void e.offsetWidth;e.style.animation=''});document.querySelectorAll('.ease-number-counter').forEach(e=>e.classList.remove('ease-counter-animate'));void document.querySelector('.ease-number-counter').offsetWidth;document.querySelectorAll('.ease-number-counter').forEach(e=>e.classList.add('ease-counter-animate'))">Replay Animations</button>
+<section>
+<h2>Basic Counters</h2>
+<div class="grid">
+  <div class="ease-number-counter ease-counter-animate" style="--ease-counter-from:0;--ease-counter-to:1000;--ease-counter-duration:3s">
+    <span class="ease-counter-value"></span>
+    <span class="ease-counter-label">Downloads</span>
+  </div>
+  <div class="ease-number-counter ease-counter-animate" style="--ease-counter-from:0;--ease-counter-to:500;--ease-counter-duration:2s;--ease-counter-color:#22c55e">
+    <span class="ease-counter-value"></span>
+    <span class="ease-counter-label">Users</span>
+  </div>
+  <div class="ease-number-counter ease-counter-animate" style="--ease-counter-from:0;--ease-counter-to:99;--ease-counter-duration:1.5s;--ease-counter-color:#ef4444">
+    <span class="ease-counter-value"></span>
+    <span class="ease-counter-label">Bugs Fixed</span>
+  </div>
+</div>
+</section>
+<section>
+<h2>With Prefix/Suffix</h2>
+<div class="grid">
+  <div class="ease-number-counter ease-counter-animate ease-counter-lg" style="--ease-counter-from:0;--ease-counter-to:9999;--ease-counter-color:#8b5cf6">
+    <span class="ease-counter-value" style="--ease-counter-prefix:'$'"></span>
+  </div>
+  <div class="ease-number-counter ease-counter-animate" style="--ease-counter-from:0;--ease-counter-to:100;--ease-counter-color:#f59e0b">
+    <span class="ease-counter-value" style="--ease-counter-suffix:'%'"></span>
+    <span class="ease-counter-label">Completion</span>
+  </div>
+</div>
+</section>
+<p>Uses CSS @property for integer animation. Click "Replay" to restart.</p>
+</body>
+</html>

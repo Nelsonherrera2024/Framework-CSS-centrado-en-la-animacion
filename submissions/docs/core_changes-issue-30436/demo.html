@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Theme Switcher — EaseMotion CSS</title>
+<link rel="stylesheet" href="style.css">
+<style>
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 600px; margin: 0 auto; padding: 2rem; background: var(--ease-bg,#f9fafb); color: var(--ease-text,#111); }
+h1 { margin-bottom: .5rem; }
+section { background: var(--ease-surface,#fff); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--ease-border,#e5e7eb); margin-bottom: 1.5rem; }
+.card { background: var(--ease-bg-secondary,#f3f4f6); padding: 1rem; border-radius: 8px; margin-top: 1rem; }
+.btn { padding: .5rem 1rem; border: 1px solid var(--ease-border,#d1d5db); border-radius: 6px; background: var(--ease-surface,#fff); color: var(--ease-text,#111); cursor: pointer; }
+code { background: var(--ease-bg-tertiary,#e5e7eb); padding: .15em .4em; border-radius: 4px; }
+</style>
+</head>
+<body>
+<div class="ease-theme-transition">
+<h1>Theme Switcher</h1>
+<div class="ease-theme-switcher" style="margin-bottom:1.5rem">
+  <button class="ease-theme-option is-active" data-theme="system">System</button>
+  <button class="ease-theme-option" data-theme="light">Light</button>
+  <button class="ease-theme-option" data-theme="dark">Dark</button>
+  <button class="ease-theme-option" data-theme="sepia">Sepia</button>
+  <button class="ease-theme-option" data-theme="high-contrast">High Contrast</button>
+</div>
+<section>
+<h2>Sample Content</h2>
+<p>This text and the card below respond to the selected theme.</p>
+<div class="card">
+  <p><strong>Card Title</strong></p>
+  <p>This card uses theme CSS variables for colors.</p>
+  <button class="btn">Sample Button</button>
+</div>
+</section>
+</div>
+<script>
+document.querySelectorAll('.ease-theme-option').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.ease-theme-option').forEach(b => b.classList.remove('is-active'));
+    btn.classList.add('is-active');
+    const theme = btn.dataset.theme;
+    document.documentElement.className = '';
+    if (theme === 'system') {
+      document.documentElement.classList.add('ease-dark-mode-auto');
+    } else if (theme !== 'light') {
+      document.documentElement.classList.add('ease-theme-' + theme);
+    }
+  });
+});
+</script>
+</body>
+</html>
