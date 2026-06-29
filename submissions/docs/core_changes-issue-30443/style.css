@@ -1,0 +1,49 @@
+@layer easemotion-components {
+.ease-confetti {
+  --ease-confetti-duration: 3s;
+  --ease-confetti-pieces: 40;
+  --ease-confetti-colors: #ef4444, #3b82f6, #22c55e, #f59e0b, #8b5cf6, #ec4899;
+
+  position: relative;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.ease-confetti-piece {
+  position: absolute;
+  top: -10px;
+  width: 8px;
+  height: 8px;
+  opacity: 0;
+  animation: ease-confetti-fall var(--ease-confetti-duration) ease-in forwards;
+}
+
+.ease-confetti-piece:nth-child(1)  { left: 5%;   animation-delay: 0.0s; background: #ef4444; }
+.ease-confetti-piece:nth-child(2)  { left: 12%;  animation-delay: 0.1s; background: #3b82f6; }
+.ease-confetti-piece:nth-child(3)  { left: 20%;  animation-delay: 0.2s; background: #22c55e; }
+.ease-confetti-piece:nth-child(4)  { left: 28%;  animation-delay: 0.3s; background: #f59e0b; }
+.ease-confetti-piece:nth-child(5)  { left: 35%;  animation-delay: 0.4s; background: #8b5cf6; }
+.ease-confetti-piece:nth-child(6)  { left: 42%;  animation-delay: 0.15s; background: #ec4899; }
+.ease-confetti-piece:nth-child(7)  { left: 50%;  animation-delay: 0.35s; background: #ef4444; }
+.ease-confetti-piece:nth-child(8)  { left: 58%;  animation-delay: 0.05s; background: #3b82f6; }
+.ease-confetti-piece:nth-child(9)  { left: 65%;  animation-delay: 0.45s; background: #22c55e; }
+.ease-confetti-piece:nth-child(10) { left: 72%;  animation-delay: 0.25s; background: #f59e0b; }
+.ease-confetti-piece:nth-child(11) { left: 78%;  animation-delay: 0.5s;  background: #8b5cf6; }
+.ease-confetti-piece:nth-child(12) { left: 85%;  animation-delay: 0.3s;  background: #ec4899; }
+.ease-confetti-piece:nth-child(13) { left: 92%;  animation-delay: 0.1s;  background: #ef4444; }
+.ease-confetti-piece:nth-child(14) { left: 8%;   animation-delay: 0.55s; background: #3b82f6; }
+.ease-confetti-piece:nth-child(15) { left: 48%;  animation-delay: 0.4s;  background: #22c55e; }
+
+.ease-confetti-square { border-radius: 0; }
+.ease-confetti-circle { border-radius: 50%; }
+.ease-confetti-star { clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); }
+
+@keyframes ease-confetti-fall {
+  0%   { opacity: 1; transform: translateY(0) rotate(0deg) scale(1); }
+  100% { opacity: 0; transform: translateY(100vh) rotate(720deg) scale(0.5); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ease-confetti-piece { animation: none; display: none; }
+}
+}

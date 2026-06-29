@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Confetti — EaseMotion CSS</title><link rel="stylesheet" href="style.css"><style>
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 600px; margin: 0 auto; padding: 2rem; background: #f9fafb; color: #111; text-align: center; }
+h1 { margin-bottom: .5rem; }
+.btn { padding: .75rem 1.5rem; border: none; border-radius: 8px; background: #3b82f6; color: #fff; font-size: 1rem; cursor: pointer; }
+.btn:hover { background: #2563eb; }
+.confetti-box { position: relative; height: 300px; background: #fff; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,.08); overflow: hidden; margin-top: 1.5rem; display: flex; align-items: center; justify-content: center; flex-direction: column; }
+</style></head>
+<body>
+<h1>CSS Confetti</h1>
+<p>Click the button to trigger confetti!</p>
+<button class="btn" onclick="document.getElementById('confettiBox').classList.toggle('ease-confetti')">Toggle Confetti</button>
+<div class="confetti-box" id="confettiBox">
+  <span style="font-size:2rem">🎉</span>
+  <p style="color:#6b7280;margin:.5rem 0 0">Celebration!</p>
+  <div class="ease-confetti-piece ease-confetti-square"></div>
+  <div class="ease-confetti-piece ease-confetti-circle"></div>
+  <div class="ease-confetti-piece ease-confetti-star"></div>
+  <div class="ease-confetti-piece ease-confetti-square"></div>
+  <div class="ease-confetti-piece ease-confetti-circle"></div>
+  <div class="ease-confetti-piece ease-confetti-square"></div>
+  <div class="ease-confetti-piece ease-confetti-star"></div>
+  <div class="ease-confetti-piece ease-confetti-circle"></div>
+  <div class="ease-confetti-piece ease-confetti-square"></div>
+  <div class="ease-confetti-piece ease-confetti-star"></div>
+  <div class="ease-confetti-piece ease-confetti-circle"></div>
+  <div class="ease-confetti-piece ease-confetti-square"></div>
+  <div class="ease-confetti-piece ease-confetti-star"></div>
+  <div class="ease-confetti-piece ease-confetti-circle"></div>
+  <div class="ease-confetti-piece ease-confetti-square"></div>
+</div>
+</body>
+</html>
