@@ -1,0 +1,23 @@
+// ================================================================
+// ease-accordion — Accordion Expand/Collapse Max-Height Utilities Mixins
+// Submission for EaseMotion CSS · Issue #27801
+// ================================================================
+
+@use 'sass:map';
+
+$ease-accordion-config: (
+  'max-height': 500px,
+  'duration': 0.4s
+) !default;
+
+@mixin ease-accordion-collapse($max-height: map.get($ease-accordion-config, 'max-height'), $duration: map.get($ease-accordion-config, 'duration')) {
+  overflow: hidden !important;
+  max-height: 0 !important;
+  transition: max-height $duration ease !important;
+}
+
+@mixin ease-accordion-expand($max-height: map.get($ease-accordion-config, 'max-height'), $duration: map.get($ease-accordion-config, 'duration')) {
+  overflow: hidden !important;
+  max-height: $max-height !important;
+  transition: max-height $duration ease !important;
+}

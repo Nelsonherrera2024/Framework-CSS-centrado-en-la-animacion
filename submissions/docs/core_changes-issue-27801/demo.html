@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><title>ease-accordion — Demo</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:system-ui,sans-serif; background:#f8fafc; color:#1e293b; padding:3rem 1.5rem; display:flex; flex-direction:column; align-items:center; }
+@media (prefers-color-scheme:dark) { body { background:#0f172a; color:#f1f5f9; } }
+.demo-header { text-align:center; margin-bottom:3rem; }
+.demo-header h1 { font-size:clamp(2rem,5vw,3rem); }
+.demo-header p { color:#64748b; margin-top:0.5rem; }
+.demo-section { max-width:500px; margin:0 auto 2.5rem; width:100%; }
+.demo-section h2 { font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:#6c63ff;margin-bottom:0.75rem; }
+.accordion { border:1px solid #e2e8f0; border-radius:0.5rem; overflow:hidden; }
+.accordion-btn { width:100%; padding:0.75rem 1rem; background:white; border:none; text-align:left; font-size:0.9rem; font-weight:500; cursor:pointer; display:flex; justify-content:space-between; align-items:center; }
+@media (prefers-color-scheme:dark) { .accordion-btn { background:#1e293b; color:#f1f5f9; } .accordion { border-color:#334155; } }
+.accordion-content { overflow:hidden; max-height:0; transition:max-height 0.4s ease; }
+.accordion-content-inner { padding:0 1rem 1rem; font-size:0.85rem; color:#64748b; line-height:1.6; }
+.accordion.open .accordion-content { max-height:300px; }
+.accordion-btn .arrow { transition:transform 0.3s ease; }
+.accordion.open .arrow { transform:rotate(180deg); }
+.tag { display:inline-block; font-size:0.6rem; font-family:monospace; background:rgba(108,99,255,0.1); border:1px solid rgba(108,99,255,0.2); border-radius:999px; padding:0.25em 0.75em; color:#6c63ff; margin-top:1rem; }
+</style>
+</head>
+<body>
+<header class="demo-header"><h1>ease-accordion</h1><p>Expand/collapse max-height mixins</p></header>
+<section class="demo-section">
+<h2>Demo (click to toggle)</h2>
+<div class="accordion" onclick="this.classList.toggle('open')">
+<button class="accordion-btn"><span>What is EaseMotion CSS?</span><span class="arrow">▼</span></button>
+<div class="accordion-content"><div class="accordion-content-inner">EaseMotion CSS is a utility-first CSS framework designed for motion and interaction. It provides low-level utility classes for building custom designs with minimal CSS.</div></div>
+</div>
+<div class="accordion" onclick="this.classList.toggle('open')" style="margin-top:0.5rem;">
+<button class="accordion-btn"><span>How do SCSS mixins work?</span><span class="arrow">▼</span></button>
+<div class="accordion-content"><div class="accordion-content-inner">SCSS mixins are reusable blocks of styles that can be included anywhere. The ease-accordion mixins use max-height transitions to create smooth expand/collapse animations.</div></div>
+</div>
+<div class="tag" style="margin-top:1rem;display:inline-block;">ease-accordion-collapse / ease-accordion-expand</div>
+</section>
+<script>document.querySelectorAll('.accordion-btn').forEach(b=>b.addEventListener('click',e=>{e.stopPropagation();b.parentElement.classList.toggle('open')}))</script>
+</body>
+</html>
