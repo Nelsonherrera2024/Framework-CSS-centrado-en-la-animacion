@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Validation States — EaseMotion CSS</title>
+  <meta name="description" content="Interactive form component showcasing success and error validation states with custom borders, icons, and messages.">
+  <link rel="stylesheet" href="../../easemotion.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <span class="demo-badge">EaseMotion CSS — Form Utilities</span>
+      <h1>Form Validation States</h1>
+      <p class="description">
+        Demonstrates form input validation. Type credentials below and click "Validate Form" 
+        to trigger error and success state indicators.
+      </p>
+    </header>
+
+    <main class="showcase">
+
+      <form class="demo-form" id="validation-form" novalidate>
+        
+        <!-- Field 1: Email -->
+        <div class="form-group" id="group-email">
+          <label for="input-email">Email Address</label>
+          <div class="input-wrapper">
+            <input type="email" id="input-email" placeholder="name@example.com" required>
+            <span class="status-icon"></span>
+          </div>
+          <span class="feedback-msg">Please enter a valid email address.</span>
+        </div>
+
+        <!-- Field 2: Password -->
+        <div class="form-group" id="group-password">
+          <label for="input-password">Password</label>
+          <div class="input-wrapper">
+            <input type="password" id="input-password" placeholder="At least 6 characters" required>
+            <span class="status-icon"></span>
+          </div>
+          <span class="feedback-msg">Password must be at least 6 characters long.</span>
+        </div>
+
+        <button class="ease-btn validate-btn" type="submit">Validate Form</button>
+      </form>
+
+    </main>
+  </div>
+
+  <script>
+    const form = document.getElementById('validation-form');
+    
+    const emailGroup = document.getElementById('group-email');
+    const emailInput = document.getElementById('input-email');
+    
+    const passGroup = document.getElementById('group-password');
+    const passInput = document.getElementById('input-password');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // 1. Validate Email
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (emailRegex.test(emailInput.value)) {
+        emailGroup.className = 'form-group ease-input-success';
+      } else {
+        emailGroup.className = 'form-group ease-input-error';
+      }
+
+      // 2. Validate Password
+      if (passInput.value.length >= 6) {
+        passGroup.className = 'form-group ease-input-success';
+      } else {
+        passGroup.className = 'form-group ease-input-error';
+      }
+    });
+
+    // Real-time input resets
+    emailInput.addEventListener('input', () => {
+      emailGroup.className = 'form-group';
+    });
+
+    passInput.addEventListener('input', () => {
+      passGroup.className = 'form-group';
+    });
+  </script>
+
+</body>
+</html>
