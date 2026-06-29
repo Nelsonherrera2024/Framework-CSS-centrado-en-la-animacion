@@ -1,0 +1,67 @@
+@layer easemotion-utilities {
+.ease-gradient-animate {
+  --ease-ga-speed: 6s;
+  --ease-ga-angle: 135deg;
+  --ease-ga-bg-1: #3b82f6;
+  --ease-ga-bg-2: #8b5cf6;
+  --ease-ga-bg-3: #ec4899;
+  --ease-ga-bg-4: #f97316;
+
+  background: linear-gradient(
+    var(--ease-ga-angle),
+    var(--ease-ga-bg-1),
+    var(--ease-ga-bg-2),
+    var(--ease-ga-bg-3),
+    var(--ease-ga-bg-4)
+  );
+  background-size: 300% 300%;
+  animation: ease-ga-shift var(--ease-ga-speed) ease infinite;
+}
+
+.ease-gradient-animate-slow { --ease-ga-speed: 12s; }
+.ease-gradient-animate-fast { --ease-ga-speed: 3s; }
+.ease-gradient-animate-angle { animation-name: ease-ga-rotate; }
+
+.ease-gradient-animate-sunset {
+  --ease-ga-bg-1: #f97316;
+  --ease-ga-bg-2: #ef4444;
+  --ease-ga-bg-3: #ec4899;
+  --ease-ga-bg-4: #a855f7;
+}
+
+.ease-gradient-animate-ocean {
+  --ease-ga-bg-1: #06b6d4;
+  --ease-ga-bg-2: #3b82f6;
+  --ease-ga-bg-3: #6366f1;
+  --ease-ga-bg-4: #8b5cf6;
+}
+
+.ease-gradient-animate-aurora {
+  --ease-ga-bg-1: #22c55e;
+  --ease-ga-bg-2: #14b8a6;
+  --ease-ga-bg-3: #06b6d4;
+  --ease-ga-bg-4: #3b82f6;
+}
+
+.ease-gradient-animate-neon {
+  --ease-ga-bg-1: #ec4899;
+  --ease-ga-bg-2: #a855f7;
+  --ease-ga-bg-3: #6366f1;
+  --ease-ga-bg-4: #06b6d4;
+}
+
+@keyframes ease-ga-shift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes ease-ga-rotate {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ease-gradient-animate { animation: none; }
+}
+}
