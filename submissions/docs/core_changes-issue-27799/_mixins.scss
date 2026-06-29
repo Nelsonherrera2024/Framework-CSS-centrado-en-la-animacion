@@ -1,0 +1,29 @@
+// ================================================================
+// ease-card-lift — Card Hover Lift & Perspective Tilt Mixins
+// Submission for EaseMotion CSS · Issue #27799
+// ================================================================
+
+@use 'sass:map';
+
+$ease-card-lift-config: (
+  'lift-distance': -8px,
+  'shadow-rest': '0 2px 8px rgba(0,0,0,0.1)',
+  'shadow-hover': '0 12px 28px rgba(0,0,0,0.15)',
+  'perspective': 800px,
+  'max-tilt': 5deg,
+  'duration': 0.3s
+) !default;
+
+@mixin ease-card-lift($lift: map.get($ease-card-lift-config, 'lift-distance'), $duration: map.get($ease-card-lift-config, 'duration')) {
+  transition: transform $duration cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow $duration ease !important;
+  &:hover {
+    transform: translateY($lift) !important;
+    box-shadow: map.get($ease-card-lift-config, 'shadow-hover') !important;
+  }
+}
+
+@mixin ease-card-perspective($perspective: map.get($ease-card-lift-config, 'perspective'), $tilt: map.get($ease-card-lift-config, 'max-tilt')) {
+  perspective: $perspective !important;
+  transition: transform $tilt ease !important;
+  &:hover { transform: rotateX($tilt * -1) rotateY($tilt) !important; }
+}
