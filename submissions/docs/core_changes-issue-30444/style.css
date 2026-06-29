@@ -1,0 +1,35 @@
+@layer easemotion-utilities {
+.ease-shape-morph {
+  --ease-morph-duration: 0.4s;
+  --ease-morph-easing: cubic-bezier(0.4, 0, 0.2, 1);
+
+  width: 150px;
+  height: 150px;
+  background: var(--ease-primary, #3b82f6);
+  clip-path: circle(50%);
+  transition: clip-path var(--ease-morph-duration) var(--ease-morph-easing),
+              border-radius var(--ease-morph-duration) var(--ease-morph-easing);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+}
+
+.ease-shape-circle    { clip-path: circle(50%); }
+.ease-shape-triangle  { clip-path: polygon(50% 0%, 0% 100%, 100% 100%); }
+.ease-shape-diamond   { clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); }
+.ease-shape-hexagon   { clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%); }
+.ease-shape-star      { clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%); }
+.ease-shape-pentagon  { clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%); }
+.ease-shape-chevron   { clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%); }
+.ease-shape-cross     { clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%); }
+
+.ease-shape-polygon {
+  clip-path: var(--ease-shape-clip);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ease-shape-morph { transition: none; }
+}
+}
