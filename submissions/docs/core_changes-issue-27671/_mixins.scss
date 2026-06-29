@@ -1,0 +1,66 @@
+// ================================================================
+// ease-neumorphic — Neumorphic Soft Shadow Elevation Mixin
+// Submission for EaseMotion CSS · Issue #27671
+// ================================================================
+// Provides SCSS mixins for neumorphic (soft UI) shadow effects.
+// ================================================================
+
+@use 'sass:map';
+
+// -----------------------------------------------
+// Configuration
+// -----------------------------------------------
+$ease-neumorphic-config: (
+  'shadow-color': rgba(0, 0, 0, 0.1),
+  'light-color': rgba(255, 255, 255, 0.8),
+  'bg-color': #e0e5ec,
+  'border-radius': 1rem
+) !default;
+
+// -----------------------------------------------
+// Mixins
+// -----------------------------------------------
+
+/// Neumorphic pressed (concave) shadow
+@mixin ease-neumorphic-pressed(
+  $shadow: map.get($ease-neumorphic-config, 'shadow-color'),
+  $light: map.get($ease-neumorphic-config, 'light-color'),
+  $radius: map.get($ease-neumorphic-config, 'border-radius')
+) {
+  box-shadow:
+    inset 3px 3px 6px $shadow,
+    inset -3px -3px 6px $light;
+  border-radius: $radius;
+}
+
+/// Neumorphic raised (convex) shadow
+@mixin ease-neumorphic-raised(
+  $shadow: map.get($ease-neumorphic-config, 'shadow-color'),
+  $light: map.get($ease-neumorphic-config, 'light-color'),
+  $radius: map.get($ease-neumorphic-config, 'border-radius')
+) {
+  box-shadow:
+    6px 6px 12px $shadow,
+    -6px -6px 12px $light;
+  border-radius: $radius;
+}
+
+/// Neumorphic flat (no depth) shadow
+@mixin ease-neumorphic-flat(
+  $radius: map.get($ease-neumorphic-config, 'border-radius')
+) {
+  box-shadow: none;
+  border-radius: $radius;
+}
+
+/// Full neumorphic card with background
+@mixin ease-neumorphic-card(
+  $bg: map.get($ease-neumorphic-config, 'bg-color'),
+  $shadow: map.get($ease-neumorphic-config, 'shadow-color'),
+  $light: map.get($ease-neumorphic-config, 'light-color'),
+  $radius: map.get($ease-neumorphic-config, 'border-radius')
+) {
+  background: $bg;
+  border-radius: $radius;
+  @include ease-neumorphic-raised($shadow, $light, $radius);
+}
