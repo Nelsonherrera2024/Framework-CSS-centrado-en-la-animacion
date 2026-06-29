@@ -1,0 +1,278 @@
+/* ============================================================
+   Numbered List and Counter Styling — numbered-list-styling-tm
+   CSS Framework: EaseMotion-css Design Tokens
+   Generated for EaseMotion-css Competition
+   ============================================================ */
+
+/* ── Counter Reset ───────────────────────────────────────── */
+.list-counter {
+  counter-reset: list-counter;
+}
+
+/* ── Counter Increment ──────────────────────────────────── */
+.list-counter li {
+  counter-increment: list-counter;
+}
+
+/* ── Roman Numeral List ─────────────────────────────────── */
+.list-roman {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* ── Roman Numeral Item ─────────────────────────────────── */
+.list-roman li {
+  position: relative;
+  padding-left: 3rem;
+  margin-bottom: var(--ease-space-2);
+  line-height: 1.6;
+}
+
+/* ── Roman Numeral Marker ──────────────────────────────── */
+.list-roman li::before {
+  content: counter(list-counter, upper-roman) ".";
+  counter-increment: list-counter;
+  position: absolute;
+  left: 0;
+  width: 2.5rem;
+  text-align: right;
+  color: var(--ease-color-primary);
+  font-weight: 700;
+  font-size: var(--ease-text-sm);
+}
+
+/* ── Lower Roman Variant ───────────────────────────────── */
+.list-roman-lower li::before {
+  content: counter(list-counter, lower-roman) ".";
+}
+
+/* ── Small Size Roman ──────────────────────────────────── */
+.list-roman-sm li {
+  padding-left: 2.5rem;
+}
+
+/* ── Small Size Roman Marker ───────────────────────────── */
+.list-roman-sm li::before {
+  font-size: var(--ease-text-xs);
+  width: 2rem;
+}
+
+/* ── Large Size Roman ──────────────────────────────────── */
+.list-roman-lg li {
+  padding-left: 4rem;
+  font-size: var(--ease-text-lg);
+}
+
+/* ── Large Size Roman Marker ────────────────────────────── */
+.list-roman-lg li::before {
+  font-size: var(--ease-text-xl);
+  width: 3rem;
+}
+
+/* ── Alphabetic List ───────────────────────────────────── */
+.list-alpha {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* ── Alphabetic Item ───────────────────────────────────── */
+.list-alpha li {
+  position: relative;
+  padding-left: 2.5rem;
+  margin-bottom: var(--ease-space-2);
+}
+
+/* ── Lower Alpha Marker ────────────────────────────────── */
+.list-alpha li::before {
+  content: counter(list-counter, lower-alpha) ".";
+  counter-increment: list-counter;
+  position: absolute;
+  left: 0;
+  color: var(--ease-color-secondary);
+  font-weight: 600;
+}
+
+/* ── Upper Alpha Marker ─────────────────────────────────── */
+.list-alpha-upper li::before {
+  content: counter(list-counter, upper-alpha) ".";
+}
+
+/* ── Circle Number List ────────────────────────────────── */
+.list-circle {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* ── Circle Number Item ────────────────────────────────── */
+.list-circle li {
+  position: relative;
+  padding-left: 3rem;
+  margin-bottom: var(--ease-space-3);
+  padding-top: var(--ease-space-1);
+}
+
+/* ── Circle Number Marker ──────────────────────────────── */
+.list-circle li::before {
+  content: counter(list-counter);
+  counter-increment: list-counter;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2rem;
+  height: 2rem;
+  background: var(--ease-color-primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--ease-text-sm);
+  font-weight: 700;
+}
+
+/* ── Alternating Circle Colors ─────────────────────────── */
+.list-circle li:nth-child(2n)::before {
+  background: var(--ease-color-secondary);
+}
+
+/* ── Third Alternating Color ───────────────────────────── */
+.list-circle li:nth-child(3n)::before {
+  background: var(--ease-color-success);
+}
+
+/* ── Fourth Alternating Color ──────────────────────────── */
+.list-circle li:nth-child(4n)::before {
+  background: var(--ease-color-warning);
+}
+
+/* ── Primary Color Circles ─────────────────────────────── */
+.list-circle-primary li::before {
+  background: var(--ease-color-primary);
+}
+
+/* ── Secondary Color Circles ───────────────────────────── */
+.list-circle-secondary li::before {
+  background: var(--ease-color-secondary);
+}
+
+/* ── Square Number List ────────────────────────────────── */
+.list-square {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* ── Square Number Item ────────────────────────────────── */
+.list-square li {
+  position: relative;
+  padding-left: 3rem;
+  margin-bottom: var(--ease-space-2);
+}
+
+/* ── Square Number Marker ─────────────────────────────── */
+.list-square li::before {
+  content: counter(list-counter);
+  counter-increment: list-counter;
+  position: absolute;
+  left: 0;
+  width: 1.75rem;
+  height: 1.75rem;
+  background: var(--ease-color-neutral-800);
+  color: white;
+  border-radius: var(--ease-radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--ease-text-xs);
+  font-weight: 700;
+}
+
+/* ── Alternating Square Colors ─────────────────────────── */
+.list-square li:nth-child(2n)::before {
+  background: var(--ease-color-neutral-600);
+}
+
+/* ── Decorative Dot List ──────────────────────────────── */
+.list-dots {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* ── Decorative Dot Item ───────────────────────────────── */
+.list-dots li {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: var(--ease-space-2);
+}
+
+/* ── Dot Marker Base ──────────────────────────────────── */
+.list-dots li::before {
+  content: counter(list-counter);
+  counter-increment: list-counter;
+  position: absolute;
+  left: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  background: var(--ease-color-neutral-200);
+  border-radius: 50%;
+  top: 0.4rem;
+  font-size: 0;
+}
+
+/* ── Dot Color 1 ──────────────────────────────────────── */
+.list-dots li:nth-child(1)::before {
+  background: var(--ease-color-primary);
+}
+
+/* ── Dot Color 2 ──────────────────────────────────────── */
+.list-dots li:nth-child(2)::before {
+  background: var(--ease-color-secondary);
+}
+
+/* ── Dot Color 3 ──────────────────────────────────────── */
+.list-dots li:nth-child(3)::before {
+  background: var(--ease-color-success);
+}
+
+/* ── Dot Color 4 ──────────────────────────────────────── */
+.list-dots li:nth-child(4)::before {
+  background: var(--ease-color-warning);
+}
+
+/* ── Dot Color 5 ──────────────────────────────────────── */
+.list-dots li:nth-child(5)::before {
+  background: var(--ease-color-info);
+}
+
+/* ── Dark Mode ─────────────────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+  .list-roman li::before {
+    color: var(--ease-color-primary-light);
+  }
+  .list-alpha li::before {
+    color: var(--ease-color-secondary-light);
+  }
+  .list-circle li:nth-child(2n)::before {
+    background: var(--ease-color-secondary-dark);
+  }
+  .list-circle li:nth-child(3n)::before {
+    background: var(--ease-color-success-dark);
+  }
+  .list-square li::before {
+    background: var(--ease-color-neutral-600);
+  }
+  .list-square li:nth-child(2n)::before {
+    background: var(--ease-color-neutral-500);
+  }
+  .list-dots li::before {
+    background: var(--ease-color-neutral-600);
+  }
+}
+
+/* ── Reduced Motion ───────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .list-circle li::before,
+  .list-square li::before,
+  .list-dots li::before {
+    transition: none;
+  }
+}
