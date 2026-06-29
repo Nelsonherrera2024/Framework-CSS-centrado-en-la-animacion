@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/><title>ease-container-query — Demo</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:system-ui,sans-serif; background:#f8fafc; color:#1e293b; padding:3rem 1.5rem; display:flex; flex-direction:column; align-items:center; }
+@media (prefers-color-scheme:dark) { body { background:#0f172a; color:#f1f5f9; } }
+.demo-header { text-align:center; margin-bottom:3rem; }
+.demo-header h1 { font-size:clamp(2rem,5vw,3rem); }
+.demo-header p { color:#64748b; margin-top:0.5rem; }
+.demo-section { max-width:700px; margin:0 auto 2.5rem; text-align:center; }
+.demo-section h2 { font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:#6c63ff;margin-bottom:0.75rem; }
+.grid { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
+.cq-wrap { container-type:inline-size; container-name:demo; width:300px; background:white; border:1px solid #e2e8f0; border-radius:0.5rem; padding:1rem; }
+@media (prefers-color-scheme:dark) { .cq-wrap { background:#1e293b; border-color:#334155; } }
+.cq-child { font-size:0.8rem; color:#64748b; }
+@container demo (min-width: 250px) { .cq-child { font-size:1.1rem; color:#1e293b; font-weight:600; } }
+@media (prefers-color-scheme:dark) { @container demo (min-width: 250px) { .cq-child { color:#f1f5f9; } } }
+.narrow { width:180px; }
+.wide { width:300px; }
+.tag { display:inline-block; font-size:0.6rem; font-family:monospace; background:rgba(108,99,255,0.1); border:1px solid rgba(108,99,255,0.2); border-radius:999px; padding:0.25em 0.75em; color:#6c63ff; margin-top:0.5rem; }
+</style>
+</head>
+<body>
+<header class="demo-header"><h1>ease-container-query</h1><p>Container query wrapper mixins</p></header>
+<section class="demo-section">
+<h2>Resize wrappers to see text change</h2>
+<div class="grid">
+<div class="cq-wrap narrow"><p class="cq-child">Narrow container — small text</p><div class="tag">@container (min-width:250px)</div></div>
+<div class="cq-wrap wide"><p class="cq-child">Wide container — large text</p><div class="tag">@container (min-width:250px)</div></div>
+</div>
+</section>
+</body>
+</html>

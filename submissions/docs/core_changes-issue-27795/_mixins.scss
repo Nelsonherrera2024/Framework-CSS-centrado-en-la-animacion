@@ -1,0 +1,22 @@
+// ================================================================
+// ease-container-query — CSS Container Query Wrapper Mixins
+// Submission for EaseMotion CSS · Issue #27795
+// ================================================================
+
+@use 'sass:map';
+
+$ease-cq-config: (
+  'name': 'ease-container',
+  'type': inline-size
+) !default;
+
+@mixin ease-container($name: map.get($ease-cq-config, 'name'), $type: map.get($ease-cq-config, 'type')) {
+  container-name: $name !important;
+  container-type: $type !important;
+}
+
+@mixin ease-container-query($name: map.get($ease-cq-config, 'name'), $breakpoint: 400px) {
+  @container #{$name} (min-width: #{$breakpoint}) {
+    @content;
+  }
+}
