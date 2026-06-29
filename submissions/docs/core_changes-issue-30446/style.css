@@ -1,0 +1,45 @@
+@layer easemotion-utilities {
+.ease-parallax {
+  --ease-parallax-perspective: 1px;
+  --ease-parallax-height: 100vh;
+
+  perspective: var(--ease-parallax-perspective);
+  height: var(--ease-parallax-height);
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.ease-parallax-layer {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ease-parallax-slow {
+  transform: translateZ(-2px) scale(3);
+}
+
+.ease-parallax-medium {
+  transform: translateZ(-1px) scale(2);
+}
+
+.ease-parallax-fast {
+  transform: translateZ(0) scale(1);
+}
+
+.ease-parallax-base {
+  position: relative;
+  z-index: 1;
+  background: var(--ease-bg, #f9fafb);
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.ease-parallax-static {
+  position: relative;
+  z-index: 2;
+}
+}

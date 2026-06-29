@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Parallax — EaseMotion CSS</title><link rel="stylesheet" href="style.css"><style>
+body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: #fff; }
+code { background: rgba(255,255,255,.2); padding: .15em .4em; border-radius: 4px; }
+</style></head>
+<body>
+<div class="ease-parallax" style="--ease-parallax-perspective:1px;height:100vh">
+  <div class="ease-parallax-layer ease-parallax-slow" style="background:linear-gradient(135deg,#1e293b,#3b82f6);align-items:flex-start;justify-content:center;padding:4rem 2rem;flex-direction:column">
+    <h1 style="font-size:3rem;margin:0">Parallax Scroll</h1>
+    <p style="font-size:1.1rem;opacity:.8">Slow background layer</p>
+  </div>
+  <div class="ease-parallax-layer ease-parallax-medium" style="align-items:center;justify-content:center;pointer-events:none">
+    <div style="width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,.1);border:2px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;font-size:3rem;backdrop-filter:blur(4px)">✦</div>
+  </div>
+  <div class="ease-parallax-base" style="background:#0f172a;color:#fff;padding:4rem 2rem">
+    <h2>Foreground Content</h2>
+    <p>Scroll up/down to see the parallax effect. The background layers move at different speeds.</p>
+    <p>This uses the <code>perspective + translateZ() scale()</code> technique.</p>
+    <p style="height:100vh">Keep scrolling...</p>
+    <p>You reached the bottom!</p>
+  </div>
+</div>
+</body>
+</html>
