@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EaseMotion CSS — Cookie Consent Banner with Bottom Slide</title>
+    <!-- Outfit & Fira Code Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Outfit:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="cookie-workspace">
+      <!-- Header -->
+      <header class="matrix-header">
+        <h1>Cookie Consent Banner</h1>
+        <p>
+          Simulate a cookie preferences banner that slides up from the bottom.
+          Click the controls below to toggle preferences or reset saved local storage consent.
+        </p>
+      </header>
+
+      <!-- Reset / trigger actions -->
+      <div style="margin-bottom: 2rem;">
+        <button class="demo-action-btn" id="reset-storage-btn">Reset Consent Storage</button>
+      </div>
+
+      <!-- Banner overlay container -->
+      <div class="cookie-banner-overlay" id="cookie-banner">
+        <div class="cookie-card-body">
+          <div class="banner-row">
+            <div class="banner-desc">
+              <h4>Cookie Consent Preferences</h4>
+              <p>We use cookies to personalize your experience and analyze traffic. Customize preferences below.</p>
+            </div>
+            
+            <div class="banner-controls">
+              <button class="banner-btn btn-secondary" id="toggle-prefs-btn">Preferences</button>
+              <button class="banner-btn btn-secondary" id="decline-btn">Decline</button>
+              <button class="banner-btn btn-primary" id="accept-all-btn">Accept All</button>
+            </div>
+          </div>
+
+          <!-- Preferences Drawer -->
+          <div class="prefs-drawer" id="prefs-drawer" style="display:none;">
+            <div class="prefs-row">
+              <div class="prefs-info">
+                <span>Essential Cookies</span>
+                <p>Required for standard site functionality (always enabled).</p>
+              </div>
+              <input type="checkbox" class="prefs-chk" checked disabled style="cursor:not-allowed;" />
+            </div>
+
+            <div class="prefs-row">
+              <div class="prefs-info">
+                <span>Analytics Cookies</span>
+                <p>Helps us measure site traffic performance metrics.</p>
+              </div>
+              <input type="checkbox" class="prefs-chk" id="chk-analytics" checked />
+            </div>
+
+            <div class="prefs-row">
+              <div class="prefs-info">
+                <span>Marketing Cookies</span>
+                <p>Used for advertisement and product recommendation targetings.</p>
+              </div>
+              <input type="checkbox" class="prefs-chk" id="chk-marketing" />
+            </div>
+
+            <div style="display:flex; justify-content:flex-end; margin-top:0.5rem;">
+              <button class="banner-btn btn-success" id="accept-selected-btn">Accept Selected</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Code Block -->
+      <div class="code-panel">
+        <h4>React Component Copy-Paste Usage (.jsx)</h4>
+        <pre id="code-view" class="code-view"></pre>
+      </div>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <p>
+          EaseMotion CSS — Created for GSSOC 2026. View issue on
+          <a
+            href="https://github.com/SAPTARSHI-coder/EaseMotion-css/issues/27370"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GitHub #27370</a
+          >.
+        </p>
+      </footer>
+    </div>
+
+    <!-- Active interactive slide drawer logic -->
+    <script>
+      (function () {
+        const resetStorageBtn = document.getElementById("reset-storage-btn");
+        const cookieBanner = document.getElementById("cookie-banner");
+        const togglePrefsBtn = document.getElementById("toggle-prefs-btn");
+        const declineBtn = document.getElementById("decline-btn");
+        const acceptAllBtn = document.getElementById("accept-all-btn");
+        const prefsDrawer = document.getElementById("prefs-drawer");
+        const acceptSelectedBtn = document.getElementById("accept-selected-btn");
+        const chkAnalytics = document.getElementById("chk-analytics");
+        const chkMarketing = document.getElementById("chk-marketing");
+        const codeView = document.getElementById("code-view");
+
+        const cookieName = "easemotion_consent_demo";
+
+        function checkConsent() {
+          const consent = localStorage.getItem(cookieName);
+          if (!consent) {
+            setTimeout(() => {
+              cookieBanner.classList.add("active");
+            }, 800);
+          }
+        }
+
+        function saveConsent(type, prefs) {
+          localStorage.setItem(cookieName, JSON.stringify({ type, prefs }));
+          cookieBanner.classList.remove("active");
+        }
+
+        function handleAcceptAll() {
+          saveConsent("accept", { essential: true, analytics: true, marketing: true });
+        }
+
+        function handleAcceptSelected() {
+          saveConsent("accept", {
+            essential: true,
+            analytics: chkAnalytics.checked,
+            marketing: chkMarketing.checked
+          });
+        }
+
+        function handleDecline() {
+          saveConsent("decline", { essential: true, analytics: false, marketing: false });
+        }
+
+        function togglePrefs() {
+          const isHidden = prefsDrawer.style.display === "none";
+          prefsDrawer.style.display = isHidden ? "flex" : "none";
+          togglePrefsBtn.textContent = isHidden ? "Hide Preferences" : "Preferences";
+        }
+
+        function resetStorage() {
+          localStorage.removeItem(cookieName);
+          cookieBanner.classList.remove("active");
+          prefsDrawer.style.display = "none";
+          togglePrefsBtn.textContent = "Preferences";
+          
+          setTimeout(() => {
+            cookieBanner.classList.add("active");
+          }, 400);
+        }
+
+        function renderReactCode() {
+          const codeText = `// React Usage Example:\nimport React from 'react';\nimport CookieConsentBanner from './CookieConsentBanner';\n\nexport default function App() {\n  const handleAccept = (prefs) => {\n    console.log('Consent saved:', prefs);\n  };\n\n  return (\n    <CookieConsentBanner \n      cookieName="app_user_consent" \n      accentColor="#8b5cf6" \n      onAccept={handleAccept} \n    />\n  );\n}`;
+          codeView.textContent = codeText;
+        }
+
+        togglePrefsBtn.addEventListener("click", togglePrefs);
+        declineBtn.addEventListener("click", handleDecline);
+        acceptAllBtn.addEventListener("click", handleAcceptAll);
+        acceptSelectedBtn.addEventListener("click", handleAcceptSelected);
+        resetStorageBtn.addEventListener("click", resetStorage);
+
+        // Initial setup
+        checkConsent();
+        renderReactCode();
+      })();
+    </script>
+  </body>
+</html>

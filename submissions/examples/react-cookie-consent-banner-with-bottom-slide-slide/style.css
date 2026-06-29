@@ -1,0 +1,255 @@
+/* ============================================================
+   Cookie Consent Banner with Bottom Slide Slide
+   Provides base variables, slide tracks, cookie banner containers,
+   action panels, and layout offsets.
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   DESIGN SYSTEM TOKENS
+   ------------------------------------------------------------ */
+:root {
+  --cookie-bg-base: #030712;
+  --cookie-bg-surface: #0b0f19;
+  --cookie-border-subtle: #1f2937;
+  --cookie-text-primary: #f9fafb;
+  --cookie-text-secondary: #9ca3af;
+  --cookie-text-muted: #6b7280;
+
+  --cookie-accent-violet: #8b5cf6;
+  --cookie-accent-emerald: #10b981;
+
+  --cookie-brand-gradient: linear-gradient(135deg, #8b5cf6 0%, #3b82f6 50%, #10b981 100%);
+  --cookie-shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+  --cookie-font-display: "Outfit", sans-serif;
+  --cookie-font-mono: "Fira Code", monospace;
+  --cookie-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--cookie-bg-base);
+  color: var(--cookie-text-primary);
+  font-family: var(--cookie-font-display);
+  line-height: 1.5;
+}
+
+.cookie-workspace {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+}
+
+/* Header */
+.matrix-header {
+  border-bottom: 1px solid var(--cookie-border-subtle);
+  padding-bottom: 2rem;
+  margin-bottom: 3.5rem;
+}
+
+.matrix-header h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 0 0 0.5rem 0;
+  background: var(--cookie-brand-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.02em;
+}
+
+.matrix-header p {
+  font-size: 1.05rem;
+  color: var(--cookie-text-secondary);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ------------------------------------------------------------
+   INTERACTIVE WORKSPACE BANNER
+   ------------------------------------------------------------ */
+.demo-action-btn {
+  background: var(--cookie-brand-gradient);
+  color: #fff;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--cookie-transition);
+  box-shadow: var(--cookie-shadow-lg);
+}
+
+.demo-action-btn:hover {
+  opacity: 0.95;
+  transform: translateY(-2px);
+}
+
+/* Banner Component styling */
+.cookie-banner-overlay {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cookie-banner-overlay.active {
+  transform: translateY(0);
+}
+
+.cookie-card-body {
+  max-width: 850px;
+  margin: 0 auto;
+  background-color: var(--cookie-bg-surface);
+  border: 1px solid var(--cookie-border-subtle);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: var(--cookie-shadow-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.banner-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.banner-desc {
+  flex: 1;
+  min-width: 280px;
+  text-align: left;
+}
+
+.banner-desc h4 {
+  margin: 0 0 0.25rem 0;
+  color: var(--cookie-text-primary);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.banner-desc p {
+  margin: 0;
+  color: var(--cookie-text-secondary);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.banner-controls {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.banner-btn {
+  padding: 0.5rem 1.25rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--cookie-transition);
+}
+
+.btn-secondary {
+  border: 1px solid var(--cookie-border-subtle);
+  background-color: var(--cookie-bg-base);
+  color: #fff;
+}
+
+.btn-secondary:hover {
+  border-color: var(--cookie-accent-violet);
+}
+
+.btn-primary {
+  border: none;
+  background-color: var(--cookie-accent-violet);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.btn-success {
+  border: none;
+  background-color: var(--cookie-accent-emerald);
+  color: #fff;
+}
+
+.btn-success:hover {
+  opacity: 0.9;
+}
+
+/* Preferences Toggle Drawer */
+.prefs-drawer {
+  border-top: 1px solid var(--cookie-border-subtle);
+  padding-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: left;
+}
+
+.prefs-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.prefs-info span {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--cookie-text-primary);
+}
+
+.prefs-info p {
+  margin: 0;
+  font-size: 0.75rem;
+  color: var(--cookie-text-muted);
+}
+
+.prefs-chk {
+  cursor: pointer;
+}
+
+/* Code Panel */
+.code-panel {
+  max-width: 800px;
+  margin: 3.5rem auto 0 auto;
+  background-color: #010409;
+  border: 1px solid var(--cookie-border-subtle);
+  border-radius: 8px;
+  padding: 1.25rem;
+  text-align: left;
+}
+
+.code-panel h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.8rem;
+  color: var(--cookie-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.code-view {
+  font-family: var(--cookie-font-mono);
+  color: #58a6ff;
+  margin: 0;
+  font-size: 0.85rem;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+@media (max-width: 900px) {
+  .cookie-card-body {
+    flex-direction: column;
+  }
+}
