@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Error Resilience Sandbox — EaseMotion CSS</title>
+  <meta name="description" content="Dashboard simulating REST API error-handling patterns, try-catch guards, and rate-limiting recovery.">
+  <link rel="stylesheet" href="../../easemotion.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <span class="demo-badge">EaseMotion CSS — API Resilience Specs</span>
+      <h1>API Error Resilience</h1>
+      <p class="description">
+        Demonstrates script crashes caused by missing try-catch error guards on API queries.
+        Simulate requests below to test crash prevention and retry wrappers.
+      </p>
+    </header>
+
+    <main class="dashboard">
+
+      <!-- Left Panel: Trigger Sandbox -->
+      <section class="demo-card state-card">
+        <h2 class="section-title">API Simulators</h2>
+        
+        <div class="simulator-buttons">
+          <button class="ease-btn" id="btn-trigger-vuln" type="button">Trigger Guardless API (Crashes)</button>
+          <button class="ease-btn ease-btn-success" id="btn-trigger-resilient" type="button">Trigger Resilient API (Recovers)</button>
+        </div>
+      </section>
+
+      <!-- Right Panel: Visual Logs -->
+      <section class="demo-card logs-card">
+        <h2 class="section-title">API Output Logs</h2>
+        
+        <div class="logs-console" id="logs-console">
+          <div class="log-line text-muted">[System] Sandbox active. Waiting for API triggers...</div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script>
+    const logsConsole = document.getElementById('logs-console');
+
+    const logMsg = (text, type = 'normal') => {
+      const line = document.createElement('div');
+      line.className = `log-line ${type === 'muted' ? 'text-muted' : ''} ${type === 'danger' ? 'text-danger' : ''} ${type === 'success' ? 'text-success' : ''}`;
+      line.innerHTML = text;
+      logsConsole.appendChild(line);
+      logsConsole.scrollTop = logsConsole.scrollHeight;
+    };
+
+    // Simulated Guardless Call (Crashes thread on error)
+    document.getElementById('btn-trigger-vuln').addEventListener('click', () => {
+      logMsg('🚀 Dispatching API request to <code>/issues/unclaim</code>...', 'normal');
+      
+      // Simulate crash by throwing unhandled exception
+      setTimeout(() => {
+        logMsg('❌ API Error: Rate limit exceeded (403 Forbidden)', 'danger');
+        logMsg('💥 ERROR: Uncaught Exception! Node process terminated.', 'danger');
+      }, 600);
+    });
+
+    // Simulated Resilient Call (Caught and retried)
+    document.getElementById('btn-trigger-resilient').addEventListener('click', () => {
+      logMsg('🚀 Dispatching API request to <code>/issues/unclaim</code>...', 'normal');
+      
+      setTimeout(() => {
+        logMsg('⚠️ API Error: Rate limit exceeded (403 Forbidden) - Caught by try-catch!', 'danger');
+        logMsg('🔄 Scheduling exponential backoff retry in 1000ms...', 'muted');
+        
+        setTimeout(() => {
+          logMsg('🚀 Retrying API request to <code>/issues/unclaim</code>...', 'normal');
+          setTimeout(() => {
+            logMsg('✅ API Success: Issue successfully unclaimed! (200 OK)', 'success');
+          }, 600);
+        }, 1000);
+      }, 600);
+    });
+  </script>
+
+</body>
+</html>
