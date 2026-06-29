@@ -1,0 +1,56 @@
+// ================================================================
+// ease-gradient-text — Gradient Text Flow & Animation Mixins
+// Submission for EaseMotion CSS · Issue #27669
+// ================================================================
+// SCSS mixins for animated gradient text effects.
+// ================================================================
+
+@use 'sass:map';
+@use 'sass:string';
+
+// -----------------------------------------------
+// Configuration
+// -----------------------------------------------
+$ease-gradient-text-config: (
+  'gradient': linear-gradient(90deg, #6c5ce7, #fd79a8, #fdcb6e, #6c5ce7),
+  'duration': 4s,
+  'bg-size': 200% auto
+) !default;
+
+// -----------------------------------------------
+// Mixins
+// -----------------------------------------------
+
+/// Base gradient text clip
+@mixin ease-gradient-text-base(
+  $gradient: map.get($ease-gradient-text-config, 'gradient')
+) {
+  background: $gradient;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+}
+
+/// Animate the gradient background position
+@mixin ease-gradient-text-flow(
+  $duration: map.get($ease-gradient-text-config, 'duration'),
+  $bg-size: map.get($ease-gradient-text-config, 'bg-size'),
+  $gradient: map.get($ease-gradient-text-config, 'gradient')
+) {
+  background: $gradient;
+  background-size: $bg-size;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: ease-gradient-shift $duration linear infinite;
+}
+
+/// Keyframes for gradient shift
+@mixin ease-gradient-text-keyframes {
+  @keyframes ease-gradient-shift {
+    0%   { background-position: 0% center; }
+    100% { background-position: 200% center; }
+  }
+}

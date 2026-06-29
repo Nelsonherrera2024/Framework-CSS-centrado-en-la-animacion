@@ -1,0 +1,22 @@
+// ================================================================
+// ease-gradient-text — Style Demo SCSS
+// Submission for EaseMotion CSS · Issue #27669
+// ================================================================
+
+@use 'mixins' as gradient;
+
+@include gradient.ease-gradient-text-keyframes;
+
+.heading-flow {
+  @include gradient.ease-gradient-text-flow;
+  font-size: 2.5rem;
+  font-weight: 800;
+}
+
+.heading-static {
+  @include gradient.ease-gradient-text-base(
+    linear-gradient(135deg, #6c5ce7, #fd79a8)
+  );
+  font-size: 2rem;
+  font-weight: 700;
+}

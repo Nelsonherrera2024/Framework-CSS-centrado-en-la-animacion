@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ease-gradient-text — Demo</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #0f172a; color: #f1f5f9; padding: 3rem 1.5rem;
+      display: flex; flex-direction: column; align-items: center;
+      justify-content: center; min-height: 100vh;
+    }
+    .demo-header { text-align: center; margin-bottom: 3rem; }
+    .demo-header h1 {
+      font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800;
+      background: linear-gradient(90deg, #6c5ce7, #fd79a8, #fdcb6e, #6c5ce7);
+      background-size: 200% auto;
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent; color: transparent;
+      animation: shift 4s linear infinite;
+    }
+    @keyframes shift {
+      0%   { background-position: 0% center; }
+      100% { background-position: 200% center; }
+    }
+    .demo-header p { color: #94a3b8; margin-top: 0.5rem; }
+    .demo-section { text-align: center; margin-bottom: 2.5rem; }
+    .demo-section h2 {
+      font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, #6c5ce7, #fd79a8);
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent; color: transparent;
+    }
+    .demo-section p { color: #94a3b8; max-width: 480px; }
+    .info {
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 0.75rem; padding: 1rem; margin-top: 2rem; text-align: center;
+      max-width: 400px;
+    }
+    .info code { color: #6c5ce7; font-size: 0.8rem; }
+    .tag {
+      display: inline-block; font-size: 0.6rem; font-family: monospace;
+      background: rgba(108,92,231,0.15); border: 1px solid rgba(108,92,231,0.25);
+      border-radius: 999px; padding: 0.25em 0.75em; color: #a29bfe; margin: 0.25rem;
+    }
+  </style>
+</head>
+<body>
+<header class="demo-header">
+  <h1>Gradient Text Flow</h1>
+  <p>Animated gradient text via SCSS mixins</p>
+</header>
+<section class="demo-section">
+  <h2>Static Gradient</h2>
+  <p>Applied via <span class="tag">ease-gradient-text-base</span> — a fixed gradient fill with <code>background-clip: text</code>.</p>
+</section>
+<section class="demo-section">
+  <h2 style="background:linear-gradient(90deg,#6c5ce7,#fd79a8,#fdcb6e,#6c5ce7);background-size:200% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;animation:shift 4s linear infinite;">Animated Flow</h2>
+  <p>Applied via <span class="tag">ease-gradient-text-flow</span> — the gradient slides horizontally for a shimmer effect.</p>
+</section>
+<div class="info">
+  <p style="font-size:0.85rem;margin-bottom:0.5rem;">SCSS usage:</p>
+  <code>@use 'mixins' as gradient;<br>@include gradient.ease-gradient-text-keyframes;<br>@include gradient.ease-gradient-text-flow;</code>
+</div>
+</body>
+</html>
