@@ -1,0 +1,51 @@
+// ================================================================
+// ease-keyframe-wobble — Wobble & Pulse Animation Keyframe Mixins
+// Submission for EaseMotion CSS · Issue #27800
+// ================================================================
+
+@use 'sass:map';
+
+$ease-wobble-config: (
+  'duration': 0.6s,
+  'intensity': 5deg
+) !default;
+
+// --- Keyframes ---
+
+@mixin ease-keyframes-wobble($intensity: map.get($ease-wobble-config, 'intensity')) {
+  @keyframes ease-wobble {
+    0%, 100% { transform: rotate(0deg); }
+    20% { transform: rotate($intensity * -1); }
+    40% { transform: rotate($intensity); }
+    60% { transform: rotate($intensity * -0.5); }
+    80% { transform: rotate($intensity * 0.5); }
+  }
+}
+
+@mixin ease-keyframes-pulse($scale-min: 0.95, $scale-max: 1.05) {
+  @keyframes ease-pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale($scale-max); }
+  }
+}
+
+@mixin ease-keyframes-pulse-soft {
+  @keyframes ease-pulse-soft {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.85; transform: scale(1.02); }
+  }
+}
+
+// --- Application mixins ---
+
+@mixin ease-anim-wobble($duration: map.get($ease-wobble-config, 'duration')) {
+  animation: ease-wobble $duration ease-in-out !important;
+}
+
+@mixin ease-anim-pulse($duration: 2s) {
+  animation: ease-pulse $duration ease-in-out infinite !important;
+}
+
+@mixin ease-anim-pulse-soft($duration: 2.5s) {
+  animation: ease-pulse-soft $duration ease-in-out infinite !important;
+}
