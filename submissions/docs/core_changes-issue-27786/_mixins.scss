@@ -1,0 +1,23 @@
+// ================================================================
+// ease-grid-fit — Flexible CSS Grid Auto-Fit Generator Mixin
+// Submission for EaseMotion CSS · Issue #27786
+// ================================================================
+
+@use 'sass:map';
+
+$ease-grid-fit-config: (
+  'min-column-width': 250px,
+  'gap': 1rem
+) !default;
+
+@mixin ease-grid-auto-fit($min: map.get($ease-grid-fit-config, 'min-column-width'), $gap: map.get($ease-grid-fit-config, 'gap')) {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax($min, 1fr)) !important;
+  gap: $gap !important;
+}
+
+@mixin ease-grid-auto-fill($min: map.get($ease-grid-fit-config, 'min-column-width'), $gap: map.get($ease-grid-fit-config, 'gap')) {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax($min, 1fr)) !important;
+  gap: $gap !important;
+}
