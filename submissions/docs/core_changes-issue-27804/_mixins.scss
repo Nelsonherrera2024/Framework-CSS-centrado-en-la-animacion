@@ -1,0 +1,30 @@
+// ================================================================
+// ease-truncate — Multi-Line Clamp Utility Mixins
+// Submission for EaseMotion CSS · Issue #27804
+// ================================================================
+
+@use 'sass:map';
+
+$ease-truncate-config: (
+  'default-lines': 2,
+  'line-height': 1.5
+) !default;
+
+@mixin ease-clamp($lines: map.get($ease-truncate-config, 'default-lines')) {
+  display: -webkit-box !important;
+  -webkit-line-clamp: $lines !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+}
+
+@mixin ease-truncate {
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+@mixin ease-clamp-responsive($mobile: 2, $tablet: 3, $desktop: 4) {
+  @include ease-clamp($mobile);
+  @media (min-width: 768px) { -webkit-line-clamp: $tablet !important; }
+  @media (min-width: 1024px) { -webkit-line-clamp: $desktop !important; }
+}
