@@ -1,0 +1,212 @@
+/* =============================================
+   transform-origin-utilities-tm — EaseMotion CSS Utilities
+   Generated: 2026-06-29
+   ============================================= */
+
+:root {
+  --transform-origin-utilities-tm-color-primary: #6c63ff;
+  --transform-origin-utilities-tm-color-secondary: #8b5cf6;
+  --transform-origin-utilities-tm-radius: 0.5rem;
+  --transform-origin-utilities-tm-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
+  --transform-origin-utilities-tm-shadow-md: 0 4px 6px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.06);
+  --transform-origin-utilities-tm-shadow-lg: 0 10px 15px rgba(0,0,0,0.1), 0 4px 6px rgba(0,0,0,0.05);
+  --transform-origin-utilities-tm-transition: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Transform Origin Utilities Tm Utilities ───────────────────────────── */
+
+.origin-center {
+  transform-origin: center;
+  -webkit-transform-origin: center;
+}
+.origin-top {
+  transform-origin: top;
+  -webkit-transform-origin: top;
+}
+.origin-bottom {
+  transform-origin: bottom;
+  -webkit-transform-origin: bottom;
+}
+.origin-left {
+  transform-origin: left;
+  -webkit-transform-origin: left;
+}
+.origin-right {
+  transform-origin: right;
+  -webkit-transform-origin: right;
+}
+.origin-top-left {
+  transform-origin: top left;
+  -webkit-transform-origin: top left;
+}
+.origin-top-right {
+  transform-origin: top right;
+  -webkit-transform-origin: top right;
+}
+.origin-bottom-left {
+  transform-origin: bottom left;
+  -webkit-transform-origin: bottom left;
+}
+.origin-bottom-right {
+  transform-origin: bottom right;
+  -webkit-transform-origin: bottom right;
+}
+.origin-top-center {
+  transform-origin: top center;
+  -webkit-transform-origin: top center;
+}
+.origin-bottom-center {
+  transform-origin: bottom center;
+  -webkit-transform-origin: bottom center;
+}
+.origin-center-top {
+  transform-origin: center top;
+  -webkit-transform-origin: center top;
+}
+.origin-center-bottom {
+  transform-origin: center bottom;
+  -webkit-transform-origin: center bottom;
+}
+.origin-0-0 {
+  transform-origin: 0 0;
+  -webkit-transform-origin: 0 0;
+}
+.origin-100-0 {
+  transform-origin: 100% 0;
+  -webkit-transform-origin: 100% 0%;
+}
+.origin-0-100 {
+  transform-origin: 0 100%;
+  -webkit-transform-origin: 0 100%;
+}
+.origin-100-100 {
+  transform-origin: 100% 100%;
+  -webkit-transform-origin: 100% 100%;
+}
+.origin-50-50 {
+  transform-origin: 50% 50%;
+  -webkit-transform-origin: 50% 50%;
+}
+
+/* ── Responsive Variants ───────────────────────────────── */
+
+@media (max-width: 640px) {
+  .sm\:origin-center { max-width: 100%; }
+}
+@media (min-width: 768px) {
+  .md\:origin-center { max-width: 100%; }
+}
+@media (max-width: 640px) {
+  .sm\:origin-top { max-width: 100%; }
+}
+@media (min-width: 768px) {
+  .md\:origin-top { max-width: 100%; }
+}
+@media (max-width: 640px) {
+  .sm\:origin-bottom { max-width: 100%; }
+}
+@media (min-width: 768px) {
+  .md\:origin-bottom { max-width: 100%; }
+}
+@media (max-width: 640px) {
+  .sm\:origin-left { max-width: 100%; }
+}
+@media (min-width: 768px) {
+  .md\:origin-left { max-width: 100%; }
+}
+@media (max-width: 640px) {
+  .sm\:origin-right { max-width: 100%; }
+}
+@media (min-width: 768px) {
+  .md\:origin-right { max-width: 100%; }
+}
+@media (max-width: 640px) {
+  .sm\:origin-top-left { max-width: 100%; }
+}
+@media (min-width: 768px) {
+  .md\:origin-top-left { max-width: 100%; }
+}
+@media (max-width: 640px) {
+  .sm\:origin-top-right { max-width: 100%; }
+}
+@media (min-width: 768px) {
+  .md\:origin-top-right { max-width: 100%; }
+}
+@media (max-width: 640px) {
+  .sm\:origin-bottom-left { max-width: 100%; }
+}
+@media (min-width: 768px) {
+  .md\:origin-bottom-left { max-width: 100%; }
+}
+@media (max-width: 640px) {
+  .sm\:origin-bottom-right { max-width: 100%; }
+}
+@media (min-width: 768px) {
+  .md\:origin-bottom-right { max-width: 100%; }
+}
+@media (max-width: 640px) {
+  .sm\:origin-top-center { max-width: 100%; }
+}
+@media (min-width: 768px) {
+  .md\:origin-top-center { max-width: 100%; }
+}
+@media (max-width: 640px) {
+  .sm\:origin-bottom-center { max-width: 100%; }
+}
+@media (min-width: 768px) {
+  .md\:origin-bottom-center { max-width: 100%; }
+}
+@media (max-width: 640px) {
+  .sm\:origin-center-top { max-width: 100%; }
+}
+@media (min-width: 768px) {
+  .md\:origin-center-top { max-width: 100%; }
+}
+@media (max-width: 640px) {
+  .sm\:origin-center-bottom { max-width: 100%; }
+}
+@media (min-width: 768px) {
+  .md\:origin-center-bottom { max-width: 100%; }
+}
+@media (max-width: 640px) {
+  .sm\:origin-0-0 { max-width: 100%; }
+}
+@media (min-width: 768px) {
+  .md\:origin-0-0 { max-width: 100%; }
+}
+@media (max-width: 640px) {
+  .sm\:origin-100-0 { max-width: 100%; }
+}
+@media (min-width: 768px) {
+  .md\:origin-100-0 { max-width: 100%; }
+}
+@media (max-width: 640px) {
+  .sm\:origin-0-100 { max-width: 100%; }
+}
+@media (min-width: 768px) {
+  .md\:origin-0-100 { max-width: 100%; }
+}
+@media (max-width: 640px) {
+  .sm\:origin-100-100 { max-width: 100%; }
+}
+@media (min-width: 768px) {
+  .md\:origin-100-100 { max-width: 100%; }
+}
+@media (max-width: 640px) {
+  .sm\:origin-50-50 { max-width: 100%; }
+}
+@media (min-width: 768px) {
+  .md\:origin-50-50 { max-width: 100%; }
+}
+
+/* ── Dark Mode ─────────────────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+  --transform-origin-utilities-tm-color-primary: #a09af8;  --transform-origin-utilities-tm-color-bg: #0f172a;
+}
+
+/* ── Reduced Motion ────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .origin-center { transition: none; }
+  .origin-top { transition: none; }
+  .origin-bottom { transition: none; }
+}
