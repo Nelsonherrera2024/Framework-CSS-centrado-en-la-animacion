@@ -21,7 +21,7 @@ Provides a clean, reusable SCSS mixin to add customizable, animated drawing unde
 
 ## Usage Example
 ```scss
-@import "text-highlight-underline-draw-utilities";
+@import "scss-text-highlight-underline-draw-utilities";
 
 .nav-link-draw {
   color: #1e293b;
