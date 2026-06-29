@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Progress Ring — EaseMotion CSS</title><link rel="stylesheet" href="style.css"><style>
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 600px; margin: 0 auto; padding: 2rem; background: #f9fafb; color: #111; }
+h1 { margin-bottom: .5rem; }
+section { background: #fff; padding: 1.5rem; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,.08); margin-bottom: 1.5rem; }
+h2 { margin: 0 0 1rem; font-size: 1rem; color: #374151; }
+.grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; text-align: center; }
+code { background: #e5e7eb; padding: .15em .4em; border-radius: 4px; }
+.btn { padding: .5rem 1rem; border: 1px solid #d1d5db; border-radius: 6px; background: #fff; cursor: pointer; }
+.btn:hover { background: #f3f4f6; }
+</style></head>
+<body>
+<h1>Circular Progress Ring</h1>
+<button class="btn" onclick="setRandomValue()">Set Random Value</button>
+<section>
+<h2>Variants</h2>
+<div class="grid">
+  <div><div class="ease-progress-ring" style="--ease-ring-value:75"><svg viewBox="0 0 100 100"><circle class="ease-progress-ring-track" cx="50" cy="50" r="45"/><circle class="ease-progress-ring-fill" cx="50" cy="50" r="45"/></svg><span class="ease-progress-ring-label">75%</span></div><code>default</code></div>
+  <div><div class="ease-progress-ring ease-progress-ring-sm ease-progress-ring-success" style="--ease-ring-value:90"><svg viewBox="0 0 100 100"><circle class="ease-progress-ring-track" cx="50" cy="50" r="45"/><circle class="ease-progress-ring-fill" cx="50" cy="50" r="45"/></svg><span class="ease-progress-ring-label">90%</span></div><code>sm / success</code></div>
+  <div><div class="ease-progress-ring ease-progress-ring-lg" style="--ease-ring-value:45"><svg viewBox="0 0 100 100"><circle class="ease-progress-ring-track" cx="50" cy="50" r="45"/><circle class="ease-progress-ring-fill" cx="50" cy="50" r="45"/></svg><span class="ease-progress-ring-label">45%</span></div><code>lg</code></div>
+</div>
+</section>
+<section>
+<h2>Interactive</h2>
+<div style="text-align:center">
+<div class="ease-progress-ring ease-progress-ring-lg" id="interactiveRing" style="--ease-ring-value:50"><svg viewBox="0 0 100 100"><circle class="ease-progress-ring-track" cx="50" cy="50" r="45"/><circle class="ease-progress-ring-fill" cx="50" cy="50" r="45"/></svg><span class="ease-progress-ring-label" id="ringLabel">50%</span></div>
+</div>
+</section>
+<script>
+function setRandomValue() {
+  const val = Math.floor(Math.random() * 101);
+  const ring = document.getElementById('interactiveRing');
+  const label = document.getElementById('ringLabel');
+  ring.style.setProperty('--ease-ring-value', val);
+  label.textContent = val + '%';
+}
+</script>
+</body>
+</html>

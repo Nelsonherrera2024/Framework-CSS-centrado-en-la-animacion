@@ -1,0 +1,60 @@
+@layer easemotion-components {
+.ease-progress-ring {
+  --ease-ring-size: 6rem;
+  --ease-ring-stroke: 6;
+  --ease-ring-color: var(--ease-primary, #3b82f6);
+  --ease-ring-track: var(--ease-bg-tertiary, #e5e7eb);
+  --ease-ring-value: 0;
+  --ease-ring-duration: 0.6s;
+
+  width: var(--ease-ring-size);
+  height: var(--ease-ring-size);
+  position: relative;
+  display: inline-block;
+}
+
+.ease-progress-ring svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.ease-progress-ring-track {
+  fill: none;
+  stroke: var(--ease-ring-track);
+  stroke-width: var(--ease-ring-stroke);
+}
+
+.ease-progress-ring-fill {
+  fill: none;
+  stroke: var(--ease-ring-color);
+  stroke-width: var(--ease-ring-stroke);
+  stroke-linecap: round;
+  stroke-dasharray: 283;
+  stroke-dashoffset: calc(283 - (283 * var(--ease-ring-value)) / 100);
+  transition: stroke-dashoffset var(--ease-ring-duration) cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ease-progress-ring-label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(var(--ease-ring-size) / 3.5);
+  font-weight: 700;
+  color: var(--ease-ring-color);
+  font-variant-numeric: tabular-nums;
+}
+
+.ease-progress-ring-sm { --ease-ring-size: 4rem; }
+.ease-progress-ring-lg { --ease-ring-size: 8rem; }
+
+.ease-progress-ring-success { --ease-ring-color: var(--ease-green-500, #22c55e); }
+.ease-progress-ring-warning { --ease-ring-color: var(--ease-amber-500, #f59e0b); }
+.ease-progress-ring-danger  { --ease-ring-color: var(--ease-red-500, #ef4444); }
+
+@media (prefers-reduced-motion: reduce) {
+  .ease-progress-ring-fill { transition: none; }
+}
+}
