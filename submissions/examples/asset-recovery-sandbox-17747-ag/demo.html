@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Graceful Asset Recovery Playground — EaseMotion CSS</title>
+  <meta name="description" content="Asset error simulation dashboard demonstrating dynamic fallback loading and file restoration logic.">
+  <link rel="stylesheet" href="../../easemotion.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <span class="demo-badge">EaseMotion CSS — Robustness Specs</span>
+      <h1>Graceful Asset Recovery</h1>
+      <p class="description">
+        Demonstrates script write issues (like empty string bundle overrides) and showcases 
+        client-side recovery managers that load CDN assets if local stylesheet builds fail.
+      </p>
+    </header>
+
+    <main class="dashboard">
+
+      <!-- Left Panel: State Dashboard -->
+      <section class="demo-card state-card">
+        <h2 class="section-title">Asset Status</h2>
+        
+        <div class="status-box status-error" id="asset-status">
+          <span class="status-dot"></span>
+          <span class="status-text">Local Bundle Missing (404)</span>
+        </div>
+
+        <div class="action-buttons">
+          <button class="ease-btn" id="btn-simulate-fail" type="button">Simulate Asset Fail</button>
+          <button class="ease-btn ease-btn-success" id="btn-trigger-fallback" type="button">Trigger Recovery Fallback</button>
+        </div>
+      </section>
+
+      <!-- Right Panel: Visual Logs -->
+      <section class="demo-card logs-card">
+        <h2 class="section-title">Recovery Pipeline Events</h2>
+        
+        <div class="logs-console" id="logs-console">
+          <div class="log-line text-muted">[System] Application loaded. Initializing style checks...</div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script>
+    const statusBox = document.getElementById('asset-status');
+    const logsConsole = document.getElementById('logs-console');
+
+    const logMsg = (text, type = 'normal') => {
+      const line = document.createElement('div');
+      line.className = `log-line ${type === 'muted' ? 'text-muted' : ''} ${type === 'success' ? 'text-success' : ''}`;
+      line.innerHTML = text;
+      logsConsole.appendChild(line);
+      logsConsole.scrollTop = logsConsole.scrollHeight;
+    };
+
+    document.getElementById('btn-simulate-fail').addEventListener('click', () => {
+      statusBox.className = 'status-box status-error';
+      statusBox.querySelector('.status-text').textContent = 'Local Bundle Missing (404)';
+      logMsg('⚠️ Stylesheet failed to load! Page styling fallback initiated...', 'normal');
+    });
+
+    document.getElementById('btn-trigger-fallback').addEventListener('click', () => {
+      // Simulate loading recovery
+      statusBox.className = 'status-box status-success';
+      statusBox.querySelector('.status-text').textContent = 'CDN Fallback Loaded';
+      logMsg('🔄 Loading stylesheet from CDN fallback link: <code>https://cdn.jsdelivr.net/...</code>', 'muted');
+      logMsg('✅ Recovery stylesheet injected! Page styles restored.', 'success');
+    });
+  </script>
+
+</body>
+</html>
