@@ -1,0 +1,103 @@
+// ============================================
+// EaseMotion CSS — SCSS Responsive Breakpoint Mixins
+// Issue #30321 — Responsive breakpoint mixin library
+// ============================================
+
+// --- Breakpoint tokens (matching --ease-bp-* CSS vars) ---
+$ease-bp-sm:  640px;
+$ease-bp-md:  768px;
+$ease-bp-lg:  1024px;
+$ease-bp-xl:  1280px;
+
+// --- Breakpoint mixins ---
+
+@mixin ease-sm {
+  @media (min-width: $ease-bp-sm) {
+    @content;
+  }
+}
+
+@mixin ease-md {
+  @media (min-width: $ease-bp-md) {
+    @content;
+  }
+}
+
+@mixin ease-lg {
+  @media (min-width: $ease-bp-lg) {
+    @content;
+  }
+}
+
+@mixin ease-xl {
+  @media (min-width: $ease-bp-xl) {
+    @content;
+  }
+}
+
+@mixin ease-below-sm {
+  @media (max-width: calc($ease-bp-sm - 1px)) {
+    @content;
+  }
+}
+
+@mixin ease-below-md {
+  @media (max-width: calc($ease-bp-md - 1px)) {
+    @content;
+  }
+}
+
+@mixin ease-below-lg {
+  @media (max-width: calc($ease-bp-lg - 1px)) {
+    @content;
+  }
+}
+
+@mixin ease-below-xl {
+  @media (max-width: calc($ease-bp-xl - 1px)) {
+    @content;
+  }
+}
+
+@mixin ease-between($min, $max) {
+  @media (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+}
+
+@mixin ease-motion-ok {
+  @media (prefers-reduced-motion: no-preference) {
+    @content;
+  }
+}
+
+@mixin ease-motion-reduce {
+  @media (prefers-reduced-motion: reduce) {
+    @content;
+  }
+}
+
+@mixin ease-dark-scheme {
+  @media (prefers-color-scheme: dark) {
+    @content;
+  }
+}
+
+@mixin ease-light-scheme {
+  @media (prefers-color-scheme: light) {
+    @content;
+  }
+}
+
+// --- Usage example ---
+// .ease-hero {
+//   font-size: 1rem;
+//
+//   @include ease-md {
+//     font-size: 1.25rem;
+//   }
+//
+//   @include ease-lg {
+//     font-size: 1.5rem;
+//   }
+// }

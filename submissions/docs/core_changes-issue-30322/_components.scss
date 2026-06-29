@@ -1,0 +1,93 @@
+// ============================================
+// EaseMotion CSS — SCSS Component Variant Generators
+// Issue #30322 — Component variant generation mixins
+// ============================================
+
+// --- Button variant generator ---
+@mixin ease-btn-variant(
+  $bg: var(--ease-primary),
+  $color: var(--ease-primary-text),
+  $bg-hover: var(--ease-primary-hover),
+  $color-hover: var(--ease-primary-text),
+  $border-color: transparent,
+  $border-hover: transparent,
+  $shadow: none
+) {
+  background: $bg;
+  color: $color;
+  border-color: $border-color;
+  box-shadow: $shadow;
+
+  &:hover,
+  &:focus-visible {
+    background: $bg-hover;
+    color: $color-hover;
+    border-color: $border-hover;
+  }
+}
+
+@mixin ease-btn-size(
+  $padding-y: 0.5rem,
+  $padding-x: 1rem,
+  $font-size: 0.875rem,
+  $border-radius: 0.375rem
+) {
+  padding: $padding-y $padding-x;
+  font-size: $font-size;
+  border-radius: $border-radius;
+}
+
+// --- Card variant generator ---
+@mixin ease-card-variant(
+  $bg: var(--ease-surface),
+  $border-color: var(--ease-border),
+  $shadow: 0 1px 3px var(--ease-shadow),
+  $hover-shadow: 0 4px 12px var(--ease-shadow),
+  $border-radius: 0.75rem
+) {
+  background: $bg;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  box-shadow: $shadow;
+  transition: box-shadow 0.2s, transform 0.2s;
+
+  &:hover {
+    box-shadow: $hover-shadow;
+  }
+}
+
+// --- Badge variant generator ---
+@mixin ease-badge-variant(
+  $bg: var(--ease-primary),
+  $color: var(--ease-primary-text),
+  $border-radius: 9999px
+) {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.125rem 0.625rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: $bg;
+  color: $color;
+  border-radius: $border-radius;
+  line-height: 1.25;
+}
+
+// --- Alert variant generator ---
+@mixin ease-alert-variant(
+  $bg: var(--ease-primary-light, #dbeafe),
+  $border: var(--ease-primary, #3b82f6),
+  $color: var(--ease-primary-hover, #1d4ed8)
+) {
+  background: $bg;
+  border-left: 4px solid $border;
+  color: $color;
+  padding: 1rem;
+  border-radius: 0.375rem;
+}
+
+// --- Usage example ---
+// .ease-btn-custom {
+//   @include ease-btn-variant(#8b5cf6, #fff, #7c3aed);
+//   @include ease-btn-size(0.75rem, 1.5rem, 0.875rem, 0.5rem);
+// }
