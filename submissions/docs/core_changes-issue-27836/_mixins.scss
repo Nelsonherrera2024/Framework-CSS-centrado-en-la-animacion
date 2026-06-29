@@ -1,0 +1,40 @@
+// ================================================================
+// ease-border-draw — Animated Border Draw & Glow Keyframe Mixins
+// Submission for EaseMotion CSS · Issue #27836
+// ================================================================
+
+@use 'sass:map';
+
+$ease-border-draw-config: (
+  'color': #6c63ff,
+  'width': 2px,
+  'duration': 1.5s
+) !default;
+
+@mixin ease-keyframes-border-draw {
+  @keyframes ease-border-draw {
+    0%   { border-color: transparent; }
+    25%  { border-top-color: var(--ease-border-color, #6c63ff); }
+    50%  { border-right-color: var(--ease-border-color, #6c63ff); }
+    75%  { border-bottom-color: var(--ease-border-color, #6c63ff); }
+    100% { border-color: var(--ease-border-color, #6c63ff); }
+  }
+}
+
+@mixin ease-keyframes-border-glow {
+  @keyframes ease-border-glow {
+    0%, 100% { box-shadow: 0 0 4px var(--ease-glow-color, #6c63ff); }
+    50% { box-shadow: 0 0 16px var(--ease-glow-color, #6c63ff); }
+  }
+}
+
+@mixin ease-border-draw($color: map.get($ease-border-draw-config, 'color'), $width: map.get($ease-border-draw-config, 'width'), $duration: map.get($ease-border-draw-config, 'duration')) {
+  --ease-border-color: #{$color};
+  border: $width solid transparent !important;
+  animation: ease-border-draw $duration ease forwards !important;
+}
+
+@mixin ease-border-glow($color: map.get($ease-border-draw-config, 'color'), $duration: 2s) {
+  --ease-glow-color: #{$color};
+  animation: ease-border-glow $duration ease-in-out infinite !important;
+}
