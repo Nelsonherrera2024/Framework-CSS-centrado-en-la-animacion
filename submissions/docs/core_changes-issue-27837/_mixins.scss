@@ -1,0 +1,31 @@
+// ================================================================
+// ease-text-underline — Text Highlight Underline Draw Utilities Mixins
+// Submission for EaseMotion CSS · Issue #27837
+// ================================================================
+
+@use 'sass:map';
+
+$ease-underline-config: (
+  'color': #fef08a,
+  'height': 0.3em,
+  'duration': 0.3s
+) !default;
+
+@mixin ease-underline-highlight($color: map.get($ease-underline-config, 'color'), $height: map.get($ease-underline-config, 'height')) {
+  background: linear-gradient($color 0%, $color 100%) !important;
+  background-repeat: no-repeat !important;
+  background-size: 0% $height !important;
+  background-position: 0 100% !important;
+  transition: background-size 0.3s ease !important;
+  &:hover { background-size: 100% $height !important; }
+}
+
+@mixin ease-underline-draw($color: map.get($ease-underline-config, 'color'), $height: 2px) {
+  text-decoration: none !important;
+  background: linear-gradient($color 0%, $color 100%) !important;
+  background-repeat: no-repeat !important;
+  background-size: 0% $height !important;
+  background-position: 0 100% !important;
+  transition: background-size 0.4s ease !important;
+  &:hover { background-size: 100% $height !important; }
+}
