@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Loaders — EaseMotion CSS</title><link rel="stylesheet" href="style.css"><style>
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 700px; margin: 0 auto; padding: 2rem; background: #f9fafb; color: #111; }
+h1 { margin-bottom: .5rem; }
+section { background: #fff; padding: 1.5rem; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,.08); margin-bottom: 1.5rem; }
+h2 { margin: 0 0 1rem; font-size: 1rem; color: #374151; }
+.grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; text-align: center; align-items: center; }
+.grid-item { display: flex; flex-direction: column; align-items: center; gap: .5rem; padding: 1rem; }
+code { background: #e5e7eb; padding: .15em .4em; border-radius: 4px; font-size: .8rem; }
+</style></head>
+<body>
+<h1>CSS Loader / Spinner Gallery</h1>
+<section>
+<div class="grid">
+  <div class="grid-item"><span class="ease-loader-spin"></span><code>.ease-loader-spin</code></div>
+  <div class="grid-item"><span class="ease-loader-pulse"></span><code>.ease-loader-pulse</code></div>
+  <div class="grid-item"><span class="ease-loader-dots"><span></span><span></span><span></span></span><code>.ease-loader-dots</code></div>
+  <div class="grid-item"><span class="ease-loader-ripple"></span><code>.ease-loader-ripple</code></div>
+  <div class="grid-item"><span class="ease-loader-hourglass"></span><code>.ease-loader-hourglass</code></div>
+  <div class="grid-item"><span class="ease-loader-ellipsis">...</span><code>.ease-loader-ellipsis</code></div>
+</div>
+</section>
+<section>
+<h2>Size Variants</h2>
+<div class="grid">
+  <div class="grid-item"><span class="ease-loader-spin ease-loader-sm"></span><code>sm</code></div>
+  <div class="grid-item"><span class="ease-loader-spin"></span><code>default</code></div>
+  <div class="grid-item"><span class="ease-loader-spin ease-loader-lg"></span><code>lg</code></div>
+  <div class="grid-item"><span class="ease-loader-pulse ease-loader-sm"></span><code>sm pulse</code></div>
+  <div class="grid-item"><span class="ease-loader-pulse ease-loader-lg"></span><code>lg pulse</code></div>
+</div>
+</section>
+<section>
+<h2>Color Override</h2>
+<div class="grid">
+  <div class="grid-item"><span class="ease-loader-spin" style="--ease-loader-color:#22c55e"></span><span>green</span></div>
+  <div class="grid-item"><span class="ease-loader-pulse" style="--ease-loader-color:#ef4444"></span><span>red</span></div>
+  <div class="grid-item"><span class="ease-loader-dots" style="--ease-loader-color:#8b5cf6"><span></span><span></span><span></span></span><span>purple</span></div>
+</div>
+</section>
+</body>
+</html>
