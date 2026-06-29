@@ -1,0 +1,283 @@
+/* ============================================================
+   Icon Badge and Notification Utilities — icon-badge-utilities-tm
+   CSS Framework: EaseMotion-css Design Tokens
+   Generated for EaseMotion-css Competition
+   ============================================================ */
+
+/* ── Badge Container ───────────────────────────────────── */
+.badge-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* ── Badge Element ────────────────────────────────────── */
+.badge-container .badge {
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+  min-width: 1.25rem;
+  height: 1.25rem;
+  padding: 0 0.3rem;
+  background: var(--ease-color-danger);
+  color: white;
+  border-radius: 9999px;
+  font-size: var(--ease-text-xs);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  border: 2px solid var(--ease-color-surface);
+  box-shadow: var(--ease-shadow-sm);
+}
+
+/* ── Small Badge Size ──────────────────────────────────── */
+.badge-sm .badge {
+  min-width: 1rem;
+  height: 1rem;
+  font-size: 0.6rem;
+  padding: 0 0.2rem;
+}
+
+/* ── Medium Badge Size ─────────────────────────────────── */
+.badge-md .badge {
+  min-width: 1.25rem;
+  height: 1.25rem;
+  font-size: var(--ease-text-xs);
+}
+
+/* ── Large Badge Size ──────────────────────────────────── */
+.badge-lg .badge {
+  min-width: 1.5rem;
+  height: 1.5rem;
+  font-size: var(--ease-text-sm);
+  padding: 0 0.4rem;
+}
+
+/* ── Primary Badge Color ──────────────────────────────── */
+.badge-primary .badge {
+  background: var(--ease-color-primary);
+}
+
+/* ── Secondary Badge Color ─────────────────────────────── */
+.badge-secondary .badge {
+  background: var(--ease-color-secondary);
+}
+
+/* ── Success Badge Color ──────────────────────────────── */
+.badge-success .badge {
+  background: var(--ease-color-success);
+}
+
+/* ── Danger Badge Color ───────────────────────────────── */
+.badge-danger .badge {
+  background: var(--ease-color-danger);
+}
+
+/* ── Warning Badge Color ─────────────────────────────── */
+.badge-warning .badge {
+  background: var(--ease-color-warning);
+}
+
+/* ── Info Badge Color ────────────────────────────────── */
+.badge-info .badge {
+  background: var(--ease-color-info);
+}
+
+/* ── Neutral Badge Color ─────────────────────────────── */
+.badge-neutral .badge {
+  background: var(--ease-color-neutral-600);
+}
+
+/* ── Notification Dot Base ────────────────────────────── */
+.notification-dot {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0.625rem;
+  height: 0.625rem;
+  background: var(--ease-color-danger);
+  border-radius: 50%;
+  border: 2px solid var(--ease-color-surface);
+}
+
+/* ── Small Dot ───────────────────────────────────────── */
+.notification-dot-sm {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+/* ── Large Dot ───────────────────────────────────────── */
+.notification-dot-lg {
+  width: 0.875rem;
+  height: 0.875rem;
+}
+
+/* ── Pulse Keyframe ──────────────────────────────────── */
+@keyframes badge-pulse-keyframe {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0.7;
+  }
+}
+
+/* ── Pulsing Dot Normal Speed ────────────────────────── */
+.notification-dot-pulse {
+  animation: badge-pulse-keyframe 1.5s ease-in-out infinite;
+}
+
+/* ── Pulsing Dot Slow ────────────────────────────────── */
+.notification-dot-pulse-slow {
+  animation: badge-pulse-keyframe 2.5s ease-in-out infinite;
+}
+
+/* ── Pulsing Dot Fast ────────────────────────────────── */
+.notification-dot-pulse-fast {
+  animation: badge-pulse-keyframe 0.8s ease-in-out infinite;
+}
+
+/* ── Ring Pulse Keyframe ─────────────────────────────── */
+@keyframes badge-ring-keyframe {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(185, 28, 28, 0.7);
+  }
+  100% {
+    transform: scale(1.5);
+    box-shadow: 0 0 0 8px rgba(185, 28, 28, 0);
+  }
+}
+
+/* ── Danger Ring Pulse ───────────────────────────────── */
+.notification-dot-ring {
+  animation: badge-ring-keyframe 1.5s ease-out infinite;
+  background: var(--ease-color-danger);
+}
+
+/* ── Primary Ring Keyframe ──────────────────────────── */
+@keyframes badge-ring-primary-keyframe {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(108, 99, 255, 0.7);
+  }
+  100% {
+    transform: scale(1.5);
+    box-shadow: 0 0 0 8px rgba(108, 99, 255, 0);
+  }
+}
+
+/* ── Primary Ring Pulse ──────────────────────────────── */
+.notification-dot-ring-primary {
+  animation-name: badge-ring-primary-keyframe;
+  background: var(--ease-color-primary);
+}
+
+/* ── Success Ring Keyframe ───────────────────────────── */
+@keyframes badge-ring-success-keyframe {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(21, 128, 61, 0.7);
+  }
+  100% {
+    transform: scale(1.5);
+    box-shadow: 0 0 0 8px rgba(21, 128, 61, 0);
+  }
+}
+
+/* ── Success Ring Pulse ──────────────────────────────── */
+.notification-dot-ring-success {
+  animation-name: badge-ring-success-keyframe;
+  background: var(--ease-color-success);
+}
+
+/* ── Count Bubble Base ───────────────────────────────── */
+.count-bubble {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.5rem;
+  height: 1.5rem;
+  padding: 0 0.4rem;
+  background: var(--ease-color-primary);
+  color: white;
+  border-radius: 9999px;
+  font-size: var(--ease-text-xs);
+  font-weight: 700;
+  box-shadow: var(--ease-shadow-md);
+}
+
+/* ── Small Count Bubble ──────────────────────────────── */
+.count-bubble-sm {
+  min-width: 1.25rem;
+  height: 1.25rem;
+  font-size: 0.6rem;
+  padding: 0 0.25rem;
+}
+
+/* ── Large Count Bubble ──────────────────────────────── */
+.count-bubble-lg {
+  min-width: 2rem;
+  height: 2rem;
+  font-size: var(--ease-text-base);
+  padding: 0 0.5rem;
+}
+
+/* ── Status Indicator Base ──────────────────────────── */
+.status-indicator {
+  display: inline-block;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 50%;
+  background: var(--ease-color-neutral-400);
+  border: 2px solid var(--ease-color-surface);
+  flex-shrink: 0;
+}
+
+/* ── Online Status ──────────────────────────────────── */
+.status-online {
+  background: var(--ease-color-success);
+}
+
+/* ── Offline Status ─────────────────────────────────── */
+.status-offline {
+  background: var(--ease-color-neutral-400);
+}
+
+/* ── Busy Status ────────────────────────────────────── */
+.status-busy {
+  background: var(--ease-color-danger);
+}
+
+/* ── Away Status ────────────────────────────────────── */
+.status-away {
+  background: var(--ease-color-warning);
+}
+
+/* ── Dark Mode ─────────────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+  .badge .badge {
+    border-color: var(--ease-color-neutral-800);
+  }
+  .notification-dot {
+    border-color: var(--ease-color-neutral-800);
+  }
+  .status-indicator {
+    border-color: var(--ease-color-neutral-900);
+  }
+}
+
+/* ── Reduced Motion ────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .notification-dot-pulse,
+  .notification-dot-pulse-slow,
+  .notification-dot-pulse-fast {
+    animation: none;
+  }
+  .notification-dot-ring {
+    animation: none;
+  }
+}
