@@ -1,0 +1,93 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: var(--ease-color-bg, #0f172a);
+  color: var(--ease-color-text, #f8fafc);
+  display: flex;
+  height: 100vh;
+}
+
+.layout {
+  display: flex;
+  width: 100%;
+}
+
+.sidebar {
+  width: 280px;
+  background: #1e293b;
+  border-right: 1px solid #334155;
+  padding: 1rem;
+}
+
+.search-container {
+  margin-bottom: 1.5rem;
+}
+
+.ease-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #475569;
+  background: #0f172a;
+  color: #fff;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+}
+
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-list li {
+  margin-bottom: 0.5rem;
+}
+
+.nav-list a {
+  color: #cbd5e1;
+  text-decoration: none;
+  display: block;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+.nav-list a:hover {
+  background: #334155;
+  color: #fff;
+}
+
+.content {
+  flex: 1;
+  padding: 3rem;
+  overflow-y: auto;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+.docs-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+}
+
+.docs-table th, .docs-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #334155;
+}
+
+.docs-table th {
+  background: #1e293b;
+  font-weight: 600;
+}
+
+code {
+  background: #1e293b;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-family: monospace;
+}
