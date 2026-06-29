@@ -1,0 +1,125 @@
+/* ============================================================
+   Gradient Border Utilities — gradient-border-utilities-tm
+   CSS Framework: EaseMotion-css Design Tokens
+   Generated for EaseMotion-css Competition
+   ============================================================ */
+
+/* ── Gradient Border Wrapper ────────────────────────────── */
+.gradient-border-wrap {
+  position: relative;
+  background: var(--ease-color-surface);
+  border-radius: var(--ease-radius-xl);
+  padding: 2px;
+}
+.gradient-border-wrap::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(135deg, var(--ease-color-primary), var(--ease-color-secondary), var(--ease-color-info));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+.gradient-border-inner {
+  background: var(--ease-color-surface);
+  border-radius: calc(var(--ease-radius-xl) - 2px);
+  padding: var(--ease-space-4);
+}
+
+/* ── Gradient Border Variants ─────────────────────────── */
+.gradient-border-primary {
+  background: linear-gradient(var(--ease-color-primary), var(--ease-color-primary-dark));
+}
+.gradient-border-rainbow {
+  background: linear-gradient(90deg, #ef4444, #f97316, #eab308, #22c55e, #3b82f6, #8b5cf6, #ef4444);
+}
+.gradient-border-sunset {
+  background: linear-gradient(135deg, var(--ease-color-danger), var(--ease-color-warning), var(--ease-color-primary));
+}
+.gradient-border-ocean {
+  background: linear-gradient(135deg, var(--ease-color-info), var(--ease-color-secondary));
+}
+.gradient-border-forest {
+  background: linear-gradient(135deg, var(--ease-color-success), var(--ease-color-info));
+}
+
+/* ── Gradient Border Sizes ─────────────────────────────── */
+.gradient-border-sm { padding: 1px; border-radius: var(--ease-radius-md); }
+.gradient-border-md { padding: 2px; border-radius: var(--ease-radius-lg); }
+.gradient-border-lg { padding: 3px; border-radius: var(--ease-radius-xl); }
+
+/* ── Gradient Button ───────────────────────────────────── */
+.gradient-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--ease-space-3) var(--ease-space-6);
+  background: linear-gradient(135deg, var(--ease-color-primary), var(--ease-color-secondary));
+  color: white;
+  border: none;
+  border-radius: var(--ease-radius-lg);
+  font-weight: 600;
+  font-size: var(--ease-text-base);
+  cursor: pointer;
+  transition: transform var(--ease-speed-fast) var(--ease-ease), box-shadow var(--ease-speed-fast) var(--ease-ease);
+  box-shadow: var(--ease-shadow-md);
+}
+.gradient-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--ease-shadow-lg), var(--ease-glow-primary);
+}
+.gradient-btn:active {
+  transform: translateY(0);
+  box-shadow: var(--ease-shadow-sm);
+}
+
+/* ── Gradient Button Variants ──────────────────────────── */
+.gradient-btn-rainbow {
+  background: linear-gradient(90deg, #ef4444, #f97316, #eab308, #22c55e, #3b82f6, #8b5cf6);
+  background-size: 200% auto;
+  animation: gradient-btn-shift 3s linear infinite;
+}
+@keyframes gradient-btn-shift {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+/* ── Gradient Button Sizes ─────────────────────────────── */
+.gradient-btn-sm { padding: var(--ease-space-2) var(--ease-space-4); font-size: var(--ease-text-sm); border-radius: var(--ease-radius-md); }
+.gradient-btn-lg { padding: var(--ease-space-4) var(--ease-space-8); font-size: var(--ease-text-lg); border-radius: var(--ease-radius-xl); }
+
+/* ── Outline Gradient ─────────────────────────────────── */
+.outline-gradient {
+  position: relative;
+  background: var(--ease-color-surface);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+.outline-gradient::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, var(--ease-color-primary), var(--ease-color-secondary));
+  z-index: -1;
+}
+
+/* ── Dark Mode ─────────────────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+  .gradient-border-inner {
+    background: var(--ease-color-neutral-900);
+  }
+  .gradient-btn {
+    color: white;
+  }
+}
+
+/* ── Reduced Motion ─────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .gradient-btn-rainbow { animation: none; background-position: 0% center; }
+  .gradient-btn:hover { transform: none; }
+}
