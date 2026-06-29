@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Card Margin Conflict — Demo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <h1>ease-card Margin Conflict</h1>
+  <p class="subtitle">Demonstrating conflicting margin declarations in ease-card component</p>
+
+  <div class="demo-grid">
+
+    <!-- ─── Conflict Side ─── -->
+    <div class="card card-conflict">
+      <div class="card-header">
+        <span class="tag tag-a">Branch A: margin-bottom: 1rem</span>
+        <span class="tag tag-b">Branch B: remove</span>
+      </div>
+      <div class="card-body">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p><span class="tag tag-b">Branch B: margin-bottom: 0 on last p</span></p>
+      </div>
+      <div class="card-footer">
+        <span class="tag tag-a">Branch A: margin-top: 0.75rem</span>
+        <span class="tag tag-b">Branch B: margin-top: 1rem</span>
+        <button class="btn btn-primary">Action</button>
+        <button class="btn">Cancel</button>
+      </div>
+    </div>
+
+    <!-- ─── Resolution Side ─── -->
+    <div class="card card-resolved">
+      <div class="card-header">
+        <code>--card-section-gap: 1rem</code>
+      </div>
+      <div class="card-body">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p>Last paragraph keeps <code>margin-bottom: 0</code> as a reset — no conflict.</p>
+      </div>
+      <div class="card-footer">
+        <code>margin-top: var(--card-section-gap)</code>
+        <button class="btn btn-primary">Action</button>
+        <button class="btn">Cancel</button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="callout">
+    <strong>Resolution:</strong> Replace hard-coded <code>margin-bottom</code> / <code>margin-top</code> with a shared <code>--card-section-gap</code> custom property (<code>1rem</code> default). Keep the <code>p:last-child</code> reset. This satisfies both branches — one unified value, no duplication, fully overridable.
+  </div>
+
+</body>
+</html>
