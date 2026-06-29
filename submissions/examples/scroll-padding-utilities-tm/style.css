@@ -1,0 +1,229 @@
+/* Scroll Padding Utilities - scroll-padding */
+.scroll-px-0 { scroll-padding-left: 0px; scroll-padding-right: 0px; }
+.scroll-py-0 { scroll-padding-top: 0px; scroll-padding-bottom: 0px; }
+.scroll-pt-0 { scroll-padding-top: 0px; }
+.scroll-pr-0 { scroll-padding-right: 0px; }
+.scroll-pb-0 { scroll-padding-bottom: 0px; }
+.scroll-pl-0 { scroll-padding-left: 0px; }
+.scroll-px-1 { scroll-padding-left: 1px; scroll-padding-right: 1px; }
+.scroll-py-1 { scroll-padding-top: 1px; scroll-padding-bottom: 1px; }
+.scroll-pt-1 { scroll-padding-top: 1px; }
+.scroll-pr-1 { scroll-padding-right: 1px; }
+.scroll-pb-1 { scroll-padding-bottom: 1px; }
+.scroll-pl-1 { scroll-padding-left: 1px; }
+.scroll-px-2 { scroll-padding-left: 2px; scroll-padding-right: 2px; }
+.scroll-py-2 { scroll-padding-top: 2px; scroll-padding-bottom: 2px; }
+.scroll-pt-2 { scroll-padding-top: 2px; }
+.scroll-pr-2 { scroll-padding-right: 2px; }
+.scroll-pb-2 { scroll-padding-bottom: 2px; }
+.scroll-pl-2 { scroll-padding-left: 2px; }
+.scroll-px-3 { scroll-padding-left: 3px; scroll-padding-right: 3px; }
+.scroll-py-3 { scroll-padding-top: 3px; scroll-padding-bottom: 3px; }
+.scroll-pt-3 { scroll-padding-top: 3px; }
+.scroll-pr-3 { scroll-padding-right: 3px; }
+.scroll-pb-3 { scroll-padding-bottom: 3px; }
+.scroll-pl-3 { scroll-padding-left: 3px; }
+.scroll-px-4 { scroll-padding-left: 4px; scroll-padding-right: 4px; }
+.scroll-py-4 { scroll-padding-top: 4px; scroll-padding-bottom: 4px; }
+.scroll-pt-4 { scroll-padding-top: 4px; }
+.scroll-pr-4 { scroll-padding-right: 4px; }
+.scroll-pb-4 { scroll-padding-bottom: 4px; }
+.scroll-pl-4 { scroll-padding-left: 4px; }
+.scroll-px-5 { scroll-padding-left: 5px; scroll-padding-right: 5px; }
+.scroll-py-5 { scroll-padding-top: 5px; scroll-padding-bottom: 5px; }
+.scroll-pt-5 { scroll-padding-top: 5px; }
+.scroll-pr-5 { scroll-padding-right: 5px; }
+.scroll-pb-5 { scroll-padding-bottom: 5px; }
+.scroll-pl-5 { scroll-padding-left: 5px; }
+.scroll-px-6 { scroll-padding-left: 6px; scroll-padding-right: 6px; }
+.scroll-py-6 { scroll-padding-top: 6px; scroll-padding-bottom: 6px; }
+.scroll-pt-6 { scroll-padding-top: 6px; }
+.scroll-pr-6 { scroll-padding-right: 6px; }
+.scroll-pb-6 { scroll-padding-bottom: 6px; }
+.scroll-pl-6 { scroll-padding-left: 6px; }
+.scroll-px-7 { scroll-padding-left: 7px; scroll-padding-right: 7px; }
+.scroll-py-7 { scroll-padding-top: 7px; scroll-padding-bottom: 7px; }
+.scroll-pt-7 { scroll-padding-top: 7px; }
+.scroll-pr-7 { scroll-padding-right: 7px; }
+.scroll-pb-7 { scroll-padding-bottom: 7px; }
+.scroll-pl-7 { scroll-padding-left: 7px; }
+.scroll-px-8 { scroll-padding-left: 8px; scroll-padding-right: 8px; }
+.scroll-py-8 { scroll-padding-top: 8px; scroll-padding-bottom: 8px; }
+.scroll-pt-8 { scroll-padding-top: 8px; }
+.scroll-pr-8 { scroll-padding-right: 8px; }
+.scroll-pb-8 { scroll-padding-bottom: 8px; }
+.scroll-pl-8 { scroll-padding-left: 8px; }
+.scroll-px-9 { scroll-padding-left: 9px; scroll-padding-right: 9px; }
+.scroll-py-9 { scroll-padding-top: 9px; scroll-padding-bottom: 9px; }
+.scroll-pt-9 { scroll-padding-top: 9px; }
+.scroll-pr-9 { scroll-padding-right: 9px; }
+.scroll-pb-9 { scroll-padding-bottom: 9px; }
+.scroll-pl-9 { scroll-padding-left: 9px; }
+.scroll-px-10 { scroll-padding-left: 10px; scroll-padding-right: 10px; }
+.scroll-py-10 { scroll-padding-top: 10px; scroll-padding-bottom: 10px; }
+.scroll-pt-10 { scroll-padding-top: 10px; }
+.scroll-pr-10 { scroll-padding-right: 10px; }
+.scroll-pb-10 { scroll-padding-bottom: 10px; }
+.scroll-pl-10 { scroll-padding-left: 10px; }
+.scroll-px-11 { scroll-padding-left: 11px; scroll-padding-right: 11px; }
+.scroll-py-11 { scroll-padding-top: 11px; scroll-padding-bottom: 11px; }
+.scroll-pt-11 { scroll-padding-top: 11px; }
+.scroll-pr-11 { scroll-padding-right: 11px; }
+.scroll-pb-11 { scroll-padding-bottom: 11px; }
+.scroll-pl-11 { scroll-padding-left: 11px; }
+.scroll-px-12 { scroll-padding-left: 12px; scroll-padding-right: 12px; }
+.scroll-py-12 { scroll-padding-top: 12px; scroll-padding-bottom: 12px; }
+.scroll-pt-12 { scroll-padding-top: 12px; }
+.scroll-pr-12 { scroll-padding-right: 12px; }
+.scroll-pb-12 { scroll-padding-bottom: 12px; }
+.scroll-pl-12 { scroll-padding-left: 12px; }
+.scroll-px-13 { scroll-padding-left: 13px; scroll-padding-right: 13px; }
+.scroll-py-13 { scroll-padding-top: 13px; scroll-padding-bottom: 13px; }
+.scroll-pt-13 { scroll-padding-top: 13px; }
+.scroll-pr-13 { scroll-padding-right: 13px; }
+.scroll-pb-13 { scroll-padding-bottom: 13px; }
+.scroll-pl-13 { scroll-padding-left: 13px; }
+.scroll-px-14 { scroll-padding-left: 14px; scroll-padding-right: 14px; }
+.scroll-py-14 { scroll-padding-top: 14px; scroll-padding-bottom: 14px; }
+.scroll-pt-14 { scroll-padding-top: 14px; }
+.scroll-pr-14 { scroll-padding-right: 14px; }
+.scroll-pb-14 { scroll-padding-bottom: 14px; }
+.scroll-pl-14 { scroll-padding-left: 14px; }
+.scroll-px-15 { scroll-padding-left: 15px; scroll-padding-right: 15px; }
+.scroll-py-15 { scroll-padding-top: 15px; scroll-padding-bottom: 15px; }
+.scroll-pt-15 { scroll-padding-top: 15px; }
+.scroll-pr-15 { scroll-padding-right: 15px; }
+.scroll-pb-15 { scroll-padding-bottom: 15px; }
+.scroll-pl-15 { scroll-padding-left: 15px; }
+.scroll-px-16 { scroll-padding-left: 16px; scroll-padding-right: 16px; }
+.scroll-py-16 { scroll-padding-top: 16px; scroll-padding-bottom: 16px; }
+.scroll-pt-16 { scroll-padding-top: 16px; }
+.scroll-pr-16 { scroll-padding-right: 16px; }
+.scroll-pb-16 { scroll-padding-bottom: 16px; }
+.scroll-pl-16 { scroll-padding-left: 16px; }
+.scroll-px-17 { scroll-padding-left: 17px; scroll-padding-right: 17px; }
+.scroll-py-17 { scroll-padding-top: 17px; scroll-padding-bottom: 17px; }
+.scroll-pt-17 { scroll-padding-top: 17px; }
+.scroll-pr-17 { scroll-padding-right: 17px; }
+.scroll-pb-17 { scroll-padding-bottom: 17px; }
+.scroll-pl-17 { scroll-padding-left: 17px; }
+.scroll-px-18 { scroll-padding-left: 18px; scroll-padding-right: 18px; }
+.scroll-py-18 { scroll-padding-top: 18px; scroll-padding-bottom: 18px; }
+.scroll-pt-18 { scroll-padding-top: 18px; }
+.scroll-pr-18 { scroll-padding-right: 18px; }
+.scroll-pb-18 { scroll-padding-bottom: 18px; }
+.scroll-pl-18 { scroll-padding-left: 18px; }
+.scroll-px-19 { scroll-padding-left: 19px; scroll-padding-right: 19px; }
+.scroll-py-19 { scroll-padding-top: 19px; scroll-padding-bottom: 19px; }
+.scroll-pt-19 { scroll-padding-top: 19px; }
+.scroll-pr-19 { scroll-padding-right: 19px; }
+.scroll-pb-19 { scroll-padding-bottom: 19px; }
+.scroll-pl-19 { scroll-padding-left: 19px; }
+.scroll-px-20 { scroll-padding-left: 20px; scroll-padding-right: 20px; }
+.scroll-py-20 { scroll-padding-top: 20px; scroll-padding-bottom: 20px; }
+.scroll-pt-20 { scroll-padding-top: 20px; }
+.scroll-pr-20 { scroll-padding-right: 20px; }
+.scroll-pb-20 { scroll-padding-bottom: 20px; }
+.scroll-pl-20 { scroll-padding-left: 20px; }
+.scroll-px-21 { scroll-padding-left: 21px; scroll-padding-right: 21px; }
+.scroll-py-21 { scroll-padding-top: 21px; scroll-padding-bottom: 21px; }
+.scroll-pt-21 { scroll-padding-top: 21px; }
+.scroll-pr-21 { scroll-padding-right: 21px; }
+.scroll-pb-21 { scroll-padding-bottom: 21px; }
+.scroll-pl-21 { scroll-padding-left: 21px; }
+.scroll-px-22 { scroll-padding-left: 22px; scroll-padding-right: 22px; }
+.scroll-py-22 { scroll-padding-top: 22px; scroll-padding-bottom: 22px; }
+.scroll-pt-22 { scroll-padding-top: 22px; }
+.scroll-pr-22 { scroll-padding-right: 22px; }
+.scroll-pb-22 { scroll-padding-bottom: 22px; }
+.scroll-pl-22 { scroll-padding-left: 22px; }
+.scroll-px-23 { scroll-padding-left: 23px; scroll-padding-right: 23px; }
+.scroll-py-23 { scroll-padding-top: 23px; scroll-padding-bottom: 23px; }
+.scroll-pt-23 { scroll-padding-top: 23px; }
+.scroll-pr-23 { scroll-padding-right: 23px; }
+.scroll-pb-23 { scroll-padding-bottom: 23px; }
+.scroll-pl-23 { scroll-padding-left: 23px; }
+.scroll-px-24 { scroll-padding-left: 24px; scroll-padding-right: 24px; }
+.scroll-py-24 { scroll-padding-top: 24px; scroll-padding-bottom: 24px; }
+.scroll-pt-24 { scroll-padding-top: 24px; }
+.scroll-pr-24 { scroll-padding-right: 24px; }
+.scroll-pb-24 { scroll-padding-bottom: 24px; }
+.scroll-pl-24 { scroll-padding-left: 24px; }
+.scroll-px-25 { scroll-padding-left: 25px; scroll-padding-right: 25px; }
+.scroll-py-25 { scroll-padding-top: 25px; scroll-padding-bottom: 25px; }
+.scroll-pt-25 { scroll-padding-top: 25px; }
+.scroll-pr-25 { scroll-padding-right: 25px; }
+.scroll-pb-25 { scroll-padding-bottom: 25px; }
+.scroll-pl-25 { scroll-padding-left: 25px; }
+.scroll-px-26 { scroll-padding-left: 26px; scroll-padding-right: 26px; }
+.scroll-py-26 { scroll-padding-top: 26px; scroll-padding-bottom: 26px; }
+.scroll-pt-26 { scroll-padding-top: 26px; }
+.scroll-pr-26 { scroll-padding-right: 26px; }
+.scroll-pb-26 { scroll-padding-bottom: 26px; }
+.scroll-pl-26 { scroll-padding-left: 26px; }
+.scroll-px-27 { scroll-padding-left: 27px; scroll-padding-right: 27px; }
+.scroll-py-27 { scroll-padding-top: 27px; scroll-padding-bottom: 27px; }
+.scroll-pt-27 { scroll-padding-top: 27px; }
+.scroll-pr-27 { scroll-padding-right: 27px; }
+.scroll-pb-27 { scroll-padding-bottom: 27px; }
+.scroll-pl-27 { scroll-padding-left: 27px; }
+.scroll-px-28 { scroll-padding-left: 28px; scroll-padding-right: 28px; }
+.scroll-py-28 { scroll-padding-top: 28px; scroll-padding-bottom: 28px; }
+.scroll-pt-28 { scroll-padding-top: 28px; }
+.scroll-pr-28 { scroll-padding-right: 28px; }
+.scroll-pb-28 { scroll-padding-bottom: 28px; }
+.scroll-pl-28 { scroll-padding-left: 28px; }
+.scroll-px-29 { scroll-padding-left: 29px; scroll-padding-right: 29px; }
+.scroll-py-29 { scroll-padding-top: 29px; scroll-padding-bottom: 29px; }
+.scroll-pt-29 { scroll-padding-top: 29px; }
+.scroll-pr-29 { scroll-padding-right: 29px; }
+.scroll-pb-29 { scroll-padding-bottom: 29px; }
+.scroll-pl-29 { scroll-padding-left: 29px; }
+.scroll-px-30 { scroll-padding-left: 30px; scroll-padding-right: 30px; }
+.scroll-py-30 { scroll-padding-top: 30px; scroll-padding-bottom: 30px; }
+.scroll-pt-30 { scroll-padding-top: 30px; }
+.scroll-pr-30 { scroll-padding-right: 30px; }
+.scroll-pb-30 { scroll-padding-bottom: 30px; }
+.scroll-pl-30 { scroll-padding-left: 30px; }
+.scroll-px-31 { scroll-padding-left: 31px; scroll-padding-right: 31px; }
+.scroll-py-31 { scroll-padding-top: 31px; scroll-padding-bottom: 31px; }
+.scroll-pt-31 { scroll-padding-top: 31px; }
+.scroll-pr-31 { scroll-padding-right: 31px; }
+.scroll-pb-31 { scroll-padding-bottom: 31px; }
+.scroll-pl-31 { scroll-padding-left: 31px; }
+.scroll-px-32 { scroll-padding-left: 32px; scroll-padding-right: 32px; }
+.scroll-py-32 { scroll-padding-top: 32px; scroll-padding-bottom: 32px; }
+.scroll-pt-32 { scroll-padding-top: 32px; }
+.scroll-pr-32 { scroll-padding-right: 32px; }
+.scroll-pb-32 { scroll-padding-bottom: 32px; }
+.scroll-pl-32 { scroll-padding-left: 32px; }
+.scroll-px-36 { scroll-padding-left: 36px; scroll-padding-right: 36px; }
+.scroll-py-36 { scroll-padding-top: 36px; scroll-padding-bottom: 36px; }
+.scroll-pt-36 { scroll-padding-top: 36px; }
+.scroll-pr-36 { scroll-padding-right: 36px; }
+.scroll-pb-36 { scroll-padding-bottom: 36px; }
+.scroll-pl-36 { scroll-padding-left: 36px; }
+.scroll-px-40 { scroll-padding-left: 40px; scroll-padding-right: 40px; }
+.scroll-py-40 { scroll-padding-top: 40px; scroll-padding-bottom: 40px; }
+.scroll-pt-40 { scroll-padding-top: 40px; }
+.scroll-pr-40 { scroll-padding-right: 40px; }
+.scroll-pb-40 { scroll-padding-bottom: 40px; }
+.scroll-pl-40 { scroll-padding-left: 40px; }
+.scroll-px-48 { scroll-padding-left: 48px; scroll-padding-right: 48px; }
+.scroll-py-48 { scroll-padding-top: 48px; scroll-padding-bottom: 48px; }
+.scroll-pt-48 { scroll-padding-top: 48px; }
+.scroll-pr-48 { scroll-padding-right: 48px; }
+.scroll-pb-48 { scroll-padding-bottom: 48px; }
+.scroll-pl-48 { scroll-padding-left: 48px; }
+.scroll-px-56 { scroll-padding-left: 56px; scroll-padding-right: 56px; }
+.scroll-py-56 { scroll-padding-top: 56px; scroll-padding-bottom: 56px; }
+.scroll-pt-56 { scroll-padding-top: 56px; }
+.scroll-pr-56 { scroll-padding-right: 56px; }
+.scroll-pb-56 { scroll-padding-bottom: 56px; }
+.scroll-pl-56 { scroll-padding-left: 56px; }
+.scroll-px-64 { scroll-padding-left: 64px; scroll-padding-right: 64px; }
+.scroll-py-64 { scroll-padding-top: 64px; scroll-padding-bottom: 64px; }
+.scroll-pt-64 { scroll-padding-top: 64px; }
+.scroll-pr-64 { scroll-padding-right: 64px; }
+.scroll-pb-64 { scroll-padding-bottom: 64px; }
+.scroll-pl-64 { scroll-padding-left: 64px; }
