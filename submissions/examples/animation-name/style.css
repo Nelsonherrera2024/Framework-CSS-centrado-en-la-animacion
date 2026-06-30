@@ -1,0 +1,937 @@
+/* animation-name */
+.anim-none {
+  animation-name: none;
+  animation-name: none !important;
+}
+.anim-fade-in {
+  animation-name: fadeIn;
+  animation-name: fadeIn !important;
+}
+.anim-fade-out {
+  animation-name: fadeOut;
+  animation-name: fadeOut !important;
+}
+.anim-slide-up {
+  animation-name: slideUp;
+  animation-name: slideUp !important;
+}
+.anim-slide-down {
+  animation-name: slideDown;
+  animation-name: slideDown !important;
+}
+.anim-slide-left {
+  animation-name: slideLeft;
+  animation-name: slideLeft !important;
+}
+.anim-slide-right {
+  animation-name: slideRight;
+  animation-name: slideRight !important;
+}
+.anim-bounce-in {
+  animation-name: bounceIn;
+  animation-name: bounceIn !important;
+}
+.anim-bounce-out {
+  animation-name: bounceOut;
+  animation-name: bounceOut !important;
+}
+.anim-spin {
+  animation-name: spin;
+  animation-name: spin !important;
+}
+.anim-ping {
+  animation-name: ping;
+  animation-name: ping !important;
+}
+.anim-pulse {
+  animation-name: pulse;
+  animation-name: pulse !important;
+}
+.anim-pulse-grow {
+  animation-name: pulseGrow;
+  animation-name: pulseGrow !important;
+}
+.anim-shake {
+  animation-name: shake;
+  animation-name: shake !important;
+}
+.anim-swing {
+  animation-name: swing;
+  animation-name: swing !important;
+}
+.anim-tada {
+  animation-name: tada;
+  animation-name: tada !important;
+}
+.anim-wiggle {
+  animation-name: wiggle;
+  animation-name: wiggle !important;
+}
+.anim-jello {
+  animation-name: jello;
+  animation-name: jello !important;
+}
+.anim-heartbeat {
+  animation-name: heartbeat;
+  animation-name: heartbeat !important;
+}
+.anim-flash {
+  animation-name: flash;
+  animation-name: flash !important;
+}
+.anim-rubber-band {
+  animation-name: rubberBand;
+  animation-name: rubberBand !important;
+}
+.anim-zoom-in {
+  animation-name: zoomIn;
+  animation-name: zoomIn !important;
+}
+.anim-zoom-out {
+  animation-name: zoomOut;
+  animation-name: zoomOut !important;
+}
+.anim-glow {
+  animation-name: glow;
+  animation-name: glow !important;
+}
+.anim-float {
+  animation-name: float;
+  animation-name: float !important;
+}
+.anim-droplet {
+  animation-name: droplet;
+  animation-name: droplet !important;
+}
+.anim-sunrise {
+  animation-name: sunrise;
+  animation-name: sunrise !important;
+}
+.anim-sunset {
+  animation-name: sunset;
+  animation-name: sunset !important;
+}
+.anim-cursor-blink {
+  animation-name: cursorBlink;
+  animation-name: cursorBlink !important;
+}
+.anim-shimmer {
+  animation-name: shimmer;
+  animation-name: shimmer !important;
+}
+.anim-hover-lift {
+  animation-name: hoverLift;
+  animation-name: hoverLift !important;
+}
+.anim-hover-scale {
+  animation-name: hoverScale;
+  animation-name: hoverScale !important;
+}
+.anim-focus-ring {
+  animation-name: focusRing;
+  animation-name: focusRing !important;
+}
+.anim-ripple {
+  animation-name: ripple;
+  animation-name: ripple !important;
+}
+.anim-morph {
+  animation-name: morph;
+  animation-name: morph !important;
+}
+.anim-glitch {
+  animation-name: glitch;
+  animation-name: glitch !important;
+}
+.anim-vibrate {
+  animation-name: vibrate;
+  animation-name: vibrate !important;
+}
+.anim-parallax {
+  animation-name: parallax;
+  animation-name: parallax !important;
+}
+.anim-scroll-reveal {
+  animation-name: scrollReveal;
+  animation-name: scrollReveal !important;
+}
+@media (min-width: 640px) {
+  .sm\:anim-none {
+    animation-name: none;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:anim-fade-in {
+    animation-name: fadeIn;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:anim-fade-out {
+    animation-name: fadeOut;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:anim-slide-up {
+    animation-name: slideUp;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:anim-slide-down {
+    animation-name: slideDown;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:anim-slide-left {
+    animation-name: slideLeft;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:anim-slide-right {
+    animation-name: slideRight;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:anim-bounce-in {
+    animation-name: bounceIn;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:anim-bounce-out {
+    animation-name: bounceOut;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:anim-spin {
+    animation-name: spin;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:anim-ping {
+    animation-name: ping;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:anim-pulse {
+    animation-name: pulse;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:anim-pulse-grow {
+    animation-name: pulseGrow;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:anim-shake {
+    animation-name: shake;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:anim-swing {
+    animation-name: swing;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:anim-tada {
+    animation-name: tada;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:anim-wiggle {
+    animation-name: wiggle;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:anim-jello {
+    animation-name: jello;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:anim-heartbeat {
+    animation-name: heartbeat;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:anim-flash {
+    animation-name: flash;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:anim-rubber-band {
+    animation-name: rubberBand;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:anim-zoom-in {
+    animation-name: zoomIn;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:anim-zoom-out {
+    animation-name: zoomOut;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:anim-glow {
+    animation-name: glow;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:anim-float {
+    animation-name: float;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:anim-droplet {
+    animation-name: droplet;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:anim-sunrise {
+    animation-name: sunrise;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:anim-sunset {
+    animation-name: sunset;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:anim-cursor-blink {
+    animation-name: cursorBlink;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:anim-shimmer {
+    animation-name: shimmer;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:anim-hover-lift {
+    animation-name: hoverLift;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:anim-hover-scale {
+    animation-name: hoverScale;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:anim-focus-ring {
+    animation-name: focusRing;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:anim-ripple {
+    animation-name: ripple;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:anim-morph {
+    animation-name: morph;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:anim-glitch {
+    animation-name: glitch;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:anim-vibrate {
+    animation-name: vibrate;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:anim-parallax {
+    animation-name: parallax;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:anim-scroll-reveal {
+    animation-name: scrollReveal;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:anim-none {
+    animation-name: none;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:anim-fade-in {
+    animation-name: fadeIn;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:anim-fade-out {
+    animation-name: fadeOut;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:anim-slide-up {
+    animation-name: slideUp;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:anim-slide-down {
+    animation-name: slideDown;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:anim-slide-left {
+    animation-name: slideLeft;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:anim-slide-right {
+    animation-name: slideRight;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:anim-bounce-in {
+    animation-name: bounceIn;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:anim-bounce-out {
+    animation-name: bounceOut;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:anim-spin {
+    animation-name: spin;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:anim-ping {
+    animation-name: ping;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:anim-pulse {
+    animation-name: pulse;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:anim-pulse-grow {
+    animation-name: pulseGrow;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:anim-shake {
+    animation-name: shake;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:anim-swing {
+    animation-name: swing;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:anim-tada {
+    animation-name: tada;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:anim-wiggle {
+    animation-name: wiggle;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:anim-jello {
+    animation-name: jello;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:anim-heartbeat {
+    animation-name: heartbeat;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:anim-flash {
+    animation-name: flash;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:anim-rubber-band {
+    animation-name: rubberBand;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:anim-zoom-in {
+    animation-name: zoomIn;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:anim-zoom-out {
+    animation-name: zoomOut;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:anim-glow {
+    animation-name: glow;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:anim-float {
+    animation-name: float;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:anim-droplet {
+    animation-name: droplet;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:anim-sunrise {
+    animation-name: sunrise;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:anim-sunset {
+    animation-name: sunset;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:anim-cursor-blink {
+    animation-name: cursorBlink;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:anim-shimmer {
+    animation-name: shimmer;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:anim-hover-lift {
+    animation-name: hoverLift;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:anim-hover-scale {
+    animation-name: hoverScale;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:anim-focus-ring {
+    animation-name: focusRing;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:anim-ripple {
+    animation-name: ripple;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:anim-morph {
+    animation-name: morph;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:anim-glitch {
+    animation-name: glitch;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:anim-vibrate {
+    animation-name: vibrate;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:anim-parallax {
+    animation-name: parallax;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:anim-scroll-reveal {
+    animation-name: scrollReveal;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:anim-none {
+    animation-name: none;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:anim-fade-in {
+    animation-name: fadeIn;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:anim-fade-out {
+    animation-name: fadeOut;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:anim-slide-up {
+    animation-name: slideUp;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:anim-slide-down {
+    animation-name: slideDown;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:anim-slide-left {
+    animation-name: slideLeft;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:anim-slide-right {
+    animation-name: slideRight;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:anim-bounce-in {
+    animation-name: bounceIn;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:anim-bounce-out {
+    animation-name: bounceOut;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:anim-spin {
+    animation-name: spin;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:anim-ping {
+    animation-name: ping;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:anim-pulse {
+    animation-name: pulse;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:anim-pulse-grow {
+    animation-name: pulseGrow;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:anim-shake {
+    animation-name: shake;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:anim-swing {
+    animation-name: swing;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:anim-tada {
+    animation-name: tada;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:anim-wiggle {
+    animation-name: wiggle;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:anim-jello {
+    animation-name: jello;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:anim-heartbeat {
+    animation-name: heartbeat;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:anim-flash {
+    animation-name: flash;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:anim-rubber-band {
+    animation-name: rubberBand;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:anim-zoom-in {
+    animation-name: zoomIn;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:anim-zoom-out {
+    animation-name: zoomOut;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:anim-glow {
+    animation-name: glow;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:anim-float {
+    animation-name: float;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:anim-droplet {
+    animation-name: droplet;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:anim-sunrise {
+    animation-name: sunrise;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:anim-sunset {
+    animation-name: sunset;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:anim-cursor-blink {
+    animation-name: cursorBlink;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:anim-shimmer {
+    animation-name: shimmer;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:anim-hover-lift {
+    animation-name: hoverLift;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:anim-hover-scale {
+    animation-name: hoverScale;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:anim-focus-ring {
+    animation-name: focusRing;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:anim-ripple {
+    animation-name: ripple;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:anim-morph {
+    animation-name: morph;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:anim-glitch {
+    animation-name: glitch;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:anim-vibrate {
+    animation-name: vibrate;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:anim-parallax {
+    animation-name: parallax;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:anim-scroll-reveal {
+    animation-name: scrollReveal;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:anim-none {
+    animation-name: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:anim-fade-in {
+    animation-name: fadeIn;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:anim-fade-out {
+    animation-name: fadeOut;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:anim-slide-up {
+    animation-name: slideUp;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:anim-slide-down {
+    animation-name: slideDown;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:anim-slide-left {
+    animation-name: slideLeft;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:anim-slide-right {
+    animation-name: slideRight;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:anim-bounce-in {
+    animation-name: bounceIn;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:anim-bounce-out {
+    animation-name: bounceOut;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:anim-spin {
+    animation-name: spin;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:anim-ping {
+    animation-name: ping;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:anim-pulse {
+    animation-name: pulse;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:anim-pulse-grow {
+    animation-name: pulseGrow;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:anim-shake {
+    animation-name: shake;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:anim-swing {
+    animation-name: swing;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:anim-tada {
+    animation-name: tada;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:anim-wiggle {
+    animation-name: wiggle;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:anim-jello {
+    animation-name: jello;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:anim-heartbeat {
+    animation-name: heartbeat;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:anim-flash {
+    animation-name: flash;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:anim-rubber-band {
+    animation-name: rubberBand;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:anim-zoom-in {
+    animation-name: zoomIn;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:anim-zoom-out {
+    animation-name: zoomOut;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:anim-glow {
+    animation-name: glow;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:anim-float {
+    animation-name: float;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:anim-droplet {
+    animation-name: droplet;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:anim-sunrise {
+    animation-name: sunrise;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:anim-sunset {
+    animation-name: sunset;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:anim-cursor-blink {
+    animation-name: cursorBlink;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:anim-shimmer {
+    animation-name: shimmer;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:anim-hover-lift {
+    animation-name: hoverLift;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:anim-hover-scale {
+    animation-name: hoverScale;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:anim-focus-ring {
+    animation-name: focusRing;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:anim-ripple {
+    animation-name: ripple;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:anim-morph {
+    animation-name: morph;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:anim-glitch {
+    animation-name: glitch;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:anim-vibrate {
+    animation-name: vibrate;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:anim-parallax {
+    animation-name: parallax;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:anim-scroll-reveal {
+    animation-name: scrollReveal;
+  }
+}
