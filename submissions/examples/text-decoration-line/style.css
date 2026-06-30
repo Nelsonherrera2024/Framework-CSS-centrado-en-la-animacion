@@ -1,0 +1,121 @@
+/* text-decoration-line */
+.underline {
+  text-decoration-line: underline;
+  text-decoration-line: underline !important;
+}
+.overline {
+  text-decoration-line: overline;
+  text-decoration-line: overline !important;
+}
+.line-through {
+  text-decoration-line: line-through;
+  text-decoration-line: line-through !important;
+}
+.no-underline {
+  text-decoration-line: none;
+  text-decoration-line: none !important;
+}
+.blink {
+  text-decoration-line: blink;
+  text-decoration-line: blink !important;
+}
+@media (min-width: 640px) {
+  .sm\:underline {
+    text-decoration-line: underline;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:overline {
+    text-decoration-line: overline;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:line-through {
+    text-decoration-line: line-through;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:no-underline {
+    text-decoration-line: none;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:blink {
+    text-decoration-line: blink;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:underline {
+    text-decoration-line: underline;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:overline {
+    text-decoration-line: overline;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:line-through {
+    text-decoration-line: line-through;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:no-underline {
+    text-decoration-line: none;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:blink {
+    text-decoration-line: blink;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:underline {
+    text-decoration-line: underline;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:overline {
+    text-decoration-line: overline;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:line-through {
+    text-decoration-line: line-through;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:no-underline {
+    text-decoration-line: none;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:blink {
+    text-decoration-line: blink;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:underline {
+    text-decoration-line: underline;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:overline {
+    text-decoration-line: overline;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:line-through {
+    text-decoration-line: line-through;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:no-underline {
+    text-decoration-line: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:blink {
+    text-decoration-line: blink;
+  }
+}
