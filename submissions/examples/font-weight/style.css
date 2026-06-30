@@ -1,0 +1,265 @@
+/* font-weight */
+.font-thin {
+  font-weight: 100;
+  font-weight: 100 !important;
+}
+.font-extralight {
+  font-weight: 200;
+  font-weight: 200 !important;
+}
+.font-light {
+  font-weight: 300;
+  font-weight: 300 !important;
+}
+.font-normal {
+  font-weight: 400;
+  font-weight: 400 !important;
+}
+.font-medium {
+  font-weight: 500;
+  font-weight: 500 !important;
+}
+.font-semibold {
+  font-weight: 600;
+  font-weight: 600 !important;
+}
+.font-bold {
+  font-weight: 700;
+  font-weight: 700 !important;
+}
+.font-extrabold {
+  font-weight: 800;
+  font-weight: 800 !important;
+}
+.font-black {
+  font-weight: 900;
+  font-weight: 900 !important;
+}
+.font-lighter {
+  font-weight: lighter;
+  font-weight: lighter !important;
+}
+.font-bolder {
+  font-weight: bolder;
+  font-weight: bolder !important;
+}
+@media (min-width: 640px) {
+  .sm\:font-thin {
+    font-weight: 100;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:font-extralight {
+    font-weight: 200;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:font-light {
+    font-weight: 300;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:font-normal {
+    font-weight: 400;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:font-medium {
+    font-weight: 500;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:font-semibold {
+    font-weight: 600;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:font-bold {
+    font-weight: 700;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:font-extrabold {
+    font-weight: 800;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:font-black {
+    font-weight: 900;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:font-lighter {
+    font-weight: lighter;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:font-bolder {
+    font-weight: bolder;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:font-thin {
+    font-weight: 100;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:font-extralight {
+    font-weight: 200;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:font-light {
+    font-weight: 300;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:font-normal {
+    font-weight: 400;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:font-medium {
+    font-weight: 500;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:font-semibold {
+    font-weight: 600;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:font-bold {
+    font-weight: 700;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:font-extrabold {
+    font-weight: 800;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:font-black {
+    font-weight: 900;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:font-lighter {
+    font-weight: lighter;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:font-bolder {
+    font-weight: bolder;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:font-thin {
+    font-weight: 100;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:font-extralight {
+    font-weight: 200;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:font-light {
+    font-weight: 300;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:font-normal {
+    font-weight: 400;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:font-medium {
+    font-weight: 500;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:font-semibold {
+    font-weight: 600;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:font-bold {
+    font-weight: 700;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:font-extrabold {
+    font-weight: 800;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:font-black {
+    font-weight: 900;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:font-lighter {
+    font-weight: lighter;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:font-bolder {
+    font-weight: bolder;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:font-thin {
+    font-weight: 100;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:font-extralight {
+    font-weight: 200;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:font-light {
+    font-weight: 300;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:font-normal {
+    font-weight: 400;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:font-medium {
+    font-weight: 500;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:font-semibold {
+    font-weight: 600;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:font-bold {
+    font-weight: 700;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:font-extrabold {
+    font-weight: 800;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:font-black {
+    font-weight: 900;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:font-lighter {
+    font-weight: lighter;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:font-bolder {
+    font-weight: bolder;
+  }
+}
