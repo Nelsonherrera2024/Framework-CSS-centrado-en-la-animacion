@@ -1,0 +1,193 @@
+/* vertical-align */
+.align-baseline {
+  vertical-align: baseline;
+  vertical-align: baseline !important;
+}
+.align-top {
+  vertical-align: top;
+  vertical-align: top !important;
+}
+.align-middle {
+  vertical-align: middle;
+  vertical-align: middle !important;
+}
+.align-bottom {
+  vertical-align: bottom;
+  vertical-align: bottom !important;
+}
+.align-text-top {
+  vertical-align: text-top;
+  vertical-align: text-top !important;
+}
+.align-text-bottom {
+  vertical-align: text-bottom;
+  vertical-align: text-bottom !important;
+}
+.align-sub {
+  vertical-align: sub;
+  vertical-align: sub !important;
+}
+.align-super {
+  vertical-align: super;
+  vertical-align: super !important;
+}
+@media (min-width: 640px) {
+  .sm\:align-baseline {
+    vertical-align: baseline;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:align-top {
+    vertical-align: top;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:align-middle {
+    vertical-align: middle;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:align-bottom {
+    vertical-align: bottom;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:align-text-top {
+    vertical-align: text-top;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:align-text-bottom {
+    vertical-align: text-bottom;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:align-sub {
+    vertical-align: sub;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:align-super {
+    vertical-align: super;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:align-baseline {
+    vertical-align: baseline;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:align-top {
+    vertical-align: top;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:align-middle {
+    vertical-align: middle;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:align-bottom {
+    vertical-align: bottom;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:align-text-top {
+    vertical-align: text-top;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:align-text-bottom {
+    vertical-align: text-bottom;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:align-sub {
+    vertical-align: sub;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:align-super {
+    vertical-align: super;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:align-baseline {
+    vertical-align: baseline;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:align-top {
+    vertical-align: top;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:align-middle {
+    vertical-align: middle;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:align-bottom {
+    vertical-align: bottom;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:align-text-top {
+    vertical-align: text-top;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:align-text-bottom {
+    vertical-align: text-bottom;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:align-sub {
+    vertical-align: sub;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:align-super {
+    vertical-align: super;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:align-baseline {
+    vertical-align: baseline;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:align-top {
+    vertical-align: top;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:align-middle {
+    vertical-align: middle;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:align-bottom {
+    vertical-align: bottom;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:align-text-top {
+    vertical-align: text-top;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:align-text-bottom {
+    vertical-align: text-bottom;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:align-sub {
+    vertical-align: sub;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:align-super {
+    vertical-align: super;
+  }
+}
