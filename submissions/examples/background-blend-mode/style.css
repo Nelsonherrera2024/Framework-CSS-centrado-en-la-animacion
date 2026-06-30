@@ -1,0 +1,361 @@
+/* background-blend-mode */
+.bg-blend-normal {
+  background-blend-mode: normal;
+  background-blend-mode: normal !important;
+}
+.bg-blend-multiply {
+  background-blend-mode: multiply;
+  background-blend-mode: multiply !important;
+}
+.bg-blend-screen {
+  background-blend-mode: screen;
+  background-blend-mode: screen !important;
+}
+.bg-blend-overlay {
+  background-blend-mode: overlay;
+  background-blend-mode: overlay !important;
+}
+.bg-blend-darken {
+  background-blend-mode: darken;
+  background-blend-mode: darken !important;
+}
+.bg-blend-lighten {
+  background-blend-mode: lighten;
+  background-blend-mode: lighten !important;
+}
+.bg-blend-color-dodge {
+  background-blend-mode: color-dodge;
+  background-blend-mode: color-dodge !important;
+}
+.bg-blend-color-burn {
+  background-blend-mode: color-burn;
+  background-blend-mode: color-burn !important;
+}
+.bg-blend-hard {
+  background-blend-mode: hard-light;
+  background-blend-mode: hard-light !important;
+}
+.bg-blend-soft {
+  background-blend-mode: soft-light;
+  background-blend-mode: soft-light !important;
+}
+.bg-blend-diff {
+  background-blend-mode: difference;
+  background-blend-mode: difference !important;
+}
+.bg-blend-exclusion {
+  background-blend-mode: exclusion;
+  background-blend-mode: exclusion !important;
+}
+.bg-blend-hue {
+  background-blend-mode: hue;
+  background-blend-mode: hue !important;
+}
+.bg-blend-color {
+  background-blend-mode: color;
+  background-blend-mode: color !important;
+}
+.bg-blend-lum {
+  background-blend-mode: luminosity;
+  background-blend-mode: luminosity !important;
+}
+@media (min-width: 640px) {
+  .sm\:bg-blend-normal {
+    background-blend-mode: normal;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:bg-blend-multiply {
+    background-blend-mode: multiply;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:bg-blend-screen {
+    background-blend-mode: screen;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:bg-blend-overlay {
+    background-blend-mode: overlay;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:bg-blend-darken {
+    background-blend-mode: darken;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:bg-blend-lighten {
+    background-blend-mode: lighten;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:bg-blend-color-dodge {
+    background-blend-mode: color-dodge;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:bg-blend-color-burn {
+    background-blend-mode: color-burn;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:bg-blend-hard {
+    background-blend-mode: hard-light;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:bg-blend-soft {
+    background-blend-mode: soft-light;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:bg-blend-diff {
+    background-blend-mode: difference;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:bg-blend-exclusion {
+    background-blend-mode: exclusion;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:bg-blend-hue {
+    background-blend-mode: hue;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:bg-blend-color {
+    background-blend-mode: color;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:bg-blend-lum {
+    background-blend-mode: luminosity;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:bg-blend-normal {
+    background-blend-mode: normal;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:bg-blend-multiply {
+    background-blend-mode: multiply;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:bg-blend-screen {
+    background-blend-mode: screen;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:bg-blend-overlay {
+    background-blend-mode: overlay;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:bg-blend-darken {
+    background-blend-mode: darken;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:bg-blend-lighten {
+    background-blend-mode: lighten;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:bg-blend-color-dodge {
+    background-blend-mode: color-dodge;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:bg-blend-color-burn {
+    background-blend-mode: color-burn;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:bg-blend-hard {
+    background-blend-mode: hard-light;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:bg-blend-soft {
+    background-blend-mode: soft-light;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:bg-blend-diff {
+    background-blend-mode: difference;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:bg-blend-exclusion {
+    background-blend-mode: exclusion;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:bg-blend-hue {
+    background-blend-mode: hue;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:bg-blend-color {
+    background-blend-mode: color;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:bg-blend-lum {
+    background-blend-mode: luminosity;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:bg-blend-normal {
+    background-blend-mode: normal;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:bg-blend-multiply {
+    background-blend-mode: multiply;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:bg-blend-screen {
+    background-blend-mode: screen;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:bg-blend-overlay {
+    background-blend-mode: overlay;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:bg-blend-darken {
+    background-blend-mode: darken;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:bg-blend-lighten {
+    background-blend-mode: lighten;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:bg-blend-color-dodge {
+    background-blend-mode: color-dodge;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:bg-blend-color-burn {
+    background-blend-mode: color-burn;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:bg-blend-hard {
+    background-blend-mode: hard-light;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:bg-blend-soft {
+    background-blend-mode: soft-light;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:bg-blend-diff {
+    background-blend-mode: difference;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:bg-blend-exclusion {
+    background-blend-mode: exclusion;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:bg-blend-hue {
+    background-blend-mode: hue;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:bg-blend-color {
+    background-blend-mode: color;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:bg-blend-lum {
+    background-blend-mode: luminosity;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:bg-blend-normal {
+    background-blend-mode: normal;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:bg-blend-multiply {
+    background-blend-mode: multiply;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:bg-blend-screen {
+    background-blend-mode: screen;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:bg-blend-overlay {
+    background-blend-mode: overlay;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:bg-blend-darken {
+    background-blend-mode: darken;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:bg-blend-lighten {
+    background-blend-mode: lighten;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:bg-blend-color-dodge {
+    background-blend-mode: color-dodge;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:bg-blend-color-burn {
+    background-blend-mode: color-burn;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:bg-blend-hard {
+    background-blend-mode: hard-light;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:bg-blend-soft {
+    background-blend-mode: soft-light;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:bg-blend-diff {
+    background-blend-mode: difference;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:bg-blend-exclusion {
+    background-blend-mode: exclusion;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:bg-blend-hue {
+    background-blend-mode: hue;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:bg-blend-color {
+    background-blend-mode: color;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:bg-blend-lum {
+    background-blend-mode: luminosity;
+  }
+}
