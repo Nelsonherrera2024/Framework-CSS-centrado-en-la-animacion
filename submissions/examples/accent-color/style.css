@@ -1,0 +1,1994 @@
+/* accent-color */
+.accent-primary {
+  accent-color: var(--ease-primary);
+  accent-color: var(--ease-primary) !important;
+}
+.accent-accent {
+  accent-color: var(--ease-accent);
+  accent-color: var(--ease-accent) !important;
+}
+.accent-success {
+  accent-color: var(--ease-success);
+  accent-color: var(--ease-success) !important;
+}
+.accent-danger {
+  accent-color: var(--ease-danger);
+  accent-color: var(--ease-danger) !important;
+}
+.accent-warning {
+  accent-color: var(--ease-warning);
+  accent-color: var(--ease-warning) !important;
+}
+.accent-info {
+  accent-color: var(--ease-info);
+  accent-color: var(--ease-info) !important;
+}
+.accent-auto {
+  accent-color: auto;
+  accent-color: auto !important;
+}
+.accent-black {
+  accent-color: #000;
+  accent-color: #000 !important;
+}
+.accent-white {
+  accent-color: #fff;
+  accent-color: #fff !important;
+}
+.accent-gray-50 {
+  accent-color: #f8fafc;
+  accent-color: #f8fafc !important;
+}
+.accent-gray-100 {
+  accent-color: #f1f5f9;
+  accent-color: #f1f5f9 !important;
+}
+.accent-gray-200 {
+  accent-color: #e2e8f0;
+  accent-color: #e2e8f0 !important;
+}
+.accent-gray-300 {
+  accent-color: #cbd5e1;
+  accent-color: #cbd5e1 !important;
+}
+.accent-gray-400 {
+  accent-color: #94a3b8;
+  accent-color: #94a3b8 !important;
+}
+.accent-gray-500 {
+  accent-color: #64748b;
+  accent-color: #64748b !important;
+}
+.accent-gray-600 {
+  accent-color: #475569;
+  accent-color: #475569 !important;
+}
+.accent-gray-700 {
+  accent-color: #334155;
+  accent-color: #334155 !important;
+}
+.accent-gray-800 {
+  accent-color: #1e293b;
+  accent-color: #1e293b !important;
+}
+.accent-gray-900 {
+  accent-color: #0f172a;
+  accent-color: #0f172a !important;
+}
+.accent-red-50 {
+  accent-color: #fef2f2;
+  accent-color: #fef2f2 !important;
+}
+.accent-red-100 {
+  accent-color: #fee2e2;
+  accent-color: #fee2e2 !important;
+}
+.accent-red-200 {
+  accent-color: #fecaca;
+  accent-color: #fecaca !important;
+}
+.accent-red-300 {
+  accent-color: #fca5a5;
+  accent-color: #fca5a5 !important;
+}
+.accent-red-400 {
+  accent-color: #f87171;
+  accent-color: #f87171 !important;
+}
+.accent-red-500 {
+  accent-color: #ef4444;
+  accent-color: #ef4444 !important;
+}
+.accent-red-600 {
+  accent-color: #dc2626;
+  accent-color: #dc2626 !important;
+}
+.accent-red-700 {
+  accent-color: #b91c1c;
+  accent-color: #b91c1c !important;
+}
+.accent-blue-50 {
+  accent-color: #eff6ff;
+  accent-color: #eff6ff !important;
+}
+.accent-blue-100 {
+  accent-color: #dbeafe;
+  accent-color: #dbeafe !important;
+}
+.accent-blue-200 {
+  accent-color: #bfdbfe;
+  accent-color: #bfdbfe !important;
+}
+.accent-blue-300 {
+  accent-color: #93c5fd;
+  accent-color: #93c5fd !important;
+}
+.accent-blue-400 {
+  accent-color: #60a5fa;
+  accent-color: #60a5fa !important;
+}
+.accent-blue-500 {
+  accent-color: #3b82f6;
+  accent-color: #3b82f6 !important;
+}
+.accent-blue-600 {
+  accent-color: #2563eb;
+  accent-color: #2563eb !important;
+}
+.accent-blue-700 {
+  accent-color: #1d4ed8;
+  accent-color: #1d4ed8 !important;
+}
+.accent-green-50 {
+  accent-color: #f0fdf4;
+  accent-color: #f0fdf4 !important;
+}
+.accent-green-100 {
+  accent-color: #dcfce7;
+  accent-color: #dcfce7 !important;
+}
+.accent-green-200 {
+  accent-color: #bbf7d0;
+  accent-color: #bbf7d0 !important;
+}
+.accent-green-300 {
+  accent-color: #86efac;
+  accent-color: #86efac !important;
+}
+.accent-green-400 {
+  accent-color: #4ade80;
+  accent-color: #4ade80 !important;
+}
+.accent-green-500 {
+  accent-color: #22c55e;
+  accent-color: #22c55e !important;
+}
+.accent-green-600 {
+  accent-color: #16a34a;
+  accent-color: #16a34a !important;
+}
+.accent-green-700 {
+  accent-color: #15803d;
+  accent-color: #15803d !important;
+}
+.accent-yellow-50 {
+  accent-color: #fefce8;
+  accent-color: #fefce8 !important;
+}
+.accent-yellow-100 {
+  accent-color: #fef9c3;
+  accent-color: #fef9c3 !important;
+}
+.accent-yellow-200 {
+  accent-color: #fef08a;
+  accent-color: #fef08a !important;
+}
+.accent-yellow-300 {
+  accent-color: #fde047;
+  accent-color: #fde047 !important;
+}
+.accent-yellow-400 {
+  accent-color: #facc15;
+  accent-color: #facc15 !important;
+}
+.accent-yellow-500 {
+  accent-color: #eab308;
+  accent-color: #eab308 !important;
+}
+.accent-yellow-600 {
+  accent-color: #ca8a04;
+  accent-color: #ca8a04 !important;
+}
+.accent-purple-50 {
+  accent-color: #faf5ff;
+  accent-color: #faf5ff !important;
+}
+.accent-purple-100 {
+  accent-color: #f3e8ff;
+  accent-color: #f3e8ff !important;
+}
+.accent-purple-200 {
+  accent-color: #e9d5ff;
+  accent-color: #e9d5ff !important;
+}
+.accent-purple-300 {
+  accent-color: #d8b4fe;
+  accent-color: #d8b4fe !important;
+}
+.accent-purple-400 {
+  accent-color: #c084fc;
+  accent-color: #c084fc !important;
+}
+.accent-purple-500 {
+  accent-color: #a855f7;
+  accent-color: #a855f7 !important;
+}
+.accent-purple-600 {
+  accent-color: #9333ea;
+  accent-color: #9333ea !important;
+}
+.accent-purple-700 {
+  accent-color: #7e22ce;
+  accent-color: #7e22ce !important;
+}
+.accent-pink-50 {
+  accent-color: #fdf2f8;
+  accent-color: #fdf2f8 !important;
+}
+.accent-pink-100 {
+  accent-color: #fce7f3;
+  accent-color: #fce7f3 !important;
+}
+.accent-pink-200 {
+  accent-color: #fbcfe8;
+  accent-color: #fbcfe8 !important;
+}
+.accent-pink-300 {
+  accent-color: #f9a8d4;
+  accent-color: #f9a8d4 !important;
+}
+.accent-pink-400 {
+  accent-color: #f472b6;
+  accent-color: #f472b6 !important;
+}
+.accent-pink-500 {
+  accent-color: #ec4899;
+  accent-color: #ec4899 !important;
+}
+.accent-pink-600 {
+  accent-color: #db2777;
+  accent-color: #db2777 !important;
+}
+.accent-pink-700 {
+  accent-color: #be185d;
+  accent-color: #be185d !important;
+}
+.accent-orange-50 {
+  accent-color: #fff7ed;
+  accent-color: #fff7ed !important;
+}
+.accent-orange-100 {
+  accent-color: #ffedd5;
+  accent-color: #ffedd5 !important;
+}
+.accent-orange-200 {
+  accent-color: #fed7aa;
+  accent-color: #fed7aa !important;
+}
+.accent-orange-300 {
+  accent-color: #fdba74;
+  accent-color: #fdba74 !important;
+}
+.accent-orange-400 {
+  accent-color: #fb923c;
+  accent-color: #fb923c !important;
+}
+.accent-orange-500 {
+  accent-color: #f97316;
+  accent-color: #f97316 !important;
+}
+.accent-orange-600 {
+  accent-color: #ea580c;
+  accent-color: #ea580c !important;
+}
+.accent-orange-700 {
+  accent-color: #c2410c;
+  accent-color: #c2410c !important;
+}
+.accent-indigo-50 {
+  accent-color: #eef2ff;
+  accent-color: #eef2ff !important;
+}
+.accent-indigo-100 {
+  accent-color: #e0e7ff;
+  accent-color: #e0e7ff !important;
+}
+.accent-indigo-200 {
+  accent-color: #c7d2fe;
+  accent-color: #c7d2fe !important;
+}
+.accent-indigo-300 {
+  accent-color: #a5b4fc;
+  accent-color: #a5b4fc !important;
+}
+.accent-indigo-400 {
+  accent-color: #818cf8;
+  accent-color: #818cf8 !important;
+}
+.accent-indigo-500 {
+  accent-color: #6366f1;
+  accent-color: #6366f1 !important;
+}
+.accent-indigo-600 {
+  accent-color: #4f46e5;
+  accent-color: #4f46e5 !important;
+}
+.accent-indigo-700 {
+  accent-color: #4338ca;
+  accent-color: #4338ca !important;
+}
+@media (min-width: 640px) {
+  .sm\:accent-primary {
+    accent-color: var(--ease-primary);
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-accent {
+    accent-color: var(--ease-accent);
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-success {
+    accent-color: var(--ease-success);
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-danger {
+    accent-color: var(--ease-danger);
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-warning {
+    accent-color: var(--ease-warning);
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-info {
+    accent-color: var(--ease-info);
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-auto {
+    accent-color: auto;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-black {
+    accent-color: #000;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-white {
+    accent-color: #fff;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-gray-50 {
+    accent-color: #f8fafc;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-gray-100 {
+    accent-color: #f1f5f9;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-gray-200 {
+    accent-color: #e2e8f0;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-gray-300 {
+    accent-color: #cbd5e1;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-gray-400 {
+    accent-color: #94a3b8;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-gray-500 {
+    accent-color: #64748b;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-gray-600 {
+    accent-color: #475569;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-gray-700 {
+    accent-color: #334155;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-gray-800 {
+    accent-color: #1e293b;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-gray-900 {
+    accent-color: #0f172a;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-red-50 {
+    accent-color: #fef2f2;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-red-100 {
+    accent-color: #fee2e2;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-red-200 {
+    accent-color: #fecaca;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-red-300 {
+    accent-color: #fca5a5;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-red-400 {
+    accent-color: #f87171;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-red-500 {
+    accent-color: #ef4444;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-red-600 {
+    accent-color: #dc2626;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-red-700 {
+    accent-color: #b91c1c;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-blue-50 {
+    accent-color: #eff6ff;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-blue-100 {
+    accent-color: #dbeafe;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-blue-200 {
+    accent-color: #bfdbfe;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-blue-300 {
+    accent-color: #93c5fd;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-blue-400 {
+    accent-color: #60a5fa;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-blue-500 {
+    accent-color: #3b82f6;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-blue-600 {
+    accent-color: #2563eb;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-blue-700 {
+    accent-color: #1d4ed8;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-green-50 {
+    accent-color: #f0fdf4;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-green-100 {
+    accent-color: #dcfce7;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-green-200 {
+    accent-color: #bbf7d0;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-green-300 {
+    accent-color: #86efac;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-green-400 {
+    accent-color: #4ade80;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-green-500 {
+    accent-color: #22c55e;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-green-600 {
+    accent-color: #16a34a;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-green-700 {
+    accent-color: #15803d;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-yellow-50 {
+    accent-color: #fefce8;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-yellow-100 {
+    accent-color: #fef9c3;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-yellow-200 {
+    accent-color: #fef08a;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-yellow-300 {
+    accent-color: #fde047;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-yellow-400 {
+    accent-color: #facc15;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-yellow-500 {
+    accent-color: #eab308;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-yellow-600 {
+    accent-color: #ca8a04;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-purple-50 {
+    accent-color: #faf5ff;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-purple-100 {
+    accent-color: #f3e8ff;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-purple-200 {
+    accent-color: #e9d5ff;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-purple-300 {
+    accent-color: #d8b4fe;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-purple-400 {
+    accent-color: #c084fc;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-purple-500 {
+    accent-color: #a855f7;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-purple-600 {
+    accent-color: #9333ea;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-purple-700 {
+    accent-color: #7e22ce;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-pink-50 {
+    accent-color: #fdf2f8;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-pink-100 {
+    accent-color: #fce7f3;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-pink-200 {
+    accent-color: #fbcfe8;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-pink-300 {
+    accent-color: #f9a8d4;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-pink-400 {
+    accent-color: #f472b6;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-pink-500 {
+    accent-color: #ec4899;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-pink-600 {
+    accent-color: #db2777;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-pink-700 {
+    accent-color: #be185d;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-orange-50 {
+    accent-color: #fff7ed;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-orange-100 {
+    accent-color: #ffedd5;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-orange-200 {
+    accent-color: #fed7aa;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-orange-300 {
+    accent-color: #fdba74;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-orange-400 {
+    accent-color: #fb923c;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-orange-500 {
+    accent-color: #f97316;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-orange-600 {
+    accent-color: #ea580c;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-orange-700 {
+    accent-color: #c2410c;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-indigo-50 {
+    accent-color: #eef2ff;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-indigo-100 {
+    accent-color: #e0e7ff;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-indigo-200 {
+    accent-color: #c7d2fe;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-indigo-300 {
+    accent-color: #a5b4fc;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-indigo-400 {
+    accent-color: #818cf8;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-indigo-500 {
+    accent-color: #6366f1;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-indigo-600 {
+    accent-color: #4f46e5;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:accent-indigo-700 {
+    accent-color: #4338ca;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-primary {
+    accent-color: var(--ease-primary);
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-accent {
+    accent-color: var(--ease-accent);
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-success {
+    accent-color: var(--ease-success);
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-danger {
+    accent-color: var(--ease-danger);
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-warning {
+    accent-color: var(--ease-warning);
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-info {
+    accent-color: var(--ease-info);
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-auto {
+    accent-color: auto;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-black {
+    accent-color: #000;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-white {
+    accent-color: #fff;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-gray-50 {
+    accent-color: #f8fafc;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-gray-100 {
+    accent-color: #f1f5f9;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-gray-200 {
+    accent-color: #e2e8f0;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-gray-300 {
+    accent-color: #cbd5e1;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-gray-400 {
+    accent-color: #94a3b8;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-gray-500 {
+    accent-color: #64748b;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-gray-600 {
+    accent-color: #475569;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-gray-700 {
+    accent-color: #334155;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-gray-800 {
+    accent-color: #1e293b;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-gray-900 {
+    accent-color: #0f172a;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-red-50 {
+    accent-color: #fef2f2;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-red-100 {
+    accent-color: #fee2e2;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-red-200 {
+    accent-color: #fecaca;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-red-300 {
+    accent-color: #fca5a5;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-red-400 {
+    accent-color: #f87171;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-red-500 {
+    accent-color: #ef4444;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-red-600 {
+    accent-color: #dc2626;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-red-700 {
+    accent-color: #b91c1c;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-blue-50 {
+    accent-color: #eff6ff;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-blue-100 {
+    accent-color: #dbeafe;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-blue-200 {
+    accent-color: #bfdbfe;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-blue-300 {
+    accent-color: #93c5fd;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-blue-400 {
+    accent-color: #60a5fa;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-blue-500 {
+    accent-color: #3b82f6;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-blue-600 {
+    accent-color: #2563eb;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-blue-700 {
+    accent-color: #1d4ed8;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-green-50 {
+    accent-color: #f0fdf4;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-green-100 {
+    accent-color: #dcfce7;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-green-200 {
+    accent-color: #bbf7d0;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-green-300 {
+    accent-color: #86efac;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-green-400 {
+    accent-color: #4ade80;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-green-500 {
+    accent-color: #22c55e;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-green-600 {
+    accent-color: #16a34a;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-green-700 {
+    accent-color: #15803d;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-yellow-50 {
+    accent-color: #fefce8;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-yellow-100 {
+    accent-color: #fef9c3;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-yellow-200 {
+    accent-color: #fef08a;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-yellow-300 {
+    accent-color: #fde047;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-yellow-400 {
+    accent-color: #facc15;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-yellow-500 {
+    accent-color: #eab308;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-yellow-600 {
+    accent-color: #ca8a04;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-purple-50 {
+    accent-color: #faf5ff;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-purple-100 {
+    accent-color: #f3e8ff;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-purple-200 {
+    accent-color: #e9d5ff;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-purple-300 {
+    accent-color: #d8b4fe;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-purple-400 {
+    accent-color: #c084fc;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-purple-500 {
+    accent-color: #a855f7;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-purple-600 {
+    accent-color: #9333ea;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-purple-700 {
+    accent-color: #7e22ce;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-pink-50 {
+    accent-color: #fdf2f8;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-pink-100 {
+    accent-color: #fce7f3;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-pink-200 {
+    accent-color: #fbcfe8;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-pink-300 {
+    accent-color: #f9a8d4;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-pink-400 {
+    accent-color: #f472b6;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-pink-500 {
+    accent-color: #ec4899;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-pink-600 {
+    accent-color: #db2777;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-pink-700 {
+    accent-color: #be185d;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-orange-50 {
+    accent-color: #fff7ed;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-orange-100 {
+    accent-color: #ffedd5;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-orange-200 {
+    accent-color: #fed7aa;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-orange-300 {
+    accent-color: #fdba74;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-orange-400 {
+    accent-color: #fb923c;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-orange-500 {
+    accent-color: #f97316;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-orange-600 {
+    accent-color: #ea580c;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-orange-700 {
+    accent-color: #c2410c;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-indigo-50 {
+    accent-color: #eef2ff;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-indigo-100 {
+    accent-color: #e0e7ff;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-indigo-200 {
+    accent-color: #c7d2fe;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-indigo-300 {
+    accent-color: #a5b4fc;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-indigo-400 {
+    accent-color: #818cf8;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-indigo-500 {
+    accent-color: #6366f1;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-indigo-600 {
+    accent-color: #4f46e5;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-indigo-700 {
+    accent-color: #4338ca;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-primary {
+    accent-color: var(--ease-primary);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-accent {
+    accent-color: var(--ease-accent);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-success {
+    accent-color: var(--ease-success);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-danger {
+    accent-color: var(--ease-danger);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-warning {
+    accent-color: var(--ease-warning);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-info {
+    accent-color: var(--ease-info);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-auto {
+    accent-color: auto;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-black {
+    accent-color: #000;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-white {
+    accent-color: #fff;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-gray-50 {
+    accent-color: #f8fafc;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-gray-100 {
+    accent-color: #f1f5f9;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-gray-200 {
+    accent-color: #e2e8f0;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-gray-300 {
+    accent-color: #cbd5e1;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-gray-400 {
+    accent-color: #94a3b8;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-gray-500 {
+    accent-color: #64748b;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-gray-600 {
+    accent-color: #475569;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-gray-700 {
+    accent-color: #334155;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-gray-800 {
+    accent-color: #1e293b;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-gray-900 {
+    accent-color: #0f172a;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-red-50 {
+    accent-color: #fef2f2;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-red-100 {
+    accent-color: #fee2e2;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-red-200 {
+    accent-color: #fecaca;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-red-300 {
+    accent-color: #fca5a5;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-red-400 {
+    accent-color: #f87171;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-red-500 {
+    accent-color: #ef4444;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-red-600 {
+    accent-color: #dc2626;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-red-700 {
+    accent-color: #b91c1c;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-blue-50 {
+    accent-color: #eff6ff;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-blue-100 {
+    accent-color: #dbeafe;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-blue-200 {
+    accent-color: #bfdbfe;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-blue-300 {
+    accent-color: #93c5fd;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-blue-400 {
+    accent-color: #60a5fa;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-blue-500 {
+    accent-color: #3b82f6;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-blue-600 {
+    accent-color: #2563eb;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-blue-700 {
+    accent-color: #1d4ed8;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-green-50 {
+    accent-color: #f0fdf4;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-green-100 {
+    accent-color: #dcfce7;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-green-200 {
+    accent-color: #bbf7d0;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-green-300 {
+    accent-color: #86efac;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-green-400 {
+    accent-color: #4ade80;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-green-500 {
+    accent-color: #22c55e;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-green-600 {
+    accent-color: #16a34a;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-green-700 {
+    accent-color: #15803d;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-yellow-50 {
+    accent-color: #fefce8;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-yellow-100 {
+    accent-color: #fef9c3;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-yellow-200 {
+    accent-color: #fef08a;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-yellow-300 {
+    accent-color: #fde047;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-yellow-400 {
+    accent-color: #facc15;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-yellow-500 {
+    accent-color: #eab308;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-yellow-600 {
+    accent-color: #ca8a04;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-purple-50 {
+    accent-color: #faf5ff;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-purple-100 {
+    accent-color: #f3e8ff;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-purple-200 {
+    accent-color: #e9d5ff;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-purple-300 {
+    accent-color: #d8b4fe;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-purple-400 {
+    accent-color: #c084fc;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-purple-500 {
+    accent-color: #a855f7;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-purple-600 {
+    accent-color: #9333ea;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-purple-700 {
+    accent-color: #7e22ce;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-pink-50 {
+    accent-color: #fdf2f8;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-pink-100 {
+    accent-color: #fce7f3;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-pink-200 {
+    accent-color: #fbcfe8;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-pink-300 {
+    accent-color: #f9a8d4;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-pink-400 {
+    accent-color: #f472b6;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-pink-500 {
+    accent-color: #ec4899;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-pink-600 {
+    accent-color: #db2777;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-pink-700 {
+    accent-color: #be185d;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-orange-50 {
+    accent-color: #fff7ed;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-orange-100 {
+    accent-color: #ffedd5;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-orange-200 {
+    accent-color: #fed7aa;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-orange-300 {
+    accent-color: #fdba74;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-orange-400 {
+    accent-color: #fb923c;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-orange-500 {
+    accent-color: #f97316;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-orange-600 {
+    accent-color: #ea580c;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-orange-700 {
+    accent-color: #c2410c;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-indigo-50 {
+    accent-color: #eef2ff;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-indigo-100 {
+    accent-color: #e0e7ff;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-indigo-200 {
+    accent-color: #c7d2fe;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-indigo-300 {
+    accent-color: #a5b4fc;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-indigo-400 {
+    accent-color: #818cf8;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-indigo-500 {
+    accent-color: #6366f1;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-indigo-600 {
+    accent-color: #4f46e5;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-indigo-700 {
+    accent-color: #4338ca;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-primary {
+    accent-color: var(--ease-primary);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-accent {
+    accent-color: var(--ease-accent);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-success {
+    accent-color: var(--ease-success);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-danger {
+    accent-color: var(--ease-danger);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-warning {
+    accent-color: var(--ease-warning);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-info {
+    accent-color: var(--ease-info);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-auto {
+    accent-color: auto;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-black {
+    accent-color: #000;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-white {
+    accent-color: #fff;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-gray-50 {
+    accent-color: #f8fafc;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-gray-100 {
+    accent-color: #f1f5f9;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-gray-200 {
+    accent-color: #e2e8f0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-gray-300 {
+    accent-color: #cbd5e1;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-gray-400 {
+    accent-color: #94a3b8;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-gray-500 {
+    accent-color: #64748b;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-gray-600 {
+    accent-color: #475569;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-gray-700 {
+    accent-color: #334155;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-gray-800 {
+    accent-color: #1e293b;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-gray-900 {
+    accent-color: #0f172a;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-red-50 {
+    accent-color: #fef2f2;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-red-100 {
+    accent-color: #fee2e2;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-red-200 {
+    accent-color: #fecaca;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-red-300 {
+    accent-color: #fca5a5;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-red-400 {
+    accent-color: #f87171;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-red-500 {
+    accent-color: #ef4444;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-red-600 {
+    accent-color: #dc2626;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-red-700 {
+    accent-color: #b91c1c;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-blue-50 {
+    accent-color: #eff6ff;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-blue-100 {
+    accent-color: #dbeafe;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-blue-200 {
+    accent-color: #bfdbfe;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-blue-300 {
+    accent-color: #93c5fd;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-blue-400 {
+    accent-color: #60a5fa;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-blue-500 {
+    accent-color: #3b82f6;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-blue-600 {
+    accent-color: #2563eb;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-blue-700 {
+    accent-color: #1d4ed8;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-green-50 {
+    accent-color: #f0fdf4;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-green-100 {
+    accent-color: #dcfce7;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-green-200 {
+    accent-color: #bbf7d0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-green-300 {
+    accent-color: #86efac;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-green-400 {
+    accent-color: #4ade80;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-green-500 {
+    accent-color: #22c55e;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-green-600 {
+    accent-color: #16a34a;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-green-700 {
+    accent-color: #15803d;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-yellow-50 {
+    accent-color: #fefce8;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-yellow-100 {
+    accent-color: #fef9c3;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-yellow-200 {
+    accent-color: #fef08a;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-yellow-300 {
+    accent-color: #fde047;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-yellow-400 {
+    accent-color: #facc15;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-yellow-500 {
+    accent-color: #eab308;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-yellow-600 {
+    accent-color: #ca8a04;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-purple-50 {
+    accent-color: #faf5ff;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-purple-100 {
+    accent-color: #f3e8ff;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-purple-200 {
+    accent-color: #e9d5ff;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-purple-300 {
+    accent-color: #d8b4fe;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-purple-400 {
+    accent-color: #c084fc;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-purple-500 {
+    accent-color: #a855f7;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-purple-600 {
+    accent-color: #9333ea;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-purple-700 {
+    accent-color: #7e22ce;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-pink-50 {
+    accent-color: #fdf2f8;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-pink-100 {
+    accent-color: #fce7f3;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-pink-200 {
+    accent-color: #fbcfe8;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-pink-300 {
+    accent-color: #f9a8d4;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-pink-400 {
+    accent-color: #f472b6;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-pink-500 {
+    accent-color: #ec4899;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-pink-600 {
+    accent-color: #db2777;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-pink-700 {
+    accent-color: #be185d;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-orange-50 {
+    accent-color: #fff7ed;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-orange-100 {
+    accent-color: #ffedd5;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-orange-200 {
+    accent-color: #fed7aa;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-orange-300 {
+    accent-color: #fdba74;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-orange-400 {
+    accent-color: #fb923c;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-orange-500 {
+    accent-color: #f97316;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-orange-600 {
+    accent-color: #ea580c;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-orange-700 {
+    accent-color: #c2410c;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-indigo-50 {
+    accent-color: #eef2ff;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-indigo-100 {
+    accent-color: #e0e7ff;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-indigo-200 {
+    accent-color: #c7d2fe;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-indigo-300 {
+    accent-color: #a5b4fc;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-indigo-400 {
+    accent-color: #818cf8;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-indigo-500 {
+    accent-color: #6366f1;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-indigo-600 {
+    accent-color: #4f46e5;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-indigo-700 {
+    accent-color: #4338ca;
+  }
+}
+/* accent-secondary */
+.accent-secondary {
+  accent-secondary: var(--ease-secondary);
+  accent-secondary: var(--ease-secondary) !important;
+}
+@media (min-width: 640px) {
+  .sm\:accent-secondary {
+    accent-secondary: var(--ease-secondary);
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:accent-secondary {
+    accent-secondary: var(--ease-secondary);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:accent-secondary {
+    accent-secondary: var(--ease-secondary);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:accent-secondary {
+    accent-secondary: var(--ease-secondary);
+  }
+}
