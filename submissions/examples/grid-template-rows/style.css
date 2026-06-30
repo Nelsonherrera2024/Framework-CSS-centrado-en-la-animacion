@@ -1,0 +1,313 @@
+/* grid-template-rows */
+.grid-rows-none {
+  grid-template-rows: none;
+  grid-template-rows: none !important;
+}
+.grid-rows-1 {
+  grid-template-rows: repeat(1, minmax(0, 1fr));
+  grid-template-rows: repeat(1, minmax(0, 1fr)) !important;
+}
+.grid-rows-2 {
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr)) !important;
+}
+.grid-rows-3 {
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(3, minmax(0, 1fr)) !important;
+}
+.grid-rows-4 {
+  grid-template-rows: repeat(4, minmax(0, 1fr));
+  grid-template-rows: repeat(4, minmax(0, 1fr)) !important;
+}
+.grid-rows-5 {
+  grid-template-rows: repeat(5, minmax(0, 1fr));
+  grid-template-rows: repeat(5, minmax(0, 1fr)) !important;
+}
+.grid-rows-6 {
+  grid-template-rows: repeat(6, minmax(0, 1fr));
+  grid-template-rows: repeat(6, minmax(0, 1fr)) !important;
+}
+.grid-rows-auto {
+  grid-template-rows: auto;
+  grid-template-rows: auto !important;
+}
+.grid-rows-min {
+  grid-template-rows: minmax(min-content, auto);
+  grid-template-rows: minmax(min-content, auto) !important;
+}
+.grid-rows-max {
+  grid-template-rows: minmax(max-content, auto);
+  grid-template-rows: minmax(max-content, auto) !important;
+}
+.grid-rows-fr {
+  grid-template-rows: minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr) !important;
+}
+.grid-rows-subgrid {
+  grid-template-rows: subgrid;
+  grid-template-rows: subgrid !important;
+}
+.grid-rows-dense {
+  grid-template-rows: dense;
+  grid-template-rows: dense !important;
+}
+@media (min-width: 640px) {
+  .sm\:grid-rows-none {
+    grid-template-rows: none;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:grid-rows-1 {
+    grid-template-rows: repeat(1, minmax(0, 1fr));
+  }
+}
+@media (min-width: 640px) {
+  .sm\:grid-rows-2 {
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 640px) {
+  .sm\:grid-rows-3 {
+    grid-template-rows: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (min-width: 640px) {
+  .sm\:grid-rows-4 {
+    grid-template-rows: repeat(4, minmax(0, 1fr));
+  }
+}
+@media (min-width: 640px) {
+  .sm\:grid-rows-5 {
+    grid-template-rows: repeat(5, minmax(0, 1fr));
+  }
+}
+@media (min-width: 640px) {
+  .sm\:grid-rows-6 {
+    grid-template-rows: repeat(6, minmax(0, 1fr));
+  }
+}
+@media (min-width: 640px) {
+  .sm\:grid-rows-auto {
+    grid-template-rows: auto;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:grid-rows-min {
+    grid-template-rows: minmax(min-content, auto);
+  }
+}
+@media (min-width: 640px) {
+  .sm\:grid-rows-max {
+    grid-template-rows: minmax(max-content, auto);
+  }
+}
+@media (min-width: 640px) {
+  .sm\:grid-rows-fr {
+    grid-template-rows: minmax(0, 1fr);
+  }
+}
+@media (min-width: 640px) {
+  .sm\:grid-rows-subgrid {
+    grid-template-rows: subgrid;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:grid-rows-dense {
+    grid-template-rows: dense;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:grid-rows-none {
+    grid-template-rows: none;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:grid-rows-1 {
+    grid-template-rows: repeat(1, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:grid-rows-2 {
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:grid-rows-3 {
+    grid-template-rows: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:grid-rows-4 {
+    grid-template-rows: repeat(4, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:grid-rows-5 {
+    grid-template-rows: repeat(5, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:grid-rows-6 {
+    grid-template-rows: repeat(6, minmax(0, 1fr));
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:grid-rows-auto {
+    grid-template-rows: auto;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:grid-rows-min {
+    grid-template-rows: minmax(min-content, auto);
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:grid-rows-max {
+    grid-template-rows: minmax(max-content, auto);
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:grid-rows-fr {
+    grid-template-rows: minmax(0, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:grid-rows-subgrid {
+    grid-template-rows: subgrid;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:grid-rows-dense {
+    grid-template-rows: dense;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:grid-rows-none {
+    grid-template-rows: none;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:grid-rows-1 {
+    grid-template-rows: repeat(1, minmax(0, 1fr));
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:grid-rows-2 {
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:grid-rows-3 {
+    grid-template-rows: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:grid-rows-4 {
+    grid-template-rows: repeat(4, minmax(0, 1fr));
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:grid-rows-5 {
+    grid-template-rows: repeat(5, minmax(0, 1fr));
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:grid-rows-6 {
+    grid-template-rows: repeat(6, minmax(0, 1fr));
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:grid-rows-auto {
+    grid-template-rows: auto;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:grid-rows-min {
+    grid-template-rows: minmax(min-content, auto);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:grid-rows-max {
+    grid-template-rows: minmax(max-content, auto);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:grid-rows-fr {
+    grid-template-rows: minmax(0, 1fr);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:grid-rows-subgrid {
+    grid-template-rows: subgrid;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:grid-rows-dense {
+    grid-template-rows: dense;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:grid-rows-none {
+    grid-template-rows: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:grid-rows-1 {
+    grid-template-rows: repeat(1, minmax(0, 1fr));
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:grid-rows-2 {
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:grid-rows-3 {
+    grid-template-rows: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:grid-rows-4 {
+    grid-template-rows: repeat(4, minmax(0, 1fr));
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:grid-rows-5 {
+    grid-template-rows: repeat(5, minmax(0, 1fr));
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:grid-rows-6 {
+    grid-template-rows: repeat(6, minmax(0, 1fr));
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:grid-rows-auto {
+    grid-template-rows: auto;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:grid-rows-min {
+    grid-template-rows: minmax(min-content, auto);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:grid-rows-max {
+    grid-template-rows: minmax(max-content, auto);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:grid-rows-fr {
+    grid-template-rows: minmax(0, 1fr);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:grid-rows-subgrid {
+    grid-template-rows: subgrid;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:grid-rows-dense {
+    grid-template-rows: dense;
+  }
+}
