@@ -1,0 +1,193 @@
+/* text-indent */
+.indent-0 {
+  text-indent: 0;
+  text-indent: 0 !important;
+}
+.indent-1 {
+  text-indent: 0.25rem;
+  text-indent: 0.25rem !important;
+}
+.indent-2 {
+  text-indent: 0.5rem;
+  text-indent: 0.5rem !important;
+}
+.indent-4 {
+  text-indent: 1rem;
+  text-indent: 1rem !important;
+}
+.indent-8 {
+  text-indent: 2rem;
+  text-indent: 2rem !important;
+}
+.indent-16 {
+  text-indent: 4rem;
+  text-indent: 4rem !important;
+}
+.indent-neg {
+  text-indent: -0.5rem;
+  text-indent: -0.5rem !important;
+}
+.indent-full {
+  text-indent: 100%;
+  text-indent: 100% !important;
+}
+@media (min-width: 640px) {
+  .sm\:indent-0 {
+    text-indent: 0;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:indent-1 {
+    text-indent: 0.25rem;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:indent-2 {
+    text-indent: 0.5rem;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:indent-4 {
+    text-indent: 1rem;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:indent-8 {
+    text-indent: 2rem;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:indent-16 {
+    text-indent: 4rem;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:indent-neg {
+    text-indent: -0.5rem;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:indent-full {
+    text-indent: 100%;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:indent-0 {
+    text-indent: 0;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:indent-1 {
+    text-indent: 0.25rem;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:indent-2 {
+    text-indent: 0.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:indent-4 {
+    text-indent: 1rem;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:indent-8 {
+    text-indent: 2rem;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:indent-16 {
+    text-indent: 4rem;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:indent-neg {
+    text-indent: -0.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:indent-full {
+    text-indent: 100%;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:indent-0 {
+    text-indent: 0;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:indent-1 {
+    text-indent: 0.25rem;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:indent-2 {
+    text-indent: 0.5rem;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:indent-4 {
+    text-indent: 1rem;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:indent-8 {
+    text-indent: 2rem;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:indent-16 {
+    text-indent: 4rem;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:indent-neg {
+    text-indent: -0.5rem;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:indent-full {
+    text-indent: 100%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:indent-0 {
+    text-indent: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:indent-1 {
+    text-indent: 0.25rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:indent-2 {
+    text-indent: 0.5rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:indent-4 {
+    text-indent: 1rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:indent-8 {
+    text-indent: 2rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:indent-16 {
+    text-indent: 4rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:indent-neg {
+    text-indent: -0.5rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:indent-full {
+    text-indent: 100%;
+  }
+}
