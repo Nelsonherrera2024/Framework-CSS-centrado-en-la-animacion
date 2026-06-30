@@ -1,0 +1,121 @@
+/* justify-self */
+.justify-self-auto {
+  justify-self: auto;
+  justify-self: auto !important;
+}
+.justify-self-start {
+  justify-self: start;
+  justify-self: start !important;
+}
+.justify-self-center {
+  justify-self: center;
+  justify-self: center !important;
+}
+.justify-self-end {
+  justify-self: end;
+  justify-self: end !important;
+}
+.justify-self-stretch {
+  justify-self: stretch;
+  justify-self: stretch !important;
+}
+@media (min-width: 640px) {
+  .sm\:justify-self-auto {
+    justify-self: auto;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:justify-self-start {
+    justify-self: start;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:justify-self-center {
+    justify-self: center;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:justify-self-end {
+    justify-self: end;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:justify-self-stretch {
+    justify-self: stretch;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:justify-self-auto {
+    justify-self: auto;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:justify-self-start {
+    justify-self: start;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:justify-self-center {
+    justify-self: center;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:justify-self-end {
+    justify-self: end;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:justify-self-stretch {
+    justify-self: stretch;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:justify-self-auto {
+    justify-self: auto;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:justify-self-start {
+    justify-self: start;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:justify-self-center {
+    justify-self: center;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:justify-self-end {
+    justify-self: end;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:justify-self-stretch {
+    justify-self: stretch;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:justify-self-auto {
+    justify-self: auto;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:justify-self-start {
+    justify-self: start;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:justify-self-center {
+    justify-self: center;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:justify-self-end {
+    justify-self: end;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:justify-self-stretch {
+    justify-self: stretch;
+  }
+}
