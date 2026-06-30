@@ -1,0 +1,97 @@
+/* animation-play-state */
+.play-running {
+  animation-play-state: running;
+  animation-play-state: running !important;
+}
+.play-paused {
+  animation-play-state: paused;
+  animation-play-state: paused !important;
+}
+.play-initial {
+  animation-play-state: initial;
+  animation-play-state: initial !important;
+}
+.play-inherit {
+  animation-play-state: inherit;
+  animation-play-state: inherit !important;
+}
+@media (min-width: 640px) {
+  .sm\:play-running {
+    animation-play-state: running;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:play-paused {
+    animation-play-state: paused;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:play-initial {
+    animation-play-state: initial;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:play-inherit {
+    animation-play-state: inherit;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:play-running {
+    animation-play-state: running;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:play-paused {
+    animation-play-state: paused;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:play-initial {
+    animation-play-state: initial;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:play-inherit {
+    animation-play-state: inherit;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:play-running {
+    animation-play-state: running;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:play-paused {
+    animation-play-state: paused;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:play-initial {
+    animation-play-state: initial;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:play-inherit {
+    animation-play-state: inherit;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:play-running {
+    animation-play-state: running;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:play-paused {
+    animation-play-state: paused;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:play-initial {
+    animation-play-state: initial;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:play-inherit {
+    animation-play-state: inherit;
+  }
+}
