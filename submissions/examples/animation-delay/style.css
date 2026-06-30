@@ -1,0 +1,217 @@
+/* animation-delay */
+.delay-0 {
+  animation-delay: 0s;
+  animation-delay: 0s !important;
+}
+.delay-1 {
+  animation-delay: 0.1s;
+  animation-delay: 0.1s !important;
+}
+.delay-2 {
+  animation-delay: 0.2s;
+  animation-delay: 0.2s !important;
+}
+.delay-3 {
+  animation-delay: 0.3s;
+  animation-delay: 0.3s !important;
+}
+.delay-4 {
+  animation-delay: 0.4s;
+  animation-delay: 0.4s !important;
+}
+.delay-5 {
+  animation-delay: 0.5s;
+  animation-delay: 0.5s !important;
+}
+.delay-neg-1 {
+  animation-delay: -1s;
+  animation-delay: -1s !important;
+}
+.delay-neg-2 {
+  animation-delay: -2s;
+  animation-delay: -2s !important;
+}
+.delay-neg-3 {
+  animation-delay: -3s;
+  animation-delay: -3s !important;
+}
+@media (min-width: 640px) {
+  .sm\:delay-0 {
+    animation-delay: 0s;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:delay-1 {
+    animation-delay: 0.1s;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:delay-2 {
+    animation-delay: 0.2s;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:delay-3 {
+    animation-delay: 0.3s;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:delay-4 {
+    animation-delay: 0.4s;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:delay-5 {
+    animation-delay: 0.5s;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:delay-neg-1 {
+    animation-delay: -1s;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:delay-neg-2 {
+    animation-delay: -2s;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:delay-neg-3 {
+    animation-delay: -3s;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:delay-0 {
+    animation-delay: 0s;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:delay-1 {
+    animation-delay: 0.1s;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:delay-2 {
+    animation-delay: 0.2s;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:delay-3 {
+    animation-delay: 0.3s;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:delay-4 {
+    animation-delay: 0.4s;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:delay-5 {
+    animation-delay: 0.5s;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:delay-neg-1 {
+    animation-delay: -1s;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:delay-neg-2 {
+    animation-delay: -2s;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:delay-neg-3 {
+    animation-delay: -3s;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:delay-0 {
+    animation-delay: 0s;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:delay-1 {
+    animation-delay: 0.1s;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:delay-2 {
+    animation-delay: 0.2s;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:delay-3 {
+    animation-delay: 0.3s;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:delay-4 {
+    animation-delay: 0.4s;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:delay-5 {
+    animation-delay: 0.5s;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:delay-neg-1 {
+    animation-delay: -1s;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:delay-neg-2 {
+    animation-delay: -2s;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:delay-neg-3 {
+    animation-delay: -3s;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:delay-0 {
+    animation-delay: 0s;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:delay-1 {
+    animation-delay: 0.1s;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:delay-2 {
+    animation-delay: 0.2s;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:delay-3 {
+    animation-delay: 0.3s;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:delay-4 {
+    animation-delay: 0.4s;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:delay-5 {
+    animation-delay: 0.5s;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:delay-neg-1 {
+    animation-delay: -1s;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:delay-neg-2 {
+    animation-delay: -2s;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:delay-neg-3 {
+    animation-delay: -3s;
+  }
+}
