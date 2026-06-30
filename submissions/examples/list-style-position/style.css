@@ -1,0 +1,433 @@
+/* list-style-position */
+.list-inside {
+  list-style-position: inside;
+  list-style-position: inside !important;
+}
+.list-outside {
+  list-style-position: outside;
+  list-style-position: outside !important;
+}
+.list-position-inside {
+  list-style-position: inside;
+  list-style-position: inside !important;
+}
+.list-position-outside {
+  list-style-position: outside;
+  list-style-position: outside !important;
+}
+.list-inside-list {
+  list-style-position: inside;
+  list-style-position: inside !important;
+}
+.list-outside-list {
+  list-style-position: outside;
+  list-style-position: outside !important;
+}
+.list-pos-in {
+  list-style-position: inside;
+  list-style-position: inside !important;
+}
+.list-pos-out {
+  list-style-position: outside;
+  list-style-position: outside !important;
+}
+.list-style-in {
+  list-style-position: inside;
+  list-style-position: inside !important;
+}
+.list-style-out {
+  list-style-position: outside;
+  list-style-position: outside !important;
+}
+.list-style-inside {
+  list-style-position: inside;
+  list-style-position: inside !important;
+}
+.list-style-outside {
+  list-style-position: outside;
+  list-style-position: outside !important;
+}
+.list-inside-auto {
+  list-style-position: inside;
+  list-style-position: inside !important;
+}
+.list-outside-auto {
+  list-style-position: outside;
+  list-style-position: outside !important;
+}
+.list-style-position-inside {
+  list-style-position: inside;
+  list-style-position: inside !important;
+}
+.list-style-position-outside {
+  list-style-position: outside;
+  list-style-position: outside !important;
+}
+.list-pos-auto-inside {
+  list-style-position: inside;
+  list-style-position: inside !important;
+}
+.list-pos-auto-outside {
+  list-style-position: outside;
+  list-style-position: outside !important;
+}
+@media (min-width: 640px) {
+  .sm\:list-inside {
+    list-style-position: inside;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:list-outside {
+    list-style-position: outside;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:list-position-inside {
+    list-style-position: inside;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:list-position-outside {
+    list-style-position: outside;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:list-inside-list {
+    list-style-position: inside;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:list-outside-list {
+    list-style-position: outside;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:list-pos-in {
+    list-style-position: inside;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:list-pos-out {
+    list-style-position: outside;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:list-style-in {
+    list-style-position: inside;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:list-style-out {
+    list-style-position: outside;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:list-style-inside {
+    list-style-position: inside;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:list-style-outside {
+    list-style-position: outside;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:list-inside-auto {
+    list-style-position: inside;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:list-outside-auto {
+    list-style-position: outside;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:list-style-position-inside {
+    list-style-position: inside;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:list-style-position-outside {
+    list-style-position: outside;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:list-pos-auto-inside {
+    list-style-position: inside;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:list-pos-auto-outside {
+    list-style-position: outside;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:list-inside {
+    list-style-position: inside;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:list-outside {
+    list-style-position: outside;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:list-position-inside {
+    list-style-position: inside;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:list-position-outside {
+    list-style-position: outside;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:list-inside-list {
+    list-style-position: inside;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:list-outside-list {
+    list-style-position: outside;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:list-pos-in {
+    list-style-position: inside;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:list-pos-out {
+    list-style-position: outside;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:list-style-in {
+    list-style-position: inside;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:list-style-out {
+    list-style-position: outside;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:list-style-inside {
+    list-style-position: inside;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:list-style-outside {
+    list-style-position: outside;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:list-inside-auto {
+    list-style-position: inside;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:list-outside-auto {
+    list-style-position: outside;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:list-style-position-inside {
+    list-style-position: inside;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:list-style-position-outside {
+    list-style-position: outside;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:list-pos-auto-inside {
+    list-style-position: inside;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:list-pos-auto-outside {
+    list-style-position: outside;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:list-inside {
+    list-style-position: inside;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:list-outside {
+    list-style-position: outside;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:list-position-inside {
+    list-style-position: inside;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:list-position-outside {
+    list-style-position: outside;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:list-inside-list {
+    list-style-position: inside;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:list-outside-list {
+    list-style-position: outside;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:list-pos-in {
+    list-style-position: inside;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:list-pos-out {
+    list-style-position: outside;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:list-style-in {
+    list-style-position: inside;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:list-style-out {
+    list-style-position: outside;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:list-style-inside {
+    list-style-position: inside;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:list-style-outside {
+    list-style-position: outside;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:list-inside-auto {
+    list-style-position: inside;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:list-outside-auto {
+    list-style-position: outside;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:list-style-position-inside {
+    list-style-position: inside;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:list-style-position-outside {
+    list-style-position: outside;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:list-pos-auto-inside {
+    list-style-position: inside;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:list-pos-auto-outside {
+    list-style-position: outside;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:list-inside {
+    list-style-position: inside;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:list-outside {
+    list-style-position: outside;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:list-position-inside {
+    list-style-position: inside;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:list-position-outside {
+    list-style-position: outside;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:list-inside-list {
+    list-style-position: inside;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:list-outside-list {
+    list-style-position: outside;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:list-pos-in {
+    list-style-position: inside;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:list-pos-out {
+    list-style-position: outside;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:list-style-in {
+    list-style-position: inside;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:list-style-out {
+    list-style-position: outside;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:list-style-inside {
+    list-style-position: inside;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:list-style-outside {
+    list-style-position: outside;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:list-inside-auto {
+    list-style-position: inside;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:list-outside-auto {
+    list-style-position: outside;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:list-style-position-inside {
+    list-style-position: inside;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:list-style-position-outside {
+    list-style-position: outside;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:list-pos-auto-inside {
+    list-style-position: inside;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:list-pos-auto-outside {
+    list-style-position: outside;
+  }
+}
