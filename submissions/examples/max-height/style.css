@@ -1,0 +1,457 @@
+/* max-height */
+.max-h-0 {
+  max-height: 0;
+  max-height: 0 !important;
+}
+.max-h-none {
+  max-height: none;
+  max-height: none !important;
+}
+.max-h-full {
+  max-height: 100%;
+  max-height: 100% !important;
+}
+.max-h-screen {
+  max-height: 100vh;
+  max-height: 100vh !important;
+}
+.max-h-min {
+  max-height: min-content;
+  max-height: min-content !important;
+}
+.max-h-max {
+  max-height: max-content;
+  max-height: max-content !important;
+}
+.max-h-fit {
+  max-height: fit-content;
+  max-height: fit-content !important;
+}
+.max-h-1 {
+  max-height: 0.25rem;
+  max-height: 0.25rem !important;
+}
+.max-h-2 {
+  max-height: 0.5rem;
+  max-height: 0.5rem !important;
+}
+.max-h-4 {
+  max-height: 1rem;
+  max-height: 1rem !important;
+}
+.max-h-8 {
+  max-height: 2rem;
+  max-height: 2rem !important;
+}
+.max-h-16 {
+  max-height: 4rem;
+  max-height: 4rem !important;
+}
+.max-h-32 {
+  max-height: 8rem;
+  max-height: 8rem !important;
+}
+.max-h-48 {
+  max-height: 12rem;
+  max-height: 12rem !important;
+}
+.max-h-64 {
+  max-height: 16rem;
+  max-height: 16rem !important;
+}
+.max-h-screen-sm {
+  max-height: 640px;
+  max-height: 640px !important;
+}
+.max-h-screen-md {
+  max-height: 768px;
+  max-height: 768px !important;
+}
+.max-h-screen-lg {
+  max-height: 1024px;
+  max-height: 1024px !important;
+}
+.max-h-screen-xl {
+  max-height: 1280px;
+  max-height: 1280px !important;
+}
+@media (min-width: 640px) {
+  .sm\:max-h-0 {
+    max-height: 0;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:max-h-none {
+    max-height: none;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:max-h-full {
+    max-height: 100%;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:max-h-screen {
+    max-height: 100vh;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:max-h-min {
+    max-height: min-content;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:max-h-max {
+    max-height: max-content;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:max-h-fit {
+    max-height: fit-content;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:max-h-1 {
+    max-height: 0.25rem;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:max-h-2 {
+    max-height: 0.5rem;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:max-h-4 {
+    max-height: 1rem;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:max-h-8 {
+    max-height: 2rem;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:max-h-16 {
+    max-height: 4rem;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:max-h-32 {
+    max-height: 8rem;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:max-h-48 {
+    max-height: 12rem;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:max-h-64 {
+    max-height: 16rem;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:max-h-screen-sm {
+    max-height: 640px;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:max-h-screen-md {
+    max-height: 768px;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:max-h-screen-lg {
+    max-height: 1024px;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:max-h-screen-xl {
+    max-height: 1280px;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:max-h-0 {
+    max-height: 0;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:max-h-none {
+    max-height: none;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:max-h-full {
+    max-height: 100%;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:max-h-screen {
+    max-height: 100vh;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:max-h-min {
+    max-height: min-content;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:max-h-max {
+    max-height: max-content;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:max-h-fit {
+    max-height: fit-content;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:max-h-1 {
+    max-height: 0.25rem;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:max-h-2 {
+    max-height: 0.5rem;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:max-h-4 {
+    max-height: 1rem;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:max-h-8 {
+    max-height: 2rem;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:max-h-16 {
+    max-height: 4rem;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:max-h-32 {
+    max-height: 8rem;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:max-h-48 {
+    max-height: 12rem;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:max-h-64 {
+    max-height: 16rem;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:max-h-screen-sm {
+    max-height: 640px;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:max-h-screen-md {
+    max-height: 768px;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:max-h-screen-lg {
+    max-height: 1024px;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:max-h-screen-xl {
+    max-height: 1280px;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:max-h-0 {
+    max-height: 0;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:max-h-none {
+    max-height: none;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:max-h-full {
+    max-height: 100%;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:max-h-screen {
+    max-height: 100vh;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:max-h-min {
+    max-height: min-content;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:max-h-max {
+    max-height: max-content;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:max-h-fit {
+    max-height: fit-content;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:max-h-1 {
+    max-height: 0.25rem;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:max-h-2 {
+    max-height: 0.5rem;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:max-h-4 {
+    max-height: 1rem;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:max-h-8 {
+    max-height: 2rem;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:max-h-16 {
+    max-height: 4rem;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:max-h-32 {
+    max-height: 8rem;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:max-h-48 {
+    max-height: 12rem;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:max-h-64 {
+    max-height: 16rem;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:max-h-screen-sm {
+    max-height: 640px;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:max-h-screen-md {
+    max-height: 768px;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:max-h-screen-lg {
+    max-height: 1024px;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:max-h-screen-xl {
+    max-height: 1280px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:max-h-0 {
+    max-height: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:max-h-none {
+    max-height: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:max-h-full {
+    max-height: 100%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:max-h-screen {
+    max-height: 100vh;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:max-h-min {
+    max-height: min-content;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:max-h-max {
+    max-height: max-content;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:max-h-fit {
+    max-height: fit-content;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:max-h-1 {
+    max-height: 0.25rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:max-h-2 {
+    max-height: 0.5rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:max-h-4 {
+    max-height: 1rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:max-h-8 {
+    max-height: 2rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:max-h-16 {
+    max-height: 4rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:max-h-32 {
+    max-height: 8rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:max-h-48 {
+    max-height: 12rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:max-h-64 {
+    max-height: 16rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:max-h-screen-sm {
+    max-height: 640px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:max-h-screen-md {
+    max-height: 768px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:max-h-screen-lg {
+    max-height: 1024px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:max-h-screen-xl {
+    max-height: 1280px;
+  }
+}
