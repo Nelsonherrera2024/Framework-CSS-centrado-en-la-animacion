@@ -1,0 +1,51 @@
+/* Layout and positioning utility classes */
+.ease-relative { position: relative; }
+.ease-absolute { position: absolute; }
+.ease-inline-block { display: inline-block; }
+
+/* Position variations */
+.ease-bottom-full { bottom: 100%; }
+.ease-top-full { top: 100%; }
+.ease-left-full { left: 100%; }
+.ease-right-full { right: 100%; }
+.ease-left-1/2 { left: 50%; }
+.ease-top-1/2 { top: 50%; }
+.ease--translate-x-1/2 { transform: translateX(-50%); }
+.ease--translate-y-1/2 { transform: translateY(-50%); }
+
+/* Component spacing margins */
+.ease-mb-2 { margin-bottom: 8px; }
+.ease-mt-2 { margin-top: 8px; }
+.ease-mr-2 { margin-right: 8px; }
+.ease-ml-2 { margin-left: 8px; }
+
+/* Tooltip appearance UI */
+.ease-center {
+    background-color: #333333;
+    color: #ffffff;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    white-space: nowrap;
+    z-index: 100;
+    pointer-events: none;
+}
+
+/* Entrance animation utilities */
+.ease-fade-in {
+    animation: easeFadeIn 0.2s ease-out forwards;
+}
+
+.ease-slide-up {
+    animation: easeSlideUp 0.2s ease-out forwards;
+}
+
+@keyframes easeFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes easeSlideUp {
+    from { transform: translate(-50%, 4px); }
+    to { transform: translate(-50%, 0); }
+}
