@@ -1,0 +1,73 @@
+/* text-combine-upright */
+.combine-none {
+  text-combine-upright: none;
+  text-combine-upright: none !important;
+}
+.combine-digits {
+  text-combine-upright: digits;
+  text-combine-upright: digits !important;
+}
+.combine-all {
+  text-combine-upright: all;
+  text-combine-upright: all !important;
+}
+@media (min-width: 640px) {
+  .sm\:combine-none {
+    text-combine-upright: none;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:combine-digits {
+    text-combine-upright: digits;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:combine-all {
+    text-combine-upright: all;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:combine-none {
+    text-combine-upright: none;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:combine-digits {
+    text-combine-upright: digits;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:combine-all {
+    text-combine-upright: all;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:combine-none {
+    text-combine-upright: none;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:combine-digits {
+    text-combine-upright: digits;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:combine-all {
+    text-combine-upright: all;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:combine-none {
+    text-combine-upright: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:combine-digits {
+    text-combine-upright: digits;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:combine-all {
+    text-combine-upright: all;
+  }
+}
