@@ -1,0 +1,73 @@
+/* stroke-linejoin */
+.stroke-join-miter {
+  stroke-linejoin: miter;
+  stroke-linejoin: miter !important;
+}
+.stroke-join-round {
+  stroke-linejoin: round;
+  stroke-linejoin: round !important;
+}
+.stroke-join-bevel {
+  stroke-linejoin: bevel;
+  stroke-linejoin: bevel !important;
+}
+@media (min-width: 640px) {
+  .sm\:stroke-join-miter {
+    stroke-linejoin: miter;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:stroke-join-round {
+    stroke-linejoin: round;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:stroke-join-bevel {
+    stroke-linejoin: bevel;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:stroke-join-miter {
+    stroke-linejoin: miter;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:stroke-join-round {
+    stroke-linejoin: round;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:stroke-join-bevel {
+    stroke-linejoin: bevel;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:stroke-join-miter {
+    stroke-linejoin: miter;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:stroke-join-round {
+    stroke-linejoin: round;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:stroke-join-bevel {
+    stroke-linejoin: bevel;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:stroke-join-miter {
+    stroke-linejoin: miter;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:stroke-join-round {
+    stroke-linejoin: round;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:stroke-join-bevel {
+    stroke-linejoin: bevel;
+  }
+}
