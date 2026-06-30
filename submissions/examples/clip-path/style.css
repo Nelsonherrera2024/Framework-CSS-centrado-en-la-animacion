@@ -1,0 +1,337 @@
+/* clip-path */
+.clip-none {
+  clip-path: none;
+  clip-path: none !important;
+}
+.clip-circle {
+  clip-path: circle(50%);
+  clip-path: circle(50%) !important;
+}
+.clip-circle-sm {
+  clip-path: circle(30%);
+  clip-path: circle(30%) !important;
+}
+.clip-circle-lg {
+  clip-path: circle(70%);
+  clip-path: circle(70%) !important;
+}
+.clip-ellipse {
+  clip-path: ellipse(50% 30%);
+  clip-path: ellipse(50% 30%) !important;
+}
+.clip-inset {
+  clip-path: inset(10% 20% 30% 40%);
+  clip-path: inset(10% 20% 30% 40%) !important;
+}
+.clip-inset-sm {
+  clip-path: inset(5% 10% 15% 20%);
+  clip-path: inset(5% 10% 15% 20%) !important;
+}
+.clip-polygon {
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%) !important;
+}
+.clip-polygon-sm {
+  clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+  clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%) !important;
+}
+.clip-polygon-lg {
+  clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+  clip-path: polygon(0% 0%, 100% 50%, 0% 100%) !important;
+}
+.clip-url {
+  clip-path: url(#clipShape);
+  clip-path: url(#clipShape) !important;
+}
+.clip-border-box {
+  clip-path: border-box;
+  clip-path: border-box !important;
+}
+.clip-padding-box {
+  clip-path: padding-box;
+  clip-path: padding-box !important;
+}
+.clip-content-box {
+  clip-path: content-box;
+  clip-path: content-box !important;
+}
+@media (min-width: 640px) {
+  .sm\:clip-none {
+    clip-path: none;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:clip-circle {
+    clip-path: circle(50%);
+  }
+}
+@media (min-width: 640px) {
+  .sm\:clip-circle-sm {
+    clip-path: circle(30%);
+  }
+}
+@media (min-width: 640px) {
+  .sm\:clip-circle-lg {
+    clip-path: circle(70%);
+  }
+}
+@media (min-width: 640px) {
+  .sm\:clip-ellipse {
+    clip-path: ellipse(50% 30%);
+  }
+}
+@media (min-width: 640px) {
+  .sm\:clip-inset {
+    clip-path: inset(10% 20% 30% 40%);
+  }
+}
+@media (min-width: 640px) {
+  .sm\:clip-inset-sm {
+    clip-path: inset(5% 10% 15% 20%);
+  }
+}
+@media (min-width: 640px) {
+  .sm\:clip-polygon {
+    clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+  }
+}
+@media (min-width: 640px) {
+  .sm\:clip-polygon-sm {
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+  }
+}
+@media (min-width: 640px) {
+  .sm\:clip-polygon-lg {
+    clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+  }
+}
+@media (min-width: 640px) {
+  .sm\:clip-url {
+    clip-path: url(#clipShape);
+  }
+}
+@media (min-width: 640px) {
+  .sm\:clip-border-box {
+    clip-path: border-box;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:clip-padding-box {
+    clip-path: padding-box;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:clip-content-box {
+    clip-path: content-box;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:clip-none {
+    clip-path: none;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:clip-circle {
+    clip-path: circle(50%);
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:clip-circle-sm {
+    clip-path: circle(30%);
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:clip-circle-lg {
+    clip-path: circle(70%);
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:clip-ellipse {
+    clip-path: ellipse(50% 30%);
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:clip-inset {
+    clip-path: inset(10% 20% 30% 40%);
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:clip-inset-sm {
+    clip-path: inset(5% 10% 15% 20%);
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:clip-polygon {
+    clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:clip-polygon-sm {
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:clip-polygon-lg {
+    clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:clip-url {
+    clip-path: url(#clipShape);
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:clip-border-box {
+    clip-path: border-box;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:clip-padding-box {
+    clip-path: padding-box;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:clip-content-box {
+    clip-path: content-box;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:clip-none {
+    clip-path: none;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:clip-circle {
+    clip-path: circle(50%);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:clip-circle-sm {
+    clip-path: circle(30%);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:clip-circle-lg {
+    clip-path: circle(70%);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:clip-ellipse {
+    clip-path: ellipse(50% 30%);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:clip-inset {
+    clip-path: inset(10% 20% 30% 40%);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:clip-inset-sm {
+    clip-path: inset(5% 10% 15% 20%);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:clip-polygon {
+    clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:clip-polygon-sm {
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:clip-polygon-lg {
+    clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:clip-url {
+    clip-path: url(#clipShape);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:clip-border-box {
+    clip-path: border-box;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:clip-padding-box {
+    clip-path: padding-box;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:clip-content-box {
+    clip-path: content-box;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:clip-none {
+    clip-path: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:clip-circle {
+    clip-path: circle(50%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:clip-circle-sm {
+    clip-path: circle(30%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:clip-circle-lg {
+    clip-path: circle(70%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:clip-ellipse {
+    clip-path: ellipse(50% 30%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:clip-inset {
+    clip-path: inset(10% 20% 30% 40%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:clip-inset-sm {
+    clip-path: inset(5% 10% 15% 20%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:clip-polygon {
+    clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:clip-polygon-sm {
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:clip-polygon-lg {
+    clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:clip-url {
+    clip-path: url(#clipShape);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:clip-border-box {
+    clip-path: border-box;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:clip-padding-box {
+    clip-path: padding-box;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:clip-content-box {
+    clip-path: content-box;
+  }
+}
