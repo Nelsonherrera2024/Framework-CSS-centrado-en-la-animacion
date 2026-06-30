@@ -1,0 +1,697 @@
+/* object-position */
+.object-top {
+  object-position: top;
+  object-position: top !important;
+}
+.object-bottom {
+  object-position: bottom;
+  object-position: bottom !important;
+}
+.object-left {
+  object-position: left;
+  object-position: left !important;
+}
+.object-right {
+  object-position: right;
+  object-position: right !important;
+}
+.object-center {
+  object-position: center;
+  object-position: center !important;
+}
+.object-left-top {
+  object-position: left top;
+  object-position: left top !important;
+}
+.object-left-bottom {
+  object-position: left bottom;
+  object-position: left bottom !important;
+}
+.object-right-top {
+  object-position: right top;
+  object-position: right top !important;
+}
+.object-right-bottom {
+  object-position: right bottom;
+  object-position: right bottom !important;
+}
+.object-top-center {
+  object-position: top center;
+  object-position: top center !important;
+}
+.object-bottom-center {
+  object-position: bottom center;
+  object-position: bottom center !important;
+}
+.object-center-top {
+  object-position: center top;
+  object-position: center top !important;
+}
+.object-center-bottom {
+  object-position: center bottom;
+  object-position: center bottom !important;
+}
+.object-50-50 {
+  object-position: 50% 50%;
+  object-position: 50% 50% !important;
+}
+.object-0-0 {
+  object-position: 0 0;
+  object-position: 0 0 !important;
+}
+.object-100-0 {
+  object-position: 100% 0;
+  object-position: 100% 0 !important;
+}
+.object-0-100 {
+  object-position: 0 100%;
+  object-position: 0 100% !important;
+}
+.object-100-100 {
+  object-position: 100% 100%;
+  object-position: 100% 100% !important;
+}
+.object-25-25 {
+  object-position: 25% 25%;
+  object-position: 25% 25% !important;
+}
+.object-75-75 {
+  object-position: 75% 75%;
+  object-position: 75% 75% !important;
+}
+.object-top-left {
+  object-position: top left;
+  object-position: top left !important;
+}
+.object-top-right {
+  object-position: top right;
+  object-position: top right !important;
+}
+.object-bottom-left {
+  object-position: bottom left;
+  object-position: bottom left !important;
+}
+.object-bottom-right {
+  object-position: bottom right;
+  object-position: bottom right !important;
+}
+.object-position-top {
+  object-position: top;
+  object-position: top !important;
+}
+.object-position-center {
+  object-position: center;
+  object-position: center !important;
+}
+.object-position-bottom {
+  object-position: bottom;
+  object-position: bottom !important;
+}
+.object-position-left {
+  object-position: left;
+  object-position: left !important;
+}
+.object-position-right {
+  object-position: right;
+  object-position: right !important;
+}
+@media (min-width: 640px) {
+  .sm\:object-top {
+    object-position: top;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:object-bottom {
+    object-position: bottom;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:object-left {
+    object-position: left;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:object-right {
+    object-position: right;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:object-center {
+    object-position: center;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:object-left-top {
+    object-position: left top;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:object-left-bottom {
+    object-position: left bottom;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:object-right-top {
+    object-position: right top;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:object-right-bottom {
+    object-position: right bottom;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:object-top-center {
+    object-position: top center;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:object-bottom-center {
+    object-position: bottom center;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:object-center-top {
+    object-position: center top;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:object-center-bottom {
+    object-position: center bottom;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:object-50-50 {
+    object-position: 50% 50%;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:object-0-0 {
+    object-position: 0 0;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:object-100-0 {
+    object-position: 100% 0;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:object-0-100 {
+    object-position: 0 100%;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:object-100-100 {
+    object-position: 100% 100%;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:object-25-25 {
+    object-position: 25% 25%;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:object-75-75 {
+    object-position: 75% 75%;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:object-top-left {
+    object-position: top left;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:object-top-right {
+    object-position: top right;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:object-bottom-left {
+    object-position: bottom left;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:object-bottom-right {
+    object-position: bottom right;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:object-position-top {
+    object-position: top;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:object-position-center {
+    object-position: center;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:object-position-bottom {
+    object-position: bottom;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:object-position-left {
+    object-position: left;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:object-position-right {
+    object-position: right;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:object-top {
+    object-position: top;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:object-bottom {
+    object-position: bottom;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:object-left {
+    object-position: left;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:object-right {
+    object-position: right;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:object-center {
+    object-position: center;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:object-left-top {
+    object-position: left top;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:object-left-bottom {
+    object-position: left bottom;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:object-right-top {
+    object-position: right top;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:object-right-bottom {
+    object-position: right bottom;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:object-top-center {
+    object-position: top center;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:object-bottom-center {
+    object-position: bottom center;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:object-center-top {
+    object-position: center top;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:object-center-bottom {
+    object-position: center bottom;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:object-50-50 {
+    object-position: 50% 50%;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:object-0-0 {
+    object-position: 0 0;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:object-100-0 {
+    object-position: 100% 0;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:object-0-100 {
+    object-position: 0 100%;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:object-100-100 {
+    object-position: 100% 100%;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:object-25-25 {
+    object-position: 25% 25%;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:object-75-75 {
+    object-position: 75% 75%;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:object-top-left {
+    object-position: top left;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:object-top-right {
+    object-position: top right;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:object-bottom-left {
+    object-position: bottom left;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:object-bottom-right {
+    object-position: bottom right;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:object-position-top {
+    object-position: top;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:object-position-center {
+    object-position: center;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:object-position-bottom {
+    object-position: bottom;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:object-position-left {
+    object-position: left;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:object-position-right {
+    object-position: right;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:object-top {
+    object-position: top;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:object-bottom {
+    object-position: bottom;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:object-left {
+    object-position: left;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:object-right {
+    object-position: right;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:object-center {
+    object-position: center;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:object-left-top {
+    object-position: left top;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:object-left-bottom {
+    object-position: left bottom;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:object-right-top {
+    object-position: right top;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:object-right-bottom {
+    object-position: right bottom;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:object-top-center {
+    object-position: top center;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:object-bottom-center {
+    object-position: bottom center;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:object-center-top {
+    object-position: center top;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:object-center-bottom {
+    object-position: center bottom;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:object-50-50 {
+    object-position: 50% 50%;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:object-0-0 {
+    object-position: 0 0;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:object-100-0 {
+    object-position: 100% 0;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:object-0-100 {
+    object-position: 0 100%;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:object-100-100 {
+    object-position: 100% 100%;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:object-25-25 {
+    object-position: 25% 25%;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:object-75-75 {
+    object-position: 75% 75%;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:object-top-left {
+    object-position: top left;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:object-top-right {
+    object-position: top right;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:object-bottom-left {
+    object-position: bottom left;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:object-bottom-right {
+    object-position: bottom right;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:object-position-top {
+    object-position: top;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:object-position-center {
+    object-position: center;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:object-position-bottom {
+    object-position: bottom;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:object-position-left {
+    object-position: left;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:object-position-right {
+    object-position: right;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:object-top {
+    object-position: top;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:object-bottom {
+    object-position: bottom;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:object-left {
+    object-position: left;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:object-right {
+    object-position: right;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:object-center {
+    object-position: center;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:object-left-top {
+    object-position: left top;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:object-left-bottom {
+    object-position: left bottom;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:object-right-top {
+    object-position: right top;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:object-right-bottom {
+    object-position: right bottom;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:object-top-center {
+    object-position: top center;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:object-bottom-center {
+    object-position: bottom center;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:object-center-top {
+    object-position: center top;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:object-center-bottom {
+    object-position: center bottom;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:object-50-50 {
+    object-position: 50% 50%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:object-0-0 {
+    object-position: 0 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:object-100-0 {
+    object-position: 100% 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:object-0-100 {
+    object-position: 0 100%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:object-100-100 {
+    object-position: 100% 100%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:object-25-25 {
+    object-position: 25% 25%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:object-75-75 {
+    object-position: 75% 75%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:object-top-left {
+    object-position: top left;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:object-top-right {
+    object-position: top right;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:object-bottom-left {
+    object-position: bottom left;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:object-bottom-right {
+    object-position: bottom right;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:object-position-top {
+    object-position: top;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:object-position-center {
+    object-position: center;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:object-position-bottom {
+    object-position: bottom;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:object-position-left {
+    object-position: left;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:object-position-right {
+    object-position: right;
+  }
+}
