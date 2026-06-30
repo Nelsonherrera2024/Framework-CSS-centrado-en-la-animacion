@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessible Focus Utilities — EaseMotion CSS</title>
+  <link rel="stylesheet" href="../../core/variables.css">
+  <link rel="stylesheet" href="../../easemotion.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Skip Navigation Link -->
+  <a href="#main-content" class="ease-skip-link ease-focus-ring">
+    Skip to main content
+  </a>
+
+  <main id="main-content" class="accessibility-demo">
+
+    <!-- Section 1: Icon Buttons with aria-label -->
+    <div class="demo-section">
+      <h2>Icon Buttons with ARIA Labels</h2>
+      <p>Each icon button has a descriptive aria-label. Screen readers announce the action, not the icon character.</p>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <button class="ease-btn-icon ease-focus-animated" aria-label="Close dialog">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+        <button class="ease-btn-icon ease-focus-animated" aria-label="Delete item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>
+        </button>
+        <button class="ease-btn-icon ease-focus-animated" aria-label="Edit content">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+        </button>
+        <button class="ease-btn-icon ease-focus-animated" aria-label="Share content">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92z"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Section 2: Buttons with Icon + Text -->
+    <div class="demo-section">
+      <h2>Labeled Buttons with Focus Animation</h2>
+      <p>The animated focus ring pulses once on keyboard focus, providing clear visual feedback.</p>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <button class="ease-btn-label ease-focus-animated" aria-label="Save document">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm2 16H5V5h11.17L19 7.83V19zm-7-7c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+          Save Changes
+        </button>
+        <button class="ease-btn-label ease-focus-animated" aria-label="Download file">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+          Download
+        </button>
+        <button class="ease-btn-label ease-focus-animated" aria-label="View documentation">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+          Learn More
+        </button>
+      </div>
+    </div>
+
+    <!-- Section 3: Card Links with Focus Glow -->
+    <div class="demo-section">
+      <h2>Card Links with Focus Glow</h2>
+      <p>Card-like interactive areas use the glow focus style so keyboard users can target the entire card.</p>
+      <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap:16px;">
+        <a href="#card1" class="ease-card-link ease-focus-glow" aria-label="Read article: Getting Started with Accessibility">
+          <h3 class="ease-card-link-title">Getting Started with Accessibility</h3>
+          <p class="ease-card-link-desc">Learn the fundamentals of web accessibility and why it matters for all users.</p>
+        </a>
+        <a href="#card2" class="ease-card-link ease-focus-glow" aria-label="Read article: ARIA in Practice">
+          <h3 class="ease-card-link-title">ARIA in Practice</h3>
+          <p class="ease-card-link-desc">Real-world examples of using ARIA attributes to improve screen reader support.</p>
+        </a>
+        <a href="#card3" class="ease-card-link ease-focus-glow" aria-label="Read article: Keyboard Navigation Patterns">
+          <h3 class="ease-card-link-title">Keyboard Navigation Patterns</h3>
+          <p class="ease-card-link-desc">Essential keyboard interaction patterns for building inclusive interfaces.</p>
+        </a>
+      </div>
+    </div>
+
+    <!-- Section 4: Focus indicator toggle demo -->
+    <div class="demo-section">
+      <h2>Keyboard vs Mouse Focus Detection</h2>
+      <p>Elements below respond only to keyboard focus (tab), not mouse clicks. The focus ring is never shown on mouse click.</p>
+      <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:8px;">
+        <button class="ease-btn-label ease-focus-animated">Tab to Me</button>
+        <button class="ease-btn-label ease-focus-animated">Tab to Me</button>
+        <button class="ease-btn-label ease-focus-animated">Tab to Me</button>
+      </div>
+    </div>
+
+  </main>
+</body>
+</html>

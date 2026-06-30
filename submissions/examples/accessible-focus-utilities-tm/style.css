@@ -1,0 +1,220 @@
+/* ============================================================
+   Accessible Focus Utilities — EaseMotion CSS
+   Issue: #2103 — Add aria-labels and keyboard focus states
+   ============================================================ */
+
+.accessibility-demo {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: var(--ease-space-10, 2.5rem) var(--ease-space-6, 1.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: var(--ease-space-8, 2rem);
+}
+
+/* ── Section Headers ───────────────────────────────────── */
+.demo-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ease-space-4, 1rem);
+}
+
+.demo-section h2 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--ease-color-text, #1e293b);
+  margin: 0;
+  padding-bottom: var(--ease-space-2, 0.5rem);
+  border-bottom: 2px solid var(--ease-color-neutral-200, #e2e8f0);
+}
+
+.demo-section p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--ease-color-muted, #64748b);
+}
+
+/* ── Icon Buttons ─────────────────────────────────────── */
+.ease-btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: var(--ease-radius-md, 0.5rem);
+  background: var(--ease-color-neutral-100, #f1f5f9);
+  color: var(--ease-color-neutral-700, #334155);
+  cursor: pointer;
+  transition: background var(--ease-speed-fast, 150ms) var(--ease-ease-out),
+              color var(--ease-speed-fast, 150ms) var(--ease-ease-out),
+              transform var(--ease-speed-fast, 150ms) var(--ease-ease-out);
+  font-size: 1.125rem;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.ease-btn-icon:hover {
+  background: var(--ease-color-primary, #6c63ff);
+  color: white;
+  transform: translateY(-1px);
+}
+
+.ease-btn-icon:active {
+  transform: translateY(0);
+  background: var(--ease-color-primary-dark, #4b44cc);
+}
+
+/* ── Keyboard Focus Ring (global override pattern) ─────── */
+/* Replaces browser default blue ring with a styled one */
+.ease-focus-ring:focus-visible,
+*:focus-visible {
+  outline: 2px solid var(--ease-color-primary, #6c63ff);
+  outline-offset: 2px;
+  border-radius: var(--ease-radius-sm, 0.25rem);
+}
+
+/* Animated focus ring — pulses once on focus */
+.ease-focus-animated:focus-visible {
+  outline: 2px solid var(--ease-color-primary, #6c63ff);
+  outline-offset: 3px;
+  animation: ease-focus-pulse 0.3s ease-out;
+}
+
+@keyframes ease-focus-pulse {
+  0%   { outline-offset: 3px; outline-width: 2px; }
+  50%  { outline-offset: 5px; outline-width: 3px; }
+  100% { outline-offset: 3px; outline-width: 2px; }
+}
+
+/* Glow focus — for card-like interactive containers */
+.ease-focus-glow:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--ease-color-primary-alpha, rgba(108,99,255,0.25)),
+              0 0 0 1px var(--ease-color-primary, #6c63ff);
+  border-radius: var(--ease-radius-lg, 1rem);
+}
+
+/* ── Skip Link ─────────────────────────────────────────── */
+.ease-skip-link {
+  position: absolute;
+  top: -100%;
+  left: var(--ease-space-4, 1rem);
+  z-index: 9999;
+  padding: var(--ease-space-3, 0.75rem) var(--ease-space-6, 1.5rem);
+  background: var(--ease-color-primary, #6c63ff);
+  color: white;
+  font-weight: 700;
+  font-size: 0.875rem;
+  border-radius: 0 0 var(--ease-radius-md, 0.5rem) var(--ease-radius-md, 0.5rem);
+  text-decoration: none;
+  transition: top var(--ease-speed-fast, 150ms);
+}
+
+.ease-skip-link:focus-visible {
+  top: 0;
+  outline: none;
+}
+
+/* ── Icon + Text Button ───────────────────────────────── */
+.ease-btn-label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ease-space-2, 0.5rem);
+  padding: var(--ease-space-3, 0.75rem) var(--ease-space-5, 1.25rem);
+  background: var(--ease-color-primary, #6c63ff);
+  color: white;
+  border: none;
+  border-radius: var(--ease-radius-md, 0.5rem);
+  font-family: inherit;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--ease-speed-fast, 150ms) var(--ease-ease-out),
+              transform var(--ease-speed-fast, 150ms) var(--ease-ease-out),
+              box-shadow var(--ease-speed-fast, 150ms) var(--ease-ease-out);
+  text-decoration: none;
+}
+
+.ease-btn-label:hover {
+  background: var(--ease-color-primary-dark, #4b44cc);
+  transform: translateY(-1px);
+  box-shadow: var(--ease-shadow-md);
+}
+
+.ease-btn-label:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* ── Card Link (accessible link-as-card pattern) ─────── */
+.ease-card-link {
+  display: block;
+  padding: var(--ease-space-5, 1.25rem);
+  background: var(--ease-color-surface, #ffffff);
+  border: 1px solid var(--ease-color-neutral-200, #e2e8f0);
+  border-radius: var(--ease-radius-lg, 1rem);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color var(--ease-speed-fast, 150ms),
+              box-shadow var(--ease-speed-fast, 150ms),
+              transform var(--ease-speed-fast, 150ms);
+}
+
+.ease-card-link:hover {
+  border-color: var(--ease-color-primary, #6c63ff);
+  box-shadow: var(--ease-shadow-lg);
+  transform: translateY(-2px);
+}
+
+.ease-card-link:focus-visible {
+  outline: 2px solid var(--ease-color-primary, #6c63ff);
+  outline-offset: 2px;
+  border-color: var(--ease-color-primary, #6c63ff);
+}
+
+.ease-card-link-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ease-color-text, #1e293b);
+  margin: 0 0 var(--ease-space-2, 0.5rem);
+}
+
+.ease-card-link-desc {
+  font-size: 0.875rem;
+  color: var(--ease-color-muted, #64748b);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ── Visually Hidden (screen reader only) ─────────────── */
+.ease-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ── Dark Mode ────────────────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+  .ease-btn-icon { background: var(--ease-color-neutral-700, #334155); color: var(--ease-color-neutral-100, #f1f5f9); }
+  .ease-btn-icon:hover { background: var(--ease-color-primary, #6c63ff); color: white; }
+  .ease-btn-icon:active { background: var(--ease-color-primary-dark, #4b44cc); }
+  .ease-card-link { background: var(--ease-color-neutral-800, #1e293b); border-color: var(--ease-color-neutral-700, #334155); color: inherit; }
+  .ease-card-link-title { color: var(--ease-color-neutral-100, #f1f5f9); }
+  .ease-card-link-desc { color: var(--ease-color-neutral-400, #94a3b8); }
+  .demo-section h2 { color: var(--ease-color-neutral-100, #f1f5f9); border-bottom-color: var(--ease-color-neutral-700, #334155); }
+  .demo-section p { color: var(--ease-color-neutral-400, #94a3b8); }
+  .ease-focus-glow:focus-visible { box-shadow: 0 0 0 3px rgba(160, 154, 248, 0.25), 0 0 0 1px var(--ease-color-primary-light, #a09af8); }
+}
+
+/* ── Reduced Motion ───────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .ease-btn-icon, .ease-btn-label, .ease-card-link { transition: none; }
+  .ease-focus-animated:focus-visible { animation: none; }
+}
