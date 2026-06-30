@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glass Card Token Fix — EaseMotion CSS</title>
+  <link rel="stylesheet" href="../../core/variables.css">
+  <link rel="stylesheet" href="../../easemotion.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Background for glass effect visibility -->
+  <div style="min-height:100vh; background: linear-gradient(135deg, #e0e7ff 0%, #f3e8ff 50%, #ede9fe 100%); padding: 0;">
+    <div class="glass-demo">
+
+      <!-- Example 1: Standard Glass Card -->
+      <div class="ease-card-glass ease-glass-hover">
+        <div class="ease-glass-header">
+          <h3 class="ease-glass-title">Standard Glass Card</h3>
+          <p class="ease-glass-subtitle">With explicit token fallbacks</p>
+        </div>
+        <div class="ease-glass-body">
+          <p>The glass card now uses explicit fallback values for dark mode text color instead of relying on the undefined <code>--ease-color-text-dark</code> token.</p>
+        </div>
+        <div class="ease-glass-footer">
+          <span class="ease-glass-badge">G</span>
+          <span style="font-size:0.8125rem; color:var(--ease-color-muted,#64748b);">Issue #5628 Fix</span>
+        </div>
+      </div>
+
+      <!-- Example 2: Primary Glass Card -->
+      <div class="ease-card-glass ease-glass-primary ease-glass-hover">
+        <div class="ease-glass-header">
+          <h3 class="ease-glass-title">Primary Glass</h3>
+          <p class="ease-glass-subtitle">Accent-colored glass overlay</p>
+        </div>
+        <div class="ease-glass-body">
+          <p>Built with rgba overlay on primary color. Backdrop blur and explicit color tokens ensure readability in both light and dark modes.</p>
+        </div>
+        <div class="ease-glass-footer">
+          <span class="ease-glass-badge" style="background:rgba(108,99,255,.35); color:#a09af8;">P</span>
+          <span style="font-size:0.8125rem; color:var(--ease-color-muted,#64748b);">Primary variant</span>
+        </div>
+      </div>
+
+      <!-- Example 3: Success Glass Card -->
+      <div class="ease-card-glass ease-glass-success ease-glass-hover">
+        <div class="ease-glass-header">
+          <h3 class="ease-glass-title">Success Glass</h3>
+          <p class="ease-glass-subtitle">Green-tinted glass panel</p>
+        </div>
+        <div class="ease-glass-body">
+          <p>Success variant for positive-state cards. All text uses explicit dark-mode fallbacks rather than undefined tokens.</p>
+        </div>
+        <div class="ease-glass-footer">
+          <span class="ease-glass-badge" style="background:rgba(21,128,61,.35); color:#86efac;">S</span>
+          <span style="font-size:0.8125rem; color:var(--ease-color-muted,#64748b);">Success variant</span>
+        </div>
+      </div>
+
+      <!-- Example 4: Strong Glass Card -->
+      <div class="ease-card-glass ease-glass-strong ease-glass-hover">
+        <div class="ease-glass-header">
+          <h3 class="ease-glass-title">Strong Glass</h3>
+          <p class="ease-glass-subtitle">Higher opacity, stronger blur</p>
+        </div>
+        <div class="ease-glass-body">
+          <p>Strong variant uses 92% opacity and 24px blur for maximum frosted glass effect on light backgrounds.</p>
+        </div>
+        <div class="ease-glass-footer">
+          <span class="ease-glass-badge" style="background:rgba(255,255,255,.2); color:var(--ease-color-text,#1e293b);">S</span>
+          <span style="font-size:0.8125rem; color:var(--ease-color-muted,#64748b);">Strong variant</span>
+        </div>
+      </div>
+
+      <!-- Example 5: Subtle Glass Card -->
+      <div class="ease-card-glass ease-glass-subtle ease-glass-hover">
+        <div class="ease-glass-header">
+          <h3 class="ease-glass-title">Subtle Glass</h3>
+          <p class="ease-glass-subtitle">Low opacity for backgrounds</p>
+        </div>
+        <div class="ease-glass-body">
+          <p>Subtle variant for stacking multiple glass cards or using as a light overlay on image backgrounds.</p>
+        </div>
+        <div class="ease-glass-footer">
+          <span class="ease-glass-badge" style="background:rgba(100,116,139,.2);">S</span>
+          <span style="font-size:0.8125rem; color:var(--ease-color-muted,#64748b);">Subtle variant</span>
+        </div>
+      </div>
+
+      <!-- Example 6: Warning Glass Card -->
+      <div class="ease-card-glass ease-glass-warning ease-glass-hover">
+        <div class="ease-glass-header">
+          <h3 class="ease-glass-title">Warning Glass</h3>
+          <p class="ease-glass-subtitle">Amber-tinted alert panel</p>
+        </div>
+        <div class="ease-glass-body">
+          <p>Warning variant for soft alert states. The fallback token fix ensures warning text is always readable in dark mode.</p>
+        </div>
+        <div class="ease-glass-footer">
+          <span class="ease-glass-badge" style="background:rgba(180,83,9,.35); color:#fcd34d;">!</span>
+          <span style="font-size:0.8125rem; color:var(--ease-color-muted,#64748b);">Warning variant</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
