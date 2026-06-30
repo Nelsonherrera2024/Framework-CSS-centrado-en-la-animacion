@@ -1,70 +1,14 @@
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-}
-
-.fl-card {
-  background: #ffffff;
-  border-radius: 14px;
-  padding: 1.5rem;
-  width: 360px;
-  max-width: 90vw;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-}
-
-.fl-group {
-  position: relative;
-}
-
-.fl-input {
-  width: 100%;
-  padding: 1rem 0.75rem 0.375rem;
-  font-size: 0.9rem;
-  border: 1px solid #e2e8f0;
-  border-radius: 8px;
-  outline: none;
-  background: transparent;
-  color: #334155;
-  transition: border-color 0.2s ease;
-}
-
-.fl-input:focus {
-  border-color: #6366f1;
-}
-
-.fl-textarea {
-  resize: vertical;
-  min-height: 70px;
-  padding-top: 1.25rem;
-}
-
-.fl-label {
-  position: absolute;
-  left: 0.75rem;
-  top: 0.75rem;
-  font-size: 0.9rem;
-  color: #94a3b8;
-  pointer-events: none;
-  transition: all 0.2s ease;
-  transform-origin: left top;
-}
-
-.fl-input:focus + .fl-label,
-.fl-input:not(:placeholder-shown) + .fl-label {
-  top: 0.3rem;
-  font-size: 0.7rem;
-  color: #6366f1;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .fl-input,
-  .fl-label {
-    transition: none;
-  }
-}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: #0f0f0f; color: #d1d5db; font-family: system-ui, sans-serif; padding: 4rem 1rem; text-align: center; }
+h1 { color: #fff; font-size: 1.75rem; margin-bottom: 0.25rem; }
+.subtitle { color: #9ca3af; margin-bottom: 2rem; }
+section { background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; max-width: 500px; margin-left: auto; margin-right: auto; text-align: left; }
+h2 { color: #fff; font-size: 1.1rem; margin-bottom: 0.75rem; }
+p { color: #9ca3af; line-height: 1.8; margin-top: 1rem; }
+code { background: #2a2a2a; padding: 0.15em 0.4em; border-radius: 4px; font-size: 0.9em; }
+.form { display: flex; flex-direction: column; gap: 1.5rem; }
+.field { position: relative; }
+.field input { width: 100%; padding: 1rem 0.75rem 0.5rem; border: 2px solid #2a2a2a; border-radius: 8px; background: transparent; color: #fff; font-size: 0.95rem; outline: none; transition: border-color 0.2s; }
+.field input:focus { border-color: #6366f1; }
+.field label { position: absolute; left: 0.75rem; top: 50%; transform: translateY(-50%); color: #6b7280; font-size: 0.95rem; pointer-events: none; transition: all 0.2s ease; background: #1a1a1a; padding: 0 0.25rem; }
+.field input:focus + label, .field input:not(:placeholder-shown) + label { top: 0; transform: translateY(-50%); font-size: 0.75rem; color: #818cf8; }
