@@ -1,0 +1,49 @@
+/* backface-visibility */
+.backface-visible {
+  backface-visibility: visible;
+  backface-visibility: visible !important;
+}
+.backface-hidden {
+  backface-visibility: hidden;
+  backface-visibility: hidden !important;
+}
+@media (min-width: 640px) {
+  .sm\:backface-visible {
+    backface-visibility: visible;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:backface-hidden {
+    backface-visibility: hidden;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:backface-visible {
+    backface-visibility: visible;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:backface-hidden {
+    backface-visibility: hidden;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:backface-visible {
+    backface-visibility: visible;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:backface-hidden {
+    backface-visibility: hidden;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:backface-visible {
+    backface-visibility: visible;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:backface-hidden {
+    backface-visibility: hidden;
+  }
+}
