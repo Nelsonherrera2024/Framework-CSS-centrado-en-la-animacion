@@ -1,0 +1,169 @@
+/* pointer-events */
+.pointer-none {
+  pointer-events: none;
+  pointer-events: none !important;
+}
+.pointer-auto {
+  pointer-events: auto;
+  pointer-events: auto !important;
+}
+.pointer-stroke {
+  pointer-events: stroke;
+  pointer-events: stroke !important;
+}
+.pointer-fill {
+  pointer-events: fill;
+  pointer-events: fill !important;
+}
+.pointer-all {
+  pointer-events: all;
+  pointer-events: all !important;
+}
+.pointer-visible {
+  pointer-events: visible;
+  pointer-events: visible !important;
+}
+.pointer-visibility {
+  pointer-events: visiblePainted;
+  pointer-events: visiblePainted !important;
+}
+@media (min-width: 640px) {
+  .sm\:pointer-none {
+    pointer-events: none;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:pointer-auto {
+    pointer-events: auto;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:pointer-stroke {
+    pointer-events: stroke;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:pointer-fill {
+    pointer-events: fill;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:pointer-all {
+    pointer-events: all;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:pointer-visible {
+    pointer-events: visible;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:pointer-visibility {
+    pointer-events: visiblePainted;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:pointer-none {
+    pointer-events: none;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:pointer-auto {
+    pointer-events: auto;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:pointer-stroke {
+    pointer-events: stroke;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:pointer-fill {
+    pointer-events: fill;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:pointer-all {
+    pointer-events: all;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:pointer-visible {
+    pointer-events: visible;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:pointer-visibility {
+    pointer-events: visiblePainted;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:pointer-none {
+    pointer-events: none;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:pointer-auto {
+    pointer-events: auto;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:pointer-stroke {
+    pointer-events: stroke;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:pointer-fill {
+    pointer-events: fill;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:pointer-all {
+    pointer-events: all;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:pointer-visible {
+    pointer-events: visible;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:pointer-visibility {
+    pointer-events: visiblePainted;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:pointer-none {
+    pointer-events: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:pointer-auto {
+    pointer-events: auto;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:pointer-stroke {
+    pointer-events: stroke;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:pointer-fill {
+    pointer-events: fill;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:pointer-all {
+    pointer-events: all;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:pointer-visible {
+    pointer-events: visible;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:pointer-visibility {
+    pointer-events: visiblePainted;
+  }
+}
