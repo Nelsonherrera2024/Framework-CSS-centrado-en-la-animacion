@@ -1,0 +1,121 @@
+/* text-decoration-style */
+.decoration-solid {
+  text-decoration-style: solid;
+  text-decoration-style: solid !important;
+}
+.decoration-double {
+  text-decoration-style: double;
+  text-decoration-style: double !important;
+}
+.decoration-dotted {
+  text-decoration-style: dotted;
+  text-decoration-style: dotted !important;
+}
+.decoration-dashed {
+  text-decoration-style: dashed;
+  text-decoration-style: dashed !important;
+}
+.decoration-wavy {
+  text-decoration-style: wavy;
+  text-decoration-style: wavy !important;
+}
+@media (min-width: 640px) {
+  .sm\:decoration-solid {
+    text-decoration-style: solid;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:decoration-double {
+    text-decoration-style: double;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:decoration-dotted {
+    text-decoration-style: dotted;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:decoration-dashed {
+    text-decoration-style: dashed;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:decoration-wavy {
+    text-decoration-style: wavy;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:decoration-solid {
+    text-decoration-style: solid;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:decoration-double {
+    text-decoration-style: double;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:decoration-dotted {
+    text-decoration-style: dotted;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:decoration-dashed {
+    text-decoration-style: dashed;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:decoration-wavy {
+    text-decoration-style: wavy;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:decoration-solid {
+    text-decoration-style: solid;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:decoration-double {
+    text-decoration-style: double;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:decoration-dotted {
+    text-decoration-style: dotted;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:decoration-dashed {
+    text-decoration-style: dashed;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:decoration-wavy {
+    text-decoration-style: wavy;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:decoration-solid {
+    text-decoration-style: solid;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:decoration-double {
+    text-decoration-style: double;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:decoration-dotted {
+    text-decoration-style: dotted;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:decoration-dashed {
+    text-decoration-style: dashed;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:decoration-wavy {
+    text-decoration-style: wavy;
+  }
+}
