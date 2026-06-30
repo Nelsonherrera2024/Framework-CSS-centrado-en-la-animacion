@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrollbar Color Utilities</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: system-ui, sans-serif; padding: 2rem; }
+    .demo-item { margin: 0.5rem; padding: 0.75rem 1rem; border: 1px solid #ccc; border-radius: 4px; }
+    .dark body { background: #1a1a1a; color: #eee; }
+    .dark .demo-item { border-color: #444; }
+  </style>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="demo-item scrollbar-thumb-primary">.scrollbar-thumb-primary</div>
+  <div class="demo-item scrollbar-thumb-secondary">.scrollbar-thumb-secondary</div>
+  <div class="demo-item scrollbar-thumb-accent">.scrollbar-thumb-accent</div>
+  <div class="demo-item scrollbar-thumb-gray">.scrollbar-thumb-gray</div>
+  <div class="demo-item scrollbar-thumb-dark">.scrollbar-thumb-dark</div>
+  <div class="demo-item scrollbar-thumb-light">.scrollbar-thumb-light</div>
+</body>
+</html>
