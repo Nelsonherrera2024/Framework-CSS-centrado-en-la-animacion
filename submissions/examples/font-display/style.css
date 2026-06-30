@@ -1,0 +1,241 @@
+/* font-display */
+.font-swap {
+  font-display: swap;
+  font-display: swap !important;
+}
+.font-block {
+  font-display: block;
+  font-display: block !important;
+}
+.font-fallback {
+  font-display: fallback;
+  font-display: fallback !important;
+}
+.font-optional {
+  font-display: optional;
+  font-display: optional !important;
+}
+.font-auto {
+  font-display: auto;
+  font-display: auto !important;
+}
+.font-display-auto {
+  font-display: auto;
+  font-display: auto !important;
+}
+.font-display-block {
+  font-display: block;
+  font-display: block !important;
+}
+.font-display-swap {
+  font-display: swap;
+  font-display: swap !important;
+}
+.font-display-fallback {
+  font-display: fallback;
+  font-display: fallback !important;
+}
+.font-display-optional {
+  font-display: optional;
+  font-display: optional !important;
+}
+@media (min-width: 640px) {
+  .sm\:font-swap {
+    font-display: swap;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:font-block {
+    font-display: block;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:font-fallback {
+    font-display: fallback;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:font-optional {
+    font-display: optional;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:font-auto {
+    font-display: auto;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:font-display-auto {
+    font-display: auto;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:font-display-block {
+    font-display: block;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:font-display-swap {
+    font-display: swap;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:font-display-fallback {
+    font-display: fallback;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:font-display-optional {
+    font-display: optional;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:font-swap {
+    font-display: swap;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:font-block {
+    font-display: block;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:font-fallback {
+    font-display: fallback;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:font-optional {
+    font-display: optional;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:font-auto {
+    font-display: auto;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:font-display-auto {
+    font-display: auto;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:font-display-block {
+    font-display: block;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:font-display-swap {
+    font-display: swap;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:font-display-fallback {
+    font-display: fallback;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:font-display-optional {
+    font-display: optional;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:font-swap {
+    font-display: swap;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:font-block {
+    font-display: block;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:font-fallback {
+    font-display: fallback;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:font-optional {
+    font-display: optional;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:font-auto {
+    font-display: auto;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:font-display-auto {
+    font-display: auto;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:font-display-block {
+    font-display: block;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:font-display-swap {
+    font-display: swap;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:font-display-fallback {
+    font-display: fallback;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:font-display-optional {
+    font-display: optional;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:font-swap {
+    font-display: swap;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:font-block {
+    font-display: block;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:font-fallback {
+    font-display: fallback;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:font-optional {
+    font-display: optional;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:font-auto {
+    font-display: auto;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:font-display-auto {
+    font-display: auto;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:font-display-block {
+    font-display: block;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:font-display-swap {
+    font-display: swap;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:font-display-fallback {
+    font-display: fallback;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:font-display-optional {
+    font-display: optional;
+  }
+}
