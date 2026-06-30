@@ -1,0 +1,49 @@
+/* scroll-snap-stop */
+.snap-stop-normal {
+  scroll-snap-stop: normal;
+  scroll-snap-stop: normal !important;
+}
+.snap-stop-always {
+  scroll-snap-stop: always;
+  scroll-snap-stop: always !important;
+}
+@media (min-width: 640px) {
+  .sm\:snap-stop-normal {
+    scroll-snap-stop: normal;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:snap-stop-always {
+    scroll-snap-stop: always;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:snap-stop-normal {
+    scroll-snap-stop: normal;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:snap-stop-always {
+    scroll-snap-stop: always;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:snap-stop-normal {
+    scroll-snap-stop: normal;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:snap-stop-always {
+    scroll-snap-stop: always;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:snap-stop-normal {
+    scroll-snap-stop: normal;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:snap-stop-always {
+    scroll-snap-stop: always;
+  }
+}
