@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Text Stroke — EaseMotion CSS</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="../../easemotion.css" />
+  <style>
+    body { font-family: system-ui, -apple-system, sans-serif; padding: 2rem; background: var(--ease-color-bg); color: var(--ease-color-text); }
+    h2 { margin: 0 0 1rem 0; font-size: 1.25rem; color: var(--ease-color-text); }
+    .demo-section { margin-bottom: 2.5rem; }
+    label { display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--ease-color-muted); font-size: 0.875rem; }
+    code { background: var(--ease-color-neutral-100); padding: 0.1em 0.4em; border-radius: 0.25rem; font-size: 0.875em; }
+  </style>
+</head>
+<body>
+  <div style="max-width: 860px; margin: 0 auto;">
+
+    <!-- Section 1: Card with badges and buttons -->
+    <div class="demo-section">
+      <h2>Interactive Card Component</h2>
+      <div class="text-stroke-card text-stroke-focus">
+        <div class="text-stroke-card-header">
+          <span class="text-stroke-badge text-stroke-badge-primary">Text Stroke Demo</span>
+          <span class="text-stroke-badge text-stroke-badge-success">Live</span>
+          <span class="text-stroke-badge text-stroke-badge-warning">Beta</span>
+        </div>
+        <div class="text-stroke-card-body">
+          <p style="margin:0;">Interactive card demonstrating <code>text-stroke</code> CSS utilities with chip, icon, and badge components.</p>
+          <div class="text-stroke-chip">
+            <span class="text-stroke-icon">✦</span>
+            Text Stroke Chip
+          </div>
+          <div class="text-stroke-chip" style="margin-top: 0.5rem;">
+            <span class="text-stroke-icon" style="background:rgba(21,128,61,.15);color:#15803d;">✓</span>
+            Another Chip
+          </div>
+        </div>
+        <div class="text-stroke-card-footer">
+          <button class="text-stroke-btn">Primary</button>
+          <button class="text-stroke-btn text-stroke-btn-ghost">Secondary</button>
+          <button class="text-stroke-btn text-stroke-btn-sm">Small</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 2: Grid layout -->
+    <div class="demo-section">
+      <h2>Responsive Grid Layout</h2>
+      <div class="text-stroke-grid">
+        <div class="text-stroke-demo">
+          <span class="text-stroke-badge text-stroke-badge-primary">Grid Item 1</span>
+          <p style="margin:0.5rem 0 0 0;font-size:0.875rem;">Text Stroke grid item with badge and avatar.</p>
+          <div style="margin-top:0.75rem;display:flex;align-items:center;gap:0.5rem;">
+            <span class="text-stroke-avatar">TM</span>
+            <span style="font-size:0.875rem;">Taylor M.</span>
+          </div>
+        </div>
+        <div class="text-stroke-demo">
+          <span class="text-stroke-badge text-stroke-badge-warning">Grid Item 2</span>
+          <p style="margin:0.5rem 0 0 0;font-size:0.875rem;">Input field with text-stroke focus state.</p>
+          <input class="text-stroke-input" type="text" placeholder="Type here..." style="margin-top:0.5rem;" />
+        </div>
+        <div class="text-stroke-demo">
+          <span class="text-stroke-tag">Text Stroke</span>
+          <p style="margin:0.5rem 0 0 0;font-size:0.875rem;">Progress bar using text-stroke tokens.</p>
+          <div class="text-stroke-progress" style="margin-top:0.75rem;">
+            <div class="text-stroke-progress-bar" style="width:72%;"></div>
+          </div>
+        </div>
+        <div class="text-stroke-demo">
+          <span class="text-stroke-badge text-stroke-badge-danger">Grid Item 4</span>
+          <p style="margin:0.5rem 0 0 0;font-size:0.875rem;">Disabled text-stroke button state.</p>
+          <button class="text-stroke-btn text-stroke-disabled" style="margin-top:0.5rem;">Disabled</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 3: Row layout -->
+    <div class="demo-section">
+      <h2>Row with Avatar and Tags</h2>
+      <div class="text-stroke-demo text-stroke-row">
+        <span class="text-stroke-avatar-lg">TM</span>
+        <div style="flex:1;">
+          <strong>Taylor Morgan</strong>
+          <div style="font-size:0.875rem;color:var(--ease-color-muted);">Frontend developer · Text Stroke</div>
+        </div>
+        <span class="text-stroke-tag">Active</span>
+      </div>
+      <div class="text-stroke-divider"></div>
+      <div class="text-stroke-demo text-stroke-row" style="gap:1rem;">
+        <span class="text-stroke-badge text-stroke-badge-success">Deployed</span>
+        <span class="text-stroke-badge text-stroke-badge-warning">Review</span>
+        <span class="text-stroke-badge text-stroke-badge-info">Staging</span>
+        <span class="text-stroke-badge text-stroke-badge-danger">Blocked</span>
+      </div>
+    </div>
+
+    <!-- Section 4: Loaders and inputs -->
+    <div class="demo-section">
+      <h2>Loading States and Form Elements</h2>
+      <div class="text-stroke-demo" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1.5rem;">
+        <div>
+          <label>Small Loader</label>
+          <div style="margin-top:0.5rem;display:flex;align-items:center;gap:0.75rem;">
+            <span class="text-stroke-loader"></span>
+            <span style="font-size:0.875rem;">Loading...</span>
+          </div>
+        </div>
+        <div>
+          <label>Large Spinner</label>
+          <div style="margin-top:0.5rem;">
+            <span class="text-stroke-spinner"></span>
+          </div>
+        </div>
+        <div>
+          <label>Text Input</label>
+          <input class="text-stroke-input" type="email" placeholder="email@example.com" style="margin-top:0.5rem;" />
+        </div>
+        <div>
+          <label>Disabled Input</label>
+          <input class="text-stroke-input text-stroke-disabled" type="text" value="Disabled" style="margin-top:0.5rem;" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 5: Sidebar + tooltip -->
+    <div class="demo-section">
+      <h2>Navigation Components</h2>
+      <div class="text-stroke-demo text-stroke-row" style="gap:2rem;">
+        <div>
+          <label>Sidebar Navigation</label>
+          <div style="margin-top:0.75rem;display:flex;flex-direction:column;gap:0.25rem;min-width:180px;">
+            <div class="text-stroke-sidebar-item active">
+              <span class="text-stroke-icon">◉</span> Dashboard
+            </div>
+            <div class="text-stroke-sidebar-item">
+              <span class="text-stroke-icon">☰</span> Projects
+            </div>
+            <div class="text-stroke-sidebar-item">
+              <span class="text-stroke-icon">⚙</span> Settings
+            </div>
+          </div>
+        </div>
+        <div>
+          <label>Tooltip Button</label>
+          <div style="margin-top:0.75rem;">
+            <div class="text-stroke-tooltip-wrap">
+              <button class="text-stroke-btn">Text Stroke Button</button>
+              <span class="text-stroke-tooltip">Tooltip for Text Stroke</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <label>Avatar Sizes</label>
+          <div style="margin-top:0.75rem;display:flex;align-items:center;gap:0.5rem;">
+            <span class="text-stroke-avatar-sm">S</span>
+            <span class="text-stroke-avatar">M</span>
+            <span class="text-stroke-avatar-lg">L</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
