@@ -1,0 +1,505 @@
+/* will-change */
+.will-change-auto {
+  will-change: auto;
+  will-change: auto !important;
+}
+.will-change-scroll {
+  will-change: scroll-position;
+  will-change: scroll-position !important;
+}
+.will-change-contents {
+  will-change: contents;
+  will-change: contents !important;
+}
+.will-change-transform {
+  will-change: transform;
+  will-change: transform !important;
+}
+.will-change-opacity {
+  will-change: opacity;
+  will-change: opacity !important;
+}
+.will-change-top-left {
+  will-change: top, left;
+  will-change: top, left !important;
+}
+.will-change-cursor {
+  will-change: cursor;
+  will-change: cursor !important;
+}
+.will-change-font {
+  will-change: font-variation-settings;
+  will-change: font-variation-settings !important;
+}
+.will-change-scrollx {
+  will-change: scroll-position;
+  will-change: scroll-position !important;
+}
+.will-change-auto-2 {
+  will-change: auto;
+  will-change: auto !important;
+}
+.will-change-multi {
+  will-change: transform, opacity;
+  will-change: transform, opacity !important;
+}
+.will-change-multi-2 {
+  will-change: transform, opacity, contents;
+  will-change: transform, opacity, contents !important;
+}
+.will-change-inherit {
+  will-change: inherit;
+  will-change: inherit !important;
+}
+.will-change-initial {
+  will-change: initial;
+  will-change: initial !important;
+}
+.will-change-unset {
+  will-change: unset;
+  will-change: unset !important;
+}
+.will-change-default {
+  will-change: auto;
+  will-change: auto !important;
+}
+.change-auto {
+  will-change: auto;
+  will-change: auto !important;
+}
+.change-transform {
+  will-change: transform;
+  will-change: transform !important;
+}
+.change-opacity {
+  will-change: opacity;
+  will-change: opacity !important;
+}
+.change-scroll {
+  will-change: scroll-position;
+  will-change: scroll-position !important;
+}
+.change-contents {
+  will-change: contents;
+  will-change: contents !important;
+}
+@media (min-width: 640px) {
+  .sm\:will-change-auto {
+    will-change: auto;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:will-change-scroll {
+    will-change: scroll-position;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:will-change-contents {
+    will-change: contents;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:will-change-transform {
+    will-change: transform;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:will-change-opacity {
+    will-change: opacity;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:will-change-top-left {
+    will-change: top, left;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:will-change-cursor {
+    will-change: cursor;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:will-change-font {
+    will-change: font-variation-settings;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:will-change-scrollx {
+    will-change: scroll-position;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:will-change-auto-2 {
+    will-change: auto;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:will-change-multi {
+    will-change: transform, opacity;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:will-change-multi-2 {
+    will-change: transform, opacity, contents;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:will-change-inherit {
+    will-change: inherit;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:will-change-initial {
+    will-change: initial;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:will-change-unset {
+    will-change: unset;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:will-change-default {
+    will-change: auto;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:change-auto {
+    will-change: auto;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:change-transform {
+    will-change: transform;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:change-opacity {
+    will-change: opacity;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:change-scroll {
+    will-change: scroll-position;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:change-contents {
+    will-change: contents;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:will-change-auto {
+    will-change: auto;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:will-change-scroll {
+    will-change: scroll-position;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:will-change-contents {
+    will-change: contents;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:will-change-transform {
+    will-change: transform;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:will-change-opacity {
+    will-change: opacity;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:will-change-top-left {
+    will-change: top, left;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:will-change-cursor {
+    will-change: cursor;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:will-change-font {
+    will-change: font-variation-settings;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:will-change-scrollx {
+    will-change: scroll-position;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:will-change-auto-2 {
+    will-change: auto;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:will-change-multi {
+    will-change: transform, opacity;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:will-change-multi-2 {
+    will-change: transform, opacity, contents;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:will-change-inherit {
+    will-change: inherit;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:will-change-initial {
+    will-change: initial;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:will-change-unset {
+    will-change: unset;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:will-change-default {
+    will-change: auto;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:change-auto {
+    will-change: auto;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:change-transform {
+    will-change: transform;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:change-opacity {
+    will-change: opacity;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:change-scroll {
+    will-change: scroll-position;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:change-contents {
+    will-change: contents;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:will-change-auto {
+    will-change: auto;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:will-change-scroll {
+    will-change: scroll-position;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:will-change-contents {
+    will-change: contents;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:will-change-transform {
+    will-change: transform;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:will-change-opacity {
+    will-change: opacity;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:will-change-top-left {
+    will-change: top, left;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:will-change-cursor {
+    will-change: cursor;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:will-change-font {
+    will-change: font-variation-settings;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:will-change-scrollx {
+    will-change: scroll-position;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:will-change-auto-2 {
+    will-change: auto;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:will-change-multi {
+    will-change: transform, opacity;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:will-change-multi-2 {
+    will-change: transform, opacity, contents;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:will-change-inherit {
+    will-change: inherit;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:will-change-initial {
+    will-change: initial;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:will-change-unset {
+    will-change: unset;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:will-change-default {
+    will-change: auto;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:change-auto {
+    will-change: auto;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:change-transform {
+    will-change: transform;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:change-opacity {
+    will-change: opacity;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:change-scroll {
+    will-change: scroll-position;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:change-contents {
+    will-change: contents;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:will-change-auto {
+    will-change: auto;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:will-change-scroll {
+    will-change: scroll-position;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:will-change-contents {
+    will-change: contents;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:will-change-transform {
+    will-change: transform;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:will-change-opacity {
+    will-change: opacity;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:will-change-top-left {
+    will-change: top, left;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:will-change-cursor {
+    will-change: cursor;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:will-change-font {
+    will-change: font-variation-settings;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:will-change-scrollx {
+    will-change: scroll-position;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:will-change-auto-2 {
+    will-change: auto;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:will-change-multi {
+    will-change: transform, opacity;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:will-change-multi-2 {
+    will-change: transform, opacity, contents;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:will-change-inherit {
+    will-change: inherit;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:will-change-initial {
+    will-change: initial;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:will-change-unset {
+    will-change: unset;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:will-change-default {
+    will-change: auto;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:change-auto {
+    will-change: auto;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:change-transform {
+    will-change: transform;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:change-opacity {
+    will-change: opacity;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:change-scroll {
+    will-change: scroll-position;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:change-contents {
+    will-change: contents;
+  }
+}
