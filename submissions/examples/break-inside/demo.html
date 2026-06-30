@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Break Inside Utilities</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: system-ui, sans-serif; padding: 2rem; }
+    .demo-item { margin: 0.5rem; padding: 0.75rem 1rem; border: 1px solid #ccc; border-radius: 4px; }
+    .dark body { background: #1a1a1a; color: #eee; }
+    .dark .demo-item { border-color: #444; }
+  </style>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="demo-item break-inside-auto">.break-inside-auto</div>
+  <div class="demo-item break-inside-avoid">.break-inside-avoid</div>
+  <div class="demo-item break-inside-avoid-page">.break-inside-avoid-page</div>
+  <div class="demo-item break-inside-avoid-column">.break-inside-avoid-column</div>
+  <div class="demo-item break-inside-avoid-region">.break-inside-avoid-region</div>
+</body>
+</html>
