@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Card Margin Conflict — Demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/SAPTARSHI-coder/EaseMotion-css@main/easemotion.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="demo-header ease-fade-in">
+    <h1>Card Margin Conflict</h1>
+    <p>Side-by-side: conflicting margins (left) vs resolved with custom property (right)</p>
+  </div>
+
+  <div class="demo-grid">
+    <div class="card card-conflict ease-card ease-card-shadow ease-slide-up">
+      <div class="card-header">
+        <span class="tag tag-a">Branch A: margin-bottom: 1rem</span>
+        <span class="tag tag-b">Branch B: remove</span>
+      </div>
+      <div class="card-body">
+        <p>Header and footer use hardcoded margin values from two different branches.</p>
+        <p><span class="tag tag-b">Branch B: margin-bottom: 0 on last p</span></p>
+        <p><span class="tag tag-a">Branch A: margin-top: 0.75rem</span></p>
+      </div>
+      <div class="card-footer">
+        <button class="btn btn-primary">Action</button>
+        <button class="btn">Cancel</button>
+      </div>
+    </div>
+
+    <div class="card card-resolved ease-card ease-card-shadow ease-slide-up ease-delay-200">
+      <div class="card-header">
+        <code>--card-section-gap: 1rem</code>
+      </div>
+      <div class="card-body">
+        <p>Single custom property controls header margin-bottom and footer margin-top.</p>
+        <p>Last paragraph keeps <code>margin-bottom: 0</code> as a reset — no conflict.</p>
+        <p>Override <code>--card-section-gap</code> to change spacing everywhere at once.</p>
+      </div>
+      <div class="card-footer">
+        <button class="btn btn-primary">Action</button>
+        <button class="btn">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>Resolution:</strong> Replace hardcoded <code>margin-bottom</code> / <code>margin-top</code> in <code>.ease-card-header</code> and <code>.ease-card-footer</code> with a shared <code>--card-section-gap</code> custom property (default <code>1rem</code>). Keep the <code>.ease-card-body p:last-child</code> reset (<code>margin-bottom: 0</code>). This satisfies both branches — one unified value, no duplication, fully overridable.
+  </div>
+</body>
+</html>
