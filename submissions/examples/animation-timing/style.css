@@ -1,0 +1,193 @@
+/* animation-timing-function */
+.ease-linear {
+  animation-timing-function: linear;
+  animation-timing-function: linear !important;
+}
+.ease-in {
+  animation-timing-function: ease-in;
+  animation-timing-function: ease-in !important;
+}
+.ease-out {
+  animation-timing-function: ease-out;
+  animation-timing-function: ease-out !important;
+}
+.ease-in-out {
+  animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out !important;
+}
+.ease-step-start {
+  animation-timing-function: step-start;
+  animation-timing-function: step-start !important;
+}
+.ease-step-end {
+  animation-timing-function: step-end;
+  animation-timing-function: step-end !important;
+}
+.ease-bounce {
+  animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55) !important;
+}
+.ease-smooth {
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+@media (min-width: 640px) {
+  .sm\:ease-linear {
+    animation-timing-function: linear;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:ease-in {
+    animation-timing-function: ease-in;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:ease-out {
+    animation-timing-function: ease-out;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:ease-in-out {
+    animation-timing-function: ease-in-out;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:ease-step-start {
+    animation-timing-function: step-start;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:ease-step-end {
+    animation-timing-function: step-end;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:ease-bounce {
+    animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+}
+@media (min-width: 640px) {
+  .sm\:ease-smooth {
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:ease-linear {
+    animation-timing-function: linear;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:ease-in {
+    animation-timing-function: ease-in;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:ease-out {
+    animation-timing-function: ease-out;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:ease-in-out {
+    animation-timing-function: ease-in-out;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:ease-step-start {
+    animation-timing-function: step-start;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:ease-step-end {
+    animation-timing-function: step-end;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:ease-bounce {
+    animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:ease-smooth {
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:ease-linear {
+    animation-timing-function: linear;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:ease-in {
+    animation-timing-function: ease-in;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:ease-out {
+    animation-timing-function: ease-out;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:ease-in-out {
+    animation-timing-function: ease-in-out;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:ease-step-start {
+    animation-timing-function: step-start;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:ease-step-end {
+    animation-timing-function: step-end;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:ease-bounce {
+    animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:ease-smooth {
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:ease-linear {
+    animation-timing-function: linear;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:ease-in {
+    animation-timing-function: ease-in;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:ease-out {
+    animation-timing-function: ease-out;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:ease-in-out {
+    animation-timing-function: ease-in-out;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:ease-step-start {
+    animation-timing-function: step-start;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:ease-step-end {
+    animation-timing-function: step-end;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:ease-bounce {
+    animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:ease-smooth {
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
