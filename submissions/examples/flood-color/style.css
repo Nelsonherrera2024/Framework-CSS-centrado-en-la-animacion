@@ -1,0 +1,97 @@
+/* flood-color */
+.flood-color-black {
+  flood-color: black;
+  flood-color: black !important;
+}
+.flood-color-white {
+  flood-color: white;
+  flood-color: white !important;
+}
+.flood-color-primary {
+  flood-color: var(--ease-primary);
+  flood-color: var(--ease-primary) !important;
+}
+.flood-color-inherit {
+  flood-color: inherit;
+  flood-color: inherit !important;
+}
+@media (min-width: 640px) {
+  .sm\:flood-color-black {
+    flood-color: black;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:flood-color-white {
+    flood-color: white;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:flood-color-primary {
+    flood-color: var(--ease-primary);
+  }
+}
+@media (min-width: 640px) {
+  .sm\:flood-color-inherit {
+    flood-color: inherit;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:flood-color-black {
+    flood-color: black;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:flood-color-white {
+    flood-color: white;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:flood-color-primary {
+    flood-color: var(--ease-primary);
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:flood-color-inherit {
+    flood-color: inherit;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:flood-color-black {
+    flood-color: black;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:flood-color-white {
+    flood-color: white;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:flood-color-primary {
+    flood-color: var(--ease-primary);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:flood-color-inherit {
+    flood-color: inherit;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:flood-color-black {
+    flood-color: black;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:flood-color-white {
+    flood-color: white;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:flood-color-primary {
+    flood-color: var(--ease-primary);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:flood-color-inherit {
+    flood-color: inherit;
+  }
+}
