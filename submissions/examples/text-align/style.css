@@ -1,0 +1,169 @@
+/* text-align */
+.text-left {
+  text-align: left;
+  text-align: left !important;
+}
+.text-center {
+  text-align: center;
+  text-align: center !important;
+}
+.text-right {
+  text-align: right;
+  text-align: right !important;
+}
+.text-justify {
+  text-align: justify;
+  text-align: justify !important;
+}
+.text-start {
+  text-align: start;
+  text-align: start !important;
+}
+.text-end {
+  text-align: end;
+  text-align: end !important;
+}
+.text-match-parent {
+  text-align: match-parent;
+  text-align: match-parent !important;
+}
+@media (min-width: 640px) {
+  .sm\:text-left {
+    text-align: left;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:text-center {
+    text-align: center;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:text-right {
+    text-align: right;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:text-justify {
+    text-align: justify;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:text-start {
+    text-align: start;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:text-end {
+    text-align: end;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:text-match-parent {
+    text-align: match-parent;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:text-left {
+    text-align: left;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:text-center {
+    text-align: center;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:text-right {
+    text-align: right;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:text-justify {
+    text-align: justify;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:text-start {
+    text-align: start;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:text-end {
+    text-align: end;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:text-match-parent {
+    text-align: match-parent;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:text-left {
+    text-align: left;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:text-center {
+    text-align: center;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:text-right {
+    text-align: right;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:text-justify {
+    text-align: justify;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:text-start {
+    text-align: start;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:text-end {
+    text-align: end;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:text-match-parent {
+    text-align: match-parent;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:text-left {
+    text-align: left;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:text-center {
+    text-align: center;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:text-right {
+    text-align: right;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:text-justify {
+    text-align: justify;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:text-start {
+    text-align: start;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:text-end {
+    text-align: end;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:text-match-parent {
+    text-align: match-parent;
+  }
+}
