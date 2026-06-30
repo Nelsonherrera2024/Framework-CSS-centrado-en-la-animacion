@@ -1,0 +1,194 @@
+/* white-space */
+.whitespace-normal {
+  white-space: normal;
+  white-space: normal !important;
+}
+.whitespace-nowrap {
+  white-space: nowrap;
+  white-space: nowrap !important;
+}
+.whitespace-pre {
+  white-space: pre;
+  white-space: pre !important;
+}
+.whitespace-pre-wrap {
+  white-space: pre-wrap;
+  white-space: pre-wrap !important;
+}
+.whitespace-pre-line {
+  white-space: pre-line;
+  white-space: pre-line !important;
+}
+.whitespace-break {
+  white-space: break-spaces;
+  white-space: break-spaces !important;
+}
+@media (min-width: 640px) {
+  .sm\:whitespace-normal {
+    white-space: normal;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:whitespace-nowrap {
+    white-space: nowrap;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:whitespace-pre {
+    white-space: pre;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:whitespace-pre-wrap {
+    white-space: pre-wrap;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:whitespace-pre-line {
+    white-space: pre-line;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:whitespace-break {
+    white-space: break-spaces;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:whitespace-normal {
+    white-space: normal;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:whitespace-nowrap {
+    white-space: nowrap;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:whitespace-pre {
+    white-space: pre;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:whitespace-pre-wrap {
+    white-space: pre-wrap;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:whitespace-pre-line {
+    white-space: pre-line;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:whitespace-break {
+    white-space: break-spaces;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:whitespace-normal {
+    white-space: normal;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:whitespace-nowrap {
+    white-space: nowrap;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:whitespace-pre {
+    white-space: pre;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:whitespace-pre-wrap {
+    white-space: pre-wrap;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:whitespace-pre-line {
+    white-space: pre-line;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:whitespace-break {
+    white-space: break-spaces;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:whitespace-normal {
+    white-space: normal;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:whitespace-nowrap {
+    white-space: nowrap;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:whitespace-pre {
+    white-space: pre;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:whitespace-pre-wrap {
+    white-space: pre-wrap;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:whitespace-pre-line {
+    white-space: pre-line;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:whitespace-break {
+    white-space: break-spaces;
+  }
+}
+/* text-wrap */
+.whitespace-pretty {
+  text-wrap: pretty;
+  text-wrap: pretty !important;
+}
+.whitespace-balance {
+  text-wrap: balance;
+  text-wrap: balance !important;
+}
+@media (min-width: 640px) {
+  .sm\:whitespace-pretty {
+    text-wrap: pretty;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:whitespace-balance {
+    text-wrap: balance;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:whitespace-pretty {
+    text-wrap: pretty;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:whitespace-balance {
+    text-wrap: balance;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:whitespace-pretty {
+    text-wrap: pretty;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:whitespace-balance {
+    text-wrap: balance;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:whitespace-pretty {
+    text-wrap: pretty;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:whitespace-balance {
+    text-wrap: balance;
+  }
+}
