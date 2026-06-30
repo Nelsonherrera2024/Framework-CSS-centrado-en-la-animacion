@@ -1,0 +1,193 @@
+/* transition-property */
+.transition-none {
+  transition-property: none;
+  transition-property: none !important;
+}
+.transition-all {
+  transition-property: all;
+  transition-property: all !important;
+}
+.transition-colors {
+  transition-property: color, background-color, border-color;
+  transition-property: color, background-color, border-color !important;
+}
+.transition-opacity {
+  transition-property: opacity;
+  transition-property: opacity !important;
+}
+.transition-transform {
+  transition-property: transform;
+  transition-property: transform !important;
+}
+.transition-shadow {
+  transition-property: box-shadow;
+  transition-property: box-shadow !important;
+}
+.transition-width {
+  transition-property: width;
+  transition-property: width !important;
+}
+.transition-height {
+  transition-property: height;
+  transition-property: height !important;
+}
+@media (min-width: 640px) {
+  .sm\:transition-none {
+    transition-property: none;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:transition-all {
+    transition-property: all;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:transition-colors {
+    transition-property: color, background-color, border-color;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:transition-opacity {
+    transition-property: opacity;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:transition-transform {
+    transition-property: transform;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:transition-shadow {
+    transition-property: box-shadow;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:transition-width {
+    transition-property: width;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:transition-height {
+    transition-property: height;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:transition-none {
+    transition-property: none;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:transition-all {
+    transition-property: all;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:transition-colors {
+    transition-property: color, background-color, border-color;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:transition-opacity {
+    transition-property: opacity;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:transition-transform {
+    transition-property: transform;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:transition-shadow {
+    transition-property: box-shadow;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:transition-width {
+    transition-property: width;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:transition-height {
+    transition-property: height;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:transition-none {
+    transition-property: none;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:transition-all {
+    transition-property: all;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:transition-colors {
+    transition-property: color, background-color, border-color;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:transition-opacity {
+    transition-property: opacity;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:transition-transform {
+    transition-property: transform;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:transition-shadow {
+    transition-property: box-shadow;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:transition-width {
+    transition-property: width;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:transition-height {
+    transition-property: height;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:transition-none {
+    transition-property: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:transition-all {
+    transition-property: all;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:transition-colors {
+    transition-property: color, background-color, border-color;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:transition-opacity {
+    transition-property: opacity;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:transition-transform {
+    transition-property: transform;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:transition-shadow {
+    transition-property: box-shadow;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:transition-width {
+    transition-property: width;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:transition-height {
+    transition-property: height;
+  }
+}
