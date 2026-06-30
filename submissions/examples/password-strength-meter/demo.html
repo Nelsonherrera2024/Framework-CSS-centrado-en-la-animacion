@@ -3,21 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Password Strength Meter</title>
-  <link rel="stylesheet" href="../../easemotion.css">
+  <title>Password Strength Meter — EaseMotion CSS</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="ease-flex ease-center" style="min-height: 100vh; background: #f8fafc;">
-    <div class="psm-card">
-      <label class="psm-label" for="psmInput">Password</label>
-      <input type="password" id="psmInput" class="psm-input" placeholder="Enter a password..." autocomplete="off" />
-      <div class="psm-bar">
-        <div class="psm-fill" id="psmFill"></div>
-      </div>
-      <div class="psm-hint" id="psmHint">Enter a password to check strength</div>
-    </div>
-  </div>
-  <script src="script.js"></script>
+  <h1>Password Strength Meter</h1>
+  <p class="subtitle">A CSS-only password strength indicator bar — pure CSS.</p>
+  <section><h2>Demo</h2><p class="sec-desc">Strength levels shown with animated bars</p><div class="meter"><span class="label">Weak</span><div class="bar"><div class="fill weak"></div></div></div><div class="meter"><span class="label">Fair</span><div class="bar"><div class="fill fair"></div></div></div><div class="meter"><span class="label">Good</span><div class="bar"><div class="fill good"></div></div></div><div class="meter"><span class="label">Strong</span><div class="bar"><div class="fill strong"></div></div></div></section>
+  <section><h2>How It Works</h2><p>The strength meter uses <code>width</code> percentages and color transitions on the fill bar to indicate password strength levels.</p></section>
 </body>
 </html>
