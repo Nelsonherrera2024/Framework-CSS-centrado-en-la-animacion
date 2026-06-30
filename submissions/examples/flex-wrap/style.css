@@ -1,0 +1,217 @@
+/* flex-wrap */
+.flex-wrap {
+  flex-wrap: wrap;
+  flex-wrap: wrap !important;
+}
+.flex-nowrap {
+  flex-wrap: nowrap;
+  flex-wrap: nowrap !important;
+}
+.flex-wrap-reverse {
+  flex-wrap: wrap-reverse;
+  flex-wrap: wrap-reverse !important;
+}
+.flex-wrap-initial {
+  flex-wrap: initial;
+  flex-wrap: initial !important;
+}
+.flex-wrap-inherit {
+  flex-wrap: inherit;
+  flex-wrap: inherit !important;
+}
+.flex-wrap-unset {
+  flex-wrap: unset;
+  flex-wrap: unset !important;
+}
+.flex-wrap-revert {
+  flex-wrap: revert;
+  flex-wrap: revert !important;
+}
+.flex-wrap-balance {
+  flex-wrap: balance;
+  flex-wrap: balance !important;
+}
+.flex-wrap-ghost-left {
+  flex-wrap: <flex-wrap>;
+  flex-wrap: <flex-wrap> !important;
+}
+@media (min-width: 640px) {
+  .sm\:flex-wrap {
+    flex-wrap: wrap;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:flex-nowrap {
+    flex-wrap: nowrap;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:flex-wrap-reverse {
+    flex-wrap: wrap-reverse;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:flex-wrap-initial {
+    flex-wrap: initial;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:flex-wrap-inherit {
+    flex-wrap: inherit;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:flex-wrap-unset {
+    flex-wrap: unset;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:flex-wrap-revert {
+    flex-wrap: revert;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:flex-wrap-balance {
+    flex-wrap: balance;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:flex-wrap-ghost-left {
+    flex-wrap: <flex-wrap>;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:flex-wrap {
+    flex-wrap: wrap;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:flex-nowrap {
+    flex-wrap: nowrap;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:flex-wrap-reverse {
+    flex-wrap: wrap-reverse;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:flex-wrap-initial {
+    flex-wrap: initial;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:flex-wrap-inherit {
+    flex-wrap: inherit;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:flex-wrap-unset {
+    flex-wrap: unset;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:flex-wrap-revert {
+    flex-wrap: revert;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:flex-wrap-balance {
+    flex-wrap: balance;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:flex-wrap-ghost-left {
+    flex-wrap: <flex-wrap>;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:flex-wrap {
+    flex-wrap: wrap;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:flex-nowrap {
+    flex-wrap: nowrap;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:flex-wrap-reverse {
+    flex-wrap: wrap-reverse;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:flex-wrap-initial {
+    flex-wrap: initial;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:flex-wrap-inherit {
+    flex-wrap: inherit;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:flex-wrap-unset {
+    flex-wrap: unset;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:flex-wrap-revert {
+    flex-wrap: revert;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:flex-wrap-balance {
+    flex-wrap: balance;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:flex-wrap-ghost-left {
+    flex-wrap: <flex-wrap>;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:flex-wrap {
+    flex-wrap: wrap;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:flex-nowrap {
+    flex-wrap: nowrap;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:flex-wrap-reverse {
+    flex-wrap: wrap-reverse;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:flex-wrap-initial {
+    flex-wrap: initial;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:flex-wrap-inherit {
+    flex-wrap: inherit;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:flex-wrap-unset {
+    flex-wrap: unset;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:flex-wrap-revert {
+    flex-wrap: revert;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:flex-wrap-balance {
+    flex-wrap: balance;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:flex-wrap-ghost-left {
+    flex-wrap: <flex-wrap>;
+  }
+}
