@@ -1,0 +1,313 @@
+/* justify-content */
+.justify-normal {
+  justify-content: normal;
+  justify-content: normal !important;
+}
+.justify-center {
+  justify-content: center;
+  justify-content: center !important;
+}
+.justify-start {
+  justify-content: flex-start;
+  justify-content: flex-start !important;
+}
+.justify-end {
+  justify-content: flex-end;
+  justify-content: flex-end !important;
+}
+.justify-between {
+  justify-content: space-between;
+  justify-content: space-between !important;
+}
+.justify-around {
+  justify-content: space-around;
+  justify-content: space-around !important;
+}
+.justify-evenly {
+  justify-content: space-evenly;
+  justify-content: space-evenly !important;
+}
+.justify-stretch {
+  justify-content: stretch;
+  justify-content: stretch !important;
+}
+.justify-left {
+  justify-content: left;
+  justify-content: left !important;
+}
+.justify-right {
+  justify-content: right;
+  justify-content: right !important;
+}
+.justify-baseline {
+  justify-content: baseline;
+  justify-content: baseline !important;
+}
+.justify-first-baseline {
+  justify-content: first baseline;
+  justify-content: first baseline !important;
+}
+.justify-last-baseline {
+  justify-content: last baseline;
+  justify-content: last baseline !important;
+}
+@media (min-width: 640px) {
+  .sm\:justify-normal {
+    justify-content: normal;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:justify-center {
+    justify-content: center;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:justify-start {
+    justify-content: flex-start;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:justify-end {
+    justify-content: flex-end;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:justify-between {
+    justify-content: space-between;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:justify-around {
+    justify-content: space-around;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:justify-evenly {
+    justify-content: space-evenly;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:justify-stretch {
+    justify-content: stretch;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:justify-left {
+    justify-content: left;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:justify-right {
+    justify-content: right;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:justify-baseline {
+    justify-content: baseline;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:justify-first-baseline {
+    justify-content: first baseline;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:justify-last-baseline {
+    justify-content: last baseline;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:justify-normal {
+    justify-content: normal;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:justify-center {
+    justify-content: center;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:justify-start {
+    justify-content: flex-start;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:justify-end {
+    justify-content: flex-end;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:justify-between {
+    justify-content: space-between;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:justify-around {
+    justify-content: space-around;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:justify-evenly {
+    justify-content: space-evenly;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:justify-stretch {
+    justify-content: stretch;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:justify-left {
+    justify-content: left;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:justify-right {
+    justify-content: right;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:justify-baseline {
+    justify-content: baseline;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:justify-first-baseline {
+    justify-content: first baseline;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:justify-last-baseline {
+    justify-content: last baseline;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:justify-normal {
+    justify-content: normal;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:justify-center {
+    justify-content: center;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:justify-start {
+    justify-content: flex-start;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:justify-end {
+    justify-content: flex-end;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:justify-between {
+    justify-content: space-between;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:justify-around {
+    justify-content: space-around;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:justify-evenly {
+    justify-content: space-evenly;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:justify-stretch {
+    justify-content: stretch;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:justify-left {
+    justify-content: left;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:justify-right {
+    justify-content: right;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:justify-baseline {
+    justify-content: baseline;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:justify-first-baseline {
+    justify-content: first baseline;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:justify-last-baseline {
+    justify-content: last baseline;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:justify-normal {
+    justify-content: normal;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:justify-center {
+    justify-content: center;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:justify-start {
+    justify-content: flex-start;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:justify-end {
+    justify-content: flex-end;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:justify-between {
+    justify-content: space-between;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:justify-around {
+    justify-content: space-around;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:justify-evenly {
+    justify-content: space-evenly;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:justify-stretch {
+    justify-content: stretch;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:justify-left {
+    justify-content: left;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:justify-right {
+    justify-content: right;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:justify-baseline {
+    justify-content: baseline;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:justify-first-baseline {
+    justify-content: first baseline;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:justify-last-baseline {
+    justify-content: last baseline;
+  }
+}
