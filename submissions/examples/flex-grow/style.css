@@ -1,0 +1,337 @@
+/* flex-grow */
+.grow-0 {
+  flex-grow: 0;
+  flex-grow: 0 !important;
+}
+.grow {
+  flex-grow: 1;
+  flex-grow: 1 !important;
+}
+.grow-2 {
+  flex-grow: 2;
+  flex-grow: 2 !important;
+}
+.grow-3 {
+  flex-grow: 3;
+  flex-grow: 3 !important;
+}
+.grow-4 {
+  flex-grow: 4;
+  flex-grow: 4 !important;
+}
+.grow-5 {
+  flex-grow: 5;
+  flex-grow: 5 !important;
+}
+.grow-full {
+  flex-grow: 999;
+  flex-grow: 999 !important;
+}
+.grow-auto {
+  flex-grow: auto;
+  flex-grow: auto !important;
+}
+.grow-none {
+  flex-grow: 0;
+  flex-grow: 0 !important;
+}
+.grow-inherit {
+  flex-grow: inherit;
+  flex-grow: inherit !important;
+}
+.grow-initial {
+  flex-grow: initial;
+  flex-grow: initial !important;
+}
+.grow-unset {
+  flex-grow: unset;
+  flex-grow: unset !important;
+}
+.grow-revert {
+  flex-grow: revert;
+  flex-grow: revert !important;
+}
+.grow-max {
+  flex-grow: 9999;
+  flex-grow: 9999 !important;
+}
+@media (min-width: 640px) {
+  .sm\:grow-0 {
+    flex-grow: 0;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:grow {
+    flex-grow: 1;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:grow-2 {
+    flex-grow: 2;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:grow-3 {
+    flex-grow: 3;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:grow-4 {
+    flex-grow: 4;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:grow-5 {
+    flex-grow: 5;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:grow-full {
+    flex-grow: 999;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:grow-auto {
+    flex-grow: auto;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:grow-none {
+    flex-grow: 0;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:grow-inherit {
+    flex-grow: inherit;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:grow-initial {
+    flex-grow: initial;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:grow-unset {
+    flex-grow: unset;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:grow-revert {
+    flex-grow: revert;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:grow-max {
+    flex-grow: 9999;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:grow-0 {
+    flex-grow: 0;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:grow {
+    flex-grow: 1;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:grow-2 {
+    flex-grow: 2;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:grow-3 {
+    flex-grow: 3;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:grow-4 {
+    flex-grow: 4;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:grow-5 {
+    flex-grow: 5;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:grow-full {
+    flex-grow: 999;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:grow-auto {
+    flex-grow: auto;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:grow-none {
+    flex-grow: 0;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:grow-inherit {
+    flex-grow: inherit;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:grow-initial {
+    flex-grow: initial;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:grow-unset {
+    flex-grow: unset;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:grow-revert {
+    flex-grow: revert;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:grow-max {
+    flex-grow: 9999;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:grow-0 {
+    flex-grow: 0;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:grow {
+    flex-grow: 1;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:grow-2 {
+    flex-grow: 2;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:grow-3 {
+    flex-grow: 3;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:grow-4 {
+    flex-grow: 4;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:grow-5 {
+    flex-grow: 5;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:grow-full {
+    flex-grow: 999;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:grow-auto {
+    flex-grow: auto;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:grow-none {
+    flex-grow: 0;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:grow-inherit {
+    flex-grow: inherit;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:grow-initial {
+    flex-grow: initial;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:grow-unset {
+    flex-grow: unset;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:grow-revert {
+    flex-grow: revert;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:grow-max {
+    flex-grow: 9999;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:grow-0 {
+    flex-grow: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:grow {
+    flex-grow: 1;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:grow-2 {
+    flex-grow: 2;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:grow-3 {
+    flex-grow: 3;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:grow-4 {
+    flex-grow: 4;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:grow-5 {
+    flex-grow: 5;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:grow-full {
+    flex-grow: 999;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:grow-auto {
+    flex-grow: auto;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:grow-none {
+    flex-grow: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:grow-inherit {
+    flex-grow: inherit;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:grow-initial {
+    flex-grow: initial;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:grow-unset {
+    flex-grow: unset;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:grow-revert {
+    flex-grow: revert;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:grow-max {
+    flex-grow: 9999;
+  }
+}
