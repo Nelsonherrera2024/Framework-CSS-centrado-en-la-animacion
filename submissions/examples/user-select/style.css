@@ -1,0 +1,145 @@
+/* user-select */
+.select-none {
+  user-select: none;
+  user-select: none !important;
+}
+.select-text {
+  user-select: text;
+  user-select: text !important;
+}
+.select-all {
+  user-select: all;
+  user-select: all !important;
+}
+.select-contain {
+  user-select: contain;
+  user-select: contain !important;
+}
+.select-auto {
+  user-select: auto;
+  user-select: auto !important;
+}
+.select-all-auto {
+  user-select: all auto;
+  user-select: all auto !important;
+}
+@media (min-width: 640px) {
+  .sm\:select-none {
+    user-select: none;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:select-text {
+    user-select: text;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:select-all {
+    user-select: all;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:select-contain {
+    user-select: contain;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:select-auto {
+    user-select: auto;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:select-all-auto {
+    user-select: all auto;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:select-none {
+    user-select: none;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:select-text {
+    user-select: text;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:select-all {
+    user-select: all;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:select-contain {
+    user-select: contain;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:select-auto {
+    user-select: auto;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:select-all-auto {
+    user-select: all auto;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:select-none {
+    user-select: none;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:select-text {
+    user-select: text;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:select-all {
+    user-select: all;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:select-contain {
+    user-select: contain;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:select-auto {
+    user-select: auto;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:select-all-auto {
+    user-select: all auto;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:select-none {
+    user-select: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:select-text {
+    user-select: text;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:select-all {
+    user-select: all;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:select-contain {
+    user-select: contain;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:select-auto {
+    user-select: auto;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:select-all-auto {
+    user-select: all auto;
+  }
+}
