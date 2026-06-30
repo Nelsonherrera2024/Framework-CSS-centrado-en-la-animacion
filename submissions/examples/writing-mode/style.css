@@ -1,0 +1,121 @@
+/* writing-mode */
+.write-horizontal {
+  writing-mode: horizontal-tb;
+  writing-mode: horizontal-tb !important;
+}
+.write-vertical-lr {
+  writing-mode: vertical-lr;
+  writing-mode: vertical-lr !important;
+}
+.write-vertical-rl {
+  writing-mode: vertical-rl;
+  writing-mode: vertical-rl !important;
+}
+.write-sideways-lr {
+  writing-mode: sideways-lr;
+  writing-mode: sideways-lr !important;
+}
+.write-sideways-rl {
+  writing-mode: sideways-rl;
+  writing-mode: sideways-rl !important;
+}
+@media (min-width: 640px) {
+  .sm\:write-horizontal {
+    writing-mode: horizontal-tb;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:write-vertical-lr {
+    writing-mode: vertical-lr;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:write-vertical-rl {
+    writing-mode: vertical-rl;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:write-sideways-lr {
+    writing-mode: sideways-lr;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:write-sideways-rl {
+    writing-mode: sideways-rl;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:write-horizontal {
+    writing-mode: horizontal-tb;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:write-vertical-lr {
+    writing-mode: vertical-lr;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:write-vertical-rl {
+    writing-mode: vertical-rl;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:write-sideways-lr {
+    writing-mode: sideways-lr;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:write-sideways-rl {
+    writing-mode: sideways-rl;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:write-horizontal {
+    writing-mode: horizontal-tb;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:write-vertical-lr {
+    writing-mode: vertical-lr;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:write-vertical-rl {
+    writing-mode: vertical-rl;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:write-sideways-lr {
+    writing-mode: sideways-lr;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:write-sideways-rl {
+    writing-mode: sideways-rl;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:write-horizontal {
+    writing-mode: horizontal-tb;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:write-vertical-lr {
+    writing-mode: vertical-lr;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:write-vertical-rl {
+    writing-mode: vertical-rl;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:write-sideways-lr {
+    writing-mode: sideways-lr;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:write-sideways-rl {
+    writing-mode: sideways-rl;
+  }
+}
