@@ -1,0 +1,121 @@
+/* text-underline-position */
+.underline-auto {
+  text-underline-position: auto;
+  text-underline-position: auto !important;
+}
+.underline-under {
+  text-underline-position: under;
+  text-underline-position: under !important;
+}
+.underline-left {
+  text-underline-position: left;
+  text-underline-position: left !important;
+}
+.underline-right {
+  text-underline-position: right;
+  text-underline-position: right !important;
+}
+.underline-from-font {
+  text-underline-position: from-font;
+  text-underline-position: from-font !important;
+}
+@media (min-width: 640px) {
+  .sm\:underline-auto {
+    text-underline-position: auto;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:underline-under {
+    text-underline-position: under;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:underline-left {
+    text-underline-position: left;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:underline-right {
+    text-underline-position: right;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:underline-from-font {
+    text-underline-position: from-font;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:underline-auto {
+    text-underline-position: auto;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:underline-under {
+    text-underline-position: under;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:underline-left {
+    text-underline-position: left;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:underline-right {
+    text-underline-position: right;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:underline-from-font {
+    text-underline-position: from-font;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:underline-auto {
+    text-underline-position: auto;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:underline-under {
+    text-underline-position: under;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:underline-left {
+    text-underline-position: left;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:underline-right {
+    text-underline-position: right;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:underline-from-font {
+    text-underline-position: from-font;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:underline-auto {
+    text-underline-position: auto;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:underline-under {
+    text-underline-position: under;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:underline-left {
+    text-underline-position: left;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:underline-right {
+    text-underline-position: right;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:underline-from-font {
+    text-underline-position: from-font;
+  }
+}
