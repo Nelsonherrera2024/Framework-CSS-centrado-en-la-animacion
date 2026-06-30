@@ -1,0 +1,481 @@
+/* text-size-adjust */
+.text-size-adjust-auto {
+  text-size-adjust: auto;
+  text-size-adjust: auto !important;
+}
+.text-size-adjust-none {
+  text-size-adjust: none;
+  text-size-adjust: none !important;
+}
+.text-size-adjust-100 {
+  text-size-adjust: 100%;
+  text-size-adjust: 100% !important;
+}
+.text-size-adjust-150 {
+  text-size-adjust: 150%;
+  text-size-adjust: 150% !important;
+}
+.text-size-adjust-200 {
+  text-size-adjust: 200%;
+  text-size-adjust: 200% !important;
+}
+.text-size-adjust-inherit {
+  text-size-adjust: inherit;
+  text-size-adjust: inherit !important;
+}
+.text-size-adjust-initial {
+  text-size-adjust: initial;
+  text-size-adjust: initial !important;
+}
+.text-size-adjust-unset {
+  text-size-adjust: unset;
+  text-size-adjust: unset !important;
+}
+.text-adjust-auto {
+  text-size-adjust: auto;
+  text-size-adjust: auto !important;
+}
+.text-adjust-none {
+  text-size-adjust: none;
+  text-size-adjust: none !important;
+}
+.adjust-auto {
+  text-size-adjust: auto;
+  text-size-adjust: auto !important;
+}
+.adjust-none {
+  text-size-adjust: none;
+  text-size-adjust: none !important;
+}
+.text-size-adjust-value-auto {
+  text-size-adjust: auto;
+  text-size-adjust: auto !important;
+}
+.text-size-adjust-value-none {
+  text-size-adjust: none;
+  text-size-adjust: none !important;
+}
+.text-adjust-auto-2 {
+  text-size-adjust: auto;
+  text-size-adjust: auto !important;
+}
+.text-adjust-none-2 {
+  text-size-adjust: none;
+  text-size-adjust: none !important;
+}
+.text-size-adjust-150pct {
+  text-size-adjust: 150%;
+  text-size-adjust: 150% !important;
+}
+.text-size-adjust-200pct {
+  text-size-adjust: 200%;
+  text-size-adjust: 200% !important;
+}
+.text-size-adjust-phone {
+  text-size-adjust: auto;
+  text-size-adjust: auto !important;
+}
+.text-size-adjust-tablet {
+  text-size-adjust: auto;
+  text-size-adjust: auto !important;
+}
+@media (min-width: 640px) {
+  .sm\:text-size-adjust-auto {
+    text-size-adjust: auto;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:text-size-adjust-none {
+    text-size-adjust: none;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:text-size-adjust-100 {
+    text-size-adjust: 100%;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:text-size-adjust-150 {
+    text-size-adjust: 150%;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:text-size-adjust-200 {
+    text-size-adjust: 200%;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:text-size-adjust-inherit {
+    text-size-adjust: inherit;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:text-size-adjust-initial {
+    text-size-adjust: initial;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:text-size-adjust-unset {
+    text-size-adjust: unset;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:text-adjust-auto {
+    text-size-adjust: auto;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:text-adjust-none {
+    text-size-adjust: none;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:adjust-auto {
+    text-size-adjust: auto;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:adjust-none {
+    text-size-adjust: none;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:text-size-adjust-value-auto {
+    text-size-adjust: auto;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:text-size-adjust-value-none {
+    text-size-adjust: none;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:text-adjust-auto-2 {
+    text-size-adjust: auto;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:text-adjust-none-2 {
+    text-size-adjust: none;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:text-size-adjust-150pct {
+    text-size-adjust: 150%;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:text-size-adjust-200pct {
+    text-size-adjust: 200%;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:text-size-adjust-phone {
+    text-size-adjust: auto;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:text-size-adjust-tablet {
+    text-size-adjust: auto;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:text-size-adjust-auto {
+    text-size-adjust: auto;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:text-size-adjust-none {
+    text-size-adjust: none;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:text-size-adjust-100 {
+    text-size-adjust: 100%;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:text-size-adjust-150 {
+    text-size-adjust: 150%;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:text-size-adjust-200 {
+    text-size-adjust: 200%;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:text-size-adjust-inherit {
+    text-size-adjust: inherit;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:text-size-adjust-initial {
+    text-size-adjust: initial;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:text-size-adjust-unset {
+    text-size-adjust: unset;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:text-adjust-auto {
+    text-size-adjust: auto;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:text-adjust-none {
+    text-size-adjust: none;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:adjust-auto {
+    text-size-adjust: auto;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:adjust-none {
+    text-size-adjust: none;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:text-size-adjust-value-auto {
+    text-size-adjust: auto;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:text-size-adjust-value-none {
+    text-size-adjust: none;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:text-adjust-auto-2 {
+    text-size-adjust: auto;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:text-adjust-none-2 {
+    text-size-adjust: none;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:text-size-adjust-150pct {
+    text-size-adjust: 150%;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:text-size-adjust-200pct {
+    text-size-adjust: 200%;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:text-size-adjust-phone {
+    text-size-adjust: auto;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:text-size-adjust-tablet {
+    text-size-adjust: auto;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:text-size-adjust-auto {
+    text-size-adjust: auto;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:text-size-adjust-none {
+    text-size-adjust: none;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:text-size-adjust-100 {
+    text-size-adjust: 100%;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:text-size-adjust-150 {
+    text-size-adjust: 150%;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:text-size-adjust-200 {
+    text-size-adjust: 200%;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:text-size-adjust-inherit {
+    text-size-adjust: inherit;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:text-size-adjust-initial {
+    text-size-adjust: initial;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:text-size-adjust-unset {
+    text-size-adjust: unset;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:text-adjust-auto {
+    text-size-adjust: auto;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:text-adjust-none {
+    text-size-adjust: none;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:adjust-auto {
+    text-size-adjust: auto;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:adjust-none {
+    text-size-adjust: none;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:text-size-adjust-value-auto {
+    text-size-adjust: auto;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:text-size-adjust-value-none {
+    text-size-adjust: none;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:text-adjust-auto-2 {
+    text-size-adjust: auto;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:text-adjust-none-2 {
+    text-size-adjust: none;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:text-size-adjust-150pct {
+    text-size-adjust: 150%;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:text-size-adjust-200pct {
+    text-size-adjust: 200%;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:text-size-adjust-phone {
+    text-size-adjust: auto;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:text-size-adjust-tablet {
+    text-size-adjust: auto;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:text-size-adjust-auto {
+    text-size-adjust: auto;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:text-size-adjust-none {
+    text-size-adjust: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:text-size-adjust-100 {
+    text-size-adjust: 100%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:text-size-adjust-150 {
+    text-size-adjust: 150%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:text-size-adjust-200 {
+    text-size-adjust: 200%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:text-size-adjust-inherit {
+    text-size-adjust: inherit;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:text-size-adjust-initial {
+    text-size-adjust: initial;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:text-size-adjust-unset {
+    text-size-adjust: unset;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:text-adjust-auto {
+    text-size-adjust: auto;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:text-adjust-none {
+    text-size-adjust: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:adjust-auto {
+    text-size-adjust: auto;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:adjust-none {
+    text-size-adjust: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:text-size-adjust-value-auto {
+    text-size-adjust: auto;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:text-size-adjust-value-none {
+    text-size-adjust: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:text-adjust-auto-2 {
+    text-size-adjust: auto;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:text-adjust-none-2 {
+    text-size-adjust: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:text-size-adjust-150pct {
+    text-size-adjust: 150%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:text-size-adjust-200pct {
+    text-size-adjust: 200%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:text-size-adjust-phone {
+    text-size-adjust: auto;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:text-size-adjust-tablet {
+    text-size-adjust: auto;
+  }
+}
