@@ -1,20 +1,19 @@
 # Accordion Component
 
-A reusable accordion component for EaseMotion CSS.
+A smooth, animated Accordion component for EaseMotion CSS.
+
+## Overview
+This component allows users to toggle content visibility with smooth height transitions, making it perfect for FAQs and feature lists.
 
 ## Features
+- **Smooth Animations**: Uses `cubic-bezier` timing for fluid opening/closing.
+- **Auto-Collapse**: Automatically closes other sections when one is opened.
+- **Accessible**: Clean structure for easy focus and interaction.
 
-- Smooth expand/collapse animation
-- Responsive layout
-- Clean modern design
-- Easy customization
-- Vanilla HTML/CSS/JavaScript
+## How to Integrate
+1. Copy the HTML structure for `.accordion-item`.
+2. Include the JavaScript logic to handle the `max-height` toggle.
+3. Customize styles in `style.css` using the provided classes.
 
-## Files
-
-- index.html
-- style.css
-
-## Preview
-
-Accordion component with animated content reveal and modern UI styling.
+## Contribution
+Built for GSSoC 2026.
