@@ -1,0 +1,97 @@
+/* text-orientation */
+.orient-mixed {
+  text-orientation: mixed;
+  text-orientation: mixed !important;
+}
+.orient-upright {
+  text-orientation: upright;
+  text-orientation: upright !important;
+}
+.orient-sideways {
+  text-orientation: sideways;
+  text-orientation: sideways !important;
+}
+.orient-use-glyph {
+  text-orientation: use-glyphs;
+  text-orientation: use-glyphs !important;
+}
+@media (min-width: 640px) {
+  .sm\:orient-mixed {
+    text-orientation: mixed;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:orient-upright {
+    text-orientation: upright;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:orient-sideways {
+    text-orientation: sideways;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:orient-use-glyph {
+    text-orientation: use-glyphs;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:orient-mixed {
+    text-orientation: mixed;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:orient-upright {
+    text-orientation: upright;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:orient-sideways {
+    text-orientation: sideways;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:orient-use-glyph {
+    text-orientation: use-glyphs;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:orient-mixed {
+    text-orientation: mixed;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:orient-upright {
+    text-orientation: upright;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:orient-sideways {
+    text-orientation: sideways;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:orient-use-glyph {
+    text-orientation: use-glyphs;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:orient-mixed {
+    text-orientation: mixed;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:orient-upright {
+    text-orientation: upright;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:orient-sideways {
+    text-orientation: sideways;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:orient-use-glyph {
+    text-orientation: use-glyphs;
+  }
+}
