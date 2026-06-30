@@ -1,0 +1,122 @@
+/* font-variant */
+.font-variant-normal {
+  font-variant: normal;
+  font-variant: normal !important;
+}
+.font-variant-smallcaps {
+  font-variant: small-caps;
+  font-variant: small-caps !important;
+}
+@media (min-width: 640px) {
+  .sm\:font-variant-normal {
+    font-variant: normal;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:font-variant-smallcaps {
+    font-variant: small-caps;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:font-variant-normal {
+    font-variant: normal;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:font-variant-smallcaps {
+    font-variant: small-caps;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:font-variant-normal {
+    font-variant: normal;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:font-variant-smallcaps {
+    font-variant: small-caps;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:font-variant-normal {
+    font-variant: normal;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:font-variant-smallcaps {
+    font-variant: small-caps;
+  }
+}
+/* font-variant-numeric */
+.font-variant-ordinal {
+  font-variant-numeric: ordinal;
+  font-variant-numeric: ordinal !important;
+}
+.font-variant-lining {
+  font-variant-numeric: lining-nums;
+  font-variant-numeric: lining-nums !important;
+}
+.font-variant-oldstyle {
+  font-variant-numeric: oldstyle-nums;
+  font-variant-numeric: oldstyle-nums !important;
+}
+@media (min-width: 640px) {
+  .sm\:font-variant-ordinal {
+    font-variant-numeric: ordinal;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:font-variant-lining {
+    font-variant-numeric: lining-nums;
+  }
+}
+@media (min-width: 640px) {
+  .sm\:font-variant-oldstyle {
+    font-variant-numeric: oldstyle-nums;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:font-variant-ordinal {
+    font-variant-numeric: ordinal;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:font-variant-lining {
+    font-variant-numeric: lining-nums;
+  }
+}
+@media (min-width: 1024px) {
+  .lg\:font-variant-oldstyle {
+    font-variant-numeric: oldstyle-nums;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:font-variant-ordinal {
+    font-variant-numeric: ordinal;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:font-variant-lining {
+    font-variant-numeric: lining-nums;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  .dark\:font-variant-oldstyle {
+    font-variant-numeric: oldstyle-nums;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:font-variant-ordinal {
+    font-variant-numeric: ordinal;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:font-variant-lining {
+    font-variant-numeric: lining-nums;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:font-variant-oldstyle {
+    font-variant-numeric: oldstyle-nums;
+  }
+}
