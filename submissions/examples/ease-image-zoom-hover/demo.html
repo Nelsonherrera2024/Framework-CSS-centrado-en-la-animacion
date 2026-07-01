@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Component: ease-image-zoom-hover — EaseMotion CSS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <span class="badge" id="component-badge">New Component</span>
+      <h1 id="main-heading">ease-image-zoom-hover</h1>
+      <p class="lead">A premium, highly-customizable pure CSS image hover zoom component featuring a smooth glassmorphic overlay and an animated zoom-in hint icon.</p>
+    </header>
+
+    <!-- Showcase Grid -->
+    <main class="showcase-grid">
+      
+      <!-- 1. Default Image Zoom -->
+      <article class="card">
+        <div class="card-image-wrapper">
+          <div class="ease-image-zoom-hover">
+            <img src="assets/scenic.png" alt="Sunset mountain scenic view" class="ease-image-zoom-img">
+            <div class="ease-image-zoom-overlay">
+              <svg class="ease-image-zoom-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <span class="card-tag">Default</span>
+          <h3 class="card-title">Classic Zoom</h3>
+          <p class="card-text">Smooth 1.15x scaling transition with a glassmorphic dark overlay and zoom-in indicator icon.</p>
+        </div>
+      </article>
+
+      <!-- 2. Subtle Zoom -->
+      <article class="card">
+        <div class="card-image-wrapper">
+          <div class="ease-image-zoom-hover ease-image-zoom-hover--subtle">
+            <img src="assets/architectural.png" alt="Modern luxury villa architecture" class="ease-image-zoom-img">
+            <div class="ease-image-zoom-overlay">
+              <svg class="ease-image-zoom-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <span class="card-tag">--subtle</span>
+          <h3 class="card-title">Gentle Scale</h3>
+          <p class="card-text">Subtle 1.07x zoom. Perfect for cleaner, more modern interfaces where minimalist transitions are desired.</p>
+        </div>
+      </article>
+
+      <!-- 3. Intense Zoom -->
+      <article class="card">
+        <div class="card-image-wrapper">
+          <div class="ease-image-zoom-hover ease-image-zoom-hover--intense">
+            <img src="assets/digital_art.png" alt="Premium glowing digital ribbon artwork" class="ease-image-zoom-img">
+            <div class="ease-image-zoom-overlay">
+              <svg class="ease-image-zoom-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <span class="card-tag">--intense</span>
+          <h3 class="card-title">Dramatic Focus</h3>
+          <p class="card-text">Aggressive 1.25x scaling for rich imagery, product zooms, or galleries highlighting finer details.</p>
+        </div>
+      </article>
+
+      <!-- 4. Slow Transition Zoom -->
+      <article class="card">
+        <div class="card-image-wrapper">
+          <div class="ease-image-zoom-hover ease-image-zoom-hover--slow">
+            <img src="assets/scenic.png" alt="Sunset mountain scenic view" class="ease-image-zoom-img">
+            <div class="ease-image-zoom-overlay">
+              <svg class="ease-image-zoom-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <span class="card-tag">--slow</span>
+          <h3 class="card-title">Slow Motion</h3>
+          <p class="card-text">Elongated 0.75s transition that emphasizes a luxurious, premium feel for editorial layouts.</p>
+        </div>
+      </article>
+
+      <!-- 5. No Overlay Zoom -->
+      <article class="card">
+        <div class="card-image-wrapper">
+          <div class="ease-image-zoom-hover ease-image-zoom-hover--no-overlay">
+            <img src="assets/architectural.png" alt="Modern luxury villa architecture" class="ease-image-zoom-img">
+            <div class="ease-image-zoom-overlay">
+              <!-- Overlay markup exists but is hidden via modifier class -->
+              <svg class="ease-image-zoom-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <span class="card-tag">--no-overlay</span>
+          <h3 class="card-title">Pure Image Zoom</h3>
+          <p class="card-text">No dark overlay mask or search icon. Only the image zooms smoothly inside its card frame.</p>
+        </div>
+      </article>
+
+      <!-- 6. Custom CSS Variables Override -->
+      <article class="card">
+        <div class="card-image-wrapper">
+          <div class="ease-image-zoom-hover custom-zoom-card">
+            <img src="assets/digital_art.png" alt="Premium glowing digital ribbon artwork" class="ease-image-zoom-img">
+            <div class="ease-image-zoom-overlay">
+              <svg class="ease-image-zoom-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                <line x1="11" y1="8" x2="11" y2="14"></line>
+                <line x1="8" y1="11" x2="14" y2="11"></line>
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <span class="card-tag">CSS Custom Vars</span>
+          <h3 class="card-title">Purple 1.35x Override</h3>
+          <p class="card-text">Demonstrates customization via CSS variables, using a purple backdrop, custom duration, and larger scale.</p>
+        </div>
+      </article>
+
+    </main>
+
+    <!-- Documentation Section -->
+    <section class="docs-section">
+      <h2 id="docs-heading">Component Documentation</h2>
+      
+      <p>Integrating the component is simple. Wrap your image and overlay HTML markup with the container class <code>.ease-image-zoom-hover</code>. Customize behavior by appending modifiers or overriding design variables.</p>
+
+      <pre class="code-block"><code class="language-html"><span class="code-tag">&lt;div</span> <span class="code-attr">class</span>=<span class="code-string">"ease-image-zoom-hover"</span><span class="code-tag">&gt;</span>
+  <span class="code-tag">&lt;img</span> <span class="code-attr">src</span>=<span class="code-string">"image.jpg"</span> <span class="code-attr">alt</span>=<span class="code-string">"Description"</span> <span class="code-attr">class</span>=<span class="code-string">"ease-image-zoom-img"</span><span class="code-tag">&gt;</span>
+  <span class="code-tag">&lt;div</span> <span class="code-attr">class</span>=<span class="code-string">"ease-image-zoom-overlay"</span><span class="code-tag">&gt;</span>
+    <span class="code-tag">&lt;svg</span> <span class="code-attr">class</span>=<span class="code-string">"ease-image-zoom-icon"</span> <span class="code-attr">aria-hidden</span>=<span class="code-string">"true"</span><span class="code-tag">&gt;</span>...<span class="code-tag">&lt;/svg&gt;</span>
+  <span class="code-tag">&lt;/div&gt;</span>
+<span class="code-tag">&lt;/div&gt;</span></code></pre>
+
+      <h3>Modifier Classes</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Class Name</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>.ease-image-zoom-hover</code></td>
+            <td>Base</td>
+            <td>The core container wrapper. Enables hover-to-zoom context.</td>
+          </tr>
+          <tr>
+            <td><code>.ease-image-zoom-hover--subtle</code></td>
+            <td>Intensity Mod</td>
+            <td>Decreases the zoom scale to 1.07x.</td>
+          </tr>
+          <tr>
+            <td><code>.ease-image-zoom-hover--intense</code></td>
+            <td>Intensity Mod</td>
+            <td>Increases the zoom scale to 1.25x.</td>
+          </tr>
+          <tr>
+            <td><code>.ease-image-zoom-hover--slow</code></td>
+            <td>Speed Mod</td>
+            <td>Slows transition speed down to 0.75s.</td>
+          </tr>
+          <tr>
+            <td><code>.ease-image-zoom-hover--fast</code></td>
+            <td>Speed Mod</td>
+            <td>Speeds up transition to 0.25s.</td>
+          </tr>
+          <tr>
+            <td><code>.ease-image-zoom-hover--no-overlay</code></td>
+            <td>Display Mod</td>
+            <td>Hides the dark overlay and icon, zooming only the image.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3 style="margin-top: 2rem;">CSS Custom Customization Variables</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Custom Variable</th>
+            <th>Default Value</th>
+            <th>Purpose</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>--ease-zoom-scale</code></td>
+            <td><code>1.15</code></td>
+            <td>Scale factor applied to the image on hover (e.g. <code>1.25</code>).</td>
+          </tr>
+          <tr>
+            <td><code>--ease-zoom-duration</code></td>
+            <td><code>0.45s</code></td>
+            <td>Transition timing length for the scale, fade-in, and filter shifts.</td>
+          </tr>
+          <tr>
+            <td><code>--ease-zoom-ease</code></td>
+            <td><code>cubic-bezier(0.25, 1, 0.5, 1)</code></td>
+            <td>Transition easing curve for zoom and overlay fading.</td>
+          </tr>
+          <tr>
+            <td><code>--ease-zoom-overlay-bg</code></td>
+            <td><code>rgba(15, 23, 42, 0.4)</code></td>
+            <td>Overlay background overlay color and transparency.</td>
+          </tr>
+          <tr>
+            <td><code>--ease-zoom-icon-color</code></td>
+            <td><code>#ffffff</code></td>
+            <td>Fill/stroke color of the hint SVG icon.</td>
+          </tr>
+          <tr>
+            <td><code>--ease-zoom-icon-scale-init</code></td>
+            <td><code>0.7</code></td>
+            <td>Starting scale for the hint icon prior to hover animation.</td>
+          </tr>
+          <tr>
+            <td><code>--ease-zoom-icon-scale-hover</code></td>
+            <td><code>1</code></td>
+            <td>Final scale for the hint icon on hover.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <footer>
+      <p>Submitted for the <a href="https://github.com/SAPTARSHI-coder/EaseMotion-css" target="_blank" rel="noopener">EaseMotion CSS Framework</a>. Built with ⚡ CSS transition transform engine.</p>
+    </footer>
+  </div>
+
+</body>
+</html>
