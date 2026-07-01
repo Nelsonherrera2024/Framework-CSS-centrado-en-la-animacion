@@ -1,91 +1,152 @@
-/* Core Layout Utilities */
-.em-fab-container {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: center;
-  gap: 16px;
-  z-index: 9999;
+/* ================================================================
+   Component: ease-floating-action-button
+   EaseMotion CSS
+   ================================================================ */
+
+:root {
+  --ease-primary: #6c63ff;
+  --ease-primary-hover: #8b5cf6;
+  --ease-danger: #f43f5e;
+  --ease-bg: #f8fafc;
+  --ease-text: #ffffff;
+  --ease-shadow: 0 10px 25px rgba(108, 99, 255, 0.3);
+  --ease-transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* Base FAB button styling */
-.em-fab-trigger {
-  width: 56px;
-  height: 56px;
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: var(--ease-bg);
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+/* 
+  FAB Container 
+  Positioned relative for fixed positioning in real usage, 
+  but here relative to center it in the demo
+*/
+.ease-fab-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* Hidden checkbox hack for click functionality without JS */
+.ease-fab-toggle {
+  display: none;
+}
+
+/* Main FAB Button */
+.ease-fab-main {
+  width: 64px;
+  height: 64px;
+  background: var(--ease-primary);
+  color: var(--ease-text);
   border-radius: 50%;
-  background-color: #2563eb;
-  color: #ffffff;
-  border: none;
-  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 24px;
-  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
-              background-color 0.3s ease;
+  cursor: pointer;
+  box-shadow: var(--ease-shadow);
+  transition: transform var(--ease-transition), background var(--ease-transition);
+  z-index: 10;
+  position: relative;
 }
 
-.em-fab-trigger:hover {
-  background-color: #1d4ed8;
+.ease-fab-main:hover {
+  transform: scale(1.05);
+  background: var(--ease-primary-hover);
 }
 
-/* Rotate main icon when menu is open */
-.em-fab-container.open .em-fab-trigger {
+/* Icon rotation on active */
+.ease-fab-icon {
+  transition: transform var(--ease-transition);
+}
+.ease-fab-toggle:checked + .ease-fab-main .ease-fab-icon {
   transform: rotate(135deg);
-  background-color: #dc2626;
-  box-shadow: 0 4px 10px rgba(220, 38, 38, 0.3);
+}
+.ease-fab-toggle:checked + .ease-fab-main {
+  background: var(--ease-danger);
+  box-shadow: 0 10px 25px rgba(244, 63, 94, 0.3);
 }
 
-/* Speed dial menu box */
-.em-fab-speed-dial {
+/* Menu Items Container */
+.ease-fab-menu {
+  position: absolute;
+  bottom: 80px;
   display: flex;
   flex-direction: column-reverse;
+  align-items: center;
   gap: 12px;
-  pointer-events: none; /* Block clicks when hidden */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  pointer-events: none;
 }
 
-.em-fab-container.open .em-fab-speed-dial {
-  pointer-events: auto;
-}
-
-/* Individual speed dial actions */
-.em-fab-action {
-  width: 44px;
-  height: 44px;
+/* Individual Menu Items */
+.ease-fab-item {
+  width: 48px;
+  height: 48px;
+  background: #ffffff;
+  color: var(--ease-primary);
   border-radius: 50%;
-  background-color: #ffffff;
-  color: #4b5563;
-  border: 1px solid #e5e7eb;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   
-  /* Initial hidden state: scaled down and rotated backward */
+  /* Initial hidden state */
   opacity: 0;
-  transform: scale(0.4) rotate(-90deg) translateY(20px);
+  transform: translateY(20px) scale(0.5);
+  transition: all var(--ease-transition);
   
-  /* Smooth custom bounce curve */
-  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
-              opacity 0.3s ease,
-              background-color 0.2s ease;
-  
-  /* Staggered transition delay fallback */
-  transition-delay: var(--stagger-delay, 0ms);
+  /* Staggered delay handled via custom property */
+  transition-delay: calc(var(--item-index) * 0.05s);
+  pointer-events: auto;
 }
 
-.em-fab-action:hover {
-  background-color: #f3f4f6;
-  color: #1f2937;
+.ease-fab-item:hover {
+  background: var(--ease-primary);
+  color: #ffffff;
+  transform: scale(1.1) !important;
 }
 
-/* Revealed active states */
-.em-fab-container.open .em-fab-action {
+/* Active state: fan out */
+.ease-fab-toggle:checked ~ .ease-fab-menu {
+  pointer-events: auto;
+}
+.ease-fab-toggle:checked ~ .ease-fab-menu .ease-fab-item {
   opacity: 1;
-  transform: scale(1) rotate(0deg) translateY(0);
+  transform: translateY(0) scale(1);
+}
+
+/* Tooltip (Optional) */
+.ease-fab-item::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  right: 60px;
+  background: #334155;
+  color: #ffffff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: opacity 0.3s, transform 0.3s;
+  pointer-events: none;
+}
+.ease-fab-item:hover::before {
+  opacity: 1;
+  transform: translateX(0);
 }

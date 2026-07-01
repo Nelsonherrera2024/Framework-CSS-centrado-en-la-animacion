@@ -3,47 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EaseMotion - Floating Action Button Showcase</title>
+  <title>Ease Floating Action Button</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    body {
-      font-family: system-ui, -apple-system, sans-serif;
-      background-color: #f8fafc;
-      margin: 0;
-      padding: 40px;
-      color: #0f172a;
-    }
-    .demo-info {
-      max-width: 500px;
-    }
-    h1 { margin-bottom: 8px; font-size: 1.75rem; }
-    p { color: #64748b; font-size: 0.95rem; line-height: 1.5; }
-  </style>
 </head>
 <body>
 
-  <div class="demo-info">
-    <h1>Expandable Speed Dial FAB</h1>
-    <p>Click the action button in the bottom right corner to view the staggered entry, rotation, and spring-bounce animation scaling variables.</p>
-  </div>
+  <!-- FAB Component -->
+  <div class="ease-fab-container">
+    
+    <!-- Hidden checkbox to handle state -->
+    <input type="checkbox" id="fab-toggle" class="ease-fab-toggle">
+    
+    <!-- Main Button -->
+    <label for="fab-toggle" class="ease-fab-main" aria-label="Toggle Menu">
+      <span class="ease-fab-icon">+</span>
+    </label>
 
-  <div class="em-fab-container" id="speedDialFAB">
-    <button class="em-fab-trigger" aria-label="Toggle Menu" onclick="toggleFAB()">
-      ＋
-    </button>
-
-    <div class="em-fab-speed-dial">
-      <button class="em-fab-action" style="--stagger-delay: 50ms;" aria-label="Action 1">✉</button>
-      <button class="em-fab-action" style="--stagger-delay: 100ms;" aria-label="Action 2">📞</button>
-      <button class="em-fab-action" style="--stagger-delay: 150ms;" aria-label="Action 3">⚙</button>
+    <!-- Expanded Menu -->
+    <!-- Custom property --item-index controls the staggered animation delay -->
+    <div class="ease-fab-menu" role="menu">
+      <button class="ease-fab-item" style="--item-index: 1;" data-tooltip="Write Message" aria-label="Write Message">
+        ✎
+      </button>
+      <button class="ease-fab-item" style="--item-index: 2;" data-tooltip="Upload File" aria-label="Upload File">
+        ↑
+      </button>
+      <button class="ease-fab-item" style="--item-index: 3;" data-tooltip="Create Folder" aria-label="Create Folder">
+        📁
+      </button>
     </div>
+
   </div>
 
-  <script>
-    function toggleFAB() {
-      const fabContainer = document.getElementById('speedDialFAB');
-      fabContainer.classList.toggle('open');
-    }
-  </script>
 </body>
 </html>
