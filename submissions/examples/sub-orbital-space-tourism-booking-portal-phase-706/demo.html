@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sub-Orbital Space Tourism Booking Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="cosmos" aria-hidden="true">
+    <div class="starfield starfield-a"></div>
+    <div class="starfield starfield-b"></div>
+    <div class="starfield starfield-c"></div>
+    <div class="aurora aurora-left"></div>
+    <div class="aurora aurora-right"></div>
+  </div>
+
+  <main class="portal-shell">
+    <section class="hero-panel card reveal">
+      <div class="hero-copy">
+        <p class="eyebrow">Astra Horizon Voyages</p>
+        <h1>Sub-Orbital Space Tourism Booking Portal</h1>
+        <p class="hero-text">
+          Reserve a cinematic ascent above the Earth horizon with precision launch planning,
+          private cabin detailing, and astronaut-grade preparation presented in a luxury booking experience.
+        </p>
+        <div class="badge-row">
+          <span class="floating-badge badge-cyan">Launch Window Open</span>
+          <span class="floating-badge badge-gold">Cabin Ready</span>
+          <span class="floating-badge badge-green">Zero-G Training Included</span>
+          <span class="floating-badge badge-violet">Orbit Preview Active</span>
+        </div>
+        <div class="hero-actions">
+          <a class="action action-primary" href="#booking-controls">Secure Voyage</a>
+          <a class="action action-secondary" href="#packages">Explore Flight Suites</a>
+        </div>
+      </div>
+
+      <div class="hero-visual card-overlay">
+        <div class="hero-metrics">
+          <article class="metric-card">
+            <span class="metric-label">Apogee Target</span>
+            <strong>104 km</strong>
+            <span class="metric-detail">Earth-curve panorama</span>
+          </article>
+          <article class="metric-card">
+            <span class="metric-label">Cabin Silence</span>
+            <strong>17 dB</strong>
+            <span class="metric-detail">Pressurized luxury shell</span>
+          </article>
+        </div>
+        <div class="rocket-stage">
+          <svg class="rocket-scene" viewBox="0 0 520 600" role="img" aria-label="Sub-orbital rocket and space capsule above an Earth horizon">
+            <defs>
+              <linearGradient id="earthGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.2"></stop>
+                <stop offset="55%" stop-color="#3b82f6" stop-opacity="0.9"></stop>
+                <stop offset="100%" stop-color="#a78bfa" stop-opacity="0.2"></stop>
+              </linearGradient>
+              <linearGradient id="rocketBody" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#f8fafc"></stop>
+                <stop offset="100%" stop-color="#cbd5e1"></stop>
+              </linearGradient>
+              <linearGradient id="capsuleGlass" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#22d3ee"></stop>
+                <stop offset="100%" stop-color="#3b82f6"></stop>
+              </linearGradient>
+              <linearGradient id="engineGlow" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#facc15"></stop>
+                <stop offset="100%" stop-color="#fb7185"></stop>
+              </linearGradient>
+              <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+                <feGaussianBlur stdDeviation="10" result="blur"></feGaussianBlur>
+                <feMerge>
+                  <feMergeNode in="blur"></feMergeNode>
+                  <feMergeNode in="SourceGraphic"></feMergeNode>
+                </feMerge>
+              </filter>
+            </defs>
+
+            <g class="scene-stars">
+              <circle cx="85" cy="80" r="2"></circle>
+              <circle cx="146" cy="140" r="2.4"></circle>
+              <circle cx="432" cy="94" r="2"></circle>
+              <circle cx="392" cy="166" r="2.6"></circle>
+              <circle cx="218" cy="64" r="1.8"></circle>
+              <circle cx="318" cy="130" r="1.8"></circle>
+            </g>
+
+            <path class="orbit-path" d="M88 205C172 128 334 112 445 205"></path>
+            <circle class="orbit-pulse" cx="384" cy="165" r="8"></circle>
+
+            <g class="capsule-float">
+              <path d="M366 140c21 0 40 17 40 39 0 22-19 42-40 42s-39-20-39-42c0-22 18-39 39-39z" fill="#111827" stroke="#dbeafe" stroke-width="3"></path>
+              <circle cx="366" cy="179" r="20" fill="url(#capsuleGlass)"></circle>
+              <path d="M340 188h52" stroke="#f8fafc" stroke-width="3" stroke-linecap="round"></path>
+            </g>
+
+            <g class="launch-rings" filter="url(#softGlow)">
+              <circle cx="260" cy="360" r="78"></circle>
+              <circle cx="260" cy="360" r="112"></circle>
+            </g>
+
+            <g class="rocket-float">
+              <path d="M260 126c42 54 60 115 60 190v118H200V316c0-75 18-136 60-190z" fill="url(#rocketBody)"></path>
+              <path d="M260 92c21 0 40 14 46 34H214c6-20 25-34 46-34z" fill="#e2e8f0"></path>
+              <path d="M232 192h56v78h-56z" rx="28" fill="url(#capsuleGlass)"></path>
+              <path d="M200 304l-58 74h58z" fill="#3b82f6"></path>
+              <path d="M320 304l58 74h-58z" fill="#3b82f6"></path>
+              <path d="M230 434h60v58h-60z" fill="#cbd5e1"></path>
+              <path d="M230 492c6 26 18 46 30 66 12-20 24-40 30-66h-60z" fill="url(#engineGlow)" class="engine-flame"></path>
+              <path d="M214 346h92" stroke="#94a3b8" stroke-width="4" stroke-linecap="round"></path>
+              <path d="M228 386h64" stroke="#94a3b8" stroke-width="4" stroke-linecap="round"></path>
+            </g>
+
+            <g class="launch-pad">
+              <rect x="118" y="498" width="284" height="18" rx="9"></rect>
+              <rect x="145" y="516" width="230" height="14" rx="7"></rect>
+              <rect x="164" y="530" width="192" height="10" rx="5"></rect>
+              <circle cx="140" cy="507" r="6" class="launch-dot"></circle>
+              <circle cx="380" cy="507" r="6" class="launch-dot launch-delay"></circle>
+            </g>
+
+            <path class="earth-horizon" d="M36 570C103 520 178 496 260 496s157 24 224 74" stroke="url(#earthGlow)" stroke-width="16" stroke-linecap="round"></path>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="layout-grid">
+      <div class="main-column">
+        <section id="packages" class="card reveal">
+          <div class="section-heading">
+            <p class="eyebrow">Flight Packages</p>
+            <h2>Curated ascent profiles</h2>
+          </div>
+          <div class="package-grid">
+            <article class="package-card card-overlay">
+              <span class="package-tier">Stratos</span>
+              <h3>Panorama Ascent</h3>
+              <p>Window-dominant seating, guided Earth-rise briefing, and a smooth sub-orbital return arc.</p>
+              <ul class="package-list">
+                <li>12-minute microgravity interval</li>
+                <li>Private biometric fitting suite</li>
+                <li>Champagne recovery lounge access</li>
+              </ul>
+              <div class="package-foot">
+                <strong>$485K</strong>
+                <span>per voyager</span>
+              </div>
+            </article>
+            <article class="package-card card-overlay featured-package">
+              <span class="package-tier">Zenith</span>
+              <h3>Celestial Signature</h3>
+              <p>Priority launch timing, immersive orbit preview, and a premium capsule dining presentation.</p>
+              <ul class="package-list">
+                <li>18-minute microgravity interval</li>
+                <li>Private training concierge</li>
+                <li>Signature cabin memory portfolio</li>
+              </ul>
+              <div class="package-foot">
+                <strong>$760K</strong>
+                <span>most requested</span>
+              </div>
+            </article>
+            <article class="package-card card-overlay">
+              <span class="package-tier">Nocturne</span>
+              <h3>Twilight Horizon</h3>
+              <p>Golden-hour ascent designed for cinematic cloud bands, stargazing departure, and night landing.</p>
+              <ul class="package-list">
+                <li>Sunset trajectory alignment</li>
+                <li>Sky terrace arrival reception</li>
+                <li>Custom capsule fragrance program</li>
+              </ul>
+              <div class="package-foot">
+                <strong>$920K</strong>
+                <span>limited windows</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="card reveal">
+          <div class="section-heading">
+            <p class="eyebrow">Booking Timeline</p>
+            <h2>From reservation to liftoff</h2>
+          </div>
+          <div class="timeline">
+            <article class="timeline-item card-overlay">
+              <span class="timeline-day">T-30</span>
+              <div>
+                <h3>Flight matching</h3>
+                <p>Launch rhythm, seat orientation, nutrition profile, and preferred horizon lighting are confirmed.</p>
+              </div>
+            </article>
+            <article class="timeline-item card-overlay">
+              <span class="timeline-day">T-14</span>
+              <div>
+                <h3>Medical readiness</h3>
+                <p>Adaptive pressure simulation, vestibular calibration, and cabin tailoring are completed.</p>
+              </div>
+            </article>
+            <article class="timeline-item card-overlay">
+              <span class="timeline-day">T-03</span>
+              <div>
+                <h3>Spaceport arrival</h3>
+                <p>Personal capsule walkthrough, launch etiquette briefing, and suit pairing finalization begin.</p>
+              </div>
+            </article>
+            <article class="timeline-item card-overlay">
+              <span class="timeline-day">L-00</span>
+              <div>
+                <h3>Sub-orbital ascent</h3>
+                <p>Pulse-synced cabin lighting, Earth horizon reveal, and guided re-entry comfort sequence engage.</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="card reveal">
+          <div class="section-heading">
+            <p class="eyebrow">Spaceport Destination</p>
+            <h2>Choose your departure atmosphere</h2>
+          </div>
+          <div class="destination-grid">
+            <article class="destination-card card-overlay">
+              <h3>Atacama Skyport</h3>
+              <p>Desert clarity, black-sky dawn departures, and discreet arrival suites beside the launch ridge.</p>
+              <div class="destination-meta">
+                <span>Humidity 12%</span>
+                <span>Runway thermal stability high</span>
+              </div>
+            </article>
+            <article class="destination-card card-overlay">
+              <h3>Arctic Halo Port</h3>
+              <p>Ice horizon reflections, polar aurora climbs, and a glacier-view recovery salon.</p>
+              <div class="destination-meta">
+                <span>Visibility 94%</span>
+                <span>Night ascent priority</span>
+              </div>
+            </article>
+            <article class="destination-card card-overlay">
+              <h3>Oceanic Meridian</h3>
+              <p>Sea-level tranquility, sapphire cloud decks, and marine horizon lift profiles for cinematic departures.</p>
+              <div class="destination-meta">
+                <span>Crosswind low</span>
+                <span>Golden-hour boarding</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="card reveal">
+          <div class="section-heading">
+            <p class="eyebrow">Luxury Cabin Experience</p>
+            <h2>Comfort engineered for the edge of space</h2>
+          </div>
+          <div class="cabin-panel card-overlay">
+            <div class="cabin-copy">
+              <p>
+                The panoramic capsule combines sculpted seating, adaptive ambient lighting, personal acoustic shielding,
+                and an observation dome tuned for crisp planetary contrast during ascent and descent.
+              </p>
+              <div class="cabin-tags">
+                <span>Reclining observation shell</span>
+                <span>Temperature-zoned seating</span>
+                <span>Pressure-balanced refresh suite</span>
+              </div>
+            </div>
+            <div class="cabin-stats">
+              <article>
+                <span>Cabin pressure transition</span>
+                <strong>4.2 min</strong>
+              </article>
+              <article>
+                <span>View dome span</span>
+                <strong>220 deg</strong>
+              </article>
+              <article>
+                <span>Seat recline memory</span>
+                <strong>8 profiles</strong>
+              </article>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <aside class="side-column">
+        <section class="card reveal">
+          <div class="section-heading">
+            <p class="eyebrow">Passenger Readiness Dashboard</p>
+            <h2>Voyager status</h2>
+          </div>
+          <div class="readiness-list">
+            <article class="dashboard-card card-overlay">
+              <div class="dashboard-top">
+                <span>Training completion</span>
+                <strong>92%</strong>
+              </div>
+              <div class="progress-track">
+                <span class="progress-fill fill-cyan"></span>
+              </div>
+            </article>
+            <article class="dashboard-card card-overlay">
+              <div class="dashboard-top">
+                <span>Cabin fit profile</span>
+                <strong>Ready</strong>
+              </div>
+              <div class="status-chip chip-green">Biofit synchronized</div>
+            </article>
+            <article class="dashboard-card card-overlay">
+              <div class="dashboard-top">
+                <span>Cardiovascular tolerance</span>
+                <strong>Optimal</strong>
+              </div>
+              <div class="progress-track">
+                <span class="progress-fill fill-gold progress-short"></span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="card reveal">
+          <div class="section-heading">
+            <p class="eyebrow">Launch Intelligence</p>
+            <h2>Altitude and window cards</h2>
+          </div>
+          <div class="intel-grid">
+            <article class="intel-card card-overlay">
+              <span class="intel-label">Orbit altitude preview</span>
+              <strong>104 km</strong>
+              <p>Projected apex with 6.4 minutes of uninterrupted Earth-limb visibility.</p>
+            </article>
+            <article class="intel-card card-overlay">
+              <span class="intel-label">Launch window</span>
+              <strong>08:42 UTC</strong>
+              <p>Atmospheric calm, low turbulence corridor, and optimal solar glare position.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="card reveal">
+          <div class="section-heading">
+            <p class="eyebrow">Safety and Training Checklist</p>
+            <h2>Pre-flight clearance</h2>
+          </div>
+          <div class="checklist">
+            <label class="check-item card-overlay">
+              <input type="checkbox" checked>
+              <span>Pressure adaptation briefing completed</span>
+            </label>
+            <label class="check-item card-overlay">
+              <input type="checkbox" checked>
+              <span>Zero-G movement rehearsal cleared</span>
+            </label>
+            <label class="check-item card-overlay">
+              <input type="checkbox" checked>
+              <span>Cabin communications walkthrough confirmed</span>
+            </label>
+            <label class="check-item card-overlay">
+              <input type="checkbox">
+              <span>Optional twilight ascent concierge selected</span>
+            </label>
+          </div>
+        </section>
+
+        <section id="booking-controls" class="card reveal">
+          <div class="section-heading">
+            <p class="eyebrow">CTA Booking Controls</p>
+            <h2>Finalize your reservation</h2>
+          </div>
+          <form class="booking-controls">
+            <label>
+              Departure spaceport
+              <select>
+                <option>Atacama Skyport</option>
+                <option>Arctic Halo Port</option>
+                <option>Oceanic Meridian</option>
+              </select>
+            </label>
+            <label>
+              Cabin suite
+              <select>
+                <option>Celestial Signature</option>
+                <option>Panorama Ascent</option>
+                <option>Twilight Horizon</option>
+              </select>
+            </label>
+            <label>
+              Passenger count
+              <select>
+                <option>02 voyagers</option>
+                <option>03 voyagers</option>
+                <option>04 voyagers</option>
+              </select>
+            </label>
+            <div class="cta-panel card-overlay">
+              <div>
+                <span class="cta-label">Priority boarding hold</span>
+                <strong>$45,000 deposit</strong>
+              </div>
+              <button type="button" class="action action-primary action-block">Reserve Launch Window</button>
+            </div>
+          </form>
+        </section>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="portal-footer">
+    <p>Crafted for private voyagers seeking a polished route from launch selection to capsule ascent.</p>
+  </footer>
+</body>
+</html>
