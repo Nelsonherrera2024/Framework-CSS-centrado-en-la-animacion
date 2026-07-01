@@ -218,13 +218,19 @@
 }
 
 /* Loading spinner inside button */
-.ease-btn-loading {
+/* .ease-btn-loading {
   pointer-events: none;
   position: relative;
   color: transparent !important;
+} */
+
+.ease-btn-loading {
+  position: relative;
+  pointer-events: none;
 }
 
-.ease-btn-loading > * {
+
+.ease-btn-loading > span {
   visibility: hidden;
 }
 
