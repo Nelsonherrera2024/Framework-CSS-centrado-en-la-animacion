@@ -1,53 +1,79 @@
-# SCSS Utility: Multi-Layer Box Shadow Elevation Scale (#28479)
+# Multi-Layer Box Shadow Elevation Scale
 
-A powerful SCSS mixin and utility class system designed for EaseMotion CSS that generates highly realistic, volumetric box shadows. It avoids the "flat" look of single-layer CSS shadows by stacking multiple layers of low-opacity drop shadows with varying blur radii and offsets.
+A lightweight SCSS mixin that generates layered `box-shadow` values to simulate realistic depth/elevation, inspired by Material Design's elevation system. Instead of a single flat shadow, each level stacks multiple shadow layers on top of one another — producing a softer, more natural sense of depth.
 
-## 📦 What's included?
+## Why multi-layer?
 
-- `_multi-layer-box-shadow-elevation-scale.scss`: The raw SCSS partial containing the `@mixin ease-elevation` and a loop that generates `.ease-elevation-0` through `.ease-elevation-5` utility classes.
-- `style.css`: The compiled CSS output for demonstration purposes.
-- `demo.html`: A self-contained browser demo showcasing the 5 elevation levels and a physical hover transition effect.
+A single `box-shadow` often looks flat or artificial. Real-world shadows are actually a combination of a tight, dark shadow close to the object and a soft, diffuse shadow further out. This utility recreates that by layering several shadows with different offsets, blur radii, and opacities per elevation level.
 
-## 🛠 Features
+## Files
 
-- **Multi-Layer Depth**: Each elevation level uses 2 to 3 distinct `box-shadow` layers (an ambient shadow, a direct light shadow, and a crisp contact shadow on higher levels) to accurately mimic physical light.
-- **Parametric Mixin**: The `@mixin ease-elevation($level, $color, $opacity)` allows you to customize the color and intensity of the shadow based on your theme (e.g., using a darker shadow on dark mode, or a tinted shadow for colorful cards).
-- **Zero Dependencies**: Pure SCSS using standard CSS colors. No external pre-processors or JS needed.
+- `_multi-layer-box-shadow-elevation-scale.scss` — the SCSS source (mixin + map + utility classes)
+- `style.css` — compiled CSS output
+- `demo.html` — visual demo of all elevation levels
 
-## 🚀 How to use
+## Usage
 
-**As a utility class (HTML):**
-
-Include the compiled CSS in your project and apply the classes directly to elements.
-
-```html
-<div class="ease-elevation-3">
-  I float above the background!
-</div>
+### 1. Import the partial
+```scss
+@use "multi-layer-box-shadow-elevation-scale" as elevation;
 ```
 
-**As an SCSS Mixin (in your stylesheets):**
-
-Import the partial into your main SCSS file and `@include` it for powerful hover effects.
-
+### 2. Use the mixin directly
 ```scss
-@import 'multi-layer-box-shadow-elevation-scale';
-
-.my-card {
-  background: white;
-  border-radius: 12px;
-  /* Start flat */
-  @include ease-elevation(1);
-  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-
-  &:hover {
-    transform: translateY(-8px);
-    /* Elevate smoothly on hover, with a custom brand color tint */
-    @include ease-elevation(4, rgba(59, 130, 246, 1));
-  }
+.card {
+  @include elevation.elevation(3);
 }
 ```
 
-## 🎨 Why this fits EaseMotion
+### 3. Or use the generated utility classes
+```html
+<div class="card elevation-3">Content</div>
+```
 
-**EaseMotion** is all about fluid, physical interfaces. Single-layer box shadows look cheap and digital. Multi-layer box shadows look like real objects sitting on a physical desk. By combining these highly tuned, physically-based shadows with CSS transitions, elements on the screen feel like they have genuine weight and depth.
+Utility classes `.elevation-0` through `.elevation-5` are auto-generated from the `$elevation-levels` map.
+
+## Parameters
+
+| Parameter | Type | Default | Description |
+|---|---|---|---|
+| `$level` | Number (0–5) | — required | The elevation level to apply. Determines how many shadow layers are stacked. |
+| `$color` | Color | `rgba(0, 0, 0, 1)` | Base color used to derive each shadow layer's RGBA value. |
+
+## Customizing levels
+
+Elevation levels are defined in the `$elevation-levels` map as `(y-offset, blur, spread, opacity)`:
+
+```scss
+$elevation-levels: (
+  0: (0px, 0px, 0px, 0),
+  1: (1px, 2px, 0px, 0.05),
+  2: (2px, 4px, -1px, 0.08),
+  3: (4px, 8px, -2px, 0.10),
+  4: (8px, 16px, -4px, 0.12),
+  5: (12px, 24px, -6px, 0.16)
+);
+```
+
+Add, remove, or adjust entries to fit your design system — the mixin and utility classes will update automatically.
+
+## Compiled CSS output (excerpt)
+
+```css
+.elevation-1 {
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.elevation-3 {
+  box-shadow:
+    0px 1px 2px 0px rgba(0, 0, 0, 0.05),
+    0px 2px 4px -1px rgba(0, 0, 0, 0.08),
+    0px 4px 8px -2px rgba(0, 0, 0, 0.10);
+  transition: box-shadow 0.2s ease-in-out;
+}
+```
+
+## Demo
+
+Open `demo.html` in a browser to see five cards showing elevation levels 1–5 side by side.
