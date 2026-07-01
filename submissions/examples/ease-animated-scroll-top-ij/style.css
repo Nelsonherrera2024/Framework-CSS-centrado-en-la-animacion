@@ -1,0 +1,130 @@
+:root {
+  --ast-btn-size: 48px;
+  --ast-btn-gap: 24px;
+  --ast-btn-bg: #2563eb;
+  --ast-btn-color: #ffffff;
+  --ast-btn-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+  --ast-btn-radius: 50%;
+  --ast-transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  --ast-bounce: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  --ast-threshold: 400px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.7;
+  color: #1e293b;
+  background: #f8fafc;
+  padding: 0 24px 120px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.ast-section {
+  text-align: center;
+  padding: 80px 0 40px;
+}
+
+.ast-section h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: #0f172a;
+}
+
+.ast-desc {
+  margin-top: 12px;
+  font-size: 1.1rem;
+  color: #475569;
+}
+
+.ast-content h2 {
+  margin-top: 48px;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.ast-content p {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #334155;
+}
+
+.ast-content code {
+  background: #e2e8f0;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.ast-btn {
+  position: fixed;
+  bottom: var(--ast-btn-gap);
+  right: var(--ast-btn-gap);
+  width: var(--ast-btn-size);
+  height: var(--ast-btn-size);
+  border: none;
+  border-radius: var(--ast-btn-radius);
+  background: var(--ast-btn-bg);
+  color: var(--ast-btn-color);
+  box-shadow: var(--ast-btn-shadow);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  transform: scale(0.6) translateY(20px);
+  transition: opacity var(--ast-transition), transform var(--ast-transition);
+  pointer-events: none;
+  z-index: 999;
+}
+
+.ast-btn.ast-visible {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  pointer-events: auto;
+  animation: ast-bounce-in 0.5s var(--ast-bounce);
+}
+
+.ast-arrow {
+  transition: transform 0.3s ease;
+}
+
+.ast-btn:hover .ast-arrow {
+  transform: rotate(360deg);
+}
+
+@keyframes ast-bounce-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) translateY(30px);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15) translateY(-6px);
+  }
+  70% {
+    transform: scale(0.95) translateY(3px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ast-btn,
+  .ast-arrow {
+    transition: none;
+    animation: none;
+  }
+  .ast-btn.ast-visible {
+    animation: none;
+  }
+}

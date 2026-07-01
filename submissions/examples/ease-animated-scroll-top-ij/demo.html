@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animated Scroll to Top</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section class="ast-section">
+    <h1>Animated Scroll to Top</h1>
+    <p class="ast-desc">A smooth scroll-to-top button with bounce entrance and hover rotation. Scroll down to see it in action.</p>
+  </section>
+
+  <section class="ast-content">
+    <h2>Why use a scroll-to-top button?</h2>
+    <p>Long-form content benefits from quick navigation aids. A scroll-to-top button saves users from manual scrolling, improving UX on article-heavy pages.</p>
+
+    <h2>How it works</h2>
+    <p>The button listens for the <code>scroll</code> event. Once the page scrolls past a threshold (e.g., 400px), it gains the <code>.ast-visible</code> class which triggers a fade-in bounce via CSS. On click, <code>window.scrollTo({ top: 0, behavior: 'smooth' })</code> animates back up.</p>
+
+    <h2>Customisation</h2>
+    <p>All visual properties — colours, sizes, timing — are controlled through CSS custom properties in <code>:root</code>, making it easy to adapt to your design system.</p>
+
+    <h2>Performance notes</h2>
+    <p>Only <code>opacity</code> and <code>transform</code> are animated, both GPU-accelerated properties. The scroll handler is kept lightweight to avoid jank.</p>
+
+    <h2>Accessibility</h2>
+    <p>The button carries <code>aria-label="Scroll to top"</code> and is keyboard-focusable. The smooth-scrolling behaviour respects the user's <code>prefers-reduced-motion</code> setting.</p>
+
+    <h2>Browser support</h2>
+    <p>Works in all modern browsers. <code>scroll-behavior: smooth</code> is supported in Chrome, Firefox, Edge, Safari 15.4+. For older browsers, a <code>window.scrollTo(0, 0)</code> fallback applies.</p>
+
+    <h2>Get started</h2>
+    <p>Copy the HTML, link the CSS, and you're done. Adjust the threshold, colours, or animation curve to match your brand.</p>
+  </section>
+
+  <button id="ast-btn" class="ast-btn" aria-label="Scroll to top">
+    <svg class="ast-arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <script>
+    const btn = document.getElementById('ast-btn');
+
+    window.addEventListener('scroll', () => {
+      btn.classList.toggle('ast-visible', window.scrollY > 400);
+    });
+
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
