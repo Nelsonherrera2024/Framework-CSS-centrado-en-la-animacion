@@ -101,6 +101,18 @@
     animation: ease-icon-draw 0.3s ease 0.1s both;
   }
   
+  @keyframes ease-icon-pop {
+    0% {
+      opacity: 0;
+      transform: scale(0) rotate(-10deg);
+    }
+
+    100% {
+      opacity: 1;
+      transform: scale(1) rotate(0);
+    }
+  }
+  
   @keyframes ease-icon-draw {
     from {
       opacity: 0;
