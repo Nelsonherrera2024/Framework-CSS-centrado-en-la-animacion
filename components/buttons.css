@@ -125,6 +125,10 @@
   }
 }
 
+ .dark-mode .ease-btn-ghost:hover {
+    color: #000000 !important;
+}
+
 /* Link style */
 .ease-btn-link {
   background: none;
