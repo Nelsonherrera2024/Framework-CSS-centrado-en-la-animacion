@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linux Startup Animation</title>
+
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/SAPTARSHI-coder/EaseMotion-css@main/easemotion.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="terminal ease-fade-in">
+
+    <div class="penguin">
+        <div class="head">
+            <div class="eye left"></div>
+            <div class="eye right"></div>
+            <div class="beak"></div>
+        </div>
+
+        <div class="body">
+            <div class="belly"></div>
+        </div>
+
+        <div class="feet">
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <h2 class="title">Linux Boot Sequence</h2>
+
+    <div class="progress-container">
+        <div class="progress-bar"></div>
+    </div>
+
+    <div class="boot-messages">
+
+        <p class="msg ease-fade-in-up ease-delay-100">
+            ✔ Initializing Linux Kernel...
+        </p>
+
+        <p class="msg ease-fade-in-up ease-delay-200">
+            ✔ Mounting File System...
+        </p>
+
+        <p class="msg ease-fade-in-up ease-delay-300">
+            ✔ Starting Network Manager...
+        </p>
+
+        <p class="msg ease-fade-in-up ease-delay-400">
+            ✔ Loading Drivers...
+        </p>
+
+        <p class="msg ease-fade-in-up ease-delay-500">
+            ✔ Starting Display Manager...
+        </p>
+
+        <p class="msg ease-fade-in-up ease-delay-600">
+            ✔ Boot Complete.
+        </p>
+
+    </div>
+
+    <div class="login">
+        login:
+        <span class="cursor"></span>
+    </div>
+
+</div>
+
+</body>
+</html>

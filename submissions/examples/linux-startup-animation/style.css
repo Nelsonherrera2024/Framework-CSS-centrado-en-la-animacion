@@ -1,0 +1,237 @@
+/* ===========================
+   Linux Startup Animation
+   =========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #111;
+    font-family: "Courier New", monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #00ff66;
+}
+
+.terminal {
+    width: 90%;
+    max-width: 850px;
+    background: #000;
+    border: 3px solid #333;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 0 30px rgba(0,255,100,.25);
+}
+
+/* ===========================
+   Tux Penguin
+   =========================== */
+
+.penguin{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    margin-bottom:25px;
+}
+
+.head{
+    width:90px;
+    height:90px;
+    background:#111;
+    border-radius:50%;
+    position:relative;
+}
+
+.eye{
+    width:12px;
+    height:12px;
+    background:#fff;
+    border-radius:50%;
+    position:absolute;
+    top:30px;
+}
+
+.eye.left{
+    left:24px;
+}
+
+.eye.right{
+    right:24px;
+}
+
+.beak{
+    width:18px;
+    height:14px;
+    background:orange;
+    position:absolute;
+    left:50%;
+    top:48px;
+    transform:translateX(-50%);
+    clip-path:polygon(50% 100%,0 0,100% 0);
+}
+
+.body{
+    width:110px;
+    height:130px;
+    background:#111;
+    border-radius:60px;
+    margin-top:-10px;
+    position:relative;
+}
+
+.belly{
+    width:72px;
+    height:92px;
+    background:#fff;
+    border-radius:50%;
+    position:absolute;
+    left:50%;
+    top:20px;
+    transform:translateX(-50%);
+}
+
+.feet{
+    display:flex;
+    gap:25px;
+    margin-top:-5px;
+}
+
+.feet span{
+    width:26px;
+    height:14px;
+    background:orange;
+    border-radius:50%;
+}
+
+/* ===========================
+   Title
+   =========================== */
+
+.title{
+    text-align:center;
+    color:#fff;
+    margin-bottom:30px;
+    letter-spacing:2px;
+}
+
+/* ===========================
+   Progress Bar
+   =========================== */
+
+.progress-container{
+    width:100%;
+    height:18px;
+    background:#222;
+    border-radius:30px;
+    overflow:hidden;
+    margin-bottom:30px;
+}
+
+.progress-bar{
+    height:100%;
+    width:0;
+    background:linear-gradient(90deg,#00ff66,#00cc55);
+    animation:load 6s forwards;
+}
+
+/* ===========================
+   Boot Messages
+   =========================== */
+
+.boot-messages{
+    line-height:2;
+    font-size:18px;
+}
+
+.msg{
+    opacity:0;
+    animation:appear .5s forwards;
+}
+
+.msg:nth-child(1){animation-delay:1s;}
+.msg:nth-child(2){animation-delay:2s;}
+.msg:nth-child(3){animation-delay:3s;}
+.msg:nth-child(4){animation-delay:4s;}
+.msg:nth-child(5){animation-delay:5s;}
+.msg:nth-child(6){animation-delay:6s;}
+
+/* ===========================
+   Login Cursor
+   =========================== */
+
+.login{
+    margin-top:35px;
+    font-size:20px;
+    color:#fff;
+}
+
+.cursor{
+    display:inline-block;
+    width:10px;
+    height:22px;
+    background:#00ff66;
+    animation:blink .8s infinite;
+}
+
+/* ===========================
+   Animations
+   =========================== */
+
+@keyframes load{
+
+    from{
+        width:0%;
+    }
+
+    to{
+        width:100%;
+    }
+
+}
+
+@keyframes blink{
+
+    50%{
+        opacity:0;
+    }
+
+}
+
+@keyframes appear{
+
+    from{
+        opacity:0;
+        transform:translateX(-20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateX(0);
+    }
+
+}
+
+/* ===========================
+   Responsive
+   =========================== */
+
+@media(max-width:768px){
+
+    .terminal{
+        padding:20px;
+    }
+
+    .title{
+        font-size:22px;
+    }
+
+    .boot-messages{
+        font-size:15px;
+    }
+
+}
