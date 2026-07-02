@@ -1,0 +1,17 @@
+/* ── Layer priority declaration ────────────────────────────────
+   Order: base → components → utilities (utilities have highest weight)
+   ─────────────────────────────────────────────────────────────── */
+@layer easemotion.base, easemotion.components, easemotion.utilities;
+
+/* ── Core styles ─────────────────────────────────────────────── */
+@import 'core/variables.css';
+@import 'core/base.css';
+
+/* ── Component styles ────────────────────────────────────────── */
+/* @import 'components/buttons.css';
+@import 'components/cards.css'; */
+/* If there are more components (e.g. modals, forms), add them here */
+
+/* ── Utilities & animations ──────────────────────────────────── */
+@import 'core/utilities.css';
+@import 'core/animations.css';

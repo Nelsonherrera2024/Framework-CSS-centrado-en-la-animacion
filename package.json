@@ -17,7 +17,7 @@
     "CHANGELOG.md"
   ],
   "scripts": {
-    "build": "node scripts/build-minified-css.mjs",
+    "build": "npx postcss easemotion.css -o dist/easemotion.min.css",
     "resolve-conflict": "node scripts/resolve-conflict.mjs",
     "build:scss": "sass scss/_index.scss dist/easemotion.scss.css",
     "prepublishOnly": "npm run build",
@@ -55,7 +55,11 @@
     "node": ">=18"
   },
   "devDependencies": {
+    "cssnano": "^8.0.2",
     "jsdom": "^29.1.1",
+    "postcss": "^8.5.16",
+    "postcss-cli": "^11.0.1",
+    "postcss-import": "^16.1.1",
     "prettier": "^3.8.3",
     "sass": "^1.77.0",
     "stylelint": "^17.12.0",

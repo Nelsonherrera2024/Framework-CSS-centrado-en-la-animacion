@@ -1348,3 +1348,22 @@ Built with care &nbsp;·&nbsp; Zero dependencies &nbsp;·&nbsp; Animation-first 
 ## Accessibility
 
 EaseMotion CSS supports the `prefers-reduced-motion` media query to respect users who prefer reduced motion and reduce animation-related discomfort. When enabled at the operating system level, animations and transitions are minimized to provide a more accessible experience.
+
+
+### CSS Cascade Layers
+
+EaseMotion wraps all its styles in `@layer easemotion.*`. This means you can
+control exactly where EaseMotion sits in your cascade priority, regardless of
+load order:
+
+\`\`\`css
+@layer easemotion.utilities, my-overrides;
+\`\`\`
+
+Anything in `my-overrides` will always win over EaseMotion, even if
+EaseMotion's stylesheet loads after yours.
+
+> **Browser support:** `@layer` is supported in all modern browsers (Chrome,
+> Firefox, Safari, Edge since 2022). In unsupported browsers (e.g. IE11),
+> styles still apply — you just lose the explicit layer-priority control and
+> fall back to normal source-order cascade behavior.
