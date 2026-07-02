@@ -1,18 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Poor Visibility in light mode</title>
+    <title>Better Visibility in Light Mode — Docs Fix</title>
     <link href="style.css" rel="stylesheet">
 </head>
 
 <body>
-    <section id="components" class="docs-section">
-        <!-- This docs-h3 class color is set to color rgba(255, 255, 255, 0.85); on line 1043 in docs.css. This need to be changed  -->
-        <h3 class="docs-h3">Component Name</h3>
-    </section>
+    <!-- Top Navigation Bar Replica -->
+    <nav class="demo-nav">
+        <div class="demo-nav-inner">
+            <a href="#" class="demo-logo">EaseMotion</a>
+            <ul class="demo-nav-links">
+                <li><a href="#buttons" class="active">Buttons</a></li>
+                <li><a href="#cards">Cards</a></li>
+                <li><a href="#animations">Animations</a></li>
+                <li><a href="#layout">Layout</a></li>
+                <li><a href="#">Docs</a></li>
+                <li>
+                    <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle light/dark theme">
+                        🌓
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content Showcase -->
+    <main class="docs-content">
+        <section id="components" class="docs-section">
+            <h3 class="docs-h3">Component Name (docs-h3)</h3>
+            <p class="docs-p">
+                This demo showcases the fix for two light mode visibility issues in the documentation pages:
+            </p>
+            <ul style="margin-top: 1rem; padding-left: 1.5rem; line-height: 1.8;">
+                <li>The active <strong>"Buttons"</strong> tab in the navigation bar now updates its background and text colors dynamically using theme variables, ensuring high contrast in both dark and light modes.</li>
+                <li>The <strong>"docs-h3"</strong> heading class color now uses <code>var(--heading-color)</code> instead of being hardcoded to white, remaining perfectly readable when theme toggled.</li>
+            </ul>
+        </section>
+    </main>
+
+    <script>
+        const themeBtn = document.getElementById("theme-toggle");
+        const html = document.documentElement;
+        themeBtn.addEventListener("click", () => {
+            const currentTheme = html.getAttribute("data-theme") || "dark";
+            const targetTheme = currentTheme === "light" ? "dark" : "light";
+            html.setAttribute("data-theme", targetTheme);
+        });
+    </script>
 </body>
 
 </html>
