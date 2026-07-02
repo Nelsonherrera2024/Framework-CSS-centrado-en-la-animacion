@@ -3,89 +3,65 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EaseMotion CSS — Glassmorphism Login Form</title>
+  <title>EaseMotion CSS — Animated Counting Number</title>
   <link rel="icon" type="image/svg+xml" href="../ease-favicon/favicon.svg" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <div class="mesh-bg">
-    <div class="mesh-blob mesh-blob--one"></div>
-    <div class="mesh-blob mesh-blob--two"></div>
-    <div class="mesh-blob mesh-blob--three"></div>
-  </div>
-
   <div class="container">
-    
+
     <header class="hero">
       <div class="badge">⚡ EaseMotion CSS</div>
-      <h1>Glassmorphism Login</h1>
-      <p>A beautiful frosted glass login component featuring a vibrant animated background mesh, floating labels, and smooth micro-interactions.</p>
+      <h1>Animated Counting Numbers</h1>
+      <p>A smart, scroll-triggered counting animation that fires immediately when statistics enter the browser's active viewport window.</p>
+      <div class="scroll-hint">Scroll Down to See the Magic 👇</div>
     </header>
 
-    <div class="ease-glass-form">
-      <div class="ease-glass-form__card">
+    <div class="scroll-spacer"></div>
+
+    <section class="section">
+      <h2 class="section-title">📊 Live Counter Metrics</h2>
+      <div class="counter-grid">
         
-        <div class="form-header">
-          <h2>Welcome Back</h2>
-          <p>Enter your credentials to access your account</p>
+        <div class="counter-card">
+          <div class="ease-count-up" data-target="1200" data-suffix="+" data-duration="2000">0</div>
+          <p class="counter-label">Active Developers</p>
         </div>
 
-        <form onsubmit="event.preventDefault(); alert('Login submitted! 🎉');">
-          <div class="ease-glass-form__field">
-            <input type="email" id="email" required placeholder=" " />
-            <label for="email">Email Address</label>
-            <div class="field-glow"></div>
-          </div>
+        <div class="counter-card">
+          <div class="ease-count-up" data-target="99" data-suffix="%" data-duration="1500">0</div>
+          <p class="counter-label">Success Rate</p>
+        </div>
 
-          <div class="ease-glass-form__field">
-            <input type="password" id="password" required placeholder=" " />
-            <label for="password">Password</label>
-            <div class="field-glow"></div>
-          </div>
-
-          <div class="form-options">
-            <label class="remember-me">
-              <input type="checkbox" />
-              <span>Remember me</span>
-            </label>
-            <a href="#" class="forgot-pass">Forgot Password?</a>
-          </div>
-
-          <button type="submit" class="ease-glass-form__btn">
-            <span>Sign In</span>
-          </button>
-        </form>
-
-        <div class="form-footer">
-          <p>Don't have an account? <a href="#">Sign up</a></p>
+        <div class="counter-card">
+          <div class="ease-count-up" data-target="450" data-prefix="$" data-suffix="K" data-duration="2500">0</div>
+          <p class="counter-label">Revenue Secured</p>
         </div>
 
       </div>
-    </div>
+    </section>
 
     <section class="code-section">
       <h2>📄 How to Use</h2>
-      <p>Wrap the component structures with <code>ease-glass-form</code> classes:</p>
+      <p>Declare your data configuration properties on the <code>ease-count-up</code> markup container node:</p>
       <div class="code-block">
-        <pre><code>&lt;div class="ease-glass-form"&gt;
-  &lt;div class="ease-glass-form__card"&gt;
-    &lt;h2&gt;Welcome Back&lt;/h2&gt;
-    &lt;div class="ease-glass-form__field"&gt;
-      &lt;input type="email" required placeholder=" " /&gt;
-      &lt;label&gt;Email Address&lt;/label&gt;
-    &lt;/div&gt;
-    &lt;button class="ease-glass-form__btn"&gt;Sign In&lt;/button&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</code></pre>
+        <pre><code>&lt;div class="ease-count-up" data-target="1000" data-suffix="+" data-duration="2000"&gt;0&lt;/div&gt;
+
+&lt;script&gt;
+  // Viewport Observer Setup Engine
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+        animateValue(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  document.querySelectorAll('.ease-count-up').forEach(el => observer.observe(el));
+&lt;/script&gt;</code></pre>
       </div>
     </section>
 
     <footer class="footer">
-      <p>Built with ⚡ EaseMotion CSS — Open Source UI Animation Library</p>
-    </footer>
-
-  </div>
-
-</body>
-</html>
+      <p>Built with ⚡ EaseMotion CSS — Open Source UI Animation

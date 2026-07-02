@@ -1,91 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>EaseMotion CSS — Glassmorphism Login Form</title>
-  <link rel="icon" type="image/svg+xml" href="../ease-favicon/favicon.svg" />
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
+# ⚡ Ease Confetti Burst on Click Effect
 
-  <div class="mesh-bg">
-    <div class="mesh-blob mesh-blob--one"></div>
-    <div class="mesh-blob mesh-blob--two"></div>
-    <div class="mesh-blob mesh-blob--three"></div>
-  </div>
+A celebratory, high-energy micro-interaction component for EaseMotion CSS that triggers an explosion of confetti particles upon user clicks.
 
-  <div class="container">
-    
-    <header class="hero">
-      <div class="badge">⚡ EaseMotion CSS</div>
-      <h1>Glassmorphism Login</h1>
-      <p>A beautiful frosted glass login component featuring a vibrant animated background mesh, floating labels, and smooth micro-interactions.</p>
-    </header>
+## ✨ What it does
+Spawns vibrant particles from the explicit point of cursor contact inside any button structure. The particles launch outwards along randomized trajectory physics vectors, rotating and scaling down dynamically before gracefully vanishing.
 
-    <div class="ease-glass-form">
-      <div class="ease-glass-form__card">
-        
-        <div class="form-header">
-          <h2>Welcome Back</h2>
-          <p>Enter your credentials to access your account</p>
-        </div>
+## 🚀 How to Use
+Include the `ease-confetti-btn` utility identifier class onto your interactive markup element:
 
-        <form onsubmit="event.preventDefault(); alert('Login submitted! 🎉');">
-          <div class="ease-glass-form__field">
-            <input type="email" id="email" required placeholder=" " />
-            <label for="email">Email Address</label>
-            <div class="field-glow"></div>
-          </div>
+```html
+<button class="ease-confetti-btn" id="celebrateBtn">
+  🎉 Celebrate!
+</button>
 
-          <div class="ease-glass-form__field">
-            <input type="password" id="password" required placeholder=" " />
-            <label for="password">Password</label>
-            <div class="field-glow"></div>
-          </div>
+A celebratory, high-energy micro-interaction component for EaseMotion CSS that triggers an explosion of confetti particles upon user clicks.
 
-          <div class="form-options">
-            <label class="remember-me">
-              <input type="checkbox" />
-              <span>Remember me</span>
-            </label>
-            <a href="#" class="forgot-pass">Forgot Password?</a>
-          </div>
+## ✨ What it does
+Spawns vibrant particles from the explicit point of cursor contact inside any button structure. The particles launch outwards along randomized trajectory physics vectors, rotating and scaling down dynamically before gracefully vanishing.
 
-          <button type="submit" class="ease-glass-form__btn">
-            <span>Sign In</span>
-          </button>
-        </form>
+## 🚀 How to Use
+Include the `ease-confetti-btn` utility identifier class onto your interactive markup element:
 
-        <div class="form-footer">
-          <p>Don't have an account? <a href="#">Sign up</a></p>
-        </div>
-
-      </div>
-    </div>
-
-    <section class="code-section">
-      <h2>📄 How to Use</h2>
-      <p>Wrap the component structures with <code>ease-glass-form</code> classes:</p>
-      <div class="code-block">
-        <pre><code>&lt;div class="ease-glass-form"&gt;
-  &lt;div class="ease-glass-form__card"&gt;
-    &lt;h2&gt;Welcome Back&lt;/h2&gt;
-    &lt;div class="ease-glass-form__field"&gt;
-      &lt;input type="email" required placeholder=" " /&gt;
-      &lt;label&gt;Email Address&lt;/label&gt;
-    &lt;/div&gt;
-    &lt;button class="ease-glass-form__btn"&gt;Sign In&lt;/button&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</code></pre>
-      </div>
-    </section>
-
-    <footer class="footer">
-      <p>Built with ⚡ EaseMotion CSS — Open Source UI Animation Library</p>
-    </footer>
-
-  </div>
-
-</body>
-</html>
+```html
+<button class="ease-confetti-btn" id="celebrateBtn">
+  🎉 Celebrate!
+</button>

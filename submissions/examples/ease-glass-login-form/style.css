@@ -1,4 +1,4 @@
-/* ─── Reset & Base Variables ────────────────────────── */
+/* ─── Reset & Workspace Layout ──────────────────────── */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -11,74 +11,201 @@ body {
   color: #e2e8f0;
   min-height: 100vh;
   padding: 2rem 1rem;
-  overflow-x: hidden;
+}
+
+/* ─── Confetti Trigger Buttons ──────────────────────── */
+.ease-confetti-btn {
   position: relative;
+  overflow: visible; /* CRITICAL: Allows confetti to fly outside button boundaries */
+  padding: 1rem 2.25rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #6366f1, #3b82f6);
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
+  transition: transform 0.1s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s ease;
+  user-select: none;
+  outline: none;
 }
 
-/* ─── Animated Mesh Background ──────────────────────── */
-.mesh-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-  background: #0f0f1a;
-  overflow: hidden;
+/* Micro-interaction on Click */
+.ease-confetti-btn:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
 }
 
-.mesh-blob {
+/* Color Variants */
+.ease-confetti-btn--rose {
+  background: linear-gradient(135deg, #ec4899, #f43f5e);
+  box-shadow: 0 4px 15px rgba(236, 72, 153, 0.4);
+}
+.ease-confetti-btn--rose:active {
+  box-shadow: 0 2px 8px rgba(236, 72, 153, 0.3);
+}
+
+.ease-confetti-btn--emerald {
+  background: linear-gradient(135deg, #10b981, #059669);
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+}
+.ease-confetti-btn--emerald:active {
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}
+
+/* ─── Confetti Particles Engine ─────────────────────── */
+.confetti-particle {
   position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.4;
-  mix-blend-mode: screen;
-  animation: floatMesh 20s infinite alternate ease-in-out;
+  pointer-events: none;
+  opacity: 0;
+  top: 50%;
+  left: 50%;
+  border-radius: 2px;
+  animation: confetti-burst 0.9s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
 }
 
-.mesh-blob--one {
-  width: 450px;
-  height: 450px;
-  background: linear-gradient(135deg, #6366f1, #4f46e5);
-  top: -10%;
-  left: 15%;
-  animation-duration: 18s;
+/* Hardware-Accelerated 3D Motion Physics Arc */
+@keyframes confetti-burst {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg) scale(1);
+    opacity: 1;
+  }
+  /* Middle point introduces a realistic gravitational drop arc effect */
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(var(--tx), var(--ty), 0) rotate(var(--rot)) scale(0.2);
+    opacity: 0;
+  }
 }
 
-.mesh-blob--two {
-  width: 400px;
-  height: 400px;
-  background: linear-gradient(135deg, #ec4899, #d946ef);
-  bottom: 10%;
-  right: 15%;
-  animation-duration: 22s;
-  animation-delay: -5s;
+/* ─── Layout Formatting Infrastructure ───────────────── */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
 }
 
-.mesh-blob--three {
-  width: 350px;
-  height: 350px;
-  background: linear-gradient(135deg, #10b981, #06b6d4);
-  top: 40%;
-  left: 45%;
-  animation-duration: 25s;
-  animation-delay: -10s;
+.hero {
+  text-align: center;
+  padding: 4rem 2rem 2rem;
 }
 
-@keyframes floatMesh {
-  0% { transform: translate(0, 0) scale(1) rotate(0deg); }
-  50% { transform: translate(80px, 50px) scale(1.1) rotate(180deg); }
-  100% { transform: translate(-40px, -80px) scale(0.9) rotate(360deg); }
+.badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #a5b4fc;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  margin-bottom: 1.5rem;
 }
 
-/* ─── Glassmorphism Container & Card ────────────────── */
-.ease-glass-form {
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 900;
+  background: linear-gradient(135deg, #fff, #94a3b8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: #94a3b8;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.section {
+  margin: 3rem 0;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #f1f5f9;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.demo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.demo-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 1.25rem;
+  padding: 2.5rem 2rem;
+  text-align: center;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 3rem 0;
+  gap: 1rem;
 }
 
-.ease-glass-form__card {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter
+.demo-card h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #f1f5f9;
+}
+
+.demo-card p {
+  font-size: 0.875rem;
+  color: #94a3b8;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+.code-section {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  margin: 3rem 0;
+}
+
+.code-section h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+  color: #f1f5f9;
+}
+
+.code-section p {
+  color: #94a3b8;
+  margin-bottom: 1.5rem;
+}
+
+.code-block {
+  background: #070712;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  overflow-x: auto;
+}
+
+.code-block pre {
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 0.85rem;
+  color: #7dd3fc;
+  line-height: 1.8;
+}
+
+.footer {
+  text-align: center;
+  padding: 2rem 0;
+  color: #475569;
+  font-size: 0.875rem;
+}
