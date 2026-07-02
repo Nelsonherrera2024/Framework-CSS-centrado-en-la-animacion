@@ -1,0 +1,15 @@
+@use 'neumorphic-soft-shadow-elevation-mixin' as *;
+
+.neumorphic-card {
+  @include neumorphic-elevation();
+  width: 200px;
+  height: 120px;
+  border-radius: 20px;
+}
+
+.neumorphic-card--pressed {
+  @include neumorphic-elevation($inset: true);
+  width: 200px;
+  height: 120px;
+  border-radius: 20px;
+}

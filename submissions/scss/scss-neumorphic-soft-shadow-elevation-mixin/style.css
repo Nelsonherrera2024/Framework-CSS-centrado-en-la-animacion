@@ -1,0 +1,17 @@
+.neumorphic-card {
+  background: #e0e5ec;
+  box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.15), -8px -8px 16px rgb(249.296, 250.216, 251.504);
+  width: 200px;
+  height: 120px;
+  border-radius: 20px;
+}
+
+.neumorphic-card--pressed {
+  background: #e0e5ec;
+  box-shadow: inset 8px 8px 16px rgba(0, 0, 0, 0.15), inset -8px -8px 16px rgb(249.296, 250.216, 251.504);
+  width: 200px;
+  height: 120px;
+  border-radius: 20px;
+}
+
+/*# sourceMappingURL=style.css.map */

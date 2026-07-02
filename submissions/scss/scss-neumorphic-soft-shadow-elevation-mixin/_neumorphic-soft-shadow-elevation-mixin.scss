@@ -1,0 +1,27 @@
+@use "sass:color";
+
+// Neumorphic Soft Shadow Elevation Mixin
+// Creates soft, dual-direction shadows for a neumorphic "pressed/raised" UI look
+
+@mixin neumorphic-elevation(
+  $bg: #e0e5ec,
+  $distance: 8px,
+  $blur: 16px,
+  $intensity: 0.15,
+  $inset: false
+) {
+  $light-shadow: color.adjust($bg, $lightness: 8%);
+  $dark-shadow: color.adjust($bg, $lightness: -12%);
+
+  background: $bg;
+
+  @if $inset {
+    box-shadow:
+      inset $distance $distance $blur rgba(0, 0, 0, $intensity),
+      inset (-$distance) (-$distance) $blur $light-shadow;
+  } @else {
+    box-shadow:
+      $distance $distance $blur rgba(0, 0, 0, $intensity),
+      (-$distance) (-$distance) $blur $light-shadow;
+  }
+}

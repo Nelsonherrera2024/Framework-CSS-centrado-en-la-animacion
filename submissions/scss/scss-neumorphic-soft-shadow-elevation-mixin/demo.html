@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Neumorphic Soft Shadow Elevation Mixin — Demo</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background: #e0e5ec;
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      min-height: 100vh;
+      margin: 0;
+    }
+    .label {
+      text-align: center;
+      color: #444;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <div class="neumorphic-card"></div>
+    <p class="label">.neumorphic-card (raised)</p>
+  </div>
+
+  <div>
+    <div class="neumorphic-card--pressed"></div>
+    <p class="label">.neumorphic-card--pressed (inset)</p>
+  </div>
+</body>
+</html>
