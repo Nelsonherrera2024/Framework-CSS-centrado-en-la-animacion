@@ -1298,3 +1298,36 @@ body > .docs-shell {
     justify-content: center;
   }
 }
+
+/* ── Purple Water Cursor Flow Effect ── */
+#water-cursor-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.water-drop {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(147, 51, 234, 0.7) 0%, rgba(147, 51, 234, 0) 70%);
+  animation: rippleFlow 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  pointer-events: none;
+}
+
+@keyframes rippleFlow {
+  0% {
+    width: 0px;
+    height: 0px;
+    opacity: 1;
+  }
+  100% {
+    width: 60px;
+    height: 60px;
+    opacity: 0;
+  }
+}

@@ -278,3 +278,33 @@ document.querySelectorAll('.copy-class-btn').forEach(btn => {
 
   drawParticles();
 })();
+
+// Purple Water Cursor Flow Effect
+(function initWaterCursor() {
+  const container = document.getElementById("water-cursor-container");
+  if (!container) return;
+
+  let lastSpawn = 0;
+  const spawnDelay = 15; // millisecond delta throttle check
+
+  window.addEventListener("mousemove", (e) => {
+    const now = performance.now();
+    if (now - lastSpawn < spawnDelay) return;
+    lastSpawn = now;
+
+    const drop = document.createElement("div");
+    drop.classList.add("water-drop");
+    drop.style.left = e.clientX + "px";
+    drop.style.top = e.clientY + "px";
+    drop.style.transform = "translate(-50%, -50%)";
+
+    container.appendChild(drop);
+
+    // Remove element after 1000ms lifecycle animation
+    setTimeout(() => {
+      if (drop.parentNode) {
+        drop.parentNode.removeChild(drop);
+      }
+    }, 1000);
+  });
+})();
