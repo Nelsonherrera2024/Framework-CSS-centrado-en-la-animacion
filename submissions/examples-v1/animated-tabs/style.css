@@ -98,6 +98,16 @@ h1 {
   border-color: #2563eb;
   color: white;
 }
+/* Light mode visibility enhancement */
+
+.ease-tab.ease-tab-active {
+  font-weight: 600;
+}
+
+.ease-tabs-pill .ease-tab.ease-tab-active,
+.ease-tabs-bordered .ease-tab.ease-tab-active {
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+}
 
 /* Vertical Variant */
 
