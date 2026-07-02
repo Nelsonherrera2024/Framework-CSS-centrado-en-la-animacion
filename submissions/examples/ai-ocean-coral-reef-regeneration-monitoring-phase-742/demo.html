@@ -1,125 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coral Regeneration AI — Phase #742</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <title>AI Ocean Coral Reef Regeneration Monitoring - Phase #742</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 
-  <!-- Particle System -->
-  <div class="plankton p1"></div>
-  <div class="plankton p2"></div>
-  <div class="plankton p3"></div>
-  <div class="plankton p4"></div>
-
-  <!-- Header -->
-  <header class="monitor-header fade-in">
-    <div class="brand">OCEAN-AI DEEP REEF</div>
-    <div class="monitor-stat">
-      <div class="stat-box">
-        <span class="stat-val" style="color: var(--clr-coral)">+14.2%</span>
-        <span class="stat-lbl">Growth Rate (30d)</span>
-      </div>
-      <div class="stat-box">
-        <span class="stat-val">Active</span>
-        <span class="stat-lbl">AI Sonar Grid</span>
-      </div>
-    </div>
-  </header>
-
-  <!-- Main Workspace -->
-  <main class="app-main">
+  <div class="ease-dashboard-layout">
     
-    <!-- Left Sidebar: Water Quality -->
-    <aside class="panel fade-up">
-      <div class="panel-title">WATER QUALITY</div>
-      
-      <div class="quality-grp">
-        <div class="q-hdr">
-          <span class="q-lbl">Temperature</span>
-          <div><span class="q-val">26.4</span><span class="q-sub">°C</span></div>
+    <!-- ── Sidebar ── -->
+    <aside class="ease-sidebar">
+      <div class="ease-brand">
+        <div class="ease-brand-icon">
+          <!-- Wave/Ocean SVG -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 12h4l2-9 4 18 2-9h4"></path>
+          </svg>
         </div>
-        <div class="therm-bar">
-          <div class="therm-marker" style="left: 45%;"></div>
-        </div>
+        <span class="ease-brand-text">AquaCore</span>
       </div>
-
-      <div class="quality-grp" style="margin-top: 2.5rem;">
-        <div class="q-hdr">
-          <span class="q-lbl">Acidity (pH)</span>
-          <div><span class="q-val">8.1</span><span class="q-sub">Optimal</span></div>
-        </div>
-        <div class="ph-graph">
-          <div class="ph-wave"></div>
+      
+      <nav class="ease-nav">
+        <a href="#" class="ease-nav-item is-active">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+          Overview
+        </a>
+        <a href="#" class="ease-nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg>
+          Analytics
+        </a>
+        <a href="#" class="ease-nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+          Reef Sectors
+        </a>
+        <a href="#" class="ease-nav-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10.06 10.06 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          Sensors
+        </a>
+      </nav>
+      
+      <div class="ease-sidebar-footer">
+        <div class="ease-status-card">
+          <div class="ease-status-header">
+            <span class="ease-status-dot"><span class="ease-status-pulse"></span></span>
+            <span class="ease-status-text">AI Live Sync</span>
+          </div>
+          <p class="ease-status-desc">Scanning Sector Alpha-7 for thermal anomalies.</p>
         </div>
       </div>
     </aside>
 
-    <!-- Center: AI Coral Polyp Analyzer -->
-    <section class="panel analyzer-panel fade-in delay-1" style="padding: 0; background: transparent; border: none; box-shadow: none;">
-      <div class="analyzer-view">
-        
-        <!-- Sonar Rings -->
-        <div class="sonar-center">
-          <div class="sonar-ring"></div>
-          <div class="sonar-ring"></div>
-          <div class="sonar-ring"></div>
-        </div>
-
-        <!-- Growing Coral Bed -->
-        <div class="reef-bed">
-          <div class="polyp pl-1"></div>
-          <div class="polyp pl-2"></div>
-          <div class="polyp pl-3"></div>
-          <div class="polyp pl-4"></div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Right Sidebar: Regeneration Metrics -->
-    <aside class="panel fade-up delay-2">
+    <!-- ── Main Content ── -->
+    <main class="ease-main-content">
       
-      <div class="regen-card">
-        <span class="rc-lbl">Biomass Regenerated</span>
-        <span class="rc-val">4,250 kg</span>
-      </div>
+      <header class="ease-header">
+        <div class="ease-header-title">
+          <h1 class="ease-page-title">Coral Regeneration</h1>
+          <p class="ease-page-subtitle">Phase #742 • Great Barrier Reef Sector</p>
+        </div>
+        <div class="ease-header-actions">
+          <button class="ease-btn ease-btn-secondary">Export Data</button>
+          <button class="ease-btn ease-btn-primary">Generate AI Report</button>
+        </div>
+      </header>
 
-      <div class="panel-title">BIODIVERSITY INDEX</div>
-      
-      <div class="species-list">
+      <!-- ── KPI Cards ── -->
+      <section class="ease-kpi-grid">
         
-        <div class="sp-item">
-          <div class="sp-icon">🐟</div>
-          <div class="sp-info">
-            <span class="sp-name">Reef Fish Population</span>
-            <span class="sp-count">~12,500</span>
+        <div class="ease-card ease-kpi-card" style="--card-delay: 0.1s;">
+          <div class="ease-kpi-icon" style="color: #0ea5e9; background: #e0f2fe;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+          </div>
+          <div class="ease-kpi-data">
+            <span class="ease-kpi-label">Coral Density Growth</span>
+            <strong class="ease-kpi-value">+14.2%</strong>
+          </div>
+          <div class="ease-kpi-trend positive">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+            Up from last month
           </div>
         </div>
 
-        <div class="sp-item">
-          <div class="sp-icon">🐢</div>
-          <div class="sp-info">
-            <span class="sp-name">Marine Turtles</span>
-            <span class="sp-count">Active Nesting (14)</span>
+        <div class="ease-card ease-kpi-card" style="--card-delay: 0.2s;">
+          <div class="ease-kpi-icon" style="color: #f43f5e; background: #ffe4e6;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"></path></svg>
+          </div>
+          <div class="ease-kpi-data">
+            <span class="ease-kpi-label">Avg Water Temp</span>
+            <strong class="ease-kpi-value">26.4°C</strong>
+          </div>
+          <div class="ease-kpi-trend negative">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"></polyline><polyline points="17 18 23 18 23 12"></polyline></svg>
+            +0.2°C Warning
           </div>
         </div>
 
-        <div class="sp-item">
-          <div class="sp-icon">🦠</div>
-          <div class="sp-info">
-            <span class="sp-name">Symbiotic Zooxanthellae</span>
-            <span class="sp-count" style="color: var(--clr-coral)">Dense Colonies</span>
+        <div class="ease-card ease-kpi-card" style="--card-delay: 0.3s;">
+          <div class="ease-kpi-icon" style="color: #10b981; background: #d1fae5;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10.06 10.06 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          </div>
+          <div class="ease-kpi-data">
+            <span class="ease-kpi-label">Active Drones</span>
+            <strong class="ease-kpi-value">12 / 12</strong>
+          </div>
+          <div class="ease-kpi-trend positive">
+            All systems operational
           </div>
         </div>
 
-      </div>
+      </section>
 
-    </aside>
+      <!-- ── AI Analysis Section ── -->
+      <section class="ease-analysis-section">
+        <div class="ease-card ease-map-card" style="--card-delay: 0.4s;">
+          <h2 class="ease-card-title">Live Regeneration Heatmap</h2>
+          <div class="ease-map-container">
+            <!-- Simulated Sonar/Heatmap Grid -->
+            <div class="ease-sonar-ring"></div>
+            <div class="ease-sonar-ring delay-1"></div>
+            <div class="ease-sonar-ring delay-2"></div>
+            
+            <div class="ease-reef-node" style="top: 30%; left: 40%;">
+              <div class="ease-node-pulse healthy"></div>
+              <span class="ease-node-tooltip">Sector A: High Growth</span>
+            </div>
+            <div class="ease-reef-node" style="top: 60%; left: 70%;">
+              <div class="ease-node-pulse warning"></div>
+              <span class="ease-node-tooltip">Sector B: Bleaching Risk</span>
+            </div>
+            <div class="ease-reef-node" style="top: 75%; left: 25%;">
+              <div class="ease-node-pulse healthy"></div>
+              <span class="ease-node-tooltip">Sector C: Stable</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="ease-card ease-list-card" style="--card-delay: 0.5s;">
+          <h2 class="ease-card-title">AI Action Items</h2>
+          <ul class="ease-action-list">
+            <li class="ease-action-item">
+              <div class="ease-action-icon" style="background: #e0f2fe; color: #0ea5e9;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              </div>
+              <div class="ease-action-text">
+                <strong>Schedule drone deployment</strong>
+                <span>Sector B needs micro-fragmentation seeding.</span>
+              </div>
+            </li>
+            <li class="ease-action-item">
+              <div class="ease-action-icon" style="background: #ffe4e6; color: #f43f5e;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+              </div>
+              <div class="ease-action-text">
+                <strong>Thermal Anomaly Detected</strong>
+                <span>Water temp spiked in Sector B at 14:00 UTC.</span>
+              </div>
+            </li>
+            <li class="ease-action-item">
+              <div class="ease-action-icon" style="background: #d1fae5; color: #10b981;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </div>
+              <div class="ease-action-text">
+                <strong>Symbiodinium Growth</strong>
+                <span>Algae density optimal in Sector A.</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
 
-  </main>
-
+    </main>
+  </div>
 </body>
 </html>
