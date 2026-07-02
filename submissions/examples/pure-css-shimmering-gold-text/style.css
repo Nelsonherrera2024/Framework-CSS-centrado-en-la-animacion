@@ -1,0 +1,41 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #222;
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.gold-text {
+    font-size: 80px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    
+    /* The Gold Gradient */
+    background: linear-gradient(
+        to right,
+        #bf953f,
+        #fcf6ba,
+        #b38728,
+        #fbf5b7,
+        #aa771c
+    );
+    background-size: 200% auto;
+    
+    /* Clipping the background to the text */
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    
+    /* Animation */
+    animation: shine 3s linear infinite;
+}
+
+@keyframes shine {
+    to {
+        background-position: 200% center;
+    }
+}
