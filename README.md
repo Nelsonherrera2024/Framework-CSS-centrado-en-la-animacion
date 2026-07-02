@@ -291,6 +291,8 @@ Or in CSS / PostCSS / Sass:
 
 ### Option 3 — Granular imports _(pick only what you need)_
 
+For projects that only need specific parts of EaseMotion, import files individually:
+
 ```html
 <!-- Font (optional — for Inter typography) -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -327,7 +329,6 @@ Or in CSS / PostCSS / Sass:
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/easemotion-css/components/cards.css"
 />
-```
 
 ### Option 4 — Modular animation imports _(load only what you need)_
 
@@ -1348,3 +1349,37 @@ Built with care &nbsp;·&nbsp; Zero dependencies &nbsp;·&nbsp; Animation-first 
 ## Accessibility
 
 EaseMotion CSS supports the `prefers-reduced-motion` media query to respect users who prefer reduced motion and reduce animation-related discomfort. When enabled at the operating system level, animations and transitions are minimized to provide a more accessible experience.
+
+**Dependency order:**
+
+\`\`\`
+variables.css      (required first — no dependencies)
+└── base.css
+    └── animations.css
+        └── utilities.css
+            └── components/buttons.css
+            └── components/cards.css
+\`\`\`
+
+Loading any file before its dependency causes CSS custom properties to
+silently resolve to `initial` (transparent colors, zero-duration animations)
+with **no console error**. Always load files top-to-bottom in the order
+above.
+
+
+---
+
+## Step 4: Update `README.md`
+
+Find the **"Granular imports"** section (search for `Granular imports` or `Option 3`). If it doesn't exist, add a new section under **"Usage"** or **"Customization"**:
+
+```markdown
+### Granular imports (Option 3)
+
+For projects that only need specific parts of EaseMotion, import files individually:
+
+```html
+<link rel="stylesheet" href="core/variables.css" />
+<link rel="stylesheet" href="core/base.css" />
+<link rel="stylesheet" href="components/buttons.css" />
+<!-- ... -->

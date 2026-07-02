@@ -7,10 +7,13 @@
 :root {
   color-scheme: light dark;
 
+  --ease-version: "1.0.0";
+
   /* ── Transition Speeds ─────────────────────────────────── */
   --ease-speed-fast:    150ms;
   --ease-speed-medium:  300ms;
   --ease-speed-slow:    600ms;
+  --ease-speed-fast: 150ms;
   --ease-ease:          cubic-bezier(0.4, 0, 0.2, 1);   /* smooth ease-in-out */
   --ease-ease-out:      cubic-bezier(0, 0, 0.2, 1);
   --ease-ease-linear:   linear;

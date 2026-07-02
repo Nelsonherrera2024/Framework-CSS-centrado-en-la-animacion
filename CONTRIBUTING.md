@@ -57,6 +57,13 @@ EaseMotion CSS has four distinct contribution subdirectories depending on your c
 > **Strict Directory Structure Required**
 > The `submissions/` folder strictly contains only **4 subdirectories**: `examples/`, `react/`, `scss/`, and `docs/`. **Never add or create feature folders directly in the root of `submissions/`** (e.g. `submissions/your-feature/`). Any Pull Request adding files directly under `submissions/` root will be automatically closed as invalid by our validation bots.
 
+## CSS dependency order
+
+New component files must declare their dependencies at the top as a comment,
+e.g.:
+```css
+/* Depends on: core/variables.css, core/utilities.css */
+
 ### 📢 Contribution Rate Limit Update
 
 To maintain repository stability, review quality, and fair contribution distribution, EaseMotion CSS enforces a soft daily rate limit:
