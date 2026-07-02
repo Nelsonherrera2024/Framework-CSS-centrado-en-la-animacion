@@ -1,0 +1,49 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #111;
+    margin: 0;
+}
+
+.scan-container {
+    position: relative;
+    width: 100px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fingerprint-mask {
+    color: #333;
+    transition: color 0.5s;
+}
+
+.scan-container:hover .fingerprint-mask {
+    color: #00ffcc;
+    filter: drop-shadow(0 0 10px #00ffcc);
+}
+
+.scanner-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #00ffcc;
+    box-shadow: 0 0 15px #00ffcc, 0 0 30px #00ffcc;
+    animation: scan 2s linear infinite;
+    opacity: 0;
+}
+
+.scan-container:hover .scanner-line {
+    opacity: 1;
+}
+
+@keyframes scan {
+    0% { top: 0; }
+    50% { top: 100%; }
+    100% { top: 0; }
+}
