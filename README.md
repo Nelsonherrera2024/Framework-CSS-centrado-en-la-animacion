@@ -776,6 +776,62 @@ Then simply add `.ease-reveal` along with an animation class:
 </div>
 ```
 
+### Scroll-Triggered Transitions (Scroll Trigger)
+
+For a lightweight, transition-based scroll animation system (like AOS or GSAP ScrollTrigger), you can use the `scroll-trigger.js` helper script and the `ease-scroll` utility classes.
+
+#### Setup
+
+Include the script in your HTML:
+```html
+<script src="https://cdn.jsdelivr.net/npm/easemotion-css/core/scroll-trigger.js"></script>
+```
+
+#### Usage
+
+Add the `.ease-scroll` base class and a scroll variant class to your element:
+```html
+<div class="ease-scroll ease-scroll-fade-up">
+  Animates up and fades in on scroll!
+</div>
+```
+
+#### Available Transition Styles
+
+- **Fades**: `ease-scroll-fade`, `ease-scroll-fade-up`, `ease-scroll-fade-down`, `ease-scroll-fade-left`, `ease-scroll-fade-right`
+- **Slides**: `ease-scroll-slide-up`, `ease-scroll-slide-down`, `ease-scroll-slide-left`, `ease-scroll-slide-right`
+- **Scales**: `ease-scroll-scale-in`, `ease-scroll-scale-out`
+- **Others**: `ease-scroll-blur-in`, `ease-scroll-flip-up`, `ease-scroll-flip-down`, `ease-scroll-flip-left`, `ease-scroll-flip-right`
+
+#### Configuration Options
+
+Customize animations declaratively using inline custom properties or data attributes:
+
+##### Custom Properties (CSS variables):
+```html
+<div class="ease-scroll ease-scroll-fade-up" 
+     style="--ease-scroll-duration: 1s; --ease-scroll-delay: 0.2s;">
+  Customized via CSS variables!
+</div>
+```
+
+##### Data Attributes:
+- `data-ease-scroll-duration`: Transition duration in milliseconds (e.g. `800` or `1200`).
+- `data-ease-scroll-delay`: Transition delay in milliseconds (e.g. `200` or `300`).
+- `data-ease-scroll-easing`: Easing function (e.g. `cubic-bezier(...)` or standard timing functions).
+- `data-ease-scroll-threshold`: Visibility threshold from `0` to `1` (defaults to `0.15` - triggers when 15% is visible).
+- `data-ease-scroll-once`: Set to `false` to repeat the animation every time the element scrolls into view (defaults to `true`).
+
+```html
+<div class="ease-scroll ease-scroll-scale-in" 
+     data-ease-scroll-duration="800" 
+     data-ease-scroll-delay="200" 
+     data-ease-scroll-once="false"
+     data-ease-scroll-threshold="0.3">
+  Repeats animation and has custom config!
+</div>
+```
+
 ### Hover Effects
 
 ```html
