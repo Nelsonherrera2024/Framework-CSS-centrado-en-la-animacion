@@ -11,6 +11,11 @@
 >
 > Core contribution access may reopen once the framework structure and validation systems are fully stabilized.
 
+> [!NOTE]
+> **Repository-Assigned Bug Fixes**
+>
+> Some repository-assigned bug-fix issues may require changes outside the `submissions/` directory (for example, files under `examples/`). If such exceptions exist, they should be explicitly mentioned in the corresponding issue to avoid confusion for contributors.
+
 Thank you for your interest in improving EaseMotion CSS.
 
 > [!TIP]
