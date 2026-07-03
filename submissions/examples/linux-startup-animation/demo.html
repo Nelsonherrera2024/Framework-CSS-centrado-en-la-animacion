@@ -4,74 +4,69 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Linux Startup Animation</title>
-
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/SAPTARSHI-coder/EaseMotion-css@main/easemotion.min.css">
-
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="terminal ease-fade-in">
+    <main class="terminal">
 
-    <div class="penguin">
-        <div class="head">
-            <div class="eye left"></div>
-            <div class="eye right"></div>
-            <div class="beak"></div>
-        </div>
+        <header class="terminal-header">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <h1>Linux Startup Animation</h1>
+        </header>
 
-        <div class="body">
-            <div class="belly"></div>
-        </div>
+        <section class="penguin">
 
-        <div class="feet">
-            <span></span>
-            <span></span>
-        </div>
-    </div>
+            <div class="head">
+                <div class="eye left"></div>
+                <div class="eye right"></div>
+                <div class="beak"></div>
+            </div>
 
-    <h2 class="title">Linux Boot Sequence</h2>
+            <div class="body">
+                <div class="belly"></div>
+            </div>
 
-    <div class="progress-container">
-        <div class="progress-bar"></div>
-    </div>
+            <div class="feet">
+                <span></span>
+                <span></span>
+            </div>
 
-    <div class="boot-messages">
+        </section>
 
-        <p class="msg ease-fade-in-up ease-delay-100">
-            ✔ Initializing Linux Kernel...
-        </p>
+        <section class="boot-screen">
 
-        <p class="msg ease-fade-in-up ease-delay-200">
-            ✔ Mounting File System...
-        </p>
+            <div class="progress-container">
+                <div class="progress-bar"></div>
+            </div>
 
-        <p class="msg ease-fade-in-up ease-delay-300">
-            ✔ Starting Network Manager...
-        </p>
+            <div class="boot-messages">
 
-        <p class="msg ease-fade-in-up ease-delay-400">
-            ✔ Loading Drivers...
-        </p>
+                <p class="msg msg1">[ OK ] Initializing Linux Kernel...</p>
 
-        <p class="msg ease-fade-in-up ease-delay-500">
-            ✔ Starting Display Manager...
-        </p>
+                <p class="msg msg2">[ OK ] Mounting File System...</p>
 
-        <p class="msg ease-fade-in-up ease-delay-600">
-            ✔ Boot Complete.
-        </p>
+                <p class="msg msg3">[ OK ] Starting Network Manager...</p>
 
-    </div>
+                <p class="msg msg4">[ OK ] Loading Device Drivers...</p>
 
-    <div class="login">
-        login:
-        <span class="cursor"></span>
-    </div>
+                <p class="msg msg5">[ OK ] Starting Display Manager...</p>
 
+                <p class="msg msg6">[ OK ] Boot Completed Successfully.</p>
+
+            </div>
+
+            <div class="login">
+    <span>user@linux:~$ </span>
+    <span class="cursor"></span>
 </div>
+
+        </section>
+
+    </main>
 
 </body>
 </html>

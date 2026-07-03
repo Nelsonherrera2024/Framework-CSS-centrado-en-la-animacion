@@ -1,39 +1,55 @@
 # Linux Startup Animation
 
-A pure HTML and CSS Linux startup animation component built for EaseMotion CSS.
+A Linux-inspired startup animation built using only HTML and CSS.
 
-## ✨ Features
+This example recreates a simple Linux boot sequence inside a terminal window. It features a progress bar, boot messages, a blinking terminal cursor, and a CSS-drawn Linux penguin mascot.
 
-- 🐧 CSS-drawn Tux Penguin
-- 💻 Linux terminal-style interface
-- 📊 Animated loading progress bar
-- ⌨️ Sequential Linux boot messages
-- ✨ Blinking login cursor
-- 📱 Responsive design
-- 🎨 Uses EaseMotion CSS entrance animations
-- 🚫 No JavaScript required
+---
 
-## 📂 Folder Structure
+## Features
+
+- Pure HTML and CSS
+- No JavaScript
+- Animated boot progress bar
+- Sequential boot log messages
+- Blinking terminal cursor
+- CSS-drawn Linux penguin
+- Responsive design
+
+---
+
+## File Structure
 
 ```
 linux-startup-animation/
-├── index.html
+├── demo.html
 ├── style.css
 └── README.md
 ```
 
-## 🚀 Technologies Used
+---
 
-- HTML5
-- CSS3
-- EaseMotion CSS
+## How to Use
 
-## 📖 How to Run
+1. Open `demo.html` in any modern browser.
+2. Watch the Linux startup animation.
+3. Customize the boot messages, colors, or animation timings if desired.
 
-1. Open `index.html` in your browser.
-2. Or use Live Server in VS Code.
-3. Watch the Linux boot animation.
+---
 
-## 🎯 Purpose
+## Why this fits EaseMotion CSS
 
-This example demonstrates how to create a Linux-inspired startup animation using only HTML and CSS while integrating EaseMotion CSS animation utilities.
+This example demonstrates how CSS animations can be used to create engaging interface effects without JavaScript. It is lightweight, easy to understand, beginner-friendly, and showcases smooth animation techniques that align with EaseMotion CSS.
+
+---
+
+## Browser Support
+
+- Chrome
+- Firefox
+- Edge
+- Safari
+
+---
+
+Created as an example submission for the EaseMotion CSS project.
