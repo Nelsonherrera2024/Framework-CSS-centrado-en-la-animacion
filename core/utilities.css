@@ -205,8 +205,8 @@
   max-width: var(--ease-container-max) !important;
   margin-left: auto !important;
   margin-right: auto !important;
-  padding-left: var(--ease-space-6) !important;
-  padding-right: var(--ease-space-6) !important;
+  padding-left: var(--ease-space-4) !important;
+  padding-right: var(--ease-space-4) !important;
 
   /* Container Query support */
   container-type: inline-size !important;
@@ -365,15 +365,7 @@
    Mobile-first breakpoints using --ease-bp-* tokens
    ──────────────────────────────────────────────────────────── */
 
-/* Extra-small: override default grid collapse at 480px */
-@media (max-width: 480px) {
-  .ease-grid-auto,
-  .ease-grid-cols-2,
-  .ease-grid-cols-3,
-  .ease-grid-cols-4 {
-    grid-template-columns: minmax(0, 1fr) !important;
-  }
-}
+/* Removed hacky max-width/min-width grid overrides. Use mobile-first utilities instead (e.g. .ease-grid-cols-1 .ease-md-grid-cols-3) */
 
 /* sm: 640px+ (--ease-bp-sm) */
 @media (min-width: 640px) {

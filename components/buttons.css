@@ -313,16 +313,33 @@
 
 /* ── Accessibility: Reduced Motion ───────────────────────── */
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .ease-btn {
     max-width: 100%;
     white-space: normal;
     text-align: center;
+    min-height: 44px; /* Minimum tap target size for accessibility */
   }
 
   .ease-btn-group {
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
+    gap: var(--ease-space-2);
+  }
+
+  /* Reset border radius for wrapped button groups */
+  .ease-btn-group .ease-btn {
+    border-radius: var(--ease-radius-md, 0.5rem);
+    border-width: 2px;
+    border-right-width: 2px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ease-btn-group {
+    flex-direction: column;
+    width: 100%;
   }
 }
 

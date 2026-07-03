@@ -122,9 +122,29 @@
 
   @media (prefers-color-scheme: dark) {
     .ease-navbar-glass {
-      background: var(--ease-glass-bg, rgba(15, 23, 42, 0.3));
+      background: var(--ease-glass-bg, rgba(15, 14, 23, 0.3));
       border-color: var(--ease-glass-border, rgba(255, 255, 255, 0.08));
       color: var(--ease-color-neutral-100, #f1f5f9);
+    }
+  }
+
+  /* ── Mobile Responsive Navbar (≤768px) ───────────────── */
+  @media (max-width: 768px) {
+    .ease-navbar-glass {
+      flex-direction: column;
+      gap: var(--ease-space-3);
+    }
+
+    .ease-navbar-glass .ease-navbar-menu {
+      width: 100%;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: var(--ease-space-2);
+    }
+
+    .ease-navbar-glass .ease-navbar-item {
+      padding: var(--ease-space-2) var(--ease-space-3);
+      font-size: var(--ease-text-xs);
     }
   }
 }

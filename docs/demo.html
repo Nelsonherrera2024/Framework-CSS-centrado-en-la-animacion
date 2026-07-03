@@ -41,6 +41,7 @@
       color: var(--page-text);
     }
 
+    /* ── Navigation ──────────────────────────────────────── */
     .demo-nav {
       position: sticky;
       top: 0;
@@ -49,13 +50,15 @@
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      padding: var(--ease-space-4) 0;
+      padding: var(--ease-space-3) 0;
     }
 
+    /* Top bar: logo on left, theme toggle on right — always one row */
     .demo-nav-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: var(--ease-space-3);
     }
 
     .demo-logo {
@@ -66,25 +69,39 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
       letter-spacing: -0.02em;
+      flex-shrink: 0;
     }
 
+    /* Section links: sit between logo and theme toggle */
     .demo-nav-links {
       display: flex;
-      gap: var(--ease-space-6);
+      flex-wrap: wrap;
+      gap: var(--ease-space-4);
       list-style: none;
       padding: 0;
       margin: 0;
+      align-items: center;
+      justify-content: flex-end;
+      flex-shrink: 1;
+    }
+
+    .demo-nav-links::-webkit-scrollbar {
+      display: none; /* Chrome / Safari */
     }
 
     .demo-nav-links a {
       color: rgba(255, 255, 255, 0.65);
       font-size: var(--ease-text-sm);
       font-weight: 500;
-      transition: color var(--ease-speed-fast) var(--ease-ease), background-color var(--ease-speed-fast) var(--ease-ease), box-shadow var(--ease-speed-fast) var(--ease-ease);
+      transition: color var(--ease-speed-fast) var(--ease-ease),
+                  background-color var(--ease-speed-fast) var(--ease-ease),
+                  box-shadow var(--ease-speed-fast) var(--ease-ease);
       text-decoration: none;
       position: relative;
-      padding: 6px 12px;
+      padding: var(--ease-space-2) var(--ease-space-3);
       border-radius: var(--ease-radius-md);
+      white-space: nowrap; /* keep each link on one line */
+      display: block;
     }
 
     .demo-nav-links a:hover,
@@ -115,7 +132,7 @@
 
     /* ── Hero ─────────────────────────────────────────────── */
     .demo-hero {
-      padding: var(--ease-space-16) 0;
+      padding: clamp(var(--ease-space-8), 8vw, var(--ease-space-16)) 0;
       text-align: center;
       background: radial-gradient(ellipse 80% 60% at 50% 0%,
           rgba(108, 99, 255, 0.18) 0%,
@@ -123,26 +140,56 @@
     }
 
     .demo-hero h1 {
-      font-size: clamp(2.5rem, 6vw, 4rem);
+      /* 1.75rem floor so it stays readable at 320px */
+      font-size: clamp(1.75rem, 7vw, 4rem);
       font-weight: 800;
       background: linear-gradient(135deg, #ffffff 0%, #a78bfa 60%, #6c63ff 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
       letter-spacing: -0.04em;
-      margin-bottom: var(--ease-space-4);
+      margin-bottom: var(--ease-space-3);
+      /* Prevent long gradient text from overflowing on tiny screens */
+      word-break: break-word;
+      overflow-wrap: break-word;
     }
 
     .demo-hero p {
-  font-size: var(--ease-text-lg);
-  color: var(--page-text-muted);
-  max-width: 560px;
-  margin: 0 auto var(--ease-space-8);
-}
+      font-size: var(--ease-text-base);
+      color: var(--page-text-muted);
+      max-width: 560px;
+      width: 100%;
+      margin: 0 auto var(--ease-space-5);
+      /* Wrap gracefully at narrow widths */
+      overflow-wrap: break-word;
+    }
+
+    /* ── Hero CTA buttons ─────────────────────────────────── */
+    .demo-hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: var(--ease-space-3);
+    }
+
+    /* On very narrow screens, stack CTA buttons vertically */
+    @media (max-width: 424px) {
+      .demo-hero-cta {
+        flex-direction: column;
+        align-items: stretch;
+        gap: var(--ease-space-2);
+      }
+
+      .demo-hero-cta .ease-btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
 
     /* ── Section ──────────────────────────────────────────── */
     .demo-section {
-      padding: var(--ease-space-16) 0;
+      padding: clamp(var(--ease-space-8), 6vw, var(--ease-space-16)) 0;
       border-top: 1px solid rgba(255, 255, 255, 0.06);
     }
 
@@ -156,17 +203,31 @@
     }
 
     .demo-section-title {
-      font-size: var(--ease-text-3xl);
+      /* Fluid: 1.5rem at 320px → 1.875rem at desktop */
+      font-size: clamp(1.5rem, 4vw + 0.5rem, 1.875rem);
       font-weight: 700;
       color: var(--heading-color);
       margin-bottom: var(--ease-space-2);
+      word-break: break-word;
+      overflow-wrap: break-word;
     }
 
     .demo-section-desc {
       color: var(--page-text-muted);
       font-size: var(--ease-text-base);
       max-width: 520px;
-      margin-bottom: var(--ease-space-10);
+      width: 100%;
+      margin-bottom: var(--ease-space-8);
+      overflow-wrap: break-word;
+    }
+
+    /* ── Button groups ────────────────────────────────────── */
+    .demo-btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: var(--ease-space-3);
+      margin-bottom: var(--ease-space-8);
     }
 
     /* ── Code Tag ─────────────────────────────────────────── */
@@ -177,9 +238,13 @@
       background: rgba(108, 99, 255, 0.15);
       color: var(--ease-color-primary-light);
       border: 1px solid rgba(108, 99, 255, 0.3);
-      padding: 0.15em 0.6em;
+      padding: 0.15em 0.5em;
       border-radius: var(--ease-radius-full);
       white-space: nowrap;
+      /* Allow very long class-name tags to break at small widths */
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     /* ── Demo Chip ────────────────────────────────────────── */
@@ -196,6 +261,8 @@
       background-color: rgba(255, 255, 255, 0.04);
       border-color: rgba(255, 255, 255, 0.08);
       color: #fffffe;
+      /* Use space-5 (20px) desktop; cards.css handles ≤640px → space-4 */
+      padding: var(--ease-space-5);
     }
 
     .ease-card-title {
@@ -218,30 +285,52 @@
       border-color: rgba(255, 255, 255, 0.06);
     }
 
-    /* ── Animation Box ────────────────────────────────────── */
+    /* ── Animation groups ─────────────────────────────────── */
+    .demo-anim-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--ease-space-5);
+      margin-bottom: var(--ease-space-8);
+    }
+
+    /* ── Layout demo helpers ──────────────────────────────── */
+    .demo-layout-row {
+      margin-bottom: var(--ease-space-8);
+    }
+
+    /* Layout flex row: allow tag to truncate on small screens */
+    .demo-layout-row .ease-flex {
+      flex-wrap: wrap;
+      gap: var(--ease-space-3);
+    }
+
     .anim-box {
-      width: 64px;
-      height: 64px;
+      width: 60px;
+      height: 60px;
       border-radius: var(--ease-radius-md);
       background: linear-gradient(135deg, var(--ease-color-primary), #a78bfa);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.5rem;
+      font-size: 1.375rem;
       color: #fff;
       font-weight: bold;
       cursor: pointer;
+      /* Minimum tap target on touch devices */
+      min-width: 44px;
+      min-height: 44px;
     }
 
     .anim-cell {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: var(--ease-space-3);
+      gap: var(--ease-space-2);
     }
 
     .anim-cell .tag {
       font-size: 10px;
+      max-width: 120px;
     }
 
     /* ── Badge ────────────────────────────────────────────── */
@@ -273,18 +362,153 @@
     /* ── Footer ───────────────────────────────────────────── */
     .demo-footer {
       text-align: center;
-      padding: var(--ease-space-12) 0;
+      padding: clamp(var(--ease-space-6), 5vw, var(--ease-space-12)) 0;
       border-top: 1px solid rgba(255, 255, 255, 0.06);
       color: rgba(255, 255, 255, 0.35);
       font-size: var(--ease-text-sm);
+    }
+
+    .demo-footer p {
+      overflow-wrap: break-word;
     }
 
     /* ── Divider ──────────────────────────────────────────── */
     .demo-divider {
       height: 1px;
       background: linear-gradient(90deg, transparent, rgba(108, 99, 255, 0.4), transparent);
-      margin: var(--ease-space-12) 0;
+      margin: clamp(var(--ease-space-6), 4vw, var(--ease-space-8)) 0;
       border: none;
+    }
+
+    /* ══════════════════════════════════════════════════════
+       RESPONSIVE BREAKPOINTS
+       Tested at: 320px · 375px · 425px · 504px · 768px · 1024px+
+    ══════════════════════════════════════════════════════ */
+
+    /* ── ≤480px: phones (320 / 375 / 425) ─────────────────── */
+    @media (max-width: 480px) {
+      /* Nav: single row, links scroll horizontally */
+      .demo-nav {
+        padding: var(--ease-space-2) 0;
+      }
+
+      .demo-nav-inner {
+        gap: var(--ease-space-2);
+      }
+
+      .demo-nav-links a {
+        padding: var(--ease-space-1) var(--ease-space-2);
+        font-size: 0.7rem;
+      }
+
+      /* Hero */
+      .demo-hero h1 {
+        font-size: clamp(1.6rem, 8vw, 2rem);
+        letter-spacing: -0.03em;
+      }
+
+      .demo-hero p {
+        font-size: var(--ease-text-sm);
+      }
+
+      /* Sections */
+      .demo-section-title {
+        font-size: clamp(1.3rem, 5vw, 1.5rem);
+      }
+
+      .demo-section-desc {
+        font-size: var(--ease-text-sm);
+        margin-bottom: var(--ease-space-6);
+      }
+
+      /* Button groups: tighter gap */
+      .demo-btn-group {
+        gap: var(--ease-space-2);
+        margin-bottom: var(--ease-space-6);
+      }
+
+      /* Stat cards: already collapse to 1-col via framework at ≤480px */
+      /* Animation cells: tighter gap so more fit per row */
+      .demo-anim-group {
+        gap: var(--ease-space-3);
+      }
+
+      .anim-cell .tag {
+        max-width: 80px;
+        font-size: 9px;
+      }
+
+      /* Stagger cards: full-width stack */
+      .ease-flex.ease-flex-wrap > .ease-card[style*="min-width"] {
+        min-width: 0 !important;
+        flex: 1 1 calc(50% - var(--ease-space-2)) !important;
+      }
+
+      /* Layout flex demo: stack label and button */
+      .demo-layout-row .ease-flex {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      /* Divider: tighter */
+      .demo-divider {
+        margin: var(--ease-space-4) 0;
+      }
+    }
+
+    /* ── 481px – 640px: large phones / small tablets (504px) ─ */
+    @media (min-width: 481px) and (max-width: 640px) {
+      .demo-nav {
+        padding: var(--ease-space-2) 0;
+      }
+
+      .demo-nav-links a {
+        padding: var(--ease-space-1) var(--ease-space-2);
+        font-size: var(--ease-text-xs);
+      }
+
+      .demo-section-desc {
+        margin-bottom: var(--ease-space-6);
+      }
+
+      .demo-btn-group {
+        gap: var(--ease-space-2);
+        margin-bottom: var(--ease-space-6);
+      }
+    }
+
+    /* ── 641px – 768px: tablet ─────────────────────────────── */
+    @media (min-width: 641px) and (max-width: 768px) {
+      /* Nav: still single row, links fit comfortably */
+      .demo-nav-inner {
+        gap: var(--ease-space-3);
+      }
+
+      /* Stat cards: 2-col on tablet (framework handles ≤480 → 1-col) */
+      .ease-grid-cols-3.ease-sm-grid-cols-1 {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      }
+    }
+
+    /* ── 769px+: desktop — preserve original design ─────────── */
+    @media (min-width: 769px) {
+      .demo-nav-inner {
+        gap: var(--ease-space-4);
+      }
+
+      .demo-nav-links a {
+        padding: var(--ease-space-2) var(--ease-space-3);
+        font-size: var(--ease-text-sm);
+      }
+
+      .anim-box {
+        width: 64px;
+        height: 64px;
+      }
+
+      .demo-anim-group {
+        gap: var(--ease-space-6);
+      }
     }
   </style>
 </head>
@@ -294,10 +518,10 @@
   <!-- ═══════════════════════════════════════════════════════
        NAVIGATION
   ══════════════════════════════════════════════════════════ -->
-  <nav class="demo-nav" style="padding-left: 10px;">
+  <nav class="demo-nav">
     <div class="ease-container demo-nav-inner">
       <a href="index.html" class="demo-logo" style="text-decoration: none; display: flex; align-items: center;">
-        <img src="assets/logo.svg" alt="EaseMotion CSS" style="height: 36px; width: auto; display: block;" />
+        <img src="assets/logo.svg" alt="EaseMotion CSS" style="height: 32px; width: auto; display: block;" />
       </a>
       <ul class="demo-nav-links">
         <li><a href="#buttons">Buttons</a></li>
@@ -305,29 +529,28 @@
         <li><a href="#animations">Animations</a></li>
         <li><a href="#layout">Layout</a></li>
         <li><a href="./">Docs</a></li>
-        <li>
-          <button
-            id="theme-toggle"
-            class="theme-toggle-btn ease-hover-grow"
-            aria-label="Toggle dark/light theme"
-          >
-            <svg class="sun-icon" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="5"></circle>
-              <line x1="12" y1="1" x2="12" y2="3"></line>
-              <line x1="12" y1="21" x2="12" y2="23"></line>
-              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-              <line x1="1" y1="12" x2="3" y2="12"></line>
-              <line x1="21" y1="12" x2="23" y2="12"></line>
-              <line x1="4.22" y1="19.72" x2="5.64" y2="18.3"></line>
-              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-            </svg>
-            <svg class="moon-icon" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-            </svg>
-          </button>
-        </li>
       </ul>
+      <button
+        id="theme-toggle"
+        class="theme-toggle-btn ease-hover-grow"
+        aria-label="Toggle dark/light theme"
+        style="flex-shrink: 0;"
+      >
+        <svg class="sun-icon" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.72" x2="5.64" y2="18.3"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg class="moon-icon" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
     </div>
   </nav>
 
@@ -340,18 +563,18 @@
         <div class="demo-section-label">Interactive Demo</div>
         <h1>Build with EaseMotion</h1>
         <p>Human-readable class names. Animation-first. No memorization required.</p>
-        <div class="ease-center ease-gap-3 ease-slide-up ease-delay-200">
+        <div class="demo-hero-cta ease-slide-up ease-delay-200">
           <a
             href="./"
             class="ease-btn ease-btn-primary ease-btn-hover ease-btn-lg ease-btn-pill"
-            style="display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:0 1.35rem; line-height:1; color:white;"
+            style="display:inline-flex; align-items:center; justify-content:center; min-height:48px; line-height:1; color:white;"
           >
             Read Docs
           </a>
           <a
             href="https://github.com/SAPTARSHI-coder/EaseMotion-css"
             class="ease-btn ease-btn-outline ease-btn-lg ease-btn-pill"
-            style="display:inline-flex; align-items:center; justify-content:center; min-height:48px; border-color:rgba(255,255,255,0.25); color:var(--page-text); padding:0 1.35rem; line-height:1;"
+            style="display:inline-flex; align-items:center; justify-content:center; min-height:48px; border-color:rgba(255,255,255,0.25); color:var(--page-text);"
           >
             GitHub ↗
           </a>
@@ -365,7 +588,7 @@
     <!-- ═════════════════════════════════════════════════════
          BUTTONS
     ══════════════════════════════════════════════════════════ -->
-    <section id="buttons" class="demo-section" style="padding-left: 10px;">
+    <section id="buttons" class="demo-section">
       <div class="ease-container">
         <div class="demo-section-label">Components</div>
         <h2 class="demo-section-title">Buttons</h2>
@@ -375,7 +598,7 @@
 
         <!-- Variants -->
         <div class="demo-chip">// Variants</div>
-        <div class="ease-flex ease-flex-wrap ease-gap-3" style="margin-bottom: var(--ease-space-8);">
+        <div class="demo-btn-group">
           <button class="ease-btn ease-btn-primary">Primary</button>
           <button class="ease-btn ease-btn-success">Success</button>
           <button class="ease-btn ease-btn-danger">Danger</button>
@@ -383,27 +606,32 @@
           <button class="ease-btn ease-btn-ghost" style="color: var(--page-text);">Ghost</button>
         </div>
 
-        <!-- Hover effects -->
-        <div class="demo-chip">// With ease-btn-hover</div>
-        <div class="ease-flex ease-flex-wrap ease-gap-3" style="margin-bottom: var(--ease-space-8);">
-          <button class="ease-btn ease-btn-primary ease-btn-hover">Hover me ✨</button>
-          <button class="ease-btn ease-btn-outline ease-btn-hover"
-            style="border-color:rgba(255,255,255,0.3); color: var(--page-text);Hover me 🚀</button>
-          <button class="ease-btn ease-btn-success ease-btn-hover">Hover me 🌿</button>
-        </div>
+       <!-- Hover effects -->
+<div class="demo-chip">// With ease-btn-hover</div>
+<div class="demo-btn-group">
+  <button class="ease-btn ease-btn-primary ease-btn-hover">Hover me ✨</button>
 
-        <!-- Sizes -->
-        <div class="demo-chip">// Sizes</div>
-        <div class="ease-flex ease-flex-wrap ease-items-center ease-gap-3" style="margin-bottom: var(--ease-space-8);">
-          <button class="ease-btn ease-btn-primary ease-btn-sm">Small</button>
-          <button class="ease-btn ease-btn-primary">Default</button>
-          <button class="ease-btn ease-btn-primary ease-btn-lg">Large</button>
-          <button class="ease-btn ease-btn-primary ease-btn-xl">X-Large</button>
-        </div>
+  <button
+    class="ease-btn ease-btn-outline ease-btn-hover"
+    style="border-color: rgba(255,255,255,0.3); color: var(--page-text);">
+    Hover me 🚀
+  </button>
+
+  <button class="ease-btn ease-btn-success ease-btn-hover">Hover me 🌿</button>
+</div>
+
+<!-- Sizes -->
+<div class="demo-chip">// Sizes</div>
+<div class="demo-btn-group">
+  <button class="ease-btn ease-btn-primary ease-btn-sm">Small</button>
+  <button class="ease-btn ease-btn-primary">Default</button>
+  <button class="ease-btn ease-btn-primary ease-btn-lg">Large</button>
+  <button class="ease-btn ease-btn-primary ease-btn-xl">X-Large</button>
+</div>
 
         <!-- Squish -->
         <div class="demo-chip">// Squish Button Utility</div>
-        <div class="ease-flex ease-flex-wrap ease-gap-3" style="margin-bottom: var(--ease-space-8);">
+        <div class="demo-btn-group">
           <button class="ease-btn ease-btn-primary ease-squish-button">Squish Me </button>
         </div>
 
@@ -423,7 +651,7 @@
     <!-- ═════════════════════════════════════════════════════
          CARDS
     ══════════════════════════════════════════════════════════ -->
-    <section id="cards" class="demo-section" style="padding-left: 10px;">
+    <section id="cards" class="demo-section">
       <div class="ease-container">
         <div class="demo-section-label">Components</div>
         <h2 class="demo-section-title">Cards</h2>
@@ -433,9 +661,9 @@
 
         <!-- Hover Cards -->
         <div class="demo-chip">// ease-card + ease-card-hover</div>
-        <div class="ease-grid ease-grid-auto ease-gap-6" style="margin-bottom: var(--ease-space-10);">
+        <div class="ease-grid ease-grid-auto ease-gap-6" style="margin-bottom: var(--ease-space-8);">
 
-          <article class="ease-card ease-card-shadow ease-card-hover ease-slide-up ease-delay-100" style="padding: 10px;">
+          <article class="ease-card ease-card-shadow ease-card-hover ease-slide-up ease-delay-100">
             <div class="ease-card-header" >
               <span class="ease-badge ease-badge-primary">New</span>
             </div>
@@ -450,7 +678,7 @@
             </div>
           </article>
 
-          <article class="ease-card ease-card-shadow ease-card-hover ease-slide-up ease-delay-200" style="padding: 10px;">
+          <article class="ease-card ease-card-shadow ease-card-hover ease-slide-up ease-delay-200">
             <div class="ease-card-header">
               <span class="ease-badge ease-badge-success">Stable</span>
             </div>
@@ -465,7 +693,7 @@
             </div>
           </article>
 
-          <article class="ease-card ease-card-shadow ease-card-hover ease-slide-up ease-delay-300" style="padding: 10px;">
+          <article class="ease-card ease-card-shadow ease-card-hover ease-slide-up ease-delay-300">
             <div class="ease-card-header">
               <span class="ease-badge ease-badge-danger">MVP</span>
             </div>
@@ -482,10 +710,10 @@
 
         <div class="demo-chip">// Card Variants Showcase</div>
 
-        <div class="ease-grid ease-grid-auto ease-gap-6" style="margin-bottom: var(--ease-space-10);">
+        <div class="ease-grid ease-grid-auto ease-gap-6" style="margin-bottom: var(--ease-space-8);">
 
           <!-- Base Card -->
-          <article class="ease-card" style="padding: 10px;">
+          <article class="ease-card">
             <h3 class="ease-card-title">Base Card</h3>
             <p class="ease-card-subtitle">Default Variant</p>
 
@@ -497,7 +725,7 @@
           </article>
 
           <!-- Shadow Card -->
-          <article class="ease-card ease-card-shadow" style="padding: 10px;">
+          <article class="ease-card ease-card-shadow">
             <h3 class="ease-card-title">Shadow Card</h3>
             <p class="ease-card-subtitle">Elevation Effect</p>
 
@@ -509,7 +737,7 @@
           </article>
 
           <!-- Hover Card -->
-          <article class="ease-card ease-card-hover" style="padding: 10px;">
+          <article class="ease-card ease-card-hover">
             <h3 class="ease-card-title">Hover Card</h3>
             <p class="ease-card-subtitle">Interactive Motion</p>
 
@@ -524,16 +752,16 @@
 
         <!-- Special Types -->
         <div class="demo-chip">// Stat Cards · Accent Cards</div>
-        <div class="ease-grid ease-grid-cols-3 ease-gap-6 ease-sm-grid-cols-1">
-          <div class="ease-card ease-card-stat ease-card-hover" style="padding: 10px;">
+        <div class="ease-grid ease-grid-cols-1 ease-md-grid-cols-3 ease-gap-6">
+          <div class="ease-card ease-card-stat ease-card-hover">
             <div class="ease-stat-value">42+</div>
             <div class="ease-stat-label">Utilities</div>
           </div>
-          <div class="ease-card ease-card-stat ease-card-hover" style="padding: 10px;">
+          <div class="ease-card ease-card-stat ease-card-hover">
             <div class="ease-stat-value">12</div>
             <div class="ease-stat-label">Animations</div>
           </div>
-          <div class="ease-card ease-card-stat ease-card-hover" style="padding: 10px;">
+          <div class="ease-card ease-card-stat ease-card-hover">
             <div class="ease-stat-value">0</div>
             <div class="ease-stat-label">Dependencies</div>
           </div>
@@ -546,7 +774,7 @@
     <!-- ═════════════════════════════════════════════════════
          ANIMATIONS
     ══════════════════════════════════════════════════════════ -->
-    <section id="animations" class="demo-section"style="padding-left: 10px;">
+    <section id="animations" class="demo-section">
       <div class="ease-container">
         <div class="demo-section-label">Animations</div>
         <h2 class="demo-section-title">Motion Library</h2>
@@ -556,7 +784,7 @@
 
         <!-- Entrance anims -->
         <div class="demo-chip">// Entrance animations</div>
-        <div class="ease-flex ease-flex-wrap ease-gap-6" style="margin-bottom: var(--ease-space-10);">
+        <div class="demo-anim-group">
           <div class="anim-cell">
             <div class="anim-box ease-fade-in" id="anim-fade" onclick="replay(this,'ease-fade-in')">F</div>
             <span class="tag">ease-fade-in</span>
@@ -590,7 +818,7 @@
 
         <!-- Looping anims -->
         <div class="demo-chip">// Looping animations</div>
-        <div class="ease-flex ease-flex-wrap ease-gap-6" style="margin-bottom: var(--ease-space-10);">
+        <div class="demo-anim-group">
           <div class="anim-cell">
             <div class="anim-box ease-bounce">↕</div>
             <span class="tag">ease-bounce</span>
@@ -607,7 +835,7 @@
 
         <!-- Hover anims -->
         <div class="demo-chip">// Hover animations</div>
-        <div class="ease-flex ease-flex-wrap ease-gap-6" style="margin-bottom: var(--ease-space-10);">
+        <div class="demo-anim-group">
           <div class="anim-cell">
             <div class="anim-box ease-hover-grow">↔</div>
             <span class="tag">ease-hover-grow</span>
@@ -643,7 +871,7 @@
         </div>
         <!-- Slide-in from Off-Canvas -->
         <div class="demo-chip">// Slide-in from off-canvas (sides & corners)</div>
-        <div class="ease-flex ease-flex-wrap ease-gap-6" style="margin-bottom: var(--ease-space-10); overflow: hidden;">
+        <div class="demo-anim-group" style="overflow: hidden;">
           <div class="anim-cell">
             <div class="anim-box ease-slide-in-from-top" onclick="replay(this,'ease-slide-in-from-top')">↓</div>
             <span class="tag">ease-slide-in-from-top</span>
@@ -702,7 +930,7 @@
     <!-- ═════════════════════════════════════════════════════
          LAYOUT
     ══════════════════════════════════════════════════════════ -->
-    <section id="layout" class="demo-section" style="padding-left: 10px;">
+    <section id="layout" class="demo-section">
       <div class="ease-container">
         <div class="demo-section-label">Layout Utilities</div>
         <h2 class="demo-section-title">Flexible Layouts</h2>
@@ -712,17 +940,17 @@
 
         <!-- Flex examples -->
         <div class="demo-chip">// ease-flex · ease-center · ease-justify-between</div>
-        <div style="margin-bottom: var(--ease-space-8);">
+        <div class="demo-layout-row">
           <div class="ease-flex ease-justify-between ease-items-center ease-padding-4 ease-rounded ease-border"
-            style="border-color:rgba(255,255,255,0.08);">
-            <span class="tag">ease-flex ease-justify-between</span>
-            <button class="ease-btn ease-btn-primary ease-btn-sm">Action</button>
+            style="border-color:rgba(255,255,255,0.08); gap: var(--ease-space-3);">
+            <span class="tag" style="white-space: normal; overflow-wrap: break-word;">ease-flex ease-justify-between</span>
+            <button class="ease-btn ease-btn-primary ease-btn-sm" style="flex-shrink:0;">Action</button>
           </div>
         </div>
 
         <!-- Grid examples -->
         <div class="demo-chip">// ease-grid ease-grid-auto ease-gap</div>
-        <div class="ease-grid ease-grid-auto ease-gap-4" style="margin-bottom: var(--ease-space-8);">
+        <div class="ease-grid ease-grid-auto ease-gap-4 demo-layout-row">
           <div
             class="ease-padding-4 ease-rounded ease-bg-primary ease-text-white ease-text-center ease-font-semibold ease-shadow">
             Alpha</div>
@@ -736,17 +964,17 @@
 
         <!-- Stagger example -->
         <div class="demo-chip">// ease-slide-up + ease-delay-*</div>
-        <div class="ease-flex ease-gap-4 ease-flex-wrap">
-          <div class="ease-card ease-slide-up ease-delay-100" style="flex:1; min-width:140px;">
+        <div class="ease-grid ease-gap-4" style="grid-template-columns: repeat(auto-fill, minmax(min(100%, 120px), 1fr));">
+          <div class="ease-card ease-slide-up ease-delay-100">
             <code class="tag">delay-100</code>
           </div>
-          <div class="ease-card ease-slide-up ease-delay-200" style="flex:1; min-width:140px;">
+          <div class="ease-card ease-slide-up ease-delay-200">
             <code class="tag">delay-200</code>
           </div>
-          <div class="ease-card ease-slide-up ease-delay-300" style="flex:1; min-width:140px;">
+          <div class="ease-card ease-slide-up ease-delay-300">
             <code class="tag">delay-300</code>
           </div>
-          <div class="ease-card ease-slide-up ease-delay-500" style="flex:1; min-width:140px;">
+          <div class="ease-card ease-slide-up ease-delay-500">
             <code class="tag">delay-500</code>
           </div>
         </div>
