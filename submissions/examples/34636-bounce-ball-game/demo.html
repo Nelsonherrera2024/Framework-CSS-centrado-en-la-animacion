@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Bounce Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="hud">
+        <div class="stat-box">Score: <span id="scoreVal" class="stat-value">0</span></div>
+        <div class="stat-box">Level: <span id="levelVal" class="stat-value">1</span></div>
+        <div class="stat-box">Shields: <span id="shieldVal" class="stat-value">0</span></div>
+    </div>
+
+    <div id="startScreen" class="ui-layer">
+        <div class="panel">
+            <h1>Neon Bounce</h1>
+            <p>Keep the ball in the shrinking circle!<br>Use Mouse or Touch to move the paddle.</p>
+            <button id="startBtn">Start Game</button>
+        </div>
+    </div>
+
+    <div id="gameOverScreen" class="ui-layer hidden">
+        <div class="panel">
+            <h1>System Failure</h1>
+            <p>Final Score: <span id="finalScore">0</span><br>Bounces: <span id="finalBounces">0</span></p>
+            <button id="restartBtn">Reboot System</button>
+        </div>
+    </div>
+
+    <canvas id="gameCanvas"></canvas>
+
+    <script>
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        let width, height;
+        function resize() {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resize);
+        resize();
+
+        // Game Classes
+        class Ball {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+                this.vx = (Math.random() - 0.5) * 10;
+                this.vy = 5;
+                this.radius = 8;
+            }
+            update(speedMultiplier) {
+                this.vy += 0.2; // Gravity from issue specs
+                this.x += this.vx * speedMultiplier;
+                this.y += this.vy * speedMultiplier;
+            }
+            draw(ctx) {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = '#fff';
+                ctx.shadowBlur = 15;
+                ctx.shadowColor = '#0ff';
+                ctx.fill();
+                ctx.shadowBlur = 0;
+            }
+        }
+
+        class Game {
+            constructor() {
+                this.reset();
+                this.bindControls();
+            }
+
+            reset() {
+                this.state = 'start'; // start, playing, gameover
+                this.balls = [new Ball(width/2, height/2 - 100)];
+                this.particles = [];
+                this.score = 0;
+                this.bounces = 0;
+                this.level = 1;
+                this.speedMultiplier = 1;
+                this.shields = 0;
+                
+                this.circle = {
+                    x: width / 2,
+                    y: height / 2,
+                    radius: Math.min(width, height) * 0.45,
+                    minRadius: Math.min(width, height) * 0.2
+                };
+
+                this.paddle = {
+                    x: width / 2,
+                    y: height / 2 + this.circle.radius * 0.8,
+                    width: 120,
+                    height: 15
+                };
+                
+                this.updateHUD();
+            }
+
+            bindControls() {
+                const movePaddle = (e) => {
+                    if(this.state !== 'playing') return;
+                    let clientX = e.touches ? e.touches[0].clientX : e.clientX;
+                    this.paddle.x = clientX;
+                };
+                window.addEventListener('mousemove', movePaddle);
+                window.addEventListener('touchmove', movePaddle);
+                
+                document.getElementById('startBtn').addEventListener('click', () => this.start());
+                document.getElementById('restartBtn').addEventListener('click', () => {
+                    this.reset();
+                    this.start();
+                });
+            }
+
+            start() {
+                this.state = 'playing';
+                document.getElementById('startScreen').classList.add('hidden');
+                document.getElementById('gameOverScreen').classList.add('hidden');
+            }
+
+            gameOver() {
+                this.state = 'gameover';
+                document.getElementById('gameOverScreen').classList.remove('hidden');
+                document.getElementById('finalScore').innerText = this.score;
+                document.getElementById('finalBounces').innerText = this.bounces;
+            }
+
+            createParticles(x, y, color) {
+                for(let i=0; i<10; i++) {
+                    this.particles.push({
+                        x: x, y: y,
+                        vx: (Math.random() - 0.5) * 8,
+                        vy: (Math.random() - 0.5) * 8,
+                        life: 1,
+                        color: color
+                    });
+                }
+            }
+
+            update() {
+                if(this.state !== 'playing') return;
+
+                // Shrink circle slowly
+                if(this.circle.radius > this.circle.minRadius) {
+                    this.circle.radius -= 0.05;
+                    this.paddle.y = this.circle.y + this.circle.radius * 0.8;
+                }
+
+                // Update Balls
+                for(let i = this.balls.length - 1; i >= 0; i--) {
+                    let ball = this.balls[i];
+                    ball.update(this.speedMultiplier);
+
+                    // Circle collision logic from issue spec
+                    const dx = ball.x - this.circle.x;
+                    const dy = ball.y - this.circle.y;
+                    const dist = Math.sqrt(dx*dx + dy*dy);
+                    
+                    if (dist + ball.radius > this.circle.radius) {
+                        // Check if ball fell past paddle (bottom arc)
+                        if(dy > 0 && dy > this.circle.radius * 0.7) {
+                            if(this.shields > 0) {
+                                this.shields--;
+                                ball.vy *= -1; // Bounce back
+                                this.createParticles(ball.x, ball.y, '#0f0');
+                                this.updateHUD();
+                            } else {
+                                this.balls.splice(i, 1);
+                                if(this.balls.length === 0) this.gameOver();
+                                continue;
+                            }
+                        }
+
+                        const nx = dx / dist;
+                        const ny = dy / dist;
+                        const dot = ball.vx * nx + ball.vy * ny;
+                        ball.vx -= 2 * dot * nx;
+                        ball.vy -= 2 * dot * ny;
+                        
+                        ball.x = this.circle.x + nx * (this.circle.radius - ball.radius);
+                        ball.y = this.circle.y + ny * (this.circle.radius - ball.radius);
+                        
+                        this.createParticles(ball.x, ball.y, '#f0f');
+                        this.score += 10;
+                    }
+
+                    // Paddle collision logic from issue spec
+                    if (ball.y + ball.radius > this.paddle.y - this.paddle.height/2 &&
+                        ball.y - ball.radius < this.paddle.y + this.paddle.height/2 &&
+                        ball.x > this.paddle.x - this.paddle.width/2 &&
+                        ball.x < this.paddle.x + this.paddle.width/2 && ball.vy > 0) {
+                        
+                        const hitPos = (ball.x - this.paddle.x) / (this.paddle.width / 2);
+                        const angle = hitPos * Math.PI / 3;
+                        const speed = Math.sqrt(ball.vx*ball.vx + ball.vy*ball.vy);
+                        
+                        ball.vx = Math.sin(angle) * speed * 0.8;
+                        ball.vy = -Math.cos(angle) * speed * 0.8 - 5; // Added jump boost
+                        
+                        this.bounces++;
+                        this.score += 50;
+                        this.createParticles(ball.x, ball.y, '#0ff');
+                        
+                        if(this.bounces % 20 === 0) {
+                            this.level++;
+                            // Random Powerup reward on level up
+                            const pwr = Math.random();
+                            if(pwr < 0.33) { this.balls.push(new Ball(this.circle.x, this.circle.y)); } // Multiball
+                            else if(pwr < 0.66) { this.shields++; } // Shield
+                            else { this.speedMultiplier = 0.5; setTimeout(() => this.speedMultiplier = 1, 5000); } // Slow-mo
+                        }
+                        this.updateHUD();
+                    }
+                }
+
+                // Update particles
+                for(let i = this.particles.length - 1; i >= 0; i--) {
+                    let p = this.particles[i];
+                    p.x += p.vx; p.y += p.vy;
+                    p.life -= 0.05;
+                    if(p.life <= 0) this.particles.splice(i, 1);
+                }
+            }
+
+            updateHUD() {
+                document.getElementById('scoreVal').innerText = this.score;
+                document.getElementById('levelVal').innerText = this.level;
+                document.getElementById('shieldVal').innerText = this.shields;
+            }
+
+            draw() {
+                ctx.fillStyle = 'rgba(9, 10, 15, 0.3)'; // Trail effect
+                ctx.fillRect(0, 0, width, height);
+
+                // Draw Circle Arena
+                ctx.beginPath();
+                ctx.arc(this.circle.x, this.circle.y, this.circle.radius, 0, Math.PI * 2);
+                ctx.strokeStyle = '#f0f';
+                ctx.lineWidth = 4;
+                ctx.shadowBlur = 20;
+                ctx.shadowColor = '#f0f';
+                ctx.stroke();
+                
+                // Draw Paddle
+                ctx.shadowBlur = 15;
+                ctx.shadowColor = '#0ff';
+                ctx.fillStyle = '#0ff';
+                ctx.beginPath();
+                ctx.roundRect(this.paddle.x - this.paddle.width/2, this.paddle.y - this.paddle.height/2, this.paddle.width, this.paddle.height, 10);
+                ctx.fill();
+
+                // Draw Balls & Particles
+                this.balls.forEach(b => b.draw(ctx));
+                
+                ctx.globalCompositeOperation = 'lighter';
+                this.particles.forEach(p => {
+                    ctx.fillStyle = p.color;
+                    ctx.globalAlpha = p.life;
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, 3, 0, Math.PI*2);
+                    ctx.fill();
+                });
+                ctx.globalAlpha = 1;
+                ctx.globalCompositeOperation = 'source-over';
+                ctx.shadowBlur = 0; // reset
+            }
+
+            loop() {
+                this.update();
+                this.draw();
+                requestAnimationFrame(() => this.loop());
+            }
+        }
+
+        const game = new Game();
+        game.loop();
+    </script>
+</body>
+</html>
