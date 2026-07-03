@@ -4,21 +4,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:;">
-      <!-- Favicon and App Icons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png" />
-    <link rel="manifest" href="assets/site.webmanifest" />
-    <link rel="shortcut icon" href="assets/favicon.ico" />
-    <link rel="stylesheet" href="docs.css" />
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:;">
+  <!-- Favicon and App Icons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png" />
+  <link rel="manifest" href="assets/site.webmanifest" />
+  <link rel="shortcut icon" href="assets/favicon.ico" />
+  <link rel="stylesheet" href="docs.css" />
   <script>
     (function () {
       var t = localStorage.getItem("em-theme") || "dark";
       document.documentElement.setAttribute("data-theme", t);
     })();
   </script>
-<title>EaseMotion CSS — Interactive Demo</title>
+  <title>EaseMotion CSS — Interactive Demo</title>
   <meta name="description"
     content="Live demo showcasing EaseMotion CSS utilities, animations, buttons, and card components." />
 
@@ -134,11 +135,11 @@
     }
 
     .demo-hero p {
-  font-size: var(--ease-text-lg);
-  color: var(--page-text-muted);
-  max-width: 560px;
-  margin: 0 auto var(--ease-space-8);
-}
+      font-size: var(--ease-text-lg);
+      color: var(--page-text-muted);
+      max-width: 560px;
+      margin: 0 auto var(--ease-space-8);
+    }
 
     /* ── Section ──────────────────────────────────────────── */
     .demo-section {
@@ -306,12 +307,9 @@
         <li><a href="#layout">Layout</a></li>
         <li><a href="./">Docs</a></li>
         <li>
-          <button
-            id="theme-toggle"
-            class="theme-toggle-btn ease-hover-grow"
-            aria-label="Toggle dark/light theme"
-          >
-            <svg class="sun-icon" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <button id="theme-toggle" class="theme-toggle-btn ease-hover-grow" aria-label="Toggle dark/light theme">
+            <svg class="sun-icon" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2"
+              fill="none" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="5"></circle>
               <line x1="12" y1="1" x2="12" y2="3"></line>
               <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -322,7 +320,8 @@
               <line x1="4.22" y1="19.72" x2="5.64" y2="18.3"></line>
               <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
             </svg>
-            <svg class="moon-icon" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <svg class="moon-icon" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2"
+              fill="none" stroke-linecap="round" stroke-linejoin="round">
               <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
             </svg>
           </button>
@@ -341,18 +340,13 @@
         <h1>Build with EaseMotion</h1>
         <p>Human-readable class names. Animation-first. No memorization required.</p>
         <div class="ease-center ease-gap-3 ease-slide-up ease-delay-200">
-          <a
-            href="./"
-            class="ease-btn ease-btn-primary ease-btn-hover ease-btn-lg ease-btn-pill"
-            style="display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:0 1.35rem; line-height:1; color:white;"
-          >
+          <a href="./" class="ease-btn ease-btn-primary ease-btn-hover ease-btn-lg ease-btn-pill"
+            style="display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:0 1.35rem; line-height:1; color:white;">
             Read Docs
           </a>
-          <a
-            href="https://github.com/SAPTARSHI-coder/EaseMotion-css"
+          <a href="https://github.com/SAPTARSHI-coder/EaseMotion-css"
             class="ease-btn ease-btn-outline ease-btn-lg ease-btn-pill"
-            style="display:inline-flex; align-items:center; justify-content:center; min-height:48px; border-color:rgba(255,255,255,0.25); color:var(--page-text); padding:0 1.35rem; line-height:1;"
-          >
+            style="display:inline-flex; align-items:center; justify-content:center; min-height:48px; border-color:rgba(255,255,255,0.25); color:var(--page-text); padding:0 1.35rem; line-height:1;">
             GitHub ↗
           </a>
         </div>
@@ -387,8 +381,7 @@
         <div class="demo-chip">// With ease-btn-hover</div>
         <div class="ease-flex ease-flex-wrap ease-gap-3" style="margin-bottom: var(--ease-space-8);">
           <button class="ease-btn ease-btn-primary ease-btn-hover">Hover me ✨</button>
-          <button class="ease-btn ease-btn-outline ease-btn-hover"
-            style="border-color:rgba(255,255,255,0.3); color: var(--page-text);Hover me 🚀</button>
+          <button class="ease-btn ease-btn-outline ease-btn-hover">Hover me 🚀</button>
           <button class="ease-btn ease-btn-success ease-btn-hover">Hover me 🌿</button>
         </div>
 
@@ -412,8 +405,7 @@
         <div class="ease-flex ease-flex-wrap ease-items-center ease-gap-3">
           <button class="ease-btn ease-btn-primary ease-btn-pill">Pill Shape</button>
           <button class="ease-btn ease-btn-primary" disabled>Disabled</button>
-          <button class="ease-btn ease-btn-outline ease-btn-loading"
-            style="border-color:rgba(255,255,255,0.3); color:#fff;">Loading</button>
+          <button class="ease-btn ease-btn-outline ease-btn-loading">Loading</button>
         </div>
       </div>
     </section>
@@ -435,8 +427,9 @@
         <div class="demo-chip">// ease-card + ease-card-hover</div>
         <div class="ease-grid ease-grid-auto ease-gap-6" style="margin-bottom: var(--ease-space-10);">
 
-          <article class="ease-card ease-card-shadow ease-card-hover ease-slide-up ease-delay-100" style="padding: 10px;">
-            <div class="ease-card-header" >
+          <article class="ease-card ease-card-shadow ease-card-hover ease-slide-up ease-delay-100"
+            style="padding: 10px;">
+            <div class="ease-card-header">
               <span class="ease-badge ease-badge-primary">New</span>
             </div>
             <h3 class="ease-card-title">Animation First</h3>
@@ -450,7 +443,8 @@
             </div>
           </article>
 
-          <article class="ease-card ease-card-shadow ease-card-hover ease-slide-up ease-delay-200" style="padding: 10px;">
+          <article class="ease-card ease-card-shadow ease-card-hover ease-slide-up ease-delay-200"
+            style="padding: 10px;">
             <div class="ease-card-header">
               <span class="ease-badge ease-badge-success">Stable</span>
             </div>
@@ -465,7 +459,8 @@
             </div>
           </article>
 
-          <article class="ease-card ease-card-shadow ease-card-hover ease-slide-up ease-delay-300" style="padding: 10px;">
+          <article class="ease-card ease-card-shadow ease-card-hover ease-slide-up ease-delay-300"
+            style="padding: 10px;">
             <div class="ease-card-header">
               <span class="ease-badge ease-badge-danger">MVP</span>
             </div>
@@ -546,7 +541,7 @@
     <!-- ═════════════════════════════════════════════════════
          ANIMATIONS
     ══════════════════════════════════════════════════════════ -->
-    <section id="animations" class="demo-section"style="padding-left: 10px;">
+    <section id="animations" class="demo-section" style="padding-left: 10px;">
       <div class="ease-container">
         <div class="demo-section-label">Animations</div>
         <h2 class="demo-section-title">Motion Library</h2>
@@ -788,15 +783,15 @@
 
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const id = entry.target.getAttribute("id");
-                navLinks.forEach(link => {
-                    link.classList.remove("active");
-                    if (link.getAttribute("href") === `#${id}`) {
-                        link.classList.add("active");
-                    }
-                });
-            }
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute("id");
+            navLinks.forEach(link => {
+              link.classList.remove("active");
+              if (link.getAttribute("href") === `#${id}`) {
+                link.classList.add("active");
+              }
+            });
+          }
         });
       }, observerOptions);
 
@@ -804,10 +799,10 @@
 
       // Click event for immediate feedback
       navLinks.forEach(link => {
-          link.addEventListener("click", function() {
-              navLinks.forEach(a => a.classList.remove("active"));
-              this.classList.add("active");
-          });
+        link.addEventListener("click", function () {
+          navLinks.forEach(a => a.classList.remove("active"));
+          this.classList.add("active");
+        });
       });
     });
   </script>
