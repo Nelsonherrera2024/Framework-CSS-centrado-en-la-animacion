@@ -286,6 +286,72 @@
       margin: var(--ease-space-12) 0;
       border: none;
     }
+
+    /* ── Mobile Hamburger Drawer Rules ────────────────── */
+    .menu-toggle-btn, .menu-close-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: #ffffff;
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    .mobile-close-container {
+      display: none;
+      width: 100%;
+      justify-content: flex-end;
+      margin-bottom: var(--ease-space-4);
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle-btn, .menu-close-btn {
+        display: block;
+      }
+
+      .mobile-close-container {
+        display: flex;
+      }
+
+      .demo-nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Hidden off-screen by default */
+        width: 280px;
+        height: 100vh;
+        background: rgba(15, 14, 23, 0.98);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-left: 1px solid rgba(255, 255, 255, 0.08);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: var(--ease-space-6) var(--ease-space-8);
+        gap: var(--ease-space-4) !important;
+        transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 9999;
+      }
+
+      /* Slide-in class activated via JS */
+      .demo-nav-links.is-open {
+        right: 0;
+      }
+
+      .demo-nav-links li {
+        width: 100%;
+      }
+
+      .demo-nav-links a {
+        display: block;
+        width: 100%;
+        padding: 10px 14px;
+      }
+
+      #theme-toggle {
+        margin-top: var(--ease-space-4);
+        margin-left: 14px;
+      }
+    }
+    
   </style>
 </head>
 
@@ -294,12 +360,29 @@
   <!-- ═══════════════════════════════════════════════════════
        NAVIGATION
   ══════════════════════════════════════════════════════════ -->
-  <nav class="demo-nav" style="padding-left: 10px;">
+ <nav class="demo-nav" style="padding-left: 10px;">
     <div class="ease-container demo-nav-inner">
       <a href="index.html" class="demo-logo" style="text-decoration: none; display: flex; align-items: center;">
         <img src="assets/logo.svg" alt="EaseMotion CSS" style="height: 36px; width: auto; display: block;" />
       </a>
-      <ul class="demo-nav-links">
+      
+      <button id="menu-toggle" class="menu-toggle-btn" aria-label="Open Menu">
+        <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <ul class="demo-nav-links" id="nav-links">
+        <li class="mobile-close-container">
+          <button id="menu-close" class="menu-close-btn" aria-label="Close Menu">
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </li>
         <li><a href="#buttons">Buttons</a></li>
         <li><a href="#cards">Cards</a></li>
         <li><a href="#animations">Animations</a></li>
@@ -836,6 +919,33 @@
         html.setAttribute("data-theme", targetTheme);
         localStorage.setItem("em-theme", targetTheme);
       }
+    });
+  </script>
+
+  <script>
+    // ── Mobile Sidebar Drawer Event Bindings ───────────────
+    document.addEventListener("DOMContentLoaded", () => {
+      const menuToggle = document.getElementById("menu-toggle");
+      const menuClose = document.getElementById("menu-close");
+      const navLinksContainer = document.getElementById("nav-links");
+      const navLinks = document.querySelectorAll(".demo-nav-links a");
+
+      // Open mobile menu drawer
+      menuToggle.addEventListener("click", () => {
+        navLinksContainer.classList.add("is-open");
+      });
+
+      // Close mobile menu drawer via X button
+      menuClose.addEventListener("click", () => {
+        navLinksContainer.classList.remove("is-open");
+      });
+
+      // Automatically close drawer when a navigation anchor is tapped
+      navLinks.forEach(link => {
+        link.addEventListener("click", () => {
+          navLinksContainer.classList.remove("is-open");
+        });
+      });
     });
   </script>
 </body>
