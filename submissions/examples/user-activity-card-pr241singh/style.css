@@ -1,567 +1,212 @@
+/* Base variables and resets for the component */
 :root {
-
-  --primary: #4f46e5;
-  --primary-dark: #4338ca;
-  --success: #10b981;
-  --warning: #f59e0b;
-  --danger: #ef4444;
-  --info: #3b82f6;
-  --surface: #ffffff;
-  --background: #f5f7fb;
-  --text: #1f2937;
-  --muted: #6b7280;
-  --border: #d9e2ec;
-  --radius: 18px;
-  --shadow: 0 15px 35px rgba(0, 0, 0, .08);
-
+    --ease-radius: 12px;
+    --ease-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    
+    /* Light Mode Palette (Default) */
+    --ease-bg-card: #ffffff;
+    --ease-border: #e2e8f0;
+    --ease-text-main: #1e293b;
+    --ease-text-muted: #64748b;
+    
+    /* Status Colors */
+    --ease-success: #10b981;
+    --ease-success-bg: #ecfdf5;
+    --ease-pending: #f59e0b;
+    --ease-pending-bg: #fffbeb;
+    --ease-warning: #ef4444;
+    --ease-warning-bg: #fef2f2;
 }
 
-* {
-
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-
+/* Base Demo Styling Layout */
+.demo-container {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #f8fafc;
 }
 
-body {
-
-  font-family: Segoe UI, Tahoma, Geneva, Verdana, sans-serif;
-
-  background: linear-gradient(135deg, #eef3ff, #fafcff);
-
-  color: var(--text);
-
-  min-height: 100vh;
-
-  padding: 50px 20px;
-
+.demo-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
 }
 
-.container {
-
-  max-width: 950px;
-
-  margin: auto;
-
+/* ==========================================
+   Core User Activity Card Component
+   ========================================== */
+.ease-activity-card {
+    display: flex;
+    align-items: center;
+    padding: 1.25rem;
+    border-radius: var(--ease-radius);
+    background: var(--ease-bg-card);
+    border: 1px solid var(--ease-border);
+    transition: var(--ease-transition);
+    position: relative;
+    overflow: hidden;
+    gap: 1rem;
+    animation: fadeIn 0.5s ease-out;
 }
 
-h1 {
-
-  text-align: center;
-
-  color: var(--primary);
-
-  margin-bottom: 12px;
-
+/* Animations Keyframes */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-.subtitle {
-
-  text-align: center;
-
-  color: var(--muted);
-
-  margin-bottom: 45px;
-
+/* Hover Lift Effect */
+.ease-activity-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
 }
 
-.demo-card {
-
-  background: var(--surface);
-
-  border-radius: 22px;
-
-  padding: 28px;
-
-  margin-bottom: 28px;
-
-  box-shadow: var(--shadow);
-
-  transition: .35s;
-
+/* Avatar Styles & Interaction */
+.activity-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #6366f1;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: var(--ease-transition);
+    flex-shrink: 0;
 }
 
-.demo-card:hover {
-
-  transform: translateY(-6px);
-
+.ease-activity-card:hover .activity-avatar {
+    transform: scale(1.1) rotate(5deg);
 }
 
-.demo-card h2 {
-
-  color: var(--primary);
-
-  margin-bottom: 20px;
-
-}
-
-/* ==========================
-   Activity Card
-========================== */
-
-.activity-card {
-
-  display: flex;
-
-  align-items: center;
-
-  gap: 18px;
-
-  padding: 18px;
-
-  border: 1px solid var(--border);
-
-  border-radius: 16px;
-
-  transition: .35s;
-
-  background: #fff;
-
-}
-
-.activity-card:hover {
-
-  transform: translateY(-3px);
-
-  box-shadow: 0 12px 28px rgba(79, 70, 229, .10);
-
-}
-
-/* ==========================
-   Avatar
-========================== */
-
-.avatar {
-
-  width: 65px;
-
-  height: 65px;
-
-  border-radius: 50%;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  background: linear-gradient(135deg, var(--primary), #7c3aed);
-
-  color: #fff;
-
-  font-weight: 700;
-
-  font-size: 22px;
-
-  flex-shrink: 0;
-
-  transition: .35s;
-
-}
-
-.activity-card:hover .avatar {
-
-  transform: scale(1.08) rotate(8deg);
-
-}
-
-/* ==========================
-   Content
-========================== */
-
+/* Content Area */
 .activity-content {
-
-  flex: 1;
-
+    flex-grow: 1;
 }
 
 .activity-content h3 {
-
-  margin-bottom: 6px;
-
-  font-size: 20px;
-
+    margin: 0 0 0.25rem 0;
+    font-size: 1rem;
+    color: var(--ease-text-main);
+    font-weight: 600;
 }
 
 .activity-content p {
-
-  color: var(--text);
-
-  margin-bottom: 8px;
-
-  line-height: 1.5;
-
+    margin: 0 0 0.5rem 0;
+    font-size: 0.9rem;
+    color: var(--ease-text-muted);
 }
 
-.time {
-
-  color: var(--muted);
-
-  font-size: 14px;
-
+.activity-time {
+    display: block;
+    font-size: 0.75rem;
+    color: #94a3b8;
 }
 
-/* ==========================
-   Status Badges
-========================== */
-
-.badge {
-
-  padding: 8px 14px;
-
-  border-radius: 999px;
-
-  color: #fff;
-
-  font-size: 13px;
-
-  font-weight: 600;
-
-  white-space: nowrap;
-
-  transition: .3s;
-
+/* Status Badges */
+.activity-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: var(--ease-transition);
 }
 
-.badge:hover {
-
-  transform: scale(1.08);
-
+.activity-badge.success {
+    background-color: var(--ease-success-bg);
+    color: var(--ease-success);
 }
 
-.success {
-
-  background: var(--success);
-
+.activity-badge.pending {
+    background-color: var(--ease-pending-bg);
+    color: var(--ease-pending);
 }
 
-.warning {
-
-  background: var(--warning);
-
+.activity-badge.failed {
+    background-color: var(--ease-warning-bg);
+    color: var(--ease-warning);
 }
 
-.info {
-
-  background: var(--info);
-
+.ease-activity-card:hover .activity-badge {
+    transform: scale(1.05);
 }
 
-.paid {
+/* ==========================================
+   Library Variants
+   ========================================== */
 
-  background: #16a34a;
-
+/* 1. Glassmorphism Variant */
+.ease-activity-glass {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.achievement {
-
-  background: #9333ea;
-
+/* 2. Filled Variant */
+.ease-activity-filled {
+    background: #f1f5f9;
+    border: none;
+}
+.ease-activity-filled:hover {
+    background: #e2e8f0;
 }
 
-/* ==========================
-   Fade Animation
-========================== */
-
-.demo-card {
-
-  animation: fadeUp .7s ease;
-
+/* 3. Minimalist Variant */
+.ease-activity-minimal {
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid var(--ease-border);
+    background: transparent;
+}
+.ease-activity-minimal:hover {
+    transform: none;
+    box-shadow: none;
+    background: rgba(0,0,0,0.01);
 }
 
-@keyframes fadeUp {
-
-  from {
-
-    opacity: 0;
-
-    transform: translateY(25px);
-
-  }
-
-  to {
-
-    opacity: 1;
-
-    transform: translateY(0);
-
-  }
-
+/* 4. Gradient Border Highlight Variant */
+.ease-activity-gradient {
+    border-left: 4px solid #6366f1;
 }
 
-/* ==========================
-   Glass Variant
-========================== */
+/* ==========================================
+   Accessibility & Responsiveness
+   ========================================== */
 
-.glass {
-
-  background: rgba(255, 255, 255, .28);
-
-  backdrop-filter: blur(14px);
-
-  border: 1px solid rgba(255, 255, 255, .35);
-
+/* Keyboard Focus Ring Styles */
+.ease-activity-card:focus-visible {
+    outline: 2px solid #6366f1;
+    outline-offset: 2px;
 }
 
-.glass .avatar {
-
-  background: linear-gradient(135deg, #06b6d4, #3b82f6);
-
+/* Tablet & Mobile Layout Shifts */
+@media (max-width: 640px) {
+    .ease-activity-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+    
+    .activity-badge {
+        align-self: flex-start;
+        margin-top: 0.25rem;
+    }
 }
 
-/* ==========================
-   Gradient Variant
-========================== */
-
-.gradient {
-
-  background: linear-gradient(135deg, #4f46e5, #7c3aed);
-
-  color: #ffffff;
-
-}
-
-.gradient .activity-content h3,
-
-.gradient .activity-content p,
-
-.gradient .time {
-
-  color: #ffffff;
-
-}
-
-.gradient .badge {
-
-  background: #ffffff;
-
-  color: #4f46e5;
-
-}
-
-.gradient .avatar {
-
-  background: rgba(255, 255, 255, .2);
-
-}
-
-/* ==========================
-   Dashboard Variant
-========================== */
-
-.dashboard {
-
-  border-left: 6px solid var(--success);
-
-}
-
-.dashboard:hover {
-
-  border-left-color: var(--primary);
-
-}
-
-/* ==========================
-   Hover Effects
-========================== */
-
-.activity-card:hover .badge {
-
-  transform: scale(1.08);
-
-}
-
-.activity-card:hover .activity-content h3 {
-
-  color: var(--primary);
-
-}
-
-.activity-card:hover p {
-
-  transform: translateX(4px);
-
-  transition: .3s;
-
-}
-
-/* ==========================
-   Responsive
-========================== */
-
-@media(max-width:768px) {
-
-  body {
-
-    padding: 30px 18px;
-
-  }
-
-  .demo-card {
-
-    padding: 20px;
-
-  }
-
-  .activity-card {
-
-    flex-direction: column;
-
-    align-items: flex-start;
-
-  }
-
-  .badge {
-
-    align-self: flex-start;
-
-  }
-
-}
-
-@media(max-width:480px) {
-
-  h1 {
-
-    font-size: 28px;
-
-  }
-
-  .subtitle {
-
-    font-size: 15px;
-
-  }
-
-  .avatar {
-
-    width: 56px;
-
-    height: 56px;
-
-    font-size: 18px;
-
-  }
-
-  .activity-content h3 {
-
-    font-size: 18px;
-
-  }
-
-  .activity-content p {
-
-    font-size: 15px;
-
-  }
-
-}
-
-/* ==========================
-   Dark Mode
-========================== */
-
-@media(prefers-color-scheme:dark) {
-
-  :root {
-
-    --background: #0f172a;
-    --surface: #1e293b;
-    --text: #f8fafc;
-    --muted: #cbd5e1;
-    --border: #334155;
-
-  }
-
-  body {
-
-    background: #0f172a;
-
-    color: var(--text);
-
-  }
-
-  .demo-card {
-
-    background: #1e293b;
-
-  }
-
-  .activity-card {
-
-    background: #0f172a;
-
-    border-color: #334155;
-
-  }
-
-  .activity-content p {
-
-    color: #f1f5f9;
-
-  }
-
-  .glass {
-
-    background: rgba(30, 41, 59, .45);
-
-    border: 1px solid rgba(255, 255, 255, .08);
-
-  }
-
-}
-
-/* ==========================
-   Focus Visible
-========================== */
-
-.activity-card:focus-within {
-
-  outline: 3px solid rgba(79, 70, 229, .35);
-
-  outline-offset: 4px;
-
-}
-
-/* ==========================
-   Reduced Motion
-========================== */
-
-@media(prefers-reduced-motion:reduce) {
-
-  * {
-
-    animation: none !important;
-
-    transition: none !important;
-
-    scroll-behavior: auto !important;
-
-  }
-
-}
-
-/* ==========================
-   Custom Scrollbar
-========================== */
-
-::-webkit-scrollbar {
-
-  width: 8px;
-
-}
-
-::-webkit-scrollbar-thumb {
-
-  background: var(--primary);
-
-  border-radius: 999px;
-
-}
-
-::-webkit-scrollbar-track {
-
-  background: #eef2ff;
-
+/* Graceful degradation for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .ease-activity-card,
+    .activity-avatar,
+    .activity-badge {
+        animation: none !important;
+        transition: none !important;
+        transform: none !important;
+    }
 }
