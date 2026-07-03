@@ -1,36 +1,25 @@
-# SCSS Utility: Flexbox Alignment & Layout Utility Mixins
+ # Flexbox Alignment & Layout Utility Mixins
 
-A reusable, structural SCSS layout partial providing comprehensive, parametric flexbox arrangement mixins and independent utility classes to optimize element distributions within the EaseMotion CSS engine.
+A clean, reusable module for managing flexible grid alignment structures seamlessly within the design system.
 
-## API & Parametric Configurations
+## Mixins Included
 
-### `ease-flex()`
-Assembles standard layout definitions cleanly into composable components with zero multi-class rule dependency stacking.
+### 1. `flex-layout`
+Configures a container as a flexible box layout with full alignment configurations.
 
-- `$direction` (Default: `row`): Sets the primary layout alignment axis orientation.
-- `$justify` (Default: `flex-start`): Manages main axis spacing distribution structures.
-- `$align` (Default: `stretch`): Directs cross axis child item stretch and baseline alignments.
-- `$wrap` (Default: `nowrap`): Toggles item row wrapping thresholds.
-- `$gap` (Default: `tokens.$ease-spacing-md`): Spatial padding grid allocating room between modules.
+### 2. `flex-center`
+A helper variant to instantly center inner nodes perfectly along both axes.
 
----
+### 3. `flex-item`
+Allows granular sizing configurations directly on child flex elements.
 
-## Technical Integration Guide
+## Usage Example
 
-### Sass Dependency Compiling
 ```scss
-@use "../../scss/mixins" as ease;
-@use "../../scss/tokens" as tokens;
-
-.custom-nav-bar {
-  @include ease.ease-flex(
-    $direction: row,
-    $justify: space-between,
-    $align: center,
-    $gap: tokens.$ease-spacing-lg
-  );
+.container {
+  @include flex-layout(row, space-between, center, wrap);
 }
 
-```
----
-Crafted with 💜 by **[pari-dubey1](https://github.com/pari-dubey1)**
+.centered-card {
+  @include flex-center;
+}
