@@ -1,0 +1,98 @@
+/* Base Button Component Setup */
+.ease-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: 2px solid #3b82f6;
+  background-color: #3b82f6;
+  background-color: color-mix(in srgb, #3b82f6 100%, transparent);
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.ease-btn:hover {
+  background-color: #2563eb;
+}
+
+/* Disabled Interactions Blocker */
+.ease-btn-disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Button Groups */
+.ease-btn-group {
+  display: inline-flex;
+}
+
+/* Normalize button-group borders to eliminate seam shifts */
+.ease-btn-group .ease-btn {
+  border-radius: 0;
+  border-right-width: 2px;
+}
+
+.ease-btn-group .ease-btn:not(:last-child) {
+  margin-right: -2px;
+}
+
+.ease-btn-group .ease-btn:first-child {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+.ease-btn-group .ease-btn:last-child {
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
+/* Hiding raw text nodes securely during loading states */
+.ease-btn-loading {
+  color: transparent !important;
+  pointer-events: none;
+}
+
+.ease-btn-loading > * {
+  visibility: hidden;
+}
+
+/* Loading Spinner Element */
+.ease-btn-loading::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 50%;
+  left: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: #ffffff;
+  animation: ease-spin 0.6s linear infinite;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes ease-spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* Icon-only configuration dimensions */
+.ease-btn-icon {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border-radius: 50%;
+}

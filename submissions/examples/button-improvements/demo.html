@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Button Improvements Demonstration</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { font-family: system-ui, sans-serif; padding: 40px; background: #f8fafc; color: #1e293b; }
+    .showcase-block { margin-bottom: 30px; background: #ffffff; padding: 20px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+    h3 { margin-top: 0; color: #334155; }
+  </style>
+</head>
+<body>
+
+  <h2>EaseMotion-css Button System Improvements</h2>
+
+  <div class="showcase-block">
+    <h3>1. Line-height Scaling & Transparent Loading Safeties</h3>
+    <button class="ease-btn">Standard Text Layout</button>
+    <button class="ease-btn ease-btn-loading">Hidden Text While Loading</button>
+  </div>
+
+  <div class="showcase-block">
+    <h3>2. Interaction Protections (Pointer Block)</h3>
+    <button class="ease-btn ease-btn-disabled" onclick="alert('Error: Triggered!')">Disabled Class State</button>
+  </div>
+
+  <div class="showcase-block">
+    <h3>3. Clean Group Seam Alignment</h3>
+    <div class="ease-btn-group">
+      <button class="ease-btn">First</button>
+      <button class="ease-btn">Second</button>
+      <button class="ease-btn">Third</button>
+    </div>
+  </div>
+
+  <div class="showcase-block">
+    <h3>4. Consistent Uniform Icon Shapes</h3>
+    <button class="ease-btn ease-btn-icon">🔧</button>
+    <button class="ease-btn ease-btn-icon">🚀</button>
+  </div>
+
+</body>
+</html>
