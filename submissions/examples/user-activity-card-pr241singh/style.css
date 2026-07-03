@@ -1,0 +1,212 @@
+/* Base variables and resets for the component */
+:root {
+    --ease-radius: 12px;
+    --ease-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    
+    /* Light Mode Palette (Default) */
+    --ease-bg-card: #ffffff;
+    --ease-border: #e2e8f0;
+    --ease-text-main: #1e293b;
+    --ease-text-muted: #64748b;
+    
+    /* Status Colors */
+    --ease-success: #10b981;
+    --ease-success-bg: #ecfdf5;
+    --ease-pending: #f59e0b;
+    --ease-pending-bg: #fffbeb;
+    --ease-warning: #ef4444;
+    --ease-warning-bg: #fef2f2;
+}
+
+/* Base Demo Styling Layout */
+.demo-container {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #f8fafc;
+}
+
+.demo-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* ==========================================
+   Core User Activity Card Component
+   ========================================== */
+.ease-activity-card {
+    display: flex;
+    align-items: center;
+    padding: 1.25rem;
+    border-radius: var(--ease-radius);
+    background: var(--ease-bg-card);
+    border: 1px solid var(--ease-border);
+    transition: var(--ease-transition);
+    position: relative;
+    overflow: hidden;
+    gap: 1rem;
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Animations Keyframes */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Hover Lift Effect */
+.ease-activity-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Avatar Styles & Interaction */
+.activity-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #6366f1;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: var(--ease-transition);
+    flex-shrink: 0;
+}
+
+.ease-activity-card:hover .activity-avatar {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Content Area */
+.activity-content {
+    flex-grow: 1;
+}
+
+.activity-content h3 {
+    margin: 0 0 0.25rem 0;
+    font-size: 1rem;
+    color: var(--ease-text-main);
+    font-weight: 600;
+}
+
+.activity-content p {
+    margin: 0 0 0.5rem 0;
+    font-size: 0.9rem;
+    color: var(--ease-text-muted);
+}
+
+.activity-time {
+    display: block;
+    font-size: 0.75rem;
+    color: #94a3b8;
+}
+
+/* Status Badges */
+.activity-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: var(--ease-transition);
+}
+
+.activity-badge.success {
+    background-color: var(--ease-success-bg);
+    color: var(--ease-success);
+}
+
+.activity-badge.pending {
+    background-color: var(--ease-pending-bg);
+    color: var(--ease-pending);
+}
+
+.activity-badge.failed {
+    background-color: var(--ease-warning-bg);
+    color: var(--ease-warning);
+}
+
+.ease-activity-card:hover .activity-badge {
+    transform: scale(1.05);
+}
+
+/* ==========================================
+   Library Variants
+   ========================================== */
+
+/* 1. Glassmorphism Variant */
+.ease-activity-glass {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* 2. Filled Variant */
+.ease-activity-filled {
+    background: #f1f5f9;
+    border: none;
+}
+.ease-activity-filled:hover {
+    background: #e2e8f0;
+}
+
+/* 3. Minimalist Variant */
+.ease-activity-minimal {
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid var(--ease-border);
+    background: transparent;
+}
+.ease-activity-minimal:hover {
+    transform: none;
+    box-shadow: none;
+    background: rgba(0,0,0,0.01);
+}
+
+/* 4. Gradient Border Highlight Variant */
+.ease-activity-gradient {
+    border-left: 4px solid #6366f1;
+}
+
+/* ==========================================
+   Accessibility & Responsiveness
+   ========================================== */
+
+/* Keyboard Focus Ring Styles */
+.ease-activity-card:focus-visible {
+    outline: 2px solid #6366f1;
+    outline-offset: 2px;
+}
+
+/* Tablet & Mobile Layout Shifts */
+@media (max-width: 640px) {
+    .ease-activity-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+    
+    .activity-badge {
+        align-self: flex-start;
+        margin-top: 0.25rem;
+    }
+}
+
+/* Graceful degradation for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .ease-activity-card,
+    .activity-avatar,
+    .activity-badge {
+        animation: none !important;
+        transition: none !important;
+        transform: none !important;
+    }
+}
