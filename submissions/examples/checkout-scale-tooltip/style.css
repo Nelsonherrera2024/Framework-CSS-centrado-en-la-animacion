@@ -1,160 +1,146 @@
 /* =========================================================================
-   Component Custom Properties (Scoped to avoid global :root pollution)
+   Component Custom Properties (Encapsulated Sandbox Scope)
    ========================================================================= */
-.ems-scale-tooltip-sandbox {
-    /* Scale Hover Motion Parameters */
-    --ems-scale-duration: 0.25s;
-    --ems-scale-easing: cubic-bezier(0.34, 1.56, 0.64, 1);
-    /* Elegant back-out spring curve */
-    --ems-scale-start-factor: 0.85;
-    --ems-scale-translate-y: -8px;
+.saas-skew-tooltip-sandbox {
+    /* Kinetic Skew Motion Parameters */
+    --skew-duration: 0.35s;
+    --skew-easing: cubic-bezier(0.25, 1, 0.5, 1);
+    --skew-angle-start: -12deg;
+    --skew-scale-start: 0.95;
 
-    /* Secure and Professional E-Commerce Palette */
-    --ems-checkout-dark: #0f172a;
-    --ems-checkout-muted: #64748b;
-    --ems-checkout-accent: #16a34a;
-    /* Trustworthy Secure Green */
-    --ems-field-border: #cbd5e1;
-    --ems-tooltip-bg: #ffffff;
-    --ems-tooltip-border: #e2e8f0;
-    --ems-tooltip-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.1), 0 8px 16px -6px rgba(15, 23, 42, 0.05);
+    /* Modern Responsive SaaS Brand Palette */
+    --saas-dark-bg: #090d16;
+    --saas-card-bg: #111827;
+    --saas-border: #1f2937;
+    --saas-accent: #0ea5e9;
+    --tooltip-bg: #1f2937;
+    --text-primary: #f9fafb;
+    --text-muted: #9ca3af;
 
-    /* Isolated Presentation Layout Setup (Replaces global body styles) */
+    /* Sandbox Box Model Layout Layer */
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 400px;
-    background-color: #f8fafc;
+    min-height: 380px;
+    background-color: var(--saas-dark-bg);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    padding: 20px;
+    padding: 24px;
 }
 
 /* =========================================================================
-   Sandbox Container & Field Structure
+   Sandbox Container & Layout Structure 
    ========================================================================= */
-.ems-scale-tooltip-sandbox * {
+.saas-skew-tooltip-sandbox * {
     box-sizing: border-box;
 }
 
-.ems-scale-tooltip-sandbox .checkout-container {
-    background: #ffffff;
-    padding: 24px;
+.saas-skew-tooltip-sandbox .analytics-card {
+    background-color: var(--saas-card-bg);
+    border: 1px solid var(--saas-border);
     border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.02);
-    border: 1px solid var(--ems-tooltip-border);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
     width: 100%;
     max-width: 320px;
 }
 
-.ems-scale-tooltip-sandbox .checkout-form-row {
+.saas-skew-tooltip-sandbox .analytics-header {
     display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.ems-scale-tooltip-sandbox .label-info-group {
-    display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 6px;
 }
 
-.ems-scale-tooltip-sandbox .field-label {
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: #334155;
+.saas-skew-tooltip-sandbox .card-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
     margin: 0;
 }
 
-.ems-scale-tooltip-sandbox .checkout-field {
-    width: 80px;
-    padding: 10px 12px;
-    font-size: 0.95rem;
-    border: 1px solid var(--ems-field-border);
-    border-radius: 8px;
-    outline: none;
-    color: var(--ems-checkout-dark);
-    text-align: center;
-    font-variant-numeric: tabular-nums;
-    transition: border-color 0.2s ease;
+.saas-skew-tooltip-sandbox .status-indicator {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background-color: rgba(16, 185, 129, 0.1);
+    color: #10b981;
 }
 
-.ems-scale-tooltip-sandbox .checkout-field:focus {
-    border-color: #3b82f6;
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+.saas-skew-tooltip-sandbox .analytics-body {
+    margin: 0;
+    font-size: 0.875rem;
+    color: #cbd5e1;
+    line-height: 1.5;
 }
 
 /* =========================================================================
    Component Layout Base Structure
    ========================================================================= */
-.ems-scale-tooltip-sandbox .tooltip-wrapper {
+.saas-skew-tooltip-sandbox .tooltip-wrapper {
     position: relative;
-    display: inline-flex;
-    align-items: center;
+    width: 100%;
 }
 
-/* Help circle trigger button design */
-.ems-scale-tooltip-sandbox .checkout-info-trigger {
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    border: 1px solid var(--ems-field-border);
-    background-color: #f1f5f9;
-    color: var(--ems-checkout-muted);
-    font-size: 0.75rem;
+.saas-skew-tooltip-sandbox .dashboard-action-btn {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 0.9rem;
     font-weight: 600;
+    color: var(--text-primary);
+    background-color: rgba(31, 41, 55, 0.5);
+    border: 1px solid var(--saas-border);
+    border-radius: 8px;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2s ease;
     outline: none;
-    padding: 0;
-    margin: 0;
+    transition: background-color 0.2s, border-color 0.2s;
 }
 
-.ems-scale-tooltip-sandbox .checkout-info-trigger:hover,
-.ems-scale-tooltip-sandbox .checkout-info-trigger:focus-visible {
-    background-color: #e2e8f0;
-    color: var(--ems-checkout-dark);
-    border-color: var(--ems-checkout-muted);
+.saas-skew-tooltip-sandbox .dashboard-action-btn:hover {
+    background-color: rgba(31, 41, 55, 0.9);
+    border-color: var(--saas-accent);
 }
 
-/* High-contrast dashboard keyboard focus ring management */
-.ems-scale-tooltip-sandbox .checkout-info-trigger:focus-visible {
-    box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #3b82f6;
+.saas-skew-tooltip-sandbox .dashboard-action-btn:focus-visible {
+    border-color: var(--saas-accent);
+    box-shadow: 0 0 0 2px var(--saas-card-bg), 0 0 0 4px var(--saas-accent);
 }
 
 /* =========================================================================
-   Checkout Tooltip Box Layout (Centered Top Placement)
+   Dashboard Tooltip Box Layout (Centered Top Placement)
    ========================================================================= */
-.ems-scale-tooltip-sandbox .checkout-tooltip {
+.saas-skew-tooltip-sandbox .dashboard-tooltip {
     position: absolute;
     bottom: 100%;
     left: 50%;
-    transform: translateX(-50%) translateY(var(--ems-scale-translate-y)) scale(var(--ems-scale-start-factor));
-    margin-bottom: 8px;
+    margin-bottom: 12px;
     width: 240px;
     padding: 14px;
-    background-color: var(--ems-tooltip-bg);
-    border: 1px solid var(--ems-tooltip-border);
-    border-radius: 12px;
-    box-shadow: var(--ems-tooltip-shadow);
+    background-color: var(--tooltip-bg);
+    border: 1px solid #374151;
+    border-radius: 10px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4);
     z-index: 100;
     pointer-events: none;
     transform-origin: bottom center;
 
-    /* Initially Hidden State */
+    /* Pre-activation properties mapping dynamic skews */
     opacity: 0;
     visibility: hidden;
+    transform: translateX(-50%) translateY(10px) scale(var(--skew-scale-start)) skewX(var(--skew-angle-start));
 
-    /* Smooth multi-property transition grouping */
-    transition: opacity var(--ems-scale-duration) var(--ems-scale-easing),
-        visibility var(--ems-scale-duration) var(--ems-scale-easing),
-        transform var(--ems-scale-duration) var(--ems-scale-easing);
+    /* Hardware-accelerated composite property transition chain */
+    transition: opacity var(--skew-duration) var(--skew-easing),
+        visibility var(--skew-duration) var(--skew-easing),
+        transform var(--skew-duration) var(--skew-easing);
 }
 
-/* Geometric Tooltip Downward Pointing Anchor Arrow */
-.ems-scale-tooltip-sandbox .checkout-tooltip::after {
+/* Structural Anchor Pin Overlay Shapes */
+.saas-skew-tooltip-sandbox .dashboard-tooltip::after {
     content: '';
     position: absolute;
     top: 100%;
@@ -162,10 +148,10 @@
     transform: translateX(-50%);
     border-width: 6px;
     border-style: solid;
-    border-color: var(--ems-tooltip-bg) transparent transparent transparent;
+    border-color: var(--tooltip-bg) transparent transparent transparent;
 }
 
-.ems-scale-tooltip-sandbox .checkout-tooltip::before {
+.saas-skew-tooltip-sandbox .dashboard-tooltip::before {
     content: '';
     position: absolute;
     top: 100%;
@@ -173,45 +159,42 @@
     transform: translateX(-50%);
     border-width: 7px;
     border-style: solid;
-    border-color: var(--ems-tooltip-border) transparent transparent transparent;
+    border-color: #374151 transparent transparent transparent;
     z-index: -1;
-    /* Outer stroke silhouette wrapper layer */
 }
 
-.ems-scale-tooltip-sandbox .tooltip-secure-badge {
+.saas-skew-tooltip-sandbox .tooltip-category {
     display: block;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-weight: 700;
-    color: var(--ems-checkout-accent);
-    margin-bottom: 6px;
+    color: var(--saas-accent);
+    margin-bottom: 4px;
     text-transform: uppercase;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.05em;
 }
 
-.ems-scale-tooltip-sandbox .tooltip-body {
+.saas-skew-tooltip-sandbox .tooltip-text {
     margin: 0;
     font-size: 0.8rem;
-    line-height: 1.45;
-    color: #475569;
-    text-align: left;
+    line-height: 1.4;
+    color: #d1d5db;
 }
 
 /* =========================================================================
-   Interaction Engine: Hardware-Accelerated Scale-Hover Triggers
+   Interaction Engine: Responsive Skew-Active States
    ========================================================================= */
-.ems-scale-tooltip-sandbox .checkout-info-trigger:hover+.checkout-tooltip,
-.ems-scale-tooltip-sandbox .checkout-info-trigger:focus-visible+.checkout-tooltip {
+.saas-skew-tooltip-sandbox .dashboard-action-btn:hover+.dashboard-tooltip,
+.saas-skew-tooltip-sandbox .dashboard-action-btn:focus-visible+.dashboard-tooltip {
     opacity: 1;
     visibility: visible;
-    transform: translateX(-50%) translateY(var(--ems-scale-translate-y)) scale(1);
+    transform: translateX(-50%) translateY(0) scale(1) skewX(0deg);
 }
 
-/* Accessibility: honors user preference metrics regarding motion limits */
 @media (prefers-reduced-motion: reduce) {
 
-    .ems-scale-tooltip-sandbox .checkout-info-trigger:hover+.checkout-tooltip,
-    .ems-scale-tooltip-sandbox .checkout-info-trigger:focus-visible+.checkout-tooltip {
+    .saas-skew-tooltip-sandbox .dashboard-action-btn:hover+.dashboard-tooltip,
+    .saas-skew-tooltip-sandbox .dashboard-action-btn:focus-visible+.dashboard-tooltip {
         transition: none;
-        transform: translateX(-50%) translateY(var(--ems-scale-translate-y)) scale(1);
+        transform: translateX(-50%) translateY(0) scale(1) skewX(0deg);
     }
 }

@@ -4,27 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Commerce Checkout Scale-Hover Tooltip</title>
+    <title>SaaS Dashboard Skew Tooltip</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="ems-scale-tooltip-sandbox">
-        <main class="checkout-container">
-            <div class="checkout-form-row">
-                <div class="label-info-group">
-                    <label for="cvv-input" class="field-label">Security Code (CVV)</label>
-                    <div class="tooltip-wrapper">
-                        <button type="button" class="checkout-info-trigger" aria-describedby="cvv-scale-tooltip"
-                            aria-label="What is CVV?">?</button>
-                        <div id="cvv-scale-tooltip" class="checkout-tooltip" role="tooltip">
-                            <span class="tooltip-secure-badge">🔒 Secure Verification</span>
-                            <p class="tooltip-body">For Visa/Mastercard, this is the 3-digit code printed on the
-                                signature strip on the back of your card.</p>
-                        </div>
-                    </div>
+    <div class="saas-skew-tooltip-sandbox">
+        <main class="analytics-card">
+            <div class="analytics-header">
+                <span class="card-title">Cache Allocation</span>
+                <span class="status-indicator">Optimal</span>
+            </div>
+
+            <p class="analytics-body">
+                Dynamic cache allocation indexes are executing operations within nominal parameters.
+            </p>
+
+            <div class="tooltip-wrapper">
+                <button type="button" class="dashboard-action-btn" aria-describedby="dash-skew-tooltip">
+                    Analyze Cache Clusters
+                </button>
+
+                <div id="dash-skew-tooltip" class="dashboard-tooltip" role="tooltip">
+                    <span class="tooltip-category">Cluster Registry</span>
+                    <p class="tooltip-text">L1/L2 hits are holding steady at 98.4% efficiency across active endpoints.
+                    </p>
                 </div>
-                <input type="text" id="cvv-input" class="checkout-field" placeholder="123" maxlength="4" pattern="\d*">
             </div>
         </main>
     </div>
