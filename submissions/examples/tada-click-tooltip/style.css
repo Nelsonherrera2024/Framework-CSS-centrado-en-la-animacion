@@ -1,0 +1,427 @@
+/* ==========================================================================
+   EASEMOTION CSS - CSS Tada-Click Tooltip Component
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Design Tokens & CSS Variables
+   -------------------------------------------------------------------------- */
+:root {
+  /* Tooltip Customization Variables (Exposed for overrides) */
+  --tooltip-bg: rgba(9, 15, 29, 0.85);
+  --tooltip-color: #f1f5f9;
+  --tooltip-radius: 6px;
+  --tooltip-padding: 6px 12px;
+  --tooltip-shadow: 0 4px 16px rgba(6, 182, 212, 0.15), 0 0 0 1px rgba(6, 182, 212, 0.25);
+  --tooltip-duration: 0.45s;
+  --tooltip-delay: 0s;
+  --tooltip-easing: cubic-bezier(0.25, 1.35, 0.4, 1);
+  --tooltip-scale: 1.1;
+  --tooltip-distance: 8px;
+  --tooltip-font-size: 0.8rem;
+
+  /* Accent & Theme Styling Variables (For high-fidelity page demo) */
+  --color-cyan: #06b6d4;
+  --color-cyan-glow: rgba(6, 182, 212, 0.35);
+  --color-blue: #3b82f6;
+  --bg-app: #030712;
+  --bg-card: rgba(17, 24, 39, 0.6);
+  --border-card: rgba(255, 255, 255, 0.05);
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --tooltip-focus-outline: #06b6d4;
+}
+
+/* --------------------------------------------------------------------------
+   2. Custom Keyframe Animations
+   -------------------------------------------------------------------------- */
+
+/* Fade-in transition */
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Base Scale-in transition */
+@keyframes scale {
+  from {
+    transform: translate(var(--translate-x, 0), var(--translate-y, 0)) scale(0.85);
+  }
+  to {
+    transform: translate(var(--translate-x, 0), var(--translate-y, 0)) scale(1);
+  }
+}
+
+/* Tada-Click Transition:
+   Slightly enlarges, swings left and right, and settles smoothly into place */
+@keyframes tada-click {
+  0% {
+    transform: translate(var(--translate-x, 0), var(--translate-y, 0)) scale(0.9) rotate(0deg);
+  }
+  15% {
+    transform: translate(var(--translate-x, 0), var(--translate-y, 0)) scale(var(--tooltip-scale, 1.1)) rotate(-3deg);
+  }
+  30% {
+    transform: translate(var(--translate-x, 0), var(--translate-y, 0)) scale(var(--tooltip-scale, 1.1)) rotate(3deg);
+  }
+  45% {
+    transform: translate(var(--translate-x, 0), var(--translate-y, 0)) scale(var(--tooltip-scale, 1.1)) rotate(-3deg);
+  }
+  60% {
+    transform: translate(var(--translate-x, 0), var(--translate-y, 0)) scale(var(--tooltip-scale, 1.05)) rotate(2deg);
+  }
+  75% {
+    transform: translate(var(--translate-x, 0), var(--translate-y, 0)) scale(var(--tooltip-scale, 1.05)) rotate(-2deg);
+  }
+  90% {
+    transform: translate(var(--translate-x, 0), var(--translate-y, 0)) scale(1.01) rotate(0deg);
+  }
+  100% {
+    transform: translate(var(--translate-x, 0), var(--translate-y, 0)) scale(1) rotate(0deg);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. Core Tooltip Implementation
+   -------------------------------------------------------------------------- */
+
+/* Container wrapper to isolate hover contexts and establish relative layouts */
+.ease-tooltip-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* Interactive trigger base reset */
+.ease-tooltip-trigger {
+  cursor: pointer;
+  outline: none;
+}
+
+/* Hidden state: Default hidden tooltip setup */
+.ease-tooltip {
+  position: absolute;
+  z-index: 1000;
+  width: max-content;
+  max-width: 90vw;
+  white-space: normal;
+  word-wrap: break-word;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  
+  /* Apply customizable styles */
+  background-color: var(--tooltip-bg);
+  color: var(--tooltip-color);
+  font-family: var(--font-sans);
+  font-size: var(--tooltip-font-size);
+  font-weight: 500;
+  line-height: 1.4;
+  padding: var(--tooltip-padding);
+  border-radius: var(--tooltip-radius);
+  box-shadow: var(--tooltip-shadow);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  
+  /* Initial transform layout properties */
+  --translate-x: 0;
+  --translate-y: 0;
+  transform: translate(var(--translate-x), var(--translate-y)) scale(0.9);
+  transition: 
+    opacity var(--tooltip-duration) ease,
+    visibility var(--tooltip-duration) ease,
+    transform var(--tooltip-duration) ease;
+}
+
+/* --------------------------------------------------------------------------
+   4. Placements & Layout Directions
+   -------------------------------------------------------------------------- */
+
+/* TOP Placement */
+.ease-tooltip[data-placement="top"] {
+  bottom: 100%;
+  left: 50%;
+  --translate-x: -50%;
+  --translate-y: calc(-1 * var(--tooltip-distance));
+  transform-origin: bottom center;
+}
+
+/* BOTTOM Placement */
+.ease-tooltip[data-placement="bottom"] {
+  top: 100%;
+  left: 50%;
+  --translate-x: -50%;
+  --translate-y: var(--tooltip-distance);
+  transform-origin: top center;
+}
+
+/* LEFT Placement */
+.ease-tooltip[data-placement="left"] {
+  right: 100%;
+  top: 50%;
+  --translate-x: calc(-1 * var(--tooltip-distance));
+  --translate-y: -50%;
+  transform-origin: center right;
+}
+
+/* RIGHT Placement */
+.ease-tooltip[data-placement="right"] {
+  left: 100%;
+  top: 50%;
+  --translate-x: var(--tooltip-distance);
+  --translate-y: -50%;
+  transform-origin: center left;
+}
+
+/* --------------------------------------------------------------------------
+   5. Interactive Trigger States (Hover & Keyboard Accessibility)
+   -------------------------------------------------------------------------- */
+
+/* Active Visibility: Display tooltip on hover or keyboard focus */
+.ease-tooltip-container:hover .ease-tooltip,
+.ease-tooltip-trigger:focus-visible + .ease-tooltip {
+  visibility: visible;
+  opacity: 1;
+  animation: 
+    fade var(--tooltip-duration) linear var(--tooltip-delay) forwards,
+    tada-click var(--tooltip-duration) var(--tooltip-easing) var(--tooltip-delay) forwards;
+}
+
+/* Clear visible keyboard focus outline */
+.ease-tooltip-trigger:focus-visible {
+  outline: 2px solid var(--tooltip-focus-outline);
+  outline-offset: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   6. Mobile Viewport & Responsiveness
+   -------------------------------------------------------------------------- */
+@media (max-width: 640px) {
+  :root {
+    --tooltip-padding: 5px 10px;
+    --tooltip-font-size: 0.75rem;
+    --tooltip-distance: 6px;
+    --tooltip-scale: 1.06;
+  }
+
+  /* Reposition horizontal tooltips to vertical on mobile screens to prevent viewport clip */
+  .ease-tooltip[data-placement="left"],
+  .ease-tooltip[data-placement="right"] {
+    right: auto;
+    left: 50%;
+    top: auto;
+    bottom: 100%;
+    --translate-x: -50%;
+    --translate-y: calc(-1 * var(--tooltip-distance));
+    transform-origin: bottom center;
+  }
+}
+
+/* Support for users with reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --tooltip-duration: 0.15s;
+  }
+  .ease-tooltip-container:hover .ease-tooltip,
+  .ease-tooltip-trigger:focus-visible + .ease-tooltip {
+    animation: fade var(--tooltip-duration) linear forwards;
+    transform: translate(var(--translate-x), var(--translate-y)) scale(1);
+  }
+}
+
+/* ==========================================================================
+   7. Demo Page Styles (Strictly for Visual Layout Showcase)
+   ========================================================================== */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-app);
+  color: #f1f5f9;
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.demo-wrapper {
+  max-width: 960px;
+  width: 100%;
+  padding: 2.5rem 1.5rem;
+}
+
+/* Heading section */
+header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+header h1 {
+  font-family: var(--font-mono);
+  font-size: 1.75rem;
+  letter-spacing: 2px;
+  margin: 0 0 0.5rem 0;
+  text-transform: uppercase;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/* Cyan status dot without SVG */
+header h1::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-cyan);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--color-cyan);
+}
+
+header p {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Tech panel grid */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.tech-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: 12px;
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: border-color 0.3s ease;
+}
+
+.tech-card:hover {
+  border-color: rgba(6, 182, 212, 0.2);
+}
+
+/* Subtle corner decoration */
+.tech-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid var(--color-cyan);
+  border-left: 2px solid var(--color-cyan);
+}
+
+.card-title {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-cyan);
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.card-body {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+/* Tech triggers block */
+.trigger-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* Tech themed button */
+.tech-btn {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #e2e8f0;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: 8px 14px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.tech-btn:hover {
+  background: rgba(6, 182, 212, 0.05);
+  border-color: var(--color-cyan);
+  color: #ffffff;
+  box-shadow: 0 0 10px var(--color-cyan-glow);
+}
+
+.tech-btn.accent {
+  background: rgba(6, 182, 212, 0.1);
+  border-color: rgba(6, 182, 212, 0.3);
+  color: var(--color-cyan);
+}
+
+.tech-btn.accent:hover {
+  background: var(--color-cyan);
+  color: var(--bg-app);
+  box-shadow: 0 0 15px var(--color-cyan-glow);
+}
+
+/* Custom CSS Variables Demo Controller Panel */
+.controls-panel {
+  background: rgba(9, 15, 29, 0.4);
+  border: 1px dashed rgba(6, 182, 212, 0.2);
+  border-radius: 8px;
+  padding: 1.5rem;
+  font-family: var(--font-mono);
+}
+
+.controls-panel h3 {
+  margin-top: 0;
+  font-size: 0.9rem;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.controls-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+.control-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.control-item label {
+  color: #cbd5e1;
+}
+
+.code-inline {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 2px 6px;
+  border-radius: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  color: #38bdf8;
+}

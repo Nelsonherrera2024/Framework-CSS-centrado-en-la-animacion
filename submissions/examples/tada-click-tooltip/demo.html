@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tada-Click Tooltip - EaseMotion CSS</title>
+  
+  <!-- Link to EaseMotion CSS core animations if needed -->
+  <link rel="stylesheet" href="../../../core/animations.css">
+  <!-- Link to custom Tada-Click Tooltip styling -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="demo-wrapper">
+    <header>
+      <h1>Tada-Click Tooltip</h1>
+      <p>
+        A pure CSS interactive tooltip component featuring a springy "Tada" entrance animation. Designed for premium minimalist tech interfaces. Keyboard accessible, fully customizable via CSS variables, and mobile responsive.
+      </p>
+    </header>
+
+    <main>
+      <!-- Grid showing different placements -->
+      <section class="tech-grid" aria-label="Tooltip Placements Showcase">
+        
+        <!-- Panel 1: Top & Bottom Tooltips -->
+        <article class="tech-card">
+          <h2 class="card-title">System Console</h2>
+          <p class="card-body">
+            Monitor and execute processes. Hover or focus the options below to see vertical tooltips.
+          </p>
+          
+          <div class="trigger-group">
+            <!-- Top Tooltip Container -->
+            <div class="ease-tooltip-container">
+              <button 
+                class="tech-btn ease-tooltip-trigger" 
+                aria-describedby="tooltip-top"
+                type="button">
+                Run Diagnostics
+              </button>
+              <span 
+                class="ease-tooltip" 
+                id="tooltip-top" 
+                role="tooltip" 
+                data-placement="top">
+                Executes thread check (Top Placement)
+              </span>
+            </div>
+
+            <!-- Bottom Tooltip Container -->
+            <div class="ease-tooltip-container">
+              <button 
+                class="tech-btn ease-tooltip-trigger accent" 
+                aria-describedby="tooltip-bottom"
+                type="button">
+                System Restart
+              </button>
+              <span 
+                class="ease-tooltip" 
+                id="tooltip-bottom" 
+                role="tooltip" 
+                data-placement="bottom">
+                Safely reboot server (Bottom Placement)
+              </span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Panel 2: Left & Right Tooltips -->
+        <article class="tech-card">
+          <h2 class="card-title">Database Nodes</h2>
+          <p class="card-body">
+            Manage data replication. Hover or focus options to trigger horizontal tooltips.
+          </p>
+          
+          <div class="trigger-group">
+            <!-- Left Tooltip Container -->
+            <div class="ease-tooltip-container">
+              <button 
+                class="tech-btn ease-tooltip-trigger" 
+                aria-describedby="tooltip-left"
+                type="button">
+                DB Status
+              </button>
+              <span 
+                class="ease-tooltip" 
+                id="tooltip-left" 
+                role="tooltip" 
+                data-placement="left">
+                Nodes operational (Left Placement)
+              </span>
+            </div>
+
+            <!-- Right Tooltip Container -->
+            <div class="ease-tooltip-container">
+              <button 
+                class="tech-btn ease-tooltip-trigger" 
+                aria-describedby="tooltip-right"
+                type="button">
+                Purge Cache
+              </button>
+              <span 
+                class="ease-tooltip" 
+                id="tooltip-right" 
+                role="tooltip" 
+                data-placement="right">
+                Wipe redis entries (Right Placement)
+              </span>
+            </div>
+          </div>
+        </article>
+
+      </section>
+
+      <!-- Panel 3: Customization & Info Section -->
+      <section class="controls-panel" aria-labelledby="customization-title">
+        <h3 id="customization-title">Developer Customization Variables</h3>
+        <p style="color: #94a3b8; font-size: 0.8rem; margin-top: 0; margin-bottom: 1.25rem;">
+          You can override these custom properties in your own stylesheet or inline variables on parent containers:
+        </p>
+        
+        <div class="controls-list">
+          <div class="control-item">
+            <span class="code-inline">--tooltip-bg</span>
+            <span>Background color (supports glassmorphism)</span>
+          </div>
+          <div class="control-item">
+            <span class="code-inline">--tooltip-color</span>
+            <span>Text contrast color</span>
+          </div>
+          <div class="control-item">
+            <span class="code-inline">--tooltip-radius</span>
+            <span>Border radius of tooltip box</span>
+          </div>
+          <div class="control-item">
+            <span class="code-inline">--tooltip-padding</span>
+            <span>Internal layout spacing</span>
+          </div>
+          <div class="control-item">
+            <span class="code-inline">--tooltip-shadow</span>
+            <span>Outer shadow and border rings</span>
+          </div>
+          <div class="control-item">
+            <span class="code-inline">--tooltip-duration</span>
+            <span>Entrance animation speed (e.g. 0.45s)</span>
+          </div>
+          <div class="control-item">
+            <span class="code-inline">--tooltip-easing</span>
+            <span>Easing spring curves (cubic-bezier)</span>
+          </div>
+          <div class="control-item">
+            <span class="code-inline">--tooltip-scale</span>
+            <span>Tada bounce maximum scale factor</span>
+          </div>
+          <div class="control-item">
+            <span class="code-inline">--tooltip-distance</span>
+            <span>Offset from the trigger element</span>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+</body>
+</html>
