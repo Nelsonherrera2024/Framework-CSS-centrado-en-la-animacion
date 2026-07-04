@@ -38,7 +38,7 @@
           <span>Frequency (Hz)</span>
           <span class="tune-val" style="color: var(--clr-accent-1)">130.5</span>
         </div>
-        <div class="slider-track">
+        <div class="slider-track" tabindex="0" role="slider" aria-label="Frequency in hertz" aria-valuenow="130.5" aria-valuemin="0" aria-valuemax="200">
           <div class="slider-fill" style="width: 75%; background: var(--clr-accent-1);"></div>
           <div class="slider-thumb" style="left: 75%;"></div>
         </div>
@@ -49,7 +49,7 @@
           <span>Pulse Width (μs)</span>
           <span class="tune-val">60.0</span>
         </div>
-        <div class="slider-track">
+        <div class="slider-track" tabindex="0" role="slider" aria-label="Pulse width in microseconds" aria-valuenow="60" aria-valuemin="0" aria-valuemax="120">
           <div class="slider-fill" style="width: 45%;"></div>
           <div class="slider-thumb" style="left: 45%;"></div>
         </div>
@@ -60,7 +60,7 @@
           <span>Amplitude (V)</span>
           <span class="tune-val" style="color: var(--clr-accent-3)">3.2</span>
         </div>
-        <div class="slider-track">
+        <div class="slider-track" tabindex="0" role="slider" aria-label="Amplitude in volts" aria-valuenow="3.2" aria-valuemin="0" aria-valuemax="10">
           <div class="slider-fill" style="width: 60%; background: var(--clr-accent-3);"></div>
           <div class="slider-thumb" style="left: 60%;"></div>
         </div>
@@ -73,14 +73,14 @@
         <div class="map-scan"></div>
         
         <!-- Electrodes -->
-        <div class="electrode e-1"></div>
-        <div class="electrode e-2"></div>
-        <div class="electrode e-3"></div>
-        <div class="electrode e-4"></div>
-        <div class="electrode e-5 active"></div>
-        <div class="electrode e-6"></div>
-        <div class="electrode e-7"></div>
-        <div class="electrode e-8"></div>
+        <div class="electrode e-1" tabindex="0" role="button" aria-label="Electrode 1"></div>
+        <div class="electrode e-2" tabindex="0" role="button" aria-label="Electrode 2"></div>
+        <div class="electrode e-3" tabindex="0" role="button" aria-label="Electrode 3"></div>
+        <div class="electrode e-4" tabindex="0" role="button" aria-label="Electrode 4"></div>
+        <div class="electrode e-5 active" tabindex="0" role="button" aria-label="Electrode 5, active"></div>
+        <div class="electrode e-6" tabindex="0" role="button" aria-label="Electrode 6"></div>
+        <div class="electrode e-7" tabindex="0" role="button" aria-label="Electrode 7"></div>
+        <div class="electrode e-8" tabindex="0" role="button" aria-label="Electrode 8"></div>
       </div>
     </section>
 
@@ -97,8 +97,8 @@
           <span class="diag-lbl">Battery Life</span>
           <span class="diag-val">84%</span>
         </div>
-        <div class="diag-card" style="border-color: rgba(244, 114, 182, 0.4);">
-          <span class="diag-lbl">Sync Variance</span>
+        <div class="diag-card is-flagged">
+          <span class="diag-lbl">Sync Variance <span class="diag-flag">OUT OF RANGE</span></span>
           <span class="diag-val" style="color: var(--clr-accent-2)">+0.04 ms</span>
         </div>
         <div class="diag-card">
@@ -113,10 +113,10 @@
       <div class="panel-title">Live EEG Telemetry</div>
       
       <div class="eeg-container">
-        <!-- Simulated Waveforms -->
-        <div class="eeg-wave theta"></div>
-        <div class="eeg-wave alpha"></div>
-        <div class="eeg-wave"></div>
+        <!-- Morphing waveform lines (pure CSS clip-path animation) -->
+        <div class="eeg-line theta"></div>
+        <div class="eeg-line alpha"></div>
+        <div class="eeg-line"></div>
       </div>
     </section>
 

@@ -130,6 +130,14 @@ body::before {
   border-radius: 50%; transform: translate(-50%, -50%);
   box-shadow: 0 0 10px rgba(255,255,255,0.8);
 }
+/* Keyboard focus state for sliders */
+.slider-track:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.5);
+}
+.slider-track:focus-visible .slider-thumb {
+  box-shadow: 0 0 0 4px rgba(255,255,255,0.3), 0 0 10px rgba(255,255,255,0.8);
+}
 
 /* ── Center: Brain Array Visualizer ── */
 .brain-map {
@@ -144,7 +152,12 @@ body::before {
   transform: translate(-50%, -50%); cursor: crosshair;
   transition: all 0.3s;
 }
-.electrode:hover { background: var(--clr-accent-1); box-shadow: var(--glow-blue); transform: translate(-50%, -50%) scale(1.2); }
+.electrode:hover,
+.electrode:focus-visible {
+  background: var(--clr-accent-1); box-shadow: var(--glow-blue);
+  transform: translate(-50%, -50%) scale(1.2);
+}
+.electrode:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
 .electrode.active {
   background: var(--clr-accent-2); border-color: var(--clr-accent-2);
   box-shadow: var(--glow-pink);
@@ -178,32 +191,73 @@ body::before {
 .diag-card {
   background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.05);
   padding: 1rem; border-radius: 8px; display: flex; justify-content: space-between; align-items: center;
+  gap: 1rem;
 }
-.diag-lbl { font-size: 0.9rem; color: var(--clr-text-dim); }
-.diag-val { font-family: var(--font-mono); font-size: 1.1rem; color: var(--clr-accent-3); }
+.diag-lbl { font-size: 0.9rem; color: var(--clr-text-dim); white-space: nowrap; }
+.diag-val { font-family: var(--font-mono); font-size: 1.1rem; color: var(--clr-accent-3); white-space: nowrap; }
+
+/* Out-of-range diagnostic card (e.g. Sync Variance) */
+.diag-card.is-flagged {
+  border-color: rgba(244, 114, 182, 0.4);
+  background: rgba(244, 114, 182, 0.06);
+  flex-wrap: wrap;
+}
+.diag-card.is-flagged .diag-lbl {
+  display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;
+  white-space: normal; flex: 1 1 auto; min-width: 0;
+}
+.diag-flag {
+  font-family: var(--font-mono); font-size: 0.6rem; font-weight: 700;
+  color: var(--clr-accent-2); background: rgba(244, 114, 182, 0.15);
+  border: 1px solid rgba(244, 114, 182, 0.4);
+  padding: 0.15rem 0.4rem; border-radius: 4px; letter-spacing: 0.5px;
+  white-space: nowrap;
+}
 
 /* ── Bottom: EEG Oscilloscope ── */
 .eeg-container {
   flex: 1; position: relative; border-radius: 8px; overflow: hidden;
   background: rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.05);
 }
-/* CSS Sine Wave simulation via repeating background */
-.eeg-wave {
-  position: absolute; top: 0; left: 0; width: 200%; height: 100%;
-  background-image: radial-gradient(circle at 10px 50%, var(--clr-accent-1) 2px, transparent 2.5px);
-  background-size: 20px 100%; background-position: 0 50%;
-  opacity: 0.8;
-  animation: eeg-scroll 2s linear infinite;
+
+/* Morphing waveform lines — pure CSS clip-path animation, no SVG/JS */
+.eeg-line {
+  position: absolute; left: 0; top: 0; width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, var(--clr-accent-1) 15%, var(--clr-accent-1) 85%, transparent);
+  opacity: 0.85;
 }
-.eeg-wave.alpha {
-  top: -20px; background-image: radial-gradient(circle at 15px 50%, var(--clr-accent-2) 2px, transparent 2.5px);
-  background-size: 30px 100%; animation-duration: 1.5s; opacity: 0.6;
+.eeg-line.alpha {
+  background: linear-gradient(90deg, transparent, var(--clr-accent-2) 15%, var(--clr-accent-2) 85%, transparent);
+  opacity: 0.6;
+  animation-duration: 4.5s;
 }
-.eeg-wave.theta {
-  top: 20px; background-image: radial-gradient(circle at 25px 50%, var(--clr-accent-3) 2px, transparent 2.5px);
-  background-size: 50px 100%; animation-duration: 3s; opacity: 0.5;
+.eeg-line.theta {
+  background: linear-gradient(90deg, transparent, var(--clr-accent-3) 15%, var(--clr-accent-3) 85%, transparent);
+  opacity: 0.5;
+  animation-duration: 6s;
 }
-@keyframes eeg-scroll { 100% { transform: translateX(-50%); } }
+.eeg-line {
+  animation: wave-morph-1 3.2s ease-in-out infinite;
+}
+.eeg-line.alpha { animation-name: wave-morph-2; }
+.eeg-line.theta { animation-name: wave-morph-3; }
+
+@keyframes wave-morph-1 {
+  0%   { clip-path: polygon(0% 50%, 8% 30%, 16% 60%, 24% 20%, 32% 55%, 40% 45%, 48% 65%, 56% 35%, 64% 50%, 72% 25%, 80% 58%, 88% 40%, 96% 52%, 100% 50%, 100% 100%, 0% 100%); }
+  50%  { clip-path: polygon(0% 50%, 8% 60%, 16% 35%, 24% 55%, 32% 25%, 40% 60%, 48% 40%, 56% 60%, 64% 30%, 72% 50%, 80% 35%, 88% 60%, 96% 40%, 100% 50%, 100% 100%, 0% 100%); }
+  100% { clip-path: polygon(0% 50%, 8% 30%, 16% 60%, 24% 20%, 32% 55%, 40% 45%, 48% 65%, 56% 35%, 64% 50%, 72% 25%, 80% 58%, 88% 40%, 96% 52%, 100% 50%, 100% 100%, 0% 100%); }
+}
+@keyframes wave-morph-2 {
+  0%   { clip-path: polygon(0% 50%, 10% 65%, 20% 40%, 30% 55%, 40% 30%, 50% 60%, 60% 35%, 70% 55%, 80% 40%, 90% 58%, 100% 50%, 100% 100%, 0% 100%); }
+  50%  { clip-path: polygon(0% 50%, 10% 35%, 20% 60%, 30% 40%, 40% 65%, 50% 35%, 60% 60%, 70% 40%, 80% 55%, 90% 38%, 100% 50%, 100% 100%, 0% 100%); }
+  100% { clip-path: polygon(0% 50%, 10% 65%, 20% 40%, 30% 55%, 40% 30%, 50% 60%, 60% 35%, 70% 55%, 80% 40%, 90% 58%, 100% 50%, 100% 100%, 0% 100%); }
+}
+@keyframes wave-morph-3 {
+  0%   { clip-path: polygon(0% 50%, 15% 42%, 30% 58%, 45% 44%, 60% 56%, 75% 45%, 90% 55%, 100% 50%, 100% 100%, 0% 100%); }
+  50%  { clip-path: polygon(0% 50%, 15% 58%, 30% 42%, 45% 56%, 60% 44%, 75% 55%, 90% 45%, 100% 50%, 100% 100%, 0% 100%); }
+  100% { clip-path: polygon(0% 50%, 15% 42%, 30% 58%, 45% 44%, 60% 56%, 75% 45%, 90% 55%, 100% 50%, 100% 100%, 0% 100%); }
+}
+
 /* Oscilloscope grid */
 .eeg-container::before {
   content: ""; position: absolute; inset: 0;
@@ -239,6 +293,7 @@ body::before {
 }
 @media (max-width: 768px) {
   .app-main { display: flex; flex-direction: column; }
+  body { overflow-y: auto; }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
