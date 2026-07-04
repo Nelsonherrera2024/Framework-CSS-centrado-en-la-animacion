@@ -1,65 +1,15 @@
 # Infinite Scroll Feed Loader with Shimmer Skeleton
 
-A lightweight React component that simulates an infinite scrolling feed with animated shimmer skeleton placeholders while new content is loading.
-
-## Features
-
-- Infinite scroll using Intersection Observer
-- Animated shimmer loading skeleton
-- Responsive layout
-- No external dependencies
-- Easy to customize
-- Reusable React component
+A performant, clean, modular React infinite scrolling manager designed with an optimized intersection observer setup and smooth EaseMotion linear shimmer sweeps.
 
 ## Installation
+Drop the component directory into your UI source path hierarchy.
 
-Copy the following files into your project:
+## Component Props
 
-- `InfiniteScrollFeedLoader.jsx`
-- `style.css`
-
-Import the stylesheet:
-
-```jsx
-import "./style.css";
-```
-
-## Usage
-
-```jsx
-import InfiniteScrollFeedLoader from "./InfiniteScrollFeedLoader";
-
-function App() {
-  return (
-    <InfiniteScrollFeedLoader batchSize={6} />
-  );
-}
-
-export default App;
-```
-
-## Props
-
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| batchSize | number | 6 | Number of feed items loaded per batch |
-
-## Folder Structure
-
-```
-react-infinite-scroll-feed-loader-with-shimmer-skeleton/
-├── InfiniteScrollFeedLoader.jsx
-├── style.css
-└── README.md
-```
-
-## Browser Support
-
-- Chrome
-- Edge
-- Firefox
-- Safari
-
-## License
-
-MIT
+| Property | Type | Description |
+| :--- | :--- | :--- |
+| `isLoading` | `Boolean` | Controls structural mounting of animated loading items. |
+| `hasMore` | `Boolean` | Determines if more content records exist. |
+| `onLoadMore` | `Function` | Fetch handler triggered when reaching viewport boundaries. |
+| `skeletonCount`| `Number` | Configures structural element length allocations. |
