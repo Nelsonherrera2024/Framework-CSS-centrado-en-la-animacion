@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sidebar Active Text Contrast Fix</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="demo-shell">
+    <aside class="docs-sidebar" aria-label="Documentation navigation">
+      <div class="sidebar-group">
+        <h2 class="sidebar-group-label">Introduction</h2>
+        <ul class="sidebar-nav">
+          <li><a href="#getting-started" class="active">Getting Started</a></li>
+          <li><a href="#design">Design Philosophy</a></li>
+          <li><a href="#install">Installation</a></li>
+        </ul>
+      </div>
+
+      <div class="sidebar-group">
+        <h2 class="sidebar-group-label">Core</h2>
+        <ul class="sidebar-nav">
+          <li><a href="#variables">Variables</a></li>
+          <li><a href="#dark-mode">Dark Mode</a></li>
+          <li><a href="#utilities">Utilities</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="docs-content">
+      <section class="docs-card">
+        <p class="docs-kicker">Documentation sidebar</p>
+        <h1 class="docs-title">Active item uses the theme variable</h1>
+        <p class="docs-description">
+          In light mode, the active sidebar text now uses <strong>--nav-link-active-text</strong> instead of a hardcoded white value.
+          The active background, dark theme appearance, layout, and transitions remain unchanged.
+        </p>
+
+        <div class="demo-toolbar">
+          <button class="demo-button" type="button" id="themeToggle">Toggle theme</button>
+          <button class="demo-button" type="button">Preserve layout</button>
+        </div>
+
+        <div class="demo-note">
+          Active state preview: light mode keeps the accent text readable, while dark mode keeps the original white active text.
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const themeToggle = document.getElementById('themeToggle');
+    const root = document.documentElement;
+
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = root.getAttribute('data-theme');
+      root.setAttribute('data-theme', currentTheme === 'light' ? 'dark' : 'light');
+    });
+  </script>
+</body>
+</html>

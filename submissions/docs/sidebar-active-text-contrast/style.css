@@ -1,0 +1,204 @@
+:root {
+  --docs-sidebar-w: 260px;
+  --page-bg: #f8fafc;
+  --page-text: #0f172a;
+  --page-text-muted: #475569;
+  --header-bg: rgba(248, 250, 252, 0.9);
+  --border-color: rgba(15, 23, 42, 0.08);
+  --sidebar-bg: rgba(255, 255, 255, 0.92);
+  --sidebar-shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+  --nav-link-color: #475569;
+  --nav-link-active-bg: rgba(108, 99, 255, 0.1);
+  --nav-link-active-text: #6c63ff;
+  --nav-link-hover-bg: rgba(108, 99, 255, 0.06);
+  --accent: #6c63ff;
+  --accent-strong: #4f46e5;
+  --radius: 18px;
+  --ease: 220ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme="dark"] {
+  --page-bg: #0f0e17;
+  --page-text: #fffffe;
+  --page-text-muted: rgba(255, 255, 255, 0.68);
+  --header-bg: rgba(15, 14, 23, 0.9);
+  --border-color: rgba(255, 255, 255, 0.08);
+  --sidebar-bg: rgba(255, 255, 255, 0.03);
+  --sidebar-shadow: 0 22px 45px rgba(0, 0, 0, 0.28);
+  --nav-link-color: rgba(255, 255, 255, 0.62);
+  --nav-link-active-bg: rgba(108, 99, 255, 0.12);
+  --nav-link-active-text: #ffffff;
+  --nav-link-hover-bg: rgba(255, 255, 255, 0.06);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(108, 99, 255, 0.14), transparent 32%),
+    radial-gradient(circle at bottom right, rgba(79, 70, 229, 0.08), transparent 28%),
+    var(--page-bg);
+  color: var(--page-text);
+  min-height: 100vh;
+}
+
+.demo-shell {
+  display: grid;
+  grid-template-columns: var(--docs-sidebar-w) 1fr;
+  min-height: 100vh;
+}
+
+.docs-sidebar {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  min-height: 100vh;
+  padding: 28px 18px;
+  background: var(--sidebar-bg);
+  border-right: 1px solid var(--border-color);
+  box-shadow: var(--sidebar-shadow);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.sidebar-group + .sidebar-group {
+  margin-top: 24px;
+}
+
+.sidebar-group-label {
+  margin: 0 0 10px;
+  padding: 0 10px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.sidebar-nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar-nav li + li {
+  margin-top: 6px;
+}
+
+.sidebar-nav a {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 12px;
+  color: var(--nav-link-color);
+  text-decoration: none;
+  transition:
+    color var(--ease),
+    background var(--ease),
+    transform var(--ease),
+    box-shadow var(--ease);
+}
+
+.sidebar-nav a:hover {
+  background: var(--nav-link-hover-bg);
+  transform: translateX(3px);
+}
+
+.sidebar-nav a.active {
+  color: var(--nav-link-active-text);
+  background: var(--nav-link-active-bg);
+  border-left: 3px solid var(--accent);
+  box-shadow: inset 18px 0 18px -18px rgba(108, 99, 255, 0.32);
+  padding-left: 9px;
+}
+
+.docs-content {
+  padding: 40px clamp(24px, 5vw, 56px);
+}
+
+.docs-card {
+  max-width: 760px;
+  padding: 28px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--page-bg) 82%, white 18%);
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.06);
+}
+
+.docs-kicker {
+  margin: 0 0 10px;
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.docs-title {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.docs-description {
+  margin: 16px 0 0;
+  max-width: 58ch;
+  line-height: 1.7;
+  color: var(--page-text-muted);
+}
+
+.demo-toolbar {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.demo-button {
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  padding: 10px 16px;
+  background: var(--sidebar-bg);
+  color: var(--page-text);
+  cursor: pointer;
+  transition:
+    transform var(--ease),
+    background var(--ease),
+    color var(--ease),
+    border-color var(--ease);
+}
+
+.demo-button:hover {
+  transform: translateY(-1px);
+  border-color: rgba(108, 99, 255, 0.25);
+}
+
+.demo-note {
+  margin-top: 18px;
+  padding: 14px 16px;
+  border-left: 3px solid var(--accent);
+  border-radius: 12px;
+  background: rgba(108, 99, 255, 0.08);
+  color: var(--page-text);
+}
+
+@media (max-width: 900px) {
+  .demo-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .docs-sidebar {
+    position: relative;
+    min-height: auto;
+    border-right: 0;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .docs-content {
+    padding-top: 24px;
+  }
+}
