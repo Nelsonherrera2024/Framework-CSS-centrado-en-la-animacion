@@ -71,6 +71,12 @@
     margin-bottom: 0.25rem;
   }
   
+  @keyframes ease-icon-pop {
+    0% { transform: scale(0); opacity: 0; }
+    70% { transform: scale(1.15); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+
   .ease-icon-check, .ease-icon-cross {
     display: inline-flex;
     align-items: center;
