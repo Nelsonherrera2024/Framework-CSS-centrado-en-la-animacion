@@ -925,6 +925,7 @@
 
 .ease-ping {
   animation: ease-kf-ping 1s var(--ease-ease-out) var(--ease-animation-iterations, infinite);
+  overflow: hidden;
 }
 
 .ease-shake {
