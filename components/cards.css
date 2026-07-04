@@ -64,8 +64,7 @@
 /* ── Shadow Modifier ───────────────────────────────────────── */
 
 .ease-card-shadow {
-  box-shadow: var(--ease-shadow-lg, 0 10px 15px -3px rgba(0, 0, 0, 0.40),
-                       0 4px 6px -2px rgba(0, 0, 0, 0.25));
+  box-shadow: var(--ease-shadow-lg);
   border-color: transparent;
 }
 
@@ -101,8 +100,7 @@
 
 @media (hover: hover) and (pointer: fine) {
   .ease-card-glow:hover {
-    box-shadow: var(--ease-glow-primary, 0 0 16px rgba(108, 99, 255, 0.45)), var(--ease-shadow-lg, 0 10px 15px -3px rgba(0, 0, 0, 0.40),
-                       0 4px 6px -2px rgba(0, 0, 0, 0.25));
+    box-shadow: var(--ease-glow-primary), var(--ease-shadow-lg);
     border-color: var(--ease-color-primary-light, #a09af8);
   }
 }
