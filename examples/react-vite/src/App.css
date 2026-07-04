@@ -97,7 +97,6 @@ body {
   font-weight: 600;
   border-radius: 8px;
   cursor: pointer;
-  outline: none;
   box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3);
 }
 
@@ -110,7 +109,6 @@ body {
   font-weight: 600;
   border-radius: 8px;
   cursor: pointer;
-  outline: none;
   margin-left: 1rem;
 }
 
@@ -124,4 +122,13 @@ body {
   color: var(--accent-cyan);
   margin-bottom: 1rem;
   border: 1px solid rgba(6, 182, 212, 0.3);
+}
+
+.btn-primary:focus-visible,
+.btn-outline:focus-visible {
+  outline: 3px solid var(--accent-cyan);
+  outline-offset: 3px;
+  box-shadow:
+    0 0 0 4px rgba(6, 182, 212, 0.25),
+    0 4px 15px rgba(168, 85, 247, 0.3);
 }
