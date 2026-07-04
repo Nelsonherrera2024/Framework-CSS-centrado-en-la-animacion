@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Animated Login/Signup Form</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="card">
+    <div class="tabs">
+      <div class="tab-indicator" id="indicator"></div>
+      <button class="tab-btn active" id="loginTab" onclick="switchTab('login')">Login</button>
+      <button class="tab-btn" id="signupTab" onclick="switchTab('signup')">Sign Up</button>
+    </div>
+
+    <div class="form-panel active" id="loginPanel">
+      <h2>Welcome back 👋</h2>
+      <p class="subtitle">Sign in to your account</p>
+      <div class="input-group">
+        <label>Email</label>
+        <input type="email" placeholder="you@example.com" />
+      </div>
+      <div class="input-group">
+        <label>Password</label>
+        <input type="password" placeholder="••••••••" />
+      </div>
+      <button class="btn" onclick="rippleEffect(event)">Sign In</button>
+      <div class="divider">or continue with</div>
+      <button class="social-btn">🌐 Continue with Google</button>
+    </div>
+
+    <div class="form-panel" id="signupPanel">
+      <h2>Create account ✨</h2>
+      <p class="subtitle">Join us today, it's free</p>
+      <div class="input-group">
+        <label>Full Name</label>
+        <input type="text" placeholder="Your Name" />
+      </div>
+      <div class="input-group">
+        <label>Email</label>
+        <input type="email" placeholder="you@example.com" />
+      </div>
+      <div class="input-group">
+        <label>Password</label>
+        <input type="password" placeholder="••••••••" />
+      </div>
+      <button class="btn" onclick="rippleEffect(event)">Create Account</button>
+      <div class="divider">or continue with</div>
+      <button class="social-btn">🌐 Continue with Google</button>
+    </div>
+  </div>
+
+  <script>
+    function switchTab(tab) {
+      const indicator = document.getElementById('indicator');
+      const loginTab = document.getElementById('loginTab');
+      const signupTab = document.getElementById('signupTab');
+      const loginPanel = document.getElementById('loginPanel');
+      const signupPanel = document.getElementById('signupPanel');
+
+      if (tab === 'login') {
+        indicator.classList.remove('signup');
+        loginTab.classList.add('active');
+        signupTab.classList.remove('active');
+        loginPanel.classList.add('active');
+        signupPanel.classList.remove('active');
+      } else {
+        indicator.classList.add('signup');
+        signupTab.classList.add('active');
+        loginTab.classList.remove('active');
+        signupPanel.classList.add('active');
+        loginPanel.classList.remove('active');
+      }
+    }
+
+    function rippleEffect(e) {
+      const btn = e.currentTarget;
+      const ripple = document.createElement('span');
+      const rect = btn.getBoundingClientRect();
+      const size = Math.max(rect.width, rect.height);
+      ripple.classList.add('ripple');
+      ripple.style.width = ripple.style.height = size + 'px';
+      ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
+      ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
+      btn.appendChild(ripple);
+      setTimeout(() => ripple.remove(), 600);
+    }
+  </script>
+</body>
+</html>
