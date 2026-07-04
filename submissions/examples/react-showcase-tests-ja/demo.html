@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>React Showcase — Automated Tests | EaseMotion CSS</title>
+  <meta name="description" content="Automated test coverage demo for the EaseMotion CSS React + Vite showcase. Covers App rendering, Animate component, Modal interactions, and AnimationPlayground selector." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── Header ─────────────────────────────────────────────────────────── -->
+  <header class="site-header ease-slide-down">
+    <div class="header-inner">
+      <span class="logo">⚡ EaseMotion CSS</span>
+      <span class="badge">React Showcase Tests</span>
+    </div>
+    <p class="subtitle">
+      Automated test suite for the React + Vite showcase — built with
+      <strong>Vitest</strong> &amp; <strong>React Testing Library</strong>.
+    </p>
+  </header>
+
+  <!-- ── Main ──────────────────────────────────────────────────────────── -->
+  <main class="main">
+
+    <!-- Summary Banner -->
+    <section class="summary-banner ease-fade-in">
+      <div class="stat-card">
+        <span class="stat-number">64</span>
+        <span class="stat-label">Total Tests</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">4</span>
+        <span class="stat-label">Test Files</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">100%</span>
+        <span class="stat-label">Pass Rate</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">CI</span>
+        <span class="stat-label">Integrated</span>
+      </div>
+    </section>
+
+    <!-- Test Coverage Grid -->
+    <section class="coverage-section">
+      <h2 class="section-title">Test Coverage</h2>
+      <p class="section-desc">
+        The suite validates all four core areas of the React showcase application.
+      </p>
+
+      <div class="coverage-grid">
+
+        <!-- App Tests -->
+        <div class="coverage-card ease-slide-up">
+          <div class="card-header">
+            <span class="card-icon">🖥️</span>
+            <h3 class="card-title">App.test.jsx</h3>
+            <span class="test-count">8 tests</span>
+          </div>
+          <ul class="test-list">
+            <li class="test-item pass">Renders root without crashing</li>
+            <li class="test-item pass">Displays main heading</li>
+            <li class="test-item pass">Renders the header section</li>
+            <li class="test-item pass">Renders AnimationPlayground</li>
+            <li class="test-item pass">Renders Animate demo section</li>
+            <li class="test-item pass">Renders Modal demo section</li>
+            <li class="test-item pass">Shows "Open Modal" button</li>
+            <li class="test-item pass">Renders the footer</li>
+          </ul>
+        </div>
+
+        <!-- Animate Tests -->
+        <div class="coverage-card ease-slide-up" style="animation-delay:100ms">
+          <div class="card-header">
+            <span class="card-icon">✨</span>
+            <h3 class="card-title">Animate.test.jsx</h3>
+            <span class="test-count">22 tests</span>
+          </div>
+          <ul class="test-list">
+            <li class="test-item pass">Renders children correctly</li>
+            <li class="test-item pass">Wraps in animate-wrapper div</li>
+            <li class="test-item pass">Applies .ease-{type} for all 11 types</li>
+            <li class="test-item pass">Defaults to ease-fade-in</li>
+            <li class="test-item pass">No class for unknown type</li>
+            <li class="test-item pass">Applies hover-variant class</li>
+            <li class="test-item pass">Sets animationDelay style</li>
+            <li class="test-item pass">Sets animationDuration style</li>
+            <li class="test-item pass">Forwards extra className</li>
+          </ul>
+        </div>
+
+        <!-- Modal Tests -->
+        <div class="coverage-card ease-slide-up" style="animation-delay:200ms">
+          <div class="card-header">
+            <span class="card-icon">🪟</span>
+            <h3 class="card-title">Modal.test.jsx</h3>
+            <span class="test-count">12 tests</span>
+          </div>
+          <ul class="test-list">
+            <li class="test-item pass">Hidden when isOpen=false</li>
+            <li class="test-item pass">Visible when isOpen=true</li>
+            <li class="test-item pass">Renders overlay</li>
+            <li class="test-item pass">Displays provided title</li>
+            <li class="test-item pass">Renders children in body</li>
+            <li class="test-item pass">Correct ARIA attributes</li>
+            <li class="test-item pass">Closes via ✕ button</li>
+            <li class="test-item pass">Closes via "Got it" button</li>
+            <li class="test-item pass">Closes via backdrop click</li>
+            <li class="test-item pass">Closes on Escape key</li>
+            <li class="test-item pass">No close on body click</li>
+            <li class="test-item pass">Open/close full toggle flow</li>
+          </ul>
+        </div>
+
+        <!-- AnimationPlayground Tests -->
+        <div class="coverage-card ease-slide-up" style="animation-delay:300ms">
+          <div class="card-header">
+            <span class="card-icon">🎮</span>
+            <h3 class="card-title">AnimationPlayground.test.jsx</h3>
+            <span class="test-count">22 tests</span>
+          </div>
+          <ul class="test-list">
+            <li class="test-item pass">Renders playground container</li>
+            <li class="test-item pass">Renders the select dropdown</li>
+            <li class="test-item pass">Renders the preview box</li>
+            <li class="test-item pass">Renders section heading</li>
+            <li class="test-item pass">Default class ease-fade-in</li>
+            <li class="test-item pass">Default class label shown</li>
+            <li class="test-item pass">Default dropdown value</li>
+            <li class="test-item pass">All 11 options present</li>
+            <li class="test-item pass">Preview updates on selection</li>
+            <li class="test-item pass">Class label updates</li>
+            <li class="test-item pass">Old class removed</li>
+            <li class="test-item pass">Animation replays on select</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section class="tech-section ease-fade-in">
+      <h2 class="section-title">Technology Stack</h2>
+      <div class="tech-grid">
+        <div class="tech-chip ease-zoom-in">
+          <span class="tech-icon">⚡</span>Vitest v2
+        </div>
+        <div class="tech-chip ease-zoom-in" style="animation-delay:60ms">
+          <span class="tech-icon">🧪</span>React Testing Library
+        </div>
+        <div class="tech-chip ease-zoom-in" style="animation-delay:120ms">
+          <span class="tech-icon">🖱️</span>user-event v14
+        </div>
+        <div class="tech-chip ease-zoom-in" style="animation-delay:180ms">
+          <span class="tech-icon">🔍</span>jest-dom matchers
+        </div>
+        <div class="tech-chip ease-zoom-in" style="animation-delay:240ms">
+          <span class="tech-icon">🌐</span>jsdom environment
+        </div>
+        <div class="tech-chip ease-zoom-in" style="animation-delay:300ms">
+          <span class="tech-icon">⚙️</span>GitHub Actions CI
+        </div>
+      </div>
+    </section>
+
+    <!-- Run Commands -->
+    <section class="commands-section ease-fade-in">
+      <h2 class="section-title">Run the Tests</h2>
+      <div class="command-block">
+        <div class="command-row">
+          <span class="command-label">Install</span>
+          <code class="command-code">cd submissions/examples/react-showcase &amp;&amp; npm ci</code>
+        </div>
+        <div class="command-row">
+          <span class="command-label">Run Once</span>
+          <code class="command-code">npm test</code>
+        </div>
+        <div class="command-row">
+          <span class="command-label">Watch Mode</span>
+          <code class="command-code">npm run test:watch</code>
+        </div>
+        <div class="command-row">
+          <span class="command-label">Coverage</span>
+          <code class="command-code">npm run test:coverage</code>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Footer ─────────────────────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <p>
+      Built with
+      <a href="https://github.com/SAPTARSHI-coder/EaseMotion-css" target="_blank" rel="noreferrer">
+        EaseMotion CSS
+      </a>
+      · Resolves <strong>#35169</strong> · Contributor: <strong>@jayshreerathoreai32-hue</strong>
+    </p>
+  </footer>
+
+</body>
+</html>
