@@ -676,7 +676,7 @@ a.sidebar-group-label:hover {
   }
 
   .sidebar-nav a:hover:not(.active) {
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--nav-link-active-text);
     background: transparent;
   }
 }
@@ -1001,7 +1001,7 @@ body > .docs-shell {
 .sidebar-nav a:hover {
   background: rgba(108, 99, 255, 0.08);
   border-left-color: rgba(108, 99, 255, 0.4);
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--nav-link-active-text);
   padding-left: 14px;
 }
 
@@ -1012,7 +1012,7 @@ body > .docs-shell {
     rgba(108, 99, 255, 0.05)
   );
   border-left: 2px solid #6c63ff;
-  color: #ffffff;
+  color: var(--nav-link-active-text);
   padding-left: 14px;
 }
 
