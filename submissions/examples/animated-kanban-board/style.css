@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #0f172a;
+    color: #fff;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 1300px;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.4rem;
+    color: #f8fafc;
+}
+
+.kanban-board {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.column {
+    background: #1e293b;
+    border-radius: 18px;
+    padding: 20px;
+    border: 2px solid transparent;
+    transition: 0.35s ease;
+}
+
+.todo {
+    border-color: #ef4444;
+}
+
+.progress {
+    border-color: #f59e0b;
+}
+
+.done {
+    border-color: #22c55e;
+}
+
+.column:hover {
+    transform: translateY(-6px);
+}
+
+.column-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.column-header h2 {
+    font-size: 1.3rem;
+}
+
+.count {
+    background: rgba(255,255,255,.12);
+    padding: 7px 14px;
+    border-radius: 999px;
+    font-weight: bold;
+    animation: badgePop .5s ease;
+}
+
+@keyframes badgePop {
+    from {
+        transform: scale(.6);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.card {
+    background: #334155;
+    border-radius: 14px;
+    padding: 18px;
+    margin-bottom: 16px;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(25px);
+    animation: cardIn .6s forwards;
+    transition: .3s ease;
+}
+
+.card:nth-child(2) {
+    animation-delay: .1s;
+}
+
+.card:nth-child(3) {
+    animation-delay: .2s;
+}
+
+.card:nth-child(4) {
+    animation-delay: .3s;
+}
+
+.card:nth-child(5) {
+    animation-delay: .4s;
+}
+
+@keyframes cardIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 14px 30px rgba(0,0,0,.35);
+}
+
+.priority {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 999px;
+    font-size: .75rem;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.high {
+    background: #ef4444;
+}
+
+.medium {
+    background: #f59e0b;
+}
+
+.low {
+    background: #22c55e;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    font-size: 1.05rem;
+}
+
+.card p {
+    color: #cbd5e1;
+    font-size: .92rem;
+    line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+    .kanban-board {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
