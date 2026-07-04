@@ -1072,14 +1072,17 @@
 /* ── Issue #9865: Core Changes — Issue #9865: Add Border Image Utility Classes ── */
   .ease-border-gradient-primary {
     border-image: linear-gradient(135deg, var(--ease-color-primary), var(--ease-color-secondary)) 1 !important;
+    border-style: solid !important;
   }
   
   .ease-border-gradient-success {
     border-image: linear-gradient(135deg, var(--ease-color-success), var(--ease-color-success-dark)) 1 !important;
+    border-style: solid !important;
   }
   
   .ease-border-gradient-danger {
     border-image: linear-gradient(135deg, var(--ease-color-danger), var(--ease-color-danger-dark)) 1 !important;
+    border-style: solid !important;
   }
   
   .ease-border-slice-1 { border-image-slice: 1 !important; }
