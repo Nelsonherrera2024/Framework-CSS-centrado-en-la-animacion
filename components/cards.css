@@ -184,6 +184,10 @@
     color: var(--ease-color-text-dark, #f8fafc);
   }
 
+  .ease-card-flat {
+    background-color: var(--ease-color-neutral-800, #1e293b);
+  }
+
   .ease-card-neumorphic {
     background-color: var(--ease-color-surface, #141e33);
     box-shadow:
