@@ -1,71 +1,64 @@
-import React, { useEffect, useRef, useState } from "react";
-import "./style.css";
+import React, { useEffect, useRef } from 'react';
+import './InfiniteScrollFeedLoader.css';
 
-const InfiniteScrollFeedLoader = ({ batchSize = 6 }) => {
-  const [items, setItems] = useState(
-    Array.from({ length: batchSize }, (_, i) => `Feed Item ${i + 1}`)
-  );
-  const [loading, setLoading] = useState(false);
-
+const InfiniteScrollFeedLoader = ({ 
+  isLoading, 
+  hasMore, 
+  onLoadMore, 
+  skeletonCount = 3 
+}) => {
   const observerRef = useRef(null);
 
-  const loadMore = () => {
-    setLoading(true);
-
-    setTimeout(() => {
-      const start = items.length;
-      const nextItems = Array.from(
-        { length: batchSize },
-        (_, i) => `Feed Item ${start + i + 1}`
-      );
-
-      setItems((prev) => [...prev, ...nextItems]);
-      setLoading(false);
-    }, 1200);
-  };
-
   useEffect(() => {
+    if (!hasMore || isLoading) return;
+
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && !loading) {
-          loadMore();
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          onLoadMore();
         }
       },
-      {
-        threshold: 1,
-      }
+      { threshold: 1.0 }
     );
 
     if (observerRef.current) {
       observer.observe(observerRef.current);
     }
 
-    return () => observer.disconnect();
-  }, [loading, items]);
+    return () => {
+      if (observerRef.current) {
+        observer.unobserve(observerRef.current);
+      }
+    };
+  }, [isLoading, hasMore, onLoadMore]);
+
+  // Shimmer Card Element Structure
+  const renderSkeletons = () => {
+    return Array.from({ length: skeletonCount }).map((_, index) => (
+      <div key={`skeleton-${index}`} className="shimmer-feed-card">
+        <div className="shimmer-element shimmer-avatar" />
+        <div className="shimmer-text-wrapper">
+          <div className="shimmer-element shimmer-title" />
+          <div className="shimmer-element shimmer-subtitle" />
+        </div>
+        <div className="shimmer-element shimmer-media" />
+      </div>
+    ));
+  };
 
   return (
-    <div className="feed-wrapper">
-      {items.map((item, index) => (
-        <div key={index} className="feed-card">
-          {item}
-        </div>
-      ))}
-
-      {loading && (
-        <div className="shimmer-list">
-          {Array.from({ length: 3 }).map((_, index) => (
-            <div key={index} className="shimmer-card">
-              <div className="shimmer shimmer-avatar"></div>
-              <div className="shimmer-content">
-                <div className="shimmer shimmer-line"></div>
-                <div className="shimmer shimmer-line short"></div>
-              </div>
-            </div>
-          ))}
+    <div className="infinite-scroll-feed-container">
+      {isLoading && renderSkeletons()}
+      {hasMore && !isLoading && (
+        <div ref={observerRef} className="infinite-scroll-trigger">
+          <div className="shimmer-loading-bar" />
         </div>
       )}
-
-      <div ref={observerRef} className="observer-trigger"></div>
+      {!hasMore && (
+        <div className="infinite-scroll-end">
+          <p>You have caught up with everything!</p>
+        </div>
+      )}
     </div>
   );
 };
