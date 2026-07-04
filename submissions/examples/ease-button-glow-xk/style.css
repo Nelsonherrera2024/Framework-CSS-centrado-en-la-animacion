@@ -1,0 +1,74 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --btn-glow-color: #a855f7;
+  --btn-glow-intensity: 20px;
+  --btn-bg: #1e293b;
+  --btn-text: #f8fafc;
+  --btn-padding: 0.75rem 2rem;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bg-wrapper {
+  text-align: center;
+}
+
+.bg-wrapper h2 {
+  margin-bottom: 2.5rem;
+  font-weight: 500;
+  font-size: 1.25rem;
+}
+
+.bg-demo {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.bg-btn {
+  position: relative;
+  padding: var(--btn-padding);
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: system-ui, sans-serif;
+  color: var(--btn-text);
+  background: var(--btn-bg);
+  border: 2px solid var(--btn-glow-color);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease, transform 0.3s ease, background 0.3s ease;
+}
+
+.bg-btn:hover {
+  box-shadow: 0 0 var(--btn-glow-intensity) var(--btn-glow-color);
+  transform: translateY(-2px);
+  background: color-mix(in srgb, var(--btn-bg) 80%, var(--btn-glow-color));
+}
+
+.bg-btn:active {
+  transform: translateY(0);
+}
+
+.bg-btn--purple { --btn-glow-color: #a855f7; }
+.bg-btn--blue { --btn-glow-color: #3b82f6; }
+.bg-btn--green { --btn-glow-color: #22c55e; }
+.bg-btn--red { --btn-glow-color: #ef4444; }
+.bg-btn--cyan { --btn-glow-color: #06b6d4; }
+
+@media (prefers-reduced-motion: reduce) {
+  .bg-btn { transition: none; }
+}
