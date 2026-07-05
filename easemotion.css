@@ -61,7 +61,7 @@
 @import "./components/toast.css";
 @import "./components/view-transitions.css";
 @import "./components/forms.css";
-
+@import "./components/zoom-accordion.css";
 
 /* Accessibility: Respect user's reduced motion preference */
 @media (prefers-reduced-motion: reduce) {
@@ -74,8 +74,3 @@
     scroll-behavior: auto !important;
   }
 }
-
-
-
-
-

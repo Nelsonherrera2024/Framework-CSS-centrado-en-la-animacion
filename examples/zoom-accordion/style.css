@@ -1,0 +1,73 @@
+/* ============================================================
+   EaseMotion CSS Sandbox — zoom-accordion/style.css
+   ============================================================ */
+
+/* Step back 3 levels to inherit core variables and styles safely */
+@import "../../../core/variables.css";
+@import "../../../core/utilities.css";
+@import "../../../components/zoom-accordion.css";
+
+/* ── Custom Styling overrides for the Sandbox Presentation ── */
+
+.sandbox-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* Custom interactive caret rotation for this demo */
+.ease-accordion-trigger::after {
+  content: "";
+  display: inline-block;
+  width: 0.875rem;
+  height: 0.875rem;
+  border-right: 2px solid var(--ease-color-muted, #64748b);
+  border-bottom: 2px solid var(--ease-color-muted, #64748b);
+  transform: rotate(45deg);
+  will-change: transform;
+  transition:
+    transform var(--ease-accordion-zoom-duration, 300ms)
+      var(--ease-accordion-zoom-easing, cubic-bezier(0.34, 1.56, 0.64, 1)),
+    border-color var(--ease-speed-fast, 150ms) ease;
+  margin-right: 0.25rem;
+}
+
+.ease-accordion-item[open] .ease-accordion-trigger::after {
+  transform: rotate(-135deg);
+  border-color: var(--ease-color-primary, #6c63ff);
+}
+
+/* Overriding item styles for glassmorphism preview */
+.ease-accordion-item {
+  background: var(--ease-glass-bg, rgba(255, 255, 255, 0.04));
+  border: 1px solid var(--ease-glass-border, rgba(255, 255, 255, 0.1));
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+.ease-accordion-trigger {
+  color: var(--ease-color-text, #ffffff);
+}
+
+.ease-accordion-trigger:hover {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.ease-accordion-item[open] .ease-accordion-trigger {
+  border-bottom: 1px solid var(--ease-glass-border, rgba(255, 255, 255, 0.1));
+}
+
+.ease-accordion-content {
+  color: #94a3b8;
+}
+
+/* Customized variant with slower bouncy animation and more pronounced zoom */
+.custom-zoom-accordion {
+  --ease-accordion-zoom-duration: 500ms;
+  --ease-accordion-zoom-easing: cubic-bezier(0.34, 1.76, 0.64, 1);
+  --ease-accordion-zoom-scale-start: 0.85;
+}
