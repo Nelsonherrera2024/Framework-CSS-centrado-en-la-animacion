@@ -348,4 +348,15 @@
     --ease-3d-flip-easing: cubic-bezier(0.34, 1.56, 0.64, 1);
     --ease-3d-perspective: 400px;
   }
+
+    /* Rotate Click Animation */
+.ease-tooltip[data-animation="rotate-click"]::after {
+  transform: rotate(-12deg) scale(0.9);
+  transform-origin: center;
+}
+
+.ease-tooltip[data-animation="rotate-click"]:hover::after,
+.ease-tooltip[data-animation="rotate-click"]:focus-within::after {
+  transform: rotate(0deg) scale(1);
+}
 }
