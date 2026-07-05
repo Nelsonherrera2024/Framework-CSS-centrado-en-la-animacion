@@ -230,6 +230,8 @@
 .ease-overflow-visible { overflow: visible !important; }
 .ease-overflow-auto    { overflow: auto !important; }
 .ease-overflow-scroll  { overflow: scroll !important; }
+.ease-overflow-x-hidden { overflow-x: hidden !important; }
+.ease-overflow-y-hidden { overflow-y: hidden !important; }
 .ease-overflow-x-auto  { overflow-x: auto !important; }
 .ease-overflow-y-auto  { overflow-y: auto !important; }
 
