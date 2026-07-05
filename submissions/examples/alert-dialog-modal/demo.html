@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible & Interactive Alert Dialog Modal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="demo-container">
+        <h1>Alert Dialog Modal Component Demo</h1>
+        <p>A highly accessible, responsive, and completely customizable interactive modal animated with CSS custom properties.</p>
+        
+        <button id="open-modal-btn" class="btn btn-danger" aria-haspopup="dialog">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+            Delete Account
+        </button>
+    </main>
+
+    <div id="modal-overlay" class="modal-overlay hidden">
+        <div id="alert-dialog" 
+             class="modal-box" 
+             role="alertdialog" 
+             aria-modal="true" 
+             aria-labelledby="modal-title" 
+             aria-describedby="modal-desc"
+             tabindex="-1">
+            
+            <div class="modal-header">
+                <div class="modal-icon-container">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                </div>
+                <h2 id="modal-title">Delete Account Permanent?</h2>
+            </div>
+
+            <div class="modal-body">
+                <p id="modal-desc">Are you sure you want to delete your account? This action cannot be undone and you will permanently lose all of your data, profile settings, and subscription history.</p>
+            </div>
+
+            <div class="modal-footer">
+                <button id="cancel-modal-btn" class="btn btn-secondary">Cancel</button>
+                <button id="confirm-modal-btn" class="btn btn-danger-action">Yes, Delete Everything</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const openBtn = document.getElementById('open-modal-btn');
+        const closeBtn = document.getElementById('cancel-modal-btn');
+        const confirmBtn = document.getElementById('confirm-modal-btn');
+        const overlay = document.getElementById('modal-overlay');
+        const modal = document.getElementById('alert-dialog');
+
+        let previouslyFocusedElement;
+
+        function openModal() {
+            previouslyFocusedElement = document.activeElement;
+            overlay.classList.remove('hidden');
+            overlay.classList.add('visible');
+            modal.focus();
+            document.body.style.overflow = 'hidden'; 
+            
+            document.addEventListener('keydown', handleKeyDown);
+        }
+
+        function closeModal() {
+            overlay.classList.remove('visible');
+            overlay.classList.add('hidden');
+            document.body.style.overflow = ''; 
+            document.removeEventListener('keydown', handleKeyDown);
+            
+            if (previouslyFocusedElement) {
+                previouslyFocusedElement.focus();
+            }
+        }
+
+        function handleKeyDown(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+            
+            if (e.key === 'Tab') {
+                const focusableElements = modal.querySelectorAll('button');
+                const firstElement = focusableElements[0];
+                const lastElement = focusableElements[focusableElements.length - 1];
+
+                if (e.shiftKey) { 
+                    if (document.activeElement === firstElement) {
+                        lastElement.focus();
+                        e.preventDefault();
+                    }
+                } else { 
+                    if (document.activeElement === lastElement) {
+                        firstElement.focus();
+                        e.preventDefault();
+                    }
+                }
+            }
+        }
+
+        openBtn.addEventListener('click', openModal);
+        closeBtn.addEventListener('click', closeModal);
+        overlay.addEventListener('click', (e) => {
+            if (e.target === overlay) closeModal();
+        });
+        confirmBtn.addEventListener('click', () => {
+            alert('Action Confirmed!');
+            closeModal();
+        });
+    </script>
+</body>
+</html>

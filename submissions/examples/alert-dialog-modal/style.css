@@ -1,0 +1,255 @@
+/* ==========================================
+   CSS CUSTOM PROPERTIES (Theme Customization)
+   ========================================== */
+:root {
+    --modal-bg: #ffffff;
+    --modal-text-primary: #111827;
+    --modal-text-secondary: #4b5563;
+    --overlay-bg: rgba(15, 23, 42, 0.6);
+    --accent-danger: #dc2626;
+    --accent-danger-hover: #b91c1c;
+    --accent-danger-light: #fee2e2;
+    --btn-secondary-bg: #f3f4f6;
+    --btn-secondary-text: #374151;
+    --btn-secondary-hover: #e5e7eb;
+    
+    --border-radius-lg: 12px;
+    --border-radius-md: 8px;
+    --box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    
+    /* Animation Customization */
+    --animation-duration: 0.35s;
+    --animation-timing: cubic-bezier(0.34, 1.56, 0.64, 1); /* Custom spring/bounce effect */
+}
+
+/* Dark Mode Theme overrides */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --modal-bg: #1f2937;
+        --modal-text-primary: #f9fafb;
+        --modal-text-secondary: #9ca3af;
+        --overlay-bg: rgba(0, 0, 0, 0.75);
+        --btn-secondary-bg: #374151;
+        --btn-secondary-text: #e5e7eb;
+        --btn-secondary-hover: #4b5563;
+    }
+}
+
+/* ==========================================
+   BASE & DEMO LAYOUT
+   ========================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #111827;
+    }
+}
+
+.demo-container {
+    text-align: center;
+    padding: 2rem;
+    max-width: 500px;
+}
+
+.demo-container h1 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color: var(--modal-text-primary);
+}
+
+.demo-container p {
+    color: var(--modal-text-secondary);
+    margin-bottom: 2rem;
+    line-height: 1.5;
+}
+
+/* ==========================================
+   BUTTONS STYLING
+   ========================================== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 0.75rem 1.25rem;
+    border-radius: var(--border-radius-md);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn-danger {
+    background-color: var(--accent-danger);
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: var(--accent-danger-hover);
+}
+
+.btn-danger-action {
+    background-color: var(--accent-danger);
+    color: white;
+}
+
+.btn-danger-action:hover {
+    background-color: var(--accent-danger-hover);
+}
+
+.btn-secondary {
+    background-color: var(--btn-secondary-bg);
+    color: var(--btn-secondary-text);
+}
+
+.btn-secondary:hover {
+    background-color: var(--btn-secondary-hover);
+}
+
+/* ==========================================
+   MODAL DIALOG COMPONENT (ANIMATED)
+   ========================================== */
+
+/* Backdrop Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--overlay-bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    z-index: 9999;
+    backdrop-filter: blur(4px);
+    transition: opacity var(--animation-duration) ease;
+}
+
+/* Modal Content Box */
+.modal-box {
+    background-color: var(--modal-bg);
+    width: 100%;
+    max-width: 500px;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--box-shadow);
+    padding: 1.5rem;
+    outline: none;
+    transition: transform var(--animation-duration) var(--animation-timing), 
+                opacity var(--animation-duration) ease;
+}
+
+/* --- ANIMATION STATES --- */
+
+/* Hidden State */
+.modal-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+}
+
+.modal-overlay.hidden .modal-box {
+    transform: scale(0.9) translateY(20px);
+    opacity: 0;
+}
+
+/* Visible / Active State */
+.modal-overlay.visible {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+}
+
+.modal-overlay.visible .modal-box {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+
+/* --- MODAL STRUCTURE --- */
+.modal-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.modal-icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--accent-danger-light);
+    color: var(--accent-danger);
+    flex-shrink: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+    .modal-icon-container {
+        background-color: rgba(220, 38, 38, 0.2);
+    }
+}
+
+.modal-header h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--modal-text-primary);
+}
+
+.modal-body {
+    margin-bottom: 1.75rem;
+}
+
+.modal-body p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--modal-text-secondary);
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.75rem;
+}
+
+/* Responsive Footer adjustment for small screens */
+@media (max-width: 400px) {
+    .modal-footer {
+        flex-direction: column-reverse;
+    }
+    .modal-footer .btn {
+        width: 100%;
+    }
+}
+
+/* Handle reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    :root {
+        --animation-duration: 0.01s;
+    }
+    .modal-overlay {
+        backdrop-filter: none;
+    }
+}
