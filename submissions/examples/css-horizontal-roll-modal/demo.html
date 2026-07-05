@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Horizontal Roll Modal Demo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <a href="#roll-modal" class="trigger-btn" role="button">Open Roll Modal</a>
+
+  <div id="roll-modal" class="modal-overlay" aria-labelledby="modal-title" aria-modal="true" role="dialog">
+    
+    <div class="modal-container">
+      
+      <div class="modal-header">
+        <h2 id="modal-title" class="modal-title">Horizontal Roll Modal</h2>
+        <a href="#" class="close-btn" aria-label="Close modal">&times;</a>
+      </div>
+      
+      <div class="modal-body">
+        <p>This interactive component animates dynamically into view using a 3D horizontal roll setup powered entirely by pure CSS transitions and zero JavaScript overhead.</p>
+        <p>You can easily fine-tune the transition timing, rotation angle, and bezier curves by tweaking the CSS variables exposed in the root layout.</p>
+      </div>
+      
+      <div class="modal-footer">
+        <a href="#" class="btn-secondary">Dismiss</a>
+      </div>
+      
+    </div>
+  </div>
+
+</body>
+</html>
