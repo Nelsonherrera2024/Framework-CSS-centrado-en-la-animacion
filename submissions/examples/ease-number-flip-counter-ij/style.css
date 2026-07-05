@@ -1,0 +1,12 @@
+:root { --counter-bg: #2d2d44; --digit-color: #4ecdc4; --flip-color: #3a5a5a; --flip-duration: 0.4s; --bg-color: #1a1a2e; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { display: flex; justify-content: center; align-items: center; min-height: 100vh; background: var(--bg-color); font-family: 'Courier New', monospace; }
+.container { text-align: center; }
+.title { color: #eee; margin-bottom: 2rem; font-size: 1.25rem; font-family: 'Segoe UI', system-ui, sans-serif; letter-spacing: 0.05em; opacity: 0.8; }
+.counter { background: var(--counter-bg); border-radius: 12px; padding: 1.5rem 2rem; display: inline-block; }
+.digits { font-size: 3rem; font-weight: 700; color: var(--digit-color); letter-spacing: 0.1em; }
+@keyframes flip { 0% { transform: perspective(400px) rotateX(0deg); background: var(--counter-bg); } 50% { transform: perspective(400px) rotateX(-90deg); background: var(--flip-color); } 100% { transform: perspective(400px) rotateX(0deg); background: var(--counter-bg); } }
+.controls { margin-top: 2rem; display: flex; flex-direction: column; gap: 0.75rem; align-items: center; }
+.controls label { color: #ccc; font-size: 0.875rem; font-family: 'Segoe UI', system-ui, sans-serif; }
+.controls input[type="color"] { width: 48px; height: 32px; border: none; border-radius: 4px; cursor: pointer; background: transparent; }
+.controls input[type="range"] { width: 160px; accent-color: var(--digit-color); }
