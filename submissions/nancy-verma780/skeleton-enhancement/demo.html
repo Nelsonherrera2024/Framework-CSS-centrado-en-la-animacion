@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessible & Themeable Skeleton Loader</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      padding: 40px;
+      background: #fcfcfc;
+      color: #333;
+    }
+    @media (prefers-color-scheme: dark) {
+      body { background: #1a1a1a; color: #fff; }
+    }
+    .card-preview {
+      max-width: 400px;
+      border: 1px solid rgba(0,0,0,0.1);
+      padding: 16px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.5);
+    }
+    .flex-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .flex-fill { flex: 1; }
+  </style>
+</head>
+<body>
+  <h2>Accessible Skeleton Component Sandbox</h2>
+  <div class="card-preview">
+    <div class="ease-skeleton image"></div>
+    <div class="flex-row">
+      <div class="ease-skeleton avatar"></div>
+      <div class="flex-fill">
+        <div class="ease-skeleton ease-skeleton-w-60"></div>
+        <div class="ease-skeleton ease-skeleton-w-40" style="margin-bottom: 0;"></div>
+      </div>
+    </div>
+    <div class="ease-skeleton ease-skeleton-w-100"></div>
+    <div class="ease-skeleton ease-skeleton-w-75"></div>
+  </div>
+</body>
+</html>
