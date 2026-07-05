@@ -1,143 +1,99 @@
 /* ============================================================
-   EaseMotion CSS — accordion.css
-   Native CSS height: auto transitions using grid-template-rows
+   EaseAccordion Demo Styles (ONLY NON-COMPONENT STYLES)
    ============================================================ */
 
-@layer easemotion-components {
-  /* Accordion Container */
-  .ease-accordion {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    border-radius: var(--ease-radius-lg, 0.75rem);
-    overflow: hidden;
-    background: var(--ease-color-surface, #ffffff);
-    box-shadow: var(--ease-shadow-sm, 0 1px 3px rgba(0,0,0,0.1));
-  }
-
-  /* Accordion Item Wrapper */
-  .ease-accordion-item {
-    border-bottom: 1px solid var(--ease-color-neutral-200, #e2e8f0);
-  }
-
-  .ease-accordion-item:last-child {
-    border-bottom: none;
-  }
-
-  /* Accordion Clickable Header Trigger */
-  .ease-accordion-trigger {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: var(--ease-space-4, 1rem) var(--ease-space-5, 1.25rem);
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    font-family: inherit;
-    font-size: 1rem;
-    font-weight: 600;
-    text-align: left;
-    color: var(--ease-color-neutral-900, #0f172a);
-    transition: background-color var(--ease-speed-fast, 150ms) ease;
-    user-select: none;
-    outline: none;
-  }
-
-  .ease-accordion-trigger:hover {
-    background-color: var(--ease-color-neutral-50, #f8fafc);
-  }
-
-  .ease-accordion-trigger:focus-visible {
-    background-color: var(--ease-color-neutral-100, #f1f5f9);
-    box-shadow: inset 0 0 0 2px var(--ease-color-primary, #6c63ff);
-  }
-
-  /* Chevron Rotator Icon */
-  .ease-accordion-chevron {
-    width: 1.25rem;
-    height: 1.25rem;
-    flex-shrink: 0;
-    margin-left: var(--ease-space-3, 0.75rem);
-    color: var(--ease-color-neutral-500, #64748b);
-    transition: transform var(--ease-speed-medium, 300ms) cubic-bezier(0.4, 0, 0.2, 1),
-                color var(--ease-speed-fast, 150ms) ease;
-  }
-
-  .ease-accordion-trigger:hover .ease-accordion-chevron {
-    color: var(--ease-color-primary, #6c63ff);
-  }
-
-  /* Rotate chevron when open */
-  .ease-accordion-trigger[aria-expanded="true"] .ease-accordion-chevron,
-  .ease-accordion-item.is-open .ease-accordion-chevron {
-    transform: rotate(180deg);
-    color: var(--ease-color-primary, #6c63ff);
-  }
-
-  /* Collapsible content wrapper (using CSS grid-template-rows interpolation) */
-  .ease-accordion-content {
-    display: grid;
-    grid-template-rows: 0fr;
-    transition: grid-template-rows var(--ease-speed-medium, 300ms) cubic-bezier(0.4, 0, 0.2, 1);
-    visibility: hidden;
-  }
-
-  /* Trigger state triggers grid size transition and expands grid item to 1fr */
-  .ease-accordion-trigger[aria-expanded="true"] + .ease-accordion-content,
-  .ease-accordion-item.is-open .ease-accordion-content {
-    grid-template-rows: 1fr;
-    visibility: visible;
-  }
-
-  /* Nested inner box must have min-height: 0 to allow correct height interpolation */
-  .ease-accordion-content-inner {
-    min-height: 0;
-    overflow: hidden;
-  }
-
-  /* Content Padding and Styling */
-  .ease-accordion-body {
-    padding: 0 var(--ease-space-5, 1.25rem) var(--ease-space-5, 1.25rem);
-    color: var(--ease-color-neutral-600, #475569);
-    font-size: 0.925rem;
-    line-height: 1.6;
-  }
-
-  /* Dark Mode compatibility rules */
-  .bg-dark .ease-accordion {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: none;
-  }
-
-  .bg-dark .ease-accordion-item {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  }
-
-  .bg-dark .ease-accordion-trigger {
-    color: #ffffff;
-  }
-
-  .bg-dark .ease-accordion-trigger:hover {
-    background-color: rgba(255, 255, 255, 0.02);
-  }
-
-  .bg-dark .ease-accordion-trigger:focus-visible {
-    background-color: rgba(255, 255, 255, 0.04);
-  }
-
-  .bg-dark .ease-accordion-body {
-    color: #94a3b8;
-  }
-
-  /* ── Reduced Motion Override ────────────────────────────────── */
-  @media (prefers-reduced-motion: reduce) {
-    .ease-accordion-content {
-      transition: none !important;
-    }
-    .ease-accordion-chevron {
-      transition: none !important;
-    }
-  }
+/* Base page styles */
+body {
+  margin: 0;
+  font-family: inherit;
+  background: var(--ease-color-background, #0b0f1a);
+  color: var(--ease-color-text, #f1f5f9);
+  min-height: 100vh;
 }
+
+/* Hero section (demo UI only) */
+.hero {
+  text-align: center;
+  padding: 5rem 2rem 3rem;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(108, 99, 255, 0.12),
+    transparent 60%
+  );
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  margin: 0 0 1rem;
+  background: linear-gradient(135deg, #a09af8, #c084fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+  color: #94a3b8;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+/* Section layout */
+.section-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 2rem 6rem;
+}
+
+/* Showcase header */
+.showcase-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.showcase-title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.showcase-desc {
+  color: #94a3b8;
+  font-size: 0.95rem;
+}
+
+/* Feature grid (demo UI only) */
+.feature-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.feature-icon {
+  font-size: 1.75rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Optional badge */
+.hero-badge {
+  background: linear-gradient(135deg, #6c63ff, #8b5cf6);
+  padding: 0.4rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+/* Container helper */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
