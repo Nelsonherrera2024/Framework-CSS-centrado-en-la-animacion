@@ -4,7 +4,6 @@
 @import "../core/base.css";
 @import "../core/animations.css";
 @import "../core/utilities.css";
-@import "../components/ease-marquee.css";
 @import "../components/buttons.css";
 @import "../components/cards.css";
 @import "../components/navbar.css";
@@ -19,5 +18,11 @@
 @import "../components/tooltips.css";
 @import "../components/modals.css";
 
-
-
+@import "./fade.css";
+@import "./slide.css";
+@import "./zoom.css";
+@import "./rotate.css";
+@import "./bounce.css";
+@import "./hover.css";
+@import "./misc.css";
+@import "./timing.css";

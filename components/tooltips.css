@@ -1,30 +1,29 @@
 @layer easemotion-components {
-/* ── Tooltip Design Tokens ─────────────────────────────────── */
-:root {
-  --ease-tooltip-bg: var(--ease-color-neutral-900, #1f2937);
-  --ease-tooltip-text: var(--ease-color-neutral-50, #ffffff);
-  --ease-tooltip-font-size: var(--ease-text-xs, 0.75rem);
-  --ease-tooltip-padding: var(--ease-space-1, 0.25rem) var(--ease-space-2, 0.5rem);
-  --ease-tooltip-radius: var(--ease-radius-sm, 0.25rem);
-  --ease-tooltip-gap: var(--ease-space-2, 0.5rem);
-  --ease-tooltip-animation-duration: var(--ease-speed-fast, 0.15s);
-  --ease-tooltip-z-index: var(--ease-z-toast, 9999);
-}
-
-/* Dark Mode Overrides */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --ease-tooltip-bg: var(--ease-color-neutral-100, #f3f4f6);
-    --ease-tooltip-text: var(--ease-color-neutral-900, #111827);
-  }
-}
-
   /* ==========================================================================
      TOOLTIP COMPONENT
      Pure CSS tooltip system using data-attributes and pseudo-elements.
      ========================================================================== */
 
+  :root {
+    --ease-tooltip-bg: var(--ease-color-neutral-900, #1f2937);
+    --ease-tooltip-text: var(--ease-color-neutral-50, #ffffff);
+    --ease-tooltip-font-size: var(--ease-text-xs, 0.75rem);
+    --ease-tooltip-padding: var(--ease-space-1, 0.25rem) var(--ease-space-2, 0.5rem);
+    --ease-tooltip-radius: var(--ease-radius-sm, 0.25rem);
+    --ease-tooltip-gap: var(--ease-space-2, 0.5rem);
+    --ease-tooltip-animation-duration: var(--ease-speed-fast, 0.15s);
+    --ease-tooltip-z-index: 1000;
+  }
 
+  /* Dark Mode Overrides */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ease-tooltip-bg: var(--ease-color-neutral-100, #f3f4f6);
+      --ease-tooltip-text: var(--ease-color-neutral-900, #111827);
+    }
+  }
+
+  /* Core Component Trigger */
   .ease-tooltip {
     position: relative;
     display: inline-block;
@@ -53,6 +52,7 @@
       opacity var(--ease-tooltip-animation-duration) var(--ease-ease, ease),
       visibility var(--ease-tooltip-animation-duration) var(--ease-ease, ease),
       transform var(--ease-tooltip-animation-duration) var(--ease-ease, ease);
+      
     pointer-events: none;
     box-shadow: var(--ease-shadow-md, 0 4px 6px -1px rgba(0, 0, 0, 0.1));
   }
@@ -192,22 +192,18 @@
     }
 
     /* Fallback to bottom positioning on narrow viewports to avoid cropping */
-    .ease-tooltip[data-position="top"]::after,
-    .ease-tooltip:not([data-position])::after {
+    .ease-tooltip[data-position="top"]::after {
       bottom: auto;
       top: calc(100% + var(--ease-tooltip-gap));
       transform: translateX(-50%) translateY(-4px);
     }
 
     .ease-tooltip[data-position="top"]:hover::after,
-    .ease-tooltip:not([data-position]):hover::after,
-    .ease-tooltip[data-position="top"]:focus-within::after,
-    .ease-tooltip:not([data-position]):focus-within::after {
+    .ease-tooltip[data-position="top"]:focus-within::after {
       transform: translateX(-50%) translateY(0);
     }
 
-    .ease-tooltip[data-position="top"]::before,
-    .ease-tooltip:not([data-position])::before {
+    .ease-tooltip[data-position="top"]::before {
       bottom: auto;
       top: calc(100% - 2px);
       border-top-color: transparent;
