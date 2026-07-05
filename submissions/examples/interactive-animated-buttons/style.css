@@ -1,0 +1,196 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#0f172a;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#fff;
+}
+
+.container{
+    width:90%;
+    max-width:900px;
+    text-align:center;
+}
+
+h1{
+    font-size:2.5rem;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    color:#cbd5e1;
+    margin-bottom:40px;
+}
+
+.buttons{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.btn{
+    position:relative;
+    overflow:hidden;
+    padding:18px 30px;
+    border:none;
+    cursor:pointer;
+    border-radius:14px;
+    font-size:1rem;
+    font-weight:700;
+    transition:.35s;
+    background:#1e293b;
+    color:white;
+}
+
+/* Ripple */
+
+.ripple::before{
+    content:"";
+    position:absolute;
+    width:20px;
+    height:20px;
+    background:rgba(255,255,255,.5);
+    border-radius:50%;
+    transform:scale(0);
+    left:50%;
+    top:50%;
+    transition:.6s;
+}
+
+.ripple:hover::before{
+    transform:translate(-50%,-50%) scale(15);
+    opacity:0;
+}
+
+/* Shimmer */
+
+.shimmer::after{
+    content:"";
+    position:absolute;
+    top:0;
+    left:-120%;
+    width:60%;
+    height:100%;
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.7),
+        transparent
+    );
+}
+
+.shimmer:hover::after{
+    animation:shine 1s linear;
+}
+
+@keyframes shine{
+    to{
+        left:150%;
+    }
+}
+
+/* Magnetic */
+
+.magnetic:hover{
+    transform:translateY(-6px) scale(1.05);
+    box-shadow:0 15px 35px rgba(59,130,246,.45);
+}
+
+/* Neon */
+
+.neon{
+    border:2px solid #00e5ff;
+    color:#00e5ff;
+    background:transparent;
+}
+
+.neon:hover{
+    background:#00e5ff;
+    color:#000;
+    box-shadow:
+    0 0 8px #00e5ff,
+    0 0 20px #00e5ff,
+    0 0 40px #00e5ff;
+}
+
+/* Liquid */
+
+.liquid{
+    border:2px solid #22c55e;
+    background:transparent;
+}
+
+.liquid::before{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-100%;
+    width:100%;
+    height:100%;
+    background:#22c55e;
+    transition:.4s;
+    z-index:-1;
+}
+
+.liquid:hover::before{
+    bottom:0;
+}
+
+.liquid:hover{
+    color:#fff;
+}
+
+/* Hover */
+
+.btn:hover{
+    transform:translateY(-4px);
+}
+
+.btn:focus{
+    outline:3px solid #60a5fa;
+    outline-offset:4px;
+}
+
+/* Responsive */
+
+@media(max-width:600px){
+
+h1{
+    font-size:2rem;
+}
+
+.buttons{
+    grid-template-columns:1fr;
+}
+
+.btn{
+    width:100%;
+}
+
+}
+
+.ripple-effect{
+    position:absolute;
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    background:rgba(255,255,255,0.5);
+    transform:translate(-50%,-50%) scale(0);
+    animation:rippleAnimation .6s linear;
+    pointer-events:none;
+}
+
+@keyframes rippleAnimation{
+    to{
+        transform:translate(-50%,-50%) scale(15);
+        opacity:0;
+    }
+}
