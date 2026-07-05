@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analog Clock Component - EaseMotion CSS</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Presentation center staging for demo display */
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #090d16;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: system-ui, -apple-system, sans-serif;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="ease-clock-face" role="img" aria-label="Animated pure CSS analog clock showing continuous elapsed time tracking">
+    
+    <div class="clock-marker marker-12"></div>
+    <div class="clock-marker marker-3"></div>
+    <div class="clock-marker marker-6"></div>
+    <div class="clock-marker marker-9"></div>
+
+    <div class="clock-hand hand-hour" aria-hidden="true"></div>
+    <div class="clock-hand hand-minute" aria-hidden="true"></div>
+    <div class="clock-hand hand-second" aria-hidden="true"></div>
+
+    <div class="clock-center-pin"></div>
+  </div>
+
+</body>
+</html>
