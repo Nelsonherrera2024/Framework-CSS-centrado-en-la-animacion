@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Border Buttons Demo — EaseMotion CSS</title>
+  <meta name="description" content="Dark-theme border-only button demo with red, green, and blue outlines and click popups." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- EaseMotion CSS -->
+  <link rel="stylesheet" href="../core/variables.css" />
+  <link rel="stylesheet" href="../core/base.css" />
+  <link rel="stylesheet" href="../core/animations.css" />
+  <link rel="stylesheet" href="../components/buttons.css" />
+
+  <style>
+    /* ── Page shell ─────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+      background: #0b0c10;
+      font-family: 'Inter', system-ui, sans-serif;
+      color: #e8eaf0;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: clamp(1.5rem, 4vw, 2.25rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      text-align: center;
+      background: linear-gradient(135deg, #ffffff 0%, #a78bfa 55%, #6c63ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    p.subtitle {
+      text-align: center;
+      color: rgba(232, 234, 240, 0.5);
+      font-size: 0.9rem;
+      margin-top: -1.5rem;
+    }
+
+    /* ── Button row ─────────────────────────────────────────── */
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ── Border-only button tokens ──────────────────────────── */
+
+    /* Red outline */
+    .ease-btn-outline-red {
+      --ease-btn-focus: #ef4444;
+      --ease-btn-glow: 0 0 18px rgba(239, 68, 68, 0.5);
+      --ease-btn-loading-color: #ef4444;
+      background: transparent;
+      color: #f87171;
+      border-color: #ef4444;
+    }
+    @media (hover: hover) and (pointer: fine) {
+      .ease-btn-outline-red:hover {
+        background: rgba(239, 68, 68, 0.10);
+        color: #fca5a5;
+        box-shadow: 0 0 18px rgba(239, 68, 68, 0.45);
+      }
+    }
+
+    /* Green outline */
+    .ease-btn-outline-green {
+      --ease-btn-focus: #22c55e;
+      --ease-btn-glow: 0 0 18px rgba(34, 197, 94, 0.5);
+      --ease-btn-loading-color: #22c55e;
+      background: transparent;
+      color: #4ade80;
+      border-color: #22c55e;
+    }
+    @media (hover: hover) and (pointer: fine) {
+      .ease-btn-outline-green:hover {
+        background: rgba(34, 197, 94, 0.10);
+        color: #86efac;
+        box-shadow: 0 0 18px rgba(34, 197, 94, 0.45);
+      }
+    }
+
+    /* Blue outline */
+    .ease-btn-outline-blue {
+      --ease-btn-focus: #3b82f6;
+      --ease-btn-glow: 0 0 18px rgba(59, 130, 246, 0.5);
+      --ease-btn-loading-color: #3b82f6;
+      background: transparent;
+      color: #60a5fa;
+      border-color: #3b82f6;
+    }
+    @media (hover: hover) and (pointer: fine) {
+      .ease-btn-outline-blue:hover {
+        background: rgba(59, 130, 246, 0.10);
+        color: #93c5fd;
+        box-shadow: 0 0 18px rgba(59, 130, 246, 0.45);
+      }
+    }
+
+    /* ── Popup overlay ──────────────────────────────────────── */
+    .popup-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.65);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 250ms ease, visibility 250ms ease;
+    }
+
+    .popup-overlay.is-open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .popup {
+      position: relative;
+      width: min(420px, 90vw);
+      background: #12141a;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 1rem;
+      padding: 2rem 2rem 1.75rem;
+      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.6);
+      transform: scale(0.88) translateY(12px);
+      transition: transform 280ms cubic-bezier(0.34, 1.56, 0.64, 1), opacity 250ms ease;
+      opacity: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .popup-overlay.is-open .popup {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+    }
+
+    /* Coloured top accent strip */
+    .popup::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      border-radius: 1rem 1rem 0 0;
+      background: var(--popup-accent, #6c63ff);
+    }
+
+    .popup-icon {
+      font-size: 2.25rem;
+      line-height: 1;
+    }
+
+    .popup-title {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #f1f5f9;
+      letter-spacing: -0.01em;
+    }
+
+    .popup-body {
+      font-size: 0.875rem;
+      color: rgba(232, 234, 240, 0.6);
+      line-height: 1.6;
+    }
+
+    .popup-close {
+      align-self: flex-end;
+      margin-top: 0.5rem;
+      padding: 0.45rem 1.1rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      background: transparent;
+      color: var(--popup-accent, #6c63ff);
+      border: 1.5px solid var(--popup-accent, #6c63ff);
+      transition: background 150ms ease, color 150ms ease;
+    }
+    .popup-close:hover {
+      background: var(--popup-accent, #6c63ff);
+      color: #fff;
+    }
+
+    /* Close ✕ corner button */
+    .popup-x {
+      position: absolute;
+      top: 0.9rem;
+      right: 0.9rem;
+      width: 1.75rem;
+      height: 1.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.06);
+      border: none;
+      border-radius: 50%;
+      color: rgba(255,255,255,0.45);
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: background 150ms ease, color 150ms ease;
+    }
+    .popup-x:hover {
+      background: rgba(255,255,255,0.14);
+      color: #fff;
+    }
+
+    /* Escape hint */
+    .popup-esc {
+      text-align: center;
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.2);
+      margin-top: -0.25rem;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .popup-overlay, .popup { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Border-Only Buttons</h1>
+  <p class="subtitle">Dark background · Light text · Coloured border · Click for popup</p>
+
+  <div class="btn-row">
+
+    <button
+      id="btn-red"
+      class="ease-btn ease-btn-outline-red ease-btn-hover ease-btn-lg ease-btn-pill"
+      aria-haspopup="dialog"
+      onclick="openPopup('red')"
+    >
+      🔴 Red Action
+    </button>
+
+    <button
+      id="btn-green"
+      class="ease-btn ease-btn-outline-green ease-btn-hover ease-btn-lg ease-btn-pill"
+      aria-haspopup="dialog"
+      onclick="openPopup('green')"
+    >
+      🟢 Green Action
+    </button>
+
+    <button
+      id="btn-blue"
+      class="ease-btn ease-btn-outline-blue ease-btn-hover ease-btn-lg ease-btn-pill"
+      aria-haspopup="dialog"
+      onclick="openPopup('blue')"
+    >
+      🔵 Blue Action
+    </button>
+
+  </div>
+
+  <!-- ── Popup ───────────────────────────────────────────────── -->
+  <div
+    id="popup-overlay"
+    class="popup-overlay"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="popup-title"
+    onclick="handleOverlayClick(event)"
+  >
+    <div class="popup" id="popup-box">
+      <button class="popup-x" id="popup-x-btn" aria-label="Close" onclick="closePopup()">✕</button>
+      <div class="popup-icon" id="popup-icon" aria-hidden="true"></div>
+      <div class="popup-title" id="popup-title"></div>
+      <div class="popup-body"  id="popup-body"></div>
+      <button class="popup-close" id="popup-dismiss" onclick="closePopup()">Dismiss</button>
+      <p class="popup-esc">Press <kbd>Esc</kbd> to close</p>
+    </div>
+  </div>
+
+  <script>
+    const POPUP_DATA = {
+      red: {
+        accent:  '#ef4444',
+        icon:    '🚨',
+        title:   'Red Alert!',
+        body:    'You clicked the red border button. This could represent a warning, delete action, or danger state. Use red to signal critical or destructive operations.',
+      },
+      green: {
+        accent:  '#22c55e',
+        icon:    '✅',
+        title:   'Success!',
+        body:    'You clicked the green border button. Green communicates success, confirmation, or a positive next-step. Great for save, approve, or proceed actions.',
+      },
+      blue: {
+        accent:  '#3b82f6',
+        icon:    '💡',
+        title:   'Information',
+        body:    'You clicked the blue border button. Blue is perfect for informational, primary, or neutral actions. It inspires trust and is the most versatile action colour.',
+      },
+    };
+
+    let lastFocused = null;
+
+    function openPopup(color) {
+      const data = POPUP_DATA[color];
+      const overlay = document.getElementById('popup-overlay');
+      const box     = document.getElementById('popup-box');
+
+      document.getElementById('popup-icon').textContent  = data.icon;
+      document.getElementById('popup-title').textContent = data.title;
+      document.getElementById('popup-body').textContent  = data.body;
+      box.style.setProperty('--popup-accent', data.accent);
+      document.getElementById('popup-dismiss').style.setProperty('--popup-accent', data.accent);
+
+      lastFocused = document.activeElement;
+      overlay.classList.add('is-open');
+
+      // Move focus into popup for accessibility
+      setTimeout(() => document.getElementById('popup-x-btn').focus(), 50);
+    }
+
+    function closePopup() {
+      const overlay = document.getElementById('popup-overlay');
+      overlay.classList.remove('is-open');
+      if (lastFocused) lastFocused.focus();
+    }
+
+    function handleOverlayClick(e) {
+      // Close when clicking the backdrop (not the popup box itself)
+      if (e.target === document.getElementById('popup-overlay')) closePopup();
+    }
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closePopup();
+    });
+  </script>
+
+</body>
+</html>
