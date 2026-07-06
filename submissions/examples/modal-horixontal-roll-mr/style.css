@@ -1,0 +1,162 @@
+:root{
+    --modal-duration: 0.7s;
+    --modal-glow: #00f7ff;
+    --modal-secondary: #ff00c8;
+    --modal-angle: 70deg;
+    --modal-distance: 120px;
+}
+
+/* Page */
+
+body{
+    margin:0;
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:#0b0b12;
+
+    color:white;
+    font-family:Arial,sans-serif;
+}
+
+/* Hide checkbox */
+
+#modal-toggle{
+    display:none;
+}
+
+/* Open Button */
+
+.open-btn,
+.close-btn{
+
+    display:inline-block;
+
+    padding:12px 24px;
+
+    cursor:pointer;
+
+    border:1px solid var(--modal-glow);
+
+    border-radius:8px;
+
+    color:var(--modal-glow);
+
+    background:rgba(0,247,255,0.08);
+
+    transition:.3s;
+}
+
+.open-btn:hover,
+.close-btn:hover{
+
+    box-shadow:
+        0 0 10px var(--modal-glow),
+        0 0 20px var(--modal-glow);
+
+    transform:translateY(-2px);
+}
+
+/* Overlay */
+
+.overlay{
+
+    position:fixed;
+    inset:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:rgba(0,0,0,.75);
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:.3s;
+}
+
+/* Show overlay */
+
+#modal-toggle:checked ~ .overlay{
+
+    opacity:1;
+    visibility:visible;
+}
+
+/* Modal */
+
+.modal{
+
+    width:min(90vw,600px);
+
+    padding:2rem;
+
+    border-radius:16px;
+
+    background:rgba(17,24,39,0.9);
+
+    backdrop-filter:blur(12px);
+
+    border:2px solid var(--modal-glow);
+
+    transform-style:preserve-3d;
+
+    opacity:0;
+
+    transform:
+        perspective(1200px)
+        rotateY(var(--modal-angle))
+        translateX(calc(-1 * var(--modal-distance)))
+        scale(.9);
+
+    transition:
+        transform var(--modal-duration) ease,
+        opacity var(--modal-duration) ease;
+
+    box-shadow:
+        0 0 10px rgba(0,247,255,.4),
+        0 0 25px rgba(0,247,255,.3),
+        0 0 50px rgba(255,0,200,.25);
+}
+
+/* Open Animation */
+
+#modal-toggle:checked ~ .overlay .modal{
+
+    opacity:1;
+
+    transform:
+        perspective(1200px)
+        rotateY(0deg)
+        translateX(0)
+        scale(1);
+}
+
+/* Heading */
+
+.modal h2{
+
+    margin-top:0;
+
+    color:var(--modal-glow);
+
+    text-shadow:
+        0 0 8px var(--modal-glow),
+        0 0 18px var(--modal-glow);
+}
+
+/* Reduced Motion */
+
+@media (prefers-reduced-motion: reduce){
+
+    .modal,
+    .overlay{
+
+        transition:none;
+        animation:none;
+    }
+}
