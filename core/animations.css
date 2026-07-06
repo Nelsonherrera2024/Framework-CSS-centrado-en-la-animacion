@@ -623,6 +623,24 @@
   100% { transform: scale(1);    opacity: 1; }
 }
 
+@keyframes ease-kf-jello-hover {
+  0%, 100% {
+    transform: scale(1) skew(0deg);
+  }
+  20% {
+    transform: scale(var(--ease-modal-jello-s1-x, 1.12), var(--ease-modal-jello-s1-y, 0.88)) skew(var(--ease-modal-jello-sk1, -6deg), var(--ease-modal-jello-sk1, -6deg));
+  }
+  40% {
+    transform: scale(var(--ease-modal-jello-s2-x, 0.92), var(--ease-modal-jello-s2-y, 1.08)) skew(var(--ease-modal-jello-sk2, 3deg), var(--ease-modal-jello-sk2, 3deg));
+  }
+  60% {
+    transform: scale(var(--ease-modal-jello-s3-x, 1.06), var(--ease-modal-jello-s3-y, 0.94)) skew(var(--ease-modal-jello-sk3, -1.5deg), var(--ease-modal-jello-sk3, -1.5deg));
+  }
+  80% {
+    transform: scale(var(--ease-modal-jello-s4-x, 0.98), var(--ease-modal-jello-s4-y, 1.02)) skew(var(--ease-modal-jello-sk4, 0.75deg), var(--ease-modal-jello-sk4, 0.75deg));
+  }
+}
+
 @keyframes ease-kf-morph-card {
   from {
     border-radius: 8px;
@@ -760,6 +778,10 @@
 
 .ease-expand-border-exit {
   animation: ease-kf-expand-border-exit var(--ease-speed-medium) var(--ease-ease) forwards;
+}
+
+.ease-jello-hover:hover {
+  animation: ease-kf-jello-hover var(--ease-modal-jello-duration, 0.65s) var(--ease-modal-jello-easing, ease-in-out) both;
 }
 
 /* Entrance Animations */

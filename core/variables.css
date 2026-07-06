@@ -66,6 +66,27 @@
    --ease-glass-bg: rgba(255, 255, 255, 0.12);
   --ease-glass-border: rgba(255, 255, 255, 0.20);
 
+  /* Jello-Hover Modal & Animation variables */
+  --ease-modal-jello-duration: 0.65s;
+  --ease-modal-jello-easing: ease-in-out;
+  --ease-modal-jello-s1-x: 1.12;
+  --ease-modal-jello-s1-y: 0.88;
+  --ease-modal-jello-sk1: -6deg;
+  --ease-modal-jello-s2-x: 0.92;
+  --ease-modal-jello-s2-y: 1.08;
+  --ease-modal-jello-sk2: 3deg;
+  --ease-modal-jello-s3-x: 1.06;
+  --ease-modal-jello-s3-y: 0.94;
+  --ease-modal-jello-sk3: -1.5deg;
+  --ease-modal-jello-s4-x: 0.98;
+  --ease-modal-jello-s4-y: 1.02;
+  --ease-modal-jello-sk4: 0.75deg;
+
+  /* Glassmorphism modal custom properties */
+  --ease-modal-glass-blur: 16px;
+  --ease-modal-glass-bg: var(--ease-glass-bg);
+  --ease-modal-glass-border: var(--ease-glass-border);
+
   /* ── Spacing Scale ─────────────────────────────────────── */
   --ease-space-1:  0.25rem;   /*  4px */
   --ease-space-2:  0.5rem;    /*  8px */

@@ -208,4 +208,14 @@ const modals = readFileSync(resolve(componentsDir, 'modals.css'), 'utf8');
       .map(([name]) => name);
     expect(duplicates).toEqual([]);
   });
+
+  it('should define Glassmorphism and Jello-Hover modal classes and variables', () => {
+    expect(css).toContain('.ease-modal-glass');
+    expect(css).toContain('.ease-modal-jello');
+    expect(css).toContain('@keyframes ease-kf-jello-hover');
+    expect(css).toContain('.ease-jello-hover:hover');
+    expect(css).toContain('--ease-modal-glass-blur');
+    expect(css).toContain('--ease-modal-jello-duration');
+  });
 });
+
