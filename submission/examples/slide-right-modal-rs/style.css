@@ -1,0 +1,230 @@
+/* ============================================================
+   Slide Right Modal - Minimalist Tech
+   Pure CSS Example for EaseMotion
+   ============================================================ */
+
+/* ---------- CSS Custom Properties ---------- */
+
+:root {
+  --modal-width: 420px;
+  --modal-radius: 18px;
+
+  --page-bg: #0d1117;
+  --modal-bg: #161b22;
+
+  --text-color: #f8fafc;
+  --muted-text: #94a3b8;
+
+  --border-color: rgba(255,255,255,.08);
+
+  --primary-color: #3b82f6;
+  --primary-hover: #2563eb;
+
+  --overlay-bg: rgba(0,0,0,.65);
+
+  --modal-duration: 0.45s;
+  --modal-easing: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --modal-shadow: 0 24px 60px rgba(0,0,0,.45);
+}
+
+/* ---------- Reset ---------- */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Inter,Segoe UI,Arial,sans-serif;
+    background:var(--page-bg);
+    color:var(--text-color);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:2rem;
+}
+
+/* ---------- Page ---------- */
+
+.page{
+    text-align:center;
+    max-width:700px;
+}
+
+h1{
+    font-size:3rem;
+    margin-bottom:1rem;
+    font-weight:700;
+}
+
+.description{
+    color:var(--muted-text);
+    font-size:1.1rem;
+    line-height:1.7;
+    margin-bottom:2.5rem;
+}
+
+/* ---------- Hide Checkbox ---------- */
+
+.modal-toggle{
+    display:none;
+}
+
+/* ---------- Buttons ---------- */
+
+.open-btn,
+.close-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:14px 28px;
+    background:
+          linear-gradient(
+          135deg,
+        #3b82f6,
+        #2563eb
+       );
+
+    color:white;
+    border-radius:12px;
+    cursor:pointer;
+    text-decoration:none;
+    font-weight:600;
+    transition:
+        transform .25s ease,
+        background .25s ease,
+        box-shadow .25s ease;
+}
+
+.open-btn:hover,
+.close-btn:hover{
+    background:var(--primary-hover);
+    transform:
+          translateY(-2px)
+          scale(1.02);
+    box-shadow:0 12px 24px rgba(59,130,246,.35);
+}
+
+.open-btn:focus-visible,
+.close-btn:focus-visible{
+
+   outline:3px solid #60a5fa;
+    outline-offset:4px;
+}
+
+/* ---------- Overlay ---------- */
+
+.overlay{
+    position:fixed;
+    inset:0;
+    background:var(--overlay-bg);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+    opacity:0;
+    visibility:hidden;
+    transition:
+        opacity var(--modal-duration) var(--modal-easing),
+        visibility var(--modal-duration) var(--modal-easing);
+
+    z-index:1000;
+}
+
+/* ---------- Modal ---------- */
+
+.modal{
+    width:min(var(--modal-width),90vw);
+    min-height:320px;
+    margin:2rem;
+    padding:2rem;
+    background:var(--modal-bg);
+    border:1px solid var(--border-color);
+    background:
+         linear-gradient(
+         180deg,
+       rgba(255,255,255,.03),
+       rgba(255,255,255,.01)
+      ),
+      var(--modal-bg);
+    border-radius:var(--modal-radius);
+    box-shadow:
+         0 20px 60px rgba(0,0,0,.45),
+         0 0 0 1px rgba(255,255,255,.03);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    gap:1.5rem;
+    transform:
+             translateX(120%)
+             scale(.98);
+    transition:
+        transform var(--modal-duration) var(--modal-easing);
+}
+
+.modal h2{
+    font-size:2rem;
+    letter-spacing:-0.02em;
+}
+
+.modal p{
+    color:var(--muted-text);
+    line-height:1.7;
+}
+
+.close-btn{
+    align-self:flex-start;
+    margin-top:1rem;
+}
+
+/* ---------- Open Modal ---------- */
+
+.modal-toggle:checked ~ .overlay{
+    opacity:1;
+    visibility:visible;
+}
+
+.modal-toggle:checked ~ .overlay .modal{
+    transform:
+           translateX(0)
+           scale(1);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width:768px){
+    h1{
+        font-size:2.2rem;
+    }
+    .description{
+        font-size:1rem;
+    }
+    .overlay{
+        justify-content:center;
+    }
+    .modal{
+        width:95%;
+        margin:1rem;
+        min-height:auto;
+        padding:1.5rem;
+    }
+
+}
+
+/* ---------- Reduced Motion ---------- */
+
+@media (prefers-reduced-motion:reduce){
+
+    .overlay,
+    .modal,
+    .open-btn,
+    .close-btn{
+
+        transition:none !important;
+    }
+
+}

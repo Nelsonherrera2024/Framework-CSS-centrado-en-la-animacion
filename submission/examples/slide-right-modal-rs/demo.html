@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Slide Right Modal Demo</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="page">
+
+    <h1>CSS Slide-Right Modal</h1>
+
+    <p class="description">
+      A pure CSS responsive modal with a smooth slide-right animation,
+      inspired by minimalist tech interfaces.
+    </p>
+
+    <!-- Hidden checkbox -->
+    <input type="checkbox" id="modal-toggle" class="modal-toggle">
+
+    <!-- Open Button -->
+    <label for="modal-toggle" class="open-btn">
+      Open Modal
+    </label>
+
+    <!-- Overlay -->
+    <div class="overlay">
+
+      <!-- Modal -->
+      <div
+        class="modal"
+        role="dialog"
+        aria-labelledby="modal-title"
+        aria-modal="true">
+
+        <h2 id="modal-title">
+          Welcome 👋
+        </h2>
+
+        <p>
+          This modal is built using only HTML and CSS.
+          It slides in smoothly from the right and uses
+          CSS custom properties for easy customization.
+        </p>
+
+        <label
+          for="modal-toggle"
+          class="close-btn"
+          aria-label="Close modal">
+
+          Close
+
+        </label>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
