@@ -5,6 +5,16 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [v1.2.0] — 2026-07-06
+
+### 🚀 Release Highlights
+
+#### Added
+- `submissions/examples/testimonial-carousel-bb/` — Animated testimonial carousel with auto-play, navigation dots, star pop animation, and full accessibility support
+- `submissions/README.md` — Contributor area overview and submission workflow guide
+
+---
+
 ## [v1.1.0] — 2026-06-28
 
 ### 🚀 Release Highlights

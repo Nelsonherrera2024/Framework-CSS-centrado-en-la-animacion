@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Testimonial Carousel — EaseMotion CSS</title>
+  <link rel="stylesheet" href="../../../easemotion.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <section class="ease-center" style="min-height:100vh;background:var(--ease-color-bg);padding:2rem;">
+    <div class="carousel-container-bb" style="max-width:800px;width:100%;">
+      <div class="ease-text-center ease-mb-8">
+        <span class="carousel-eyebrow-bb">What Our Users Say</span>
+        <h2 class="ease-h2" style="color:var(--ease-color-text);">Trusted by Developers</h2>
+      </div>
+
+      <div class="carousel-viewport-bb" role="region" aria-label="Testimonials" aria-live="polite">
+        <div class="carousel-track-bb" id="carouselTrack-bb">
+
+          <figure class="carousel-slide-bb" role="group" aria-label="Slide 1 of 3">
+            <div class="carousel-card-bb">
+              <div class="carousel-stars-bb" aria-hidden="true">
+                <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+              </div>
+              <blockquote class="carousel-quote-bb">
+                "EaseMotion CSS completely transformed how I prototype UI animations. The class names are so intuitive I barely touch the docs. It just works."
+              </blockquote>
+              <div class="carousel-author-bb">
+                <div class="carousel-avatar-bb" aria-hidden="true" style="background:linear-gradient(135deg,#6c63ff,#a78bfa);">SM</div>
+                <div>
+                  <cite class="carousel-name-bb">Sarah Mitchell</cite>
+                  <span class="carousel-role-bb">Senior Frontend Engineer, Google</span>
+                </div>
+              </div>
+            </div>
+          </figure>
+
+          <figure class="carousel-slide-bb" role="group" aria-label="Slide 2 of 3">
+            <div class="carousel-card-bb">
+              <div class="carousel-stars-bb" aria-hidden="true">
+                <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+              </div>
+              <blockquote class="carousel-quote-bb">
+                "I switched from Tailwind to EaseMotion for a client project and it cut my animation code by 60%. The zero-config setup is a game-changer."
+              </blockquote>
+              <div class="carousel-author-bb">
+                <div class="carousel-avatar-bb" aria-hidden="true" style="background:linear-gradient(135deg,#22c55e,#86efac);">JR</div>
+                <div>
+                  <cite class="carousel-name-bb">James Rodriguez</cite>
+                  <span class="carousel-role-bb">Indie Developer &amp; Designer</span>
+                </div>
+              </div>
+            </div>
+          </figure>
+
+          <figure class="carousel-slide-bb" role="group" aria-label="Slide 3 of 3">
+            <div class="carousel-card-bb">
+              <div class="carousel-stars-bb" aria-hidden="true">
+                <span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span>
+              </div>
+              <blockquote class="carousel-quote-bb">
+                "The contribution pipeline is brilliant. I submitted a hover effect as raw CSS and saw it integrated into the framework within a week. Truly inclusive open source."
+              </blockquote>
+              <div class="carousel-author-bb">
+                <div class="carousel-avatar-bb" aria-hidden="true" style="background:linear-gradient(135deg,#ef4444,#fca5a5);">AC</div>
+                <div>
+                  <cite class="carousel-name-bb">Aisha Chen</cite>
+                  <span class="carousel-role-bb">Open Source Contributor</span>
+                </div>
+              </div>
+            </div>
+          </figure>
+
+        </div>
+      </div>
+
+      <div class="carousel-controls-bb">
+        <button class="carousel-btn-bb carousel-prev-bb" onclick="moveCarousel(-1)" aria-label="Previous testimonial">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M12 4L6 10L12 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="carousel-dots-bb" role="tablist" aria-label="Testimonial navigation">
+          <button class="carousel-dot-bb active" role="tab" aria-selected="true" data-index="0" onclick="goToSlide(0)" aria-label="Go to testimonial 1"></button>
+          <button class="carousel-dot-bb" role="tab" aria-selected="false" data-index="1" onclick="goToSlide(1)" aria-label="Go to testimonial 2"></button>
+          <button class="carousel-dot-bb" role="tab" aria-selected="false" data-index="2" onclick="goToSlide(2)" aria-label="Go to testimonial 3"></button>
+        </div>
+        <button class="carousel-btn-bb carousel-next-bb" onclick="moveCarousel(1)" aria-label="Next testimonial">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M8 4L14 10L8 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    let currentSlide = 0;
+    const totalSlides = 3;
+
+    function updateCarousel(index) {
+      currentSlide = index;
+      const track = document.getElementById('carouselTrack-bb');
+      track.style.transform = 'translateX(-' + (index * 100) + '%)';
+
+      document.querySelectorAll('.carousel-dot-bb').forEach(function(dot, i) {
+        dot.classList.toggle('active', i === index);
+        dot.setAttribute('aria-selected', i === index);
+      });
+
+      document.querySelectorAll('.carousel-slide-bb').forEach(function(slide, i) {
+        slide.setAttribute('aria-label', 'Slide ' + (i + 1) + ' of ' + totalSlides + (i === index ? ' (current)' : ''));
+      });
+    }
+
+    function moveCarousel(direction) {
+      const next = (currentSlide + direction + totalSlides) % totalSlides;
+      updateCarousel(next);
+    }
+
+    function goToSlide(index) {
+      updateCarousel(index);
+    }
+
+    var autoPlay = setInterval(function() { moveCarousel(1); }, 5000);
+
+    document.querySelector('.carousel-viewport-bb').addEventListener('mouseenter', function() {
+      clearInterval(autoPlay);
+    });
+
+    document.querySelector('.carousel-viewport-bb').addEventListener('mouseleave', function() {
+      autoPlay = setInterval(function() { moveCarousel(1); }, 5000);
+    });
+  </script>
+</body>
+</html>
