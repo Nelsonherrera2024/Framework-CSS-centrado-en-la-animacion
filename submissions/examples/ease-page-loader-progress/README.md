@@ -1,50 +1,16 @@
 # ease-page-loader-progress
 
-## Description
-A lightweight CSS-only page loader displayed at the top of the page.
+## What changed
+Added a CSS-only page loader progress component with a top-bar fill animation.
 
-## Features
-- CSS-only
-- Uses @keyframes
-- Customizable with CSS variables
-- Responsive
-- Easy to use
+## Why
+It gives users visual feedback while a page or section is loading, and it stays lightweight by using only HTML and CSS with `@keyframes`.
 
-## Usage
+## How to test
+1. Open `demo.html` in a browser.
+2. Confirm the top progress bar animates from left to right.
+3. Resize the window to check that the layout stays responsive.
+4. Hover or inspect the demo to verify the component styles and custom property-based theming.
 
-```html
-<div class="ease-page-loader-progress"></div>
-```
-
-## CSS Variables
-
-- --ease-loader-color
-- --ease-loader-height
-- --ease-loader-duration
-- --ease-loader-bg
-
-## Customization Example
-
-```css
-:root{
-  --ease-loader-color:#4f46e5;
-  --ease-loader-height:4px;
-  --ease-loader-duration:2s;
-  --ease-loader-bg:#e5e7eb;
-}
-
-/* Or on a single element */
-.custom-loader{
-  --ease-loader-color:#06b6d4;
-  --ease-loader-height:6px;
-  --ease-loader-duration:1s;
-  --ease-loader-bg:rgba(6,182,212,0.06);
-}
-```
-
-## Browser Support
-
-- Chrome
-- Firefox
-- Edge
-- Safari
+## Note
+This is a visual demo component, so the animation loops for preview purposes and does not require JavaScript.
