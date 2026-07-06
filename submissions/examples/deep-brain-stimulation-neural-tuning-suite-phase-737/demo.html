@@ -11,34 +11,41 @@
   <!-- Header -->
   <header class="app-header fade-in">
     <div class="brand">
-      <div class="brand-pulse"></div>
+      <div class="brand-pulse" aria-hidden="true"></div>
       NEURO_SYNC V2
     </div>
     <div class="patient-status">
       <div class="stat-box">
         <span class="stat-lbl">PATIENT ID</span>
-        <span class="stat-val" style="color: var(--clr-text)">88-AX-9</span>
+        <span class="stat-val" style="color: var(--clr-text)" aria-label="Patient ID 88-AX-9">88-AX-9</span>
       </div>
       <div class="stat-box">
         <span class="stat-lbl">STIM STATUS</span>
-        <span class="stat-val" style="color: var(--clr-accent-1)">ACTIVE</span>
+        <span class="stat-val" style="color: var(--clr-accent-1)" aria-label="Stimulation status: active">ACTIVE</span>
       </div>
     </div>
   </header>
 
   <!-- Main Workspace -->
   <main class="app-main">
-    
+
     <!-- Left Panel: Tuning Controls -->
-    <aside class="panel panel-top slide-up delay-1">
-      <div class="panel-title">Stimulation Parameters</div>
-      
+    <aside class="panel panel-top slide-up delay-1" aria-labelledby="tuning-heading">
+      <h2 class="panel-title" id="tuning-heading">Stimulation Parameters</h2>
+
       <div class="tune-control">
         <div class="tune-header">
-          <span>Frequency (Hz)</span>
+          <span id="freq-label">Frequency (Hz)</span>
           <span class="tune-val" style="color: var(--clr-accent-1)">130.5</span>
         </div>
-        <div class="slider-track">
+        <div class="slider-track"
+             role="slider"
+             tabindex="0"
+             aria-labelledby="freq-label"
+             aria-valuemin="0"
+             aria-valuemax="200"
+             aria-valuenow="130.5"
+             aria-valuetext="130.5 Hz">
           <div class="slider-fill" style="width: 75%; background: var(--clr-accent-1);"></div>
           <div class="slider-thumb" style="left: 75%;"></div>
         </div>
@@ -46,10 +53,17 @@
 
       <div class="tune-control">
         <div class="tune-header">
-          <span>Pulse Width (μs)</span>
+          <span id="pulse-label">Pulse Width (μs)</span>
           <span class="tune-val">60.0</span>
         </div>
-        <div class="slider-track">
+        <div class="slider-track"
+             role="slider"
+             tabindex="0"
+             aria-labelledby="pulse-label"
+             aria-valuemin="0"
+             aria-valuemax="150"
+             aria-valuenow="60"
+             aria-valuetext="60 microseconds">
           <div class="slider-fill" style="width: 45%;"></div>
           <div class="slider-thumb" style="left: 45%;"></div>
         </div>
@@ -57,10 +71,17 @@
 
       <div class="tune-control">
         <div class="tune-header">
-          <span>Amplitude (V)</span>
+          <span id="amp-label">Amplitude (V)</span>
           <span class="tune-val" style="color: var(--clr-accent-3)">3.2</span>
         </div>
-        <div class="slider-track">
+        <div class="slider-track"
+             role="slider"
+             tabindex="0"
+             aria-labelledby="amp-label"
+             aria-valuemin="0"
+             aria-valuemax="6"
+             aria-valuenow="3.2"
+             aria-valuetext="3.2 volts">
           <div class="slider-fill" style="width: 60%; background: var(--clr-accent-3);"></div>
           <div class="slider-thumb" style="left: 60%;"></div>
         </div>
@@ -68,26 +89,26 @@
     </aside>
 
     <!-- Center: Brain Map Visualizer -->
-    <section class="panel panel-center slide-up delay-2" style="background: transparent; border: none; box-shadow: none;">
+    <section class="panel panel-center slide-up delay-2" style="background: transparent; border: none; box-shadow: none;" aria-label="Electrode array map">
       <div class="brain-map">
-        <div class="map-scan"></div>
-        
+        <div class="map-scan" aria-hidden="true"></div>
+
         <!-- Electrodes -->
-        <div class="electrode e-1"></div>
-        <div class="electrode e-2"></div>
-        <div class="electrode e-3"></div>
-        <div class="electrode e-4"></div>
-        <div class="electrode e-5 active"></div>
-        <div class="electrode e-6"></div>
-        <div class="electrode e-7"></div>
-        <div class="electrode e-8"></div>
+        <div class="electrode e-1" role="button" tabindex="0" aria-label="Electrode 1, inactive" aria-pressed="false"></div>
+        <div class="electrode e-2" role="button" tabindex="0" aria-label="Electrode 2, inactive" aria-pressed="false"></div>
+        <div class="electrode e-3" role="button" tabindex="0" aria-label="Electrode 3, inactive" aria-pressed="false"></div>
+        <div class="electrode e-4" role="button" tabindex="0" aria-label="Electrode 4, inactive" aria-pressed="false"></div>
+        <div class="electrode e-5 active" role="button" tabindex="0" aria-label="Electrode 5, active" aria-pressed="true"></div>
+        <div class="electrode e-6" role="button" tabindex="0" aria-label="Electrode 6, inactive" aria-pressed="false"></div>
+        <div class="electrode e-7" role="button" tabindex="0" aria-label="Electrode 7, inactive" aria-pressed="false"></div>
+        <div class="electrode e-8" role="button" tabindex="0" aria-label="Electrode 8, inactive" aria-pressed="false"></div>
       </div>
     </section>
 
     <!-- Right Panel: Diagnostics -->
-    <aside class="panel panel-right slide-up delay-3">
-      <div class="panel-title">Real-time Diagnostics</div>
-      
+    <aside class="panel panel-right slide-up delay-3" aria-labelledby="diag-heading">
+      <h2 class="panel-title" id="diag-heading">Real-time Diagnostics</h2>
+
       <div class="diag-list">
         <div class="diag-card">
           <span class="diag-lbl">Impedance</span>
@@ -109,14 +130,14 @@
     </aside>
 
     <!-- Bottom Panel: Oscilloscope -->
-    <section class="panel panel-bottom slide-up delay-4">
-      <div class="panel-title">Live EEG Telemetry</div>
-      
-      <div class="eeg-container">
+    <section class="panel panel-bottom slide-up delay-4" aria-labelledby="eeg-heading">
+      <h2 class="panel-title" id="eeg-heading">Live EEG Telemetry</h2>
+
+      <div class="eeg-container" role="img" aria-label="Live EEG waveform display showing theta, alpha, and raw signal traces">
         <!-- Simulated Waveforms -->
-        <div class="eeg-wave theta"></div>
-        <div class="eeg-wave alpha"></div>
-        <div class="eeg-wave"></div>
+        <div class="eeg-wave theta" aria-hidden="true"></div>
+        <div class="eeg-wave alpha" aria-hidden="true"></div>
+        <div class="eeg-wave" aria-hidden="true"></div>
       </div>
     </section>
 
