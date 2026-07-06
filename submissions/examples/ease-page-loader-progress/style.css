@@ -1,0 +1,61 @@
+/* ease-page-loader-progress
+   Simple, reusable page loader.
+   Usage: <div class="ease-page-loader-progress"></div>
+
+   Custom properties:
+   --ease-loader-color, --ease-loader-height,
+   --ease-loader-duration, --ease-loader-bg
+*/
+
+.ease-page-loader-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--ease-loader-height, 4px);
+  background: var(--ease-loader-bg, rgba(79,70,229,0.06));
+  z-index: 9999;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.ease-page-loader-progress::before {
+  /* The animated bar — use ::before as required */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 36%;
+  background: linear-gradient(90deg, transparent 0%, var(--ease-loader-color, #4f46e5) 50%, transparent 100%);
+  transform: translateX(-120%);
+  animation: ease-loader var(--ease-loader-duration, 1.6s) cubic-bezier(.2,.8,.2,1) infinite;
+  will-change: transform, opacity;
+}
+
+@keyframes ease-loader {
+  0% { transform: translateX(-120%); opacity: 0.45; }
+  60% { transform: translateX(120%); opacity: 1; }
+  100% { transform: translateX(240%); opacity: 0.45; }
+}
+
+/* Demo helper: show the loader inline inside demo cards for visualization.
+   This does not change the default fixed behaviour used in production. */
+.example .ease-page-loader-progress,
+.ease-page-loader-progress.demo-inline {
+  position: relative; /* become a normal block inside the demo */
+  top: auto; left: auto; right: auto;
+  width: 100%;
+  margin: 0.5rem 0 0 0;
+  background: var(--ease-loader-bg, rgba(79,70,229,0.06));
+  pointer-events: auto;
+}
+
+.example .ease-page-loader-progress::before,
+.ease-page-loader-progress.demo-inline::before {
+  /* position the animated bar relative to the demo element */
+  left: 0;
+}
+
+/* Hide when printing */
+@media print { .ease-page-loader-progress { display: none; } }
