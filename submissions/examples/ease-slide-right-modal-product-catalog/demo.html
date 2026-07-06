@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aether Wearables – Product Catalog</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts for premium design -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Decorative blur blobs -->
+  <div style="position: absolute; top: -10%; left: -10%; width: 40vw; height: 40vw; background: rgba(16, 185, 129, 0.15); filter: blur(140px); border-radius: 50%; pointer-events: none; z-index: 1;"></div>
+  <div style="position: absolute; bottom: -10%; right: -10%; width: 45vw; height: 45vw; background: rgba(59, 130, 246, 0.12); filter: blur(160px); border-radius: 50%; pointer-events: none; z-index: 1;"></div>
+
+  <div class="catalog-container">
+    <!-- Header -->
+    <header class="catalog-header">
+      <h1 class="catalog-title">Aether Wearables</h1>
+      <p class="catalog-subtitle">Next-generation smart wearables with premium glassmorphic interfaces.</p>
+    </header>
+
+    <!-- Product Grid -->
+    <main class="product-grid">
+      
+      <!-- Product Card 1 -->
+      <article class="product-card">
+        <div class="product-image-container">
+          <img src="product.png" alt="Aether Watch Active" class="product-img">
+        </div>
+        <div class="product-info">
+          <span class="product-tag">New Release</span>
+          <h3 class="product-name">Aether Watch Active</h3>
+          <p style="font-size: 0.875rem; color: var(--ease-color-muted); line-height: 1.4; margin-top: 0.25rem;">
+            Designed for high performance, featuring a vivid screen and extended battery life.
+          </p>
+          <div class="product-meta">
+            <span class="product-price">$249</span>
+            <a href="#ease-modal-product-catalog" id="view-details-trigger-1" class="view-btn">View Details</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Product Card 2 -->
+      <article class="product-card">
+        <div class="product-image-container">
+          <img src="product.png" alt="Aether Watch Pro" class="product-img" style="filter: hue-rotate(60deg);">
+        </div>
+        <div class="product-info">
+          <span class="product-tag">Best Seller</span>
+          <h3 class="product-name">Aether Watch Pro</h3>
+          <p style="font-size: 0.875rem; color: var(--ease-color-muted); line-height: 1.4; margin-top: 0.25rem;">
+            Premium sapphire crystal dial with comprehensive biometric sensors and GPS tracking.
+          </p>
+          <div class="product-meta">
+            <span class="product-price">$349</span>
+            <a href="#ease-modal-product-catalog" id="view-details-trigger-2" class="view-btn">View Details</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Product Card 3 -->
+      <article class="product-card">
+        <div class="product-image-container">
+          <img src="product.png" alt="Aether Watch Edition" class="product-img" style="filter: hue-rotate(180deg);">
+        </div>
+        <div class="product-info">
+          <span class="product-tag">Limited Edition</span>
+          <h3 class="product-name">Aether Watch Edition</h3>
+          <p style="font-size: 0.875rem; color: var(--ease-color-muted); line-height: 1.4; margin-top: 0.25rem;">
+            Hand-polished brushed titanium casing paired with customized magnetic link straps.
+          </p>
+          <div class="product-meta">
+            <span class="product-price">$499</span>
+            <a href="#ease-modal-product-catalog" id="view-details-trigger-3" class="view-btn">View Details</a>
+          </div>
+        </div>
+      </article>
+
+    </main>
+  </div>
+
+  <!-- ============================================================
+       PURE HTML + CSS PRODUCT DETAILS MODAL
+       ============================================================ -->
+  <div id="ease-modal-product-catalog" class="ease-modal" role="dialog" aria-modal="true" aria-labelledby="product-modal-title" aria-describedby="product-modal-desc" tabindex="-1">
+    
+    <!-- Backdrop overlay. Clicking it closes the modal by returning focus to the triggers. -->
+    <a href="#view-details-trigger-1" class="ease-modal__overlay" aria-label="Close product info overlay"></a>
+    
+    <!-- Modal Content Grid Container -->
+    <div class="ease-modal__content">
+      
+      <!-- Close button. Re-targets the opening trigger to restore focus and close. -->
+      <a href="#view-details-trigger-1" class="ease-modal__close" aria-label="Close product details">&times;</a>
+      
+      <!-- 2-Column Product Layout -->
+      <div class="modal-product-grid">
+        
+        <!-- Left Column: Product Image Gallery -->
+        <div class="modal-product-gallery">
+          <img src="product.png" alt="Aether Watch Close-up" class="modal-product-image">
+        </div>
+        
+        <!-- Right Column: Product Specs & Options Form -->
+        <div class="modal-product-details">
+          <span class="modal-brand">Aether Wearables</span>
+          <h2 id="product-modal-title" class="modal-product-name">Aether Watch Active</h2>
+          
+          <!-- Rating -->
+          <div class="modal-product-rating">
+            <span class="rating-stars">★★★★★</span>
+            <span class="rating-count">(124 customer reviews)</span>
+          </div>
+
+          <!-- Price -->
+          <div class="modal-product-price">
+            <span>$249</span>
+            <span class="price-original">$299</span>
+          </div>
+
+          <!-- Description -->
+          <p id="product-modal-desc" class="modal-product-desc">
+            Experience next-level tracking with the Aether Watch Active. Designed with a custom bio-processor to monitor blood oxygen, sleep quality, and performance analytics. Housed in durable aerospace aluminum, it is water-resistant up to 50 meters.
+          </p>
+
+          <!-- Interactive Selection (Pure CSS Option Toggles) -->
+          <form class="product-options" onsubmit="event.preventDefault();">
+            <!-- Case Size selector -->
+            <div class="option-group">
+              <span class="option-title">Case Size</span>
+              <div class="size-selector">
+                <div class="size-option">
+                  <input type="radio" name="case-size" id="size-41" value="41mm">
+                  <label for="size-41" class="size-label">41mm</label>
+                </div>
+                <div class="size-option">
+                  <input type="radio" name="case-size" id="size-45" value="45mm" checked>
+                  <label for="size-45" class="size-label">45mm</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Band Strap Options -->
+            <div class="option-group">
+              <span class="option-title">Strap Material</span>
+              <div class="size-selector">
+                <div class="size-option">
+                  <input type="radio" name="band-type" id="band-sport" value="sport" checked>
+                  <label for="band-sport" class="size-label" style="min-width: 5rem;">Sport Loop</label>
+                </div>
+                <div class="size-option">
+                  <input type="radio" name="band-type" id="band-leather" value="leather">
+                  <label for="band-leather" class="size-label" style="min-width: 5rem;">Leather</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Add to Cart CTA -->
+            <a href="#view-details-trigger-1" class="add-to-cart-btn">
+              Add to Shopping Cart
+            </a>
+          </form>
+          
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+</body>
+</html>

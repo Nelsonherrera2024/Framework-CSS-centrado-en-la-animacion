@@ -1,0 +1,621 @@
+/* ============================================================
+   EaseMotion CSS — submissions/examples/ease-slide-right-modal-product-catalog/style.css
+   Pure HTML & CSS Slide-Right Glassmorphic Product Catalog Modal
+   ============================================================ */
+
+:root {
+  /* Design Tokens */
+  --ease-color-primary: #10b981; /* Emerald/Cyan theme for product focus */
+  --ease-color-primary-light: #34d399;
+  --ease-color-primary-dark: #047857;
+  --ease-color-bg-dark: #080b11;
+  --ease-color-surface-dark: #111827;
+  --ease-color-text: #f3f4f6;
+  --ease-color-muted: #9ca3af;
+  --ease-font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --ease-z-modal: 1000;
+  --ease-speed-medium: 300ms;
+  --ease-speed-fast: 150ms;
+  --ease-ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Reset and Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--ease-font-sans);
+  background-color: var(--ease-color-bg-dark);
+  background-image: 
+    radial-gradient(circle at 0% 0%, rgba(16, 185, 129, 0.12) 0%, transparent 40%),
+    radial-gradient(circle at 100% 100%, rgba(59, 130, 246, 0.08) 0%, transparent 45%);
+  color: var(--ease-color-text);
+  min-height: 100vh;
+  padding: 2.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.catalog-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Header styling */
+.catalog-header {
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.catalog-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, var(--ease-color-primary-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.5rem;
+}
+
+.catalog-subtitle {
+  color: var(--ease-color-muted);
+  font-size: 1.1rem;
+}
+
+/* Product Catalog Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  margin-bottom: 4rem;
+}
+
+/* Product Card */
+.product-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--ease-speed-medium) var(--ease-ease-out-expo),
+              box-shadow var(--ease-speed-medium) var(--ease-ease-out-expo),
+              border-color var(--ease-speed-medium) var(--ease-ease-out-expo);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(800px circle at var(--x, 0) var(--y, 0), rgba(255,255,255,0.06), transparent 40%);
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.product-card:hover::before {
+  opacity: 1;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(16, 185, 129, 0.3);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3),
+              0 0 20px rgba(16, 185, 129, 0.05);
+}
+
+.product-image-container {
+  width: 100%;
+  aspect-ratio: 1;
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: 14px;
+  overflow: hidden;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--ease-speed-medium) ease;
+}
+
+.product-card:hover .product-img {
+  transform: scale(1.05);
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex-grow: 1;
+}
+
+.product-tag {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ease-color-primary-light);
+  letter-spacing: 0.05em;
+}
+
+.product-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.product-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+.product-price {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.view-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background var(--ease-speed-fast) ease,
+              border-color var(--ease-speed-fast) ease,
+              transform var(--ease-speed-fast) ease;
+}
+
+.product-card:hover .view-btn {
+  background: var(--ease-color-primary);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.view-btn:focus-visible {
+  outline: 2px solid var(--ease-color-primary-light);
+  outline-offset: 2px;
+}
+
+/* ============================================================
+   EASEMOTION MODAL STYLING
+   ============================================================ */
+
+.ease-modal {
+  /* 🎛️ CSS CUSTOM PROPERTIES (REQUIRED) */
+  --ease-modal-duration: 0.5s;                            /* Animation duration */
+  --ease-modal-easing: cubic-bezier(0.16, 1, 0.3, 1);       /* Easing function */
+  --ease-modal-width: 820px;                               /* Modal width (larger for 2-column) */
+  --ease-modal-blur: 24px;                                 /* Blur intensity */
+  --ease-modal-bg-opacity: 0.06;                           /* Background opacity */
+  --ease-modal-radius: 28px;                               /* Border radius */
+  --ease-modal-glow: 0 30px 60px -15px rgba(0, 0, 0, 0.6), /* Shadow/glow strength */
+                     0 0 0 1px rgba(255, 255, 255, 0.1) inset,
+                     0 0 45px rgba(16, 185, 129, 0.12);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: var(--ease-z-modal);
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Hidden state defaults */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  
+  /* Transition for closing (delays visibility until opacity and transforms complete) */
+  transition: opacity var(--ease-modal-duration) var(--ease-modal-easing),
+              visibility 0s linear var(--ease-modal-duration);
+}
+
+/* Modal Open triggers */
+.ease-modal:target,
+.ease-modal.ease-modal--open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  
+  /* Transition for opening */
+  transition: opacity var(--ease-modal-duration) var(--ease-modal-easing),
+              visibility 0s linear 0s;
+}
+
+/* ── Overlay Backdrop (Fade-in effect) ─────────────────────── */
+.ease-modal__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(5, 7, 12, 0.75);
+  z-index: 1;
+  cursor: default;
+  
+  /* Overlay opacity transition */
+  opacity: 0;
+  transition: opacity var(--ease-modal-duration) var(--ease-modal-easing);
+}
+
+.ease-modal:target .ease-modal__overlay,
+.ease-modal.ease-modal--open .ease-modal__overlay {
+  opacity: 1;
+}
+
+/* ── Modal Content (Glassmorphism + Scale & Slide-Right) ───── */
+.ease-modal__content {
+  position: relative;
+  z-index: 2;
+  width: min(var(--ease-modal-width), 94%);
+  max-height: 90vh;
+  overflow-y: auto;
+  
+  /* Glassmorphism Styling */
+  background: rgba(17, 24, 39, var(--ease-modal-bg-opacity));
+  backdrop-filter: blur(var(--ease-modal-blur));
+  -webkit-backdrop-filter: blur(var(--ease-modal-blur));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--ease-modal-radius);
+  box-shadow: var(--ease-modal-glow);
+  padding: 2.5rem;
+  color: var(--ease-color-text);
+  
+  /* Scale + Slide transition effect: Starts shifted LEFT (-100px) and scaled down (0.92) */
+  /* This creates a slide-right opening animation as it transitions to translateX(0) */
+  transform: translateX(-100px) scale(0.92);
+  opacity: 0;
+  
+  transition: transform var(--ease-modal-duration) var(--ease-modal-easing),
+              opacity var(--ease-modal-duration) var(--ease-modal-easing);
+}
+
+.ease-modal:target .ease-modal__content,
+.ease-modal.ease-modal--open .ease-modal__content {
+  transform: translateX(0) scale(1);
+  opacity: 1;
+}
+
+/* Close button */
+.ease-modal__close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--ease-color-muted);
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-decoration: none;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 10;
+  transition: background var(--ease-speed-fast) ease,
+              color var(--ease-speed-fast) ease,
+              transform var(--ease-speed-fast) ease;
+  outline: none;
+}
+
+.ease-modal__close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+.ease-modal__close:active {
+  transform: scale(0.95);
+}
+
+.ease-modal__close:focus-visible {
+  outline: 2px solid var(--ease-color-primary-light);
+  outline-offset: 2px;
+}
+
+/* ── Two-Column Product Details Grid ─────────────────────── */
+.modal-product-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+/* Product gallery display */
+.modal-product-gallery {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 18px;
+  overflow: hidden;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.modal-product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Product specifications */
+.modal-product-details {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.modal-brand {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--ease-color-primary-light);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+}
+
+.modal-product-name {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+
+.modal-product-rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.rating-stars {
+  color: #fbbf24;
+  font-size: 1.1rem;
+}
+
+.rating-count {
+  font-size: 0.875rem;
+  color: var(--ease-color-muted);
+}
+
+.modal-product-price {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.price-original {
+  font-size: 1.1rem;
+  text-decoration: line-through;
+  color: var(--ease-color-muted);
+  font-weight: 500;
+}
+
+.modal-product-desc {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(243, 244, 246, 0.8);
+  margin-bottom: 2rem;
+}
+
+/* Options / Variants selector */
+.product-options {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.option-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.option-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #cbd5e1;
+}
+
+.size-selector {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* Styling native radio buttons as pills */
+.size-option {
+  position: relative;
+}
+
+.size-option input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.size-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.75rem;
+  height: 2.5rem;
+  padding: 0 0.5rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #e5e7eb;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--ease-speed-fast) ease;
+}
+
+.size-option input:checked + .size-label {
+  background: var(--ease-color-primary);
+  border-color: var(--ease-color-primary-light);
+  color: #ffffff;
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.3);
+}
+
+.size-option input:focus-visible + .size-label {
+  outline: 2px solid var(--ease-color-primary-light);
+  outline-offset: 2px;
+}
+
+/* Add to Cart CTA */
+.add-to-cart-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--ease-color-primary) 0%, var(--ease-color-primary-dark) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+  transition: transform var(--ease-speed-fast) cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow var(--ease-speed-fast) ease;
+}
+
+.add-to-cart-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.45);
+}
+
+.add-to-cart-btn:active {
+  transform: translateY(1px);
+}
+
+.add-to-cart-btn:focus-visible {
+  outline: 3px solid rgba(16, 185, 129, 0.5);
+  outline-offset: 3px;
+}
+
+/* ============================================================
+   RESPONSIVENESS & MEDIA QUERIES
+   ============================================================ */
+
+@media (max-width: 768px) {
+  .modal-product-grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+  
+  .modal-product-gallery {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+  
+  .modal-product-name {
+    font-size: 1.6rem;
+  }
+  
+  .ease-modal__content {
+    padding: 1.75rem;
+    --ease-modal-radius: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 1.5rem 1rem;
+  }
+  
+  .catalog-title {
+    font-size: 2rem;
+  }
+  
+  .ease-modal__content {
+    padding: 1.5rem 1.25rem;
+    --ease-modal-radius: 20px;
+    width: 95%;
+  }
+  
+  .modal-product-name {
+    font-size: 1.35rem;
+  }
+  
+  .modal-product-price {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* ============================================================
+   ACCESSIBILITY & PREFERS-REDUCED-MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .ease-modal,
+  .ease-modal__overlay,
+  .ease-modal__content,
+  .ease-modal__close,
+  .product-card,
+  .view-btn,
+  .size-label,
+  .add-to-cart-btn {
+    transition: opacity 0.1s linear !important;
+    animation: none !important;
+  }
+  
+  /* Eliminate transformations on responsive elements */
+  .ease-modal__content {
+    transform: none !important;
+  }
+  
+  .product-card:hover,
+  .product-img,
+  .product-card:hover .product-img,
+  .view-btn:hover,
+  .add-to-cart-btn:hover {
+    transform: none !important;
+  }
+}
