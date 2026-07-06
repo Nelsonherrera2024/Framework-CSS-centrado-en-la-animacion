@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>ease-page-loader-progress — Demo</title>
+	<link rel="stylesheet" href="style.css">
+	<style>
+		/* Minimal demo styles (responsive, beginner-friendly) */
+		:root{--max-width:880px}
+		body{font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;margin:0;padding:2rem;background:#f8fafc;color:#0f172a}
+		.container{max-width:var(--max-width);margin:3.5rem auto}
+		header{margin-bottom:1rem}
+		h1{font-size:1.5rem;margin:.125rem 0}
+		p.lead{margin:0 0 1rem;color:#374151}
+		.card{background:#fff;border-radius:10px;box-shadow:0 6px 18px rgba(2,6,23,0.06);padding:1rem}
+		.example{border:1px dashed #e6edf3;padding:1rem;border-radius:8px;background:#fff}
+		.spacer{height:140vh} /* make the page scrollable so the fixed bar is visible */
+		pre.sample{background:#0f172a;color:#e6eef8;padding:.75rem;border-radius:6px;overflow:auto;font-size:13px}
+		.custom-loader{--ease-loader-color:#06b6d4;--ease-loader-height:6px;--ease-loader-duration:1s;--ease-loader-bg:rgba(6,182,212,0.06)}
+		@media (max-width:600px){body{padding:1rem}.container{margin:2rem auto}}
+	</style>
+</head>
+<body>
+
+	<!-- Fixed page loader: drop this anywhere to enable the top progress bar -->
+	<div class="ease-page-loader-progress" aria-hidden="true"></div>
+
+	<main class="container">
+		<header>
+			<h1>ease-page-loader-progress</h1>
+			<p class="lead">A lightweight CSS-only page loader displayed at the top of the page.</p>
+		</header>
+
+		<section class="card">
+			<div class="example">
+				<strong>Default example</strong>
+				<p>Scroll this demo to see the fixed loader animate across the top of the page.</p>
+
+				<!-- Inline demo: for visibility inside the demo card only. Use `demo-inline` locally. -->
+				<div class="ease-page-loader-progress demo-inline" aria-hidden="true"></div>
+			</div>
+		</section>
+
+		<section style="margin-top:1rem">
+			<strong>Customization Example</strong>
+			<p>Set CSS variables to change color, height and speed.</p>
+
+			<!-- Example of a customized inline loader used for presentation -->
+			<div class="ease-page-loader-progress demo-inline custom-loader" aria-hidden="true"></div>
+
+			<pre class="sample" aria-hidden="true">/* Customization example */
+.custom-loader{
+	--ease-loader-color:#06b6d4;
+	--ease-loader-height:6px;
+	--ease-loader-duration:1s;
+	--ease-loader-bg:rgba(6,182,212,0.06);
+}
+
+<!-- Inline demo usage (for examples only): -->
+&lt;div class="ease-page-loader-progress demo-inline custom-loader"&gt;&lt;/div&gt;
+</pre>
+		</section>
+
+		<p style="margin-top:1rem;color:#6b7280">This demo is responsive — the loader spans the full width on narrow screens.</p>
+
+		<div class="spacer" aria-hidden="true"></div>
+	</main>
+
+</body>
+</html>
+
