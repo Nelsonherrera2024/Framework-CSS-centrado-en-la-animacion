@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fix Heading Dark Mode - EaseMotion CSS</title>
+    <!-- Core CSS (simulating the framework) -->
+    <link rel="stylesheet" href="../../../easemotion.css">
+    <!-- The Fix -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            padding: 2rem;
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: var(--ease-color-bg);
+            color: var(--ease-color-text);
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            border: 1px solid var(--ease-color-border);
+            padding: 2rem;
+            border-radius: var(--ease-radius-lg);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Heading 1 (Fixed)</h1>
+        <h2>Heading 2 (Fixed)</h2>
+        <h3>Heading 3 (Fixed)</h3>
+        
+        <table style="width: 100%; margin-top: 2rem; text-align: left;">
+            <thead>
+                <tr>
+                    <th>Table Header (Fixed)</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Row 1</td>
+                    <td>Visible in dark mode</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
