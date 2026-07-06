@@ -5,22 +5,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:;">
-      <!-- Favicon and App Icons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png" />
-    <link rel="manifest" href="assets/site.webmanifest" />
-    <link rel="shortcut icon" href="assets/favicon.ico" />
-    <link rel="stylesheet" href="docs.css" />
+  
+  <!-- Favicon and App Icons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png" />
+  <link rel="manifest" href="assets/site.webmanifest" />
+  <link rel="shortcut icon" href="assets/favicon.ico" />
+  <link rel="stylesheet" href="docs.css" />
   <script>
     (function () {
       var t = localStorage.getItem("em-theme") || "dark";
       document.documentElement.setAttribute("data-theme", t);
     })();
   </script>
-<title>EaseMotion CSS — Interactive Demo</title>
-  <meta name="description"
-    content="Live demo showcasing EaseMotion CSS utilities, animations, buttons, and card components." />
+  <title>EaseMotion CSS — Interactive Demo</title>
+  <meta name="description" content="Live demo showcasing EaseMotion CSS utilities, animations, buttons, and card components." />
 
   <!-- EaseMotion CSS — loaded from latest GitHub main branch via jsDelivr CDN -->
   <link rel="stylesheet" href="easemotion.min.css" />
@@ -39,6 +39,8 @@
     body {
       background-color: var(--page-bg);
       color: var(--page-text);
+      margin: 0;
+      padding: 0;
     }
 
     .demo-nav {
@@ -49,13 +51,15 @@
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      padding: var(--ease-space-4) 0;
+      padding: var(--ease-space-4) var(--ease-space-4);
     }
 
     .demo-nav-inner {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      flex-wrap: wrap;
+      gap: var(--ease-space-4);
     }
 
     .demo-logo {
@@ -70,10 +74,12 @@
 
     .demo-nav-links {
       display: flex;
-      gap: var(--ease-space-6);
+      gap: var(--ease-space-4);
       list-style: none;
       padding: 0;
       margin: 0;
+      flex-wrap: wrap;
+      align-items: center;
     }
 
     .demo-nav-links a {
@@ -115,7 +121,7 @@
 
     /* ── Hero ─────────────────────────────────────────────── */
     .demo-hero {
-      padding: var(--ease-space-16) 0;
+      padding: var(--ease-space-16) var(--ease-space-4);
       text-align: center;
       background: radial-gradient(ellipse 80% 60% at 50% 0%,
           rgba(108, 99, 255, 0.18) 0%,
@@ -123,7 +129,7 @@
     }
 
     .demo-hero h1 {
-      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-size: clamp(2.25rem, 6vw, 4rem);
       font-weight: 800;
       background: linear-gradient(135deg, #ffffff 0%, #a78bfa 60%, #6c63ff 100%);
       -webkit-background-clip: text;
@@ -134,15 +140,15 @@
     }
 
     .demo-hero p {
-  font-size: var(--ease-text-lg);
-  color: var(--page-text-muted);
-  max-width: 560px;
-  margin: 0 auto var(--ease-space-8);
-}
+      font-size: var(--ease-text-lg);
+      color: var(--page-text-muted);
+      max-width: 560px;
+      margin: 0 auto var(--ease-space-8);
+    }
 
     /* ── Section ──────────────────────────────────────────── */
     .demo-section {
-      padding: var(--ease-space-16) 0;
+      padding: var(--ease-space-16) var(--ease-space-4);
       border-top: 1px solid rgba(255, 255, 255, 0.06);
     }
 
@@ -270,10 +276,32 @@
       color: var(--ease-color-danger-light);
     }
 
+    /* ── Theme Toggle Button Layout ────────────────────────── */
+    .theme-toggle-btn {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: rgba(255, 255, 255, 0.8);
+      cursor: pointer;
+      padding: 6px;
+      border-radius: var(--ease-radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all var(--ease-speed-fast) var(--ease-ease);
+    }
+
+    .theme-toggle-btn:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: #ffffff;
+    }
+
+    [data-theme="light"] .sun-icon { display: none; }
+    [data-theme="dark"] .moon-icon { display: none; }
+
     /* ── Footer ───────────────────────────────────────────── */
     .demo-footer {
       text-align: center;
-      padding: var(--ease-space-12) 0;
+      padding: var(--ease-space-12) var(--ease-space-4);
       border-top: 1px solid rgba(255, 255, 255, 0.06);
       color: rgba(255, 255, 255, 0.35);
       font-size: var(--ease-text-sm);
@@ -294,7 +322,7 @@
   <!-- ═══════════════════════════════════════════════════════
        NAVIGATION
   ══════════════════════════════════════════════════════════ -->
-  <nav class="demo-nav" style="padding-left: 10px;">
+  <nav class="demo-nav">
     <div class="ease-container demo-nav-inner">
       <a href="index.html" class="demo-logo" style="text-decoration: none; display: flex; align-items: center;">
         <img src="assets/logo.svg" alt="EaseMotion CSS" style="height: 36px; width: auto; display: block;" />
@@ -306,11 +334,7 @@
         <li><a href="#layout">Layout</a></li>
         <li><a href="./">Docs</a></li>
         <li>
-          <button
-            id="theme-toggle"
-            class="theme-toggle-btn ease-hover-grow"
-            aria-label="Toggle dark/light theme"
-          >
+          <button id="theme-toggle" class="theme-toggle-btn ease-hover-grow" aria-label="Toggle dark/light theme">
             <svg class="sun-icon" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="5"></circle>
               <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -340,19 +364,11 @@
         <div class="demo-section-label">Interactive Demo</div>
         <h1>Build with EaseMotion</h1>
         <p>Human-readable class names. Animation-first. No memorization required.</p>
-        <div class="ease-center ease-gap-3 ease-slide-up ease-delay-200">
-          <a
-            href="./"
-            class="ease-btn ease-btn-primary ease-btn-hover ease-btn-lg ease-btn-pill"
-            style="display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:0 1.35rem; line-height:1; color:white;"
-          >
+        <div class="ease-flex ease-justify-center ease-gap-3 ease-slide-up ease-delay-200" style="flex-wrap: wrap;">
+          <a href="./" class="ease-btn ease-btn-primary ease-btn-hover ease-btn-lg ease-btn-pill" style="display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:0 1.35rem; line-height:1; color:white; text-decoration:none;">
             Read Docs
           </a>
-          <a
-            href="https://github.com/SAPTARSHI-coder/EaseMotion-css"
-            class="ease-btn ease-btn-outline ease-btn-lg ease-btn-pill"
-            style="display:inline-flex; align-items:center; justify-content:center; min-height:48px; border-color:rgba(255,255,255,0.25); color:var(--page-text); padding:0 1.35rem; line-height:1;"
-          >
+          <a href="https://github.com/SAPTARSHI-coder/EaseMotion-css" class="ease-btn ease-btn-outline ease-btn-lg ease-btn-pill" style="display:inline-flex; align-items:center; justify-content:center; min-height:48px; border-color:rgba(255,255,255,0.25); color:var(--page-text); padding:0 1.35rem; line-height:1; text-decoration:none;">
             GitHub ↗
           </a>
         </div>
@@ -365,7 +381,7 @@
     <!-- ═════════════════════════════════════════════════════
          BUTTONS
     ══════════════════════════════════════════════════════════ -->
-    <section id="buttons" class="demo-section" style="padding-left: 10px;">
+    <section id="buttons" class="demo-section">
       <div class="ease-container">
         <div class="demo-section-label">Components</div>
         <h2 class="demo-section-title">Buttons</h2>
@@ -387,8 +403,7 @@
         <div class="demo-chip">// With ease-btn-hover</div>
         <div class="ease-flex ease-flex-wrap ease-gap-3" style="margin-bottom: var(--ease-space-8);">
           <button class="ease-btn ease-btn-primary ease-btn-hover">Hover me ✨</button>
-          <button class="ease-btn ease-btn-outline ease-btn-hover"
-            style="border-color:rgba(255,255,255,0.3); color: var(--page-text);Hover me 🚀</button>
+          <button class="ease-btn ease-btn-outline ease-btn-hover" style="border-color:rgba(255,255,255,0.3); color: var(--page-text);">Hover me 🚀</button>
           <button class="ease-btn ease-btn-success ease-btn-hover">Hover me 🌿</button>
         </div>
 
@@ -404,7 +419,7 @@
         <!-- Squish -->
         <div class="demo-chip">// Squish Button Utility</div>
         <div class="ease-flex ease-flex-wrap ease-gap-3" style="margin-bottom: var(--ease-space-8);">
-          <button class="ease-btn ease-btn-primary ease-squish-button">Squish Me </button>
+          <button class="ease-btn ease-btn-primary ease-squish-button">Squish Me</button>
         </div>
 
         <!-- Shapes & States -->
@@ -412,8 +427,7 @@
         <div class="ease-flex ease-flex-wrap ease-items-center ease-gap-3">
           <button class="ease-btn ease-btn-primary ease-btn-pill">Pill Shape</button>
           <button class="ease-btn ease-btn-primary" disabled>Disabled</button>
-          <button class="ease-btn ease-btn-outline ease-btn-loading"
-            style="border-color:rgba(255,255,255,0.3); color:#fff;">Loading</button>
+          <button class="ease-btn ease-btn-outline ease-btn-loading" style="border-color:rgba(255,255,255,0.3); color:#fff;">Loading</button>
         </div>
       </div>
     </section>
@@ -423,7 +437,7 @@
     <!-- ═════════════════════════════════════════════════════
          CARDS
     ══════════════════════════════════════════════════════════ -->
-    <section id="cards" class="demo-section" style="padding-left: 10px;">
+    <section id="cards" class="demo-section">
       <div class="ease-container">
         <div class="demo-section-label">Components</div>
         <h2 class="demo-section-title">Cards</h2>
@@ -435,37 +449,35 @@
         <div class="demo-chip">// ease-card + ease-card-hover</div>
         <div class="ease-grid ease-grid-auto ease-gap-6" style="margin-bottom: var(--ease-space-10);">
 
-          <article class="ease-card ease-card-shadow ease-card-hover ease-slide-up ease-delay-100" style="padding: 10px;">
-            <div class="ease-card-header" >
+          <article class="ease-card ease-card-shadow ease-card-hover ease-slide-up ease-delay-100" style="padding: 20px;">
+            <div class="ease-card-header">
               <span class="ease-badge ease-badge-primary">New</span>
             </div>
             <h3 class="ease-card-title">Animation First</h3>
             <p class="ease-card-subtitle">Design Philosophy</p>
             <div class="ease-card-body">
-              <p>EaseMotion CSS puts animations at the core, not as an afterthought. Hover this card to feel the
-                difference.</p>
+              <p>EaseMotion CSS puts animations at the core, not as an afterthought. Hover this card to feel the difference.</p>
             </div>
             <div class="ease-card-footer">
               <button class="ease-btn ease-btn-primary ease-btn-sm">Explore</button>
             </div>
           </article>
 
-          <article class="ease-card ease-card-shadow ease-card-hover ease-slide-up ease-delay-200" style="padding: 10px;">
+          <article class="ease-card ease-card-shadow ease-card-hover ease-slide-up ease-delay-200" style="padding: 20px;">
             <div class="ease-card-header">
               <span class="ease-badge ease-badge-success">Stable</span>
             </div>
             <h3 class="ease-card-title">Human Readable</h3>
             <p class="ease-card-subtitle">Class Naming</p>
             <div class="ease-card-body">
-              <p>Class names read like English. <code>ease-fade-in</code>, <code>ease-hover-grow</code> — instantly
-                obvious.</p>
+              <p>Class names read like English. <code>ease-fade-in</code>, <code>ease-hover-grow</code> — instantly obvious.</p>
             </div>
             <div class="ease-card-footer">
               <button class="ease-btn ease-btn-success ease-btn-sm">Learn More</button>
             </div>
           </article>
 
-          <article class="ease-card ease-card-shadow ease-card-hover ease-slide-up ease-delay-300" style="padding: 10px;">
+          <article class="ease-card ease-card-shadow ease-card-hover ease-slide-up ease-delay-300" style="padding: 20px;">
             <div class="ease-card-header">
               <span class="ease-badge ease-badge-danger">MVP</span>
             </div>
@@ -485,38 +497,29 @@
         <div class="ease-grid ease-grid-auto ease-gap-6" style="margin-bottom: var(--ease-space-10);">
 
           <!-- Base Card -->
-          <article class="ease-card" style="padding: 10px;">
+          <article class="ease-card" style="padding: 20px;">
             <h3 class="ease-card-title">Base Card</h3>
             <p class="ease-card-subtitle">Default Variant</p>
-
             <div class="ease-card-body">
-              <p>
-                Minimal card using only the base <code>ease-card</code> class.
-              </p>
+              <p>Minimal card using only the base <code>ease-card</code> class.</p>
             </div>
           </article>
 
           <!-- Shadow Card -->
-          <article class="ease-card ease-card-shadow" style="padding: 10px;">
+          <article class="ease-card ease-card-shadow" style="padding: 20px;">
             <h3 class="ease-card-title">Shadow Card</h3>
             <p class="ease-card-subtitle">Elevation Effect</p>
-
             <div class="ease-card-body">
-              <p>
-                Adds depth using the <code>ease-card-shadow</code> utility.
-              </p>
+              <p>Adds depth using the <code>ease-card-shadow</code> utility.</p>
             </div>
           </article>
 
           <!-- Hover Card -->
-          <article class="ease-card ease-card-hover" style="padding: 10px;">
+          <article class="ease-card ease-card-hover" style="padding: 20px;">
             <h3 class="ease-card-title">Hover Card</h3>
             <p class="ease-card-subtitle">Interactive Motion</p>
-
             <div class="ease-card-body">
-              <p>
-                Interactive hover animation powered by <code>ease-card-hover</code>.
-              </p>
+              <p>Interactive hover animation powered by <code>ease-card-hover</code>.</p>
             </div>
           </article>
 
@@ -524,16 +527,16 @@
 
         <!-- Special Types -->
         <div class="demo-chip">// Stat Cards · Accent Cards</div>
-        <div class="ease-grid ease-grid-cols-3 ease-gap-6 ease-sm-grid-cols-1">
-          <div class="ease-card ease-card-stat ease-card-hover" style="padding: 10px;">
+        <div class="ease-grid ease-gap-6" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+          <div class="ease-card ease-card-stat ease-card-hover" style="padding: 20px;">
             <div class="ease-stat-value">42+</div>
             <div class="ease-stat-label">Utilities</div>
           </div>
-          <div class="ease-card ease-card-stat ease-card-hover" style="padding: 10px;">
+          <div class="ease-card ease-card-stat ease-card-hover" style="padding: 20px;">
             <div class="ease-stat-value">12</div>
             <div class="ease-stat-label">Animations</div>
           </div>
-          <div class="ease-card ease-card-stat ease-card-hover" style="padding: 10px;">
+          <div class="ease-card ease-card-stat ease-card-hover" style="padding: 20px;">
             <div class="ease-stat-value">0</div>
             <div class="ease-stat-label">Dependencies</div>
           </div>
@@ -546,7 +549,7 @@
     <!-- ═════════════════════════════════════════════════════
          ANIMATIONS
     ══════════════════════════════════════════════════════════ -->
-    <section id="animations" class="demo-section"style="padding-left: 10px;">
+    <section id="animations" class="demo-section">
       <div class="ease-container">
         <div class="demo-section-label">Animations</div>
         <h2 class="demo-section-title">Motion Library</h2>
@@ -582,8 +585,7 @@
             <span class="tag">ease-flip</span>
           </div>
           <div class="anim-cell">
-            <div class="anim-box ease-contract-image-entrance" onclick="replay(this,'ease-contract-image-entrance')">🖼️
-            </div>
+            <div class="anim-box ease-contract-image-entrance" onclick="replay(this,'ease-contract-image-entrance')">🖼️</div>
             <span class="tag">ease-contract-image-entrance</span>
           </div>
         </div>
@@ -621,12 +623,10 @@
             <span class="tag">ease-hover-lift</span>
           </div>
           <div class="anim-cell">
-
             <div class="anim-box ease-hover-morph-card">⬡</div>
             <span class="tag">ease-hover-morph-card</span>
           </div>
           <div class="anim-cell">
-
             <div class="anim-box ease-hover-shimmer">✦</div>
             <span class="tag">ease-hover-shimmer</span>
           </div>
@@ -634,13 +634,12 @@
             <div class="anim-box ease-hover-bounce-text">↕</div>
             <span class="tag">ease-hover-bounce-text</span>
           </div>
-
           <div class="anim-cell">
             <div class="anim-box ease-hover-squish-border">▢</div>
             <span class="tag">ease-hover-squish-border</span>
           </div>
-
         </div>
+
         <!-- Slide-in from Off-Canvas -->
         <div class="demo-chip">// Slide-in from off-canvas (sides & corners)</div>
         <div class="ease-flex ease-flex-wrap ease-gap-6" style="margin-bottom: var(--ease-space-10); overflow: hidden;">
@@ -661,37 +660,29 @@
             <span class="tag">ease-slide-in-from-right</span>
           </div>
           <div class="anim-cell">
-            <div class="anim-box ease-slide-in-from-top-left" onclick="replay(this,'ease-slide-in-from-top-left')">↘
-            </div>
+            <div class="anim-box ease-slide-in-from-top-left" onclick="replay(this,'ease-slide-in-from-top-left')">↘</div>
             <span class="tag">ease-slide-in-from-top-left</span>
           </div>
           <div class="anim-cell">
-            <div class="anim-box ease-slide-in-from-top-right" onclick="replay(this,'ease-slide-in-from-top-right')">↙
-            </div>
+            <div class="anim-box ease-slide-in-from-top-right" onclick="replay(this,'ease-slide-in-from-top-right')">↙</div>
             <span class="tag">ease-slide-in-from-top-right</span>
           </div>
           <div class="anim-cell">
-            <div class="anim-box ease-slide-in-from-bottom-left"
-              onclick="replay(this,'ease-slide-in-from-bottom-left')">↗</div>
+            <div class="anim-box ease-slide-in-from-bottom-left" onclick="replay(this,'ease-slide-in-from-bottom-left')">↗</div>
             <span class="tag">ease-slide-in-from-bottom-left</span>
           </div>
           <div class="anim-cell">
-            <div class="anim-box ease-slide-in-from-bottom-right"
-              onclick="replay(this,'ease-slide-in-from-bottom-right')">↖</div>
+            <div class="anim-box ease-slide-in-from-bottom-right" onclick="replay(this,'ease-slide-in-from-bottom-right')">↖</div>
             <span class="tag">ease-slide-in-from-bottom-right</span>
           </div>
         </div>
+
         <!-- Exit anims -->
         <div class="demo-chip">// Exit animations</div>
         <div class="ease-flex ease-flex-wrap ease-gap-6">
           <div class="anim-cell">
-            <div class="ease-expand-border-exit" onclick="replay(this,'ease-expand-border-exit')" style="width:64px;
-          height:64px;
-          border:2px solid #a78bfa;
-          border-radius:12px;
-          cursor:pointer;"></div>
+            <div class="ease-expand-border-exit" onclick="replay(this,'ease-expand-border-exit')" style="width:64px; height:64px; border:2px solid #a78bfa; border-radius:12px; cursor:pointer;"></div>
             <span class="tag">ease-expand-border-exit</span>
-
           </div>
         </div>
       </div>
@@ -702,7 +693,7 @@
     <!-- ═════════════════════════════════════════════════════
          LAYOUT
     ══════════════════════════════════════════════════════════ -->
-    <section id="layout" class="demo-section" style="padding-left: 10px;">
+    <section id="layout" class="demo-section">
       <div class="ease-container">
         <div class="demo-section-label">Layout Utilities</div>
         <h2 class="demo-section-title">Flexible Layouts</h2>
@@ -713,8 +704,7 @@
         <!-- Flex examples -->
         <div class="demo-chip">// ease-flex · ease-center · ease-justify-between</div>
         <div style="margin-bottom: var(--ease-space-8);">
-          <div class="ease-flex ease-justify-between ease-items-center ease-padding-4 ease-rounded ease-border"
-            style="border-color:rgba(255,255,255,0.08);">
+          <div class="ease-flex ease-justify-between ease-items-center ease-padding-4 ease-rounded ease-border" style="border-color:rgba(255,255,255,0.08); flex-wrap: wrap; gap: 1rem;">
             <span class="tag">ease-flex ease-justify-between</span>
             <button class="ease-btn ease-btn-primary ease-btn-sm">Action</button>
           </div>
@@ -723,30 +713,24 @@
         <!-- Grid examples -->
         <div class="demo-chip">// ease-grid ease-grid-auto ease-gap</div>
         <div class="ease-grid ease-grid-auto ease-gap-4" style="margin-bottom: var(--ease-space-8);">
-          <div
-            class="ease-padding-4 ease-rounded ease-bg-primary ease-text-white ease-text-center ease-font-semibold ease-shadow">
-            Alpha</div>
-          <div
-            class="ease-padding-4 ease-rounded ease-bg-success ease-text-white ease-text-center ease-font-semibold ease-shadow">
-            Beta</div>
-          <div
-            class="ease-padding-4 ease-rounded ease-bg-danger ease-text-white ease-text-center ease-font-semibold ease-shadow">
-            Gamma</div>
+          <div class="ease-padding-4 ease-rounded ease-bg-primary ease-text-white ease-text-center ease-font-semibold ease-shadow">Alpha</div>
+          <div class="ease-padding-4 ease-rounded ease-bg-success ease-text-white ease-text-center ease-font-semibold ease-shadow">Beta</div>
+          <div class="ease-padding-4 ease-rounded ease-bg-danger ease-text-white ease-text-center ease-font-semibold ease-shadow">Gamma</div>
         </div>
 
         <!-- Stagger example -->
         <div class="demo-chip">// ease-slide-up + ease-delay-*</div>
         <div class="ease-flex ease-gap-4 ease-flex-wrap">
-          <div class="ease-card ease-slide-up ease-delay-100" style="flex:1; min-width:140px;">
+          <div class="ease-card ease-slide-up ease-delay-100" style="flex:1; min-width:140px; padding: 15px;">
             <code class="tag">delay-100</code>
           </div>
-          <div class="ease-card ease-slide-up ease-delay-200" style="flex:1; min-width:140px;">
+          <div class="ease-card ease-slide-up ease-delay-200" style="flex:1; min-width:140px; padding: 15px;">
             <code class="tag">delay-200</code>
           </div>
-          <div class="ease-card ease-slide-up ease-delay-300" style="flex:1; min-width:140px;">
+          <div class="ease-card ease-slide-up ease-delay-300" style="flex:1; min-width:140px; padding: 15px;">
             <code class="tag">delay-300</code>
           </div>
-          <div class="ease-card ease-slide-up ease-delay-500" style="flex:1; min-width:140px;">
+          <div class="ease-card ease-slide-up ease-delay-500" style="flex:1; min-width:140px; padding: 15px;">
             <code class="tag">delay-500</code>
           </div>
         </div>
@@ -761,8 +745,7 @@
   <footer class="demo-footer">
     <div class="ease-container">
       <p style="margin:0; color:rgba(255,255,255,0.3);">
-        Built with ❤️ using <strong style="color:var(--ease-color-primary-light);">EaseMotion CSS</strong> — the
-        animation-first, human-readable CSS framework.
+        Built with ❤️ using <strong style="color:var(--ease-color-primary-light);">EaseMotion CSS</strong> — the animation-first, human-readable CSS framework.
       </p>
     </div>
   </footer>
