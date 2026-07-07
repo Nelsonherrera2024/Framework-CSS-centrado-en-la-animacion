@@ -6,3 +6,19 @@
 /* Imports */
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@700;800&display=swap");
 
+/* CSS Custom Properties / Tokens */
+:root {
+  /* Animation Timing & Easing */
+  --ease-wobble-duration: 0.65s;
+  --ease-wobble-easing: cubic-bezier(0.25, 0.8, 0.25, 1);
+  --ease-wobble-scale: 1.03;
+  --ease-wobble-rotate: 1.6deg;
+  --ease-wobble-translate: 8px;
+
+  /* Theme Palette - Deep Cyber Portfolio */
+  --portfolio-bg: #090a0c;
+  --portfolio-card-bg: #121316;
+  --portfolio-text-primary: #f3f4f6;
+  --portfolio-text-secondary: #9ca3af;
+  --portfolio-text-muted: #6b7280;
+
