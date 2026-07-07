@@ -300,6 +300,202 @@ body.demo-body {
   cursor: pointer;
 }
 
+.ease-portfolio-modal-close:hover {
+  background: rgba(255, 91, 91, 0.1);
+  color: var(--portfolio-accent-coral);
+  border-color: rgba(255, 91, 91, 0.3);
+  transform: rotate(90deg);
+}
+
+.ease-portfolio-modal-close:focus-visible {
+  outline: 2px solid var(--portfolio-accent-coral);
+  outline-offset: 2px;
+}
+
+/* Modal Title */
+.ease-portfolio-modal-title {
+  font-family: "Syne", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-top: 0;
+  margin-bottom: 8px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  background: linear-gradient(135deg, #ffffff, #d1d5db);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ease-portfolio-modal-desc {
+  font-size: 0.95rem;
+  color: var(--portfolio-text-secondary);
+  margin-top: 0;
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+
+/* ==========================================
+   CSS Target Trigger States
+   ========================================== */
+.ease-portfolio-modal-overlay:target {
+  opacity: 1;
+  visibility: visible;
+}
+
+.ease-portfolio-modal-overlay:target .ease-portfolio-modal-content {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+  animation: ease-portfolio-entrance var(--ease-wobble-duration)
+    cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+/* ==========================================
+   Interactive Wobble Focus Trigger
+   Alternates animations based on focused input to allow repeated triggers
+   ========================================== */
+.ease-portfolio-modal-content:has(#service-design:focus),
+.ease-portfolio-modal-content:has(#service-brand:focus),
+.ease-portfolio-modal-content:has(#user-email:focus) {
+  animation: ease-portfolio-wobble-1 var(--ease-wobble-duration)
+    var(--ease-wobble-easing) both;
+}
+
+.ease-portfolio-modal-content:has(#service-dev:focus),
+.ease-portfolio-modal-content:has(.portfolio-submit-btn:focus),
+.ease-portfolio-modal-content:has(.ease-portfolio-modal-close:focus) {
+  animation: ease-portfolio-wobble-2 var(--ease-wobble-duration)
+    var(--ease-wobble-easing) both;
+}
+
+/* ==========================================
+   Form Fields & Controls
+   ========================================== */
+.portfolio-form-group {
+  margin-bottom: 24px;
+}
+
+.portfolio-label {
+  display: block;
+  font-family: "Space Mono", monospace;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--portfolio-text-secondary);
+  margin-bottom: 10px;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+}
+
+/* Text Input Styling */
+.portfolio-input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--portfolio-border-color);
+  border-radius: var(--portfolio-radius-md);
+  padding: 14px 18px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 0.95rem;
+  color: var(--portfolio-text-primary);
+  box-sizing: border-box;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.portfolio-input::placeholder {
+  color: var(--portfolio-text-muted);
+}
+
+.portfolio-input:hover {
+  border-color: var(--portfolio-border-hover);
+}
+
+.portfolio-input:focus {
+  border-color: var(--portfolio-accent-purple);
+  background: rgba(139, 92, 246, 0.03);
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.1);
+}
+
+/* Project Types Selector (Pills Checkbox Style) */
+.portfolio-tags-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.portfolio-tag-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.portfolio-tag-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 4px;
+  border-radius: var(--portfolio-radius-md);
+  border: 1px solid var(--portfolio-border-color);
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--portfolio-text-secondary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-align: center;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.portfolio-tag-label:hover {
+  border-color: var(--portfolio-border-hover);
+  color: var(--portfolio-text-primary);
+}
+
+/* Checked State for Tags */
+.portfolio-tag-input:checked + .portfolio-tag-label {
+  background: rgba(139, 92, 246, 0.1);
+  border-color: var(--portfolio-accent-purple);
+  color: var(--portfolio-text-primary);
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.15);
+}
+
+/* Keyboard Focus States for Custom Tag Inputs */
+.portfolio-tag-input:focus-visible + .portfolio-tag-label {
+  outline: 2px solid var(--portfolio-accent-coral);
+  outline-offset: 2px;
+}
+
+/* Submit Modal CTA */
+.portfolio-submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #050608;
+  background: linear-gradient(135deg, #ffffff, #e5e7eb);
+  padding: 16px;
+  border: none;
+  border-radius: var(--portfolio-radius-md);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-sizing: border-box;
+}
+
+.portfolio-submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+  background: linear-gradient(135deg, #ffffff, #ffffff);
+}
 
 .portfolio-submit-btn:active {
   transform: translateY(0);
