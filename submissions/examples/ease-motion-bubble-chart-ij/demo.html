@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ease-motion-bubble-chart</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Motion Bubble Chart</h1>
+    <p class="subtitle">An animated bubble chart with floating motion effect</p>
+    <button class="trigger" id="trigger">Open</button>
+    <div class="backdrop" id="backdrop"></div>
+    <div class="panel" id="panel">
+      <div class="panel-header">
+        <h2>Motion Bubble Chart</h2>
+        <button class="close" id="closeBtn">&times;</button>
+      </div>
+      <div class="panel-body">
+        <p>Experience the motion-bubble-chart with smooth CSS transitions driven by custom properties.</p>
+      </div>
+      <div class="panel-footer">
+        <button class="btn btn-secondary" id="dismissBtn">Close</button>
+        <button class="btn btn-primary">Confirm</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    const trigger = document.getElementById('trigger');
+    const panel = document.getElementById('panel');
+    const backdrop = document.getElementById('backdrop');
+    function open() { panel.classList.add('open'); backdrop.classList.add('visible'); }
+    function close() { panel.classList.remove('open'); backdrop.classList.remove('visible'); }
+    trigger.addEventListener('click', open);
+    backdrop.addEventListener('click', close);
+    document.getElementById('closeBtn').addEventListener('click', close);
+    document.getElementById('dismissBtn').addEventListener('click', close);
+  </script>
+</body>
+</html>
