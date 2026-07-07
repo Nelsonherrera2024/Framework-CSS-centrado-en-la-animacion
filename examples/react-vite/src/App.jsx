@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './App.css';
 import Animate from './components/Animate';
+import Hover from './components/Hover';
+import ScrollReveal from './components/ScrollReveal';
 
 function App() {
   const [activeAnimation, setActiveAnimation] = useState('fade-in');
@@ -131,7 +133,7 @@ function App() {
           <Animate type="zoom-in" duration={350} className="demo-card" style={{ maxWidth: '450px', width: '90%' }}>
             <h3>Modal Dialog</h3>
             <p style={{ color: 'var(--text-muted)', marginBottom: '2rem' }}>
-              This modal dialog enters the screen smoothly using the <code>ease-animate-zoom-in</code> animation.
+              This modal dialog enters the screen smoothly using the <code>ease-zoom-in</code> animation.
             </p>
             <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
               <button className="btn-outline" onClick={() => setIsModalOpen(false)} style={{ margin: 0 }}>
@@ -141,6 +143,38 @@ function App() {
           </Animate>
         </div>
       )}
+
+      {/* Hover + ScrollReveal Showcase */}
+      <ScrollReveal variant="up" className="demo-card" style={{ marginTop: '1.5rem' }}>
+        <span className="pill">04 / Hover &amp; Scroll</span>
+        <h3>Hover effects &amp; scroll reveal</h3>
+        <p style={{ color: 'var(--text-muted)' }}>
+          This card enters with <code>&lt;ScrollReveal&gt;</code> via IntersectionObserver.
+          Hover the tiles below — each is a <code>&lt;Hover&gt;</code> effect.
+        </p>
+        <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap', marginTop: '1.25rem' }}>
+          {[
+            { effect: 'lift', label: 'Lift' },
+            { effect: 'scale', label: 'Scale' },
+            { effect: 'glow', label: 'Glow' },
+            { effect: 'shake', label: 'Shake' }
+          ].map(({ effect, label }) => (
+            <Hover
+              key={effect}
+              effect={effect}
+              className="pill"
+              style={{
+                cursor: 'pointer',
+                padding: '0.75rem 1.25rem',
+                background: 'rgba(168, 85, 247, 0.15)',
+                color: 'var(--accent-purple)'
+              }}
+            >
+              {label}
+            </Hover>
+          ))}
+        </div>
+      </ScrollReveal>
 
       {/* Bottom Showcase Info */}
       <Animate type="fade-in" delay={400} className="demo-card" style={{ background: 'rgba(6, 182, 212, 0.05)', borderColor: 'rgba(6, 182, 212, 0.2)' }}>
