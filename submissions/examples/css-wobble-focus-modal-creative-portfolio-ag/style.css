@@ -300,6 +300,29 @@ body.demo-body {
   cursor: pointer;
 }
 
+
+.portfolio-submit-btn:active {
+  transform: translateY(0);
+}
+
+.portfolio-submit-btn:focus-visible {
+  outline: 3px solid var(--portfolio-accent-coral);
+  outline-offset: 4px;
+}
+
+/* ==========================================
+   Responsive Adaptation
+   ========================================== */
+@media (max-width: 600px) {
+  .portfolio-hero {
+    padding: 35px 24px;
+  }
+
+  .ease-portfolio-modal-content {
+    padding: 30px 24px;
+  }
+
+  .portfolio-tags-grid {
     grid-template-columns: 1fr;
     gap: 8px;
   }
