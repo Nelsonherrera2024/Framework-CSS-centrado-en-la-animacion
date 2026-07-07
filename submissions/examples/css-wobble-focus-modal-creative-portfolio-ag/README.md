@@ -57,3 +57,6 @@
      --ease-wobble-translate: 8px; /* Maximum horizontal wobble offset */
    }
    ```
+
+3. **Why is it useful?**
+   It allows designers and developers to add high-fidelity micro-interactions and animations to their portfolios with zero performance overhead, complete responsiveness, native browser keyboard tab-index access, and full customization via standard CSS variables.
