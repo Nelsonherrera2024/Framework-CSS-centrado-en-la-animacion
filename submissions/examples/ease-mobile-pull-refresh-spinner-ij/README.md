@@ -1,15 +1,22 @@
-# Mobile Pull Refresh Spinner
+# ease-mobile-pull-refresh-spinner
 
-A "pull to refresh" interaction with circular spinner rotation tied to pull progress via `--pull-progress`. Past the threshold, releasing triggers a full rotation animation. Content translates down with the pull gesture.
-
-## Features
-
-- Circular spinner rotates proportionally to pull distance via `--pull-progress`
-- CSS handles visual rotation; JS sets progress from drag distance
-- Past threshold triggers full refresh animation
-- Content translates down with pull gesture
-- Smooth cubic-bezier transitions
+A mobile pull-to-refresh interaction using CSS transforms and a `--pull-progress` custom property. The circular spinner rotates in proportion to the pull distance. Past the threshold, releasing triggers a full rotation animation.
 
 ## Usage
 
-Set `--pull-progress` (0 to 1) on `.pr-spinner`. CSS uses `transform: rotate(calc(var(--pull-progress) * 360deg))` for rotation. Add `.pr-refreshing` class for the continuous spin animation.
+Open `demo.html` in a browser. Drag the list downward to see the spinner rotate. Release past 80% pull to trigger the refresh animation.
+
+## CSS Custom Properties
+
+| Property | Default | Description |
+|----------|---------|-------------|
+| `--spinner-size` | `40px` | Diameter of the spinner |
+| `--spinner-color` | `#4f46e5` | Active spinner arc color |
+| `--spinner-track-color` | `#e0e7ff` | Spinner track color |
+| `--spinner-duration` | `0.8s` | Full spin duration |
+
+## Notes
+
+- JavaScript sets `--pull-progress` from drag distance
+- All visual rotation and animation is handled by CSS
+- Touch and mouse input are both supported

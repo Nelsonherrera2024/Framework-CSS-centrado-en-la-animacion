@@ -1,77 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pull Refresh Spinner - EaseMotion CSS</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ease-mobile-pull-refresh-spinner</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="demo-wrapper">
+  <div class="container">
     <h1>Pull to Refresh</h1>
-    <p class="desc">Drag down to see the spinner rotate. Release past threshold to trigger refresh.</p>
-    <div class="pr-container" id="prContainer">
-      <div class="pr-spinner-area" id="prSpinnerArea">
-        <div class="pr-spinner" id="prSpinner" style="--pull-progress: 0;"></div>
-      </div>
-      <div class="pr-content" id="prContent">
-        <div class="pr-row"><span>Item 1</span><span>Details</span></div>
-        <div class="pr-row"><span>Item 2</span><span>Details</span></div>
-        <div class="pr-row"><span>Item 3</span><span>Details</span></div>
-        <div class="pr-row"><span>Item 4</span><span>Details</span></div>
-        <div class="pr-row"><span>Item 5</span><span>Details</span></div>
+    <p class="subtitle">Drag the list downward to see the spinner</p>
+
+    <div class="refresh-wrapper" id="refreshWrapper">
+      <div class="spinner" id="spinner" style="--pull-progress: 0"></div>
+      <div class="content-area" id="contentArea">
+        <div class="list-item">Item 1 — Latest updates</div>
+        <div class="list-item">Item 2 — Notifications</div>
+        <div class="list-item">Item 3 — Messages</div>
+        <div class="list-item">Item 4 — Activity feed</div>
+        <div class="list-item">Item 5 — Friend requests</div>
       </div>
     </div>
-    <p class="pr-status" id="prStatus">Pull down to refresh</p>
+
+    <p class="hint" id="hint">↓ Pull down to refresh</p>
   </div>
+
   <script>
-    const container = document.getElementById('prContainer');
-    const spinner = document.getElementById('prSpinner');
-    const content = document.getElementById('prContent');
-    const status = document.getElementById('prStatus');
-    let startY = 0;
-    let pulling = false;
-    let pullDist = 0;
-    const threshold = 80;
+    const wrapper = document.getElementById('refreshWrapper');
+    const spinner = document.getElementById('spinner');
+    const hint = document.getElementById('hint');
+    const content = document.getElementById('contentArea');
+    let startY = 0, pulling = false, pulled = false;
 
-    container.addEventListener('mousedown', (e) => {
-      if (container.scrollTop > 0) return;
-      startY = e.clientY;
+    wrapper.addEventListener('touchstart', (e) => {
+      if (content.scrollTop > 0) return;
+      startY = e.touches[0].clientY;
       pulling = true;
-      pullDist = 0;
-      container.classList.add('pr-pulling');
-    });
+    }, { passive: true });
 
-    document.addEventListener('mousemove', (e) => {
+    wrapper.addEventListener('touchmove', (e) => {
       if (!pulling) return;
-      const dist = Math.max(0, (e.clientY - startY) * 0.5);
-      pullDist = dist;
-      const progress = Math.min(1, dist / threshold);
+      const dy = e.touches[0].clientY - startY;
+      if (dy < 0) { pulling = false; return; }
+      const progress = Math.min(dy / 150, 1);
       spinner.style.setProperty('--pull-progress', progress);
-      content.style.setProperty('--pr-translate', Math.min(dist, 120) + 'px');
-      status.textContent = progress >= 1 ? 'Release to refresh' : 'Pull down to refresh';
-    });
+      wrapper.classList.toggle('pulling', progress > 0.05);
+      pulled = progress >= 0.8;
+      hint.textContent = pulled ? 'Release to refresh' : '\u2193 Pull down to refresh';
+    }, { passive: true });
 
-    document.addEventListener('mouseup', () => {
-      if (!pulling) return;
+    wrapper.addEventListener('touchend', () => {
       pulling = false;
-      container.classList.remove('pr-pulling');
-      if (pullDist >= threshold) {
-        status.textContent = 'Refreshing...';
-        spinner.classList.add('pr-refreshing');
+      if (pulled) {
+        wrapper.classList.add('refreshing');
+        hint.textContent = 'Refreshing...';
         setTimeout(() => {
-          spinner.classList.remove('pr-refreshing');
+          wrapper.classList.remove('refreshing');
           spinner.style.setProperty('--pull-progress', 0);
-          content.style.setProperty('--pr-translate', '0px');
-          status.textContent = 'Updated!';
-          setTimeout(() => { status.textContent = 'Pull down to refresh'; }, 1000);
-        }, 1500);
+          pulled = false;
+          hint.textContent = '\u2193 Pull down to refresh';
+        }, 1800);
       } else {
         spinner.style.setProperty('--pull-progress', 0);
-        content.style.setProperty('--pr-translate', '0px');
-        status.textContent = 'Pull down to refresh';
+        wrapper.classList.remove('pulling');
       }
-      pullDist = 0;
+    }, { passive: true });
+
+    wrapper.addEventListener('mousedown', (e) => {
+      if (content.scrollTop > 0) return;
+      startY = e.clientY;
+      pulling = true;
+    });
+
+    window.addEventListener('mousemove', (e) => {
+      if (!pulling) return;
+      const dy = e.clientY - startY;
+      if (dy < 0) { pulling = false; return; }
+      const progress = Math.min(dy / 150, 1);
+      spinner.style.setProperty('--pull-progress', progress);
+      wrapper.classList.toggle('pulling', progress > 0.05);
+      pulled = progress >= 0.8;
+      hint.textContent = pulled ? 'Release to refresh' : '\u2193 Pull down to refresh';
+    });
+
+    window.addEventListener('mouseup', () => {
+      if (!pulling) return;
+      pulling = false;
+      if (pulled) {
+        wrapper.classList.add('refreshing');
+        hint.textContent = 'Refreshing...';
+        setTimeout(() => {
+          wrapper.classList.remove('refreshing');
+          spinner.style.setProperty('--pull-progress', 0);
+          pulled = false;
+          hint.textContent = '\u2193 Pull down to refresh';
+        }, 1800);
+      } else {
+        spinner.style.setProperty('--pull-progress', 0);
+        wrapper.classList.remove('pulling');
+      }
     });
   </script>
 </body>
