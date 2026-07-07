@@ -300,3 +300,29 @@ body.demo-body {
   cursor: pointer;
 }
 
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .portfolio-tag-label {
+    padding: 12px;
+  }
+}
+
+/* ==========================================
+   Reduced Motion Accessibility Preference
+   ========================================== */
+@media (prefers-reduced-motion: reduce) {
+  .ease-portfolio-modal-overlay,
+  .ease-portfolio-modal-content,
+  .ease-portfolio-modal-close,
+  .portfolio-btn,
+  .portfolio-submit-btn,
+  .portfolio-input,
+  .portfolio-tag-label {
+    transition: none !important;
+  }
+  .ease-portfolio-modal-content:focus-within {
+    animation: none !important;
+  }
+}
