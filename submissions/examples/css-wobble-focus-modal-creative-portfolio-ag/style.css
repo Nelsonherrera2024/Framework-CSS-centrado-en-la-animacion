@@ -22,3 +22,11 @@
   --portfolio-text-secondary: #9ca3af;
   --portfolio-text-muted: #6b7280;
 
+  /* Accent Colors */
+  --portfolio-accent-coral: #ff5b5b;
+  --portfolio-accent-purple: #8b5cf6;
+  --portfolio-accent-mint: #10b981;
+  --portfolio-accent-glow: rgba(139, 92, 246, 0.15);
+  --portfolio-border-color: rgba(255, 255, 255, 0.08);
+  --portfolio-border-hover: rgba(255, 255, 255, 0.2);
+
