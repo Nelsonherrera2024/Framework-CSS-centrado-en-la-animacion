@@ -1,0 +1,18 @@
+﻿:root {
+  --agenda-stagger-delay: 0.08s;
+  --agenda-duration: 0.5s;
+  --agenda-easing: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --agenda-bg: #fff;
+  --agenda-accent: #2d6cdf;
+  --agenda-radius: 12px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: system-ui, sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; background: #f4f6f9; }
+.agenda-card { width: min(90%, 480px); background: var(--agenda-bg); border-radius: var(--agenda-radius); padding: 2rem; box-shadow: 0 4px 24px rgba(0,0,0,0.06); }
+h2 { margin-bottom: 1.5rem; color: #222; font-size: 1.3rem; }
+.agenda-list { list-style: none; }
+.agenda-list li { display: flex; align-items: center; gap: 1rem; padding: 0.75rem 0; border-bottom: 1px solid #f0f0f0; animation: revealItem var(--agenda-duration) var(--agenda-easing) both; animation-delay: calc(var(--i) * var(--agenda-stagger-delay)); }
+.agenda-list li:last-child { border-bottom: none; }
+@keyframes revealItem { 0% { opacity: 0; transform: translateX(-16px) scale(0.96); } 100% { opacity: 1; transform: translateX(0) scale(1); } }
+.time { font-weight: 600; color: var(--agenda-accent); font-size: 0.85rem; min-width: 3.5rem; }
+.topic { color: #444; }
