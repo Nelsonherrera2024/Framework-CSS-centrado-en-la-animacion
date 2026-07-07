@@ -59,3 +59,17 @@
     transform: scale(1.01) rotate(calc(-0.6 * var(--ease-wobble-rotate)))
       translateX(calc(-0.6 * var(--ease-wobble-translate)));
   }
+  60% {
+    transform: scale(1.005) rotate(calc(0.4 * var(--ease-wobble-rotate)))
+      translateX(calc(0.4 * var(--ease-wobble-translate)));
+  }
+  75% {
+    transform: scale(1.002) rotate(calc(-0.2 * var(--ease-wobble-rotate)))
+      translateX(calc(-0.2 * var(--ease-wobble-translate)));
+  }
+  100% {
+    transform: scale(1) rotate(0deg) translateX(0);
+  }
+}
+
+@keyframes ease-portfolio-wobble-2 {
