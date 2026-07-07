@@ -1,0 +1,133 @@
+:root{
+    --bg:#f5f7fa;
+    --card:#ffffff;
+    --primary:#2563eb;
+    --text:#222;
+    --border:#dbe4ef;
+    --radius:16px;
+    --shadow:0 12px 30px rgba(0,0,0,.08);
+    --duration:.45s;
+    --spring:cubic-bezier(.22,1,.36,1);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:var(--bg);
+    font-family:Arial,Helvetica,sans-serif;
+    padding:40px 20px;
+    color:var(--text);
+}
+
+.container{
+    width:min(700px,100%);
+}
+
+h1{
+    text-align:center;
+    margin-bottom:8px;
+}
+
+.subtitle{
+    text-align:center;
+    color:#666;
+    margin-bottom:30px;
+}
+
+.accordion{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+}
+
+details{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    transition:transform var(--duration) var(--spring),
+               box-shadow var(--duration);
+}
+
+details:hover{
+    transform:translateY(-3px);
+}
+
+details[open]{
+    transform:scale(1.02);
+}
+
+summary{
+    list-style:none;
+    cursor:pointer;
+    padding:18px 22px;
+    font-size:1.05rem;
+    font-weight:600;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+summary::-webkit-details-marker{
+    display:none;
+}
+
+summary::after{
+    content:"+";
+    font-size:1.5rem;
+    color:var(--primary);
+    transition:transform var(--duration) var(--spring);
+}
+
+details[open] summary::after{
+    content:"−";
+    transform:rotate(180deg);
+}
+
+.content{
+    display:grid;
+    grid-template-rows:0fr;
+    transition:grid-template-rows var(--duration) var(--spring);
+}
+
+details[open] .content{
+    grid-template-rows:1fr;
+}
+
+.content p{
+    overflow:hidden;
+    padding:0 22px 20px;
+    color:#555;
+    line-height:1.7;
+}
+
+summary:focus-visible{
+    outline:3px solid rgba(37,99,235,.3);
+    outline-offset:3px;
+    border-radius:var(--radius);
+}
+
+@media (max-width:600px){
+
+    h1{
+        font-size:1.6rem;
+    }
+
+    summary{
+        font-size:1rem;
+        padding:16px;
+    }
+
+    .content p{
+        padding:0 16px 18px;
+    }
+}
