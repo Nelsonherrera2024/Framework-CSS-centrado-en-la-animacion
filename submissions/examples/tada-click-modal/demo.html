@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tada-Click Modal — Creative Portfolio Demo</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1 style="text-align:center; margin-bottom:0.25rem;">Tada-Click Modal</h1>
+<p style="text-align:center; color:#a1a1aa; margin-top:0; margin-bottom:2.5rem;">
+  Pure CSS · Zero JavaScript · Keyboard accessible
+</p>
+
+<div class="portfolio-grid">
+
+  <!-- ================= Portfolio Item 1 ================= -->
+  <div class="portfolio-item">
+    <img class="portfolio-thumb"
+         src="https://images.unsplash.com/photo-1558655146-d09347e92766?w=600&auto=format&fit=crop&q=60"
+         alt="Neon Dreams project thumbnail">
+    <div class="portfolio-caption">
+      <h3>Neon Dreams</h3>
+      <p>Brand identity &amp; motion design</p>
+    </div>
+
+    <input type="checkbox" id="modal-1" class="tada-modal-toggle"
+           aria-label="Open details for Neon Dreams project">
+
+    <div class="tada-modal-overlay">
+      <label for="modal-1" class="tada-modal-backdrop" aria-hidden="true"></label>
+      <div class="tada-modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+        <label for="modal-1" class="tada-modal-close" aria-label="Close Neon Dreams details">&times;</label>
+        <img class="tada-modal-hero"
+             src="https://images.unsplash.com/photo-1558655146-d09347e92766?w=800&auto=format&fit=crop&q=60"
+             alt="">
+        <h2 id="modal-1-title">Neon Dreams</h2>
+        <p>A full brand identity and motion system built for a synthwave-inspired
+           music festival, spanning logo animation, poster series, and social
+           templates.</p>
+        <div class="tada-modal-tags">
+          <span>Branding</span>
+          <span>Motion</span>
+          <span>2026</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= Portfolio Item 2 ================= -->
+  <div class="portfolio-item">
+    <img class="portfolio-thumb"
+         src="https://images.unsplash.com/photo-1522199755839-a2bacb67c546?w=600&auto=format&fit=crop&q=60"
+         alt="Studio Grid project thumbnail">
+    <div class="portfolio-caption">
+      <h3>Studio Grid</h3>
+      <p>Portfolio website concept</p>
+    </div>
+
+    <input type="checkbox" id="modal-2" class="tada-modal-toggle"
+           aria-label="Open details for Studio Grid project">
+
+    <div class="tada-modal-overlay">
+      <label for="modal-2" class="tada-modal-backdrop" aria-hidden="true"></label>
+      <div class="tada-modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-2-title">
+        <label for="modal-2" class="tada-modal-close" aria-label="Close Studio Grid details">&times;</label>
+        <img class="tada-modal-hero"
+             src="https://images.unsplash.com/photo-1522199755839-a2bacb67c546?w=800&auto=format&fit=crop&q=60"
+             alt="">
+        <h2 id="modal-2-title">Studio Grid</h2>
+        <p>A modular grid-based portfolio layout designed for photographers,
+           built entirely with CSS grid and container queries for effortless
+           responsiveness.</p>
+        <div class="tada-modal-tags">
+          <span>Web Design</span>
+          <span>Grid Layout</span>
+          <span>2026</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= Portfolio Item 3 ================= -->
+  <div class="portfolio-item">
+    <img class="portfolio-thumb"
+         src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=600&auto=format&fit=crop&q=60"
+         alt="Paper Trail project thumbnail">
+    <div class="portfolio-caption">
+      <h3>Paper Trail</h3>
+      <p>Editorial &amp; print design</p>
+    </div>
+
+    <input type="checkbox" id="modal-3" class="tada-modal-toggle"
+           aria-label="Open details for Paper Trail project">
+
+    <div class="tada-modal-overlay">
+      <label for="modal-3" class="tada-modal-backdrop" aria-hidden="true"></label>
+      <div class="tada-modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-3-title">
+        <label for="modal-3" class="tada-modal-close" aria-label="Close Paper Trail details">&times;</label>
+        <img class="tada-modal-hero"
+             src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=800&auto=format&fit=crop&q=60"
+             alt="">
+        <h2 id="modal-3-title">Paper Trail</h2>
+        <p>An independent print magazine exploring typography-first editorial
+           layouts, with a companion digital reading experience.</p>
+        <div class="tada-modal-tags">
+          <span>Editorial</span>
+          <span>Typography</span>
+          <span>2025</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

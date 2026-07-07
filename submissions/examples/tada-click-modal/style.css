@@ -1,0 +1,262 @@
+/* ==========================================================================
+   Tada-Click Modal — Pure CSS, zero JavaScript
+   For: EaseMotion-css — Creative Portfolio Layouts
+   ========================================================================== */
+
+:root {
+  /* Public customization API — override these on .tada-modal-toggle,
+     .portfolio-item, or :root to theme a single instance or the whole page */
+  --tada-duration: 0.7s;
+  --tada-easing: cubic-bezier(0.36, 0.07, 0.19, 0.97);
+  --tada-scale: 1.1;
+  --tada-rotate: 3deg;
+
+  --modal-radius: 16px;
+  --modal-max-width: 480px;
+  --modal-bg: #ffffff;
+  --modal-overlay-bg: rgba(15, 15, 20, 0.72);
+  --modal-accent: #7c3aed;
+  --modal-text: #1a1a1a;
+  --modal-fade-duration: 0.25s;
+}
+
+/* ---- Page / demo scaffolding (safe to remove when integrating) --------- */
+* { box-sizing: border-box; }
+
+body {
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: #0f0f14;
+  color: #f4f4f5;
+  margin: 0;
+  padding: 3rem 1.5rem;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.portfolio-item {
+  position: relative;
+  border-radius: var(--modal-radius);
+  overflow: hidden;
+  background: #1c1c24;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+}
+
+.portfolio-thumb {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.portfolio-caption {
+  padding: 1rem 1.1rem 1.2rem;
+}
+
+.portfolio-caption h3 {
+  margin: 0 0 0.25rem;
+  font-size: 1.05rem;
+}
+
+.portfolio-caption p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #a1a1aa;
+}
+
+/* ==========================================================================
+   1. The trigger — a real <input type="checkbox">, styled as a button.
+      Because it's a native checkbox, Tab + Space/Enter toggles it with
+      zero JavaScript — this is the core keyboard-accessibility mechanism.
+   ========================================================================== */
+
+.tada-modal-toggle {
+  appearance: none;
+  -webkit-appearance: none;
+  position: absolute;
+  inset: auto 1rem 1rem auto;
+  bottom: 1rem;
+  right: 1rem;
+  width: auto;
+  min-width: 128px;
+  height: 40px;
+  margin: 0;
+  padding: 0 1rem;
+  border: none;
+  border-radius: 999px;
+  background: var(--modal-accent);
+  color: #fff;
+  font: 600 0.85rem/40px "Segoe UI", sans-serif;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.tada-modal-toggle::after {
+  content: "View Project";
+}
+
+.tada-modal-toggle:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(124, 58, 237, 0.45);
+}
+
+.tada-modal-toggle:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+
+/* ==========================================================================
+   2. The overlay — hidden by default, revealed by the :checked sibling
+      selector. Uses opacity + visibility so it stays out of the tab order
+      and off-screen when closed (display:none would kill the CSS
+      transition, so we combine visibility with a delay instead).
+   ========================================================================== */
+
+.tada-modal-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: var(--modal-overlay-bg);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--modal-fade-duration) ease,
+              visibility 0s linear var(--modal-fade-duration);
+  z-index: 1000;
+}
+
+.tada-modal-toggle:checked ~ .tada-modal-overlay {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity var(--modal-fade-duration) ease;
+}
+
+/* Clicking anywhere on the dimmed backdrop closes the modal */
+.tada-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   3. The modal box + the signature "Tada-Click" animation.
+      Fires once, every time the checkbox transitions to :checked.
+   ========================================================================== */
+
+.tada-modal-box {
+  position: relative;
+  width: 100%;
+  max-width: var(--modal-max-width);
+  max-height: 85vh;
+  overflow-y: auto;
+  background: var(--modal-bg);
+  color: var(--modal-text);
+  border-radius: var(--modal-radius);
+  padding: 2rem 1.75rem 1.75rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+}
+
+.tada-modal-toggle:checked ~ .tada-modal-overlay .tada-modal-box {
+  animation: tada-click var(--tada-duration) var(--tada-easing) 1;
+}
+
+@keyframes tada-click {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  10%,
+  20% {
+    transform: scale(0.9) rotate(calc(var(--tada-rotate) * -1));
+  }
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: scale(var(--tada-scale)) rotate(var(--tada-rotate));
+  }
+  40%,
+  60%,
+  80% {
+    transform: scale(var(--tada-scale)) rotate(calc(var(--tada-rotate) * -1));
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* Respect reduced-motion preference: fall back to a simple fade */
+@media (prefers-reduced-motion: reduce) {
+  .tada-modal-toggle:checked ~ .tada-modal-overlay .tada-modal-box {
+    animation: none;
+  }
+  .tada-modal-overlay {
+    transition: opacity var(--modal-fade-duration) ease;
+  }
+}
+
+/* ---- Modal content ------------------------------------------------------ */
+
+.tada-modal-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.9rem;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #f2f2f4;
+  color: #333;
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.tada-modal-close:hover {
+  background: #e4e4e7;
+}
+
+.tada-modal-box img.tada-modal-hero {
+  width: 100%;
+  border-radius: calc(var(--modal-radius) - 6px);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.tada-modal-box h2 {
+  margin: 0 0 0.4rem;
+  font-size: 1.3rem;
+}
+
+.tada-modal-box p {
+  margin: 0 0 0.6rem;
+  line-height: 1.5;
+  font-size: 0.95rem;
+  color: #3f3f46;
+}
+
+.tada-modal-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+}
+
+.tada-modal-tags span {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(124, 58, 237, 0.12);
+  color: var(--modal-accent);
+}
