@@ -231,6 +231,9 @@
       const generatedCodeEl = document.getElementById("generatedClass");
       const copyBtn = document.getElementById("copyBtn");
 
+      // Persistent state to retain selected animations across search filter re-renders
+      const selectedAnimations = new Set();
+
       function renderList() {
         const filter = searchInput.value.toLowerCase();
         listContainer.innerHTML = "";
@@ -246,24 +249,30 @@
             const label = document.createElement("label");
             label.style.display = "flex";
             label.style.alignItems = "center";
-            const checkbox = document.createElement("input");
+                       const checkbox = document.createElement("input");
             checkbox.type = "checkbox";
             checkbox.value = anim.name;
+            checkbox.checked = selectedAnimations.has(anim.name);
             checkbox.style.marginRight = "var(--ease-space-2)";
-            checkbox.addEventListener("change", updateGenerated);
+            checkbox.addEventListener("change", (e) => {
+              if (e.target.checked) {
+                selectedAnimations.add(anim.name);
+              } else {
+                selectedAnimations.delete(anim.name);
+              }
+              updateGenerated();
+            });
             const nameSpan = document.createElement("span");
             nameSpan.textContent = anim.name;
             label.appendChild(checkbox);
             label.appendChild(nameSpan);
+            
             card.appendChild(label);
             listContainer.appendChild(card);
           });
       }
-
-      function updateGenerated() {
-        const selected = Array.from(
-          listContainer.querySelectorAll("input[type=checkbox]:checked")
-        ).map((cb) => cb.value);
+             function updateGenerated() {
+        const selected = Array.from(selectedAnimations);
         const duration = durationInput.value;
         const delay = delayInput.value;
         // Build class string: combine selected classes and utility classes for duration/delay if needed.
