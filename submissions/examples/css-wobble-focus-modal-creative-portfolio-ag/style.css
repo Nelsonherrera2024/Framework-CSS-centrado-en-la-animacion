@@ -144,3 +144,67 @@ body.demo-body {
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
 }
 
+.portfolio-badge {
+  font-family: "Space Mono", monospace;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: var(--portfolio-accent-coral);
+  letter-spacing: 0.15em;
+  margin-bottom: 15px;
+  display: inline-block;
+  border: 1px solid rgba(255, 91, 91, 0.2);
+  padding: 4px 12px;
+  border-radius: 99px;
+  background: rgba(255, 91, 91, 0.05);
+}
+
+.portfolio-hero h1 {
+  font-family: "Syne", sans-serif;
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-weight: 800;
+  margin-top: 0;
+  margin-bottom: 20px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #ffffff, #9ca3af);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.portfolio-hero p {
+  font-size: 1.1rem;
+  color: var(--portfolio-text-secondary);
+  line-height: 1.7;
+  margin-bottom: 35px;
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Trigger Button */
+.portfolio-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--portfolio-text-primary);
+  background: transparent;
+  padding: 16px 36px;
+  border-radius: 99px;
+  border: 2px solid var(--portfolio-accent-purple);
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.2);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.portfolio-btn:hover {
+  background: var(--portfolio-accent-purple);
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.4);
+  transform: translateY(-2px);
+}
+
