@@ -57,3 +57,34 @@
           aria-label="Close modal"
           title="Close"
           >&times;</a
+        >
+
+        <!-- Typography Header -->
+        <h2 id="modal-title" class="ease-portfolio-modal-title">
+          Start a Project
+        </h2>
+        <p id="modal-desc" class="ease-portfolio-modal-desc">
+          Select the services you need and enter your email address. Focus on
+          any input to trigger the wobble feedback.
+        </p>
+
+        <!-- Inquiry Form -->
+        <form
+          action="#"
+          method="get"
+          onsubmit="
+            event.preventDefault();
+            window.location.hash = '#';
+          "
+        >
+          <!-- Project Type Selection -->
+          <div class="portfolio-form-group">
+            <span class="portfolio-label">Project Scope</span>
+            <div class="portfolio-tags-grid">
+              <input
+                type="checkbox"
+                id="service-design"
+                class="portfolio-tag-input"
+              />
+              <label for="service-design" class="portfolio-tag-label"
+                >Design</label
