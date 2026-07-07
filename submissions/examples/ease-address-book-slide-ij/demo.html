@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Address Book Slide</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <button class="toggle-btn" onclick="document.querySelector('.contact-panel').classList.toggle('open')">Toggle Contacts</button>
+  <div class="contact-panel">
+    <div class="panel-header"><h3>Contacts</h3><span class="close" onclick="this.parentElement.parentElement.classList.remove('open')">&times;</span></div>
+    <ul class="contact-list">
+      <li><span class="avatar">AL</span> Alice Lim</li>
+      <li><span class="avatar">BJ</span> Bob Jones</li>
+      <li><span class="avatar">CW</span> Carol Wu</li>
+      <li><span class="avatar">DM</span> David Marks</li>
+      <li><span class="avatar">EL</span> Eva Liu</li>
+    </ul>
+  </div>
+</body>
+</html>
