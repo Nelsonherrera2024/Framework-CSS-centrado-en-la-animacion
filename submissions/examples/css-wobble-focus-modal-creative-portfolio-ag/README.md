@@ -19,3 +19,17 @@
      Get in Touch
    </a>
 
+   <!-- Modal Overlay & Box -->
+   <div
+     id="portfolio-modal"
+     class="ease-portfolio-modal-overlay"
+     role="dialog"
+     aria-modal="true"
+   >
+     <!-- Click to Close Area -->
+     <a
+       href="#"
+       class="ease-portfolio-modal-overlay-close-area"
+       aria-label="Close modal"
+     ></a>
+
