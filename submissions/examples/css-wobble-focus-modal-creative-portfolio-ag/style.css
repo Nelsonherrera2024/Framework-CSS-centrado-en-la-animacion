@@ -73,3 +73,60 @@
 }
 
 @keyframes ease-portfolio-wobble-2 {
+  0% {
+    transform: scale(1) rotate(0deg) translateX(0);
+  }
+  15% {
+    transform: scale(var(--ease-wobble-scale))
+      rotate(calc(-1 * var(--ease-wobble-rotate)))
+      translateX(calc(-1 * var(--ease-wobble-translate)));
+  }
+  30% {
+    transform: scale(var(--ease-wobble-scale))
+      rotate(calc(0.8 * var(--ease-wobble-rotate)))
+      translateX(calc(0.8 * var(--ease-wobble-translate)));
+  }
+  45% {
+    transform: scale(1.01) rotate(calc(-0.6 * var(--ease-wobble-rotate)))
+      translateX(calc(-0.6 * var(--ease-wobble-translate)));
+  }
+  60% {
+    transform: scale(1.005) rotate(calc(0.4 * var(--ease-wobble-rotate)))
+      translateX(calc(0.4 * var(--ease-wobble-translate)));
+  }
+  75% {
+    transform: scale(1.002) rotate(calc(-0.2 * var(--ease-wobble-rotate)))
+      translateX(calc(-0.2 * var(--ease-wobble-translate)));
+  }
+  100% {
+    transform: scale(1) rotate(0deg) translateX(0);
+  }
+}
+
+@keyframes ease-portfolio-entrance {
+  0% {
+    opacity: 0;
+    transform: scale(0.92) rotate(-3deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* Base resets & layout for demo */
+body.demo-body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: var(--portfolio-bg);
+  background-image:
+    radial-gradient(at 0% 0%, rgba(139, 92, 246, 0.08) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(255, 91, 91, 0.05) 0px, transparent 50%);
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  color: var(--portfolio-text-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
