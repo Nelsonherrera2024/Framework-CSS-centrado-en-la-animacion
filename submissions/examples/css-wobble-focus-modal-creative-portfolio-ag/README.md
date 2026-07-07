@@ -8,3 +8,14 @@
 
    **HTML Structure:**
 
+   ```html
+   <!-- Open Trigger -->
+   <a
+     href="#portfolio-modal"
+     class="portfolio-btn"
+     role="button"
+     aria-haspopup="dialog"
+   >
+     Get in Touch
+   </a>
+
