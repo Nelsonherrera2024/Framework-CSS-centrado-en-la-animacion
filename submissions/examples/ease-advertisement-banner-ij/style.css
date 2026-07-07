@@ -1,0 +1,22 @@
+﻿:root {
+  --banner-height: 220px;
+  --banner-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --banner-radius: 12px;
+  --banner-slide-duration: 0.8s;
+  --banner-shape-color: rgba(255,255,255,0.08);
+  --cta-bg: #fff;
+  --cta-color: #764ba2;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: system-ui, sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; background: #1a1a2e; padding: 1rem; }
+.ad-banner { position: relative; width: min(100%, 700px); height: var(--banner-height); background: var(--banner-bg); border-radius: var(--banner-radius); overflow: hidden; display: flex; align-items: center; padding: 2rem; animation: slideIn var(--banner-slide-duration) cubic-bezier(0.22, 1, 0.36, 1) both; }
+@keyframes slideIn { 0% { opacity: 0; transform: translateY(30px) scale(0.96); } 100% { opacity: 1; transform: translateY(0) scale(1); } }
+.ad-content { position: relative; z-index: 2; color: #fff; }
+.ad-title { font-size: 2rem; font-weight: 800; margin-bottom: 0.3rem; animation: fadeUp 0.6s 0.3s both; }
+.ad-text { font-size: 1rem; opacity: 0.9; margin-bottom: 1rem; animation: fadeUp 0.6s 0.45s both; }
+.ad-cta { display: inline-block; padding: 0.6rem 1.8rem; background: var(--cta-bg); color: var(--cta-color); border-radius: 50px; font-weight: 700; text-decoration: none; font-size: 0.9rem; transition: transform 0.2s, box-shadow 0.2s; animation: fadeUp 0.6s 0.6s both; }
+.ad-cta:hover { transform: scale(1.05); box-shadow: 0 8px 25px rgba(0,0,0,0.2); }
+@keyframes fadeUp { 0% { opacity: 0; transform: translateY(12px); } 100% { opacity: 1; transform: translateY(0); } }
+.ad-shape { position: absolute; border-radius: 50%; background: var(--banner-shape-color); z-index: 1; }
+.ad-shape-1 { width: 250px; height: 250px; top: -80px; right: -50px; }
+.ad-shape-2 { width: 150px; height: 150px; bottom: -40px; right: 80px; }
