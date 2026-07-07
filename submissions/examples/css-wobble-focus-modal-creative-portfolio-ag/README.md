@@ -33,3 +33,16 @@
        aria-label="Close modal"
      ></a>
 
+     <!-- Content Box -->
+     <div class="ease-portfolio-modal-content">
+       <!-- Close Button -->
+       <a href="#" class="ease-portfolio-modal-close" aria-label="Close modal"
+         >&times;</a
+       >
+
+       <!-- Form Elements -->
+       <input type="email" class="portfolio-input" placeholder="Your Email" />
+     </div>
+   </div>
+   ```
+
