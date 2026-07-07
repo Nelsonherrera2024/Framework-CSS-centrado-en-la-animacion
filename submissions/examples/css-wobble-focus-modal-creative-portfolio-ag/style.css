@@ -30,3 +30,10 @@
   --portfolio-border-color: rgba(255, 255, 255, 0.08);
   --portfolio-border-hover: rgba(255, 255, 255, 0.2);
 
+  /* Layout & Geometry */
+  --portfolio-radius-lg: 20px;
+  --portfolio-radius-md: 10px;
+  --portfolio-shadow:
+    0 30px 70px rgba(0, 0, 0, 0.8), 0 0 50px var(--portfolio-accent-glow);
+}
+
