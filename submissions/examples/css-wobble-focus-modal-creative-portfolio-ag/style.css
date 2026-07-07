@@ -37,3 +37,25 @@
     0 30px 70px rgba(0, 0, 0, 0.8), 0 0 50px var(--portfolio-accent-glow);
 }
 
+/* ==========================================
+   Wobble Keyframe Definitions (Alternating Pairs)
+   Allows repeated triggering on different input focus actions
+   ========================================== */
+@keyframes ease-portfolio-wobble-1 {
+  0% {
+    transform: scale(1) rotate(0deg) translateX(0);
+  }
+  15% {
+    transform: scale(var(--ease-wobble-scale))
+      rotate(calc(-1 * var(--ease-wobble-rotate)))
+      translateX(calc(-1 * var(--ease-wobble-translate)));
+  }
+  30% {
+    transform: scale(var(--ease-wobble-scale))
+      rotate(calc(0.8 * var(--ease-wobble-rotate)))
+      translateX(calc(0.8 * var(--ease-wobble-translate)));
+  }
+  45% {
+    transform: scale(1.01) rotate(calc(-0.6 * var(--ease-wobble-rotate)))
+      translateX(calc(-0.6 * var(--ease-wobble-translate)));
+  }
