@@ -1,0 +1,23 @@
+﻿:root {
+  --accordion-border: #ddd;
+  --accordion-header-bg: #f5f5f5;
+  --accordion-header-hover: #e8e8e8;
+  --accordion-transition: 0.35s ease;
+  --accordion-radius: 6px;
+  --accordion-gap: 4px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: system-ui, sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; background: #fafafa; }
+.accordion-preview { width: min(90%, 520px); padding: 2rem; }
+h2 { margin-bottom: 1.25rem; color: #333; small { font-weight: 400; color: #888; font-size: 0.7em; } }
+.accordion { display: flex; flex-direction: column; gap: var(--accordion-gap); }
+.accordion-panel { border: 1px solid var(--accordion-border); border-radius: var(--accordion-radius); overflow: hidden; }
+.accordion-panel input { display: none; }
+.accordion-header { display: block; padding: 0.9rem 1.2rem; background: var(--accordion-header-bg); cursor: pointer; font-weight: 600; color: #333; transition: background var(--accordion-transition); user-select: none; }
+.accordion-header:hover { background: var(--accordion-header-hover); }
+.accordion-header::after { content: "+"; float: right; transition: transform var(--accordion-transition); }
+.accordion-panel input:checked + .accordion-header::after { transform: rotate(45deg); }
+.accordion-body { max-height: 0; overflow: hidden; transition: max-height var(--accordion-transition), padding var(--accordion-transition); }
+.accordion-body p { padding: 0 1.2rem; color: #555; line-height: 1.6; }
+.accordion-panel input:checked ~ .accordion-body { max-height: 200px; }
+.accordion-panel input:checked ~ .accordion-body p { padding: 1rem 1.2rem; }
