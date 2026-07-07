@@ -46,3 +46,14 @@
    </div>
    ```
 
+   **Customizable CSS Custom Properties:**
+
+   ```css
+   :root {
+     --ease-wobble-duration: 0.65s; /* Animation length */
+     --ease-wobble-easing: cubic-bezier(...); /* Oscillating bounce curve */
+     --ease-wobble-scale: 1.03; /* Focus pop-out scale factor */
+     --ease-wobble-rotate: 1.6deg; /* Maximum angular wobble rotation */
+     --ease-wobble-translate: 8px; /* Maximum horizontal wobble offset */
+   }
+   ```
