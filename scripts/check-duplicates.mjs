@@ -14,7 +14,16 @@ const keyframePattern = /@keyframes\s+(\S+)/;
 async function readBaseline() {
   try {
     return JSON.parse(await readFile(baselinePath, "utf8"));
-  } catch {
+  } catch (error) {
+    if (error.code === "ENOENT") {
+      console.warn(
+        "No duplicate baseline at scripts/duplicate-baseline.json. Every known duplicate counts as a new violation.",
+      );
+    } else {
+      console.warn(
+        `Could not read duplicate baseline at scripts/duplicate-baseline.json (${error.message}). Known duplicates count as new violations.`,
+      );
+    }
     return { classes: {}, keyframes: {} };
   }
 }
@@ -27,13 +36,17 @@ async function findDuplicates() {
   const baseline = await readBaseline();
   const classes = {};
   const keyframes = {};
+  let scannedFiles = 0;
 
   for (const dir of dirs) {
     const dirPath = path.join(rootDir, dir);
     let entries;
     try {
       entries = await readdir(dirPath, { withFileTypes: true });
-    } catch {
+    } catch (error) {
+      console.warn(
+        `Could not scan ${dir}/ for duplicate selectors (${error.message}). Its CSS files were not checked.`,
+      );
       continue;
     }
 
@@ -42,6 +55,7 @@ async function findDuplicates() {
 
       const filePath = path.join(dirPath, entry.name);
       const content = await readFile(filePath, "utf8");
+      scannedFiles++;
       const lines = content.split("\n");
 
       for (let i = 0; i < lines.length; i++) {
@@ -96,10 +110,12 @@ async function findDuplicates() {
   if (exitCode === 0) {
     if (knownDuplicateCount > 0) {
       console.log(
-        `No new duplicate class names or @keyframes found. ${knownDuplicateCount} known duplicate entries are tracked in scripts/duplicate-baseline.json.`,
+        `No new duplicate class names or @keyframes found in ${scannedFiles} CSS files. ${knownDuplicateCount} known duplicate entries are tracked in scripts/duplicate-baseline.json.`,
       );
     } else {
-      console.log("No duplicate class names or @keyframes found.");
+      console.log(
+        `No duplicate class names or @keyframes found in ${scannedFiles} CSS files.`,
+      );
     }
   }
 

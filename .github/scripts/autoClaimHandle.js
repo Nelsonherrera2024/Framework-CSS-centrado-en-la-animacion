@@ -58,7 +58,9 @@ async function handleClaim({ github, context }) {
       return;
     }
   } catch (err) {
-    console.log(`Failed to check merged PRs: ${err.message}`);
+    console.log(
+      `Failed to check merged PRs for ${owner}/${repo}#${issueNumber} (claim by @${commenter}): ${err.message}. The claim continues without the merged-PR guard.`,
+    );
   }
 
   const currentAssignees = issue.assignees.map((a) =>
@@ -130,7 +132,9 @@ async function handleClaim({ github, context }) {
           }
         }
       } catch (err) {
-        console.log(`Failed to check claim cooldown: ${err.message}`);
+        console.log(
+          `Failed to check claim cooldown for ${owner}/${repo}#${issueNumber} (claim by @${commenter}): ${err.message}. The 1-hour cooldown was not applied.`,
+        );
       }
     }
   }

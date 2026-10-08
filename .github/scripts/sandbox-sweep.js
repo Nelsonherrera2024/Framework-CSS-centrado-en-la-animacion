@@ -93,7 +93,12 @@ async function sandboxPR(author, prNum, title) {
   try {
     execSync('git pull origin main --rebase', { stdio: 'pipe' });
   } catch (e) {
-    try { execSync('git pull origin main', { stdio: 'pipe' }); } catch {}
+    console.log(`    Rebase pull failed (${e.message.substring(0, 100)}). Retrying with a plain pull.`);
+    try {
+      execSync('git pull origin main', { stdio: 'pipe' });
+    } catch (fallbackError) {
+      console.log(`    Plain pull also failed (${fallbackError.message.substring(0, 100)}). Continuing with the current checkout; relocated files can be stale.`);
+    }
   }
 
   // Relocate files to special-submissions
